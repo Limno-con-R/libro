@@ -1,0 +1,104 @@
+"","Eco.Morpho","IDP","IPS"
+"1","Achnanthes exigua var. exigua","Craticula ambigua","Eunotia tecta"
+"2","Caloneis bacillum","Craticula molestiformis","Fallacia clepsidroides"
+"3","Craticula halophila","Caloneis molaris","Frustulia pumilio"
+"4","Caloneis molaris","Cocconeis placentula var. placentula","Frustulia rhomboides var. rostrata"
+"5","Cocconeis placentula var. placentula","Cocconeis placentula var. euglypta","Luticola uruguayensis"
+"6","Cocconeis placentula var. euglypta","Diadesmis contenta","Navicula imperfecta"
+"7","Diadesmis contenta","Denticula subtilis","Rhopalodia brebissonii"
+"8","Diploneis elliptica","Eunotia bilunaris var. bilunaris",NA
+"9","Denticula kuetzingii var. kuetzingii","Eolimna minima",NA
+"10","Diploneis ovalis","Eunotia pectinalis var. minor",NA
+"11","Diploneis puella","Eunotia pectinalis var. undulata",NA
+"12","Denticula subtilis","Eolimna subminuscula",NA
+"13","Eunotia bilunaris var. bilunaris","Eunotia tecta",NA
+"14","Eolimna minima","Fallacia clepsidroides",NA
+"15","Eunotia pectinalis var. minor","Fragilaria capucina var. vaucheriae",NA
+"16","Eunotia pectinalis var. undulata","Fallacia insociabilis",NA
+"17","Eolimna subminuscula","Fallacia monoculata",NA
+"18","Eunotia tecta","Fallacia omissa",NA
+"19","Fragilaria capucina var. capucina","Frustulia pumilio",NA
+"20","Fallacia clepsidroides","Frustulia rhomboides var. rostrata",NA
+"21","Fragilaria capucina var. vaucheriae","Fallacia tenera",NA
+"22","Fallacia insociabilis","Frustulia vulgaris",NA
+"23","Fallacia omissa","Gomphonema affine",NA
+"24","Frustulia pumilio","Gomphonema clavatum",NA
+"25","Fallacia pygmaea ssp. pygmaea","Gomphonema minutum fo. minutum",NA
+"26","Frustulia rhomboides var. rostrata","Gyrosigma nodiferum",NA
+"27","Fallacia tenera","Gyrosigma scalproides",NA
+"28","Gomphonema minutum fo. minutum","Hantzschia abundans",NA
+"29","Gyrosigma nodiferum","Halamphora montana",NA
+"30","Gomphonema parvulum var. parvulum fo. parvulum","Luticola cohnii",NA
+"31","Gomphonema pumilum","Luticola nivalis",NA
+"32","Gyrosigma scalproides","Luticola uruguayensis",NA
+"33","Hippodonta hungarica","Mayamaea excelsa",NA
+"34","Luticola cohnii","Mayamaea atomus var. permitis",NA
+"35","Luticola mutica","Navicula agrestis",NA
+"36","Luticola nivalis","Navicula atomus var. permitis",NA
+"37","Luticola uruguayensis","Navicula arvensis",NA
+"38","Mayamaea excelsa","Navicula asellus",NA
+"39","Mayamaea atomus var. permitis","Nitzschia aurariae",NA
+"40","Navicula agrestis","Nitzschia bergii",NA
+"41","Nitzschia amphibioides","Navicula cari",NA
+"42","Nitzschia amphibia fo. amphibia","Navicula cincta",NA
+"43","Navicula atomus var. permitis","Nitzschia clausii",NA
+"44","Navicula arvensis","Nitzschia communis",NA
+"45","Navicula asellus","Navicula contenta",NA
+"46","Nitzschia brevissima","Nitzschia capitellata",NA
+"47","Nitzschia bergii","Navicula cryptotenella",NA
+"48","Nitzschia clausii","Navicula cryptotenelloides",NA
+"49","Navicula contenta","Navicula decussis",NA
+"50","Nitzschia constricta","Nitzschia desertorum",NA
+"51","Navicula cuspidata","Neidium ampliatum",NA
+"52","Navicula decussis","Neidium dubium",NA
+"53","Nitzschia desertorum","Nitzschia fasciculata",NA
+"54","Nitzschia dissipata var. dissipata","Nitzschia calida",NA
+"55","Neidium ampliatum","Nitzschia hungarica",NA
+"56","Navicula erifuga","Navicula imperfecta",NA
+"57","Nitzschia fasciculata","Nitzschia inconspicua",NA
+"58","Nitzschia calida","Nitzschia intermedia",NA
+"59","Nitzschia frustulum var. frustulum","Nitzschia perminuta",NA
+"60","Nitzschia hungarica","Navicula jacobii",NA
+"61","Navicula imperfecta","Navicula kotschyi",NA
+"62","Nitzschia intermedia","Navicula laevissima",NA
+"63","Navicula jacobii","Navicula lanceolata",NA
+"64","Navicula kotschyi","Navicula lapidosa",NA
+"65","Navicula laevissima","Nitzschia levidensis",NA
+"66","Navicula lapidosa","Navicula microcari",NA
+"67","Nitzschia levidensis","Navicula menisculus var. menisculus",NA
+"68","Nitzschia linearis var. linearis","Navicula novaesiberica",NA
+"69","Navicula microcari","Navicula oligotraphenta",NA
+"70","Navicula menisculus var. menisculus","Nitzschia pumila",NA
+"71","Nitzschia nana","Navicula salinarum var. salinarum",NA
+"72","Navicula novaesiberica","Navicula schoenfeldii",NA
+"73","Navicula oligotraphenta","Nitzschia sinuata var. delognei",NA
+"74","Navicula salinarum var. salinarum","Navicula schroeteri var. schroeteri",NA
+"75","Navicula schoenfeldii","Navicula schroeteri var. symmetrica",NA
+"76","Nitzschia sinuata var. delognei","Navicula tenelloides",NA
+"77","Navicula schroeteri var. schroeteri","Navicula trivialis var. trivialis",NA
+"78","Navicula schroeteri var. symmetrica","Navicula vandamii var. vandamii",NA
+"79","Navicula tenelloides","Navicula veneta",NA
+"80","Navicula trivialis var. trivialis","Navicula viridula",NA
+"81","Navicula vandamii var. vandamii","Nitzschia valdecostata",NA
+"82","Nitzschia vermicularis","Navicula viridula var. rostellata",NA
+"83","Navicula viridula","Nitzschia angustatula",NA
+"84","Nitzschia valdecostata","Pinnularia brebissonii var. brebissonii",NA
+"85","Navicula viridula var. rostellata","Planothidium frequentissimum",NA
+"86","Nitzschia angustatula","Placoneis placentula",NA
+"87","Pinnularia acrospheria var. acrospheria","Planothidium rostratum",NA
+"88","Pinnularia brebissonii var. brebissonii","Pinnularia subcapitata var. subcapitata",NA
+"89","Pleurosira laevis fo. laevis","Rhopalodia constricta",NA
+"90","Pinnularia microstauron var. microstauron","Simonsenia delognei",NA
+"91","Placoneis placentula","Sellaphora seminulum",NA
+"92","Planothidium rostratum","Surirella splendida",NA
+"93","Pinnularia subcapitata var. subcapitata","Surirella tenera",NA
+"94","Pinnularia viridis var. viridis morphotype 1",NA,NA
+"95","Rhopalodia brebissonii",NA,NA
+"96","Rhopalodia constricta",NA,NA
+"97","Rhopalodia gibberula",NA,NA
+"98","Surirella brebissonii var. brebissonii",NA,NA
+"99","Simonsenia delognei",NA,NA
+"100","Surirella splendida",NA,NA
+"101","Stauroneis brasiliensis",NA,NA
+"102","Surirella tenera",NA,NA
+"103","Tryblionella levidensis",NA,NA

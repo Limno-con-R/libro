@@ -1,0 +1,6 @@
+book_filename: "bookdown-LimnoR"
+language:
+  ui:
+    chapter_name: "Unidad "
+delete_merged_file: true
+new_session: yes

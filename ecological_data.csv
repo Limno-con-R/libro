@@ -1,0 +1,24 @@
+Class;Order;Family;Subfamily;Tribe;Genus;Species;FG;P1;P2;P3;P4;P5;P6;P7;P8;P9;P10
+Oligochaeta;Oligochaeta;Naididae;;;Limnodrilus;Limnodrilus hoffmeisteri;GC;0;0;0;0;0;0;0;0;0;0
+Oligochaeta;Oligochaeta;Naididae;;;Pristina;Pristina jenkinae;GC;0;33,33333333;166,6666667;366,6666667;33,33333333;233,3333333;0;66,66666667;0;233,3333333
+Oligochaeta;Oligochaeta;Naididae;;;Pristina;Pristina leyidi;GC;33,33333333;183,3333333;166,6666667;66,66666667;0;0;0;0;33,33333333;0
+Oligochaeta;Oligochaeta;Naididae;;;Dero;;GC;0;0;0;100;0;0;0;0;0;100
+Insecta;Diptera;Chironomidae;Orthocladiinae;;Cricotopus;;SHR;5080;40289,75;12000;800;933,3333333;27466,66667;2200;2133,333333;266,6666667;100
+Insecta;Diptera;Chironomidae;Chironominae;;Caladomyia;;FC;0;0;0;0;0;0;0;0;0;0
+Insecta;Diptera;Chironomidae;Tanypodinae;;Tanypus;;P;0;37,4;0;0;0;0;0;0;0;0
+Insecta;Diptera;Chironomidae;Tanypodinae;;Coleotanypus;;P;0;0;0;0;0;0;0;0;0;0
+Insecta;Diptera;Chironomidae;Chironominae;;Polypedilum;;SHR;0;16,76;0;0;0;0;0;0;0;0
+Insecta;Diptera;Chironomidae;Orthocladiinae;;Onconeura;;GC;0;16,76;0;0;0;0;0;0;66,66666667;0
+Insecta;Diptera;Psychodidae;;;;;GC;0;0;33,33333333;33,33333333;0;0;0;0;0;0
+Insecta;Diptera;Muscidae;;;;;P;0;0;33,33333333;0;0;0;0;0;33,33333333;0
+Insecta;Diptera;Ephydridae;;;;;GC;0;0;0;0;33,33333333;0;0;0;0;0
+Insecta;Diptera;Ceratopogonidae;;;;;P;0;0;0;0;0;0;0;0;33,33333333;0
+Mollusca;Gastropoda;Hydrobiidae;;;Heleobia;;SCR;6933,333333;6250;4233,333333;7733,333333;66,66666667;400;866,6666667;366,6666667;5266,666667;3866,666667
+Mollusca;Gastropoda;Lymnaeidae;;;Lymnaea;;SCR;0;0;0;0;0;666,6666667;0;33,33333333;0;0
+Mollusca;Gastropoda;Ampullaridae;;;Pomacea;;SCR;0;0;0;33,33333333;0;0;0;0;0;0
+Crustacea;Amphipoda;Hyalellidae;;;Hyalella;;SHR;0;0;0;0;366,6666667;400;66,66666667;200;33,33333333;0
+Crustacea;Cladocera;Daphniidae;;;Daphnia;;FC;0;0;0;0;0;0;0;0;0;0
+Crustacea;Decapoda;Aeglidae;;;;;SHR;0;0;0;0;0;0;0;0;0;0
+Insecta;Trichoptera;Hydroptilidae;;;Hydroptyla;;SCR;0;0;0;0;0;0;0;0;66,66666667;0
+Insecta;Trichoptera;Hydropsychidae;;;Smicridea;;SCR;0;0;0;0;0;0;0;0;0;0
+Insecta;Coleoptera;Hydrophilidae;;;Berosus;;P;33,33333333;0;33,33333333;0;33,33333333;333,3333333;300;466,6666667;0;0

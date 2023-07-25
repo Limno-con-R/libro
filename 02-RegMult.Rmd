@@ -1,0 +1,278 @@
+# Correlaciones y regresión múltiple {#regmul}
+
+_**Autora de esta unidad:** Natalia Morandeira_
+
+En esta Unidad vamos a abordar análisis de correlación y regresiones múltiples (modelos lineales). Las correlaciones son análisis útiles para explorar nuestros datos y para evaluar si dos variables están asociadas positivamente o negativamente. Por otro lado, en el caso de una regresión simple, tenemos una variable respuesta (o dependiente) y una variable explicativa (o independiente). Un análisis de regresión múltiple es muy adecuado cuando hemos medido muchas variables, por ejemplo, si tenemos una variable respuesta y muchas posibles variables explicativas. Nos interesa conocer cuál o cuáles variables explican la variación de la variable respuesta, y elegir el mejor modelo. 
+
+En el marco de análisis limnológicos, una situación común es tener una variable respuesta medida en cuerpos de agua y múltiples variables que creemos que pueden explicar su variación. Entre las variables respuestas, podríamos tener (de acuerdo al objetivo de nuestro estudio) la abundancia, biomasa o diversidad de especies de un dado taxón o de grupos funcionales; o la concentración de un agroquímico; o incluso variables físico-químicas del cuerpo de agua que hipotetizamos que dependen de otro factor. Entre las variables respuestas, es posible que tengamos variables físico-químicas, características morfométricas de la laguna, usos de suelo del entorno, características de la cuenca, abundancia de otro taxón que interactúe con nuestra especie de interés, etc. Nos puede interesar en primer lugar analizar si están correlacionadas nuestras potenciales variables explicativas. Luego, podemos intentar ajustar un buen modelo que explique cómo varía nuestra variable respuesta en función de varias variables explicativas. Ese es el camino que recorreremos en esta Unidad.
+
+
+## Caso de estudio
+
+El sitio de estudio es la turbera de Rancho Hambre (Tierra del Fuego, Argentina), en donde entre octubre de 2009 y abril de 2010 se realizaron muestreos en lagunas (ver [artículo](https://link.springer.com/article/10.1007/s10750-016-2969-2) de Quiroga _et al._ 2017, y la [tesis doctoral](http://hdl.handle.net/20.500.12110/tesis_n5433_Quiroga) de María Victoria Quiroga (FCEN-UBA)). En cinco lagunas (RH1 a RH5), se realizaron muestreos estacionales (octubre, diciembre, febrero y abril), es decir, tenemos un total de 20 observaciones. Contamos con dos tablas de datos:
+
++ **Datos limnológicos físicoquímicos.** Los datos corresponden a los sitios de muestreo de orilla de los cuerpos de agua. Los parámetros limnológicos fueron estimados según lo descripto en la sección _Sampling regime, physical-chemical analyses_ de Materiales y Métodos en Quiroga _et al._ (2017). Los [datos físicoquímicos están disponibles en el repositorio digital de CONICET](http://hdl.handle.net/11336/201874). Consideraremos a las variables medidas como variables explicativas: pH, conductividad, oxígeno disuelto, dureza total, DOC, DIN, nitrógeno total, DRP, fósforo total, ag(440), SUVA254 e índice MS; todas ellas variables numéricas. Por otro lado tenemos variables categóricas que discutiremos cómo considerar: la laguna (cinco niveles) y la fecha de muestreo (cuatro niveles). 
+
++ **Biomasa de morfotipos bacterianos**. La biomasa de bacterias heterótrofas se estimó utilizando microscopía de epifluorescencia y análisis de imágenes. Para detalles ver sección _Bacterioplankton morphotypes_ de Materiales y Métodos en Quiroga _et al._ (2017). Los [datos de morfotipos bacterianos están disponibles en el repositorio digital de CONICET](http://hdl.handle.net/11336/201811). En la tabla se cuenta con la biomasa de seis morfotipos bacterianos distintos. Podemos tomar a la biomasa de cada morfotipo como una variable respuesta por separado, o bien considerar para un primer análisis a la biomasa total de bacterias heterótrofas como la variable a modelar.
+
+
+## Leer y emprolijar los datos
+
+Siempre debemos mirar nuestra tabla de datos antes de empezar: detectar posibles errores o datos faltantes, retocar los nombres de las variables, agrupar filas y columnas si corresponde, etc. En nuestro caso además tenemos por un lado las variables físico-químicas y por el otro lado las variables biológicas, pero para los análisis es conveniente tener todos los datos en un mismo _dataframe_.
+
+Empezamos leyendo las bases de datos en R. Es una buena práctica guardar los archivos en una carpeta llamada _data_, dentro de la carpeta de nuestro proyecto. Tenemos los datos en formato _csv_ en [GitHub Limno-con-R/CILCAL2023](https://github.com/Limno-con-R/CILCAL2023/tree/main/datasets) **RH_abiotic_data.csv** y **RH_morpho_biomass.csv** (son casi iguales a los disponibles en el repositorio CONICET, se cambió un guión bajo por un espacio en una de las tablas). Cargamos los datos indicando que se saltee (_skip_) la primera fila (¿por qué?).
+
+```{r lectura, echo=TRUE, message=FALSE, warning=FALSE}
+
+library(readr)
+
+datos_fq <- read_csv("data/RH_abiotic_data.csv", skip = 1)
+
+datos_bacterias <- read_csv("data/RH_morpho_biomass.csv", skip = 1)
+
+``` 
+
+Ahora vamos a ver los datos. Recordar o anotar cuántas filas y columnas tiene cada _dataframe_.
+
+```{r view, echo=TRUE}
+
+datos_fq
+``` 
+
+```{r view2, echo=TRUE}
+
+datos_bacterias
+``` 
+
+Para unir estas tablas en una sola, debemos buscar una variable o columna que sea un indicador único de cada dato, y que sea equivalente en ambas tablas. ¿Cuál les parece que es?
+
+Con ese indicador como nexo, haremos una **unión exterior completa** o _full_join_. Esto se debe a que queremos mantener todos los registros de nuestras tablas aunque para alguna laguna --quizás-- no hayamos podido medir los parámetros físicoquímicos o no hayamos podido medir la biomasa bacteriana. Para saber más sobre funciones que permiten relacionar conjuntos de datos, recomendamos consultar el capítulo [13. Datos relacionales](http://es.r4ds.hadley.nz/datos-relacionales.html) (en particular _13.4.1. Entendiendo las uniones_) en el libro traducido a castellano [R para Ciencias de Datos](http://es.r4ds.hadley.nz/), de Hadley Wickham y Garret Grolemund (2017).
+
+Hacemos la unión e inspeccionamos la tabla (¿cuántas filas y columnas tiene?).
+
+```{r tidyverse, echo=TRUE, message=FALSE, warning=FALSE}
+
+library(tidyverse)
+```
+
+```{r join, echo=TRUE}
+
+datos_RH <- full_join(datos_bacterias, datos_fq, by = "ID")
+datos_RH 
+
+``` 
+
+Las variables Pool, Site y Date se repiten en ambas tablas, por eso aparecen como Pool.x y Pool.y (por ejemplo). Dado que son idénticas, tenemos la opción de eliminar estas variables de alguna de las dos tablas, o bien incluirlas como parte de la información de nexo.
+
+```{r join2, echo=TRUE}
+
+datos_RH <- full_join(datos_bacterias, datos_fq, by = c("ID", "Pool", "Site", "Date"))
+datos_RH 
+
+``` 
+
+Ahora vamos a mejorar los nombres de las columnas. Una buena práctica es elegir siempre el mismo tipo de nomenclatura. Hay varias convenciones pero las más elegidas en el mundo de R son **_snake_** y **_camel_**. La nomenclatura _snake_ implica usar guiones bajos como separador de palabras y, generalmente, todas las letras en minúscula. La nomenclatura _camel_ implica, en vez de usar guiones, usar a las mayúsculas como indicador de que hay una palabra nueva, y siempre dejar a la primera palabra en minúscula. Si nuestra variable se llama "Fecha de muestreo", la nomenclatura sería _fecha_de_muestreo_ o _fechaDeMuestreo_, de acuerdo a la convención elegida.
+
+En la tabla que tenemos, hay una mezcla de criterios: se usan guiones bajos pero a la vez las variables empiezan con mayúscula. Vamos a ajustar. Vamos a pasar todas las variables al formato _snake_ con una función muy útil, que también sirve para nombres de columnas más desprolijos (por ejemplo, si tenemos otros signos de puntuación en los nombres). 
+
+```{r janitor,  echo=TRUE, message=FALSE, warning=FALSE}
+
+library(janitor)
+```
+
+
+```{r cleannames, echo=TRUE}
+
+datos_RH <- clean_names(datos_RH)
+datos_RH 
+
+``` 
+
+El nombre de la variable pH quedó un poco raro, lo vamos a cambiar. A continuación se pide el nombre de las columnas de datos_RH, luego específicamente el de la columna 11, y luego lo cambiamos.
+
+```{r ph, echo=TRUE}
+
+colnames(datos_RH)
+colnames(datos_RH)[11]
+
+
+colnames(datos_RH)[11] <- "ph"
+colnames(datos_RH)
+
+``` 
+Finalmente, vamos a agregar una nueva columna con la biomasa total bacteriana. Existen múltiples métodos para hacer esto, vamos a ver dos, uno con la sintaxis base de R y otro con la sintaxis de _tidyverse_. Para conocer más sobre los tipos de sintaxis de R, recomendamos la hoja de referencia [Comparación de sintaxis de R](https://raw.githubusercontent.com/rstudio/cheatsheets/main/translations/spanish/syntax_es.pdf), por Amelia McNamara (traducida al castellano por RLadies).
+
+```{r bio1, echo=TRUE}
+
+#Con la sintaxis base
+datos_bio_opcion1 <- datos_RH #duplico el dataframe para no sobreescribirlo y comparar los resultados
+
+datos_bio_opcion1$bio_total <- datos_bio_opcion1$filaments + datos_bio_opcion1$large_rods + datos_bio_opcion1$vibrio_shaped + datos_bio_opcion1$large_cocci + datos_bio_opcion1$small_rods + datos_bio_opcion1$small_cocci
+
+datos_bio_opcion1
+
+```
+
+```{r bio2, echo=TRUE}
+
+#Con la sintaxis tidyverse, la cual usa el operador _pipe_ ("la pipa") %>%
+
+datos_bio_opcion2 <- datos_RH %>%
+  mutate(bio_total = filaments + large_rods + vibrio_shaped + large_cocci + small_rods + small_cocci, .before=filaments)
+
+datos_bio_opcion2
+
+```
+
+La ventaja de la segunda opción es que podemos elegir dónde agregar la nueva columna (antes de la columna _filaments_, por ejemplo). Así que nos quedaremos con esta tabla para los siguientes pasos. De paso, borramos los dataframes que ya no necesitamos.
+
+```{r bio2_, echo=TRUE}
+
+datos_RH <- datos_bio_opcion2
+
+rm(datos_bio_opcion2)
+rm(datos_bio_opcion1)
+
+```
+
+Un último paso es informar que las variables pool y date son categóricas (factores). En el caso de date, además es adecuado ordenar los niveles de los factores, tanto para algunos análisis que consideren el orden de los meses (aquí nos exceden) como para mejorar la forma en que resumimos los resultados en una tabla o en un gráfico.
+
+```{r factors, echo=TRUE}
+
+datos_RH$pool <- factor(datos_RH$pool) #en este caso no indicamos los niveles, ya que el orden alfabético es adecuado
+
+datos_RH$date <- factor(datos_RH$date, levels = c("October_2009", "December_2009", "February_2010", "April_2010"))
+
+```
+
+¡Listo! Podemos empezar con los análisis.
+
+## Correlaciones
+
+Primero vamos a realizar análisis rápidos de todos los pares de variables con la librería _GGally_. 
+
+```{r ggally,  echo=TRUE, message=FALSE, warning=FALSE}
+library(GGally)
+```
+
+
+### Entre biomasa de morfotipos bacterianos
+
+Vamos a analizar en primer lugar las variables biológicas, para lo cual generamos un nuevo dataframe que es un subconjunto de los anteriores.
+
+```{r correlo1, echo=TRUE}
+datos_bacterias <- datos_RH[,5:11]
+  
+ggpairs(datos_bacterias, title="Correlograma entre la biomasa de morfotipos bacterianos") 
+```
+Obtenemos una matriz de gráficos, en la que cada celda expresa la correlacion de un par de variables. En este caso, todas las variables son continuas, por lo que observamos que los gráficos en la parte inferior de la matriz son de dispersión (puntos).
+
+En las diagonales, observamos histogramas suavizados para cada variable. Por ejemplo, comparemos el histograma de la biomasa total.
+
+```{r hist, echo=TRUE}
+hist(datos_bacterias$bio_total, breaks=10, col="lightblue", xlab="Biomasa total de bacterias heterótrofas", ylab="Frecuencia", main="")
+  
+```
+
+En la parte superior, se muestra el coeficiente de correlación para cada par de variables y asteriscos indicando su nivel de significancia. Podemos evaluar el par que nos interese con una función, para tener información numérica más detallada.
+
+```{r corr, echo=TRUE}
+cor.test(datos_bacterias$vibrio_shaped, datos_bacterias$large_rods)
+  
+```
+Aquí observamos que el coeficiente de la correlación de Pearson es r = 0.8310, igual al que observamos en el correlograma. Además obtenemos un intervalo de confianza y un p-valor. Sin embargo, la correlación de Pearson supone que la distribución de las variables es normal. Evaluemos la normalidad de estas dos variables (deberíamos analizarlo para todas).
+
+```{r shapiro1, echo=TRUE}
+shapiro.test(datos_bacterias$vibrio_shaped)
+shapiro.test(datos_bacterias$large_rods)
+```
+Dado que se rechaza el supuesto de distribución normal, tenemos dos opciones. La primera es hacer una correlación de Spearman, la cual es adecuada si suponemos que la relación entre las variables es monotónica (las variables siempre crecen o decrecen). La desventaja es que, en la fórmula de cómputo del método, las variables se ordenan en un rango y pasan a ser ordinales. Agregamos a la misma función que el método sea Spearman (por defecto es Pearson, ver la ayuda de la función con _?cor.test_). El rho es de 0.8316.
+
+```{r corr2, echo=TRUE}
+cor.test(datos_bacterias$vibrio_shaped, datos_bacterias$large_rods, method = "spearman")
+  
+```
+
+La segunda opción es hacer una correlación de Pearson por permutaciones. Indicamos entonces el número de permutaciones a generar o dejamos el valor por defecto que es 999. Puede tardar un poco ya que tiene que permutar. El coeficiente de correlación obtenido es de 0.8310.
+
+```{r rvai,  echo=TRUE, message=FALSE, warning=FALSE}
+library(RVAideMemoire) #Si no encuentran esta librería en las computadoras del curso, pueden probar este paso en sus hogares. En caso de problemas para instalarla, instalar primero la librería mixOmics con estas instrucciones: http://www.bioconductor.org/packages/release/bioc/html/mixOmics.html  
+```
+
+```{r corr3, echo=TRUE, warning=FALSE}
+perm.cor.test(datos_bacterias$vibrio_shaped, datos_bacterias$large_rods, progress=FALSE)
+  
+```
+
+En el correlograma, vamos a cambiar qué coeficiente se muestra. Dejaremos el de Spearman. Observar que para algunos de los pares de variables hay diferencias entre los coeficientes de Pearson y Spearman.
+
+```{r correlo2, echo=TRUE, warning=FALSE}
+datos_bacterias <- datos_RH[,5:11]
+  
+ggpairs(datos_bacterias, title="Correlograma entre la biomasa de morfotipos bacterianos", upper = list(continuous = wrap( "cor", method="spearman"), combo = "box_no_facet", discrete = "count", na =  "na")) 
+```
+
+Ahora visualizaremos la correlación como un mapa de calor.
+
+```{r correlo3, echo=TRUE, warning=FALSE}
+ggcorr(datos_bacterias, method = c("everything", "pearson")) 
+```
+
+```{r correlo4, echo=TRUE, warning=FALSE}
+ggcorr(datos_bacterias, method = c("everything", "spearman")) 
+```
+
+### Entre variables abióticas
+
+Ahora analizaremos las variables explicativas. Esto es útil ya que en el siguiente paso de realizar regresiones múltiples evitaremos colocar en el modelo dos variables muy correlacionadas entre sí, ya que son redundantes. Generamos un nuevo dataframe que es un subconjunto de los anteriores.
+
+Podemos repetir el estudio de comparar correlaciones de Pearson, de Pearson por permutaciones y de Spearman. Aquí resumidamente pasaremos a los correlogramas visuales. ¿Qué pasa con el oxígeno disuelto? Tendremos cuidado con el uso de esta variable en los análisis siguientes.
+
+```{r correlo5, echo=TRUE}
+datos_fq <- datos_RH[,12:23]
+
+ggcorr(datos_fq, method = c("everything", "spearman")) 
+```
+Si queremos tener un resumen numérico de los coeficientes de correlación, podemos generar una matriz.
+
+```{r hmisc, echo=FALSE}
+library(Hmisc)
+```
+
+```{r correlo6, echo=TRUE}
+rcorr(as.matrix(datos_fq), type="spearman") 
+```
+  
+  
+
+
+
+
+## Regresiones múltiples
+
+Intro
+
+hay que estandarizar?
+
+### Selección automática de variables
+
+#### Upward: del modelo nulo, sumando variables explicativas
+
+#### Forward: del modelo completo, quitando variables explicativas
+
+### Selección manual de variables
+
+#### Modelos univariados
+Todos los modelos
+AIC
+
+#### Modelos de regresión múltiple
+vif
+
+
+### Evaluación e interpretación del modelo final
+Evaluación de supuestos. Si no se cumplen, permutaciones
+interpretación
+
+
+## A modo de conclusión
