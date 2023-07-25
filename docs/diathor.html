@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Unidad 7 Paquetes DiaThor y optimos.prime | bookdown-LimnoR</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Unidad 7 Paquetes DiaThor y optimos.prime | bookdown-LimnoR" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Unidad 7 Paquetes DiaThor y optimos.prime | bookdown-LimnoR" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="metrix.html"/>
+<link rel="next" href="references.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>LIMNOLOGIA CON R</a>
+<ul>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#contenido"><i class="fa fa-check"></i><b>0.1</b> Contenido</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introducción a R y RStudio</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#instalación"><i class="fa fa-check"></i><b>1.1</b> Instalación</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#rstudio"><i class="fa fa-check"></i><b>1.2</b> RStudio</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#a-trabajar"><i class="fa fa-check"></i><b>1.3</b> A trabajar!</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="intro.html"><a href="intro.html#crear-un-proyecto"><i class="fa fa-check"></i><b>1.3.1</b> Crear un <strong>Proyecto</strong></a></li>
+<li class="chapter" data-level="1.3.2" data-path="intro.html"><a href="intro.html#crear-un-r-script"><i class="fa fa-check"></i><b>1.3.2</b> Crear un <strong>R Script</strong></a></li>
+<li class="chapter" data-level="1.3.3" data-path="intro.html"><a href="intro.html#instalar-y-cargar-paquetes"><i class="fa fa-check"></i><b>1.3.3</b> Instalar y cargar <strong>paquetes</strong></a></li>
+<li class="chapter" data-level="1.3.4" data-path="intro.html"><a href="intro.html#importar-datos"><i class="fa fa-check"></i><b>1.3.4</b> Importar <strong>datos</strong></a></li>
+<li class="chapter" data-level="1.3.5" data-path="intro.html"><a href="intro.html#visualizar-y-manipular-datos"><i class="fa fa-check"></i><b>1.3.5</b> Visualizar y manipular <strong>datos</strong></a></li>
+<li class="chapter" data-level="1.3.6" data-path="intro.html"><a href="intro.html#gráficos-exploratorios-básicos"><i class="fa fa-check"></i><b>1.3.6</b> Gráficos exploratorios básicos</a></li>
+<li class="chapter" data-level="1.3.7" data-path="intro.html"><a href="intro.html#recursos-extra-recomendados"><i class="fa fa-check"></i><b>1.3.7</b> Recursos extra recomendados</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="regmul.html"><a href="regmul.html"><i class="fa fa-check"></i><b>2</b> Correlaciones y regresión múltiple</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="regmul.html"><a href="regmul.html#caso-de-estudio"><i class="fa fa-check"></i><b>2.1</b> Caso de estudio</a></li>
+<li class="chapter" data-level="2.2" data-path="regmul.html"><a href="regmul.html#leer-y-emprolijar-los-datos"><i class="fa fa-check"></i><b>2.2</b> Leer y emprolijar los datos</a></li>
+<li class="chapter" data-level="2.3" data-path="regmul.html"><a href="regmul.html#correlaciones"><i class="fa fa-check"></i><b>2.3</b> Correlaciones</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="regmul.html"><a href="regmul.html#entre-biomasa-de-morfotipos-bacterianos"><i class="fa fa-check"></i><b>2.3.1</b> Entre biomasa de morfotipos bacterianos</a></li>
+<li class="chapter" data-level="2.3.2" data-path="regmul.html"><a href="regmul.html#entre-variables-abióticas"><i class="fa fa-check"></i><b>2.3.2</b> Entre variables abióticas</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="regmul.html"><a href="regmul.html#regresiones-múltiples"><i class="fa fa-check"></i><b>2.4</b> Regresiones múltiples</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="regmul.html"><a href="regmul.html#selección-automática-de-variables"><i class="fa fa-check"></i><b>2.4.1</b> Selección automática de variables</a></li>
+<li class="chapter" data-level="2.4.2" data-path="regmul.html"><a href="regmul.html#selección-manual-de-variables"><i class="fa fa-check"></i><b>2.4.2</b> Selección manual de variables</a></li>
+<li class="chapter" data-level="2.4.3" data-path="regmul.html"><a href="regmul.html#evaluación-e-interpretación-del-modelo-final"><i class="fa fa-check"></i><b>2.4.3</b> Evaluación e interpretación del modelo final</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="regmul.html"><a href="regmul.html#a-modo-de-conclusión"><i class="fa fa-check"></i><b>2.5</b> A modo de conclusión</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="gam.html"><a href="gam.html"><i class="fa fa-check"></i><b>3</b> Modelos Aditivos Generalizados</a>
+<ul>
+<li class="chapter" data-level="3.0.1" data-path="gam.html"><a href="gam.html#aclaración"><i class="fa fa-check"></i><b>3.0.1</b> Aclaración</a></li>
+<li class="chapter" data-level="3.1" data-path="gam.html"><a href="gam.html#porqué-usar-modelos-aditivos-generalizados-gams"><i class="fa fa-check"></i><b>3.1</b> ¿Porqué usar Modelos Aditivos Generalizados (GAMs)?</a></li>
+<li class="chapter" data-level="3.2" data-path="gam.html"><a href="gam.html#qué-son-los-gams"><i class="fa fa-check"></i><b>3.2</b> ¿Qué son los GAMs?</a></li>
+<li class="chapter" data-level="3.3" data-path="gam.html"><a href="gam.html#manos-a-la-obra"><i class="fa fa-check"></i><b>3.3</b> Manos a la obra!</a></li>
+<li class="chapter" data-level="3.4" data-path="gam.html"><a href="gam.html#agradecimientos"><i class="fa fa-check"></i><b>3.4</b> Agradecimientos</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="multi1.html"><a href="multi1.html"><i class="fa fa-check"></i><b>4</b> Análisis multivariados I</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="multi1.html"><a href="multi1.html#análisis-de-componentes-principales"><i class="fa fa-check"></i><b>4.1</b> Análisis de Componentes Principales</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="multi1.html"><a href="multi1.html#qué-tipos-de-datos-usa-una-acp"><i class="fa fa-check"></i><b>4.1.1</b> ¿Qué tipos de datos usa una ACP?</a></li>
+<li class="chapter" data-level="4.1.2" data-path="multi1.html"><a href="multi1.html#cómo-funciona-el-análisis"><i class="fa fa-check"></i><b>4.1.2</b> ¿Cómo funciona el análisis?</a></li>
+<li class="chapter" data-level="4.1.3" data-path="multi1.html"><a href="multi1.html#ahora-manos-a-la-obra-miremos-datos"><i class="fa fa-check"></i><b>4.1.3</b> Ahora manos a la obra: miremos datos</a></li>
+<li class="chapter" data-level="4.1.4" data-path="multi1.html"><a href="multi1.html#crear-una-condición-para-colorear-los-individuos"><i class="fa fa-check"></i><b>4.1.4</b> Crear una condición para colorear los individuos</a></li>
+<li class="chapter" data-level="4.1.5" data-path="multi1.html"><a href="multi1.html#refinando-el-modelo"><i class="fa fa-check"></i><b>4.1.5</b> Refinando el modelo</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="multi1.html"><a href="multi1.html#nmds"><i class="fa fa-check"></i><b>4.2</b> NMDS</a></li>
+<li class="chapter" data-level="4.3" data-path="multi1.html"><a href="multi1.html#permanova"><i class="fa fa-check"></i><b>4.3</b> PERMANOVA</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="multi2.html"><a href="multi2.html"><i class="fa fa-check"></i><b>5</b> Análisis multivariados II</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="multi2.html"><a href="multi2.html#introducción"><i class="fa fa-check"></i><b>5.1</b> INTRODUCCIÓN</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="multi2.html"><a href="multi2.html#la-lógica-de-las-técnicas-de-ordenación-restringida-o-canónica-constrained-análisis-de-gradiente-directo"><i class="fa fa-check"></i><b>5.1.1</b> LA LÓGICA DE LAS TÉCNICAS DE ORDENACIÓN RESTRINGIDA O CANÓNICA (“<em>CONSTRAINED</em>”, ANÁLISIS DE GRADIENTE DIRECTO)</a></li>
+<li class="chapter" data-level="5.1.2" data-path="multi2.html"><a href="multi2.html#qué-tipo-de-datos-de-composición-de-especies-se-utilizan-para-el-análisis"><i class="fa fa-check"></i><b>5.1.2</b> ¿Qué tipo de datos de composición de especies se utilizan para el análisis?</a></li>
+<li class="chapter" data-level="5.1.3" data-path="multi2.html"><a href="multi2.html#cómo-saber-si-debo-utilizar-un-método-de-ordenación-de-respuesta-lineal-o-unimodal"><i class="fa fa-check"></i><b>5.1.3</b> ¿Cómo saber si debo utilizar un método de ordenación de respuesta lineal o unimodal?</a></li>
+<li class="chapter" data-level="5.1.4" data-path="multi2.html"><a href="multi2.html#análisis-de-redundancia-rda"><i class="fa fa-check"></i><b>5.1.4</b> <strong>ANÁLISIS DE REDUNDANCIA (RDA)</strong></a></li>
+<li class="chapter" data-level="5.1.5" data-path="multi2.html"><a href="multi2.html#analicemos-estos-aspectos-a-través-de-un-ejemplo-práctico"><i class="fa fa-check"></i><b>5.1.5</b> Analicemos estos aspectos a través de un ejemplo práctico…</a></li>
+<li class="chapter" data-level="5.1.6" data-path="multi2.html"><a href="multi2.html#rda-utilizando-el-paquete-vegan-oksanen-et-al.-2007"><i class="fa fa-check"></i><b>5.1.6</b> RDA utilizando el paquete <strong>vegan</strong> (Oksanen <em>et al.</em>, 2007)</a></li>
+<li class="chapter" data-level="5.1.7" data-path="multi2.html"><a href="multi2.html#seleccionando-las-variables-explicativas-relevantes"><i class="fa fa-check"></i><b>5.1.7</b> Seleccionando las variables explicativas relevantes</a></li>
+<li class="chapter" data-level="5.1.8" data-path="multi2.html"><a href="multi2.html#rda-basado-en-matriz-de-distancia-distance-based-rda-db-rda"><i class="fa fa-check"></i><b>5.1.8</b> RDA basado en matriz de distancia (“Distance-based RDA”, db-RDA)</a></li>
+<li class="chapter" data-level="5.1.9" data-path="multi2.html"><a href="multi2.html#análisis-de-correspondencia-canónica-cca"><i class="fa fa-check"></i><b>5.1.9</b> <strong>ANÁLISIS DE CORRESPONDENCIA CANÓNICA (CCA)</strong></a></li>
+<li class="chapter" data-level="5.1.10" data-path="multi2.html"><a href="multi2.html#cca-utilizando-la-función-cca-del-paquete-vegan"><i class="fa fa-check"></i><b>5.1.10</b> CCA utilizando la función <strong>cca()</strong> del paquete <strong>vegan</strong></a></li>
+<li class="chapter" data-level="5.1.11" data-path="multi2.html"><a href="multi2.html#bibliografía-citada-y-de-lectura-recomendada"><i class="fa fa-check"></i><b>5.1.11</b> Bibliografía citada y de lectura recomendada</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="metrix.html"><a href="metrix.html"><i class="fa fa-check"></i><b>6</b> Paquete <em>metrix</em></a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="metrix.html"><a href="metrix.html#que-es-metrix"><i class="fa fa-check"></i><b>6.1</b> ¿Que es Metrix?</a></li>
+<li class="chapter" data-level="6.2" data-path="metrix.html"><a href="metrix.html#conjunto-de-datos-de-ejemplo"><i class="fa fa-check"></i><b>6.2</b> Conjunto de datos de ejemplo</a></li>
+<li class="chapter" data-level="6.3" data-path="metrix.html"><a href="metrix.html#instalar-metrix"><i class="fa fa-check"></i><b>6.3</b> Instalar <em>metrix</em></a></li>
+<li class="chapter" data-level="6.4" data-path="metrix.html"><a href="metrix.html#que-tipos-de-datos-analiza-metrix"><i class="fa fa-check"></i><b>6.4</b> ¿Que tipos de datos analiza <em>metrix</em>?</a></li>
+<li class="chapter" data-level="6.5" data-path="metrix.html"><a href="metrix.html#cargar-datos-de-densidad-de-macroinvertebrados-usando-metrix"><i class="fa fa-check"></i><b>6.5</b> Cargar datos de densidad de macroinvertebrados usando <em>metrix</em></a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="metrix.html"><a href="metrix.html#que-pasa-si-quiero-crear-mi-propio-conjunto-de-datos"><i class="fa fa-check"></i><b>6.5.1</b> ¿QUE PASA SI QUIERO CREAR MI PROPIO CONJUNTO DE DATOS?</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="metrix.html"><a href="metrix.html#cálculo-de-metricas-individuales-y-ecológicas"><i class="fa fa-check"></i><b>6.6</b> Cálculo de metricas individuales y ecológicas</a></li>
+<li class="chapter" data-level="6.7" data-path="metrix.html"><a href="metrix.html#cálculo-de-indices-bióticos"><i class="fa fa-check"></i><b>6.7</b> Cálculo de indices bióticos</a></li>
+<li class="chapter" data-level="6.8" data-path="metrix.html"><a href="metrix.html#futuro-del-paquete"><i class="fa fa-check"></i><b>6.8</b> FUTURO DEL PAQUETE</a></li>
+<li class="chapter" data-level="6.9" data-path="metrix.html"><a href="metrix.html#agradecimientos-1"><i class="fa fa-check"></i><b>6.9</b> AGRADECIMIENTOS</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="diathor.html"><a href="diathor.html"><i class="fa fa-check"></i><b>7</b> Paquetes <em>DiaThor</em> y <em>optimos.prime</em></a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="diathor.html"><a href="diathor.html#paquete-diathor"><i class="fa fa-check"></i><b>7.1</b> Paquete <em>DiaThor</em></a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="diathor.html"><a href="diathor.html#qué-hace"><i class="fa fa-check"></i><b>7.1.1</b> ¿Qué hace?</a></li>
+<li class="chapter" data-level="7.1.2" data-path="diathor.html"><a href="diathor.html#cómo-funciona"><i class="fa fa-check"></i><b>7.1.2</b> ¿Cómo funciona?</a></li>
+<li class="chapter" data-level="7.1.3" data-path="diathor.html"><a href="diathor.html#manos-a-la-obra-1"><i class="fa fa-check"></i><b>7.1.3</b> ¡Manos a la obra!</a></li>
+<li class="chapter" data-level="7.1.4" data-path="diathor.html"><a href="diathor.html#fuentes-de-información-ecológica-de-las-especies"><i class="fa fa-check"></i><b>7.1.4</b> Fuentes de información ecológica de las especies</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="diathor.html"><a href="diathor.html#paquete-optimos.prime"><i class="fa fa-check"></i><b>7.2</b> Paquete <em>optimos.prime</em></a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="diathor.html"><a href="diathor.html#qué-hace-1"><i class="fa fa-check"></i><b>7.2.1</b> ¿Qué hace?</a></li>
+<li class="chapter" data-level="7.2.2" data-path="diathor.html"><a href="diathor.html#cómo-lo-hace"><i class="fa fa-check"></i><b>7.2.2</b> ¿Cómo lo hace?</a></li>
+<li class="chapter" data-level="7.2.3" data-path="diathor.html"><a href="diathor.html#manos-a-la-obra-2"><i class="fa fa-check"></i><b>7.2.3</b> ¡Manos a la obra!</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="diathor" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">Unidad 7</span> Paquetes <em>DiaThor</em> y <em>optimos.prime</em><a href="diathor.html#diathor" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><strong>Joaquín Cochero</strong><a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a></p>
+<div id="paquete-diathor" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> Paquete <em>DiaThor</em><a href="diathor.html#paquete-diathor" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><em>Autores: María Mercedes Nicolosi Gelis</em><a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a><em>, María Belén Sathicq</em><a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a><em>, Joaquín Cochero</em></p>
+<div id="qué-hace" class="section level3 hasAnchor" number="7.1.1">
+<h3><span class="header-section-number">7.1.1</span> ¿Qué hace?<a href="diathor.html#qué-hace" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>El paquete calcula múltiples <strong>índices bióticos y ecológicos basados en diatomeas</strong> a partir de datos de abundancia en muestras ambientales.</p>
+</div>
+<div id="cómo-funciona" class="section level3 hasAnchor" number="7.1.2">
+<h3><span class="header-section-number">7.1.2</span> ¿Cómo funciona?<a href="diathor.html#cómo-funciona" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>El paquete obtiene las <strong>preferencias ecológicas</strong> de los taxones de diatomeas vinculandolos por nombre a las bases de datos de cada índice biótico y ecológico. Realiza una búsqueda exacta y luego heurística del nombre del taxón comparandola contra distintas <a href="diathor.html#fuentes-de-información-ecológica-de-las-especies">Fuentes de información ecológica de las especies</a>.</p>
+<p>Una vez que encuentra la especie en cada alguna de las bases de datos de los distintos índices, realiza los cálculos de los índices en base a su abundancia en las muestras, y devuelve una tabla con los valores de cada índice por muestra ingresada.</p>
+</div>
+<div id="manos-a-la-obra-1" class="section level3 hasAnchor" number="7.1.3">
+<h3><span class="header-section-number">7.1.3</span> ¡Manos a la obra!<a href="diathor.html#manos-a-la-obra-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Vamos a utilizar el set de datos del trabajo <em>“Exploring the use of nuclear alterations, motility and ecological guilds in epipelic diatoms as biomonitoring tools for water quality improvement in urban impacted lowland streams”,</em> de Nicolosi Gelis et al. (2020) <span class="citation">(<a href="#ref-nicolosigelis2020" role="doc-biblioref">María Mercedes Nicolosi Gelis et al. 2020</a>)</span> publicado en Ecological Indicators y disponible en el <a href="https://ri.conicet.gov.ar/handle/11336/128216">Repositorio Institucional CONICET Digital</a>.</p>
+<div id="descargar-los-datos" class="section level4 hasAnchor" number="7.1.3.1">
+<h4><span class="header-section-number">7.1.3.1</span> <strong>Descargar los datos</strong><a href="diathor.html#descargar-los-datos" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Descargar los datos de ejemplo desde el repositorio del curso y guardar el archivo en el Directorio de Trabajo del Proyecto que creamos para esta Unidad (ver cómo hacerlo en la Unidad <a href="intro.html#intro">1</a>).</p>
+<p>Datos de ejemplo aquí: <a href="https://github.com/Limno-con-R/CILCAL2023/blob/main/datasets/sampleData_diaThor.csv" class="uri">https://github.com/Limno-con-R/CILCAL2023/blob/main/datasets/sampleData_diaThor.csv</a></p>
+</div>
+<div id="instalar-el-paquete" class="section level4 hasAnchor" number="7.1.3.2">
+<h4><span class="header-section-number">7.1.3.2</span> Instalar el paquete<a href="diathor.html#instalar-el-paquete" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Instalaremos el paquete <code>diaThor</code><span class="citation">(<a href="#ref-nicolosigelis2022" role="doc-biblioref">M. M. Nicolosi Gelis et al. 2022</a>)</span> como se indica en la Unidad <a href="intro.html#intro">1</a> y los cargaremos a nuestro espacio de trabajo actual:</p>
+<div class="sourceCode" id="cb279"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb279-1"><a href="diathor.html#cb279-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(diathor)</span></code></pre></div>
+</div>
+<div id="cargar-y-previsualizar-nuestro-archivo-de-datos" class="section level4 hasAnchor" number="7.1.3.3">
+<h4><span class="header-section-number">7.1.3.3</span> Cargar y previsualizar nuestro archivo de datos<a href="diathor.html#cargar-y-previsualizar-nuestro-archivo-de-datos" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Cargaremos nuestro archivo de ejemplo (<em>sampleData_diaThor.csv</em>) a un dataframe llamado “base”:</p>
+<div class="sourceCode" id="cb280"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb280-1"><a href="diathor.html#cb280-1" aria-hidden="true" tabindex="-1"></a>base <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;sampleData_diaThor.csv&quot;</span>) <span class="co">#Corroborar que el nombre del archivo coincida con el que vamos a utilizar, y que se encuentre en la carpeta de nuestro proyecto</span></span></code></pre></div>
+<p>Veamos brevemente cómo está organizada la información de nuestras especies:</p>
+<div class="sourceCode" id="cb281"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb281-1"><a href="diathor.html#cb281-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(base)</span></code></pre></div>
+<p><code>base</code> es un objeto <code>data.frame</code> con 164 <code>obs.</code> o filas (especies) y 110 <code>variables</code> o columnas (muestras).</p>
+<p>Nuestra planilla de datos además contiene una <strong>columna obligatoria</strong> llamada “<strong><em>species</em></strong>”, la primera, adonde debremos ingresar los nombres de las especies lo mejor que podamos, sin datos sobre autorías de las mismas.</p>
+<p><em>Ejemplo de cómo llamar a las especies:</em></p>
+<p><em>Hippodonta capitata</em> ————&gt; (ASI SI! ✔️)</p>
+<p><em>Hippodonta capitata</em> (Ehrenb.) Lange-Bert., Metzeltin and Witkowski 1996 ————&gt; (ASI NO! 🚫)</p>
+<p>Veamos las primeras filas y las primeras columnas:</p>
+<div class="sourceCode" id="cb282"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb282-1"><a href="diathor.html#cb282-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(base[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>])</span></code></pre></div>
+<pre><code>##   X                        species S1_LI1_DAY0 S1_LI2_DAY0 S1_LI3_DAY0
+## 1 1   Achnanthidium minutissimum             0           0           0
+## 2 2 Achnanthes exigua var. exigua            0           0           0
+## 3 3               Amphora libyca             0           0           0
+## 4 4     Anomoeoneis sphaerophora             0           0           0
+## 5 5            Craticula ambigua             0           0           1
+## 6 6            Caloneis bacillum             0           0           0</code></pre>
+<p>Cada columna representa <strong>a una muestra</strong>.<br />
+Debe contener un nombre de muestra (<em>por ejemplo, se llaman S1_LI1_DAY0, S1_LI2_DAY0, etc.</em>).</p>
+<p><strong>NOTA</strong>: Los valores en las celdas pueden ser valores de densidad absoluta (como es en este ejemplo) o abundancia relativa. Por defecto, <em>diaThor</em> asume que las densidades son absolutas; si queremos cambiar esta opción, debemos pasar el parámetro <code>isRelAb=FALSE</code> a <code>isRelAb=TRUE</code> cuando usamos las funciones.</p>
+</div>
+<div id="a-la-magia" class="section level4 hasAnchor" number="7.1.3.4">
+<h4><span class="header-section-number">7.1.3.4</span> <strong>¡A la magia!</strong><a href="diathor.html#a-la-magia" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Vamos a ejecutar la función <code>diaThorAll()</code> , que se encargará de realizar <strong>todos los análisis que puede realizar el paquete</strong>, una atrás de otra. Y dispondremos de los resultados en un único objeto de tipo <code>data.frame</code>, que aquí lo llamaremos <code>resultados</code>.</p>
+<p>Más adelante veremos que podemos solicitar cosas específicas si sólo necesitamos un tipo de resultado, para ahorrar tiempo y reducir la cantidad de salidas.</p>
+<div class="sourceCode" id="cb284"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb284-1"><a href="diathor.html#cb284-1" aria-hidden="true" tabindex="-1"></a>resultados <span class="ot">&lt;-</span> <span class="fu">diaThorAll</span>(base)</span></code></pre></div>
+<p>El paquete nos irá mostrando información en la consola de RStudio, y nos solicitará que le indiquemos una carpeta adonde guardar todas las posibles salidas que vaya generando. Exploraremos estas salidas luego para tratar de mejorar los resultados.</p>
+<p><code>[1] "Select Results folder"</code></p>
+<p>Seleccionemos un directorio (preferentemente vacío!) para guardar las salidas, y el paquete continuará reconociendo las especies, y buscando información ecológica sobre ellas para calcular los distintos índices bióticos.</p>
+</div>
+<div id="los-resultados" class="section level4 hasAnchor" number="7.1.3.5">
+<h4><span class="header-section-number">7.1.3.5</span> Los resultados<a href="diathor.html#los-resultados" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Si todo ha salido bien, <em>diaThor</em> debería haber calculado todos los índices posibles.</p>
+<p>Cuando los índices bióticos se publican, no necesariamente se le asigna un valor ecológico a todas las especies de diatomeas (<em>hay unas 200.000 especies</em>!). Hay índices que sólo contemplan menos de 300 especies (ejemplos: <em>IDP</em>, <em>SPEAR</em> o los de Lobo et al.), y otros incluyen más de 6000 (ejemplo: <em>IPS</em>).</p>
+<p><strong>En la consola veremos que porcentaje del listado de especies que ingresamos fue efectivamente utilizado para calcular cada índice.</strong> Por ejemplo -&gt; <em>“Taxa recognized to be used in DISP index: 22.6 %”</em>, nos indica que de nuestras 164 especies, sólo utilizó 22.6% para calcular el índice DISP, mientras que dejó afuera el 77.4%. Es importante entonces delimitar qué índices fueron calculados sobre una base sólida de nuestros datos al momento de interpretar los resultados.</p>
+<p>El final de la secuencia de cálculo en la consola está delimitado por la exportación de gráficos (<em>[1] “Plots exported!”</em>).</p>
+<p>En el objeto <code>resultados</code> veremos una tabla completa con todos los resultados obtenidos.</p>
+<div class="sourceCode" id="cb285"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb285-1"><a href="diathor.html#cb285-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(resultados)</span></code></pre></div>
+<p>Es un objeto <code>data.table</code> con 109 <code>obs.</code> (nuestras muestras, filas) y 124 <code>vars.</code> (los índices calculados para cada muestra).</p>
+<p>Veamos los resultados completos!</p>
+<div class="sourceCode" id="cb286"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb286-1"><a href="diathor.html#cb286-1" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(resultados)</span></code></pre></div>
+<div class="figure">
+<img src="images/results_diathor.png" alt="" />
+<p class="caption">Figura 7.1. Primeras filas y columnas de la tabla de resultados de DiaThor</p>
+</div>
+<p>Veremos que cada muestra (fila) tiene sus valores de diversidad (<em>Richness, Shannon.H, Evenness</em>), porcentajes de número y forma de cloroplastos (<em>chorloplasts, shape.chloroplasts</em>), porcentaje de diatomeas de cada clase de tamaño (<em>size.class</em>), porcentaje de diatomeas de cada gremio ecológico (<em>guilds),</em> los valores de cada índice de Van Dam (<em>VD.Salinity, VD.NHet, VD.Oxygen, VD.Saprobity, VD.Aero, VD.Trophic</em>) y luego todos los índices bióticos.</p>
+<p>Luego de cada uno de los índices, se encuentra una columna que indica cuántas especies <strong>no fueron</strong> determinadas en cada muestra (terminan en “.<em>Indet</em>”) y cuantas fueron usadas (terminan en “.<em>Taxa.Used</em>”).</p>
+</div>
+<div id="la-sintonía-fina-veamos-las-salidas" class="section level4 hasAnchor" number="7.1.3.6">
+<h4><span class="header-section-number">7.1.3.6</span> <strong>La sintonía fina: veamos las salidas!</strong><a href="diathor.html#la-sintonía-fina-veamos-las-salidas" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Una vez que el paquete termine el análisis, vaya a la carpeta adonde se guardaron los resultados. Se encontrará con varios archivos:</p>
+<ul>
+<li><p><strong><em>Diato_results - Results.csv</em></strong>: Este archivo contiene la tabla principal de resultados, con cada muestra (fila) y sus valores de los diversos índices que si se pudieron calcular (columnas).</p></li>
+<li><p><strong><em>Plots.pdf</em></strong>: Se incluyen los gráficos de cada uno de los índices bióticos calculados (eje X) en cada uno de las muestras analizadas (eje Y) para poder visualizarlo. Son realizados con los mismos datos que se encuentran en la tabla de resultados.</p></li>
+<li><p><strong><em>Taxa excluded</em></strong> y <strong><em>Taxa included:</em></strong> Es MUY importante que se revisen estos dos archivos. En estos archivos veremos que taxa de nuestra lista de especies original fueron <strong>incluídos</strong> o <strong>excluídos</strong> en el cálculo de cada uno de los índices. También nos ayudará a reconocer potenciales errores de tipeo o de nombramiento de especies.</p>
+<p><strong><em>VanDam Taxa used.txt:</em></strong> En particular, los valores ecológicos de Van Dam son separados en un archivo de texto al resto de los resultados, porque suelen ser muy amplios. Aquí se indica en cada una de nuestras muestras los taxones que fueron incluídos en el cálculo de cada una de las tolerancias (<em>salinidad, N-heterotrofía, requisitos de oxígeno, saprobiedad, humedad, estado trófico</em>).</p></li>
+</ul>
+<p><strong>Es muy importante</strong> que antes de reportar los resultados del análisis, se revisen cuidadosamente las salidas del paquete. Nos pueden indicar que hay especies con el nombre mal escrito, o que para el cálculo de algún índice en particular se utilizó poca cantidad de especies presentes, cuestionando así la precisión del mismo.</p>
+</div>
+<div id="algunas-aclaraciones-relevantes" class="section level4 hasAnchor" number="7.1.3.7">
+<h4><span class="header-section-number">7.1.3.7</span> <strong>Algunas aclaraciones relevantes:</strong><a href="diathor.html#algunas-aclaraciones-relevantes" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li><p>Sobre el reconocimiento de los nombres de las especies:</p>
+<ul>
+<li><p>DiaThor realiza <strong>dos búsquedas</strong> automáticamente de cada especie en nuestro archivo.</p>
+<ul>
+<li><p>Primero realiza una <strong>búsqueda exacta</strong> de cada especie comparandola contra todas las especies utilizadas en todos los índices bióticos y ecológicos.</p></li>
+<li><p>Aquellas especies que no son encontradas por este medio, las separa y las vuelve a buscar automáticamente por una <strong>búsqueda heurística</strong>, para tratar de contemplar aquellos errores en la escritura de los nombres (Quien no escribió incorrectamente ‘<em>Nitzschia fasciculata</em>’ alguna vez, que tire la primer piedra!).<br />
+<br />
+Este tipo de búsqueda permite que haya un número determinado de caracteres distintos entre dos palabras para considerarlas iguales. Por defecto, este valor en las funciones de <em>diaThor</em> es igual a 2. Por ejemplo, la búsqueda heurística encontraría a la especie ‘<em>Nitzschia fasciculata</em>’ aunque la hubieramos escrito como ‘<em>Nitzschia fasiculata</em>’, porque hay sólo 1 caracter distinto. Este valor de distancia se puede cambiar con el parámetro <code>maxDistTaxa</code>.</p>
+<p><strong>¡Cuidado!</strong> Mientras más alto el valor de este parámetro, más chances de encontrar la especie que buscamos, pero más posibilidad de que confunda nuestra especie con otra de nombre similar, y se incrementa notablemente el tiempo que tarda en buscarlas.</p></li>
+</ul></li>
+<li><p>Las especies que tienen <strong>categorías subespecíficas</strong> (variedades y/o formas) se deben indicar con “var.” y “fo.”.</p>
+<ul>
+<li>Ejemplo: <em>Achnanthes exigua</em> var<em>. exigua</em>” o “<em>Gomphonema parvulum</em> var. <em>parvulum</em> fo. <em>parvulum</em>”. El texto no busca formatos, no es necesario poner las especies en itálicas o subrayadas.<br />
+El paquete va a tratar de buscarlas de cualquier manera aunque no contengan estos acrónimos, pero las búsquedas son más precisas y rápidas cuando estan nombradas así.</li>
+</ul></li>
+</ul>
+<h4 id="preguntas-frecuentes" class="hasAnchor">Preguntas frecuentes<a href="diathor.html#preguntas-frecuentes" class="anchor-section" aria-label="Anchor link to header"></a></h4></li>
+<li><p><em>¿Hay problemas encontrando el archivo de entrada CSV?</em></p>
+<p>La consola nos indica este error:</p>
+<p><code>*cannot open file 'nuestro_archivo.csv': No such file or directory</code></p>
+<p>Si corremos la función <code>diaThorAll()</code> directamente, sin agregar argumentos o parámetros, <strong>un cuadro de diálogo</strong> nos pedirá que seleccionemos el archivo con nuestros datos.</p></li>
+</ul>
+<div class="sourceCode" id="cb287"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb287-1"><a href="diathor.html#cb287-1" aria-hidden="true" tabindex="-1"></a>resultados <span class="ot">&lt;-</span> <span class="fu">diaThorAll</span>() <span class="co">#sin argumentos</span></span></code></pre></div>
+<ul>
+<li><em>¿Nuestros datos están en abundancia relativa?</em><br />
+Hay que indicarselo, cambiando el argumento <code>isRelAb</code> a <code>TRUE</code>.</li>
+</ul>
+<div class="sourceCode" id="cb288"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb288-1"><a href="diathor.html#cb288-1" aria-hidden="true" tabindex="-1"></a>resultados <span class="ot">&lt;-</span> <span class="fu">diaThorAll</span>(<span class="at">isRelAb=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<ul>
+<li><em>¿No encuentra las especies, y quiero hacer una búsqueda heurística más amplia?</em><br />
+Cambiemos el argumento <code>maxDistTaxa</code>.</li>
+</ul>
+<div class="sourceCode" id="cb289"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb289-1"><a href="diathor.html#cb289-1" aria-hidden="true" tabindex="-1"></a>resultados <span class="ot">&lt;-</span> <span class="fu">diaThorAll</span>(<span class="at">maxDistTaxa=</span><span class="dv">4</span>) <span class="co">#Ahora buscará nombres de taxa en las bases de datos internas con hasta cuatro caracteres de diferencia al ingresado en nuestro CSV.</span></span></code></pre></div>
+<ul>
+<li><em>¿Y si quiero sólo calcular un índice, en vez de todo? Así es más rápido.</em><br />
+Podemos usar funciones para cada índice biótico o ecológico.</li>
+</ul>
+<div class="sourceCode" id="cb290"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb290-1"><a href="diathor.html#cb290-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Primero, cargamos nuestros datos, como siempre</span></span>
+<span id="cb290-2"><a href="diathor.html#cb290-2" aria-hidden="true" tabindex="-1"></a>base <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;sampleData_diaThor.csv&quot;</span>) <span class="co">#Corroborar que el nombre del archivo coincida con el que vamos a utilizar, y que se encuentre en la carpeta de nuestro proyecto</span></span>
+<span id="cb290-3"><a href="diathor.html#cb290-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb290-4"><a href="diathor.html#cb290-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Luego, necesitamos que diaThor reconozca las especies por su nombre. Para esto existe la función diat_loadData()</span></span>
+<span id="cb290-5"><a href="diathor.html#cb290-5" aria-hidden="true" tabindex="-1"></a><span class="co">#A esta función se le pueden pasar los mismos argumentos que a diaThorAll(). Es decir, podemos restringir la distancia heurística con &#39;maxDistTaxa&#39;, o indicar si los datos están expresados en abundancia relativa con &#39;isRelAb&#39;</span></span>
+<span id="cb290-6"><a href="diathor.html#cb290-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb290-7"><a href="diathor.html#cb290-7" aria-hidden="true" tabindex="-1"></a>resultados <span class="ot">&lt;-</span> <span class="fu">diat_loadData</span>(base, <span class="at">isRelAb=</span><span class="cn">TRUE</span>, <span class="at">maxDistTaxa =</span> <span class="dv">2</span>) <span class="co">#Ejemplo usando abundancias relativas y la distancia heurística por defecto = 2</span></span>
+<span id="cb290-8"><a href="diathor.html#cb290-8" aria-hidden="true" tabindex="-1"></a><span class="co">#Deberemos indicar una carpeta para los resultados, en el cuadro de diálogo </span></span>
+<span id="cb290-9"><a href="diathor.html#cb290-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb290-10"><a href="diathor.html#cb290-10" aria-hidden="true" tabindex="-1"></a><span class="co">#Y luego, por ejemplo, podemos calcular sólo el índice IDP</span></span>
+<span id="cb290-11"><a href="diathor.html#cb290-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb290-12"><a href="diathor.html#cb290-12" aria-hidden="true" tabindex="-1"></a>resultadosIDP <span class="ot">&lt;-</span> <span class="fu">diat_idp</span>(resultados) <span class="co">#Grabamos los resultados en el objeto resultados IDP</span></span>
+<span id="cb290-13"><a href="diathor.html#cb290-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb290-14"><a href="diathor.html#cb290-14" aria-hidden="true" tabindex="-1"></a><span class="co">#o el índice IPS</span></span>
+<span id="cb290-15"><a href="diathor.html#cb290-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb290-16"><a href="diathor.html#cb290-16" aria-hidden="true" tabindex="-1"></a>resultadosIPS <span class="ot">&lt;-</span> <span class="fu">diat_ips</span>(resultados) <span class="co">#Grabamos los resultados en el objeto resultados IPS</span></span>
+<span id="cb290-17"><a href="diathor.html#cb290-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb290-18"><a href="diathor.html#cb290-18" aria-hidden="true" tabindex="-1"></a><span class="co">#Hay funciones separadas para todos los índices del paquete; en la documentación se indican cuales, y se van agregando con las distintas actualizaciones.</span></span></code></pre></div>
+</div>
+<div id="shiny" class="section level4 hasAnchor" number="7.1.3.8">
+<h4><span class="header-section-number">7.1.3.8</span> Shiny!<a href="diathor.html#shiny" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Hay una versión online para utilizar el paquete <code>diaThor</code> a través de un entorno Shiny, en:</p>
+<p><a href="https://limnolab.shinyapps.io/diathor-shiny/" class="uri">https://limnolab.shinyapps.io/diathor-shiny/</a></p>
+</div>
+</div>
+<div id="fuentes-de-información-ecológica-de-las-especies" class="section level3 hasAnchor" number="7.1.4">
+<h3><span class="header-section-number">7.1.4</span> Fuentes de información ecológica de las especies<a href="diathor.html#fuentes-de-información-ecológica-de-las-especies" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div style="font-size: 9pt;">
+<p>La información morfológica se busca en la base de datos del proyecto ‘Diat.Barcode’:</p>
+<ul>
+<li>Rimet F., Gusev E., Kahlert M., Kelly M., Kulikovskiy M., Maltsev Y., Mann D., Pfannkuchen M., Trobajo R., Vasselon V., Zimmermann J., Bouchez A., 2019. Diat.barcode, an open-access curated barcode library for diatoms. Scientific Reports. <a href="https://www.nature.com/articles/s41598-019-51500-6" class="uri">https://www.nature.com/articles/s41598-019-51500-6</a></li>
+</ul>
+<p>La clasificación de las especies por su clase de tamaño se obtiene de:</p>
+<ul>
+<li>Rimet F. &amp; Bouchez A., 2012. Life-forms, cell-sizes and ecological guilds of diatoms in European rivers. Knowledge and management of aquatic ecosystems, 406: 1-14. <a href="https://www.kmae-journal.org/articles/kmae/abs/2012/03/kmae120025/kmae120025.html" class="uri">https://www.kmae-journal.org/articles/kmae/abs/2012/03/kmae120025/kmae120025.html</a></li>
+</ul>
+<p>La clasificación de las especies en gremios ecológicos se obtiene de:</p>
+<ul>
+<li>Rimet F. &amp; Bouchez A., 2012. Life-forms, cell-sizes and ecological guilds of diatoms in European rivers. Knowledge and management of aquatic ecosystems, 406: 1-14. <a href="https://www.kmae-journal.org/articles/kmae/abs/2012/03/kmae120025/kmae120025.html" class="uri">https://www.kmae-journal.org/articles/kmae/abs/2012/03/kmae120025/kmae120025.html</a></li>
+</ul>
+<p>La clasificación combinada de gremios y clases de tamaño (más nueva) se obtiene de:</p>
+<ul>
+<li>B-Béres, V., Török, P., Kókai, Z., Lukács, Á., Enikő, T., Tóthmérész, B., &amp; Bácsi, I. (2017). Ecological background of diatom functional groups: Comparability of classification systems. Ecological Indicators, 82, 183-188. <a href="https://www.sciencedirect.com/science/article/abs/pii/S1470160X1730420X" class="uri">https://www.sciencedirect.com/science/article/abs/pii/S1470160X1730420X</a></li>
+</ul>
+<p>Preferencias ecológicas para la clasificación de Van Dam se obtienen de:</p>
+<ul>
+<li>Van Dam, H., Mertens, A., &amp; Sinkeldam, J. (1994). A coded checklist and ecological indicator values of freshwater diatoms from the Netherlands. Netherland Journal of Aquatic Ecology, 28(1), 117-133.</li>
+</ul>
+<p>Los índices de diversidad (Shannon H’) se calcula usando internamente el paquete <em>vegan</em> <span class="citation">(<a href="#ref-vegan" role="doc-biblioref">Oksanen et al. 2022</a>)</span>:</p>
+<ul>
+<li>Shannon, C. E., and Weaver, W. (1949). ‘The Mathematical Theory of Communication.’ (University of Illinios Press: Urbana, IL, USA.)</li>
+</ul>
+<p>Los valores de tolerancia y valencia de cada especie para cada índice biótico se obtiene de sus fuentes publicadas originales:</p>
+<ul>
+<li><p><strong>IPS</strong>: Coste, M. (1982). Étude des méthodes biologiques d’appréciation quantitative de la qualité des eaux. Rapport Cemagref QE Lyon-AF Bassin Rhône Méditerranée Corse.</p></li>
+<li><p><strong>TDI</strong>: Kelly, M. G., &amp; Whitton, B. A. (1995). The trophic diatom index: a new index for monitoring eutrophication in rivers. Journal of Applied Phycology, 7(4), 433-444.</p></li>
+<li><p><strong>IDP</strong>: Gómez, N., &amp; Licursi, M. (2001). The Pampean Diatom Index (IDP) for assessment of rivers and streams in Argentina. Aquatic Ecology, 35(2), 173-181.</p></li>
+<li><p><strong>DES</strong>: Descy, J. P. 1979. A new approach to water quality estimation using diatom. Beih. Nov Hedw. 64:305-323</p></li>
+<li><p><strong>EPID</strong>: Dell’Uomo, A. (1996). Assessment of water quality of an Apennine river as a pilot study for diatom-based monitoring of Italian watercourses. Use of algae for monitoring rivers, 65-72.</p></li>
+<li><p><strong>IDAP</strong>: Prygiel, J., &amp; Coste, M. (1993). The assessment of water quality in the Artois-Picardie water basin (France) by the use of diatom indices. Hydrobiologia, 269(1), 343-349.</p></li>
+<li><p><strong>ID-CH</strong>: Hürlimann J., Niederhauser P. 2007: Méthodes d’analyse et d’appréciation des cours d’eau. Diatomées Niveau R (région). État de l’environnement n° 0740. Office fédéral de l’environnement, Berne. 132 p</p></li>
+<li><p><strong>ILM</strong>: Leclercq, L., &amp; Maquet, B. (1987). Deux nouveaux indices diatomique et de qualité chimique des eaux courantes. Comparaison avec différents indices existants. Cahier de Biology Marine, 28, 303-310.</p></li>
+<li><p><strong>LOBO</strong>:</p>
+<ul>
+<li><p>Lobo, E. A., Callegaro, V. L. M., &amp; Bender, E. P. (2002). Utilização de algas diatomáceas epilíticas como indicadoras da qualidade da água em rios e arroios da Região Hidrográfica do Guaíba, RS, Brasil. Edunisc.</p></li>
+<li><p>Lobo, E. A., Bes, D., Tudesque, L., &amp; Ector, L. (2004). Water quality assessment of the Pardinho River, RS, Brazil, using epilithic diatom assemblages and faecal coliforms as biological indicators. Vie et Milieu, 54(2-3), 115-126.</p></li>
+</ul></li>
+<li><p><strong>SLA</strong>: Sládeček, V. (1986). Diatoms as indicators of organic pollution. Acta hydrochimica et hydrobiologica, 14(5), 555-566.</p></li>
+<li><p><strong>SPEAR(herbicides)</strong>: Wood, R. J., Mitrovic, S. M., Lim, R. P., Warne, M. S. J., Dunlop, J., &amp; Kefford, B. J. (2019). Benthic diatoms as indicators of herbicide toxicity in rivers–A new SPEcies At Risk (SPEARherbicides) index. Ecological Indicators, 99, 203-213.</p></li>
+<li><p><strong>PBIDW</strong>: Castro-Roa, D., &amp; Pinilla-Agudelo, G. (2014). Periphytic diatom index for assessing the ecological quality of the Colombian Andean urban wetlands of Bogotá. Limnetica, 33(2), 297-312.</p></li>
+<li><p><strong>DISP</strong>: Stenger-Kovács, C., Körmendi, K., Lengyel, E., Abonyi, A., Hajnal, É., Szabó, B., Buczkó, K. &amp; Padisák, J. (2018). Expanding the trait-based concept of benthic diatoms: Development of trait-and species-based indices for conductivity as the master variable of ecological status in continental saline lakes. Ecological Indicators, 95, 63-74.</p></li>
+</ul>
+</div>
+<hr />
+</div>
+</div>
+<div id="paquete-optimos.prime" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> Paquete <em>optimos.prime</em><a href="diathor.html#paquete-optimos.prime" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><em>Autores: Belén Sathicq, María Mercedes Nicolosi Gelis, Joaquín Cochero</em></p>
+<div id="qué-hace-1" class="section level3 hasAnchor" number="7.2.1">
+<h3><span class="header-section-number">7.2.1</span> ¿Qué hace?<a href="diathor.html#qué-hace-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>El paquete calcula los valores <strong>óptimos</strong> y <strong>rangos de tolerancia ecológicos</strong> de los taxones a las variables ambientales que proveamos.</p>
+</div>
+<div id="cómo-lo-hace" class="section level3 hasAnchor" number="7.2.2">
+<h3><span class="header-section-number">7.2.2</span> ¿Cómo lo hace?<a href="diathor.html#cómo-lo-hace" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>El enfoque más común utilizado para el cálculo de los óptimos y los rangos de tolerancia ecológicos es calcular la <strong>media ponderada</strong> (Birks et al. 1990; Potapova y Charles, 2003).</p>
+<p>La <strong>media ponderada</strong> <span class="math inline">\(u_{k}\)</span> de las estimaciones de los óptimos de las especies se calcula como:</p>
+<p><span class="math display">\[
+u_{k} =\sum_{i=1}^{n} y_{ik}x_{i}/\sum_{i=1}^{n}y_{ik}
+\]</span></p>
+<p>y la <strong>tolerancia</strong>, o desviación estándar ponderada <span class="math inline">\(t_{k}\)</span>, se calcula como:</p>
+<p><span class="math display">\[
+t_{k} = \sqrt{\frac{\sum_{i=1}^{n} y_{ik} (x_{i} - u_{k})^2}{\sum_{i=1}^{n} y_{ik}}}
+\]</span></p>
+<p>adonde <span class="math inline">\(y_{ik}\)</span> es la abundancia relativa de la especie <span class="math inline">\(k\)</span> en la muestra <span class="math inline">\(i\)</span>; <span class="math inline">\(x_{i}\)</span> es el valor <em>log10</em> del parámetro ambiental en la muestra <span class="math inline">\(i\)</span>; y <span class="math inline">\(n\)</span> es el número total de muestras del conjunto de datos.</p>
+</div>
+<div id="manos-a-la-obra-2" class="section level3 hasAnchor" number="7.2.3">
+<h3><span class="header-section-number">7.2.3</span> ¡Manos a la obra!<a href="diathor.html#manos-a-la-obra-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Como ejemplo, vamos a utilizar parte del set de datos de la tesis doctoral “<em>Empleo de descriptores fitoplanctonicos como biomonitores en la evaluacion de la calidad del agua en la costa del rıo de la Plata (Franja Costera Sur)</em>” de M.B. Sathicq (2017) <span class="citation">(<a href="#ref-sathicq2017" role="doc-biblioref">Sathicq 2017</a>)</span>, pública en el <a href="http://sedici.unlp.edu.ar/handle/10915/58915">repositorio SEDICI de la UNLP</a>.</p>
+<div id="descargar-los-datos-1" class="section level4 hasAnchor" number="7.2.3.1">
+<h4><span class="header-section-number">7.2.3.1</span> <strong>Descargar los datos</strong><a href="diathor.html#descargar-los-datos-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Descargaremos dos sets de datos desde el repositorio del curso, y los debemos guardar en el Directorio de Trabajo del Proyecto que creamos para esta Unidad (ver cómo hacerlo en la Unidad <a href="intro.html#intro">1</a>).</p>
+<p>Descargar el set de datos ambiental desde aquí: <a href="https://github.com/Limno-con-R/CILCAL2023/blob/main/datasets/environmental_data_OptimosPrime.csv" class="uri">https://github.com/Limno-con-R/CILCAL2023/blob/main/datasets/environmental_data_OptimosPrime.csv</a></p>
+<p>Descargar el set de dato de especies por muestras desde aquí: <a href="https://github.com/Limno-con-R/CILCAL2023/blob/main/datasets/species_data_OptimosPrime.csv" class="uri">https://github.com/Limno-con-R/CILCAL2023/blob/main/datasets/species_data_OptimosPrime.csv</a><br />
+</p>
+</div>
+<div id="instalar-el-paquete-1" class="section level4 hasAnchor" number="7.2.3.2">
+<h4><span class="header-section-number">7.2.3.2</span> Instalar el paquete<a href="diathor.html#instalar-el-paquete-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Instalaremos el paquete <em>optimos.prime</em> <span class="citation">(<a href="#ref-sathicq2020" role="doc-biblioref">Sathicq, Nicolosi Gelis, and Cochero 2020</a>)</span> como se indica en la Unidad <a href="intro.html#intro">1</a> y los cargaremos a nuestro espacio de trabajo actual:</p>
+<div class="sourceCode" id="cb291"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb291-1"><a href="diathor.html#cb291-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(optimos.prime)</span></code></pre></div>
+</div>
+<div id="cargar-y-previsualizar-nuestro-archivo-de-datos-1" class="section level4 hasAnchor" number="7.2.3.3">
+<h4><span class="header-section-number">7.2.3.3</span> Cargar y previsualizar nuestro archivo de datos<a href="diathor.html#cargar-y-previsualizar-nuestro-archivo-de-datos-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Debemos cargar dos sets de datos. El primero contiene la información de las variables ambientales en cada sitio o muestra (“<em>environmental_data_OptimosPrime</em>”). El segundo contiene la información de abundancia relativa de los taxa en cada sitio o muestra (“<em>species_data_OptimosPrime</em>”).</p>
+<div class="sourceCode" id="cb292"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb292-1"><a href="diathor.html#cb292-1" aria-hidden="true" tabindex="-1"></a>env_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;environmental_data_OptimosPrime.csv&quot;</span>) <span class="co">#Corroborar que el nombre del archivo coincida con el que vamos a utilizar, y que se encuentre en la carpeta de nuestro proyecto</span></span>
+<span id="cb292-2"><a href="diathor.html#cb292-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb292-3"><a href="diathor.html#cb292-3" aria-hidden="true" tabindex="-1"></a>species_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;species_data_OptimosPrime.csv&quot;</span>) <span class="co">#Corroborar que el nombre del archivo coincida con el que vamos a utilizar, y que se encuentre en la carpeta de nuestro proyecto</span></span>
+<span id="cb292-4"><a href="diathor.html#cb292-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb292-5"><a href="diathor.html#cb292-5" aria-hidden="true" tabindex="-1"></a><span class="co">#Alternativamente, para seleccionar un archivo con un cuadro de diálogo, se puede usar la función `file.choose()`, así:</span></span>
+<span id="cb292-6"><a href="diathor.html#cb292-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb292-7"><a href="diathor.html#cb292-7" aria-hidden="true" tabindex="-1"></a>env_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">file.choose</span>()) <span class="co">#y seleccionar el CSV con los datos ambientales</span></span>
+<span id="cb292-8"><a href="diathor.html#cb292-8" aria-hidden="true" tabindex="-1"></a>species_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">file.choose</span>()) <span class="co">#y seleccionar el CSV con los datos de abundancia de especies</span></span>
+<span id="cb292-9"><a href="diathor.html#cb292-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb292-10"><a href="diathor.html#cb292-10" aria-hidden="true" tabindex="-1"></a><span class="co">#Cualquiera de estas dos opciones cargará nuestros datos a los objetos &quot;env_data&quot; y &quot;species_data&quot;</span></span></code></pre></div>
+<p>Veamos brevemente cómo está organizada la información de nuestras especies:</p>
+<div class="sourceCode" id="cb293"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb293-1"><a href="diathor.html#cb293-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(env_data)</span></code></pre></div>
+<p><code>env_data</code> es un objeto <code>data.frame</code> con 11 <code>obs.</code> o filas (<em>parámetros ambientales</em>) y 51 <code>variables</code> o columnas (<em>sitios muestreados, o muestras</em>).</p>
+<div class="sourceCode" id="cb294"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb294-1"><a href="diathor.html#cb294-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(species_data)</span></code></pre></div>
+<p><code>species_data</code> es un objeto <code>data.frame</code> con 57 <code>obs.</code> o filas (<em>especies</em>) y 51 <code>variables</code> o columnas (<em>sitios muestreados, o muestras</em>).</p>
+<p><strong>¡Es importante que la cantidad de variables o columnas (<em>sitios muestreados, o muestras</em>) sea igual en ambos sets de datos!</strong></p>
+</div>
+<div id="a-la-magia-1" class="section level4 hasAnchor" number="7.2.3.4">
+<h4><span class="header-section-number">7.2.3.4</span> <strong>¡A la magia!</strong><a href="diathor.html#a-la-magia-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Vamos a ejecutar la función <code>op_calculate()</code> , que se encargará de realizar los análisis de óptimos ecológicos y rangos de tolerancia de los taxones que ingresamos en <code>species_data</code> a las variables ambientales que ingresamos en <code>env_data</code> . Y dispondremos de los resultados en un único objeto de tipo <code>data.frame</code>, que aquí lo llamaremos <code>resultados</code>.</p>
+<div class="sourceCode" id="cb295"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb295-1"><a href="diathor.html#cb295-1" aria-hidden="true" tabindex="-1"></a>resultados <span class="ot">&lt;-</span> <span class="fu">op_calculate</span>(env_data, species_data)</span></code></pre></div>
+<p>Cuando terminen los cálculos, en la consola nos indicará que ya podemos ver los resultados.</p>
+<p><code>[1] "Optimum values and tolerance range calculated and placed in the final data frame"</code></p>
+<p><code>[1] "Use View() to view data frame with results"</code></p>
+<div class="sourceCode" id="cb296"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb296-1"><a href="diathor.html#cb296-1" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(resultados)</span></code></pre></div>
+</div>
+<div id="los-resultados-1" class="section level4 hasAnchor" number="7.2.3.5">
+<h4><span class="header-section-number">7.2.3.5</span> Los resultados<a href="diathor.html#los-resultados-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Si todo ha salido bien, debemos ver que el objeto <code>resultados</code> es una nueva matriz de 57 <code>obs.</code> o filas (<em>especies</em>) y ahora 34 <code>variables</code> o columnas (<em>parámetros ambientales</em>). Es decir, por cada uno de los parámetros ambientales que ingresamos (eran 11), vamos a tener una columna con su valor de óptimo ecológico y otras dos columnas con su rango ecológico máximo y su ecológico rango mínimo (33 columnas). La primera columna contendrá los nombres de las especies.</p>
+<p>Veamos por ejemplo las columnas 2, 3 y 4.</p>
+<p>La <strong>columna 2</strong> (“<em>Conductivity uS/cm</em>”) indica el valor óptimo de conductividad eléctrica para las especies, y el nombre con las unidades fueron ingresadas por el usuario en la matriz de datos ambientales.</p>
+<p>La <strong>columna 3</strong> (“<em>Conductivity uS/cm - HIGH</em>”) indica el rango de tolerancia máximo, y la <strong>columna 4</strong> (“<em>Conductivity uS/cm - LOW</em>”), el rango de tolerancia mínimo.</p>
+<p>Es importante entender que los valores obtenidos responden a los óptimos, máximos y mínimos de los taxones en base a los valores de los parámetros ambientales ingresamos. Si luego incorporamos nuevas muestras (por ejemplo en otros ambientes) y encontramos las mismas especies en otras condiciones ambientales, los óptimos y rangos de tolerancia de esas especies van a cambiar. Es por eso que se les llama <em>rangos ecológicos.</em></p>
+</div>
+<div id="graficar-e-interpretar-nuestros-resultados" class="section level4 hasAnchor" number="7.2.3.6">
+<h4><span class="header-section-number">7.2.3.6</span> Graficar e interpretar nuestros resultados<a href="diathor.html#graficar-e-interpretar-nuestros-resultados" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>El paquete <code>optimos.prime</code> nos puede generar gráficos de tipo caterpillar con nuestros resultados para cada variable ambiental, con la función <code>op_plot()</code>. A esta función le tenemos que indicar la matriz de resultados de la función <code>op_calculate()</code>, y le podemos indicar los argumentos <code>label</code>, para personalizar la etiqueta del gráfico, y/o el argumento <code>html</code>. Éste último indica si el gráfico producido se realizará en formato HTML, que permite interactuar con los datos usando el mouse, y es el valor predeterminado. Si <code>html=FALSE</code>, nuestro gráfico será una imagen plana.</p>
+<div class="figure">
+<img src="images/plot_optimosPrime.png" alt="" />
+<p class="caption">Figura 7.2. Óptimos ecológicos y rangos de variación para las especies de algas en referencia al pH.</p>
+</div>
+<p>En el gráfico, se verán las especies (<em>en el eje Y</em>) y la variable ambiental elegida (pH, <em>en el eje X</em>). Los puntos verdes indican el <strong>valor óptimo de cada especie</strong>, y los bigotes indican los <strong>rangos de tolerancia</strong> de cada especie a esa variable.</p>
+<p>Aquellas especies con rangos de tolerancia más bajos (ejs. <em>Actinastrum fluviale</em>, o <em>Euglena</em> <em>acus</em>), son consideradas especies ‘sensibles’ a esa variable ambiental, y aquellas con grandes rangos de tolerancia (ejs. <em>S.nanus</em> o <em>Tetrastrum</em> <em>glabrum</em>) son consideradas especies ‘tolerantes’. A su vez en este ejemplo, aquellas con valores óptimos más altos (más arriba en el gráfico) son consideradas mas alcalófilas y las que se encuentran más abajo en el gráfico son especies más acidófilas. Es importante revisar aquellas especies que tienen rangos de tolerancia muy bajos (ej. <em>A. distans</em>), ya que puede ser el resultado de una baja cantidad de presencias de esa especie en las muestras.</p>
+<div class="sourceCode" id="cb297"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb297-1"><a href="diathor.html#cb297-1" aria-hidden="true" tabindex="-1"></a><span class="fu">op_plot</span>(resultados)</span>
+<span id="cb297-2"><a href="diathor.html#cb297-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb297-3"><a href="diathor.html#cb297-3" aria-hidden="true" tabindex="-1"></a><span class="co">#En la consola nos preguntará que variable queremos graficar, y deberemos ingresar el número de la variable. Por ejemplo, para seleccionar el pH escribiriamos el número 2.</span></span></code></pre></div>
+</div>
+<div id="algunas-aclaraciones-relevantes-1" class="section level4 hasAnchor" number="7.2.3.7">
+<h4><span class="header-section-number">7.2.3.7</span> <strong>Algunas aclaraciones relevantes:</strong><a href="diathor.html#algunas-aclaraciones-relevantes-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li><em>¿Nuestros datos no se encuentran en abundancia relativa?</em><br />
+Hay que indicarselo, cambiando el argumento <code>isRelAb</code> a <code>FALSE</code>.</li>
+</ul>
+<div class="sourceCode" id="cb298"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb298-1"><a href="diathor.html#cb298-1" aria-hidden="true" tabindex="-1"></a>resultados <span class="ot">&lt;-</span> <span class="fu">op_calculate</span>(<span class="at">isRelAb=</span><span class="cn">FALSE</span>)</span></code></pre></div>
+<ul>
+<li><em>¿Nuestros datos ya fueron convertidos a log10?</em><br />
+Hay que indicarselo, cambiando el argumento <code>islog10</code> a <code>TRUE</code>.</li>
+</ul>
+<div class="sourceCode" id="cb299"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb299-1"><a href="diathor.html#cb299-1" aria-hidden="true" tabindex="-1"></a>resultados <span class="ot">&lt;-</span> <span class="fu">op_calculate</span>(<span class="at">islog10=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+</div>
+<div id="shiny-1" class="section level4 hasAnchor" number="7.2.3.8">
+<h4><span class="header-section-number">7.2.3.8</span> Shiny!<a href="diathor.html#shiny-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Hay una versión online para utilizar el paquete <code>optimos.prime</code> a través de un entorno Shiny, en:<br />
+<a href="https://limnolab.shinyapps.io/OptimosPrime-Shiny/" class="uri">https://limnolab.shinyapps.io/OptimosPrime-Shiny/</a></p>
+
+</div>
+</div>
+</div>
+</div>
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-nicolosigelis2022" class="csl-entry">
+Nicolosi Gelis, M. M., M. B. Sathicq, J. Jupke, and J. Cochero. 2022. <span>“DiaThor: R Package for Computing Diatom Metrics and Biotic Indices.”</span> <em>Ecological Modelling</em> 465 (March): 109859. <a href="https://doi.org/10.1016/j.ecolmodel.2021.109859">https://doi.org/10.1016/j.ecolmodel.2021.109859</a>.
+</div>
+<div id="ref-nicolosigelis2020" class="csl-entry">
+Nicolosi Gelis, María Mercedes, Joaquín Cochero, Jorge Donadelli, and Nora Gómez. 2020. <span>“Exploring the Use of Nuclear Alterations, Motility and Ecological Guilds in Epipelic Diatoms as Biomonitoring Tools for Water Quality Improvement in Urban Impacted Lowland Streams.”</span> <em>Ecological Indicators</em> 110 (January): 105951. <a href="https://doi.org/10.1016/j.ecolind.2019.105951">https://doi.org/10.1016/j.ecolind.2019.105951</a>.
+</div>
+<div id="ref-vegan" class="csl-entry">
+Oksanen, Jari, Gavin L. Simpson, F. Guillaume Blanchet, Roeland Kindt, Pierre Legendre, Peter R. Minchin, R. B. O’Hara, et al. 2022. <em>Vegan: Community Ecology Package</em>. <a href="https://CRAN.R-project.org/package=vegan">https://CRAN.R-project.org/package=vegan</a>.
+</div>
+<div id="ref-sathicq2017" class="csl-entry">
+Sathicq, María Belén. 2017. <span>“Empleo de Descriptores Fitoplanctónicos Como Biomonitores En La Evaluación de La Calidad Del Agua En La Costa Del Río de La Plata (Franja Costera Sur),”</span> March. <a href="http://sedici.unlp.edu.ar/handle/10915/58915">http://sedici.unlp.edu.ar/handle/10915/58915</a>.
+</div>
+<div id="ref-sathicq2020" class="csl-entry">
+Sathicq, María Belén, María Mercedes Nicolosi Gelis, and Joaquín Cochero. 2020. <span>“Calculating Autoecological Data (Optima and Tolerance Range) for Multiple Species with the <span>‘</span>Optimos.prime<span>’</span> R Package.”</span> <em>Austral Ecology</em>, February. <a href="https://doi.org/10.1111/aec.12868">https://doi.org/10.1111/aec.12868</a>.
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="8">
+<li id="fn8"><p><a href="mailto:jcochero@ilpla.edu.ar" class="email">jcochero@ilpla.edu.ar</a><a href="diathor.html#fnref8" class="footnote-back">↩︎</a></p></li>
+<li id="fn9"><p><a href="mailto:mercedesnicolosi@ilpla.edu.ar">mercedesnicolosi@ilpla.edu.ar</a><a href="diathor.html#fnref9" class="footnote-back">↩︎</a></p></li>
+<li id="fn10"><p><a href="mailto:mbelen@ilpla.edu.ar">mbelen@ilpla.edu.ar</a><a href="diathor.html#fnref10" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="metrix.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/07-diathor.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-LimnoR.pdf", "bookdown-LimnoR.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

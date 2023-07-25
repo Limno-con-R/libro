@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Unidad 4 Análisis multivariados I | bookdown-LimnoR</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Unidad 4 Análisis multivariados I | bookdown-LimnoR" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Unidad 4 Análisis multivariados I | bookdown-LimnoR" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="gam.html"/>
+<link rel="next" href="multi2.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>LIMNOLOGIA CON R</a>
+<ul>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#contenido"><i class="fa fa-check"></i><b>0.1</b> Contenido</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introducción a R y RStudio</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#instalación"><i class="fa fa-check"></i><b>1.1</b> Instalación</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#rstudio"><i class="fa fa-check"></i><b>1.2</b> RStudio</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#a-trabajar"><i class="fa fa-check"></i><b>1.3</b> A trabajar!</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="intro.html"><a href="intro.html#crear-un-proyecto"><i class="fa fa-check"></i><b>1.3.1</b> Crear un <strong>Proyecto</strong></a></li>
+<li class="chapter" data-level="1.3.2" data-path="intro.html"><a href="intro.html#crear-un-r-script"><i class="fa fa-check"></i><b>1.3.2</b> Crear un <strong>R Script</strong></a></li>
+<li class="chapter" data-level="1.3.3" data-path="intro.html"><a href="intro.html#instalar-y-cargar-paquetes"><i class="fa fa-check"></i><b>1.3.3</b> Instalar y cargar <strong>paquetes</strong></a></li>
+<li class="chapter" data-level="1.3.4" data-path="intro.html"><a href="intro.html#importar-datos"><i class="fa fa-check"></i><b>1.3.4</b> Importar <strong>datos</strong></a></li>
+<li class="chapter" data-level="1.3.5" data-path="intro.html"><a href="intro.html#visualizar-y-manipular-datos"><i class="fa fa-check"></i><b>1.3.5</b> Visualizar y manipular <strong>datos</strong></a></li>
+<li class="chapter" data-level="1.3.6" data-path="intro.html"><a href="intro.html#gráficos-exploratorios-básicos"><i class="fa fa-check"></i><b>1.3.6</b> Gráficos exploratorios básicos</a></li>
+<li class="chapter" data-level="1.3.7" data-path="intro.html"><a href="intro.html#recursos-extra-recomendados"><i class="fa fa-check"></i><b>1.3.7</b> Recursos extra recomendados</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="regmul.html"><a href="regmul.html"><i class="fa fa-check"></i><b>2</b> Correlaciones y regresión múltiple</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="regmul.html"><a href="regmul.html#caso-de-estudio"><i class="fa fa-check"></i><b>2.1</b> Caso de estudio</a></li>
+<li class="chapter" data-level="2.2" data-path="regmul.html"><a href="regmul.html#leer-y-emprolijar-los-datos"><i class="fa fa-check"></i><b>2.2</b> Leer y emprolijar los datos</a></li>
+<li class="chapter" data-level="2.3" data-path="regmul.html"><a href="regmul.html#correlaciones"><i class="fa fa-check"></i><b>2.3</b> Correlaciones</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="regmul.html"><a href="regmul.html#entre-biomasa-de-morfotipos-bacterianos"><i class="fa fa-check"></i><b>2.3.1</b> Entre biomasa de morfotipos bacterianos</a></li>
+<li class="chapter" data-level="2.3.2" data-path="regmul.html"><a href="regmul.html#entre-variables-abióticas"><i class="fa fa-check"></i><b>2.3.2</b> Entre variables abióticas</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="regmul.html"><a href="regmul.html#regresiones-múltiples"><i class="fa fa-check"></i><b>2.4</b> Regresiones múltiples</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="regmul.html"><a href="regmul.html#selección-automática-de-variables"><i class="fa fa-check"></i><b>2.4.1</b> Selección automática de variables</a></li>
+<li class="chapter" data-level="2.4.2" data-path="regmul.html"><a href="regmul.html#selección-manual-de-variables"><i class="fa fa-check"></i><b>2.4.2</b> Selección manual de variables</a></li>
+<li class="chapter" data-level="2.4.3" data-path="regmul.html"><a href="regmul.html#evaluación-e-interpretación-del-modelo-final"><i class="fa fa-check"></i><b>2.4.3</b> Evaluación e interpretación del modelo final</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="regmul.html"><a href="regmul.html#a-modo-de-conclusión"><i class="fa fa-check"></i><b>2.5</b> A modo de conclusión</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="gam.html"><a href="gam.html"><i class="fa fa-check"></i><b>3</b> Modelos Aditivos Generalizados</a>
+<ul>
+<li class="chapter" data-level="3.0.1" data-path="gam.html"><a href="gam.html#aclaración"><i class="fa fa-check"></i><b>3.0.1</b> Aclaración</a></li>
+<li class="chapter" data-level="3.1" data-path="gam.html"><a href="gam.html#porqué-usar-modelos-aditivos-generalizados-gams"><i class="fa fa-check"></i><b>3.1</b> ¿Porqué usar Modelos Aditivos Generalizados (GAMs)?</a></li>
+<li class="chapter" data-level="3.2" data-path="gam.html"><a href="gam.html#qué-son-los-gams"><i class="fa fa-check"></i><b>3.2</b> ¿Qué son los GAMs?</a></li>
+<li class="chapter" data-level="3.3" data-path="gam.html"><a href="gam.html#manos-a-la-obra"><i class="fa fa-check"></i><b>3.3</b> Manos a la obra!</a></li>
+<li class="chapter" data-level="3.4" data-path="gam.html"><a href="gam.html#agradecimientos"><i class="fa fa-check"></i><b>3.4</b> Agradecimientos</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="multi1.html"><a href="multi1.html"><i class="fa fa-check"></i><b>4</b> Análisis multivariados I</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="multi1.html"><a href="multi1.html#análisis-de-componentes-principales"><i class="fa fa-check"></i><b>4.1</b> Análisis de Componentes Principales</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="multi1.html"><a href="multi1.html#qué-tipos-de-datos-usa-una-acp"><i class="fa fa-check"></i><b>4.1.1</b> ¿Qué tipos de datos usa una ACP?</a></li>
+<li class="chapter" data-level="4.1.2" data-path="multi1.html"><a href="multi1.html#cómo-funciona-el-análisis"><i class="fa fa-check"></i><b>4.1.2</b> ¿Cómo funciona el análisis?</a></li>
+<li class="chapter" data-level="4.1.3" data-path="multi1.html"><a href="multi1.html#ahora-manos-a-la-obra-miremos-datos"><i class="fa fa-check"></i><b>4.1.3</b> Ahora manos a la obra: miremos datos</a></li>
+<li class="chapter" data-level="4.1.4" data-path="multi1.html"><a href="multi1.html#crear-una-condición-para-colorear-los-individuos"><i class="fa fa-check"></i><b>4.1.4</b> Crear una condición para colorear los individuos</a></li>
+<li class="chapter" data-level="4.1.5" data-path="multi1.html"><a href="multi1.html#refinando-el-modelo"><i class="fa fa-check"></i><b>4.1.5</b> Refinando el modelo</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="multi1.html"><a href="multi1.html#nmds"><i class="fa fa-check"></i><b>4.2</b> NMDS</a></li>
+<li class="chapter" data-level="4.3" data-path="multi1.html"><a href="multi1.html#permanova"><i class="fa fa-check"></i><b>4.3</b> PERMANOVA</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="multi2.html"><a href="multi2.html"><i class="fa fa-check"></i><b>5</b> Análisis multivariados II</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="multi2.html"><a href="multi2.html#introducción"><i class="fa fa-check"></i><b>5.1</b> INTRODUCCIÓN</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="multi2.html"><a href="multi2.html#la-lógica-de-las-técnicas-de-ordenación-restringida-o-canónica-constrained-análisis-de-gradiente-directo"><i class="fa fa-check"></i><b>5.1.1</b> LA LÓGICA DE LAS TÉCNICAS DE ORDENACIÓN RESTRINGIDA O CANÓNICA (“<em>CONSTRAINED</em>”, ANÁLISIS DE GRADIENTE DIRECTO)</a></li>
+<li class="chapter" data-level="5.1.2" data-path="multi2.html"><a href="multi2.html#qué-tipo-de-datos-de-composición-de-especies-se-utilizan-para-el-análisis"><i class="fa fa-check"></i><b>5.1.2</b> ¿Qué tipo de datos de composición de especies se utilizan para el análisis?</a></li>
+<li class="chapter" data-level="5.1.3" data-path="multi2.html"><a href="multi2.html#cómo-saber-si-debo-utilizar-un-método-de-ordenación-de-respuesta-lineal-o-unimodal"><i class="fa fa-check"></i><b>5.1.3</b> ¿Cómo saber si debo utilizar un método de ordenación de respuesta lineal o unimodal?</a></li>
+<li class="chapter" data-level="5.1.4" data-path="multi2.html"><a href="multi2.html#análisis-de-redundancia-rda"><i class="fa fa-check"></i><b>5.1.4</b> <strong>ANÁLISIS DE REDUNDANCIA (RDA)</strong></a></li>
+<li class="chapter" data-level="5.1.5" data-path="multi2.html"><a href="multi2.html#analicemos-estos-aspectos-a-través-de-un-ejemplo-práctico"><i class="fa fa-check"></i><b>5.1.5</b> Analicemos estos aspectos a través de un ejemplo práctico…</a></li>
+<li class="chapter" data-level="5.1.6" data-path="multi2.html"><a href="multi2.html#rda-utilizando-el-paquete-vegan-oksanen-et-al.-2007"><i class="fa fa-check"></i><b>5.1.6</b> RDA utilizando el paquete <strong>vegan</strong> (Oksanen <em>et al.</em>, 2007)</a></li>
+<li class="chapter" data-level="5.1.7" data-path="multi2.html"><a href="multi2.html#seleccionando-las-variables-explicativas-relevantes"><i class="fa fa-check"></i><b>5.1.7</b> Seleccionando las variables explicativas relevantes</a></li>
+<li class="chapter" data-level="5.1.8" data-path="multi2.html"><a href="multi2.html#rda-basado-en-matriz-de-distancia-distance-based-rda-db-rda"><i class="fa fa-check"></i><b>5.1.8</b> RDA basado en matriz de distancia (“Distance-based RDA”, db-RDA)</a></li>
+<li class="chapter" data-level="5.1.9" data-path="multi2.html"><a href="multi2.html#análisis-de-correspondencia-canónica-cca"><i class="fa fa-check"></i><b>5.1.9</b> <strong>ANÁLISIS DE CORRESPONDENCIA CANÓNICA (CCA)</strong></a></li>
+<li class="chapter" data-level="5.1.10" data-path="multi2.html"><a href="multi2.html#cca-utilizando-la-función-cca-del-paquete-vegan"><i class="fa fa-check"></i><b>5.1.10</b> CCA utilizando la función <strong>cca()</strong> del paquete <strong>vegan</strong></a></li>
+<li class="chapter" data-level="5.1.11" data-path="multi2.html"><a href="multi2.html#bibliografía-citada-y-de-lectura-recomendada"><i class="fa fa-check"></i><b>5.1.11</b> Bibliografía citada y de lectura recomendada</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="metrix.html"><a href="metrix.html"><i class="fa fa-check"></i><b>6</b> Paquete <em>metrix</em></a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="metrix.html"><a href="metrix.html#que-es-metrix"><i class="fa fa-check"></i><b>6.1</b> ¿Que es Metrix?</a></li>
+<li class="chapter" data-level="6.2" data-path="metrix.html"><a href="metrix.html#conjunto-de-datos-de-ejemplo"><i class="fa fa-check"></i><b>6.2</b> Conjunto de datos de ejemplo</a></li>
+<li class="chapter" data-level="6.3" data-path="metrix.html"><a href="metrix.html#instalar-metrix"><i class="fa fa-check"></i><b>6.3</b> Instalar <em>metrix</em></a></li>
+<li class="chapter" data-level="6.4" data-path="metrix.html"><a href="metrix.html#que-tipos-de-datos-analiza-metrix"><i class="fa fa-check"></i><b>6.4</b> ¿Que tipos de datos analiza <em>metrix</em>?</a></li>
+<li class="chapter" data-level="6.5" data-path="metrix.html"><a href="metrix.html#cargar-datos-de-densidad-de-macroinvertebrados-usando-metrix"><i class="fa fa-check"></i><b>6.5</b> Cargar datos de densidad de macroinvertebrados usando <em>metrix</em></a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="metrix.html"><a href="metrix.html#que-pasa-si-quiero-crear-mi-propio-conjunto-de-datos"><i class="fa fa-check"></i><b>6.5.1</b> ¿QUE PASA SI QUIERO CREAR MI PROPIO CONJUNTO DE DATOS?</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="metrix.html"><a href="metrix.html#cálculo-de-metricas-individuales-y-ecológicas"><i class="fa fa-check"></i><b>6.6</b> Cálculo de metricas individuales y ecológicas</a></li>
+<li class="chapter" data-level="6.7" data-path="metrix.html"><a href="metrix.html#cálculo-de-indices-bióticos"><i class="fa fa-check"></i><b>6.7</b> Cálculo de indices bióticos</a></li>
+<li class="chapter" data-level="6.8" data-path="metrix.html"><a href="metrix.html#futuro-del-paquete"><i class="fa fa-check"></i><b>6.8</b> FUTURO DEL PAQUETE</a></li>
+<li class="chapter" data-level="6.9" data-path="metrix.html"><a href="metrix.html#agradecimientos-1"><i class="fa fa-check"></i><b>6.9</b> AGRADECIMIENTOS</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="diathor.html"><a href="diathor.html"><i class="fa fa-check"></i><b>7</b> Paquetes <em>DiaThor</em> y <em>optimos.prime</em></a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="diathor.html"><a href="diathor.html#paquete-diathor"><i class="fa fa-check"></i><b>7.1</b> Paquete <em>DiaThor</em></a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="diathor.html"><a href="diathor.html#qué-hace"><i class="fa fa-check"></i><b>7.1.1</b> ¿Qué hace?</a></li>
+<li class="chapter" data-level="7.1.2" data-path="diathor.html"><a href="diathor.html#cómo-funciona"><i class="fa fa-check"></i><b>7.1.2</b> ¿Cómo funciona?</a></li>
+<li class="chapter" data-level="7.1.3" data-path="diathor.html"><a href="diathor.html#manos-a-la-obra-1"><i class="fa fa-check"></i><b>7.1.3</b> ¡Manos a la obra!</a></li>
+<li class="chapter" data-level="7.1.4" data-path="diathor.html"><a href="diathor.html#fuentes-de-información-ecológica-de-las-especies"><i class="fa fa-check"></i><b>7.1.4</b> Fuentes de información ecológica de las especies</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="diathor.html"><a href="diathor.html#paquete-optimos.prime"><i class="fa fa-check"></i><b>7.2</b> Paquete <em>optimos.prime</em></a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="diathor.html"><a href="diathor.html#qué-hace-1"><i class="fa fa-check"></i><b>7.2.1</b> ¿Qué hace?</a></li>
+<li class="chapter" data-level="7.2.2" data-path="diathor.html"><a href="diathor.html#cómo-lo-hace"><i class="fa fa-check"></i><b>7.2.2</b> ¿Cómo lo hace?</a></li>
+<li class="chapter" data-level="7.2.3" data-path="diathor.html"><a href="diathor.html#manos-a-la-obra-2"><i class="fa fa-check"></i><b>7.2.3</b> ¡Manos a la obra!</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="multi1" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Unidad 4</span> Análisis multivariados I<a href="multi1.html#multi1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><strong>Patricia E. García</strong><a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a></p>
+<p>Instituto de Investigaciones en Biodiversidad y Medioambiente (INIBIOMA, CONICET-UNComahue)</p>
+<p>En esta unidad se verán ejemplos de ACP, NMDS, PERMANOVA</p>
+<div id="análisis-de-componentes-principales" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Análisis de Componentes Principales<a href="multi1.html#análisis-de-componentes-principales" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><em>Introducción</em>: Algunos sistemas no pueden definirse por sus características individuales, sino que deben verse en conjunto. Un ejemplo muy sencillo para entender este concepto es intentar describir una cara humana con un solo rasgo: la nariz.</p>
+<div class="figure">
+<img src="images/nariz.png" alt="" />
+<p class="caption">Se puede identificar una cara solo describiendo la nariz?</p>
+</div>
+<p>Para describir y reconocer una cara es necesario observar todas sus características: la nariz, los ojos, la boca, las cejas, etc. Es decir, múltiples dimensiones.</p>
+<p>El <strong>análisis de componentes principales (APC)</strong> también conocido por siglas en inglés Principal Componentes Analysis PCA, es una poderosa herramienta estadística para describir un conjunto de datos.</p>
+<p>Se basa en la reducción de la multidimensionalidad de una manera “<em>no supervisada</em>”.</p>
+<p>Su principal objetivo es proyectar datos en las direcciones de <strong>máxima varianza</strong> y de este modo eliminar aquellas direcciones o planos que aporten menos información.</p>
+<p>El ACP puede aplicarse antes de realizar un análisis de regresión o simplemente con fines exploratorios para ayudar a los investigadores a comprender relaciones entre las variables o descubrir patrones presentes en los datos.</p>
+<div id="qué-tipos-de-datos-usa-una-acp" class="section level3 hasAnchor" number="4.1.1">
+<h3><span class="header-section-number">4.1.1</span> ¿Qué tipos de datos usa una ACP?<a href="multi1.html#qué-tipos-de-datos-usa-una-acp" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Utiliza principalmente variable <em>numéricas continuas</em> que son las que efectivamente entran en el análisis. Estás variables se organizan en <strong>columnas</strong>, mientras que en las <strong>filas</strong> se organizan los individuos.</p>
+<div class="figure">
+<img src="images/organi.png" alt="" />
+<p class="caption">Organización de los datos</p>
+</div>
+<p>Estas bases de datos son de doble entrada, por lo que es posible analizarla desde el punto de vista de los individuos, de tal manera que <em>individuos</em> que tiene características similares estarán más cerca.</p>
+<p>Desde el punto de las <em>variables</em>, se pueden analizar las relaciones entre las mismas. El análisis considera relaciones lineales entre las variables y usa coeficientes de correlación. Es importante utilizar la matriz de correlación para observar las relaciones más importantes entre las variables.</p>
+</div>
+<div id="cómo-funciona-el-análisis" class="section level3 hasAnchor" number="4.1.2">
+<h3><span class="header-section-number">4.1.2</span> ¿Cómo funciona el análisis?<a href="multi1.html#cómo-funciona-el-análisis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>El funcionamiento del análisis es muy sencillo, trata de buscar la <em>dirección o componente</em> que maximice la variación de datos. Es decir que el primer plano/componente trata de capturar la mayor dispersión de los datos.</p>
+<div class="figure">
+<img src="images/compo_1.png" alt="" />
+<p class="caption">El primer componente</p>
+</div>
+<p>En el ACP, luego que se encontró el primer componente que maximizó la dispersión de los datos, el segundo componente es ortogonal, es decir a 90°.</p>
+<p><img src="images/compo_2.png" /></p>
+</div>
+<div id="ahora-manos-a-la-obra-miremos-datos" class="section level3 hasAnchor" number="4.1.3">
+<h3><span class="header-section-number">4.1.3</span> Ahora manos a la obra: miremos datos<a href="multi1.html#ahora-manos-a-la-obra-miremos-datos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>En RStudio importamos la base de datos ambientales de <a href="https://doi.org/10.1016/j.chemosphere.2018.02.103">Castro Berman et al., 2018</a>, disponible como <strong>data_cursoR.xlsx</strong> en <a href="https://github.com/Limno-con-R/CILCAL2023/tree/main/datasets">GitHub Limno-con-R/CILCAL2023</a>. Recuerden guardar el archivo en una carpeta llamada <em>data</em>, dentro del <strong>Directorio de Trabajo</strong> del <strong>Proyecto</strong> que creamos para esta Unidad (ver cómo hacerlo en la Unidad <a href="intro.html#intro">1</a>).</p>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="multi1.html#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb118-2"><a href="multi1.html#cb118-2" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span>  <span class="fu">read_excel</span>(<span class="st">&quot;data/data_cursoR.xlsx&quot;</span>, </span>
+<span id="cb118-3"><a href="multi1.html#cb118-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">col_types =</span> <span class="fu">c</span>(<span class="st">&quot;text&quot;</span>, <span class="st">&quot;numeric&quot;</span>, <span class="st">&quot;numeric&quot;</span>, </span>
+<span id="cb118-4"><a href="multi1.html#cb118-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;numeric&quot;</span>, <span class="st">&quot;numeric&quot;</span>, <span class="st">&quot;numeric&quot;</span>, </span>
+<span id="cb118-5"><a href="multi1.html#cb118-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;numeric&quot;</span>, <span class="st">&quot;numeric&quot;</span>, <span class="st">&quot;numeric&quot;</span>, </span>
+<span id="cb118-6"><a href="multi1.html#cb118-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;numeric&quot;</span>, <span class="st">&quot;numeric&quot;</span>, <span class="st">&quot;numeric&quot;</span>, </span>
+<span id="cb118-7"><a href="multi1.html#cb118-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;numeric&quot;</span>, <span class="st">&quot;numeric&quot;</span>, <span class="st">&quot;numeric&quot;</span>, </span>
+<span id="cb118-8"><a href="multi1.html#cb118-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;numeric&quot;</span>, <span class="st">&quot;numeric&quot;</span>, <span class="st">&quot;numeric&quot;</span>), </span>
+<span id="cb118-9"><a href="multi1.html#cb118-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">na =</span> <span class="st">&quot;NA&quot;</span>)</span></code></pre></div>
+<pre><code>## New names:
+## • `` -&gt; `...1`</code></pre>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="multi1.html#cb120-1" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(datos, <span class="at">row.names =</span> <span class="dv">1</span>)</span>
+<span id="cb120-2"><a href="multi1.html#cb120-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(datos)</span></code></pre></div>
+<pre><code>##       ELEVACION  LATITUD LONGITUD Temp Secchi   DO   pH Conductivity   NTU  TON
+## SL_13        62 -38.4184 -61.7594   17     44 11.8 8.55         0.32  15.7 3438
+## SL_17        20 -38.9263 -61.3687    7      8  8.0 8.53         3.43 363.0 4010
+## SL_18       119 -38.3474 -60.4527   14     12  9.0 8.84         4.05 110.0 4200
+## SL_19        89 -38.4273 -60.3181   14     24 10.8 8.54         1.10  54.4 4738
+## SL_20        64 -38.5216 -60.1404   10      9  9.0 8.44         3.25 206.0 7470
+## SL_21       194 -38.0508 -60.0340   11     16 10.0 8.30         3.35 129.0 4256
+##       TDON   SPM   POM   TP    TDP  Chl.a    DOC
+## SL_13 2565  11.7   9.2  124    0.1   3.79   4.55
+## SL_17 2890 377.5 103.4  272  114.0  68.63  10.98
+## SL_18 3909  71.0  23.4 1009  833.0  54.36 253.50
+## SL_19 4424  30.9  23.4  162    4.0  66.75  10.12
+## SL_20 5107 186.6  62.5  727  456.0 475.36  95.43
+## SL_21 3237 111.0  33.4 1365 1363.0  61.81 177.70</code></pre>
+<p>La base de datos que importamos contiene información acerca de la localización geográfica de los sitios y las variables físico-químicas.</p>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="multi1.html#cb122-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(datos)</span></code></pre></div>
+<pre><code>##    ELEVACION         LATITUD          LONGITUD           Temp      
+##  Min.   :-16.00   Min.   :-38.93   Min.   :-63.09   Min.   : 7.00  
+##  1st Qu.: 10.00   1st Qu.:-37.49   1st Qu.:-62.25   1st Qu.:15.00  
+##  Median : 58.50   Median :-36.84   Median :-60.23   Median :17.50  
+##  Mean   : 73.65   Mean   :-36.62   Mean   :-60.13   Mean   :18.52  
+##  3rd Qu.:104.00   3rd Qu.:-35.69   3rd Qu.:-57.98   3rd Qu.:22.25  
+##  Max.   :246.00   Max.   :-34.48   Max.   :-56.98   Max.   :30.00  
+##                                                                    
+##      Secchi             DO               pH         Conductivity    
+##  Min.   :  7.00   Min.   : 5.000   Min.   :8.000   Min.   :  0.320  
+##  1st Qu.: 12.00   1st Qu.: 8.725   1st Qu.:8.557   1st Qu.:  1.215  
+##  Median : 18.00   Median :10.300   Median :8.795   Median :  2.615  
+##  Mean   : 29.44   Mean   :10.238   Mean   :8.762   Mean   :  7.968  
+##  3rd Qu.: 37.75   3rd Qu.:11.050   3rd Qu.:8.982   3rd Qu.:  5.513  
+##  Max.   :140.00   Max.   :20.000   Max.   :9.400   Max.   :202.100  
+##                                                                     
+##       NTU              TON             TDON           SPM        
+##  Min.   :  2.70   Min.   : 2856   Min.   :1926   Min.   :  6.70  
+##  1st Qu.: 27.90   1st Qu.: 4104   1st Qu.:3052   1st Qu.: 36.20  
+##  Median : 83.25   Median : 4872   Median :3478   Median : 75.45  
+##  Mean   : 88.67   Mean   : 5063   Mean   :3790   Mean   :116.83  
+##  3rd Qu.:110.00   3rd Qu.: 5323   3rd Qu.:4356   3rd Qu.:128.53  
+##  Max.   :363.00   Max.   :10830   Max.   :7235   Max.   :788.40  
+##                                                                  
+##       POM               TP              TDP             Chl.a       
+##  Min.   :  6.70   Min.   :  46.0   Min.   :   0.1   Min.   :  1.58  
+##  1st Qu.: 20.00   1st Qu.: 324.0   1st Qu.: 114.0   1st Qu.: 15.80  
+##  Median : 29.60   Median : 533.0   Median : 302.0   Median : 52.05  
+##  Mean   : 40.80   Mean   : 766.1   Mean   : 560.3   Mean   : 87.80  
+##  3rd Qu.: 47.92   3rd Qu.: 820.5   3rd Qu.: 624.0   3rd Qu.: 89.13  
+##  Max.   :344.00   Max.   :4538.0   Max.   :4140.0   Max.   :981.06  
+##                                                                     
+##       DOC         
+##  Min.   :   1.26  
+##  1st Qu.:  12.36  
+##  Median :  19.45  
+##  Mean   :  93.22  
+##  3rd Qu.:  97.58  
+##  Max.   :1010.00  
+##  NA&#39;s   :1</code></pre>
+<pre><code>##    ELEVACION         LATITUD          LONGITUD           Temp      
+##  Min.   :-16.00   Min.   :-38.93   Min.   :-63.09   Min.   : 7.00  
+##  1st Qu.: 10.00   1st Qu.:-37.49   1st Qu.:-62.25   1st Qu.:15.00  
+##  Median : 58.50   Median :-36.84   Median :-60.23   Median :17.50  
+##  Mean   : 73.65   Mean   :-36.62   Mean   :-60.13   Mean   :18.52  
+##  3rd Qu.:104.00   3rd Qu.:-35.69   3rd Qu.:-57.98   3rd Qu.:22.25  
+##  Max.   :246.00   Max.   :-34.48   Max.   :-56.98   Max.   :30.00  
+##                                                                    
+##      Secchi             DO               pH         Conductivity    
+##  Min.   :  7.00   Min.   : 5.000   Min.   :8.000   Min.   :  0.320  
+##  1st Qu.: 12.00   1st Qu.: 8.725   1st Qu.:8.557   1st Qu.:  1.215  
+##  Median : 18.00   Median :10.300   Median :8.795   Median :  2.615  
+##  Mean   : 29.44   Mean   :10.238   Mean   :8.762   Mean   :  7.968  
+##  3rd Qu.: 37.75   3rd Qu.:11.050   3rd Qu.:8.982   3rd Qu.:  5.513  
+##  Max.   :140.00   Max.   :20.000   Max.   :9.400   Max.   :202.100  
+##                                                                     
+##       NTU              TON             TDON           SPM        
+##  Min.   :  2.70   Min.   : 2856   Min.   :1926   Min.   :  6.70  
+##  1st Qu.: 27.90   1st Qu.: 4104   1st Qu.:3052   1st Qu.: 36.20  
+##  Median : 83.25   Median : 4872   Median :3478   Median : 75.45  
+##  Mean   : 88.67   Mean   : 5063   Mean   :3790   Mean   :116.83  
+##  3rd Qu.:110.00   3rd Qu.: 5323   3rd Qu.:4356   3rd Qu.:128.53  
+##  Max.   :363.00   Max.   :10830   Max.   :7235   Max.   :788.40  
+##                                                                  
+##       POM               TP              TDP             Chl.a       
+##  Min.   :  6.70   Min.   :  46.0   Min.   :   0.1   Min.   :  1.58  
+##  1st Qu.: 20.00   1st Qu.: 324.0   1st Qu.: 114.0   1st Qu.: 15.80  
+##  Median : 29.60   Median : 533.0   Median : 302.0   Median : 52.05  
+##  Mean   : 40.80   Mean   : 766.1   Mean   : 560.3   Mean   : 87.80  
+##  3rd Qu.: 47.92   3rd Qu.: 820.5   3rd Qu.: 624.0   3rd Qu.: 89.13  
+##  Max.   :344.00   Max.   :4538.0   Max.   :4140.0   Max.   :981.06  
+##                                                                     
+##       DOC         
+##  Min.   :   1.26  
+##  1st Qu.:  12.36  
+##  Median :  19.45  
+##  Mean   :  93.22  
+##  3rd Qu.:  97.58  
+##  Max.   :1010.00  
+##  NA&#39;s   :1</code></pre>
+<p>En resumen, tenemos 52 observaciones (individuos) y 17 variables. De las variables presentes las primeras 3 (Elevación, Longitud y Latitud) corresponden a la localización de los ambientes.</p>
+<p>Las variables son continuas y cada una está medida de manera distintas por lo que cada una tiene su unidad y a su vez su variación. Debido a esto es necesario <strong>estandarizar</strong> y <strong>centrar</strong> las variables. La estandarización simplemente le resta a cada observación el promedio de la variable y la divide por la desviación estandar de la variable. Mientras que centrar significa que se mueve la nube de puntos de los individuos al centro de gravedad.</p>
+<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="multi1.html#cb125-1" aria-hidden="true" tabindex="-1"></a>?scale <span class="co"># el comando para estandarizar los datos</span></span></code></pre></div>
+<pre><code>## starting httpd help server ... done</code></pre>
+<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="multi1.html#cb127-1" aria-hidden="true" tabindex="-1"></a>datos.stand <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="fu">scale</span>(datos [<span class="dv">4</span><span class="sc">:</span><span class="dv">17</span>], <span class="at">center =</span> T))</span></code></pre></div>
+<p>Para este ejemplo solo usé las variables físico-químicas, para ello utilicé los corchetes e indiqué el número de columnas que quería se estandarizaran, de la columna 4 a la columna 17: <strong>[4:17]</strong>.</p>
+<p>El comando para realizar el análisis de componentes principales , está en el paquete FactoMiner. Este paquete es muy versatil y se mantiene actualizado. Aqui adjunto el link:</p>
+<p><a href="http://factominer.free.fr">FactoMineR</a></p>
+<pre><code>## Warning: package &#39;FactoMineR&#39; was built under R version 4.2.3</code></pre>
+<pre><code>## Warning in PCA(datos.stand[-2], graph = FALSE): Missing values are imputed by
+## the mean of the variable: you should use the imputePCA function of the missMDA
+## package</code></pre>
+<p>¡Recibimos un <strong><em>mensaje de advertencia</em></strong>! Este mensaje nos indica que hay valores faltantes y que el comando va a usar el promedio de la variable en las celdas donde falten datos.</p>
+<p><strong>Importante</strong>: algunos análisis son muy sensibles a la falta de datos.</p>
+<p>¡Listo hemos realizado el analisis de ACP! El objeto “res.pca” es una lista que tiene toda la información.</p>
+<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="multi1.html#cb130-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(res.pca)</span></code></pre></div>
+<pre><code>## **Results for the Principal Component Analysis (PCA)**
+## The analysis was performed on 52 individuals, described by 13 variables
+## *The results are available in the following objects:
+## 
+##    name               description                          
+## 1  &quot;$eig&quot;             &quot;eigenvalues&quot;                        
+## 2  &quot;$var&quot;             &quot;results for the variables&quot;          
+## 3  &quot;$var$coord&quot;       &quot;coord. for the variables&quot;           
+## 4  &quot;$var$cor&quot;         &quot;correlations variables - dimensions&quot;
+## 5  &quot;$var$cos2&quot;        &quot;cos2 for the variables&quot;             
+## 6  &quot;$var$contrib&quot;     &quot;contributions of the variables&quot;     
+## 7  &quot;$ind&quot;             &quot;results for the individuals&quot;        
+## 8  &quot;$ind$coord&quot;       &quot;coord. for the individuals&quot;         
+## 9  &quot;$ind$cos2&quot;        &quot;cos2 for the individuals&quot;           
+## 10 &quot;$ind$contrib&quot;     &quot;contributions of the individuals&quot;   
+## 11 &quot;$call&quot;            &quot;summary statistics&quot;                 
+## 12 &quot;$call$centre&quot;     &quot;mean of the variables&quot;              
+## 13 &quot;$call$ecart.type&quot; &quot;standard error of the variables&quot;    
+## 14 &quot;$call$row.w&quot;      &quot;weights for the individuals&quot;        
+## 15 &quot;$call$col.w&quot;      &quot;weights for the variables&quot;</code></pre>
+<div id="análisis-de-los-resultados" class="section level4 hasAnchor" number="4.1.3.1">
+<h4><span class="header-section-number">4.1.3.1</span> Análisis de los resultados<a href="multi1.html#análisis-de-los-resultados" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>El ACP calcula los autovalores (eigenvalues) y autovectores propios a partir de la matriz de covarianzas. El cálculo de los vectores depende de la cantidad de dimensiones de los datos. Los autovalores no son más que la magnitud de los autovectores, ambos ayudan a calcular los Componentes principales.</p>
+<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="multi1.html#cb132-1" aria-hidden="true" tabindex="-1"></a>eigenvalues <span class="ot">&lt;-</span> res.pca<span class="sc">$</span>eig<span class="co"># eigenvalues</span></span>
+<span id="cb132-2"><a href="multi1.html#cb132-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(eigenvalues[, <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>])</span></code></pre></div>
+<pre><code>##        eigenvalue percentage of variance cumulative percentage of variance
+## comp 1  4.1797364              32.151818                          32.15182
+## comp 2  3.5439409              27.261084                          59.41290
+## comp 3  1.3449952              10.346117                          69.75902
+## comp 4  1.0490855               8.069888                          77.82891
+## comp 5  0.9618192               7.398609                          85.22752
+## comp 6  0.8132415               6.255704                          91.48322</code></pre>
+<p>En la primer columna se observa el valor del eigenvalue, en la segunda columna se observa el porcentaje de variación explicada. En la tercera columna se muestra el porcentaje de variación acumulada.</p>
+<p>Un paquete útil para mejorar los gráficos de los analisis multivariados es <strong>factoextra</strong>.</p>
+<pre><code>## Warning: package &#39;factoextra&#39; was built under R version 4.2.3</code></pre>
+<pre><code>## Loading required package: ggplot2</code></pre>
+<pre><code>## Warning: package &#39;ggplot2&#39; was built under R version 4.2.2</code></pre>
+<pre><code>## Welcome! Want to learn more? See two factoextra-related books at https://goo.gl/ve3WBa</code></pre>
+<p><img src="04-multi1_b_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p>Los <strong>eigenvalues</strong> se utilizan para determinar el número de componentes que deben conservarse. Existen dos maneras frecuentes de analizar estos eigenvalues, por un lado muchos investigadores utilizan los eigenvalues &gt; 1. Otra manera de determinar el número de componentes es por la cantidad de variación explicada, muchos usan &gt; 70% de la variabilidad de los datos.</p>
+<p>En este ejemplo, los primeros dos planos solo explican un 59.5% de la variabilidad de los datos y al usar un 3 eje se explica 69.8%. Decido usar 3 ejes para describir estos datos.</p>
+</div>
+<div id="visualizar-los-datos" class="section level4 hasAnchor" number="4.1.3.2">
+<h4><span class="header-section-number">4.1.3.2</span> Visualizar los datos<a href="multi1.html#visualizar-los-datos" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Ahora vamos a visualizar los tres ejes. Como habíamos dicho previamente, el ACP genera gráficos de los individuos y de las variables. Actualmente es más frecuente usar gráficos en los que se observen ambos: los individuos y las variables. Este tipo de gráficos se denomina biplots.</p>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="multi1.html#cb138-1" aria-hidden="true" tabindex="-1"></a>?fviz_pca_biplot</span>
+<span id="cb138-2"><a href="multi1.html#cb138-2" aria-hidden="true" tabindex="-1"></a><span class="fu">fviz_pca_biplot</span>(res.pca,  <span class="at">repel=</span><span class="cn">TRUE</span>, <span class="at">invisible =</span> <span class="st">&quot;quali&quot;</span>)<span class="sc">+</span><span class="fu">theme_classic</span>()</span></code></pre></div>
+<pre><code>## Warning: ggrepel: 38 unlabeled data points (too many overlaps). Consider
+## increasing max.overlaps</code></pre>
+<p><img src="04-multi1_b_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p>El gráfico muestra los ejes o componentes 1 y 2. A simple vista se observa que algunos individuos, como SL_34 por ejemplo es la muestra que tiene mas DOC (carbono orgánico disuelto), mientras que la muestra SL_50 es la que presentó la mayor cantidad de POM (materia orgánica particulada).</p>
+<p><em>Interpretación</em>: el primer componente (Dim1 32.%) divide a las muestras que tienen más DOC, más conductividad, más TP hacía la derecha del gráfico. El componente 2, parece que divide a las muestras de acuerdo a la POM, la clorofila a, la salinidad.</p>
+<p>Ahora vamos a ver el componente 1 vs el componente 3.</p>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="multi1.html#cb140-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fviz_pca_biplot</span>(res.pca, <span class="at">axes=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>),  <span class="at">repel=</span><span class="cn">TRUE</span>, <span class="at">invisible =</span> <span class="st">&quot;quali&quot;</span>)<span class="sc">+</span><span class="fu">theme_classic</span>()</span></code></pre></div>
+<pre><code>## Warning: ggrepel: 20 unlabeled data points (too many overlaps). Consider
+## increasing max.overlaps</code></pre>
+<p><img src="04-multi1_b_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p>Una función importante del paquete FactoMiner, es el comando dimdesc. El mismo se utiliza para identificar las variables más significativamente asociadas a un componente.</p>
+<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="multi1.html#cb142-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dimdesc</span>(res.pca, <span class="at">axes =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>), <span class="at">proba =</span> <span class="fl">0.05</span>)</span></code></pre></div>
+<pre><code>## $Dim.1
+## 
+## Link between the variable and the continuous variables (R-square)
+## =================================================================================
+##              correlation      p.value
+## SPM            0.8005755 1.052112e-12
+## TP             0.7292919 8.700526e-10
+## DOC            0.7269277 1.048135e-09
+## Conductivity   0.6820821 2.578475e-08
+## TDP            0.6440372 2.589279e-07
+## POM            0.5824318 5.906561e-06
+## TDON           0.5749478 8.275646e-06
+## TON            0.5672584 1.160335e-05
+## Chl.a          0.4838790 2.787599e-04
+## pH             0.4499121 8.187113e-04
+## DO             0.3463183 1.190357e-02
+## 
+## $Dim.2
+## 
+## Link between the variable and the continuous variables (R-square)
+## =================================================================================
+##              correlation      p.value
+## POM            0.7266597 1.070368e-09
+## Chl.a          0.7136585 2.879319e-09
+## NTU            0.5945254 3.363780e-06
+## TON            0.5361705 4.189718e-05
+## DO             0.4590453 6.194896e-04
+## TDON           0.4178871 2.052244e-03
+## Conductivity  -0.4936215 2.003631e-04
+## TP            -0.5713221 9.715629e-06
+## DOC           -0.6187953 1.011371e-06
+## TDP           -0.6865882 1.917673e-08
+## 
+## $Dim.3
+## 
+## Link between the variable and the continuous variables (R-square)
+## =================================================================================
+##      correlation      p.value
+## pH     0.4460824 9.181604e-04
+## TON    0.4261880 1.631046e-03
+## TDON   0.3729687 6.466085e-03
+## SPM   -0.5178939 8.417748e-05
+## NTU   -0.6197587 9.622302e-07</code></pre>
+<p>Estos resultados nos permiten asociar variables a los distintos ejes/componentes. Se puede inclusive establecer un criterio ya que usa coeficientes de correlación. Para este ejemplo, se puede usar las variables que tienen una correlación &gt;0.6 con el eje. Para el componente principal 1, que explica (32.2%), las variables asociadas a este componente son DOC, TP, TDP, conductivity y SPM. Para el componente principal 2 (27.3%), está asociado a POM, clorofila a y NTU (salinidad). Finalmente, el componente principal 3 (10.3%) estaría asociado de manera negativa solo a la salinidad (NTU). El signo de la correlación indica la dirección de la correlación.</p>
+</div>
+</div>
+<div id="crear-una-condición-para-colorear-los-individuos" class="section level3 hasAnchor" number="4.1.4">
+<h3><span class="header-section-number">4.1.4</span> Crear una condición para colorear los individuos<a href="multi1.html#crear-una-condición-para-colorear-los-individuos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A veces es útil crear alguna condición (variable categórica) para colorear los individuos y quizás empezar a ver patrones más claros. En este voy a usar la variable “secchi” para colorear a los individuos. Si la variable secchi es menor o igual a 20 entonces voy a llamar a la laguna como “turbia” mientras que si es mayor a 20, la voy a denominar laguna “clara”.</p>
+<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="multi1.html#cb144-1" aria-hidden="true" tabindex="-1"></a>datos<span class="sc">$</span>condicion <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(<span class="fu">ifelse</span>(datos<span class="sc">$</span>Secchi<span class="sc">&lt;=</span><span class="dv">20</span>, <span class="st">&quot;Turbia&quot;</span>, <span class="st">&quot;Clara&quot;</span>))</span></code></pre></div>
+<p>Cree una nueva variable llamada condicion</p>
+<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="multi1.html#cb145-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fviz_pca_biplot</span>(res.pca,  <span class="at">repel=</span><span class="cn">TRUE</span>, <span class="at">invisible =</span> <span class="st">&quot;quali&quot;</span>, <span class="at">habillage =</span> datos<span class="sc">$</span>condicion, <span class="at">geom =</span> (<span class="st">&quot;point&quot;</span>))<span class="sc">+</span><span class="fu">theme_classic</span>()</span></code></pre></div>
+<p><img src="04-multi1_b_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+</div>
+<div id="refinando-el-modelo" class="section level3 hasAnchor" number="4.1.5">
+<h3><span class="header-section-number">4.1.5</span> Refinando el modelo<a href="multi1.html#refinando-el-modelo" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>El APC explica aproximadamente un 69% usando tres ejes. En el próximo paso vamos a seleccionar solo las variables disueltas: DOC, pH, TDON, DO, TDP, chla. y conductivity.</p>
+<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="multi1.html#cb146-1" aria-hidden="true" tabindex="-1"></a>data.stan.sel <span class="ot">&lt;-</span>datos.stand [,<span class="fu">c</span>(<span class="dv">3</span><span class="sc">:</span><span class="dv">5</span>,<span class="dv">8</span>,<span class="dv">12</span><span class="sc">:</span><span class="dv">14</span>)]</span></code></pre></div>
+<p>Vuelvo a realizar el analisis de ACP:</p>
+<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="multi1.html#cb147-1" aria-hidden="true" tabindex="-1"></a>res.pca2 <span class="ot">&lt;-</span><span class="fu">PCA</span>(data.stan.sel, <span class="at">graph=</span><span class="cn">FALSE</span>)</span></code></pre></div>
+<pre><code>## Warning in PCA(data.stan.sel, graph = FALSE): Missing values are imputed by
+## the mean of the variable: you should use the imputePCA function of the missMDA
+## package</code></pre>
+<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="multi1.html#cb149-1" aria-hidden="true" tabindex="-1"></a>eigenvalues2 <span class="ot">&lt;-</span> res.pca2<span class="sc">$</span>eig<span class="co"># eigenvalues</span></span>
+<span id="cb149-2"><a href="multi1.html#cb149-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(eigenvalues2[, <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>])</span></code></pre></div>
+<pre><code>##        eigenvalue percentage of variance cumulative percentage of variance
+## comp 1  2.7477587              39.253696                          39.25370
+## comp 2  1.8792045              26.845778                          66.09947
+## comp 3  0.8578634              12.255191                          78.35467
+## comp 4  0.7497849              10.711212                          89.06588
+## comp 5  0.4279332               6.113331                          95.17921
+## comp 6  0.2531477               3.616395                          98.79560</code></pre>
+<p>Biplot:</p>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="multi1.html#cb151-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fviz_pca_biplot</span>(res.pca2,  <span class="at">repel=</span><span class="cn">TRUE</span>, <span class="at">invisible =</span> <span class="st">&quot;quali&quot;</span>, <span class="at">habillage =</span> datos<span class="sc">$</span>condicion, <span class="at">geom =</span> (<span class="st">&quot;point&quot;</span>))<span class="sc">+</span><span class="fu">theme_classic</span>()</span></code></pre></div>
+<p><img src="04-multi1_b_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="multi1.html#cb152-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fviz_pca_biplot</span>(res.pca2,  <span class="at">axes=</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>), <span class="at">repel=</span><span class="cn">TRUE</span>, <span class="at">invisible =</span> <span class="st">&quot;quali&quot;</span>, <span class="at">habillage =</span> datos<span class="sc">$</span>condicion, <span class="at">geom =</span> (<span class="st">&quot;point&quot;</span>))<span class="sc">+</span><span class="fu">theme_classic</span>()</span></code></pre></div>
+<p><img src="04-multi1_b_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
+<p>El nuevo ACP con las variables seleccionadas, explica un 78% de la variabilidad total de los datos, teniendo en cuenta los primeros 3 ejes. Considero que este modelo refinado es mucho mejor que el anterior.</p>
+</div>
+</div>
+<div id="nmds" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> NMDS<a href="multi1.html#nmds" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>El escalamiento multidimensional no métrico, mejor conocido por sus siglas en ingles (<strong>Non-metric Multidimensional Scaling</strong>), es un método de análisis estadístico multivariado que representa mediciones de <em>similaridad</em> (o disimilaridad) entre pares de objetos como distancias entre puntos de un espacio de dimensión reducida. El objetivo fundamental del <strong>NMDS</strong> es generar una representación gráfica de los objetos en un espacio de modo que sus posiciones relativas sean el reflejo de su proximidad. A diferencia de otros métodos de escalamientos, el NMDS utiliza ordenes de rango, por lo que es una técnica extremadamente flexible que puede adaptarse a una gran variedad de datos.</p>
+<pre><code>## Warning: package &#39;vegan&#39; was built under R version 4.2.3</code></pre>
+<pre><code>## Loading required package: permute</code></pre>
+<pre><code>## Loading required package: lattice</code></pre>
+<pre><code>## This is vegan 2.6-4</code></pre>
+<p>Vamos a usar las variables seleccionadas en el segundo ACP, es decir las variables más relacionadas con la fracción disuelta.</p>
+<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="multi1.html#cb157-1" aria-hidden="true" tabindex="-1"></a>disueltos <span class="ot">&lt;-</span> datos[,<span class="fu">c</span>(<span class="dv">6</span><span class="sc">:</span><span class="dv">8</span>,<span class="dv">11</span>,<span class="dv">15</span><span class="sc">:</span><span class="dv">17</span>)]</span>
+<span id="cb157-2"><a href="multi1.html#cb157-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(disueltos)</span></code></pre></div>
+<pre><code>##        DO               pH         Conductivity          TDON     
+##  Min.   : 5.000   Min.   :8.000   Min.   :  0.320   Min.   :1926  
+##  1st Qu.: 8.725   1st Qu.:8.557   1st Qu.:  1.215   1st Qu.:3052  
+##  Median :10.300   Median :8.795   Median :  2.615   Median :3478  
+##  Mean   :10.238   Mean   :8.762   Mean   :  7.968   Mean   :3790  
+##  3rd Qu.:11.050   3rd Qu.:8.982   3rd Qu.:  5.513   3rd Qu.:4356  
+##  Max.   :20.000   Max.   :9.400   Max.   :202.100   Max.   :7235  
+##                                                                   
+##       TDP             Chl.a             DOC         
+##  Min.   :   0.1   Min.   :  1.58   Min.   :   1.26  
+##  1st Qu.: 114.0   1st Qu.: 15.80   1st Qu.:  12.36  
+##  Median : 302.0   Median : 52.05   Median :  19.45  
+##  Mean   : 560.3   Mean   : 87.80   Mean   :  93.22  
+##  3rd Qu.: 624.0   3rd Qu.: 89.13   3rd Qu.:  97.58  
+##  Max.   :4140.0   Max.   :981.06   Max.   :1010.00  
+##                                    NA&#39;s   :1</code></pre>
+<p>Algunos análisis exploratorios multivariados son sensibles a los datos faltantes. Como se puede observar, la variable DOC tiene un dato faltante. En este caso, lo mejor es sacar esa fila del análisis.</p>
+<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="multi1.html#cb159-1" aria-hidden="true" tabindex="-1"></a>disueltos <span class="ot">&lt;-</span> disueltos[<span class="sc">-</span><span class="dv">17</span>,]</span>
+<span id="cb159-2"><a href="multi1.html#cb159-2" aria-hidden="true" tabindex="-1"></a>condicion <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(datos<span class="sc">$</span>condicion)</span>
+<span id="cb159-3"><a href="multi1.html#cb159-3" aria-hidden="true" tabindex="-1"></a>condicion <span class="ot">&lt;-</span> condicion [<span class="sc">-</span><span class="fu">c</span>(<span class="dv">17</span>),]<span class="do">## hay que sacar la misma fila de la variable condicion</span></span></code></pre></div>
+<p>Ahora se estandarizan los datos y luego se los convierte a distancias euclidianas para luego realizar el análisis.</p>
+<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="multi1.html#cb160-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2306</span>)<span class="co"># generar resultados reproducibles</span></span>
+<span id="cb160-2"><a href="multi1.html#cb160-2" aria-hidden="true" tabindex="-1"></a>dis.stan <span class="ot">&lt;-</span><span class="fu">decostand</span>(disueltos, <span class="st">&quot;stand&quot;</span>) <span class="co"># estandarizar: variables ambientales en diferentes unidades</span></span>
+<span id="cb160-3"><a href="multi1.html#cb160-3" aria-hidden="true" tabindex="-1"></a>dis.dist <span class="ot">&lt;-</span><span class="fu">vegdist</span>(dis.stan, <span class="st">&quot;euc&quot;</span>) <span class="co"># distancia euclidiana</span></span>
+<span id="cb160-4"><a href="multi1.html#cb160-4" aria-hidden="true" tabindex="-1"></a>res.nmds <span class="ot">&lt;-</span><span class="fu">metaMDS</span>(dis.dist,  <span class="at">trymax =</span> <span class="dv">500</span>) <span class="co"># NMDS</span></span></code></pre></div>
+<pre><code>## Run 0 stress 0.08172658 
+## Run 1 stress 0.08190544 
+## ... Procrustes: rmse 0.01185868  max resid 0.06039221 
+## Run 2 stress 0.08129024 
+## ... New best solution
+## ... Procrustes: rmse 0.01390953  max resid 0.05964353 
+## Run 3 stress 0.08801438 
+## Run 4 stress 0.08189141 
+## Run 5 stress 0.0846288 
+## Run 6 stress 0.08169404 
+## ... Procrustes: rmse 0.02381188  max resid 0.116934 
+## Run 7 stress 0.08336852 
+## Run 8 stress 0.08169061 
+## ... Procrustes: rmse 0.0190035  max resid 0.08992999 
+## Run 9 stress 0.09152335 
+## Run 10 stress 0.08174482 
+## ... Procrustes: rmse 0.01178546  max resid 0.04261408 
+## Run 11 stress 0.08704684 
+## Run 12 stress 0.08073759 
+## ... New best solution
+## ... Procrustes: rmse 0.007340069  max resid 0.03921827 
+## Run 13 stress 0.08074268 
+## ... Procrustes: rmse 0.02379549  max resid 0.1167022 
+## Run 14 stress 0.08214195 
+## Run 15 stress 0.0819048 
+## Run 16 stress 0.08173675 
+## Run 17 stress 0.08722591 
+## Run 18 stress 0.08190564 
+## Run 19 stress 0.0877217 
+## Run 20 stress 0.08117769 
+## ... Procrustes: rmse 0.008500534  max resid 0.04099969 
+## Run 21 stress 0.08109837 
+## ... Procrustes: rmse 0.04191297  max resid 0.2040888 
+## Run 22 stress 0.08142552 
+## Run 23 stress 0.08713932 
+## Run 24 stress 0.08215738 
+## Run 25 stress 0.08117084 
+## ... Procrustes: rmse 0.01652584  max resid 0.07695317 
+## Run 26 stress 0.08088512 
+## ... Procrustes: rmse 0.009314285  max resid 0.04562758 
+## Run 27 stress 0.08161162 
+## Run 28 stress 0.08276532 
+## Run 29 stress 0.08138922 
+## Run 30 stress 0.08708527 
+## Run 31 stress 0.0814658 
+## Run 32 stress 0.08666174 
+## Run 33 stress 0.08186204 
+## Run 34 stress 0.08801345 
+## Run 35 stress 0.08087082 
+## ... Procrustes: rmse 0.008549763  max resid 0.04176883 
+## Run 36 stress 0.08143206 
+## Run 37 stress 0.08068018 
+## ... New best solution
+## ... Procrustes: rmse 0.007515726  max resid 0.03743025 
+## Run 38 stress 0.08102709 
+## ... Procrustes: rmse 0.03204386  max resid 0.1556518 
+## Run 39 stress 0.08473582 
+## Run 40 stress 0.09152295 
+## Run 41 stress 0.08068146 
+## ... Procrustes: rmse 0.00815311  max resid 0.04025691 
+## Run 42 stress 0.09152335 
+## Run 43 stress 0.08245253 
+## Run 44 stress 0.08143243 
+## Run 45 stress 0.08718439 
+## Run 46 stress 0.08137234 
+## Run 47 stress 0.08720687 
+## Run 48 stress 0.08085884 
+## ... Procrustes: rmse 0.01546736  max resid 0.07652651 
+## Run 49 stress 0.08111344 
+## ... Procrustes: rmse 0.03515309  max resid 0.1708126 
+## Run 50 stress 0.08179221 
+## Run 51 stress 0.08169834 
+## Run 52 stress 0.08675948 
+## Run 53 stress 0.08797076 
+## Run 54 stress 0.09155446 
+## Run 55 stress 0.08774277 
+## Run 56 stress 0.08068016 
+## ... New best solution
+## ... Procrustes: rmse 0.00136907  max resid 0.008143052 
+## ... Similar to previous best
+## *** Best solution repeated 1 times</code></pre>
+<p><strong>Una regla general</strong>: si el stress &lt; 0,05 proporciona una excelente representación en dimensiones reducidas, &lt; 0,1 es genial, &lt; 0,2 es bueno/ok, y un stress &lt; 0,3 proporciona una mala representación. <strong>Para recordar</strong>: ¡un stress alta es malo, un <em>stress bajo es bueno</em>!</p>
+<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="multi1.html#cb162-1" aria-hidden="true" tabindex="-1"></a>res.nmds</span></code></pre></div>
+<pre><code>## 
+## Call:
+## metaMDS(comm = dis.dist, trymax = 500) 
+## 
+## global Multidimensional Scaling using monoMDS
+## 
+## Data:     dis.dist 
+## Distance: euclidean 
+## 
+## Dimensions: 2 
+## Stress:     0.08068016 
+## Stress type 1, weak ties
+## Best solution was repeated 1 time in 56 tries
+## The best solution was from try 56 (random start)
+## Scaling: centring, PC rotation 
+## Species: scores missing</code></pre>
+<p>El stress es de 0.08 que es menor que 0.1 con lo cual la representación está bastante bien. Ahora vamos a graficar estos resultados:</p>
+<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="multi1.html#cb164-1" aria-hidden="true" tabindex="-1"></a>{<span class="fu">plot</span>(res.nmds, <span class="at">type=</span><span class="st">&quot;n&quot;</span>)</span>
+<span id="cb164-2"><a href="multi1.html#cb164-2" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(res.nmds, <span class="at">display =</span> <span class="st">&quot;site&quot;</span>, <span class="at">cex=</span><span class="fl">0.6</span>, <span class="at">select=</span><span class="fu">which</span>(condicion<span class="sc">==</span><span class="st">&quot;Clara&quot;</span>), <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">col=</span><span class="st">&quot;black&quot;</span>)</span>
+<span id="cb164-3"><a href="multi1.html#cb164-3" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(res.nmds, <span class="at">display =</span> <span class="st">&quot;site&quot;</span>, <span class="at">cex=</span><span class="fl">0.6</span>, <span class="at">select=</span><span class="fu">which</span>(condicion<span class="sc">==</span><span class="st">&quot;Turbia&quot;</span>), <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">col=</span><span class="st">&quot;red2&quot;</span>)</span>
+<span id="cb164-4"><a href="multi1.html#cb164-4" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="at">cex=</span><span class="fl">0.5</span>, <span class="at">box.col=</span><span class="cn">NA</span>,<span class="at">legend=</span><span class="fu">paste</span>(<span class="st">&quot;Stress =&quot;</span>,<span class="fu">round</span>(res.nmds<span class="sc">$</span>stress, <span class="dv">3</span>)))</span>
+<span id="cb164-5"><a href="multi1.html#cb164-5" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;bottomright&quot;</span>, <span class="at">cex=</span><span class="fl">0.6</span>, <span class="at">box.col=</span><span class="cn">NA</span>,</span>
+<span id="cb164-6"><a href="multi1.html#cb164-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">legend=</span><span class="fu">c</span>(<span class="st">&quot;Clara&quot;</span>, <span class="st">&quot;Turbia&quot;</span>), <span class="at">pch=</span><span class="dv">19</span>, <span class="at">col=</span><span class="fu">c</span>(<span class="st">&quot;black&quot;</span>,<span class="st">&quot;red2&quot;</span>))}</span></code></pre></div>
+<pre><code>## species scores not available</code></pre>
+<p><img src="04-multi1_b_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
+<p>El escalamiento es parecido al resultado del ACP, en donde se pueden observar que hay un solapamiento importante en el tipo de lagunas.</p>
+</div>
+<div id="permanova" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> PERMANOVA<a href="multi1.html#permanova" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>El análisis multivariante de permutaciones de la varianza o PerMANOVA, es una alternativa no paramétrica a la prueba de ANOVA multivariada. Es apropiado con conjuntos de múltiples variables que no cumples los supuestos, por ejemplo, el de normalidad. Además, se puede utilizar para datos muy sesgados, ordinales o cualitativos, y en datos de comunidades ecológicas, datos de comunidades microbiana o en datos genéticos. Su funcionamiento incluye una matriz de distancias construida a partir de cualquier medida de disimilitud. Este análisis se utiliza para comparar grupos de objetos y probar con la hipótesis nula de que los centroides y la dispersión de los grupos son equivalentes. Este análisis suele acompañar a los gráficos de ordenamiento tales como el NMDS.</p>
+<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="multi1.html#cb166-1" aria-hidden="true" tabindex="-1"></a>res.perma <span class="ot">&lt;-</span> <span class="fu">adonis2</span>(dis.dist<span class="sc">~</span>condicion, <span class="at">method =</span> <span class="st">&quot;euclidean&quot;</span>, <span class="at">permutations =</span> <span class="dv">599</span>)</span>
+<span id="cb166-2"><a href="multi1.html#cb166-2" aria-hidden="true" tabindex="-1"></a>res.perma</span></code></pre></div>
+<pre><code>## Permutation test for adonis under reduced model
+## Terms added sequentially (first to last)
+## Permutation: free
+## Number of permutations: 599
+## 
+## adonis2(formula = dis.dist ~ condicion, permutations = 599, method = &quot;euclidean&quot;)
+##           Df SumOfSqs      R2      F Pr(&gt;F)  
+## condicion  1    14.03 0.04009 2.0462   0.06 .
+## Residual  49   335.97 0.95991                
+## Total     50   350.00 1.00000                
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>Para comparar los distintos grupos se pueden hacer analisis a posteriori, de comparaciones entre los grupos.</p>
+<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="multi1.html#cb168-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pairwiseAdonis)</span></code></pre></div>
+<pre><code>## Loading required package: cluster</code></pre>
+<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="multi1.html#cb170-1" aria-hidden="true" tabindex="-1"></a>res.pos<span class="ot">&lt;-</span> <span class="fu">pairwise.adonis</span>(dis.dist, condicion, <span class="at">sim.method =</span> <span class="st">&quot;euclidean&quot;</span>, <span class="at">p.adjust.m =</span> <span class="st">&quot;bonferroni&quot;</span>)</span>
+<span id="cb170-2"><a href="multi1.html#cb170-2" aria-hidden="true" tabindex="-1"></a>res.pos</span></code></pre></div>
+<pre><code>##             pairs Df SumsOfSqs  F.Model         R2 p.value p.adjusted sig
+## 1 Clara vs Turbia  1  14.03004 2.046231 0.04008584   0.048      0.048   .</code></pre>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="4">
+<li id="fn4"><p><a href="mailto:garciapatriciaelizabeth@gmail.com" class="email">garciapatriciaelizabeth@gmail.com</a><a href="multi1.html#fnref4" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="gam.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="multi2.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/04-multi1_b.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-LimnoR.pdf", "bookdown-LimnoR.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

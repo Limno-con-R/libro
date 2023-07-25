@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Unidad 1 Introducción a R y RStudio | bookdown-LimnoR</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Unidad 1 Introducción a R y RStudio | bookdown-LimnoR" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Unidad 1 Introducción a R y RStudio | bookdown-LimnoR" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="regmul.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>LIMNOLOGIA CON R</a>
+<ul>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#contenido"><i class="fa fa-check"></i><b>0.1</b> Contenido</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introducción a R y RStudio</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#instalación"><i class="fa fa-check"></i><b>1.1</b> Instalación</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#rstudio"><i class="fa fa-check"></i><b>1.2</b> RStudio</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#a-trabajar"><i class="fa fa-check"></i><b>1.3</b> A trabajar!</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="intro.html"><a href="intro.html#crear-un-proyecto"><i class="fa fa-check"></i><b>1.3.1</b> Crear un <strong>Proyecto</strong></a></li>
+<li class="chapter" data-level="1.3.2" data-path="intro.html"><a href="intro.html#crear-un-r-script"><i class="fa fa-check"></i><b>1.3.2</b> Crear un <strong>R Script</strong></a></li>
+<li class="chapter" data-level="1.3.3" data-path="intro.html"><a href="intro.html#instalar-y-cargar-paquetes"><i class="fa fa-check"></i><b>1.3.3</b> Instalar y cargar <strong>paquetes</strong></a></li>
+<li class="chapter" data-level="1.3.4" data-path="intro.html"><a href="intro.html#importar-datos"><i class="fa fa-check"></i><b>1.3.4</b> Importar <strong>datos</strong></a></li>
+<li class="chapter" data-level="1.3.5" data-path="intro.html"><a href="intro.html#visualizar-y-manipular-datos"><i class="fa fa-check"></i><b>1.3.5</b> Visualizar y manipular <strong>datos</strong></a></li>
+<li class="chapter" data-level="1.3.6" data-path="intro.html"><a href="intro.html#gráficos-exploratorios-básicos"><i class="fa fa-check"></i><b>1.3.6</b> Gráficos exploratorios básicos</a></li>
+<li class="chapter" data-level="1.3.7" data-path="intro.html"><a href="intro.html#recursos-extra-recomendados"><i class="fa fa-check"></i><b>1.3.7</b> Recursos extra recomendados</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="regmul.html"><a href="regmul.html"><i class="fa fa-check"></i><b>2</b> Correlaciones y regresión múltiple</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="regmul.html"><a href="regmul.html#caso-de-estudio"><i class="fa fa-check"></i><b>2.1</b> Caso de estudio</a></li>
+<li class="chapter" data-level="2.2" data-path="regmul.html"><a href="regmul.html#leer-y-emprolijar-los-datos"><i class="fa fa-check"></i><b>2.2</b> Leer y emprolijar los datos</a></li>
+<li class="chapter" data-level="2.3" data-path="regmul.html"><a href="regmul.html#correlaciones"><i class="fa fa-check"></i><b>2.3</b> Correlaciones</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="regmul.html"><a href="regmul.html#entre-biomasa-de-morfotipos-bacterianos"><i class="fa fa-check"></i><b>2.3.1</b> Entre biomasa de morfotipos bacterianos</a></li>
+<li class="chapter" data-level="2.3.2" data-path="regmul.html"><a href="regmul.html#entre-variables-abióticas"><i class="fa fa-check"></i><b>2.3.2</b> Entre variables abióticas</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="regmul.html"><a href="regmul.html#regresiones-múltiples"><i class="fa fa-check"></i><b>2.4</b> Regresiones múltiples</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="regmul.html"><a href="regmul.html#selección-automática-de-variables"><i class="fa fa-check"></i><b>2.4.1</b> Selección automática de variables</a></li>
+<li class="chapter" data-level="2.4.2" data-path="regmul.html"><a href="regmul.html#selección-manual-de-variables"><i class="fa fa-check"></i><b>2.4.2</b> Selección manual de variables</a></li>
+<li class="chapter" data-level="2.4.3" data-path="regmul.html"><a href="regmul.html#evaluación-e-interpretación-del-modelo-final"><i class="fa fa-check"></i><b>2.4.3</b> Evaluación e interpretación del modelo final</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="regmul.html"><a href="regmul.html#a-modo-de-conclusión"><i class="fa fa-check"></i><b>2.5</b> A modo de conclusión</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="gam.html"><a href="gam.html"><i class="fa fa-check"></i><b>3</b> Modelos Aditivos Generalizados</a>
+<ul>
+<li class="chapter" data-level="3.0.1" data-path="gam.html"><a href="gam.html#aclaración"><i class="fa fa-check"></i><b>3.0.1</b> Aclaración</a></li>
+<li class="chapter" data-level="3.1" data-path="gam.html"><a href="gam.html#porqué-usar-modelos-aditivos-generalizados-gams"><i class="fa fa-check"></i><b>3.1</b> ¿Porqué usar Modelos Aditivos Generalizados (GAMs)?</a></li>
+<li class="chapter" data-level="3.2" data-path="gam.html"><a href="gam.html#qué-son-los-gams"><i class="fa fa-check"></i><b>3.2</b> ¿Qué son los GAMs?</a></li>
+<li class="chapter" data-level="3.3" data-path="gam.html"><a href="gam.html#manos-a-la-obra"><i class="fa fa-check"></i><b>3.3</b> Manos a la obra!</a></li>
+<li class="chapter" data-level="3.4" data-path="gam.html"><a href="gam.html#agradecimientos"><i class="fa fa-check"></i><b>3.4</b> Agradecimientos</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="multi1.html"><a href="multi1.html"><i class="fa fa-check"></i><b>4</b> Análisis multivariados I</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="multi1.html"><a href="multi1.html#análisis-de-componentes-principales"><i class="fa fa-check"></i><b>4.1</b> Análisis de Componentes Principales</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="multi1.html"><a href="multi1.html#qué-tipos-de-datos-usa-una-acp"><i class="fa fa-check"></i><b>4.1.1</b> ¿Qué tipos de datos usa una ACP?</a></li>
+<li class="chapter" data-level="4.1.2" data-path="multi1.html"><a href="multi1.html#cómo-funciona-el-análisis"><i class="fa fa-check"></i><b>4.1.2</b> ¿Cómo funciona el análisis?</a></li>
+<li class="chapter" data-level="4.1.3" data-path="multi1.html"><a href="multi1.html#ahora-manos-a-la-obra-miremos-datos"><i class="fa fa-check"></i><b>4.1.3</b> Ahora manos a la obra: miremos datos</a></li>
+<li class="chapter" data-level="4.1.4" data-path="multi1.html"><a href="multi1.html#crear-una-condición-para-colorear-los-individuos"><i class="fa fa-check"></i><b>4.1.4</b> Crear una condición para colorear los individuos</a></li>
+<li class="chapter" data-level="4.1.5" data-path="multi1.html"><a href="multi1.html#refinando-el-modelo"><i class="fa fa-check"></i><b>4.1.5</b> Refinando el modelo</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="multi1.html"><a href="multi1.html#nmds"><i class="fa fa-check"></i><b>4.2</b> NMDS</a></li>
+<li class="chapter" data-level="4.3" data-path="multi1.html"><a href="multi1.html#permanova"><i class="fa fa-check"></i><b>4.3</b> PERMANOVA</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="multi2.html"><a href="multi2.html"><i class="fa fa-check"></i><b>5</b> Análisis multivariados II</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="multi2.html"><a href="multi2.html#introducción"><i class="fa fa-check"></i><b>5.1</b> INTRODUCCIÓN</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="multi2.html"><a href="multi2.html#la-lógica-de-las-técnicas-de-ordenación-restringida-o-canónica-constrained-análisis-de-gradiente-directo"><i class="fa fa-check"></i><b>5.1.1</b> LA LÓGICA DE LAS TÉCNICAS DE ORDENACIÓN RESTRINGIDA O CANÓNICA (“<em>CONSTRAINED</em>”, ANÁLISIS DE GRADIENTE DIRECTO)</a></li>
+<li class="chapter" data-level="5.1.2" data-path="multi2.html"><a href="multi2.html#qué-tipo-de-datos-de-composición-de-especies-se-utilizan-para-el-análisis"><i class="fa fa-check"></i><b>5.1.2</b> ¿Qué tipo de datos de composición de especies se utilizan para el análisis?</a></li>
+<li class="chapter" data-level="5.1.3" data-path="multi2.html"><a href="multi2.html#cómo-saber-si-debo-utilizar-un-método-de-ordenación-de-respuesta-lineal-o-unimodal"><i class="fa fa-check"></i><b>5.1.3</b> ¿Cómo saber si debo utilizar un método de ordenación de respuesta lineal o unimodal?</a></li>
+<li class="chapter" data-level="5.1.4" data-path="multi2.html"><a href="multi2.html#análisis-de-redundancia-rda"><i class="fa fa-check"></i><b>5.1.4</b> <strong>ANÁLISIS DE REDUNDANCIA (RDA)</strong></a></li>
+<li class="chapter" data-level="5.1.5" data-path="multi2.html"><a href="multi2.html#analicemos-estos-aspectos-a-través-de-un-ejemplo-práctico"><i class="fa fa-check"></i><b>5.1.5</b> Analicemos estos aspectos a través de un ejemplo práctico…</a></li>
+<li class="chapter" data-level="5.1.6" data-path="multi2.html"><a href="multi2.html#rda-utilizando-el-paquete-vegan-oksanen-et-al.-2007"><i class="fa fa-check"></i><b>5.1.6</b> RDA utilizando el paquete <strong>vegan</strong> (Oksanen <em>et al.</em>, 2007)</a></li>
+<li class="chapter" data-level="5.1.7" data-path="multi2.html"><a href="multi2.html#seleccionando-las-variables-explicativas-relevantes"><i class="fa fa-check"></i><b>5.1.7</b> Seleccionando las variables explicativas relevantes</a></li>
+<li class="chapter" data-level="5.1.8" data-path="multi2.html"><a href="multi2.html#rda-basado-en-matriz-de-distancia-distance-based-rda-db-rda"><i class="fa fa-check"></i><b>5.1.8</b> RDA basado en matriz de distancia (“Distance-based RDA”, db-RDA)</a></li>
+<li class="chapter" data-level="5.1.9" data-path="multi2.html"><a href="multi2.html#análisis-de-correspondencia-canónica-cca"><i class="fa fa-check"></i><b>5.1.9</b> <strong>ANÁLISIS DE CORRESPONDENCIA CANÓNICA (CCA)</strong></a></li>
+<li class="chapter" data-level="5.1.10" data-path="multi2.html"><a href="multi2.html#cca-utilizando-la-función-cca-del-paquete-vegan"><i class="fa fa-check"></i><b>5.1.10</b> CCA utilizando la función <strong>cca()</strong> del paquete <strong>vegan</strong></a></li>
+<li class="chapter" data-level="5.1.11" data-path="multi2.html"><a href="multi2.html#bibliografía-citada-y-de-lectura-recomendada"><i class="fa fa-check"></i><b>5.1.11</b> Bibliografía citada y de lectura recomendada</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="metrix.html"><a href="metrix.html"><i class="fa fa-check"></i><b>6</b> Paquete <em>metrix</em></a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="metrix.html"><a href="metrix.html#que-es-metrix"><i class="fa fa-check"></i><b>6.1</b> ¿Que es Metrix?</a></li>
+<li class="chapter" data-level="6.2" data-path="metrix.html"><a href="metrix.html#conjunto-de-datos-de-ejemplo"><i class="fa fa-check"></i><b>6.2</b> Conjunto de datos de ejemplo</a></li>
+<li class="chapter" data-level="6.3" data-path="metrix.html"><a href="metrix.html#instalar-metrix"><i class="fa fa-check"></i><b>6.3</b> Instalar <em>metrix</em></a></li>
+<li class="chapter" data-level="6.4" data-path="metrix.html"><a href="metrix.html#que-tipos-de-datos-analiza-metrix"><i class="fa fa-check"></i><b>6.4</b> ¿Que tipos de datos analiza <em>metrix</em>?</a></li>
+<li class="chapter" data-level="6.5" data-path="metrix.html"><a href="metrix.html#cargar-datos-de-densidad-de-macroinvertebrados-usando-metrix"><i class="fa fa-check"></i><b>6.5</b> Cargar datos de densidad de macroinvertebrados usando <em>metrix</em></a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="metrix.html"><a href="metrix.html#que-pasa-si-quiero-crear-mi-propio-conjunto-de-datos"><i class="fa fa-check"></i><b>6.5.1</b> ¿QUE PASA SI QUIERO CREAR MI PROPIO CONJUNTO DE DATOS?</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="metrix.html"><a href="metrix.html#cálculo-de-metricas-individuales-y-ecológicas"><i class="fa fa-check"></i><b>6.6</b> Cálculo de metricas individuales y ecológicas</a></li>
+<li class="chapter" data-level="6.7" data-path="metrix.html"><a href="metrix.html#cálculo-de-indices-bióticos"><i class="fa fa-check"></i><b>6.7</b> Cálculo de indices bióticos</a></li>
+<li class="chapter" data-level="6.8" data-path="metrix.html"><a href="metrix.html#futuro-del-paquete"><i class="fa fa-check"></i><b>6.8</b> FUTURO DEL PAQUETE</a></li>
+<li class="chapter" data-level="6.9" data-path="metrix.html"><a href="metrix.html#agradecimientos-1"><i class="fa fa-check"></i><b>6.9</b> AGRADECIMIENTOS</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="diathor.html"><a href="diathor.html"><i class="fa fa-check"></i><b>7</b> Paquetes <em>DiaThor</em> y <em>optimos.prime</em></a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="diathor.html"><a href="diathor.html#paquete-diathor"><i class="fa fa-check"></i><b>7.1</b> Paquete <em>DiaThor</em></a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="diathor.html"><a href="diathor.html#qué-hace"><i class="fa fa-check"></i><b>7.1.1</b> ¿Qué hace?</a></li>
+<li class="chapter" data-level="7.1.2" data-path="diathor.html"><a href="diathor.html#cómo-funciona"><i class="fa fa-check"></i><b>7.1.2</b> ¿Cómo funciona?</a></li>
+<li class="chapter" data-level="7.1.3" data-path="diathor.html"><a href="diathor.html#manos-a-la-obra-1"><i class="fa fa-check"></i><b>7.1.3</b> ¡Manos a la obra!</a></li>
+<li class="chapter" data-level="7.1.4" data-path="diathor.html"><a href="diathor.html#fuentes-de-información-ecológica-de-las-especies"><i class="fa fa-check"></i><b>7.1.4</b> Fuentes de información ecológica de las especies</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="diathor.html"><a href="diathor.html#paquete-optimos.prime"><i class="fa fa-check"></i><b>7.2</b> Paquete <em>optimos.prime</em></a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="diathor.html"><a href="diathor.html#qué-hace-1"><i class="fa fa-check"></i><b>7.2.1</b> ¿Qué hace?</a></li>
+<li class="chapter" data-level="7.2.2" data-path="diathor.html"><a href="diathor.html#cómo-lo-hace"><i class="fa fa-check"></i><b>7.2.2</b> ¿Cómo lo hace?</a></li>
+<li class="chapter" data-level="7.2.3" data-path="diathor.html"><a href="diathor.html#manos-a-la-obra-2"><i class="fa fa-check"></i><b>7.2.3</b> ¡Manos a la obra!</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="intro" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">Unidad 1</span> Introducción a R y RStudio<a href="intro.html#intro" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><strong>Sofía Carusso</strong><a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
+<p>Museo Argentino de Ciencias Naturales Bernardino Rivadavia-CONICET</p>
+<p>&amp; <strong>María Victoria Quiroga</strong><a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
+<p>Instituto Tecnológico de Chascomús (INTECH, UNSAM-CONICET), Escuela de Bio y Nanotecnologías (UNSAM)</p>
+<div id="instalación" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> Instalación<a href="intro.html#instalación" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Seguir las indicaciones de la página <a href="https://posit.co/download/rstudio-desktop/" class="uri">https://posit.co/download/rstudio-desktop/</a> para descargar e instalar <strong>R</strong> y <strong>RStudio</strong>. Es muy importante que lo haga de manera secuencial como se indica, primero <strong>R</strong> y luego <strong>RStudio</strong>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:posit"></span>
+<img src="images/posit.png" alt="Instalación de R y RStudio." width="100%" />
+<p class="caption">
+Figure 1.1: Instalación de R y RStudio.
+</p>
+</div>
+</div>
+<div id="rstudio" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> RStudio<a href="intro.html#rstudio" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>La primera vez que abrimos RStudio la interfaz nos muestra tres paneles:</p>
+<ul>
+<li><em>Panel izquierdo</em> -<strong>Consola</strong>: donde corremos el código</li>
+<li><em>Panel derecho superior</em> -solapa <strong>Entorno</strong>: vemos los datos y funciones que cargamos en la sesión de R.</li>
+<li><em>Panel derecho inferior</em> -solapa <strong>Files</strong>: directorio de trabajo y archivos dentro de la carpeta.</li>
+<li><em>Panel derecho inferior</em> -solapa: <strong>Gráficos</strong>: visualización de plots.</li>
+<li><em>Panel derecho inferior</em> -solapa: <strong>Paquetes</strong>: visualización/carga/actualización de paquetes de R.</li>
+<li><em>Panel derecho inferior</em> -solapa: <strong>Ayuda</strong>: Recuerde que puede buscar ayuda desde esta solapa o tipeado en la consola <code>?nombre_del_comando</code>.</li>
+</ul>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:rstudio"></span>
+<img src="images/rstudio.png" alt="Interfaz de RStudio." width="100%" />
+<p class="caption">
+Figure 1.2: Interfaz de RStudio.
+</p>
+</div>
+</div>
+<div id="a-trabajar" class="section level2 hasAnchor" number="1.3">
+<h2><span class="header-section-number">1.3</span> A trabajar!<a href="intro.html#a-trabajar" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="crear-un-proyecto" class="section level3 hasAnchor" number="1.3.1">
+<h3><span class="header-section-number">1.3.1</span> Crear un <strong>Proyecto</strong><a href="intro.html#crear-un-proyecto" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li>Click en <code>File</code> ( <em>esquina superior izquierda en</em> Figura <a href="intro.html#fig:rstudio">1.2</a>).</li>
+<li>Click en <code>New Project</code>.</li>
+<li>Click en <code>New Directory</code>.</li>
+<li>Click en <code>New Project</code>.</li>
+<li>Escribir el nombre de la carpeta, que será el <strong>Directorio de Trabajo</strong> y contendrá el <strong>Proyecto</strong>. Se puede setear la ubicación de la carpeta haciendo click en <code>Browse</code>. En la Figura <a href="intro.html#fig:project">1.3</a> se creó la carpeta LimonologiaR_U01 en el Escritorio.</li>
+<li>Click en <code>Create Project</code>.</li>
+</ol>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:project"></span>
+<img src="images/project.png" alt="Crear un nuevo proyecto para la Unidad 1." width="75%" />
+<p class="caption">
+Figure 1.3: Crear un nuevo proyecto para la Unidad 1.
+</p>
+</div>
+<p>Ver el <strong>Directorio de Trabajo</strong>:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="intro.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>()</span></code></pre></div>
+<p><em>Recomendaciones:</em></p>
+<p>Crear una carpeta para cada unidad, para tener los análisis separados y ordenados.</p>
+<p>Generar nombres de carpetas y archivos <strong>sin</strong> espacios, acentos o caracteres especiales.</p>
+</div>
+<div id="crear-un-r-script" class="section level3 hasAnchor" number="1.3.2">
+<h3><span class="header-section-number">1.3.2</span> Crear un <strong>R Script</strong><a href="intro.html#crear-un-r-script" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li>Click en <code>New file</code>.</li>
+<li>Click en <code>R Script</code>.</li>
+</ol>
+<ul>
+<li>Se puede utilizar el atajo <code>Ctrl+Shift+N</code>.</li>
+</ul>
+<p>Recuerde las recomendaciones para nombrar archivos al <code>guardar</code> el script.</p>
+<p>El script se va a guardar como archivo <em>.R</em> en el <strong>Directorio de Trabajo</strong>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:script"></span>
+<img src="images/script.png" alt="Crear un nuevo R Script." width="75%" />
+<p class="caption">
+Figure 1.4: Crear un nuevo R Script.
+</p>
+</div>
+<p>En este <strong>script</strong> se escribe y guarda el código.</p>
+<p>Una forma fácil de copiar código es utilizando el botón <code>Copy to clipboard</code> que se encuentra en la esquina superior izquierda de los <code>bloques de código</code> (Figura <a href="intro.html#fig:copycode">1.5</a>).</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:copycode"></span>
+<img src="images/copycode.png" alt="Copiar código desde el material del taller." width="30%" />
+<p class="caption">
+Figure 1.5: Copiar código desde el material del taller.
+</p>
+</div>
+<p>Se pega o escribe <code>código</code> en el <strong>script</strong> y se <code>guarda</code> haciendo click como se indica en el <em>recuadro 1</em> de la Figura <a href="intro.html#fig:code">1.6</a>.</p>
+<p>El código en el <strong>script</strong> se <code>ejecuta</code> haciendo click en <code>Run the current line or selection</code> ( <em>recuadro 2</em> en Figura <a href="intro.html#fig:code">1.6</a>). Podemos ejecutar de una línea por vez: nos situamos en una línea y hacemos click; o podemos ejecutar varias líneas juntas: seleccionamos el set de líneas y hacemos click. La última opción <em>no</em> se recomineda si es la primera vez que corre el código.</p>
+<p>El código se ejecuta en la <strong>consola</strong> Figura <a href="intro.html#fig:code">1.6</a>.<strong>2</strong>.</p>
+<p>Se observan los resultados en la <strong>consola</strong> Figura <a href="intro.html#fig:code">1.6</a>.<strong>3</strong>.</p>
+<p>Los resultados se pueden copiar de la <strong>consola</strong> y pegar en el <strong>script</strong>. Recuerde marcar los resultados como comentarios (líneas que comienzan con <code>#</code>). <em>Atajo: seleccionar todas las lineas de resultados y presionar</em> <code>Ctrl+Shift+C</code>.</p>
+<p>R <strong>no</strong> ejecuta lo que se encuentra después de <code>#</code>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:code"></span>
+<img src="images/code.png" alt="Trabajo en la interfaz de RStudio. 1- Guardar Script. 2- Ejecutar código desde Script. 3- Resultados en consola" width="100%" />
+<p class="caption">
+Figure 1.6: Trabajo en la interfaz de RStudio. 1- Guardar Script. 2- Ejecutar código desde Script. 3- Resultados en consola
+</p>
+</div>
+</div>
+<div id="instalar-y-cargar-paquetes" class="section level3 hasAnchor" number="1.3.3">
+<h3><span class="header-section-number">1.3.3</span> Instalar y cargar <strong>paquetes</strong><a href="intro.html#instalar-y-cargar-paquetes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Los paquetes se instalan (por única vez) desde la <strong>consola</strong> con <code>install.packages("nombre")</code> o desde la interfase de la solapa <strong>Packages</strong>.</p>
+<p>Los paquetes se cargan en la sesión con <code>library("nombre")</code>.</p>
+<ul>
+<li><strong>Buenas prácticas!</strong> Conviene poner todas las librerías que se vayan a usar al comienzo.</li>
+</ul>
+</div>
+<div id="importar-datos" class="section level3 hasAnchor" number="1.3.4">
+<h3><span class="header-section-number">1.3.4</span> Importar <strong>datos</strong><a href="intro.html#importar-datos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Hay diversas maneras de leer datos. Podemos leer datos</p>
+<ul>
+<li><p><em>.txt</em></p>
+<ul>
+<li>Conviene guardar la base de datos como txt (Tab delimited); donde las columnas quedan definidas por espacios.</li>
+</ul></li>
+<li><p><em>.csv</em> Comma/Separated Values</p>
+<ul>
+<li>Archivos de texto separados por comas. Se forma una tabla de filas y columnas</li>
+</ul></li>
+<li><p><em>.xls</em></p></li>
+</ul>
+<p>Generalmente se utiliza un comando <code>read</code>, por ejemplo <code>read.csv("Nombre del archivo.csv")</code>, según el tipo de archivo que se trate (txt, xlsx, etc.)</p>
+<p>Una vez que tenemos cargado nuestro conjunto de datos nos puede interesar realizar algunos comandos exploratorios que nos van a dar información acerca de este <em>data frame</em> (estructura de datos).</p>
+<ul>
+<li><code>summary(objeto)</code>
+<ul>
+<li>La salida va a depender de la clase de objeto al cual lo aplicamos.</li>
+<li>Útil para ver información básica sobre nuestras variables</li>
+<li>Para <em>data frames</em> el summary nos devuelve el valor mínimo, máximo, la mediana y el 1er y 3er cuantil.</li>
+<li>Si se aplica para salidas de modelos lineales (Ver Unidad 2), nos proporciona información acerca de los residuos, los coeficientes del modelo, el error estándar residual, R<sup>2</sup>, el R ajustado, el estadístico F y el p valor.</li>
+</ul></li>
+<li><code>str(objeto)</code>
+<ul>
+<li>Nos devuelve cuántas observaciones tiene el data frame, información acerca de las variables (son numéricas? factores?); como esta estructurado nuestro conjunto de datos.</li>
+</ul></li>
+<li><code>head(objeto)</code> y <code>tail(objeto)</code>
+<ul>
+<li>Nos da las primeras y últimas filas, respectivamente.</li>
+</ul></li>
+<li><code>class(objeto)</code>
+<ul>
+<li>Devuelve qué tipo de objeto es (data frame, matrix, vector, etc).</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="intro.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;iris&quot;</span>)</span>
+<span id="cb2-2"><a href="intro.html#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="intro.html#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(iris)</span></code></pre></div>
+<pre><code>##   Sepal.Length    Sepal.Width     Petal.Length    Petal.Width   
+##  Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100  
+##  1st Qu.:5.100   1st Qu.:2.800   1st Qu.:1.600   1st Qu.:0.300  
+##  Median :5.800   Median :3.000   Median :4.350   Median :1.300  
+##  Mean   :5.843   Mean   :3.057   Mean   :3.758   Mean   :1.199  
+##  3rd Qu.:6.400   3rd Qu.:3.300   3rd Qu.:5.100   3rd Qu.:1.800  
+##  Max.   :7.900   Max.   :4.400   Max.   :6.900   Max.   :2.500  
+##        Species  
+##  setosa    :50  
+##  versicolor:50  
+##  virginica :50  
+##                 
+##                 
+## </code></pre>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="intro.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(iris)</span></code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    150 obs. of  5 variables:
+##  $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
+##  $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...
+##  $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...
+##  $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...
+##  $ Species     : Factor w/ 3 levels &quot;setosa&quot;,&quot;versicolor&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...</code></pre>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="intro.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(iris)</span></code></pre></div>
+<pre><code>##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## 1          5.1         3.5          1.4         0.2  setosa
+## 2          4.9         3.0          1.4         0.2  setosa
+## 3          4.7         3.2          1.3         0.2  setosa
+## 4          4.6         3.1          1.5         0.2  setosa
+## 5          5.0         3.6          1.4         0.2  setosa
+## 6          5.4         3.9          1.7         0.4  setosa</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="intro.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(iris)</span></code></pre></div>
+<pre><code>## [1] &quot;data.frame&quot;</code></pre>
+</div>
+<div id="visualizar-y-manipular-datos" class="section level3 hasAnchor" number="1.3.5">
+<h3><span class="header-section-number">1.3.5</span> Visualizar y manipular <strong>datos</strong><a href="intro.html#visualizar-y-manipular-datos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Qué tipo de variables hay?</p>
+<p>Existen variables numéricas (num), factores (que pueden tener varios niveles, factor), char o de caracter. Generalmente R detecta el tipo de variable al cargar los datos. Se puede transformar variables entre sí.</p>
+<ul>
+<li><strong>Observación</strong> El comando <code>c()</code> nos permite concatenar elementos. Siempre que se selecciona más de un elemento se debe concatenar.</li>
+</ul>
+<p>Por ejemplo,</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="intro.html#cb10-1" aria-hidden="true" tabindex="-1"></a>variable <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">1</span>)</span>
+<span id="cb10-2"><a href="intro.html#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="intro.html#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(variable)</span></code></pre></div>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="intro.html#cb12-1" aria-hidden="true" tabindex="-1"></a>factor <span class="ot">&lt;-</span> <span class="fu">factor</span>(variable, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;Nivel 1&quot;</span>, <span class="st">&quot;Nivel 2&quot;</span>))</span></code></pre></div>
+<p>De esta manera, transformamos una variable numerica en un factor con dos niveles, Nivel 1 y 2. Nos puede ser útil en caso de tener una variable tomada desde campo (o de encuestas) como numérica y querramos que sea categórica.</p>
+<p>Podemos acceder a elementos particulares dentro del data frame, ya sea porque nos interesa ver ese elemento individual, para sacarlo del data frame, <strong>para armar filtros</strong> o para realizar ciertos análisis con una parte del data frame. Se trabaja con coordenadas (x,y), donde <strong>x</strong> es la fila e <strong>y</strong> la columna.</p>
+<p>Si quiero todos los datos de una fila en particular, por ejemplo la 17 se escribe <code>iris[17,]</code> (seleccionamos la fila y las columnas quedan vacías porque queremos verlas todas).</p>
+<p>De la misma manera, si queremos ver solamente una columna <code>iris[,3]</code>. También podemos llamarlo según el nombre de la misma <code>iris[,"Species"]</code>.</p>
+<p>Para seleccionar los primeros 10 datos <code>iris[1:10,]</code> (o con el comando que ya vimos <strong>Head()</strong>).</p>
+<p>Si queremos seleccionar <strong>varias filas</strong> simplemente las concatenamos. Entonces si escribimos<code>iris[c(1:5), c(2,3)]</code> Qué seleccionamos en este caso?</p>
+<p>Qué pasa si quiero seleccionar una sola variable? Podemos! El signo <strong>$</strong> indica que se selecciona una columna dentro del dataframe que lo precede.</p>
+<p><code>iris$Sepcies</code> me permite ver toda la columna de la variable Especies. De esta manera, incluso podemos crear variables nuevas, asignandolas de la siguiente manera</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="intro.html#cb13-1" aria-hidden="true" tabindex="-1"></a>iris<span class="sc">$</span>variable.nueva <span class="ot">&lt;-</span> iris<span class="sc">$</span>Sepal.Length<span class="sc">/</span>iris<span class="sc">$</span>Sepal.Width</span></code></pre></div>
+<p>Qué variable nueva acabamos de crear?</p>
+<ul>
+<li><strong>Ojo!</strong> Si no le asignamos el dataframe a la variable nueva con el signo <code>$</code> (<code>iris$variablenueva</code>) el R la va a crear por fuera de nuesto data frame como un vector de los valores.</li>
+</ul>
+<p><u>Subsets</u></p>
+<p>Como lo indica el nombre, nos quedamos con una porción que seleccionemos del data frame, y sobre el cual podremos operar de manera independiente, sin que el data frame original se vea afectado.</p>
+<p>En el ejemplo con iris, podemos crear un subset que contenga solamente a la especie iris setosa.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="intro.html#cb14-1" aria-hidden="true" tabindex="-1"></a>setosa <span class="ot">&lt;-</span> <span class="fu">subset</span>(iris, iris<span class="sc">$</span>Species<span class="sc">==</span><span class="st">&quot;setosa&quot;</span>)</span></code></pre></div>
+<p>Para aquellos que se sientan más cómodos, la libreria <strong>dplyr</strong> permite hacer que las selecciones y filtros sea más fácil. Suma mucho a la facilidad del trabajo aprender a usarla!</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="intro.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb15-2"><a href="intro.html#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="intro.html#cb15-3" aria-hidden="true" tabindex="-1"></a>setosa.dplyr <span class="ot">&lt;-</span> iris <span class="sc">%&gt;%</span> </span>
+<span id="cb15-4"><a href="intro.html#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span> (Species <span class="sc">%in%</span> <span class="st">&quot;setosa&quot;</span>) </span></code></pre></div>
+<p>Hay muchas formas de hacer subsets! Es cuestion de usar aquella con la que se sientan más cómodos.</p>
+</div>
+<div id="gráficos-exploratorios-básicos" class="section level3 hasAnchor" number="1.3.6">
+<h3><span class="header-section-number">1.3.6</span> Gráficos exploratorios básicos<a href="intro.html#gráficos-exploratorios-básicos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>La visualización de datos es un punto clave dentro de cualquier análisis. Los gráficos son útiles para explorar datos, interpretarlos, identificar patrones, detectar outliers y constituyen una de las mejores maneras de comunicar los resultados.</p>
+<p><u>¿Qué tipos de gráficos existen?</u></p>
+<p>Hay una enorme diversidad, e incluso se pueden utilizar combinaciones de ellos para aumentar la información comunicada.</p>
+<ul>
+<li><strong>Gráfico de barras</strong>
+<ul>
+<li>Muestra una barra para cada categoría de una variable categórica. El alto muestra el valor observado para cada categoría (Fig 1.A)</li>
+</ul></li>
+<li><strong>Gráfico de puntos/dispersión/<em>scatter plot</em></strong>
+<ul>
+<li>Muestra la relación entre dos variables numéricas.</li>
+</ul></li>
+<li><strong>Histograma</strong>
+<ul>
+<li>Aplica para <em>variables cuantitativas</em>. Permite ver la distribucion de la variable.</li>
+</ul></li>
+<li><strong>Boxplot</strong>
+<ul>
+<li>Aplica para <em>variables cuantitativas</em>. Muestra una serie de medidas de resumnen para dicha variable. Se suele graficar junto a una variable categórica para permitir la comparación entre niveles.</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="intro.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code></pre></div>
+<pre><code>## Warning: package &#39;ggplot2&#39; was built under R version 4.2.2</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="intro.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggpubr)</span></code></pre></div>
+<pre><code>## Warning: package &#39;ggpubr&#39; was built under R version 4.2.2</code></pre>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="intro.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(grid)</span>
+<span id="cb20-2"><a href="intro.html#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-3"><a href="intro.html#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="intro.html#cb20-4" aria-hidden="true" tabindex="-1"></a>barra <span class="ot">&lt;-</span> iris <span class="sc">%&gt;%</span> </span>
+<span id="cb20-5"><a href="intro.html#cb20-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Species) <span class="sc">%&gt;%</span> </span>
+<span id="cb20-6"><a href="intro.html#cb20-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">n=</span><span class="fu">n</span>()) <span class="sc">%&gt;%</span> </span>
+<span id="cb20-7"><a href="intro.html#cb20-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(Species,n, <span class="at">fill=</span>Species))<span class="sc">+</span></span>
+<span id="cb20-8"><a href="intro.html#cb20-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">&quot;identity&quot;</span>)</span>
+<span id="cb20-9"><a href="intro.html#cb20-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-10"><a href="intro.html#cb20-10" aria-hidden="true" tabindex="-1"></a>scatter <span class="ot">&lt;-</span> iris <span class="sc">%&gt;%</span> </span>
+<span id="cb20-11"><a href="intro.html#cb20-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(Sepal.Length, Petal.Length, <span class="at">color=</span>Species)) <span class="sc">+</span></span>
+<span id="cb20-12"><a href="intro.html#cb20-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb20-13"><a href="intro.html#cb20-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-14"><a href="intro.html#cb20-14" aria-hidden="true" tabindex="-1"></a>histo <span class="ot">&lt;-</span> iris <span class="sc">%&gt;%</span> </span>
+<span id="cb20-15"><a href="intro.html#cb20-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(Sepal.Length, <span class="at">fill=</span>Species)) <span class="sc">+</span></span>
+<span id="cb20-16"><a href="intro.html#cb20-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span>
+<span id="cb20-17"><a href="intro.html#cb20-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-18"><a href="intro.html#cb20-18" aria-hidden="true" tabindex="-1"></a>box <span class="ot">&lt;-</span> iris <span class="sc">%&gt;%</span> </span>
+<span id="cb20-19"><a href="intro.html#cb20-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(Species, Petal.Length, <span class="at">fill=</span>Species)) <span class="sc">+</span></span>
+<span id="cb20-20"><a href="intro.html#cb20-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="intro.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggarrange</span>(barra,scatter,histo,box, <span class="at">ncol=</span><span class="dv">2</span>, <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">widths =</span> <span class="fu">c</span>(<span class="fl">0.5</span>,<span class="fl">0.5</span>), <span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;C&quot;</span>, <span class="st">&quot;D&quot;</span>))</span></code></pre></div>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-8"></span>
+<img src="01-introSo_files/figure-html/unnamed-chunk-8-1.png" alt="Tipos de gráficos. A) Gráfico de barras. B) Scatter plot, gráfico de puntos. C) Histograma. D) Boxplot" width="100%" />
+<p class="caption">
+Figure 1.7: Tipos de gráficos. A) Gráfico de barras. B) Scatter plot, gráfico de puntos. C) Histograma. D) Boxplot
+</p>
+</div>
+<p><u>¿R base o Ggplot2?</u></p>
+<p>La librería en la que se suelen armar los gráficos y que nunca falta en ningún script es <strong>ggplot2</strong>. Sin embargo, R permite realizar gráficos nativamente sin librerías.</p>
+<p><em>R base</em></p>
+<p>Las ventajas de usar R base para graficar es que es su rapidez para visualizar las relaciones entre variables, sin tener que preocuparnos por acordarnos de la sintaxis del script. Sin embargo, ggplot2 ofrece una variedad de combinaciones de customizacion para presentar los datos difícil de equiparar.</p>
+<p>El comando básico es <code>plot()</code>entre dos variables. Es decir,</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="intro.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(iris<span class="sc">$</span>Petal.Length,iris<span class="sc">$</span>Petal.Length)</span></code></pre></div>
+<p><img src="01-introSo_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p>De ahi en adelante, se pueden agregar distintos parámetros que hagan a la customizacion. Por ejemplo,</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="intro.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(iris<span class="sc">$</span>Petal.Length,iris<span class="sc">$</span>Petal.Width,</span>
+<span id="cb24-2"><a href="intro.html#cb24-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">cex=</span><span class="dv">2</span>, <span class="co"># Tamaño de la forma</span></span>
+<span id="cb24-3"><a href="intro.html#cb24-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">pch=</span><span class="dv">16</span>, <span class="co"># Forma (puede ser circulo, triangulo, etc)</span></span>
+<span id="cb24-4"><a href="intro.html#cb24-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">&quot;Petal Length&quot;</span>, <span class="co"># Titulo del eje x</span></span>
+<span id="cb24-5"><a href="intro.html#cb24-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab=</span><span class="st">&quot;Petal Width&quot;</span>, <span class="co"># Titulo del eje y</span></span>
+<span id="cb24-6"><a href="intro.html#cb24-6" aria-hidden="true" tabindex="-1"></a>     <span class="at">main=</span><span class="st">&quot;Petal Width vs Petal Length of Iris&quot;</span>, <span class="co"># Titulo del grafico</span></span>
+<span id="cb24-7"><a href="intro.html#cb24-7" aria-hidden="true" tabindex="-1"></a>     <span class="at">col=</span>iris<span class="sc">$</span>Species) <span class="co"># Si quiero agregarle color a los puntos. En ese caso, lo hace segun los niveles de la variable Species. </span></span>
+<span id="cb24-8"><a href="intro.html#cb24-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-9"><a href="intro.html#cb24-9" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="at">x=</span><span class="dv">1</span>, <span class="at">y=</span><span class="fl">2.4</span>, <span class="at">legend=</span><span class="fu">levels</span>(iris<span class="sc">$</span>Species), <span class="at">col=</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>), <span class="at">pch=</span><span class="dv">16</span>) <span class="co"># Leyenda </span></span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-10"></span>
+<img src="01-introSo_files/figure-html/unnamed-chunk-10-1.png" alt="Tipos de gráficos" width="100%" />
+<p class="caption">
+Figure 1.8: Tipos de gráficos
+</p>
+</div>
+<p>Veamos como se hace el resto de los gráficos:</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="intro.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Barra</span></span>
+<span id="cb25-2"><a href="intro.html#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(iris<span class="sc">$</span>Species)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-11-1"></span>
+<img src="01-introSo_files/figure-html/unnamed-chunk-11-1.png" alt="Tipos de gráficos" width="100%" />
+<p class="caption">
+Figure 1.9: Tipos de gráficos
+</p>
+</div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="intro.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Boxplot</span></span>
+<span id="cb26-2"><a href="intro.html#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(iris<span class="sc">$</span>Species, iris<span class="sc">$</span>Sepal.Length,</span>
+<span id="cb26-3"><a href="intro.html#cb26-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">&quot;Species&quot;</span>,</span>
+<span id="cb26-4"><a href="intro.html#cb26-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab=</span><span class="st">&quot;Sepal Lenght&quot;</span>,</span>
+<span id="cb26-5"><a href="intro.html#cb26-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">main=</span><span class="st">&quot;Sepal Lenght by Iris species&quot;</span>,</span>
+<span id="cb26-6"><a href="intro.html#cb26-6" aria-hidden="true" tabindex="-1"></a>     <span class="at">col=</span><span class="st">&quot;skyblue&quot;</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-11-2"></span>
+<img src="01-introSo_files/figure-html/unnamed-chunk-11-2.png" alt="Tipos de gráficos" width="100%" />
+<p class="caption">
+Figure 1.10: Tipos de gráficos
+</p>
+</div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="intro.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Historgram</span></span>
+<span id="cb27-2"><a href="intro.html#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(iris<span class="sc">$</span>Sepal.Width,</span>
+<span id="cb27-3"><a href="intro.html#cb27-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">col=</span><span class="st">&quot;yellow&quot;</span>,</span>
+<span id="cb27-4"><a href="intro.html#cb27-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">&quot;Sepal Width&quot;</span>,</span>
+<span id="cb27-5"><a href="intro.html#cb27-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">main=</span><span class="st">&quot;Histogram of Sepal Width&quot;</span>,</span>
+<span id="cb27-6"><a href="intro.html#cb27-6" aria-hidden="true" tabindex="-1"></a>     <span class="at">breaks=</span><span class="dv">30</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-11-3"></span>
+<img src="01-introSo_files/figure-html/unnamed-chunk-11-3.png" alt="Tipos de gráficos" width="100%" />
+<p class="caption">
+Figure 1.11: Tipos de gráficos
+</p>
+</div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="intro.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Qué pasa si queremos plotear el data frame entero? </span></span>
+<span id="cb28-2"><a href="intro.html#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-3"><a href="intro.html#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(iris)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-11-4"></span>
+<img src="01-introSo_files/figure-html/unnamed-chunk-11-4.png" alt="Tipos de gráficos" width="100%" />
+<p class="caption">
+Figure 1.12: Tipos de gráficos
+</p>
+</div>
+<p><em>ggplot2</em></p>
+<p>Este paquete tiene una manera de escribirse particular en capas. Los gráficos de ggplot2 está compuesto por los datos, por un conjunto de características estéticas a tener en cuenta entre los datos junto con los aspectos visuales (<em>aes, aesthetic mapping</em>) y por al menos una capa que indica cómo se debe manipular cada observación (<em>geom_</em>).</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="intro.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb29-2"><a href="intro.html#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-3"><a href="intro.html#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(<span class="at">x=</span>Petal.Length, <span class="at">y=</span>Petal.Width))<span class="sc">+</span></span>
+<span id="cb29-4"><a href="intro.html#cb29-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+<p><img src="01-introSo_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<ul>
+<li><strong>Buenas prácticas!</strong> Conviene usar un renglón por capa, de esta manera es fácil detectar errores y ver cómo se va modificando el gráfico a medida que van agregando capas.</li>
+</ul>
+<p>Al igual que en el plot del R base, se pueden cambiar los colores y formas. Sin embargo, esto va a estar atado a qué elemento queremos cambiar.</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="intro.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(<span class="at">x=</span>Petal.Length, <span class="at">y=</span>Petal.Width))<span class="sc">+</span></span>
+<span id="cb30-2"><a href="intro.html#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">colour=</span>Species)) </span></code></pre></div>
+<p><img src="01-introSo_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p>En este caso, quise cambiar el color de los puntos. Para ello, lo tengo que especificar en la capa <em>aes</em> del geom_point.</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="intro.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(<span class="at">x=</span>Petal.Length, <span class="at">y=</span>Petal.Width, <span class="at">color=</span>Species))<span class="sc">+</span></span>
+<span id="cb31-2"><a href="intro.html#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() </span></code></pre></div>
+<p><img src="01-introSo_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p>También puede ir en el aes general del gráfico. No solo puedo cambiar el color, sino también formas. O combinar todo:</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="intro.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(<span class="at">x=</span>Petal.Length, <span class="at">y=</span>Petal.Width, <span class="at">shape=</span>Species))<span class="sc">+</span></span>
+<span id="cb32-2"><a href="intro.html#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() </span></code></pre></div>
+<p><img src="01-introSo_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="intro.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(<span class="at">x=</span>Petal.Length, <span class="at">y=</span>Petal.Width, <span class="at">size=</span>Sepal.Length))<span class="sc">+</span></span>
+<span id="cb33-2"><a href="intro.html#cb33-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color=</span>Species)) </span></code></pre></div>
+<p><img src="01-introSo_files/figure-html/unnamed-chunk-15-2.png" width="672" /></p>
+<p>Noten que se generan automáticamente las leyendas, según vamos cambiando lo estético, a diferencia de R base.</p>
+<p>Este es un primer pantallazo el mundo de ggplot. Hay mucho para aprender y en general, todo lo que quieran graficar van a poder, y de muchisimas maneras.</p>
+<p>Google es su gran amigo!</p>
+</div>
+<div id="recursos-extra-recomendados" class="section level3 hasAnchor" number="1.3.7">
+<h3><span class="header-section-number">1.3.7</span> Recursos extra recomendados<a href="intro.html#recursos-extra-recomendados" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Uso de la libreria <strong>ggpubr</strong> para alinear plots <a href="http://www.sthda.com/english/articles/24-ggpubr-publication-ready-plots/81-ggplot2-easy-way-to-mix-multiple-graphs-on-the-same-page/" class="uri">http://www.sthda.com/english/articles/24-ggpubr-publication-ready-plots/81-ggplot2-easy-way-to-mix-multiple-graphs-on-the-same-page/</a></p>
+<p>Healy K. 2019. Data visualization: A practical Introduction <strong>Versión libre online:</strong><br />
+<a href="https://socviz.co/index.html#preface" class="uri">https://socviz.co/index.html#preface</a></p>
+<p>R Charts <a href="https://r-charts.com/es/ggplot2/" class="uri">https://r-charts.com/es/ggplot2/</a></p>
+<p>Cheatsheet en Code <a href="http://zevross.com/blog/2014/08/04/beautiful-plotting-in-r-a-ggplot2-cheatsheet-3" class="uri">http://zevross.com/blog/2014/08/04/beautiful-plotting-in-r-a-ggplot2-cheatsheet-3</a></p>
+
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p><a href="mailto:soficarusso@gmail.com" class="email">soficarusso@gmail.com</a><a href="intro.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p><a href="mailto:mvquiroga@iib.unsam.edu.ar" class="email">mvquiroga@iib.unsam.edu.ar</a><a href="intro.html#fnref2" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="regmul.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/01-introSo.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-LimnoR.pdf", "bookdown-LimnoR.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

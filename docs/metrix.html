@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Unidad 6 Paquete metrix | bookdown-LimnoR</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Unidad 6 Paquete metrix | bookdown-LimnoR" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Unidad 6 Paquete metrix | bookdown-LimnoR" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="multi2.html"/>
+<link rel="next" href="diathor.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>LIMNOLOGIA CON R</a>
+<ul>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#contenido"><i class="fa fa-check"></i><b>0.1</b> Contenido</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introducción a R y RStudio</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#instalación"><i class="fa fa-check"></i><b>1.1</b> Instalación</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#rstudio"><i class="fa fa-check"></i><b>1.2</b> RStudio</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#a-trabajar"><i class="fa fa-check"></i><b>1.3</b> A trabajar!</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="intro.html"><a href="intro.html#crear-un-proyecto"><i class="fa fa-check"></i><b>1.3.1</b> Crear un <strong>Proyecto</strong></a></li>
+<li class="chapter" data-level="1.3.2" data-path="intro.html"><a href="intro.html#crear-un-r-script"><i class="fa fa-check"></i><b>1.3.2</b> Crear un <strong>R Script</strong></a></li>
+<li class="chapter" data-level="1.3.3" data-path="intro.html"><a href="intro.html#instalar-y-cargar-paquetes"><i class="fa fa-check"></i><b>1.3.3</b> Instalar y cargar <strong>paquetes</strong></a></li>
+<li class="chapter" data-level="1.3.4" data-path="intro.html"><a href="intro.html#importar-datos"><i class="fa fa-check"></i><b>1.3.4</b> Importar <strong>datos</strong></a></li>
+<li class="chapter" data-level="1.3.5" data-path="intro.html"><a href="intro.html#visualizar-y-manipular-datos"><i class="fa fa-check"></i><b>1.3.5</b> Visualizar y manipular <strong>datos</strong></a></li>
+<li class="chapter" data-level="1.3.6" data-path="intro.html"><a href="intro.html#gráficos-exploratorios-básicos"><i class="fa fa-check"></i><b>1.3.6</b> Gráficos exploratorios básicos</a></li>
+<li class="chapter" data-level="1.3.7" data-path="intro.html"><a href="intro.html#recursos-extra-recomendados"><i class="fa fa-check"></i><b>1.3.7</b> Recursos extra recomendados</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="regmul.html"><a href="regmul.html"><i class="fa fa-check"></i><b>2</b> Correlaciones y regresión múltiple</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="regmul.html"><a href="regmul.html#caso-de-estudio"><i class="fa fa-check"></i><b>2.1</b> Caso de estudio</a></li>
+<li class="chapter" data-level="2.2" data-path="regmul.html"><a href="regmul.html#leer-y-emprolijar-los-datos"><i class="fa fa-check"></i><b>2.2</b> Leer y emprolijar los datos</a></li>
+<li class="chapter" data-level="2.3" data-path="regmul.html"><a href="regmul.html#correlaciones"><i class="fa fa-check"></i><b>2.3</b> Correlaciones</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="regmul.html"><a href="regmul.html#entre-biomasa-de-morfotipos-bacterianos"><i class="fa fa-check"></i><b>2.3.1</b> Entre biomasa de morfotipos bacterianos</a></li>
+<li class="chapter" data-level="2.3.2" data-path="regmul.html"><a href="regmul.html#entre-variables-abióticas"><i class="fa fa-check"></i><b>2.3.2</b> Entre variables abióticas</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="regmul.html"><a href="regmul.html#regresiones-múltiples"><i class="fa fa-check"></i><b>2.4</b> Regresiones múltiples</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="regmul.html"><a href="regmul.html#selección-automática-de-variables"><i class="fa fa-check"></i><b>2.4.1</b> Selección automática de variables</a></li>
+<li class="chapter" data-level="2.4.2" data-path="regmul.html"><a href="regmul.html#selección-manual-de-variables"><i class="fa fa-check"></i><b>2.4.2</b> Selección manual de variables</a></li>
+<li class="chapter" data-level="2.4.3" data-path="regmul.html"><a href="regmul.html#evaluación-e-interpretación-del-modelo-final"><i class="fa fa-check"></i><b>2.4.3</b> Evaluación e interpretación del modelo final</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="regmul.html"><a href="regmul.html#a-modo-de-conclusión"><i class="fa fa-check"></i><b>2.5</b> A modo de conclusión</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="gam.html"><a href="gam.html"><i class="fa fa-check"></i><b>3</b> Modelos Aditivos Generalizados</a>
+<ul>
+<li class="chapter" data-level="3.0.1" data-path="gam.html"><a href="gam.html#aclaración"><i class="fa fa-check"></i><b>3.0.1</b> Aclaración</a></li>
+<li class="chapter" data-level="3.1" data-path="gam.html"><a href="gam.html#porqué-usar-modelos-aditivos-generalizados-gams"><i class="fa fa-check"></i><b>3.1</b> ¿Porqué usar Modelos Aditivos Generalizados (GAMs)?</a></li>
+<li class="chapter" data-level="3.2" data-path="gam.html"><a href="gam.html#qué-son-los-gams"><i class="fa fa-check"></i><b>3.2</b> ¿Qué son los GAMs?</a></li>
+<li class="chapter" data-level="3.3" data-path="gam.html"><a href="gam.html#manos-a-la-obra"><i class="fa fa-check"></i><b>3.3</b> Manos a la obra!</a></li>
+<li class="chapter" data-level="3.4" data-path="gam.html"><a href="gam.html#agradecimientos"><i class="fa fa-check"></i><b>3.4</b> Agradecimientos</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="multi1.html"><a href="multi1.html"><i class="fa fa-check"></i><b>4</b> Análisis multivariados I</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="multi1.html"><a href="multi1.html#análisis-de-componentes-principales"><i class="fa fa-check"></i><b>4.1</b> Análisis de Componentes Principales</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="multi1.html"><a href="multi1.html#qué-tipos-de-datos-usa-una-acp"><i class="fa fa-check"></i><b>4.1.1</b> ¿Qué tipos de datos usa una ACP?</a></li>
+<li class="chapter" data-level="4.1.2" data-path="multi1.html"><a href="multi1.html#cómo-funciona-el-análisis"><i class="fa fa-check"></i><b>4.1.2</b> ¿Cómo funciona el análisis?</a></li>
+<li class="chapter" data-level="4.1.3" data-path="multi1.html"><a href="multi1.html#ahora-manos-a-la-obra-miremos-datos"><i class="fa fa-check"></i><b>4.1.3</b> Ahora manos a la obra: miremos datos</a></li>
+<li class="chapter" data-level="4.1.4" data-path="multi1.html"><a href="multi1.html#crear-una-condición-para-colorear-los-individuos"><i class="fa fa-check"></i><b>4.1.4</b> Crear una condición para colorear los individuos</a></li>
+<li class="chapter" data-level="4.1.5" data-path="multi1.html"><a href="multi1.html#refinando-el-modelo"><i class="fa fa-check"></i><b>4.1.5</b> Refinando el modelo</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="multi1.html"><a href="multi1.html#nmds"><i class="fa fa-check"></i><b>4.2</b> NMDS</a></li>
+<li class="chapter" data-level="4.3" data-path="multi1.html"><a href="multi1.html#permanova"><i class="fa fa-check"></i><b>4.3</b> PERMANOVA</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="multi2.html"><a href="multi2.html"><i class="fa fa-check"></i><b>5</b> Análisis multivariados II</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="multi2.html"><a href="multi2.html#introducción"><i class="fa fa-check"></i><b>5.1</b> INTRODUCCIÓN</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="multi2.html"><a href="multi2.html#la-lógica-de-las-técnicas-de-ordenación-restringida-o-canónica-constrained-análisis-de-gradiente-directo"><i class="fa fa-check"></i><b>5.1.1</b> LA LÓGICA DE LAS TÉCNICAS DE ORDENACIÓN RESTRINGIDA O CANÓNICA (“<em>CONSTRAINED</em>”, ANÁLISIS DE GRADIENTE DIRECTO)</a></li>
+<li class="chapter" data-level="5.1.2" data-path="multi2.html"><a href="multi2.html#qué-tipo-de-datos-de-composición-de-especies-se-utilizan-para-el-análisis"><i class="fa fa-check"></i><b>5.1.2</b> ¿Qué tipo de datos de composición de especies se utilizan para el análisis?</a></li>
+<li class="chapter" data-level="5.1.3" data-path="multi2.html"><a href="multi2.html#cómo-saber-si-debo-utilizar-un-método-de-ordenación-de-respuesta-lineal-o-unimodal"><i class="fa fa-check"></i><b>5.1.3</b> ¿Cómo saber si debo utilizar un método de ordenación de respuesta lineal o unimodal?</a></li>
+<li class="chapter" data-level="5.1.4" data-path="multi2.html"><a href="multi2.html#análisis-de-redundancia-rda"><i class="fa fa-check"></i><b>5.1.4</b> <strong>ANÁLISIS DE REDUNDANCIA (RDA)</strong></a></li>
+<li class="chapter" data-level="5.1.5" data-path="multi2.html"><a href="multi2.html#analicemos-estos-aspectos-a-través-de-un-ejemplo-práctico"><i class="fa fa-check"></i><b>5.1.5</b> Analicemos estos aspectos a través de un ejemplo práctico…</a></li>
+<li class="chapter" data-level="5.1.6" data-path="multi2.html"><a href="multi2.html#rda-utilizando-el-paquete-vegan-oksanen-et-al.-2007"><i class="fa fa-check"></i><b>5.1.6</b> RDA utilizando el paquete <strong>vegan</strong> (Oksanen <em>et al.</em>, 2007)</a></li>
+<li class="chapter" data-level="5.1.7" data-path="multi2.html"><a href="multi2.html#seleccionando-las-variables-explicativas-relevantes"><i class="fa fa-check"></i><b>5.1.7</b> Seleccionando las variables explicativas relevantes</a></li>
+<li class="chapter" data-level="5.1.8" data-path="multi2.html"><a href="multi2.html#rda-basado-en-matriz-de-distancia-distance-based-rda-db-rda"><i class="fa fa-check"></i><b>5.1.8</b> RDA basado en matriz de distancia (“Distance-based RDA”, db-RDA)</a></li>
+<li class="chapter" data-level="5.1.9" data-path="multi2.html"><a href="multi2.html#análisis-de-correspondencia-canónica-cca"><i class="fa fa-check"></i><b>5.1.9</b> <strong>ANÁLISIS DE CORRESPONDENCIA CANÓNICA (CCA)</strong></a></li>
+<li class="chapter" data-level="5.1.10" data-path="multi2.html"><a href="multi2.html#cca-utilizando-la-función-cca-del-paquete-vegan"><i class="fa fa-check"></i><b>5.1.10</b> CCA utilizando la función <strong>cca()</strong> del paquete <strong>vegan</strong></a></li>
+<li class="chapter" data-level="5.1.11" data-path="multi2.html"><a href="multi2.html#bibliografía-citada-y-de-lectura-recomendada"><i class="fa fa-check"></i><b>5.1.11</b> Bibliografía citada y de lectura recomendada</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="metrix.html"><a href="metrix.html"><i class="fa fa-check"></i><b>6</b> Paquete <em>metrix</em></a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="metrix.html"><a href="metrix.html#que-es-metrix"><i class="fa fa-check"></i><b>6.1</b> ¿Que es Metrix?</a></li>
+<li class="chapter" data-level="6.2" data-path="metrix.html"><a href="metrix.html#conjunto-de-datos-de-ejemplo"><i class="fa fa-check"></i><b>6.2</b> Conjunto de datos de ejemplo</a></li>
+<li class="chapter" data-level="6.3" data-path="metrix.html"><a href="metrix.html#instalar-metrix"><i class="fa fa-check"></i><b>6.3</b> Instalar <em>metrix</em></a></li>
+<li class="chapter" data-level="6.4" data-path="metrix.html"><a href="metrix.html#que-tipos-de-datos-analiza-metrix"><i class="fa fa-check"></i><b>6.4</b> ¿Que tipos de datos analiza <em>metrix</em>?</a></li>
+<li class="chapter" data-level="6.5" data-path="metrix.html"><a href="metrix.html#cargar-datos-de-densidad-de-macroinvertebrados-usando-metrix"><i class="fa fa-check"></i><b>6.5</b> Cargar datos de densidad de macroinvertebrados usando <em>metrix</em></a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="metrix.html"><a href="metrix.html#que-pasa-si-quiero-crear-mi-propio-conjunto-de-datos"><i class="fa fa-check"></i><b>6.5.1</b> ¿QUE PASA SI QUIERO CREAR MI PROPIO CONJUNTO DE DATOS?</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="metrix.html"><a href="metrix.html#cálculo-de-metricas-individuales-y-ecológicas"><i class="fa fa-check"></i><b>6.6</b> Cálculo de metricas individuales y ecológicas</a></li>
+<li class="chapter" data-level="6.7" data-path="metrix.html"><a href="metrix.html#cálculo-de-indices-bióticos"><i class="fa fa-check"></i><b>6.7</b> Cálculo de indices bióticos</a></li>
+<li class="chapter" data-level="6.8" data-path="metrix.html"><a href="metrix.html#futuro-del-paquete"><i class="fa fa-check"></i><b>6.8</b> FUTURO DEL PAQUETE</a></li>
+<li class="chapter" data-level="6.9" data-path="metrix.html"><a href="metrix.html#agradecimientos-1"><i class="fa fa-check"></i><b>6.9</b> AGRADECIMIENTOS</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="diathor.html"><a href="diathor.html"><i class="fa fa-check"></i><b>7</b> Paquetes <em>DiaThor</em> y <em>optimos.prime</em></a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="diathor.html"><a href="diathor.html#paquete-diathor"><i class="fa fa-check"></i><b>7.1</b> Paquete <em>DiaThor</em></a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="diathor.html"><a href="diathor.html#qué-hace"><i class="fa fa-check"></i><b>7.1.1</b> ¿Qué hace?</a></li>
+<li class="chapter" data-level="7.1.2" data-path="diathor.html"><a href="diathor.html#cómo-funciona"><i class="fa fa-check"></i><b>7.1.2</b> ¿Cómo funciona?</a></li>
+<li class="chapter" data-level="7.1.3" data-path="diathor.html"><a href="diathor.html#manos-a-la-obra-1"><i class="fa fa-check"></i><b>7.1.3</b> ¡Manos a la obra!</a></li>
+<li class="chapter" data-level="7.1.4" data-path="diathor.html"><a href="diathor.html#fuentes-de-información-ecológica-de-las-especies"><i class="fa fa-check"></i><b>7.1.4</b> Fuentes de información ecológica de las especies</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="diathor.html"><a href="diathor.html#paquete-optimos.prime"><i class="fa fa-check"></i><b>7.2</b> Paquete <em>optimos.prime</em></a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="diathor.html"><a href="diathor.html#qué-hace-1"><i class="fa fa-check"></i><b>7.2.1</b> ¿Qué hace?</a></li>
+<li class="chapter" data-level="7.2.2" data-path="diathor.html"><a href="diathor.html#cómo-lo-hace"><i class="fa fa-check"></i><b>7.2.2</b> ¿Cómo lo hace?</a></li>
+<li class="chapter" data-level="7.2.3" data-path="diathor.html"><a href="diathor.html#manos-a-la-obra-2"><i class="fa fa-check"></i><b>7.2.3</b> ¡Manos a la obra!</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="metrix" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">Unidad 6</span> Paquete <em>metrix</em><a href="metrix.html#metrix" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><strong>Julieta Capeletti</strong><a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a></p>
+<p>Instituto Nacional de Limnología (INALI, UNL-CONICET), Laboratorio de Bentos</p>
+<p><strong>Juan Manuel Cabrera</strong><a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a></p>
+<p>Instituto de Investigación y Desarrollo en Bioingeniería y Bioinformática (IBB, UNER-CONICET)</p>
+<div id="que-es-metrix" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> ¿Que es Metrix?<a href="metrix.html#que-es-metrix" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><em>metrix</em> es un paquete de R de código abierto diseñado específicamente para evaluar la calidad del agua utilizando datos de densidad de macroinvertebrados <span class="citation">(<a href="#ref-cabrera2023" role="doc-biblioref">Cabrera and Capeletti 2023</a>)</span>.
+Este paquete nos permite calcular una extensa cantidad de métricas e índices bióticos que evalúan la calidad del ambiente de manera rápida y sencilla.
+Admite una resolución taxonómica heterogénea que permite cálculos en varios niveles taxonómicos y es capaz de leer hojas de cálculo biológicas a partir de grandes volúmenes de datos.
+Este paquete facilita la manipulación de datos, simplificando el proceso mediante el uso de hojas de cálculo predefinidas en formato .csv.
+Esto reduce la necesidad de software o paquetes adicionales, haciéndolo accesible y fácil de usar, incluso para usuarios sin conocimientos de programación.
+Las futuras versiones del paquete pueden incluir otros índices métricos y bióticos, mejorando aún más sus capacidades.
+Además, se puede desarrollar una interfaz fácil de usar para mejorar la usabilidad de la herramienta para usuarios no científicos, como las agencias gubernamentales responsables de evaluar el impacto ambiental de las actividades relacionadas con los seres humanos.</p>
+</div>
+<div id="conjunto-de-datos-de-ejemplo" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> Conjunto de datos de ejemplo<a href="metrix.html#conjunto-de-datos-de-ejemplo" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Antes de comenzar a probar <em>metrix</em>, vamos a descargar el conjunto de datos perteneciente a muestreos en la cuenca Cañada Carrizales localizada en la ecorregión Pampeana de Argentina (32°26’23.53 “S, 61°18’10.69”W), perteneciente al trabajo <em>Métricas basadas en macroinvertebrados como monitores de ambientes con uso de suelo agrícola: estudio preliminar en una cuenca pampeana</em> <span class="citation">(<a href="#ref-capeletti2019" role="doc-biblioref">Capeletti J. 2019</a>)</span>.
+El conjunto de datos está disponible en la carpeta <em>data</em> del repositorio de GitHub de <em>metrix</em> <a href="https://github.com/Dvelop-R/metrix" class="uri">https://github.com/Dvelop-R/metrix</a>.</p>
+</div>
+<div id="instalar-metrix" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> Instalar <em>metrix</em><a href="metrix.html#instalar-metrix" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><em>metrix</em> se encuentra disponible en el repositorio CRAN.
+Primeramente se debe descargar e instalar utilizando el código <code>install.packages("metrix")</code>.
+Seguidamente se debe cargar el paquete en el entorno de trabajo:</p>
+<div class="sourceCode" id="cb261"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb261-1"><a href="metrix.html#cb261-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(metrix)</span></code></pre></div>
+</div>
+<div id="que-tipos-de-datos-analiza-metrix" class="section level2 hasAnchor" number="6.4">
+<h2><span class="header-section-number">6.4</span> ¿Que tipos de datos analiza <em>metrix</em>?<a href="metrix.html#que-tipos-de-datos-analiza-metrix" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><em>metrix</em> utiliza un formato específico de tabla de datos.
+La misma consiste en 8 columnas que representen la clasificación científica y funcional de los taxones:</p>
+<ul>
+<li><p>Las primeras 7 columnas corresponden a <em>Clase</em>, <em>Orden</em>, <em>Familia</em>, <em>Subfamilia</em>, <em>Tribu</em>, <em>Género</em> y <em>Especie</em>.</p></li>
+<li><p>La columna 8 indica el <em>grupo funcional</em> (FG) de los taxones, que puede ser <em>recolectores filtradores</em> (GF), <em>colectores recolectores</em> (GC), <em>depredadores</em> (P), <em>raspadores</em> (SCR), o <em>trituradores</em> (SHR).</p></li>
+<li><p>Después de estas columnas, se debe incluir los <em>datos de densidad (individuos/m2)</em> de los macroinvertebrados para cada muestra de sitio.</p></li>
+</ul>
+<p>Durante el proceso de carga de datos es muy común que se cometan errores de tipeo que pueden llevar a que no se pueda identificar de manera correcta a los taxa incluidos en el conjunto de datos.
+<em>metrix</em> posee un sistema de autocorreción que puede asisitir al usuario en la identificación de estas fallas en la carga de datos.
+Para ello utiliza una base de datos de nombres cientificos utilizados en la descripción de los taxones que son tenidos en cuenta a la hora de calcular las métricas e índices bióticos calculados por el paquete.
+Este sistema de autocorrección informa al usuario sobre posibles errores de carga y, si el usuario lo indica, puede corregirlo de manera automática (con un criterio de similitud de palabra).</p>
+</div>
+<div id="cargar-datos-de-densidad-de-macroinvertebrados-usando-metrix" class="section level2 hasAnchor" number="6.5">
+<h2><span class="header-section-number">6.5</span> Cargar datos de densidad de macroinvertebrados usando <em>metrix</em><a href="metrix.html#cargar-datos-de-densidad-de-macroinvertebrados-usando-metrix" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Para cargar los datos en el entorno de trabajo de R utilizamos la función <code>read_data()</code>.
+Esta función recibe 3 parámatros:</p>
+<ul>
+<li><p><em>file_name</em>: dirección/nombre del archivo .csv que contiene los datos de densidad de macroinvertebrados.</p></li>
+<li><p><em>correct</em>: valor lógico que indica si se va a utilizar el sistema de autocorrección de datos.</p></li>
+<li><p><em>verbose</em>: valor lógico que indica si se debe mostrar mensajes descriptivos del proceso de carga.</p></li>
+</ul>
+<div class="sourceCode" id="cb262"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb262-1"><a href="metrix.html#cb262-1" aria-hidden="true" tabindex="-1"></a><span class="co">#IMPORTANTE: revisar la dirección del archivo ecological_data.csv. En este ejemplo estaría dentro del directorio de trabajo por lo que no es necesario indicar la ruta completa al archivo</span></span>
+<span id="cb262-2"><a href="metrix.html#cb262-2" aria-hidden="true" tabindex="-1"></a>datos_cargados<span class="ot">&lt;-</span><span class="fu">read_data</span>(<span class="at">file_name =</span> <span class="st">&quot;ecological_data.csv&quot;</span>, <span class="at">correct =</span> <span class="cn">TRUE</span>, <span class="at">verbose =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<pre><code>## The word ampullaridae was not found in internal Family word database. Please check that entry.</code></pre>
+<pre><code>## The autocorrect system replace the word ampullaridae for Ampullariidae.</code></pre>
+<p>En este ejemplo, los datos ecológicos utilizados contienen un error en la columna de <em>Familia</em>.
+El sistema de autocorrección notificará al usuario sobre este error y, si el parámetro <code>correct</code> está seteado con el valor <code>TRUE</code>, reemplazará la palabra presuntamente erronea por otra similar hallada en la base de datos interna.</p>
+<div id="que-pasa-si-quiero-crear-mi-propio-conjunto-de-datos" class="section level3 hasAnchor" number="6.5.1">
+<h3><span class="header-section-number">6.5.1</span> ¿QUE PASA SI QUIERO CREAR MI PROPIO CONJUNTO DE DATOS?<a href="metrix.html#que-pasa-si-quiero-crear-mi-propio-conjunto-de-datos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><em>metrix</em> contiene una función que genera un archivo .CSV con una tabla cuyas columnas están debidamente etiquetadas para que pueda ser utilizada por el paquete.
+Para generar este archivo en el espacio de trabajo, se debe correr el siguiente código:</p>
+<div class="sourceCode" id="cb265"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb265-1"><a href="metrix.html#cb265-1" aria-hidden="true" tabindex="-1"></a><span class="fu">metrix_table_template</span>()</span></code></pre></div>
+<pre><code>##     Class   Order       Family    Subfamily       Tribe          Genus Species
+## 1 Insecta Diptera Chironomidae Chironominae Tanytarsini Paratanytarsus        
+##   FG Sample1 Sample2
+## 1 GC       1       0</code></pre>
+<p>Una vez generado el archivo se puede editar el mismo utilizando un bloc de notas o una editor de hojas de cálculo.
+Luego se puede cargar al entorno de trabajo de igual manera que en el paso anterior.</p>
+</div>
+</div>
+<div id="cálculo-de-metricas-individuales-y-ecológicas" class="section level2 hasAnchor" number="6.6">
+<h2><span class="header-section-number">6.6</span> Cálculo de metricas individuales y ecológicas<a href="metrix.html#cálculo-de-metricas-individuales-y-ecológicas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Para evaluar la calidad biológica del agua, es necesario examinar valores específicos que midan características clave de la comunidad de macroinvertebrados, las cuales son indicativas de su respuesta a degradaciones ambientales.
+<em>metrix</em> incluye una amplia gama de cálculos tanto para métricas individuales como ecológicas: * <em>Métricas individuales</em>: abarcan la riqueza, que indica la diversidad del conjunto de macroinvertebrados; las métricas de composición, que calculan la abundancia relativa de taxones específicos dentro de la comunidad en términos de porcentajes; y las métricas de densidad, que sirven como medidas universales utilizadas en todo tipo de estudios biológicos.
+* <em>Métricas ecológicas</em>: incluyen métricas tróficas (como la riqueza de depredadores, la riqueza de colectores recolectores, la densidad de trituradores y la densidad de raspadores), que actúan como indicadores de procesos complejos como las interacciones tróficas, la producción y la disponibilidad de fuentes de alimento.
+Además, se incluyen medidas de tolerancia para indicar la sensibilidad de la comunidad y especies individuales a varios tipos de perturbaciones.</p>
+<p>En este ejemplo vamos a calcular metricas de riqueza de nuestro conjunto de datos previamente cargados.
+Para ello vamos a utilizar la función <code>rich_metrics()</code>, la cual recibe 4 parámetros:</p>
+<ul>
+<li><em>dataset</em>: conjunto de datos cargados con la función <code>read_data()</code>.</li>
+<li><em>store</em>: valor lógico que indica si el resultado debe ser almacenado en un archivo.</li>
+<li><em>dec_c</em>: caracter utilizado como separador de decimales.</li>
+<li><em>verbose</em>: valor lógico que indica si se debe mostrar mensajes descriptivos del calcúlo realizado.</li>
+</ul>
+<div class="sourceCode" id="cb267"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb267-1"><a href="metrix.html#cb267-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Calculo de riqueza</span></span>
+<span id="cb267-2"><a href="metrix.html#cb267-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rich_metrics</span>(<span class="at">dataset =</span> datos_cargados, <span class="at">store =</span> <span class="cn">FALSE</span>, <span class="at">dec_c =</span> <span class="st">&quot;.&quot;</span>, <span class="at">verbose =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## Checking table format for Richness measures calculation...</code></pre>
+<pre><code>##                    P1 P2 P3 P4 P5 P6 P7 P8 P9 P10
+## n_taxa              4  7  7  7  6  6  4  6  8   4
+## n_fam               4  3  6  5  6  6  4  6  7   3
+## n_gen               4  6  4  5  5  6  4  6  6   4
+## n_insec_fam         2  1  4  2  3  2  2  2  4   1
+## n_non_insec_order   2  2  2  2  3  3  2  3  3   2
+## n_dip_fam           1  1  3  2  2  1  1  1  3   1
+## n_dip_gen           1  4  1  1  1  1  1  1  2   1
+## n_dip_chir_gen      1  4  1  1  1  1  1  1  2   1
+## n_chir_tax          1  4  1  1  1  1  1  1  2   1
+## n_tany_tax          0  0  0  0  0  0  0  0  0   0
+## n_stemp_tax         0  0  0  0  0  0  0  0  0   0
+## n_non_chir_dip_tax  0  0  2  1  1  0  0  0  2   0
+## n_mol_tax           1  1  1  2  1  2  1  2  1   1
+## n_gastr_tax         1  1  1  2  1  2  1  2  1   1
+## n_biv_tax           0  0  0  0  0  0  0  0  0   0
+## n_crus_tax          0  0  0  0  1  1  1  1  1   0
+## n_crusmol           1  1  1  2  2  3  2  3  2   1
+## n_oligo_tax         1  2  2  3  1  1  0  1  1   2
+## n_ephetrich         0  0  0  0  0  0  0  0  1   0</code></pre>
+<p>Los sitios P1, P7 y P10 son los que menor riqueza presentan, a diferencia de los demás sitios.
+En estos sitios la riqueza se da principalmente por la presencia de los órdenes de Diptera, Mollusca, Crustacea y Oligochaeta.</p>
+<p>También podemos calcular métricas de tolerancia utilizando la función <code>tol_metrics()</code>.
+Esta función recibe 4 parámetros:</p>
+<ul>
+<li><em>dataset</em>: conjunto de datos cargados con la función <code>read_data()</code>.</li>
+<li><em>store</em>: valor lógico que indica si el resultado debe ser almacenado en un archivo.</li>
+<li><em>dec_c</em>: caracter utilizado como separador de decimales.</li>
+<li><em>verbose</em>:valor lógico que indica si se debe mostrar mensajes descriptivos del calcúlo realizado.</li>
+</ul>
+<div class="sourceCode" id="cb270"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb270-1"><a href="metrix.html#cb270-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Calculo de metricas de tolerancia</span></span>
+<span id="cb270-2"><a href="metrix.html#cb270-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tol_metrics</span>(<span class="at">dataset =</span> datos_cargados, <span class="at">store =</span> <span class="cn">FALSE</span>, <span class="at">dec_c =</span> <span class="st">&quot;.&quot;</span>, <span class="at">verbose =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## Checking table format for Tolerance measures calculation...</code></pre>
+<pre><code>##                 P1     P2     P3     P4     P5     P6    P7     P8    P9    P10
+## r_oligochir 0.0066 0.0054 0.0278 0.6667 0.0357 0.0085 0.000 0.0313 0.100 3.3333
+## r_oligoset  0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.000 0.0000 0.000 0.0000
+## r_tanychir  0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.000 0.0000 0.000 0.0000
+## den_t_lhoff 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.000 0.0000 0.000 0.0000
+## den_t_bothr 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.000 0.0000 0.000 0.0000
+## den_t_tubi  0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.000 0.0000 0.000 0.0000
+## den_t_dero  0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.000 0.0000 0.000 0.0000
+## den_t_prist 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.000 0.0000 0.000 0.0000
+## den_t_chiro 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.000 0.0000 0.000 0.0000
+## den_t_hele  0.5740 0.5740 0.5740 0.5740 0.5740 0.5740 0.574 0.5740 0.574 0.5740</code></pre>
+<p>La relación de la densidad de Oligochaeta/Chironomidae nos permitiría diferenciar los sitios de acuerdo a su gradiente de impacto.
+Esta métrica disminuye a medida que aumenta ladegradación, por lo tanto los sitios con los valores más altos serían los más contaminados a diferencia de los sitios con los valores más bajo los cuales presentarían condiciones de referencia.
+La métrica Heleobia/DT presenta el mismo valor en todos los sitios por lo tanto no nos estaría diferenciando los sitios de acuerdo a su gradiente de impacto antrópico.</p>
+</div>
+<div id="cálculo-de-indices-bióticos" class="section level2 hasAnchor" number="6.7">
+<h2><span class="header-section-number">6.7</span> Cálculo de indices bióticos<a href="metrix.html#cálculo-de-indices-bióticos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Los índices bióticos comprenden una combinación de dos o tres métricas individuales o ecológicas, que se condensan en un único valor que resume las características biológicas de todos los organismos presentes.
+Para los índices cualitativos, estas métricas incluyen la riqueza de taxones y la sensibilidad a la contaminación.
+Para los índices cuantitativos se incorpora la abundancia (absoluta o relativa).
+<em>metrix</em> incluye cálculos para los siguientes índices bióticos:</p>
+<ul>
+<li><p><em>BMWP</em> (Biological Monitoring Working Party, <span class="citation">(<a href="#ref-armitage1983" role="doc-biblioref">Armitage et al. 1983</a>)</span>), <em>ASPT</em> (Average Score per Taxon, <span class="citation">(<a href="#ref-armitage1983" role="doc-biblioref">Armitage et al. 1983</a>)</span>) y sus adaptaciones: <em>BMWP’</em> <span class="citation">(<a href="#ref-alba1988" role="doc-biblioref">Alba-Tercedor and Sánchez-Ortega 1988</a>)</span> y <em>BMWP’’</em> <span class="citation">(<a href="#ref-loyola2000" role="doc-biblioref">Loyola 2000</a>)</span>.
+Estos índices utilizan la presencia y abundancia de ciertas familias de macroinvertebrados.
+A cada familia se le asigna un valor de puntuación basado en su tolerancia a la contaminación (de 0 a 10).
+Las familias más sensibles a la contaminación reciben puntuaciones más altas, mientras que las familias más tolerantes reciben puntuaciones más bajas.
+Las puntuaciones de todas las familias de organismos presentes en una muestra de agua se suman para obtener el valor total del índice y determinar la calidad del agua.</p></li>
+<li><p><em>IMRP</em> (Índice de Macroinvertebrados en Ríos Pampeanos, <span class="citation">(<a href="#ref-rodrigues1999" role="doc-biblioref">Rodrigues Capı́tulo 1999</a>)</span>).
+Este índice se basa en la presencia y abundancia de ciertos órdenes y familias de macroinvertebrados para determinar la calidad del agua.
+Al igual que los índices BMWP, a cada grupo se le asigna un valor de puntuación basado en su tolerancia a la contaminación (en este caso, de 0 a 1), siendo el valor final del índice la suma de todos los órdenes o familias presentes en la muestra.</p></li>
+<li><p><em>ICBrio</em> (Índice das Comunidades Benticas em Ríos, <span class="citation">(<a href="#ref-kuhlmann2012" role="doc-biblioref">Kuhlmann M. 2012</a>)</span>).
+Este índice utiliza los valores de densidad total de la muestra y se basa en la tolerancia de los organismos a la contaminación y su respuesta a las perturbaciones ambientales.
+El índice asigna valores de puntuación a diferentes grupos taxonómicos (a nivel de orden, familia y género) de macroinvertebrados presentes en las muestras.
+Estas puntuaciones se suman luego para obtener un valor total del índice y determinar la calidad del agua.</p></li>
+</ul>
+<p>En este ejemplo vamos a calcular los indices <em>BMWP</em> e <em>ICBrio</em>.
+Para ello vamos a utilizar las funciones <code>bmwp_ind()</code> e <code>icbrio_ind()</code>.
+Ambas funciones reciben 4 parámetros:</p>
+<ul>
+<li><em>dataset</em>: conjunto de datos cargados con la función <code>read_data()</code>.</li>
+<li><em>store</em>: valor lógico que indica si el resultado debe ser almacenado en un archivo.</li>
+<li><em>dec_c</em>: caracter utilizado como separador de decimales.</li>
+<li><em>verbose</em>:valor lógico que indica si se debe mostrar mensajes descriptivos del calcúlo realizado.</li>
+</ul>
+<div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb273-1"><a href="metrix.html#cb273-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Calculo de BMWP</span></span>
+<span id="cb273-2"><a href="metrix.html#cb273-2" aria-hidden="true" tabindex="-1"></a><span class="fu">bmwp_ind</span>(<span class="at">dataset =</span> datos_cargados, <span class="at">store =</span> <span class="cn">FALSE</span>, <span class="at">dec_c =</span> <span class="st">&quot;.&quot;</span>, <span class="at">verbose =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## Checking table format for BMWP and ASPT index calculation...</code></pre>
+<pre><code>## $Ibmwp_n
+##          P1  P2 P3  P4 P5 P6 P7 P8  P9 P10
+## ind_bmwp  9 3.0  9 3.0  9 12  8 12 3.0 3.0
+## ind_aspt  3 1.5  3 1.5  3  3  4  3 1.5 1.5
+## 
+## $Ibmwp_c
+##                                P1                 P2                 P3
+## ind_bmwp_class Class VII Very Bad Class VII Very Bad Class VII Very Bad
+## ind_aspt_class       Class VI Bad Class VII Very Bad       Class VI Bad
+##                                P4                 P5                 P6
+## ind_bmwp_class Class VII Very Bad Class VII Very Bad Class VII Very Bad
+## ind_aspt_class Class VII Very Bad       Class VI Bad       Class VI Bad
+##                                P7                 P8                 P9
+## ind_bmwp_class Class VII Very Bad Class VII Very Bad Class VII Very Bad
+## ind_aspt_class   Class V Moderate       Class VI Bad Class VII Very Bad
+##                               P10
+## ind_bmwp_class Class VII Very Bad
+## ind_aspt_class Class VII Very Bad</code></pre>
+<p>Los valores de BMWP y ASPT nos indican condiciones de mala calidad en los 10 puntos de muestreo.</p>
+<div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb276-1"><a href="metrix.html#cb276-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Calculo de ICBrio</span></span>
+<span id="cb276-2"><a href="metrix.html#cb276-2" aria-hidden="true" tabindex="-1"></a><span class="fu">icbrio_ind</span>(<span class="at">dataset =</span> datos_cargados, <span class="at">store =</span> <span class="cn">FALSE</span>, <span class="at">dec_c =</span> <span class="st">&quot;.&quot;</span>, <span class="at">verbose =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## Checking table format for ICbrio index calculation...</code></pre>
+<pre><code>## $Icbrio_n
+##                  P1 P2 P3 P4       P5 P6 P7       P8   P9      P10
+## ind_icbrio 4.333333  4  4  4 3.666667  4  6 3.666667 2.75 4.333333
+## 
+## $Icbrio_c
+##                   P1  P2  P3  P4  P5  P6  P7  P8      P9 P10
+## ind_icbrio_class Bad Bad Bad Bad Bad Bad Bad Bad Regular Bad</code></pre>
+<p>De igual manera el indice ICBRio nos indica que 9 sitios presentan una condición biológica mala, mientras que 1 sitio (P9) presenta regulares condiciones.</p>
+</div>
+<div id="futuro-del-paquete" class="section level2 hasAnchor" number="6.8">
+<h2><span class="header-section-number">6.8</span> FUTURO DEL PAQUETE<a href="metrix.html#futuro-del-paquete" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Las futuras versiones del paquete podrían incluir otras métricas e índices bióticos, mejorando aún más sus capacidades.
+Además, puede que se desarrolle una interfaz amigable para el usuario, mejorando la usabilidad de la herramienta para usuarios no científicos, como agencias gubernamentales encargadas de evaluar el impacto ambiental de actividades relacionadas con el ser humano.</p>
+</div>
+<div id="agradecimientos-1" class="section level2 hasAnchor" number="6.9">
+<h2><span class="header-section-number">6.9</span> AGRADECIMIENTOS<a href="metrix.html#agradecimientos-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Agradecemos a la Dra.
+Florencia Zilli, Dra.
+Mercedes Marchese y Dr. Joaquien Cochero por su ayuda y apoyo en la creación de esta herramienta.</p>
+
+</div>
+</div>
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-alba1988" class="csl-entry">
+Alba-Tercedor, J, and A Sánchez-Ortega. 1988. <span>“Rapid and Simple Method to Assess the Biological Quality of Waters Based on That of Hellawell (1978).”</span> <em>Limn<span>é</span>tica</em> 8: 51–56.
+</div>
+<div id="ref-armitage1983" class="csl-entry">
+Armitage, PD, Dorian Moss, JF Wright, and MT Furse. 1983. <span>“The Performance of a New Biological Water Quality Score System Based on Macroinvertebrates over a Wide Range of Unpolluted Running-Water Sites.”</span> <em>Water Research</em> 17 (3): 333–47.
+</div>
+<div id="ref-cabrera2023" class="csl-entry">
+Cabrera, Juan M., and Julieta Capeletti. 2023. <span>“<span>‘Metrix’</span>: An r Package for Assessing the Biological Quality of Water.”</span> <em>Ecological Modelling</em> 484: 110473. https://doi.org/<a href="https://doi.org/10.1016/j.ecolmodel.2023.110473">https://doi.org/10.1016/j.ecolmodel.2023.110473</a>.
+</div>
+<div id="ref-capeletti2019" class="csl-entry">
+Capeletti J., Facelli F., Alberto D. 2019. <span>“M<span>e</span>tricas Basadas En Macroinvertebrados Como Monitores de Ambientes Con Uso de Suelo Agr<span>i</span>cola: Estudio Preliminar En Una Cuenca Pampeana.”</span> <em>Encuentro De Saberes Para La Gesti<span>o</span>n Responsable De Ecosistemas Acu<span>a</span>ticos Pampeanos.X Congreso de Ecolog<span>i</span>a y Manejo de Ecosistemas Acu<span>a</span>ticos Pampeanos Azul, Buenos Aires, Argentina.</em>, 259–61.
+</div>
+<div id="ref-kuhlmann2012" class="csl-entry">
+Kuhlmann M., Ogura L. L., Imbimbo H. V. 2012. <span>“Protocol for Biomonitoring with the Benthic Communities of Rivers and Reservoirs in the State of s<span>ã</span>o Paulo.”</span> <em>Companhia Ambiental Do Estado de S<span>ã</span>o Paulo</em>.
+</div>
+<div id="ref-loyola2000" class="csl-entry">
+Loyola, RGN. 2000. <span>“Atual Est<span>á</span>gio Do IAP No Uso de <span class="nocase">ı́</span>Ndices Biol<span>ó</span>gicos de Qualidade.”</span> <em>Anais Do V Simp<span>ó</span>sio de Ecossistemas Brasileiros: Conserva<span>ç</span><span>ã</span>o. UFES, Vit<span>ó</span>ria–ES</em> 10: 46–52.
+</div>
+<div id="ref-rodrigues1999" class="csl-entry">
+Rodrigues Capı́tulo, A. 1999. <span>“The Macroinvertebrates as Quality Indicators of Lotic Environments in the Pampean Area.”</span> <em>Rev. Soc. Entomol Arg</em> 58: 208–17.
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="6">
+<li id="fn6"><p><a href="mailto:julieta.capeletti@hotmail.com" class="email">julieta.capeletti@hotmail.com</a><a href="metrix.html#fnref6" class="footnote-back">↩︎</a></p></li>
+<li id="fn7"><p><a href="mailto:juan.cabrera@uner.edu.ar" class="email">juan.cabrera@uner.edu.ar</a><a href="metrix.html#fnref7" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="multi2.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="diathor.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/06-metrix.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-LimnoR.pdf", "bookdown-LimnoR.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

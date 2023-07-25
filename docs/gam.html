@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Unidad 3 Modelos Aditivos Generalizados | bookdown-LimnoR</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Unidad 3 Modelos Aditivos Generalizados | bookdown-LimnoR" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Unidad 3 Modelos Aditivos Generalizados | bookdown-LimnoR" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="regmul.html"/>
+<link rel="next" href="multi1.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>LIMNOLOGIA CON R</a>
+<ul>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#contenido"><i class="fa fa-check"></i><b>0.1</b> Contenido</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introducción a R y RStudio</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#instalación"><i class="fa fa-check"></i><b>1.1</b> Instalación</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#rstudio"><i class="fa fa-check"></i><b>1.2</b> RStudio</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#a-trabajar"><i class="fa fa-check"></i><b>1.3</b> A trabajar!</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="intro.html"><a href="intro.html#crear-un-proyecto"><i class="fa fa-check"></i><b>1.3.1</b> Crear un <strong>Proyecto</strong></a></li>
+<li class="chapter" data-level="1.3.2" data-path="intro.html"><a href="intro.html#crear-un-r-script"><i class="fa fa-check"></i><b>1.3.2</b> Crear un <strong>R Script</strong></a></li>
+<li class="chapter" data-level="1.3.3" data-path="intro.html"><a href="intro.html#instalar-y-cargar-paquetes"><i class="fa fa-check"></i><b>1.3.3</b> Instalar y cargar <strong>paquetes</strong></a></li>
+<li class="chapter" data-level="1.3.4" data-path="intro.html"><a href="intro.html#importar-datos"><i class="fa fa-check"></i><b>1.3.4</b> Importar <strong>datos</strong></a></li>
+<li class="chapter" data-level="1.3.5" data-path="intro.html"><a href="intro.html#visualizar-y-manipular-datos"><i class="fa fa-check"></i><b>1.3.5</b> Visualizar y manipular <strong>datos</strong></a></li>
+<li class="chapter" data-level="1.3.6" data-path="intro.html"><a href="intro.html#gráficos-exploratorios-básicos"><i class="fa fa-check"></i><b>1.3.6</b> Gráficos exploratorios básicos</a></li>
+<li class="chapter" data-level="1.3.7" data-path="intro.html"><a href="intro.html#recursos-extra-recomendados"><i class="fa fa-check"></i><b>1.3.7</b> Recursos extra recomendados</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="regmul.html"><a href="regmul.html"><i class="fa fa-check"></i><b>2</b> Correlaciones y regresión múltiple</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="regmul.html"><a href="regmul.html#caso-de-estudio"><i class="fa fa-check"></i><b>2.1</b> Caso de estudio</a></li>
+<li class="chapter" data-level="2.2" data-path="regmul.html"><a href="regmul.html#leer-y-emprolijar-los-datos"><i class="fa fa-check"></i><b>2.2</b> Leer y emprolijar los datos</a></li>
+<li class="chapter" data-level="2.3" data-path="regmul.html"><a href="regmul.html#correlaciones"><i class="fa fa-check"></i><b>2.3</b> Correlaciones</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="regmul.html"><a href="regmul.html#entre-biomasa-de-morfotipos-bacterianos"><i class="fa fa-check"></i><b>2.3.1</b> Entre biomasa de morfotipos bacterianos</a></li>
+<li class="chapter" data-level="2.3.2" data-path="regmul.html"><a href="regmul.html#entre-variables-abióticas"><i class="fa fa-check"></i><b>2.3.2</b> Entre variables abióticas</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="regmul.html"><a href="regmul.html#regresiones-múltiples"><i class="fa fa-check"></i><b>2.4</b> Regresiones múltiples</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="regmul.html"><a href="regmul.html#selección-automática-de-variables"><i class="fa fa-check"></i><b>2.4.1</b> Selección automática de variables</a></li>
+<li class="chapter" data-level="2.4.2" data-path="regmul.html"><a href="regmul.html#selección-manual-de-variables"><i class="fa fa-check"></i><b>2.4.2</b> Selección manual de variables</a></li>
+<li class="chapter" data-level="2.4.3" data-path="regmul.html"><a href="regmul.html#evaluación-e-interpretación-del-modelo-final"><i class="fa fa-check"></i><b>2.4.3</b> Evaluación e interpretación del modelo final</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="regmul.html"><a href="regmul.html#a-modo-de-conclusión"><i class="fa fa-check"></i><b>2.5</b> A modo de conclusión</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="gam.html"><a href="gam.html"><i class="fa fa-check"></i><b>3</b> Modelos Aditivos Generalizados</a>
+<ul>
+<li class="chapter" data-level="3.0.1" data-path="gam.html"><a href="gam.html#aclaración"><i class="fa fa-check"></i><b>3.0.1</b> Aclaración</a></li>
+<li class="chapter" data-level="3.1" data-path="gam.html"><a href="gam.html#porqué-usar-modelos-aditivos-generalizados-gams"><i class="fa fa-check"></i><b>3.1</b> ¿Porqué usar Modelos Aditivos Generalizados (GAMs)?</a></li>
+<li class="chapter" data-level="3.2" data-path="gam.html"><a href="gam.html#qué-son-los-gams"><i class="fa fa-check"></i><b>3.2</b> ¿Qué son los GAMs?</a></li>
+<li class="chapter" data-level="3.3" data-path="gam.html"><a href="gam.html#manos-a-la-obra"><i class="fa fa-check"></i><b>3.3</b> Manos a la obra!</a></li>
+<li class="chapter" data-level="3.4" data-path="gam.html"><a href="gam.html#agradecimientos"><i class="fa fa-check"></i><b>3.4</b> Agradecimientos</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="multi1.html"><a href="multi1.html"><i class="fa fa-check"></i><b>4</b> Análisis multivariados I</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="multi1.html"><a href="multi1.html#análisis-de-componentes-principales"><i class="fa fa-check"></i><b>4.1</b> Análisis de Componentes Principales</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="multi1.html"><a href="multi1.html#qué-tipos-de-datos-usa-una-acp"><i class="fa fa-check"></i><b>4.1.1</b> ¿Qué tipos de datos usa una ACP?</a></li>
+<li class="chapter" data-level="4.1.2" data-path="multi1.html"><a href="multi1.html#cómo-funciona-el-análisis"><i class="fa fa-check"></i><b>4.1.2</b> ¿Cómo funciona el análisis?</a></li>
+<li class="chapter" data-level="4.1.3" data-path="multi1.html"><a href="multi1.html#ahora-manos-a-la-obra-miremos-datos"><i class="fa fa-check"></i><b>4.1.3</b> Ahora manos a la obra: miremos datos</a></li>
+<li class="chapter" data-level="4.1.4" data-path="multi1.html"><a href="multi1.html#crear-una-condición-para-colorear-los-individuos"><i class="fa fa-check"></i><b>4.1.4</b> Crear una condición para colorear los individuos</a></li>
+<li class="chapter" data-level="4.1.5" data-path="multi1.html"><a href="multi1.html#refinando-el-modelo"><i class="fa fa-check"></i><b>4.1.5</b> Refinando el modelo</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="multi1.html"><a href="multi1.html#nmds"><i class="fa fa-check"></i><b>4.2</b> NMDS</a></li>
+<li class="chapter" data-level="4.3" data-path="multi1.html"><a href="multi1.html#permanova"><i class="fa fa-check"></i><b>4.3</b> PERMANOVA</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="multi2.html"><a href="multi2.html"><i class="fa fa-check"></i><b>5</b> Análisis multivariados II</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="multi2.html"><a href="multi2.html#introducción"><i class="fa fa-check"></i><b>5.1</b> INTRODUCCIÓN</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="multi2.html"><a href="multi2.html#la-lógica-de-las-técnicas-de-ordenación-restringida-o-canónica-constrained-análisis-de-gradiente-directo"><i class="fa fa-check"></i><b>5.1.1</b> LA LÓGICA DE LAS TÉCNICAS DE ORDENACIÓN RESTRINGIDA O CANÓNICA (“<em>CONSTRAINED</em>”, ANÁLISIS DE GRADIENTE DIRECTO)</a></li>
+<li class="chapter" data-level="5.1.2" data-path="multi2.html"><a href="multi2.html#qué-tipo-de-datos-de-composición-de-especies-se-utilizan-para-el-análisis"><i class="fa fa-check"></i><b>5.1.2</b> ¿Qué tipo de datos de composición de especies se utilizan para el análisis?</a></li>
+<li class="chapter" data-level="5.1.3" data-path="multi2.html"><a href="multi2.html#cómo-saber-si-debo-utilizar-un-método-de-ordenación-de-respuesta-lineal-o-unimodal"><i class="fa fa-check"></i><b>5.1.3</b> ¿Cómo saber si debo utilizar un método de ordenación de respuesta lineal o unimodal?</a></li>
+<li class="chapter" data-level="5.1.4" data-path="multi2.html"><a href="multi2.html#análisis-de-redundancia-rda"><i class="fa fa-check"></i><b>5.1.4</b> <strong>ANÁLISIS DE REDUNDANCIA (RDA)</strong></a></li>
+<li class="chapter" data-level="5.1.5" data-path="multi2.html"><a href="multi2.html#analicemos-estos-aspectos-a-través-de-un-ejemplo-práctico"><i class="fa fa-check"></i><b>5.1.5</b> Analicemos estos aspectos a través de un ejemplo práctico…</a></li>
+<li class="chapter" data-level="5.1.6" data-path="multi2.html"><a href="multi2.html#rda-utilizando-el-paquete-vegan-oksanen-et-al.-2007"><i class="fa fa-check"></i><b>5.1.6</b> RDA utilizando el paquete <strong>vegan</strong> (Oksanen <em>et al.</em>, 2007)</a></li>
+<li class="chapter" data-level="5.1.7" data-path="multi2.html"><a href="multi2.html#seleccionando-las-variables-explicativas-relevantes"><i class="fa fa-check"></i><b>5.1.7</b> Seleccionando las variables explicativas relevantes</a></li>
+<li class="chapter" data-level="5.1.8" data-path="multi2.html"><a href="multi2.html#rda-basado-en-matriz-de-distancia-distance-based-rda-db-rda"><i class="fa fa-check"></i><b>5.1.8</b> RDA basado en matriz de distancia (“Distance-based RDA”, db-RDA)</a></li>
+<li class="chapter" data-level="5.1.9" data-path="multi2.html"><a href="multi2.html#análisis-de-correspondencia-canónica-cca"><i class="fa fa-check"></i><b>5.1.9</b> <strong>ANÁLISIS DE CORRESPONDENCIA CANÓNICA (CCA)</strong></a></li>
+<li class="chapter" data-level="5.1.10" data-path="multi2.html"><a href="multi2.html#cca-utilizando-la-función-cca-del-paquete-vegan"><i class="fa fa-check"></i><b>5.1.10</b> CCA utilizando la función <strong>cca()</strong> del paquete <strong>vegan</strong></a></li>
+<li class="chapter" data-level="5.1.11" data-path="multi2.html"><a href="multi2.html#bibliografía-citada-y-de-lectura-recomendada"><i class="fa fa-check"></i><b>5.1.11</b> Bibliografía citada y de lectura recomendada</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="metrix.html"><a href="metrix.html"><i class="fa fa-check"></i><b>6</b> Paquete <em>metrix</em></a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="metrix.html"><a href="metrix.html#que-es-metrix"><i class="fa fa-check"></i><b>6.1</b> ¿Que es Metrix?</a></li>
+<li class="chapter" data-level="6.2" data-path="metrix.html"><a href="metrix.html#conjunto-de-datos-de-ejemplo"><i class="fa fa-check"></i><b>6.2</b> Conjunto de datos de ejemplo</a></li>
+<li class="chapter" data-level="6.3" data-path="metrix.html"><a href="metrix.html#instalar-metrix"><i class="fa fa-check"></i><b>6.3</b> Instalar <em>metrix</em></a></li>
+<li class="chapter" data-level="6.4" data-path="metrix.html"><a href="metrix.html#que-tipos-de-datos-analiza-metrix"><i class="fa fa-check"></i><b>6.4</b> ¿Que tipos de datos analiza <em>metrix</em>?</a></li>
+<li class="chapter" data-level="6.5" data-path="metrix.html"><a href="metrix.html#cargar-datos-de-densidad-de-macroinvertebrados-usando-metrix"><i class="fa fa-check"></i><b>6.5</b> Cargar datos de densidad de macroinvertebrados usando <em>metrix</em></a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="metrix.html"><a href="metrix.html#que-pasa-si-quiero-crear-mi-propio-conjunto-de-datos"><i class="fa fa-check"></i><b>6.5.1</b> ¿QUE PASA SI QUIERO CREAR MI PROPIO CONJUNTO DE DATOS?</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="metrix.html"><a href="metrix.html#cálculo-de-metricas-individuales-y-ecológicas"><i class="fa fa-check"></i><b>6.6</b> Cálculo de metricas individuales y ecológicas</a></li>
+<li class="chapter" data-level="6.7" data-path="metrix.html"><a href="metrix.html#cálculo-de-indices-bióticos"><i class="fa fa-check"></i><b>6.7</b> Cálculo de indices bióticos</a></li>
+<li class="chapter" data-level="6.8" data-path="metrix.html"><a href="metrix.html#futuro-del-paquete"><i class="fa fa-check"></i><b>6.8</b> FUTURO DEL PAQUETE</a></li>
+<li class="chapter" data-level="6.9" data-path="metrix.html"><a href="metrix.html#agradecimientos-1"><i class="fa fa-check"></i><b>6.9</b> AGRADECIMIENTOS</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="diathor.html"><a href="diathor.html"><i class="fa fa-check"></i><b>7</b> Paquetes <em>DiaThor</em> y <em>optimos.prime</em></a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="diathor.html"><a href="diathor.html#paquete-diathor"><i class="fa fa-check"></i><b>7.1</b> Paquete <em>DiaThor</em></a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="diathor.html"><a href="diathor.html#qué-hace"><i class="fa fa-check"></i><b>7.1.1</b> ¿Qué hace?</a></li>
+<li class="chapter" data-level="7.1.2" data-path="diathor.html"><a href="diathor.html#cómo-funciona"><i class="fa fa-check"></i><b>7.1.2</b> ¿Cómo funciona?</a></li>
+<li class="chapter" data-level="7.1.3" data-path="diathor.html"><a href="diathor.html#manos-a-la-obra-1"><i class="fa fa-check"></i><b>7.1.3</b> ¡Manos a la obra!</a></li>
+<li class="chapter" data-level="7.1.4" data-path="diathor.html"><a href="diathor.html#fuentes-de-información-ecológica-de-las-especies"><i class="fa fa-check"></i><b>7.1.4</b> Fuentes de información ecológica de las especies</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="diathor.html"><a href="diathor.html#paquete-optimos.prime"><i class="fa fa-check"></i><b>7.2</b> Paquete <em>optimos.prime</em></a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="diathor.html"><a href="diathor.html#qué-hace-1"><i class="fa fa-check"></i><b>7.2.1</b> ¿Qué hace?</a></li>
+<li class="chapter" data-level="7.2.2" data-path="diathor.html"><a href="diathor.html#cómo-lo-hace"><i class="fa fa-check"></i><b>7.2.2</b> ¿Cómo lo hace?</a></li>
+<li class="chapter" data-level="7.2.3" data-path="diathor.html"><a href="diathor.html#manos-a-la-obra-2"><i class="fa fa-check"></i><b>7.2.3</b> ¡Manos a la obra!</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="gam" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Unidad 3</span> Modelos Aditivos Generalizados<a href="gam.html#gam" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><strong>María Victoria Quiroga</strong><a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></p>
+<p>Instituto Tecnológico de Chascomús (INTECH, UNSAM-CONICET), Escuela de Bio y Nanotecnologías (UNSAM)</p>
+<div id="aclaración" class="section level3 hasAnchor" number="3.0.1">
+<h3><span class="header-section-number">3.0.1</span> Aclaración<a href="gam.html#aclaración" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>En esta unidad se utiliza el paquete <em>ggplot2</em> <span class="citation">(<a href="#ref-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span> para generar algunos gráficos. Para comprender el código empleado se recomienda leer el <em>Capítulo 3: Data visualization</em> del libro <em>R for Data Science</em> <span class="citation">(<a href="#ref-wickham2017r" role="doc-biblioref">Wickham and Grolemund 2017</a>)</span>.</p>
+</div>
+<div id="porqué-usar-modelos-aditivos-generalizados-gams" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> ¿Porqué usar Modelos Aditivos Generalizados (GAMs)?<a href="gam.html#porqué-usar-modelos-aditivos-generalizados-gams" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li>La relación entre variables predictoras (i.e., independientes) y la variable respuesta (i.e., dependiente) <strong>no</strong> necesita ser <strong>lineal</strong>.</li>
+<li><strong>No</strong> necesitamos conocer de antemano la forma funcional de la relación.</li>
+<li>Son modelos muy flexibles que permiten la interpretación (de manera gráfica) de los efectos parciales de cada variable independiente.</li>
+<li>Podemos:</li>
+</ol>
+<ul>
+<li>Incluir predictores categóricos e interacciones.</li>
+<li>Usar distribuciones diferentes a la normal para la variable dependiente.</li>
+<li>Incluir correlaciones entre observaciones (e.g., medidas repetidas, diseños anidados) -modelos mixtos.</li>
+</ul>
+</div>
+<div id="qué-son-los-gams" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> ¿Qué son los GAMs?<a href="gam.html#qué-son-los-gams" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Los GAM permiten incorporar los efectos additivos de distintas variables independientes (i.e., explicativas) utilizando funciones suaves (<span class="math inline">\(smooth functions\)</span>).</p>
+<p><span class="math display">\[
+g(\mu) = \beta_0 + f_{1}(x_{1}) + f_{2}(x_{2}) + ... + f_{n}(x_{n}) + \varepsilon
+\]</span></p>
+<p>Donde <span class="math inline">\(\mu\)</span> es el valor esperado de la variable dependiente <em>y</em> que puede presentar distribuciones de la familia exponencial, <em>g</em> es la función de enlace, <span class="math inline">\(\beta_0\)</span> es el intercepto, <span class="math inline">\(x_{n}\)</span> son las <em>n</em> variables independientes y cada <span class="math inline">\(f_{n}\)</span> es una función suave que se estima de manera no paramétrica. Se pueden incluir funciones suaves para interacciones, por ejemplo entre las variables independientes 1 y 2 <span class="math inline">\(f(x_{1},x_{2})\)</span>. Si se incluyen términos aditivos aleatorios, por ejemplo la autocorrelación en series de tiempo, se generan modelos mixtos (GAMM, <em>generalized additive mixed model</em>).</p>
+<p>Existen diferentes estrategias para ajustar una curva suave y continua a los datos. Aquí vamos a utilizar <em>splines</em>, y en particular <em>spline</em> cúbico y cúbico cíclico. De manera muy breve, un <em>spline</em> cúbico es una curva suave cúbica por tramos (Figura <a href="gam.html#fig:Splines">3.1</a>). El <em>spline</em> cúbico cíclico empieza y termina en el mismo punto. El paquete con el que vamos a trabajar <em>mgcv</em> <span class="citation">(<a href="#ref-wood2017" role="doc-biblioref">Wood 2017</a>)</span> usa splines penalizados ( <em>conventional intergrated square second derivative cubic spline penalty</em>), donde la penalización será más grande cuanto menos suave sea la curva.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:Splines"></span>
+<img src="images/Splines.png" alt="Construcción de un spline cúbico. La curva suave (línea contínua gruesa) es la suma de las 5 funciones basis (líneas finas). Las líneas verticales muestran los nodos equiespaciados. Extraído de Wood (2017)." width="80%" />
+<p class="caption">
+Figure 3.1: Construcción de un spline cúbico. La curva suave (línea contínua gruesa) es la suma de las 5 funciones basis (líneas finas). Las líneas verticales muestran los nodos equiespaciados. Extraído de Wood (2017).
+</p>
+</div>
+</div>
+<div id="manos-a-la-obra" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Manos a la obra!<a href="gam.html#manos-a-la-obra" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Utilizaremos un set de datos del trabajo <em>The dynamics of picocyanobacteria from a hypereutrophic shallow lake is affected by light-climate and small-bodied zooplankton: a 10-year cytometric time-series analysis</em> publicado en <em>FEMS Microbiology Ecology</em> <span class="citation">(<a href="#ref-quiroga2021" role="doc-biblioref">Quiroga et al. 2021</a>)</span>, disponibles en el <a href="http://hdl.handle.net/11336/200094">Repositorio Institucional CONICET Digital</a>.</p>
+<p>Descargar el set de datos <strong>data_gam.csv</strong> de <a href="https://github.com/Limno-con-R/CILCAL2023/tree/main/datasets">GitHub Limno-con-R/CILCAL2023</a>.
+Guardar el archivo en una carpeta llamada <em>data</em>, dentro del <strong>Directorio de Trabajo</strong> del <strong>Proyecto</strong> que creamos para esta Unidad (ver cómo hacerlo en la Unidad <a href="intro.html#intro">1</a>).</p>
+<p>Instalar los paquetes como se indica en la Unidad <a href="intro.html#intro">1</a>. Luego, cargarlos en la sesión</p>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="gam.html#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mgcv)</span>
+<span id="cb86-2"><a href="gam.html#cb86-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb86-3"><a href="gam.html#cb86-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(itsadug)</span>
+<span id="cb86-4"><a href="gam.html#cb86-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(data.table)</span>
+<span id="cb86-5"><a href="gam.html#cb86-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(car)</span>
+<span id="cb86-6"><a href="gam.html#cb86-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(grid)</span>
+<span id="cb86-7"><a href="gam.html#cb86-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span></code></pre></div>
+<p>Leer datos, dar formato <code>as.Date</code> a la fecha y generar las variables <code>Mes</code> y <code>Dias</code>.</p>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="gam.html#cb87-1" aria-hidden="true" tabindex="-1"></a>base <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;data/data_gam.csv&quot;</span>)</span>
+<span id="cb87-2"><a href="gam.html#cb87-2" aria-hidden="true" tabindex="-1"></a>base<span class="sc">$</span>Fecha <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(base<span class="sc">$</span>Fecha, <span class="st">&quot;%m/%d/%Y&quot;</span>) <span class="co"># formato de fecha en inglés</span></span>
+<span id="cb87-3"><a href="gam.html#cb87-3" aria-hidden="true" tabindex="-1"></a>base<span class="sc">$</span>Mes <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">format</span>(base<span class="sc">$</span>Fecha,<span class="st">&#39;%m&#39;</span>)) <span class="co"># generar variable Mes</span></span>
+<span id="cb87-4"><a href="gam.html#cb87-4" aria-hidden="true" tabindex="-1"></a>base<span class="sc">$</span>Dia1 <span class="ot">=</span> <span class="fu">rep</span>(base<span class="sc">$</span>Fecha[<span class="dv">1</span>], <span class="fu">nrow</span>(base)) <span class="co"># fecha inicial de la serie</span></span>
+<span id="cb87-5"><a href="gam.html#cb87-5" aria-hidden="true" tabindex="-1"></a>base<span class="sc">$</span>Dias <span class="ot">&lt;-</span> (<span class="fu">interval</span>(base<span class="sc">$</span>Dia1, base<span class="sc">$</span>Fecha) <span class="sc">%/%</span> <span class="fu">days</span>(<span class="dv">1</span>))<span class="sc">+</span><span class="dv">1</span> <span class="co"># generar variable Dias</span></span></code></pre></div>
+<p>Inspección visual de primeras filas de la tabla. Para ver toda la tabla se puede utilizar <code>View(base)</code>.</p>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="gam.html#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(base)</span></code></pre></div>
+<pre><code>##        Fecha Pcy_orgml Mes       Dia1 Dias
+## 1 2007-05-22   6660000   5 2007-05-22    1
+## 2 2007-06-05   6830000   6 2007-05-22   15
+## 3 2007-06-21   4700000   6 2007-05-22   31
+## 4 2007-07-03   4680000   7 2007-05-22   43
+## 5 2007-07-17   6500000   7 2007-05-22   57
+## 6 2007-07-31   8110000   7 2007-05-22   71</code></pre>
+<p>Ver la estructura de los datos</p>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="gam.html#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(base)</span></code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    225 obs. of  5 variables:
+##  $ Fecha    : Date, format: &quot;2007-05-22&quot; &quot;2007-06-05&quot; ...
+##  $ Pcy_orgml: num  6660000 6830000 4700000 4680000 6500000 8110000 8840000 11000000 10100000 6340000 ...
+##  $ Mes      : num  5 6 6 7 7 7 8 8 9 9 ...
+##  $ Dia1     : Date, format: &quot;2007-05-22&quot; &quot;2007-05-22&quot; ...
+##  $ Dias     : num  1 15 31 43 57 71 85 99 113 127 ...</code></pre>
+<p><code>base</code> es un objeto <code>data.frame</code> con 225 <code>obs.</code> observaciones o filas y 5 <code>variables</code> o columnas.
+Variables: <code>Fecha</code> con formato <code>Date</code>. <code>Pcy_orgml</code>, abundancia de picocianobacterias (organismos/ml) en la laguna Chascomús, como valores numéricos <code>num</code>.</p>
+<p>Se generaron las variables <code>Mes</code> y <code>Dias</code> como números <code>num</code>. <code>Mes</code> indica el #mes (1-12) de la fecha de muestreo y <code>Dias</code> indica el #días transcurridos desde la primer fecha (considerando la primer fecha como día #1).</p>
+<p>Grafico exploratorio de la serie temporal</p>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="gam.html#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(base, <span class="fu">aes</span>(<span class="at">x=</span> Dias, <span class="at">y=</span> Pcy_orgml))  <span class="sc">+</span></span>
+<span id="cb92-2"><a href="gam.html#cb92-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()  <span class="sc">+</span></span>
+<span id="cb92-3"><a href="gam.html#cb92-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
+<span id="cb92-4"><a href="gam.html#cb92-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:serie"></span>
+<img src="03-gam_files/figure-html/serie-1.png" alt="Serie temporal de abundancia (organismos/ml) de picocianobacterias." width="80%" />
+<p class="caption">
+Figure 3.2: Serie temporal de abundancia (organismos/ml) de picocianobacterias.
+</p>
+</div>
+<p>No se observan outliers en el gráfico.</p>
+<p>Para datos de conteo (e.g., organismos/ml) generalmente se utiliza la distribución de Poisson, pero las series temporales de abundancia de microorganismos suelen presentar sobredispersión (Figura <a href="gam.html#fig:serie">3.2</a>). Para considerar una varianza mayor que la media se podría utilizar la distribución binomial negativa o la <em>quasi-familia</em> quasipoisson. En este ejemplo se implementará <code>family=quasipoisson</code>.</p>
+<p>La autocorrelación temporal de los datos se incluye utilizando una estructura autorregresiva de primer orden continua <code>correlation = corCAR1(form = ~ Dias)</code> en un modelo mixto <code>gamm()</code>.</p>
+<p>Como primer modelado se generan funciones suaves <code>s()</code> para el efecto estacional <code>Mes</code> y el efecto interanual ( <em>trend</em>) <code>Dias</code>. Se utiliza <em>spline</em> cúbico cíclico para el primer efecto <code>s(Mes, bs="cc")</code> y cúbico para el segundo efecto <code>s(Dias, bs="cr")</code>.</p>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="gam.html#cb93-1" aria-hidden="true" tabindex="-1"></a>modelo1<span class="ot">&lt;-</span><span class="fu">gamm</span>(Pcy_orgml <span class="sc">~</span> <span class="fu">s</span>(Mes, <span class="at">bs =</span> <span class="st">&quot;cc&quot;</span>) <span class="sc">+</span> <span class="fu">s</span>(Dias, <span class="at">bs=</span><span class="st">&quot;cr&quot;</span>), </span>
+<span id="cb93-2"><a href="gam.html#cb93-2" aria-hidden="true" tabindex="-1"></a>              <span class="at">family=</span>quasipoisson, <span class="at">data =</span> base, </span>
+<span id="cb93-3"><a href="gam.html#cb93-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">correlation =</span> <span class="fu">corCAR1</span>(<span class="at">form =</span> <span class="sc">~</span> Dias))</span></code></pre></div>
+<pre><code>## 
+##  Maximum number of PQL iterations:  20</code></pre>
+<pre><code>## iteration 1</code></pre>
+<pre><code>## iteration 2</code></pre>
+<pre><code>## iteration 3</code></pre>
+<pre><code>## iteration 4</code></pre>
+<p>Por <em>default</em> el máximo número de iteraciones está seteado en 20 <code>niterPQL=20</code>. Si el modelo no converge se puede incrementar el número de interacciones, por ejemplo: <code>gamm(..., niterPQL=40)</code>.</p>
+<p>Interpretación visual de los efectos parciales: curvas suaves <code>s()</code> ( <em>smooth functions</em>)</p>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="gam.html#cb99-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(modelo1<span class="sc">$</span>gam, <span class="at">scale=</span><span class="dv">0</span>, <span class="at">scheme=</span><span class="dv">1</span>, <span class="at">pages=</span><span class="dv">1</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-6"></span>
+<img src="03-gam_files/figure-html/unnamed-chunk-6-1.png" alt="Efectos parciales del modelo 1. Las curvas suaves se centraron en cero, se indican los intervalos de confianza de 95% en gris. Las líneas internas en los ejes x (Mes y Dias) representan los datos." width="100%" />
+<p class="caption">
+Figure 3.3: Efectos parciales del modelo 1. Las curvas suaves se centraron en cero, se indican los intervalos de confianza de 95% en gris. Las líneas internas en los ejes x (Mes y Dias) representan los datos.
+</p>
+</div>
+<p>Información del modelo</p>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="gam.html#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modelo1<span class="sc">$</span>gam)</span></code></pre></div>
+<pre><code>## 
+## Family: quasipoisson 
+## Link function: log 
+## 
+## Formula:
+## Pcy_orgml ~ s(Mes, bs = &quot;cc&quot;) + s(Dias, bs = &quot;cr&quot;)
+## 
+## Parametric coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 15.72716    0.02977   528.2   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Approximate significance of smooth terms:
+##           edf Ref.df      F  p-value    
+## s(Mes)  3.858  8.000  3.674 3.46e-06 ***
+## s(Dias) 8.743  8.743 23.752  &lt; 2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## R-sq.(adj) =  0.564   
+##   Scale est. = 1.209e+06  n = 225</code></pre>
+<p>Se especifica la familia que se utilizó <code>## Family: quasipoisson</code> y la función de enlace <code>## Link function: log</code>. <code>?family</code> muestra las familias y funciones de enlace que se utilizan por <em>default</em>. Para cambiar la función de enlace solo hay que especificarlo en el código, ejemplo <code>family = Gamma(link = "log")</code>. Si no se especifica una familia, <code>gamm</code> usa distribución gaussiana con función de enlace identidad. La ayuda <code>?gamm</code> muestra todos los argumentos y los <em>defaults</em>.</p>
+<p>Se observa que ambos términos de suavizado son significativos (<code>p-value</code> &lt; 0.05), y el <span class="math inline">\(R_{adj}^{2}\)</span> del modelo es 0.5640034.</p>
+<p>Evaluación del modelo</p>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="gam.html#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="fu">windows</span>()</span>
+<span id="cb102-2"><a href="gam.html#cb102-2" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</span>
+<span id="cb102-3"><a href="gam.html#cb102-3" aria-hidden="true" tabindex="-1"></a><span class="fu">gam.check</span>(modelo1<span class="sc">$</span>gam, <span class="at">type=</span><span class="st">&quot;pearson&quot;</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:check"></span>
+<img src="03-gam_files/figure-html/check-1.png" alt="gam.check del modelo 1." width="100%" />
+<p class="caption">
+Figure 3.4: gam.check del modelo 1.
+</p>
+</div>
+<pre><code>## 
+## &#39;gamm&#39; based fit - care required with interpretation.
+## Checks based on working residuals may be misleading.
+## Basis dimension (k) checking results. Low p-value (k-index&lt;1) may
+## indicate that k is too low, especially if edf is close to k&#39;.
+## 
+##           k&#39;  edf k-index p-value    
+## s(Mes)  8.00 3.86    0.93    0.21    
+## s(Dias) 9.00 8.74    0.31  &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>Los gráficos de la izquierda de la Figura <a href="gam.html#fig:check">3.4</a> muestran que es correcto utilizar la <em>quasi familia</em> quasipoisson. El gráfico superior derecho muestra una dispersión bastante homogénea de los residuos, por lo que no habría mayores problemas con la varianza. El gráfico inferior derecho muestra una relación lineal positiva entre los valores observados y los predichos por el modelo. Si se logra mejorar el modelo, se observará una mejoría en este gráfico y en el <span class="math inline">\(R_{adj}^{2}\)</span> del modelo.</p>
+<p>En el modelo 1 no se especificó el <code>k</code> en los términos de suavizado <code>s()</code>, se utilizó la opción <em>default</em> <code>k = 10</code>. Este argumento especifica la dimensión de las funciones <em>basis</em> del <em>spline</em>. Cuando se indica un valor de <code>k</code>, este determina el máximo grado de libertad permitida para ese término del modelo. Sin embargo, los grados de libertad efectivos <code>edf</code> para cada término los estima el modelo a través de la penalización, siendo el límite superior <span class="math inline">\(k&#39; = k - 1\)</span>. No especificar el argumento <code>k</code> equivale a indicar <code>k = 10</code>.</p>
+<p>El <code>gam.check()</code> nos indica que el <code>k</code> del término <code>s(Dias)</code> del modelo 1 es muy bajo (valor de <code>p-value</code> bajo y <code>edf</code> cercano a <code>k'</code>. Ver <code>?choose.k</code> para mas detalles.</p>
+<p>Para mejorar el modelo se modifica <code>k</code>. Se disminuye <code>k = 6</code> en <code>s(Mes)</code> para evitar que incrementen los <code>edf</code> de ese término, y se aumenta <code>k = 20</code> en <code>s(Dias)</code>. Además, se agrega un término de interacción <code>ti()</code> adecuando para trabajar con variables que tienen diferentes unidades (meses <em>versus</em> días).</p>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="gam.html#cb104-1" aria-hidden="true" tabindex="-1"></a>modelo2<span class="ot">&lt;-</span><span class="fu">gamm</span>(Pcy_orgml <span class="sc">~</span> <span class="fu">s</span>(Mes, <span class="at">bs =</span> <span class="st">&quot;cc&quot;</span>, <span class="at">k=</span><span class="dv">6</span>) <span class="sc">+</span> <span class="fu">s</span>(Dias, <span class="at">bs=</span><span class="st">&quot;cr&quot;</span>, <span class="at">k=</span><span class="dv">20</span>) </span>
+<span id="cb104-2"><a href="gam.html#cb104-2" aria-hidden="true" tabindex="-1"></a>              <span class="sc">+</span> <span class="fu">ti</span>(Mes,Dias, <span class="at">bs=</span><span class="fu">c</span>(<span class="st">&quot;cc&quot;</span>,<span class="st">&quot;cr&quot;</span>)), <span class="at">family=</span>quasipoisson, </span>
+<span id="cb104-3"><a href="gam.html#cb104-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">data =</span> base, <span class="at">correlation =</span> <span class="fu">corCAR1</span>(<span class="at">form =</span> <span class="sc">~</span> Dias))</span></code></pre></div>
+<pre><code>## 
+##  Maximum number of PQL iterations:  20</code></pre>
+<pre><code>## iteration 1</code></pre>
+<pre><code>## iteration 2</code></pre>
+<pre><code>## iteration 3</code></pre>
+<p>Interpretación visual de los efectos parciales: curvas suaves <code>s()</code>( <em>smooth functions</em>)</p>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="gam.html#cb109-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(modelo2<span class="sc">$</span>gam, <span class="at">scale=</span><span class="dv">0</span>, <span class="at">scheme=</span><span class="dv">1</span>, <span class="at">pages=</span><span class="dv">1</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-9"></span>
+<img src="03-gam_files/figure-html/unnamed-chunk-9-1.png" alt="Efectos parciales del modelo 2. Las curvas suaves se centraron en cero, se indican los intervalos de confianza de 95% en gris. Las líneas internas en los ejes x (Mes y Dias) representan los datos." width="100%" />
+<p class="caption">
+Figure 3.5: Efectos parciales del modelo 2. Las curvas suaves se centraron en cero, se indican los intervalos de confianza de 95% en gris. Las líneas internas en los ejes x (Mes y Dias) representan los datos.
+</p>
+</div>
+<p>La interacción se muestra en 3D, y es difícil de interpretar visualmente. Aquí nos centramos en la interpretación visual de los efectos parciales.</p>
+<p>Información del nuevo modelo</p>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="gam.html#cb110-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modelo2<span class="sc">$</span>gam)</span></code></pre></div>
+<pre><code>## 
+## Family: quasipoisson 
+## Link function: log 
+## 
+## Formula:
+## Pcy_orgml ~ s(Mes, bs = &quot;cc&quot;, k = 6) + s(Dias, bs = &quot;cr&quot;, k = 20) + 
+##     ti(Mes, Dias, bs = c(&quot;cc&quot;, &quot;cr&quot;))
+## 
+## Parametric coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 15.64156    0.02398   652.3   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Approximate significance of smooth terms:
+##                 edf Ref.df      F p-value    
+## s(Mes)        3.268   4.00  9.085  &lt;2e-16 ***
+## s(Dias)      17.539  17.54 28.940  &lt;2e-16 ***
+## ti(Mes,Dias)  3.718  12.00  0.595  0.0395 *  
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## R-sq.(adj) =  0.753   
+##   Scale est. = 5.8774e+05  n = 225</code></pre>
+<p>Los efectos parciales de <code>s(Mes)</code> y <code>s(Dias)</code> son significativos, y la interacción <code>ti(Mes,Dias)</code> es significativa. El <span class="math inline">\(R_{adj}^{2}\)</span> del modelo aumentó a 0.7532274.</p>
+<p>Evaluación del modelo</p>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="gam.html#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="fu">windows</span>()</span>
+<span id="cb112-2"><a href="gam.html#cb112-2" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</span>
+<span id="cb112-3"><a href="gam.html#cb112-3" aria-hidden="true" tabindex="-1"></a><span class="fu">gam.check</span>(modelo2<span class="sc">$</span>gam, <span class="at">type=</span><span class="st">&quot;pearson&quot;</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:check2"></span>
+<img src="03-gam_files/figure-html/check2-1.png" alt="gam.check del modelo 2." width="100%" />
+<p class="caption">
+Figure 3.6: gam.check del modelo 2.
+</p>
+</div>
+<pre><code>## 
+## &#39;gamm&#39; based fit - care required with interpretation.
+## Checks based on working residuals may be misleading.
+## Basis dimension (k) checking results. Low p-value (k-index&lt;1) may
+## indicate that k is too low, especially if edf is close to k&#39;.
+## 
+##                 k&#39;   edf k-index p-value    
+## s(Mes)        4.00  3.27    0.84   0.005 ** 
+## s(Dias)      19.00 17.54    0.66  &lt;2e-16 ***
+## ti(Mes,Dias) 12.00  3.72    0.89   0.015 *  
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>De nuevo, parece correcto utilizar la <em>quasi familia</em> quasipoisson, sin mayores problemas con la varianza. La relación lineal positiva entre los valores observados y los predichos (gráfico inferior derecho) ha mejorado, coincidiendo con el incremento del <span class="math inline">\(R_{adj}^{2}\)</span> del modelo.</p>
+<p>Los <code>edf</code> del término <code>s(Mes)</code> son cercanos a 3, muy similares al primer modelo, lo cual corrobora que la especificación de k en el modelo no es crítica (modelo 1 <code>k = 10</code>, modelo 2 <code>k = 6</code>), siempre que se considere un límite superior adecuado. Para <code>s(Dias)</code> el p-value sigue siendo bajo y <code>edf</code> sigue cercano a <code>k'</code>, pero <code>k-index</code> aumentó a 0.66. Se considera que no es necesario aumentar el <code>k</code> porque complejizaría el modelo, y consecuentemente la interpretación visual de la tendencia ( <em>trend</em>, efecto Dias).</p>
+<p>Se pueden comparar ambos modelos estimando su AIC</p>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="gam.html#cb114-1" aria-hidden="true" tabindex="-1"></a><span class="fu">AIC</span>(modelo1<span class="sc">$</span>lme,modelo2<span class="sc">$</span>lme)</span></code></pre></div>
+<pre><code>##             df      AIC
+## modelo1$lme  6 311.8362
+## modelo2$lme  8 228.2012</code></pre>
+<p>Efectivamente el modelo 2 presenta un AIC más bajo.</p>
+<p><strong>Otros gráficos</strong></p>
+<p>Se puede graficar con <code>vis.gam()</code>.</p>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="gam.html#cb116-1" aria-hidden="true" tabindex="-1"></a><span class="fu">vis.gam</span>(modelo2<span class="sc">$</span>gam, <span class="at">type=</span><span class="st">&quot;response&quot;</span>, </span>
+<span id="cb116-2"><a href="gam.html#cb116-2" aria-hidden="true" tabindex="-1"></a>        <span class="at">view=</span><span class="fu">c</span>(<span class="st">&quot;Mes&quot;</span>,<span class="st">&quot;Dias&quot;</span>), <span class="at">main=</span><span class="st">&quot;Pcy (org/ml)&quot;</span>,</span>
+<span id="cb116-3"><a href="gam.html#cb116-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.type =</span> <span class="st">&quot;contour&quot;</span>, <span class="at">contour.col=</span><span class="st">&quot;black&quot;</span>,<span class="at">color=</span><span class="st">&quot;terrain&quot;</span>)</span>
+<span id="cb116-4"><a href="gam.html#cb116-4" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(base<span class="sc">$</span>Mes,base<span class="sc">$</span>Dias,<span class="at">pch =</span> <span class="dv">20</span>) <span class="co">#agregar puntos de muestreo</span></span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-12"></span>
+<img src="03-gam_files/figure-html/unnamed-chunk-12-1.png" alt="vis.gam plot del modelo 2." width="100%" />
+<p class="caption">
+Figure 3.7: vis.gam plot del modelo 2.
+</p>
+</div>
+<p>Se pueden graficar los valores observados a campo y los predichos por el modelo. Cuanto mas alto sea el <span class="math inline">\(R_{adj}^{2}\)</span>, mas similares serán ambos valores.</p>
+<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="gam.html#cb117-1" aria-hidden="true" tabindex="-1"></a><span class="co"># generar datos para el gráfico </span></span>
+<span id="cb117-2"><a href="gam.html#cb117-2" aria-hidden="true" tabindex="-1"></a>Base<span class="ot">&lt;-</span><span class="fu">as.data.table</span>(base) </span>
+<span id="cb117-3"><a href="gam.html#cb117-3" aria-hidden="true" tabindex="-1"></a>datas <span class="ot">&lt;-</span> <span class="fu">rbindlist</span>(<span class="fu">list</span>(Base[, .(Pcy_orgml, Fecha)], </span>
+<span id="cb117-4"><a href="gam.html#cb117-4" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">data.table</span>(<span class="at">Pcy_orgml =</span> (modelo2<span class="sc">$</span>gam)<span class="sc">$</span>fitted.values,</span>
+<span id="cb117-5"><a href="gam.html#cb117-5" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">Fecha =</span> Base[, Fecha])))</span>
+<span id="cb117-6"><a href="gam.html#cb117-6" aria-hidden="true" tabindex="-1"></a>datas[, datos <span class="sc">:</span><span class="er">=</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">&quot;Observados&quot;</span>, <span class="fu">nrow</span>(Base)), </span>
+<span id="cb117-7"><a href="gam.html#cb117-7" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">rep</span>(<span class="st">&quot;Predichos&quot;</span>, <span class="fu">nrow</span>(Base)))]</span>
+<span id="cb117-8"><a href="gam.html#cb117-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb117-9"><a href="gam.html#cb117-9" aria-hidden="true" tabindex="-1"></a><span class="co"># generar el gráfico</span></span>
+<span id="cb117-10"><a href="gam.html#cb117-10" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> datas, <span class="fu">aes</span>(Fecha,Pcy_orgml, <span class="at">group =</span> datos))<span class="sc">+</span></span>
+<span id="cb117-11"><a href="gam.html#cb117-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">colour =</span> datos))<span class="sc">+</span></span>
+<span id="cb117-12"><a href="gam.html#cb117-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">&quot;black&quot;</span>,<span class="st">&quot;red&quot;</span>))<span class="sc">+</span></span>
+<span id="cb117-13"><a href="gam.html#cb117-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Pcy (org/ml)&quot;</span>)</span></code></pre></div>
+<p><img src="03-gam_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+</div>
+<div id="agradecimientos" class="section level2 hasAnchor" number="3.4">
+<h2><span class="header-section-number">3.4</span> Agradecimientos<a href="gam.html#agradecimientos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Un agradecimiento muy especial para los Profesores <strong>Gerardo Cueto</strong> y <strong>Adriana Pérez</strong> de la FCEN-UBA.</p>
+
+</div>
+</div>
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-quiroga2021" class="csl-entry">
+Quiroga, MV, P Huber, J Ospina-Serna, N Diovisalvi, M Odriozola, GR Cueto, L Lagomarsino, et al. 2021. <span>“<span class="nocase">The dynamics of picocyanobacteria from a hypereutrophic shallow lake is affected by light-climate and small-bodied zooplankton: a 10-year cytometric time-series analysis</span>.”</span> <em>FEMS Microbiology Ecology</em> 97 (5). <a href="https://doi.org/10.1093/femsec/fiab055">https://doi.org/10.1093/femsec/fiab055</a>.
+</div>
+<div id="ref-ggplot2" class="csl-entry">
+Wickham, H. 2016. <em>Ggplot2: Elegant Graphics for Data Analysis</em>. Springer-Verlag New York. <a href="https://ggplot2.tidyverse.org">https://ggplot2.tidyverse.org</a>.
+</div>
+<div id="ref-wickham2017r" class="csl-entry">
+Wickham, H, and G Grolemund. 2017. <em>R for Data Science</em>. O’Reilly Media. <a href="https://books.google.com.ar/books?id=-7RhvgAACAAJ">https://books.google.com.ar/books?id=-7RhvgAACAAJ</a>.
+</div>
+<div id="ref-wood2017" class="csl-entry">
+Wood, SN. 2017. <em>Generalized Additive Models: An Introduction with r.</em> 2nd ed. Boca Raton: Chapman; Hall/CRC. <a href="https://doi.org/10.1201/9781315370279">https://doi.org/10.1201/9781315370279</a>.
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="3">
+<li id="fn3"><p><a href="mailto:mvquiroga@iib.unsam.edu.ar" class="email">mvquiroga@iib.unsam.edu.ar</a><a href="gam.html#fnref3" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="regmul.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="multi1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/03-gam.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-LimnoR.pdf", "bookdown-LimnoR.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
