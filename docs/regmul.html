@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Unidad 2 Correlaciones y regresión múltiple | bookdown-LimnoR</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Unidad 2 Correlaciones y regresión múltiple | bookdown-LimnoR" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Unidad 2 Correlaciones y regresión múltiple | bookdown-LimnoR" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="intro.html"/>
+<link rel="next" href="gam.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>LIMNOLOGIA CON R</a>
+<ul>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#contenido"><i class="fa fa-check"></i><b>0.1</b> Contenido</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introducción a R y RStudio</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#instalación"><i class="fa fa-check"></i><b>1.1</b> Instalación</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#rstudio"><i class="fa fa-check"></i><b>1.2</b> RStudio</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#a-trabajar"><i class="fa fa-check"></i><b>1.3</b> A trabajar!</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="intro.html"><a href="intro.html#crear-un-proyecto"><i class="fa fa-check"></i><b>1.3.1</b> Crear un <strong>Proyecto</strong></a></li>
+<li class="chapter" data-level="1.3.2" data-path="intro.html"><a href="intro.html#crear-un-r-script"><i class="fa fa-check"></i><b>1.3.2</b> Crear un <strong>R Script</strong></a></li>
+<li class="chapter" data-level="1.3.3" data-path="intro.html"><a href="intro.html#instalar-y-cargar-paquetes"><i class="fa fa-check"></i><b>1.3.3</b> Instalar y cargar <strong>paquetes</strong></a></li>
+<li class="chapter" data-level="1.3.4" data-path="intro.html"><a href="intro.html#importar-datos"><i class="fa fa-check"></i><b>1.3.4</b> Importar <strong>datos</strong></a></li>
+<li class="chapter" data-level="1.3.5" data-path="intro.html"><a href="intro.html#visualizar-y-manipular-datos"><i class="fa fa-check"></i><b>1.3.5</b> Visualizar y manipular <strong>datos</strong></a></li>
+<li class="chapter" data-level="1.3.6" data-path="intro.html"><a href="intro.html#gráficos-exploratorios-básicos"><i class="fa fa-check"></i><b>1.3.6</b> Gráficos exploratorios básicos</a></li>
+<li class="chapter" data-level="1.3.7" data-path="intro.html"><a href="intro.html#recursos-extra-recomendados"><i class="fa fa-check"></i><b>1.3.7</b> Recursos extra recomendados</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="regmul.html"><a href="regmul.html"><i class="fa fa-check"></i><b>2</b> Correlaciones y regresión múltiple</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="regmul.html"><a href="regmul.html#caso-de-estudio"><i class="fa fa-check"></i><b>2.1</b> Caso de estudio</a></li>
+<li class="chapter" data-level="2.2" data-path="regmul.html"><a href="regmul.html#leer-y-emprolijar-los-datos"><i class="fa fa-check"></i><b>2.2</b> Leer y emprolijar los datos</a></li>
+<li class="chapter" data-level="2.3" data-path="regmul.html"><a href="regmul.html#correlaciones"><i class="fa fa-check"></i><b>2.3</b> Correlaciones</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="regmul.html"><a href="regmul.html#entre-biomasa-de-morfotipos-bacterianos"><i class="fa fa-check"></i><b>2.3.1</b> Entre biomasa de morfotipos bacterianos</a></li>
+<li class="chapter" data-level="2.3.2" data-path="regmul.html"><a href="regmul.html#entre-variables-abióticas"><i class="fa fa-check"></i><b>2.3.2</b> Entre variables abióticas</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="regmul.html"><a href="regmul.html#regresiones-múltiples"><i class="fa fa-check"></i><b>2.4</b> Regresiones múltiples</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="regmul.html"><a href="regmul.html#selección-automática-de-variables"><i class="fa fa-check"></i><b>2.4.1</b> Selección automática de variables</a></li>
+<li class="chapter" data-level="2.4.2" data-path="regmul.html"><a href="regmul.html#selección-manual-de-variables"><i class="fa fa-check"></i><b>2.4.2</b> Selección manual de variables</a></li>
+<li class="chapter" data-level="2.4.3" data-path="regmul.html"><a href="regmul.html#evaluación-e-interpretación-del-modelo-final"><i class="fa fa-check"></i><b>2.4.3</b> Evaluación e interpretación del modelo final</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="regmul.html"><a href="regmul.html#a-modo-de-conclusión"><i class="fa fa-check"></i><b>2.5</b> A modo de conclusión</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="gam.html"><a href="gam.html"><i class="fa fa-check"></i><b>3</b> Modelos Aditivos Generalizados</a>
+<ul>
+<li class="chapter" data-level="3.0.1" data-path="gam.html"><a href="gam.html#aclaración"><i class="fa fa-check"></i><b>3.0.1</b> Aclaración</a></li>
+<li class="chapter" data-level="3.1" data-path="gam.html"><a href="gam.html#porqué-usar-modelos-aditivos-generalizados-gams"><i class="fa fa-check"></i><b>3.1</b> ¿Porqué usar Modelos Aditivos Generalizados (GAMs)?</a></li>
+<li class="chapter" data-level="3.2" data-path="gam.html"><a href="gam.html#qué-son-los-gams"><i class="fa fa-check"></i><b>3.2</b> ¿Qué son los GAMs?</a></li>
+<li class="chapter" data-level="3.3" data-path="gam.html"><a href="gam.html#manos-a-la-obra"><i class="fa fa-check"></i><b>3.3</b> Manos a la obra!</a></li>
+<li class="chapter" data-level="3.4" data-path="gam.html"><a href="gam.html#agradecimientos"><i class="fa fa-check"></i><b>3.4</b> Agradecimientos</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="multi1.html"><a href="multi1.html"><i class="fa fa-check"></i><b>4</b> Análisis multivariados I</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="multi1.html"><a href="multi1.html#análisis-de-componentes-principales"><i class="fa fa-check"></i><b>4.1</b> Análisis de Componentes Principales</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="multi1.html"><a href="multi1.html#qué-tipos-de-datos-usa-una-acp"><i class="fa fa-check"></i><b>4.1.1</b> ¿Qué tipos de datos usa una ACP?</a></li>
+<li class="chapter" data-level="4.1.2" data-path="multi1.html"><a href="multi1.html#cómo-funciona-el-análisis"><i class="fa fa-check"></i><b>4.1.2</b> ¿Cómo funciona el análisis?</a></li>
+<li class="chapter" data-level="4.1.3" data-path="multi1.html"><a href="multi1.html#ahora-manos-a-la-obra-miremos-datos"><i class="fa fa-check"></i><b>4.1.3</b> Ahora manos a la obra: miremos datos</a></li>
+<li class="chapter" data-level="4.1.4" data-path="multi1.html"><a href="multi1.html#crear-una-condición-para-colorear-los-individuos"><i class="fa fa-check"></i><b>4.1.4</b> Crear una condición para colorear los individuos</a></li>
+<li class="chapter" data-level="4.1.5" data-path="multi1.html"><a href="multi1.html#refinando-el-modelo"><i class="fa fa-check"></i><b>4.1.5</b> Refinando el modelo</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="multi1.html"><a href="multi1.html#nmds"><i class="fa fa-check"></i><b>4.2</b> NMDS</a></li>
+<li class="chapter" data-level="4.3" data-path="multi1.html"><a href="multi1.html#permanova"><i class="fa fa-check"></i><b>4.3</b> PERMANOVA</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="multi2.html"><a href="multi2.html"><i class="fa fa-check"></i><b>5</b> Análisis multivariados II</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="multi2.html"><a href="multi2.html#introducción"><i class="fa fa-check"></i><b>5.1</b> INTRODUCCIÓN</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="multi2.html"><a href="multi2.html#la-lógica-de-las-técnicas-de-ordenación-restringida-o-canónica-constrained-análisis-de-gradiente-directo"><i class="fa fa-check"></i><b>5.1.1</b> LA LÓGICA DE LAS TÉCNICAS DE ORDENACIÓN RESTRINGIDA O CANÓNICA (“<em>CONSTRAINED</em>”, ANÁLISIS DE GRADIENTE DIRECTO)</a></li>
+<li class="chapter" data-level="5.1.2" data-path="multi2.html"><a href="multi2.html#qué-tipo-de-datos-de-composición-de-especies-se-utilizan-para-el-análisis"><i class="fa fa-check"></i><b>5.1.2</b> ¿Qué tipo de datos de composición de especies se utilizan para el análisis?</a></li>
+<li class="chapter" data-level="5.1.3" data-path="multi2.html"><a href="multi2.html#cómo-saber-si-debo-utilizar-un-método-de-ordenación-de-respuesta-lineal-o-unimodal"><i class="fa fa-check"></i><b>5.1.3</b> ¿Cómo saber si debo utilizar un método de ordenación de respuesta lineal o unimodal?</a></li>
+<li class="chapter" data-level="5.1.4" data-path="multi2.html"><a href="multi2.html#análisis-de-redundancia-rda"><i class="fa fa-check"></i><b>5.1.4</b> <strong>ANÁLISIS DE REDUNDANCIA (RDA)</strong></a></li>
+<li class="chapter" data-level="5.1.5" data-path="multi2.html"><a href="multi2.html#analicemos-estos-aspectos-a-través-de-un-ejemplo-práctico"><i class="fa fa-check"></i><b>5.1.5</b> Analicemos estos aspectos a través de un ejemplo práctico…</a></li>
+<li class="chapter" data-level="5.1.6" data-path="multi2.html"><a href="multi2.html#rda-utilizando-el-paquete-vegan-oksanen-et-al.-2007"><i class="fa fa-check"></i><b>5.1.6</b> RDA utilizando el paquete <strong>vegan</strong> (Oksanen <em>et al.</em>, 2007)</a></li>
+<li class="chapter" data-level="5.1.7" data-path="multi2.html"><a href="multi2.html#seleccionando-las-variables-explicativas-relevantes"><i class="fa fa-check"></i><b>5.1.7</b> Seleccionando las variables explicativas relevantes</a></li>
+<li class="chapter" data-level="5.1.8" data-path="multi2.html"><a href="multi2.html#rda-basado-en-matriz-de-distancia-distance-based-rda-db-rda"><i class="fa fa-check"></i><b>5.1.8</b> RDA basado en matriz de distancia (“Distance-based RDA”, db-RDA)</a></li>
+<li class="chapter" data-level="5.1.9" data-path="multi2.html"><a href="multi2.html#análisis-de-correspondencia-canónica-cca"><i class="fa fa-check"></i><b>5.1.9</b> <strong>ANÁLISIS DE CORRESPONDENCIA CANÓNICA (CCA)</strong></a></li>
+<li class="chapter" data-level="5.1.10" data-path="multi2.html"><a href="multi2.html#cca-utilizando-la-función-cca-del-paquete-vegan"><i class="fa fa-check"></i><b>5.1.10</b> CCA utilizando la función <strong>cca()</strong> del paquete <strong>vegan</strong></a></li>
+<li class="chapter" data-level="5.1.11" data-path="multi2.html"><a href="multi2.html#bibliografía-citada-y-de-lectura-recomendada"><i class="fa fa-check"></i><b>5.1.11</b> Bibliografía citada y de lectura recomendada</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="metrix.html"><a href="metrix.html"><i class="fa fa-check"></i><b>6</b> Paquete <em>metrix</em></a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="metrix.html"><a href="metrix.html#que-es-metrix"><i class="fa fa-check"></i><b>6.1</b> ¿Que es Metrix?</a></li>
+<li class="chapter" data-level="6.2" data-path="metrix.html"><a href="metrix.html#conjunto-de-datos-de-ejemplo"><i class="fa fa-check"></i><b>6.2</b> Conjunto de datos de ejemplo</a></li>
+<li class="chapter" data-level="6.3" data-path="metrix.html"><a href="metrix.html#instalar-metrix"><i class="fa fa-check"></i><b>6.3</b> Instalar <em>metrix</em></a></li>
+<li class="chapter" data-level="6.4" data-path="metrix.html"><a href="metrix.html#que-tipos-de-datos-analiza-metrix"><i class="fa fa-check"></i><b>6.4</b> ¿Que tipos de datos analiza <em>metrix</em>?</a></li>
+<li class="chapter" data-level="6.5" data-path="metrix.html"><a href="metrix.html#cargar-datos-de-densidad-de-macroinvertebrados-usando-metrix"><i class="fa fa-check"></i><b>6.5</b> Cargar datos de densidad de macroinvertebrados usando <em>metrix</em></a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="metrix.html"><a href="metrix.html#que-pasa-si-quiero-crear-mi-propio-conjunto-de-datos"><i class="fa fa-check"></i><b>6.5.1</b> ¿QUE PASA SI QUIERO CREAR MI PROPIO CONJUNTO DE DATOS?</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="metrix.html"><a href="metrix.html#cálculo-de-metricas-individuales-y-ecológicas"><i class="fa fa-check"></i><b>6.6</b> Cálculo de metricas individuales y ecológicas</a></li>
+<li class="chapter" data-level="6.7" data-path="metrix.html"><a href="metrix.html#cálculo-de-indices-bióticos"><i class="fa fa-check"></i><b>6.7</b> Cálculo de indices bióticos</a></li>
+<li class="chapter" data-level="6.8" data-path="metrix.html"><a href="metrix.html#futuro-del-paquete"><i class="fa fa-check"></i><b>6.8</b> FUTURO DEL PAQUETE</a></li>
+<li class="chapter" data-level="6.9" data-path="metrix.html"><a href="metrix.html#agradecimientos-1"><i class="fa fa-check"></i><b>6.9</b> AGRADECIMIENTOS</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="diathor.html"><a href="diathor.html"><i class="fa fa-check"></i><b>7</b> Paquetes <em>DiaThor</em> y <em>optimos.prime</em></a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="diathor.html"><a href="diathor.html#paquete-diathor"><i class="fa fa-check"></i><b>7.1</b> Paquete <em>DiaThor</em></a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="diathor.html"><a href="diathor.html#qué-hace"><i class="fa fa-check"></i><b>7.1.1</b> ¿Qué hace?</a></li>
+<li class="chapter" data-level="7.1.2" data-path="diathor.html"><a href="diathor.html#cómo-funciona"><i class="fa fa-check"></i><b>7.1.2</b> ¿Cómo funciona?</a></li>
+<li class="chapter" data-level="7.1.3" data-path="diathor.html"><a href="diathor.html#manos-a-la-obra-1"><i class="fa fa-check"></i><b>7.1.3</b> ¡Manos a la obra!</a></li>
+<li class="chapter" data-level="7.1.4" data-path="diathor.html"><a href="diathor.html#fuentes-de-información-ecológica-de-las-especies"><i class="fa fa-check"></i><b>7.1.4</b> Fuentes de información ecológica de las especies</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="diathor.html"><a href="diathor.html#paquete-optimos.prime"><i class="fa fa-check"></i><b>7.2</b> Paquete <em>optimos.prime</em></a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="diathor.html"><a href="diathor.html#qué-hace-1"><i class="fa fa-check"></i><b>7.2.1</b> ¿Qué hace?</a></li>
+<li class="chapter" data-level="7.2.2" data-path="diathor.html"><a href="diathor.html#cómo-lo-hace"><i class="fa fa-check"></i><b>7.2.2</b> ¿Cómo lo hace?</a></li>
+<li class="chapter" data-level="7.2.3" data-path="diathor.html"><a href="diathor.html#manos-a-la-obra-2"><i class="fa fa-check"></i><b>7.2.3</b> ¡Manos a la obra!</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="regmul" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Unidad 2</span> Correlaciones y regresión múltiple<a href="regmul.html#regmul" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><em><strong>Autora de esta unidad:</strong> Natalia Morandeira</em></p>
+<p>En esta Unidad vamos a abordar análisis de correlación y regresiones múltiples (modelos lineales). Las correlaciones son análisis útiles para explorar nuestros datos y para evaluar si dos variables están asociadas positivamente o negativamente. Por otro lado, en el caso de una regresión simple, tenemos una variable respuesta (o dependiente) y una variable explicativa (o independiente). Un análisis de regresión múltiple es muy adecuado cuando hemos medido muchas variables, por ejemplo, si tenemos una variable respuesta y muchas posibles variables explicativas. Nos interesa conocer cuál o cuáles variables explican la variación de la variable respuesta, y elegir el mejor modelo.</p>
+<p>En el marco de análisis limnológicos, una situación común es tener una variable respuesta medida en cuerpos de agua y múltiples variables que creemos que pueden explicar su variación. Entre las variables respuestas, podríamos tener (de acuerdo al objetivo de nuestro estudio) la abundancia, biomasa o diversidad de especies de un dado taxón o de grupos funcionales; o la concentración de un agroquímico; o incluso variables físico-químicas del cuerpo de agua que hipotetizamos que dependen de otro factor. Entre las variables respuestas, es posible que tengamos variables físico-químicas, características morfométricas de la laguna, usos de suelo del entorno, características de la cuenca, abundancia de otro taxón que interactúe con nuestra especie de interés, etc. Nos puede interesar en primer lugar analizar si están correlacionadas nuestras potenciales variables explicativas. Luego, podemos intentar ajustar un buen modelo que explique cómo varía nuestra variable respuesta en función de varias variables explicativas. Ese es el camino que recorreremos en esta Unidad.</p>
+<div id="caso-de-estudio" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Caso de estudio<a href="regmul.html#caso-de-estudio" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>El sitio de estudio es la turbera de Rancho Hambre (Tierra del Fuego, Argentina), en donde entre octubre de 2009 y abril de 2010 se realizaron muestreos en lagunas (ver <a href="https://link.springer.com/article/10.1007/s10750-016-2969-2">artículo</a> de Quiroga <em>et al.</em> 2017, y la <a href="http://hdl.handle.net/20.500.12110/tesis_n5433_Quiroga">tesis doctoral</a> de María Victoria Quiroga (FCEN-UBA)). En cinco lagunas (RH1 a RH5), se realizaron muestreos estacionales (octubre, diciembre, febrero y abril), es decir, tenemos un total de 20 observaciones. Contamos con dos tablas de datos:</p>
+<ul>
+<li><p><strong>Datos limnológicos físicoquímicos.</strong> Los datos corresponden a los sitios de muestreo de orilla de los cuerpos de agua. Los parámetros limnológicos fueron estimados según lo descripto en la sección <em>Sampling regime, physical-chemical analyses</em> de Materiales y Métodos en Quiroga <em>et al.</em> (2017). Los <a href="http://hdl.handle.net/11336/201874">datos físicoquímicos están disponibles en el repositorio digital de CONICET</a>. Consideraremos a las variables medidas como variables explicativas: pH, conductividad, oxígeno disuelto, dureza total, DOC, DIN, nitrógeno total, DRP, fósforo total, ag(440), SUVA254 e índice MS; todas ellas variables numéricas. Por otro lado tenemos variables categóricas que discutiremos cómo considerar: la laguna (cinco niveles) y la fecha de muestreo (cuatro niveles).</p></li>
+<li><p><strong>Biomasa de morfotipos bacterianos</strong>. La biomasa de bacterias heterótrofas se estimó utilizando microscopía de epifluorescencia y análisis de imágenes. Para detalles ver sección <em>Bacterioplankton morphotypes</em> de Materiales y Métodos en Quiroga <em>et al.</em> (2017). Los <a href="http://hdl.handle.net/11336/201811">datos de morfotipos bacterianos están disponibles en el repositorio digital de CONICET</a>. En la tabla se cuenta con la biomasa de seis morfotipos bacterianos distintos. Podemos tomar a la biomasa de cada morfotipo como una variable respuesta por separado, o bien considerar para un primer análisis a la biomasa total de bacterias heterótrofas como la variable a modelar.</p></li>
+</ul>
+</div>
+<div id="leer-y-emprolijar-los-datos" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Leer y emprolijar los datos<a href="regmul.html#leer-y-emprolijar-los-datos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Siempre debemos mirar nuestra tabla de datos antes de empezar: detectar posibles errores o datos faltantes, retocar los nombres de las variables, agrupar filas y columnas si corresponde, etc. En nuestro caso además tenemos por un lado las variables físico-químicas y por el otro lado las variables biológicas, pero para los análisis es conveniente tener todos los datos en un mismo <em>dataframe</em>.</p>
+<p>Empezamos leyendo las bases de datos en R. Es una buena práctica guardar los archivos en una carpeta llamada <em>data</em>, dentro de la carpeta de nuestro proyecto. Tenemos los datos en formato <em>csv</em> en <a href="https://github.com/Limno-con-R/CILCAL2023/tree/main/datasets">GitHub Limno-con-R/CILCAL2023</a> <strong>RH_abiotic_data.csv</strong> y <strong>RH_morpho_biomass.csv</strong> (son casi iguales a los disponibles en el repositorio CONICET, se cambió un guión bajo por un espacio en una de las tablas). Cargamos los datos indicando que se saltee (<em>skip</em>) la primera fila (¿por qué?).</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="regmul.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb34-2"><a href="regmul.html#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-3"><a href="regmul.html#cb34-3" aria-hidden="true" tabindex="-1"></a>datos_fq <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;data/RH_abiotic_data.csv&quot;</span>, <span class="at">skip =</span> <span class="dv">1</span>)</span>
+<span id="cb34-4"><a href="regmul.html#cb34-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-5"><a href="regmul.html#cb34-5" aria-hidden="true" tabindex="-1"></a>datos_bacterias <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;data/RH_morpho_biomass.csv&quot;</span>, <span class="at">skip =</span> <span class="dv">1</span>)</span></code></pre></div>
+<p>Ahora vamos a ver los datos. Recordar o anotar cuántas filas y columnas tiene cada <em>dataframe</em>.</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="regmul.html#cb35-1" aria-hidden="true" tabindex="-1"></a>datos_fq</span></code></pre></div>
+<pre><code>## # A tibble: 20 × 16
+##    ID    Pool  Site      Date     pH Condu…¹ Disso…² Total…³   DOC   DIN Total…⁴
+##    &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;     &lt;chr&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;
+##  1 1O    RH1   shore     Octo…  4.91    13.4    NA      21.2   5.6  83.6    1870
+##  2 2O    RH2   shore     Octo…  5.52     8.7    NA      46.2   5.1  41.3    1980
+##  3 3O    RH3   shore     Octo…  4.72    15.2    NA      13.8   2.8  10      1980
+##  4 4O    RH4   north sh… Octo…  5.09    11.8    NA      33.2   5.7  55.3    1650
+##  5 5O    RH5   shore     Octo…  4.82     5.5    NA      25.8   3.9  54.4    3410
+##  6 1D    RH1   shore     Dece…  6.39    19.1    11.0    38.5   7.2  21.1    1320
+##  7 2D    RH2   shore     Dece…  4.75    22.6    11.0    42.1   7.7  12.1    1870
+##  8 3D    RH3   shore     Dece…  4.67    26.7    11.7    18.9  13.4  22.6    5720
+##  9 4D    RH4   north sh… Dece…  6.75    25.6    11.7    24.8   5.3  34      7480
+## 10 5D    RH5   shore     Dece…  4.65    23      11.5    20.1  11    11.2   10230
+## 11 1F    RH1   shore     Febr…  5.9     21.4    10.4    39.5  12.7  53      8030
+## 12 2F    RH2   shore     Febr…  5.19    22.6    10.2    34     5.9  30.3   10010
+## 13 3F    RH3   shore     Febr…  4.66    25.7    10.6    32    12.5  45.3   11330
+## 14 4F    RH4   north sh… Febr…  6.65    26.8    10.9    36.6   4     0      5610
+## 15 5F    RH5   shore     Febr…  4.82    27.2    10.4    24.5   7.1  22.3    8250
+## 16 1A    RH1   shore     Apri…  7.1     21.4    10.7    25.3   7.6  23.1    9790
+## 17 2A    RH2   shore     Apri…  4.88    24      11.4    20.3   7.5   0     11110
+## 18 3A    RH3   shore     Apri…  5.4     28.5    10.4    18.8  12.7 103.     8910
+## 19 4A    RH4   north sh… Apri…  6.2     28.5    11.2    27.7   5.3  43      3630
+## 20 5A    RH5   shore     Apri…  5.43    27.1    11.2    24.2  11.6  73.2    3740
+## # … with 5 more variables: DRP &lt;dbl&gt;, `Total phosphorus` &lt;dbl&gt;,
+## #   `ag(440)` &lt;dbl&gt;, SUVA254 &lt;dbl&gt;, `MS index` &lt;dbl&gt;, and abbreviated variable
+## #   names ¹​Conductivity, ²​`Dissolved oxigen`, ³​`Total hardness`,
+## #   ⁴​`Total nitrogen`</code></pre>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="regmul.html#cb37-1" aria-hidden="true" tabindex="-1"></a>datos_bacterias</span></code></pre></div>
+<pre><code>## # A tibble: 20 × 10
+##    ID    Pool  Site        Date  Filam…¹ Large…² Vibri…³ Large…⁴ Small…⁵ Small…⁶
+##    &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;       &lt;chr&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+##  1 1O    RH1   shore       Octo…       0   16921    5315   12676    1747   25994
+##  2 2O    RH2   shore       Octo…    1435    5645    2384    7381     888   12075
+##  3 3O    RH3   shore       Octo…   13307    1597     392    8131     708   13222
+##  4 4O    RH4   north shore Octo…       0    8085    3499    7534    2028   25353
+##  5 5O    RH5   shore       Octo…       0    1921     451   15662     666   31621
+##  6 1D    RH1   shore       Dece…       0   12374    9228   21906    4503   38421
+##  7 2D    RH2   shore       Dece…       0   22924    5933   34663    6687   77581
+##  8 3D    RH3   shore       Dece…       0   12309    3471   46807    8694  139006
+##  9 4D    RH4   north shore Dece…   44419   76819   19692   44391   24931  156132
+## 10 5D    RH5   shore       Dece…       0   66952   23046  134707    2949  102890
+## 11 1F    RH1   shore       Febr…    3177    6414    7533   22218    4013   34495
+## 12 2F    RH2   shore       Febr…       0    7263    4879   25886    4098  137049
+## 13 3F    RH3   shore       Febr…    3886    9283    1294   17402    2522   93008
+## 14 4F    RH4   north shore Febr…    5860   54624   20331   33949   12469   58990
+## 15 5F    RH5   shore       Febr…       0   21324   17482   24397    7064  106885
+## 16 1A    RH1   shore       Apri…   12331   21098   11615   16083    6592   33478
+## 17 2A    RH2   shore       Apri…       0    6950    4028   22525    1395   94037
+## 18 3A    RH3   shore       Apri…       0   12394   17281   18608    4678  121090
+## 19 4A    RH4   north shore Apri…       0     901    2484    3455     642   50957
+## 20 5A    RH5   shore       Apri…       0    7626    3338   17231    2016   60287
+## # … with abbreviated variable names ¹​Filaments, ²​Large_rods, ³​Vibrio_shaped,
+## #   ⁴​Large_cocci, ⁵​Small_rods, ⁶​Small_cocci</code></pre>
+<p>Para unir estas tablas en una sola, debemos buscar una variable o columna que sea un indicador único de cada dato, y que sea equivalente en ambas tablas. ¿Cuál les parece que es?</p>
+<p>Con ese indicador como nexo, haremos una <strong>unión exterior completa</strong> o <em>full_join</em>. Esto se debe a que queremos mantener todos los registros de nuestras tablas aunque para alguna laguna –quizás– no hayamos podido medir los parámetros físicoquímicos o no hayamos podido medir la biomasa bacteriana. Para saber más sobre funciones que permiten relacionar conjuntos de datos, recomendamos consultar el capítulo <a href="http://es.r4ds.hadley.nz/datos-relacionales.html">13. Datos relacionales</a> (en particular <em>13.4.1. Entendiendo las uniones</em>) en el libro traducido a castellano <a href="http://es.r4ds.hadley.nz/">R para Ciencias de Datos</a>, de Hadley Wickham y Garret Grolemund (2017).</p>
+<p>Hacemos la unión e inspeccionamos la tabla (¿cuántas filas y columnas tiene?).</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="regmul.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="regmul.html#cb40-1" aria-hidden="true" tabindex="-1"></a>datos_RH <span class="ot">&lt;-</span> <span class="fu">full_join</span>(datos_bacterias, datos_fq, <span class="at">by =</span> <span class="st">&quot;ID&quot;</span>)</span>
+<span id="cb40-2"><a href="regmul.html#cb40-2" aria-hidden="true" tabindex="-1"></a>datos_RH </span></code></pre></div>
+<pre><code>## # A tibble: 20 × 25
+##    ID    Pool.x Site.x    Date.x Filam…¹ Large…² Vibri…³ Large…⁴ Small…⁵ Small…⁶
+##    &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;     &lt;chr&gt;    &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+##  1 1O    RH1    shore     Octob…       0   16921    5315   12676    1747   25994
+##  2 2O    RH2    shore     Octob…    1435    5645    2384    7381     888   12075
+##  3 3O    RH3    shore     Octob…   13307    1597     392    8131     708   13222
+##  4 4O    RH4    north sh… Octob…       0    8085    3499    7534    2028   25353
+##  5 5O    RH5    shore     Octob…       0    1921     451   15662     666   31621
+##  6 1D    RH1    shore     Decem…       0   12374    9228   21906    4503   38421
+##  7 2D    RH2    shore     Decem…       0   22924    5933   34663    6687   77581
+##  8 3D    RH3    shore     Decem…       0   12309    3471   46807    8694  139006
+##  9 4D    RH4    north sh… Decem…   44419   76819   19692   44391   24931  156132
+## 10 5D    RH5    shore     Decem…       0   66952   23046  134707    2949  102890
+## 11 1F    RH1    shore     Febru…    3177    6414    7533   22218    4013   34495
+## 12 2F    RH2    shore     Febru…       0    7263    4879   25886    4098  137049
+## 13 3F    RH3    shore     Febru…    3886    9283    1294   17402    2522   93008
+## 14 4F    RH4    north sh… Febru…    5860   54624   20331   33949   12469   58990
+## 15 5F    RH5    shore     Febru…       0   21324   17482   24397    7064  106885
+## 16 1A    RH1    shore     April…   12331   21098   11615   16083    6592   33478
+## 17 2A    RH2    shore     April…       0    6950    4028   22525    1395   94037
+## 18 3A    RH3    shore     April…       0   12394   17281   18608    4678  121090
+## 19 4A    RH4    north sh… April…       0     901    2484    3455     642   50957
+## 20 5A    RH5    shore     April…       0    7626    3338   17231    2016   60287
+## # … with 15 more variables: Pool.y &lt;chr&gt;, Site.y &lt;chr&gt;, Date.y &lt;chr&gt;, pH &lt;dbl&gt;,
+## #   Conductivity &lt;dbl&gt;, `Dissolved oxigen` &lt;dbl&gt;, `Total hardness` &lt;dbl&gt;,
+## #   DOC &lt;dbl&gt;, DIN &lt;dbl&gt;, `Total nitrogen` &lt;dbl&gt;, DRP &lt;dbl&gt;,
+## #   `Total phosphorus` &lt;dbl&gt;, `ag(440)` &lt;dbl&gt;, SUVA254 &lt;dbl&gt;, `MS index` &lt;dbl&gt;,
+## #   and abbreviated variable names ¹​Filaments, ²​Large_rods, ³​Vibrio_shaped,
+## #   ⁴​Large_cocci, ⁵​Small_rods, ⁶​Small_cocci</code></pre>
+<p>Las variables Pool, Site y Date se repiten en ambas tablas, por eso aparecen como Pool.x y Pool.y (por ejemplo). Dado que son idénticas, tenemos la opción de eliminar estas variables de alguna de las dos tablas, o bien incluirlas como parte de la información de nexo.</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="regmul.html#cb42-1" aria-hidden="true" tabindex="-1"></a>datos_RH <span class="ot">&lt;-</span> <span class="fu">full_join</span>(datos_bacterias, datos_fq, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;ID&quot;</span>, <span class="st">&quot;Pool&quot;</span>, <span class="st">&quot;Site&quot;</span>, <span class="st">&quot;Date&quot;</span>))</span>
+<span id="cb42-2"><a href="regmul.html#cb42-2" aria-hidden="true" tabindex="-1"></a>datos_RH </span></code></pre></div>
+<pre><code>## # A tibble: 20 × 22
+##    ID    Pool  Site  Date  Filam…¹ Large…² Vibri…³ Large…⁴ Small…⁵ Small…⁶    pH
+##    &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;
+##  1 1O    RH1   shore Octo…       0   16921    5315   12676    1747   25994  4.91
+##  2 2O    RH2   shore Octo…    1435    5645    2384    7381     888   12075  5.52
+##  3 3O    RH3   shore Octo…   13307    1597     392    8131     708   13222  4.72
+##  4 4O    RH4   nort… Octo…       0    8085    3499    7534    2028   25353  5.09
+##  5 5O    RH5   shore Octo…       0    1921     451   15662     666   31621  4.82
+##  6 1D    RH1   shore Dece…       0   12374    9228   21906    4503   38421  6.39
+##  7 2D    RH2   shore Dece…       0   22924    5933   34663    6687   77581  4.75
+##  8 3D    RH3   shore Dece…       0   12309    3471   46807    8694  139006  4.67
+##  9 4D    RH4   nort… Dece…   44419   76819   19692   44391   24931  156132  6.75
+## 10 5D    RH5   shore Dece…       0   66952   23046  134707    2949  102890  4.65
+## 11 1F    RH1   shore Febr…    3177    6414    7533   22218    4013   34495  5.9 
+## 12 2F    RH2   shore Febr…       0    7263    4879   25886    4098  137049  5.19
+## 13 3F    RH3   shore Febr…    3886    9283    1294   17402    2522   93008  4.66
+## 14 4F    RH4   nort… Febr…    5860   54624   20331   33949   12469   58990  6.65
+## 15 5F    RH5   shore Febr…       0   21324   17482   24397    7064  106885  4.82
+## 16 1A    RH1   shore Apri…   12331   21098   11615   16083    6592   33478  7.1 
+## 17 2A    RH2   shore Apri…       0    6950    4028   22525    1395   94037  4.88
+## 18 3A    RH3   shore Apri…       0   12394   17281   18608    4678  121090  5.4 
+## 19 4A    RH4   nort… Apri…       0     901    2484    3455     642   50957  6.2 
+## 20 5A    RH5   shore Apri…       0    7626    3338   17231    2016   60287  5.43
+## # … with 11 more variables: Conductivity &lt;dbl&gt;, `Dissolved oxigen` &lt;dbl&gt;,
+## #   `Total hardness` &lt;dbl&gt;, DOC &lt;dbl&gt;, DIN &lt;dbl&gt;, `Total nitrogen` &lt;dbl&gt;,
+## #   DRP &lt;dbl&gt;, `Total phosphorus` &lt;dbl&gt;, `ag(440)` &lt;dbl&gt;, SUVA254 &lt;dbl&gt;,
+## #   `MS index` &lt;dbl&gt;, and abbreviated variable names ¹​Filaments, ²​Large_rods,
+## #   ³​Vibrio_shaped, ⁴​Large_cocci, ⁵​Small_rods, ⁶​Small_cocci</code></pre>
+<p>Ahora vamos a mejorar los nombres de las columnas. Una buena práctica es elegir siempre el mismo tipo de nomenclatura. Hay varias convenciones pero las más elegidas en el mundo de R son <strong><em>snake</em></strong> y <strong><em>camel</em></strong>. La nomenclatura <em>snake</em> implica usar guiones bajos como separador de palabras y, generalmente, todas las letras en minúscula. La nomenclatura <em>camel</em> implica, en vez de usar guiones, usar a las mayúsculas como indicador de que hay una palabra nueva, y siempre dejar a la primera palabra en minúscula. Si nuestra variable se llama “Fecha de muestreo”, la nomenclatura sería <em>fecha_de_muestreo</em> o <em>fechaDeMuestreo</em>, de acuerdo a la convención elegida.</p>
+<p>En la tabla que tenemos, hay una mezcla de criterios: se usan guiones bajos pero a la vez las variables empiezan con mayúscula. Vamos a ajustar. Vamos a pasar todas las variables al formato <em>snake</em> con una función muy útil, que también sirve para nombres de columnas más desprolijos (por ejemplo, si tenemos otros signos de puntuación en los nombres).</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="regmul.html#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="regmul.html#cb45-1" aria-hidden="true" tabindex="-1"></a>datos_RH <span class="ot">&lt;-</span> <span class="fu">clean_names</span>(datos_RH)</span>
+<span id="cb45-2"><a href="regmul.html#cb45-2" aria-hidden="true" tabindex="-1"></a>datos_RH </span></code></pre></div>
+<pre><code>## # A tibble: 20 × 22
+##    id    pool  site  date  filam…¹ large…² vibri…³ large…⁴ small…⁵ small…⁶   p_h
+##    &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;
+##  1 1O    RH1   shore Octo…       0   16921    5315   12676    1747   25994  4.91
+##  2 2O    RH2   shore Octo…    1435    5645    2384    7381     888   12075  5.52
+##  3 3O    RH3   shore Octo…   13307    1597     392    8131     708   13222  4.72
+##  4 4O    RH4   nort… Octo…       0    8085    3499    7534    2028   25353  5.09
+##  5 5O    RH5   shore Octo…       0    1921     451   15662     666   31621  4.82
+##  6 1D    RH1   shore Dece…       0   12374    9228   21906    4503   38421  6.39
+##  7 2D    RH2   shore Dece…       0   22924    5933   34663    6687   77581  4.75
+##  8 3D    RH3   shore Dece…       0   12309    3471   46807    8694  139006  4.67
+##  9 4D    RH4   nort… Dece…   44419   76819   19692   44391   24931  156132  6.75
+## 10 5D    RH5   shore Dece…       0   66952   23046  134707    2949  102890  4.65
+## 11 1F    RH1   shore Febr…    3177    6414    7533   22218    4013   34495  5.9 
+## 12 2F    RH2   shore Febr…       0    7263    4879   25886    4098  137049  5.19
+## 13 3F    RH3   shore Febr…    3886    9283    1294   17402    2522   93008  4.66
+## 14 4F    RH4   nort… Febr…    5860   54624   20331   33949   12469   58990  6.65
+## 15 5F    RH5   shore Febr…       0   21324   17482   24397    7064  106885  4.82
+## 16 1A    RH1   shore Apri…   12331   21098   11615   16083    6592   33478  7.1 
+## 17 2A    RH2   shore Apri…       0    6950    4028   22525    1395   94037  4.88
+## 18 3A    RH3   shore Apri…       0   12394   17281   18608    4678  121090  5.4 
+## 19 4A    RH4   nort… Apri…       0     901    2484    3455     642   50957  6.2 
+## 20 5A    RH5   shore Apri…       0    7626    3338   17231    2016   60287  5.43
+## # … with 11 more variables: conductivity &lt;dbl&gt;, dissolved_oxigen &lt;dbl&gt;,
+## #   total_hardness &lt;dbl&gt;, doc &lt;dbl&gt;, din &lt;dbl&gt;, total_nitrogen &lt;dbl&gt;,
+## #   drp &lt;dbl&gt;, total_phosphorus &lt;dbl&gt;, ag_440 &lt;dbl&gt;, suva254 &lt;dbl&gt;,
+## #   ms_index &lt;dbl&gt;, and abbreviated variable names ¹​filaments, ²​large_rods,
+## #   ³​vibrio_shaped, ⁴​large_cocci, ⁵​small_rods, ⁶​small_cocci</code></pre>
+<p>El nombre de la variable pH quedó un poco raro, lo vamos a cambiar. A continuación se pide el nombre de las columnas de datos_RH, luego específicamente el de la columna 11, y luego lo cambiamos.</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="regmul.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(datos_RH)</span></code></pre></div>
+<pre><code>##  [1] &quot;id&quot;               &quot;pool&quot;             &quot;site&quot;             &quot;date&quot;            
+##  [5] &quot;filaments&quot;        &quot;large_rods&quot;       &quot;vibrio_shaped&quot;    &quot;large_cocci&quot;     
+##  [9] &quot;small_rods&quot;       &quot;small_cocci&quot;      &quot;p_h&quot;              &quot;conductivity&quot;    
+## [13] &quot;dissolved_oxigen&quot; &quot;total_hardness&quot;   &quot;doc&quot;              &quot;din&quot;             
+## [17] &quot;total_nitrogen&quot;   &quot;drp&quot;              &quot;total_phosphorus&quot; &quot;ag_440&quot;          
+## [21] &quot;suva254&quot;          &quot;ms_index&quot;</code></pre>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="regmul.html#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(datos_RH)[<span class="dv">11</span>]</span></code></pre></div>
+<pre><code>## [1] &quot;p_h&quot;</code></pre>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="regmul.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(datos_RH)[<span class="dv">11</span>] <span class="ot">&lt;-</span> <span class="st">&quot;ph&quot;</span></span>
+<span id="cb51-2"><a href="regmul.html#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(datos_RH)</span></code></pre></div>
+<pre><code>##  [1] &quot;id&quot;               &quot;pool&quot;             &quot;site&quot;             &quot;date&quot;            
+##  [5] &quot;filaments&quot;        &quot;large_rods&quot;       &quot;vibrio_shaped&quot;    &quot;large_cocci&quot;     
+##  [9] &quot;small_rods&quot;       &quot;small_cocci&quot;      &quot;ph&quot;               &quot;conductivity&quot;    
+## [13] &quot;dissolved_oxigen&quot; &quot;total_hardness&quot;   &quot;doc&quot;              &quot;din&quot;             
+## [17] &quot;total_nitrogen&quot;   &quot;drp&quot;              &quot;total_phosphorus&quot; &quot;ag_440&quot;          
+## [21] &quot;suva254&quot;          &quot;ms_index&quot;</code></pre>
+<p>Finalmente, vamos a agregar una nueva columna con la biomasa total bacteriana. Existen múltiples métodos para hacer esto, vamos a ver dos, uno con la sintaxis base de R y otro con la sintaxis de <em>tidyverse</em>. Para conocer más sobre los tipos de sintaxis de R, recomendamos la hoja de referencia <a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/translations/spanish/syntax_es.pdf">Comparación de sintaxis de R</a>, por Amelia McNamara (traducida al castellano por RLadies).</p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="regmul.html#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Con la sintaxis base</span></span>
+<span id="cb53-2"><a href="regmul.html#cb53-2" aria-hidden="true" tabindex="-1"></a>datos_bio_opcion1 <span class="ot">&lt;-</span> datos_RH <span class="co">#duplico el dataframe para no sobreescribirlo y comparar los resultados</span></span>
+<span id="cb53-3"><a href="regmul.html#cb53-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-4"><a href="regmul.html#cb53-4" aria-hidden="true" tabindex="-1"></a>datos_bio_opcion1<span class="sc">$</span>bio_total <span class="ot">&lt;-</span> datos_bio_opcion1<span class="sc">$</span>filaments <span class="sc">+</span> datos_bio_opcion1<span class="sc">$</span>large_rods <span class="sc">+</span> datos_bio_opcion1<span class="sc">$</span>vibrio_shaped <span class="sc">+</span> datos_bio_opcion1<span class="sc">$</span>large_cocci <span class="sc">+</span> datos_bio_opcion1<span class="sc">$</span>small_rods <span class="sc">+</span> datos_bio_opcion1<span class="sc">$</span>small_cocci</span>
+<span id="cb53-5"><a href="regmul.html#cb53-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-6"><a href="regmul.html#cb53-6" aria-hidden="true" tabindex="-1"></a>datos_bio_opcion1</span></code></pre></div>
+<pre><code>## # A tibble: 20 × 23
+##    id    pool  site  date  filam…¹ large…² vibri…³ large…⁴ small…⁵ small…⁶    ph
+##    &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;
+##  1 1O    RH1   shore Octo…       0   16921    5315   12676    1747   25994  4.91
+##  2 2O    RH2   shore Octo…    1435    5645    2384    7381     888   12075  5.52
+##  3 3O    RH3   shore Octo…   13307    1597     392    8131     708   13222  4.72
+##  4 4O    RH4   nort… Octo…       0    8085    3499    7534    2028   25353  5.09
+##  5 5O    RH5   shore Octo…       0    1921     451   15662     666   31621  4.82
+##  6 1D    RH1   shore Dece…       0   12374    9228   21906    4503   38421  6.39
+##  7 2D    RH2   shore Dece…       0   22924    5933   34663    6687   77581  4.75
+##  8 3D    RH3   shore Dece…       0   12309    3471   46807    8694  139006  4.67
+##  9 4D    RH4   nort… Dece…   44419   76819   19692   44391   24931  156132  6.75
+## 10 5D    RH5   shore Dece…       0   66952   23046  134707    2949  102890  4.65
+## 11 1F    RH1   shore Febr…    3177    6414    7533   22218    4013   34495  5.9 
+## 12 2F    RH2   shore Febr…       0    7263    4879   25886    4098  137049  5.19
+## 13 3F    RH3   shore Febr…    3886    9283    1294   17402    2522   93008  4.66
+## 14 4F    RH4   nort… Febr…    5860   54624   20331   33949   12469   58990  6.65
+## 15 5F    RH5   shore Febr…       0   21324   17482   24397    7064  106885  4.82
+## 16 1A    RH1   shore Apri…   12331   21098   11615   16083    6592   33478  7.1 
+## 17 2A    RH2   shore Apri…       0    6950    4028   22525    1395   94037  4.88
+## 18 3A    RH3   shore Apri…       0   12394   17281   18608    4678  121090  5.4 
+## 19 4A    RH4   nort… Apri…       0     901    2484    3455     642   50957  6.2 
+## 20 5A    RH5   shore Apri…       0    7626    3338   17231    2016   60287  5.43
+## # … with 12 more variables: conductivity &lt;dbl&gt;, dissolved_oxigen &lt;dbl&gt;,
+## #   total_hardness &lt;dbl&gt;, doc &lt;dbl&gt;, din &lt;dbl&gt;, total_nitrogen &lt;dbl&gt;,
+## #   drp &lt;dbl&gt;, total_phosphorus &lt;dbl&gt;, ag_440 &lt;dbl&gt;, suva254 &lt;dbl&gt;,
+## #   ms_index &lt;dbl&gt;, bio_total &lt;dbl&gt;, and abbreviated variable names ¹​filaments,
+## #   ²​large_rods, ³​vibrio_shaped, ⁴​large_cocci, ⁵​small_rods, ⁶​small_cocci</code></pre>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="regmul.html#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Con la sintaxis tidyverse, la cual usa el operador _pipe_ (&quot;la pipa&quot;) %&gt;%</span></span>
+<span id="cb55-2"><a href="regmul.html#cb55-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-3"><a href="regmul.html#cb55-3" aria-hidden="true" tabindex="-1"></a>datos_bio_opcion2 <span class="ot">&lt;-</span> datos_RH <span class="sc">%&gt;%</span></span>
+<span id="cb55-4"><a href="regmul.html#cb55-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">bio_total =</span> filaments <span class="sc">+</span> large_rods <span class="sc">+</span> vibrio_shaped <span class="sc">+</span> large_cocci <span class="sc">+</span> small_rods <span class="sc">+</span> small_cocci, <span class="at">.before=</span>filaments)</span>
+<span id="cb55-5"><a href="regmul.html#cb55-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-6"><a href="regmul.html#cb55-6" aria-hidden="true" tabindex="-1"></a>datos_bio_opcion2</span></code></pre></div>
+<pre><code>## # A tibble: 20 × 23
+##    id    pool  site        date  bio_t…¹ filam…² large…³ vibri…⁴ large…⁵ small…⁶
+##    &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;       &lt;chr&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+##  1 1O    RH1   shore       Octo…   62653       0   16921    5315   12676    1747
+##  2 2O    RH2   shore       Octo…   29808    1435    5645    2384    7381     888
+##  3 3O    RH3   shore       Octo…   37357   13307    1597     392    8131     708
+##  4 4O    RH4   north shore Octo…   46499       0    8085    3499    7534    2028
+##  5 5O    RH5   shore       Octo…   50321       0    1921     451   15662     666
+##  6 1D    RH1   shore       Dece…   86432       0   12374    9228   21906    4503
+##  7 2D    RH2   shore       Dece…  147788       0   22924    5933   34663    6687
+##  8 3D    RH3   shore       Dece…  210287       0   12309    3471   46807    8694
+##  9 4D    RH4   north shore Dece…  366384   44419   76819   19692   44391   24931
+## 10 5D    RH5   shore       Dece…  330544       0   66952   23046  134707    2949
+## 11 1F    RH1   shore       Febr…   77850    3177    6414    7533   22218    4013
+## 12 2F    RH2   shore       Febr…  179175       0    7263    4879   25886    4098
+## 13 3F    RH3   shore       Febr…  127395    3886    9283    1294   17402    2522
+## 14 4F    RH4   north shore Febr…  186223    5860   54624   20331   33949   12469
+## 15 5F    RH5   shore       Febr…  177152       0   21324   17482   24397    7064
+## 16 1A    RH1   shore       Apri…  101197   12331   21098   11615   16083    6592
+## 17 2A    RH2   shore       Apri…  128935       0    6950    4028   22525    1395
+## 18 3A    RH3   shore       Apri…  174051       0   12394   17281   18608    4678
+## 19 4A    RH4   north shore Apri…   58439       0     901    2484    3455     642
+## 20 5A    RH5   shore       Apri…   90498       0    7626    3338   17231    2016
+## # … with 13 more variables: small_cocci &lt;dbl&gt;, ph &lt;dbl&gt;, conductivity &lt;dbl&gt;,
+## #   dissolved_oxigen &lt;dbl&gt;, total_hardness &lt;dbl&gt;, doc &lt;dbl&gt;, din &lt;dbl&gt;,
+## #   total_nitrogen &lt;dbl&gt;, drp &lt;dbl&gt;, total_phosphorus &lt;dbl&gt;, ag_440 &lt;dbl&gt;,
+## #   suva254 &lt;dbl&gt;, ms_index &lt;dbl&gt;, and abbreviated variable names ¹​bio_total,
+## #   ²​filaments, ³​large_rods, ⁴​vibrio_shaped, ⁵​large_cocci, ⁶​small_rods</code></pre>
+<p>La ventaja de la segunda opción es que podemos elegir dónde agregar la nueva columna (antes de la columna <em>filaments</em>, por ejemplo). Así que nos quedaremos con esta tabla para los siguientes pasos. De paso, borramos los dataframes que ya no necesitamos.</p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="regmul.html#cb57-1" aria-hidden="true" tabindex="-1"></a>datos_RH <span class="ot">&lt;-</span> datos_bio_opcion2</span>
+<span id="cb57-2"><a href="regmul.html#cb57-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-3"><a href="regmul.html#cb57-3" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(datos_bio_opcion2)</span>
+<span id="cb57-4"><a href="regmul.html#cb57-4" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(datos_bio_opcion1)</span></code></pre></div>
+<p>Un último paso es informar que las variables pool y date son categóricas (factores). En el caso de date, además es adecuado ordenar los niveles de los factores, tanto para algunos análisis que consideren el orden de los meses (aquí nos exceden) como para mejorar la forma en que resumimos los resultados en una tabla o en un gráfico.</p>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="regmul.html#cb58-1" aria-hidden="true" tabindex="-1"></a>datos_RH<span class="sc">$</span>pool <span class="ot">&lt;-</span> <span class="fu">factor</span>(datos_RH<span class="sc">$</span>pool) <span class="co">#en este caso no indicamos los niveles, ya que el orden alfabético es adecuado</span></span>
+<span id="cb58-2"><a href="regmul.html#cb58-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-3"><a href="regmul.html#cb58-3" aria-hidden="true" tabindex="-1"></a>datos_RH<span class="sc">$</span>date <span class="ot">&lt;-</span> <span class="fu">factor</span>(datos_RH<span class="sc">$</span>date, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;October_2009&quot;</span>, <span class="st">&quot;December_2009&quot;</span>, <span class="st">&quot;February_2010&quot;</span>, <span class="st">&quot;April_2010&quot;</span>))</span></code></pre></div>
+<p>¡Listo! Podemos empezar con los análisis.</p>
+</div>
+<div id="correlaciones" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Correlaciones<a href="regmul.html#correlaciones" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Primero vamos a realizar análisis rápidos de todos los pares de variables con la librería <em>GGally</em>.</p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="regmul.html#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(GGally)</span></code></pre></div>
+<div id="entre-biomasa-de-morfotipos-bacterianos" class="section level3 hasAnchor" number="2.3.1">
+<h3><span class="header-section-number">2.3.1</span> Entre biomasa de morfotipos bacterianos<a href="regmul.html#entre-biomasa-de-morfotipos-bacterianos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Vamos a analizar en primer lugar las variables biológicas, para lo cual generamos un nuevo dataframe que es un subconjunto de los anteriores.</p>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="regmul.html#cb60-1" aria-hidden="true" tabindex="-1"></a>datos_bacterias <span class="ot">&lt;-</span> datos_RH[,<span class="dv">5</span><span class="sc">:</span><span class="dv">11</span>]</span>
+<span id="cb60-2"><a href="regmul.html#cb60-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb60-3"><a href="regmul.html#cb60-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggpairs</span>(datos_bacterias, <span class="at">title=</span><span class="st">&quot;Correlograma entre la biomasa de morfotipos bacterianos&quot;</span>) </span></code></pre></div>
+<p><img src="02-RegMult_files/figure-html/correlo1-1.png" width="672" />
+Obtenemos una matriz de gráficos, en la que cada celda expresa la correlacion de un par de variables. En este caso, todas las variables son continuas, por lo que observamos que los gráficos en la parte inferior de la matriz son de dispersión (puntos).</p>
+<p>En las diagonales, observamos histogramas suavizados para cada variable. Por ejemplo, comparemos el histograma de la biomasa total.</p>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="regmul.html#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(datos_bacterias<span class="sc">$</span>bio_total, <span class="at">breaks=</span><span class="dv">10</span>, <span class="at">col=</span><span class="st">&quot;lightblue&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;Biomasa total de bacterias heterótrofas&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;Frecuencia&quot;</span>, <span class="at">main=</span><span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<p><img src="02-RegMult_files/figure-html/hist-1.png" width="672" /></p>
+<p>En la parte superior, se muestra el coeficiente de correlación para cada par de variables y asteriscos indicando su nivel de significancia. Podemos evaluar el par que nos interese con una función, para tener información numérica más detallada.</p>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="regmul.html#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(datos_bacterias<span class="sc">$</span>vibrio_shaped, datos_bacterias<span class="sc">$</span>large_rods)</span></code></pre></div>
+<pre><code>## 
+##  Pearson&#39;s product-moment correlation
+## 
+## data:  datos_bacterias$vibrio_shaped and datos_bacterias$large_rods
+## t = 6.3382, df = 18, p-value = 5.68e-06
+## alternative hypothesis: true correlation is not equal to 0
+## 95 percent confidence interval:
+##  0.6144454 0.9311213
+## sample estimates:
+##       cor 
+## 0.8310104</code></pre>
+<p>Aquí observamos que el coeficiente de la correlación de Pearson es r = 0.8310, igual al que observamos en el correlograma. Además obtenemos un intervalo de confianza y un p-valor. Sin embargo, la correlación de Pearson supone que la distribución de las variables es normal. Evaluemos la normalidad de estas dos variables (deberíamos analizarlo para todas).</p>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="regmul.html#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">shapiro.test</span>(datos_bacterias<span class="sc">$</span>vibrio_shaped)</span></code></pre></div>
+<pre><code>## 
+##  Shapiro-Wilk normality test
+## 
+## data:  datos_bacterias$vibrio_shaped
+## W = 0.8493, p-value = 0.005189</code></pre>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="regmul.html#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">shapiro.test</span>(datos_bacterias<span class="sc">$</span>large_rods)</span></code></pre></div>
+<pre><code>## 
+##  Shapiro-Wilk normality test
+## 
+## data:  datos_bacterias$large_rods
+## W = 0.71437, p-value = 5.866e-05</code></pre>
+<p>Dado que se rechaza el supuesto de distribución normal, tenemos dos opciones. La primera es hacer una correlación de Spearman, la cual es adecuada si suponemos que la relación entre las variables es monotónica (las variables siempre crecen o decrecen). La desventaja es que, en la fórmula de cómputo del método, las variables se ordenan en un rango y pasan a ser ordinales. Agregamos a la misma función que el método sea Spearman (por defecto es Pearson, ver la ayuda de la función con <em>?cor.test</em>). El rho es de 0.8316.</p>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="regmul.html#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(datos_bacterias<span class="sc">$</span>vibrio_shaped, datos_bacterias<span class="sc">$</span>large_rods, <span class="at">method =</span> <span class="st">&quot;spearman&quot;</span>)</span></code></pre></div>
+<pre><code>## 
+##  Spearman&#39;s rank correlation rho
+## 
+## data:  datos_bacterias$vibrio_shaped and datos_bacterias$large_rods
+## S = 224, p-value = 2.994e-07
+## alternative hypothesis: true rho is not equal to 0
+## sample estimates:
+##       rho 
+## 0.8315789</code></pre>
+<p>La segunda opción es hacer una correlación de Pearson por permutaciones. Indicamos entonces el número de permutaciones a generar o dejamos el valor por defecto que es 999. Puede tardar un poco ya que tiene que permutar. El coeficiente de correlación obtenido es de 0.8310.</p>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="regmul.html#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RVAideMemoire) <span class="co">#Si no encuentran esta librería en las computadoras del curso, pueden probar este paso en sus hogares. En caso de problemas para instalarla, instalar primero la librería mixOmics con estas instrucciones: http://www.bioconductor.org/packages/release/bioc/html/mixOmics.html  </span></span></code></pre></div>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="regmul.html#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="fu">perm.cor.test</span>(datos_bacterias<span class="sc">$</span>vibrio_shaped, datos_bacterias<span class="sc">$</span>large_rods, <span class="at">progress=</span><span class="cn">FALSE</span>)</span></code></pre></div>
+<pre><code>## 
+##  Pearson&#39;s product-moment correlation - Permutation test
+## 
+## data:  datos_bacterias$vibrio_shaped and datos_bacterias$large_rods
+## 999 permutations
+## t = 6.3382, p-value = 0.002
+## alternative hypothesis: true correlation is not equal to 0
+## sample estimates:
+##       cor 
+## 0.8310104</code></pre>
+<p>En el correlograma, vamos a cambiar qué coeficiente se muestra. Dejaremos el de Spearman. Observar que para algunos de los pares de variables hay diferencias entre los coeficientes de Pearson y Spearman.</p>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="regmul.html#cb73-1" aria-hidden="true" tabindex="-1"></a>datos_bacterias <span class="ot">&lt;-</span> datos_RH[,<span class="dv">5</span><span class="sc">:</span><span class="dv">11</span>]</span>
+<span id="cb73-2"><a href="regmul.html#cb73-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb73-3"><a href="regmul.html#cb73-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggpairs</span>(datos_bacterias, <span class="at">title=</span><span class="st">&quot;Correlograma entre la biomasa de morfotipos bacterianos&quot;</span>, <span class="at">upper =</span> <span class="fu">list</span>(<span class="at">continuous =</span> <span class="fu">wrap</span>( <span class="st">&quot;cor&quot;</span>, <span class="at">method=</span><span class="st">&quot;spearman&quot;</span>), <span class="at">combo =</span> <span class="st">&quot;box_no_facet&quot;</span>, <span class="at">discrete =</span> <span class="st">&quot;count&quot;</span>, <span class="at">na =</span>  <span class="st">&quot;na&quot;</span>)) </span></code></pre></div>
+<p><img src="02-RegMult_files/figure-html/correlo2-1.png" width="672" /></p>
+<p>Ahora visualizaremos la correlación como un mapa de calor.</p>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="regmul.html#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggcorr</span>(datos_bacterias, <span class="at">method =</span> <span class="fu">c</span>(<span class="st">&quot;everything&quot;</span>, <span class="st">&quot;pearson&quot;</span>)) </span></code></pre></div>
+<p><img src="02-RegMult_files/figure-html/correlo3-1.png" width="672" /></p>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="regmul.html#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggcorr</span>(datos_bacterias, <span class="at">method =</span> <span class="fu">c</span>(<span class="st">&quot;everything&quot;</span>, <span class="st">&quot;spearman&quot;</span>)) </span></code></pre></div>
+<p><img src="02-RegMult_files/figure-html/correlo4-1.png" width="672" /></p>
+</div>
+<div id="entre-variables-abióticas" class="section level3 hasAnchor" number="2.3.2">
+<h3><span class="header-section-number">2.3.2</span> Entre variables abióticas<a href="regmul.html#entre-variables-abióticas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Ahora analizaremos las variables explicativas. Esto es útil ya que en el siguiente paso de realizar regresiones múltiples evitaremos colocar en el modelo dos variables muy correlacionadas entre sí, ya que son redundantes. Generamos un nuevo dataframe que es un subconjunto de los anteriores.</p>
+<p>Podemos repetir el estudio de comparar correlaciones de Pearson, de Pearson por permutaciones y de Spearman. Aquí resumidamente pasaremos a los correlogramas visuales. ¿Qué pasa con el oxígeno disuelto? Tendremos cuidado con el uso de esta variable en los análisis siguientes.</p>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="regmul.html#cb76-1" aria-hidden="true" tabindex="-1"></a>datos_fq <span class="ot">&lt;-</span> datos_RH[,<span class="dv">12</span><span class="sc">:</span><span class="dv">23</span>]</span>
+<span id="cb76-2"><a href="regmul.html#cb76-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-3"><a href="regmul.html#cb76-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggcorr</span>(datos_fq, <span class="at">method =</span> <span class="fu">c</span>(<span class="st">&quot;everything&quot;</span>, <span class="st">&quot;spearman&quot;</span>)) </span></code></pre></div>
+<p><img src="02-RegMult_files/figure-html/correlo5-1.png" width="672" />
+Si queremos tener un resumen numérico de los coeficientes de correlación, podemos generar una matriz.</p>
+<pre><code>## Warning: package &#39;Hmisc&#39; was built under R version 4.2.2</code></pre>
+<pre><code>## Loading required package: lattice</code></pre>
+<pre><code>## Loading required package: survival</code></pre>
+<pre><code>## Loading required package: Formula</code></pre>
+<pre><code>## 
+## Attaching package: &#39;Hmisc&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:dplyr&#39;:
+## 
+##     src, summarize</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     format.pval, units</code></pre>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="regmul.html#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rcorr</span>(<span class="fu">as.matrix</span>(datos_fq), <span class="at">type=</span><span class="st">&quot;spearman&quot;</span>) </span></code></pre></div>
+<pre><code>##                     ph conductivity dissolved_oxigen total_hardness   doc   din
+## ph                1.00         0.05            -0.03           0.39 -0.22  0.14
+## conductivity      0.05         1.00             0.06          -0.31  0.41 -0.07
+## dissolved_oxigen -0.03         0.06             1.00          -0.34 -0.03 -0.29
+## total_hardness    0.39        -0.31            -0.34           1.00 -0.16  0.01
+## doc              -0.22         0.41            -0.03          -0.16  1.00  0.16
+## din               0.14        -0.07            -0.29           0.01  0.16  1.00
+## total_nitrogen   -0.16         0.48            -0.24          -0.30  0.45 -0.15
+## drp              -0.38        -0.09            -0.15          -0.60  0.24 -0.13
+## total_phosphorus  0.19         0.52            -0.22          -0.29  0.13  0.13
+## ag_440           -0.01         0.75            -0.32          -0.14  0.49  0.14
+## suva254          -0.13         0.36            -0.63          -0.12  0.13 -0.12
+## ms_index         -0.25         0.17            -0.27          -0.20  0.41 -0.18
+##                  total_nitrogen   drp total_phosphorus ag_440 suva254 ms_index
+## ph                        -0.16 -0.38             0.19  -0.01   -0.13    -0.25
+## conductivity               0.48 -0.09             0.52   0.75    0.36     0.17
+## dissolved_oxigen          -0.24 -0.15            -0.22  -0.32   -0.63    -0.27
+## total_hardness            -0.30 -0.60            -0.29  -0.14   -0.12    -0.20
+## doc                        0.45  0.24             0.13   0.49    0.13     0.41
+## din                       -0.15 -0.13             0.13   0.14   -0.12    -0.18
+## total_nitrogen             1.00  0.41             0.27   0.42    0.36     0.10
+## drp                        0.41  1.00             0.28   0.00    0.25     0.33
+## total_phosphorus           0.27  0.28             1.00   0.66    0.46     0.03
+## ag_440                     0.42  0.00             0.66   1.00    0.59     0.29
+## suva254                    0.36  0.25             0.46   0.59    1.00     0.27
+## ms_index                   0.10  0.33             0.03   0.29    0.27     1.00
+## 
+## n
+##                  ph conductivity dissolved_oxigen total_hardness doc din
+## ph               20           20               15             20  20  20
+## conductivity     20           20               15             20  20  20
+## dissolved_oxigen 15           15               15             15  15  15
+## total_hardness   20           20               15             20  20  20
+## doc              20           20               15             20  20  20
+## din              20           20               15             20  20  20
+## total_nitrogen   20           20               15             20  20  20
+## drp              20           20               15             20  20  20
+## total_phosphorus 20           20               15             20  20  20
+## ag_440           20           20               15             20  20  20
+## suva254          20           20               15             20  20  20
+## ms_index         20           20               15             20  20  20
+##                  total_nitrogen drp total_phosphorus ag_440 suva254 ms_index
+## ph                           20  20               20     20      20       20
+## conductivity                 20  20               20     20      20       20
+## dissolved_oxigen             15  15               15     15      15       15
+## total_hardness               20  20               20     20      20       20
+## doc                          20  20               20     20      20       20
+## din                          20  20               20     20      20       20
+## total_nitrogen               20  20               20     20      20       20
+## drp                          20  20               20     20      20       20
+## total_phosphorus             20  20               20     20      20       20
+## ag_440                       20  20               20     20      20       20
+## suva254                      20  20               20     20      20       20
+## ms_index                     20  20               20     20      20       20
+## 
+## P
+##                  ph     conductivity dissolved_oxigen total_hardness doc   
+## ph                      0.8450       0.9094           0.0875         0.3417
+## conductivity     0.8450              0.8292           0.1788         0.0760
+## dissolved_oxigen 0.9094 0.8292                        0.2182         0.9142
+## total_hardness   0.0875 0.1788       0.2182                          0.5120
+## doc              0.3417 0.0760       0.9142           0.5120               
+## din              0.5541 0.7813       0.2979           0.9824         0.4934
+## total_nitrogen   0.5036 0.0318       0.3973           0.1926         0.0472
+## drp              0.1009 0.6939       0.5901           0.0048         0.3147
+## total_phosphorus 0.4266 0.0192       0.4402           0.2116         0.5765
+## ag_440           0.9699 0.0001       0.2474           0.5434         0.0271
+## suva254          0.5801 0.1200       0.0126           0.6090         0.5735
+## ms_index         0.2850 0.4631       0.3369           0.3975         0.0714
+##                  din    total_nitrogen drp    total_phosphorus ag_440 suva254
+## ph               0.5541 0.5036         0.1009 0.4266           0.9699 0.5801 
+## conductivity     0.7813 0.0318         0.6939 0.0192           0.0001 0.1200 
+## dissolved_oxigen 0.2979 0.3973         0.5901 0.4402           0.2474 0.0126 
+## total_hardness   0.9824 0.1926         0.0048 0.2116           0.5434 0.6090 
+## doc              0.4934 0.0472         0.3147 0.5765           0.0271 0.5735 
+## din                     0.5348         0.5760 0.5876           0.5560 0.6267 
+## total_nitrogen   0.5348                0.0740 0.2464           0.0675 0.1193 
+## drp              0.5760 0.0740                0.2333           0.9873 0.2787 
+## total_phosphorus 0.5876 0.2464         0.2333                  0.0015 0.0393 
+## ag_440           0.5560 0.0675         0.9873 0.0015                  0.0057 
+## suva254          0.6267 0.1193         0.2787 0.0393           0.0057        
+## ms_index         0.4556 0.6686         0.1489 0.8907           0.2144 0.2494 
+##                  ms_index
+## ph               0.2850  
+## conductivity     0.4631  
+## dissolved_oxigen 0.3369  
+## total_hardness   0.3975  
+## doc              0.0714  
+## din              0.4556  
+## total_nitrogen   0.6686  
+## drp              0.1489  
+## total_phosphorus 0.8907  
+## ag_440           0.2144  
+## suva254          0.2494  
+## ms_index</code></pre>
+</div>
+</div>
+<div id="regresiones-múltiples" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> Regresiones múltiples<a href="regmul.html#regresiones-múltiples" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Intro</p>
+<p>hay que estandarizar?</p>
+<div id="selección-automática-de-variables" class="section level3 hasAnchor" number="2.4.1">
+<h3><span class="header-section-number">2.4.1</span> Selección automática de variables<a href="regmul.html#selección-automática-de-variables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="upward-del-modelo-nulo-sumando-variables-explicativas" class="section level4 hasAnchor" number="2.4.1.1">
+<h4><span class="header-section-number">2.4.1.1</span> Upward: del modelo nulo, sumando variables explicativas<a href="regmul.html#upward-del-modelo-nulo-sumando-variables-explicativas" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+<div id="forward-del-modelo-completo-quitando-variables-explicativas" class="section level4 hasAnchor" number="2.4.1.2">
+<h4><span class="header-section-number">2.4.1.2</span> Forward: del modelo completo, quitando variables explicativas<a href="regmul.html#forward-del-modelo-completo-quitando-variables-explicativas" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+</div>
+<div id="selección-manual-de-variables" class="section level3 hasAnchor" number="2.4.2">
+<h3><span class="header-section-number">2.4.2</span> Selección manual de variables<a href="regmul.html#selección-manual-de-variables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="modelos-univariados" class="section level4 hasAnchor" number="2.4.2.1">
+<h4><span class="header-section-number">2.4.2.1</span> Modelos univariados<a href="regmul.html#modelos-univariados" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Todos los modelos
+AIC</p>
+</div>
+<div id="modelos-de-regresión-múltiple" class="section level4 hasAnchor" number="2.4.2.2">
+<h4><span class="header-section-number">2.4.2.2</span> Modelos de regresión múltiple<a href="regmul.html#modelos-de-regresión-múltiple" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>vif</p>
+</div>
+</div>
+<div id="evaluación-e-interpretación-del-modelo-final" class="section level3 hasAnchor" number="2.4.3">
+<h3><span class="header-section-number">2.4.3</span> Evaluación e interpretación del modelo final<a href="regmul.html#evaluación-e-interpretación-del-modelo-final" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Evaluación de supuestos. Si no se cumplen, permutaciones
+interpretación</p>
+</div>
+</div>
+<div id="a-modo-de-conclusión" class="section level2 hasAnchor" number="2.5">
+<h2><span class="header-section-number">2.5</span> A modo de conclusión<a href="regmul.html#a-modo-de-conclusión" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="gam.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/02-RegMult.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-LimnoR.pdf", "bookdown-LimnoR.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
