@@ -109,3 +109,15 @@ iniciando-con-la-fecha-de-muestreo
 iniciando-con-la-conductividad
 introducción-1
 evaluación-de-supuestos
+fig:posit
+fig:rstudio
+fig:project
+fig:script
+fig:copycode
+fig:code
+fig:unnamed-chunk-8
+fig:unnamed-chunk-10
+fig:unnamed-chunk-11-1
+fig:unnamed-chunk-11-2
+fig:unnamed-chunk-11-3
+fig:unnamed-chunk-11-4
