@@ -5,38 +5,39 @@
 
 Instituto Tecnológico de Chascomús (INTECH, UNSAM-CONICET), Escuela de Bio y Nanotecnologías (UNSAM)
 
-## INTRODUCCIÓN
+## Introducción
 
->El supuesto principal de cualquier técnica de ordenación es que los datos analizados son redundantes, es decir, contienen más variables (y dimensiones) de las necesarias para describir la información subyacente, y podemos reducir el número de estas dimensiones sin perder demasiada información. Por ejemplo, en el caso de los datos de composición de especies, algunas de las especies suelen ser ecológicamente similares (por ejemplo, especies que prefieren crecer en un hábitat húmedo en lugar de seco), lo que significa que el conjunto de datos contiene varias variables redundantes (especies) que cuentan la misma historia. O, para explicar la redundancia de otra manera, a partir de la presencia de una especie, a menudo podemos predecir la presencia de varias otras especies. En el caso de la ordenación aplicada en la matriz de variables ambientales, estas a menudo se correlacionan entre sí (por ejemplo, las mediciones del temperatura del agua a menudo se relacionan con las concentraciones de oxígeno disuelto), lo que también permite la reducción de la dimensión.
+El supuesto principal de cualquier técnica de ordenación es que los datos analizados son redundantes, es decir, contienen más variables (y dimensiones) de las necesarias para describir la información subyacente, y podemos reducir el número de estas dimensiones sin perder demasiada información. Por ejemplo, en el caso de los datos de composición de especies, algunas de las especies suelen ser ecológicamente similares (por ejemplo, especies que prefieren crecer en un hábitat húmedo en lugar de seco), lo que significa que el conjunto de datos contiene varias variables redundantes (especies) que cuentan la misma historia. O, para explicar la redundancia de otra manera, a partir de la presencia de una especie, a menudo podemos predecir la presencia de varias otras especies. En el caso de la ordenación aplicada en la matriz de variables ambientales, estas a menudo se correlacionan entre sí (por ejemplo, las mediciones del temperatura del agua a menudo se relacionan con las concentraciones de oxígeno disuelto), lo que también permite la reducción de la dimensión.
 
->Dado que el espacio multidimensional no es fácil de mostrar, describir o simplemente imaginar, vale la pena reducirlo a unas pocas dimensiones principales, conservando al máximo la información. Esto también significa que si las variables individuales son completamente independientes entre sí (por ejemplo, cada especie tiene preferencias completamente diferentes), entonces es probable que la ordenación no encuentre una reducción razonable del espacio multidimensional.
+Dado que el espacio multidimensional no es fácil de mostrar, describir o simplemente imaginar, vale la pena reducirlo a unas pocas dimensiones principales, conservando al máximo la información. Esto también significa que si las variables individuales son completamente independientes entre sí (por ejemplo, cada especie tiene preferencias completamente diferentes), entonces es probable que la ordenación no encuentre una reducción razonable del espacio multidimensional.
 
->Lo que hace el método de ordenación se puede formular de dos maneras alternativas:(i) busca gradientes en la composición de especies (representados generalmente por ejes de ordenación) e intenta explicar estos gradientes por variables ambientales; y/o (ii) busca la distribución de muestras en un espacio de ordenación reducido que refleje al máximo la disimilitud (= distancia) entre muestras en términos de su composición de especies.
+Lo que hace el método de ordenación se puede formular de dos maneras alternativas:(i) busca gradientes en la composición de especies (representados generalmente por ejes de ordenación) e intenta explicar estos gradientes por variables ambientales; y/o (ii) busca la distribución de muestras en un espacio de ordenación reducido que refleje al máximo la disimilitud (= distancia) entre muestras en términos de su composición de especies.
 
->De acuerdo al apartado anterior (**Unidad 4**), las técnicas allí presentadas permiten el análisis de una única matriz de datos de forma tal de revelar su estructura a través de un grafo construido con un conjunto reducido de ejes ortogonales (*i.e* independientes) Las variables externas que pueden estar influenciando esta estructura sólo podrán ser consideradas después del cómputo de la ordenación. De acuerdo con esta caracterísitica, se las conocen como "técnicas de ordenación indirecta" en donde uno deja que la matriz de datos exprese las relaciones entre objetos y variables sin restricción ("*unconstrained analyses*"). Por lo tanto es una forma pasiva de análisis, y el usuario interpreta los resultados de la ordenación *a posteriori*.
+De acuerdo al apartado anterior (**Unidad 4**), las técnicas allí presentadas permiten el análisis de una única matriz de datos de forma tal de revelar su estructura a través de un grafo construido con un conjunto reducido de ejes ortogonales (*i.e* independientes) Las variables externas que pueden estar influenciando esta estructura sólo podrán ser consideradas después del cómputo de la ordenación. De acuerdo con esta caracterísitica, se las conocen como "técnicas de ordenación indirecta" en donde uno deja que la matriz de datos exprese las relaciones entre objetos y variables sin restricción ("*unconstrained analyses*"). Por lo tanto es una forma pasiva de análisis, y el usuario interpreta los resultados de la ordenación *a posteriori*.
 
->Las técnicas de **ordenación canónica**, por el contrario, permiten asociar dos o más conjuntos de datos en el propio proceso de ordenación. Típicamente,en ecología, estas matrices la constituyen una matriz de datos biológicos, como por ejemplo, relevamiento de especies en diferentes sitios (matriz de "respuesta") y su matriz ambiental asociada (matriz "explicativa") (Figura 1). 
+Las técnicas de **ordenación canónica**, por el contrario, permiten asociar dos o más conjuntos de datos en el propio proceso de ordenación. Típicamente,en ecología, estas matrices la constituyen una matriz de datos biológicos, como por ejemplo, relevamiento de especies en diferentes sitios (matriz de "respuesta") y su matriz ambiental asociada (matriz "explicativa") (Figura 1). 
 
 <image src="./images/Figura 1.jpg">
 **Figura 1:** *Esquema de las matrices utilizadas comúnmente en estudios ecológicos*
 
->En este contexto, las técnicas de ordenación canónicas se engloban dentro de las "técnicas de ordenación directa" y permiten analizar patrones entre un conjunto de datos que están relacionadas con (o pueden ser interpretadas por) otro conjunto de datos, y/o probar formalmente hipótesis estadísticas sobre la importancia de estas relaciones. En otras palabras, las técnicas de ordenación canónica exploran explícitamente las relaciones entre dos matrices: una matriz de respuesta y una matriz explicativa y ambas matrices son utilizadas en la producción de la ordenación. Son análisis "restringidos" o "*constrained analyses*" (Figura 2). 
+En este contexto, las técnicas de ordenación canónicas se engloban dentro de las "técnicas de ordenación directa" y permiten analizar patrones entre un conjunto de datos que están relacionadas con (o pueden ser interpretadas por) otro conjunto de datos, y/o probar formalmente hipótesis estadísticas sobre la importancia de estas relaciones. En otras palabras, las técnicas de ordenación canónica exploran explícitamente las relaciones entre dos matrices: una matriz de respuesta y una matriz explicativa y ambas matrices son utilizadas en la producción de la ordenación. Son análisis "restringidos" o "*constrained analyses*" (Figura 2). 
 
 <image src="./images/Figura 2.jpg">
 **Figura 2:** *Esquema de "funcionamiento" de las técnicas de ordenación canónicas.*
 
-### LA LÓGICA DE LAS TÉCNICAS DE ORDENACIÓN RESTRINGIDA O CANÓNICA ("*CONSTRAINED*", ANÁLISIS DE GRADIENTE DIRECTO)
+## La lógica de las técnicas de ordenación restringida o canónica ("constrained", análisis de gradiente directo)
 
->Los ejes de ordenación están limitados/restringidos por factores ambientales. Relaciona la composición de especies directamente con las variables ambientales y extrae la variación en la composición de especies que está directamente relacionada con el medio ambiente. Las variables ambientales ingresan directamente al algoritmo, y los ejes de ordenación restringidos corresponden a las direcciones de la variabilidad en los datos que se explica por estas variables ambientales. El método generalmente se usa como análisis confirmatorio, es decir, puede probar las hipótesis sobre la relación entre los factores ambientales en la composición de especies (a diferencia de la ordenación sin restricciones, que es exploratoria). Descompone la varianza total en los datos de composición de especies en una fracción explicada por variables ambientales (relacionadas con ejes de ordenación restringidos) y no explicada por variables ambientales (relacionadas con ejes de ordenación no restringidos). Ofrece varias oportunidades interesantes cuando se trata de variables explicativas: permite selección directa (la selección de variables ambientales importantes mediante la exclusión de aquellas que no son relevantes para la composición de especies), habilita la prueba de permutación de Monte Carlo (una prueba de significancia de la varianza explicada por factores ambientales) y permite el análisis de la partición de la varianza (partición de la varianza explicada por diferentes grupos de variables ambientales).
+Los ejes de ordenación están limitados/restringidos por factores ambientales. Relaciona la composición de especies directamente con las variables ambientales y extrae la variación en la composición de especies que está directamente relacionada con el medio ambiente. Las variables ambientales ingresan directamente al algoritmo, y los ejes de ordenación restringidos corresponden a las direcciones de la variabilidad en los datos que se explica por estas variables ambientales. El método generalmente se usa como análisis confirmatorio, es decir, puede probar las hipótesis sobre la relación entre los factores ambientales en la composición de especies (a diferencia de la ordenación sin restricciones, que es exploratoria). Descompone la varianza total en los datos de composición de especies en una fracción explicada por variables ambientales (relacionadas con ejes de ordenación restringidos) y no explicada por variables ambientales (relacionadas con ejes de ordenación no restringidos). Ofrece varias oportunidades interesantes cuando se trata de variables explicativas: permite selección directa (la selección de variables ambientales importantes mediante la exclusión de aquellas que no son relevantes para la composición de especies), habilita la prueba de permutación de Monte Carlo (una prueba de significancia de la varianza explicada por factores ambientales) y permite el análisis de la partición de la varianza (partición de la varianza explicada por diferentes grupos de variables ambientales).
 
 ### ¿Qué tipo de datos de composición de especies se utilizan para el análisis?
->#### (a) Métodos basados en datos brutos (enfoque clásico)
 
->Métodos basados en el análisis de matrices crudas de muestras-especies con datos de abundancia o presencia/ausencia. Dentro de estos métodos, se reconocen tradicionalmente dos categorías, que se diferencian por la suposición de la respuesta de las especies a lo largo del gradiente ambiental: 
+#### (a) Métodos basados en datos brutos (enfoque clásico)
 
->1. **lineal** (Figura 3, panel izquierdo): supone que las especies responden linealmente a lo largo del gradiente ambiental, lo que podría ser cierto para datos ecológicos bastante homogéneos, y esto se da cuando donde los gradientes ecológicos considerados son bastante cortos;
+Métodos basados en el análisis de matrices crudas de muestras-especies con datos de abundancia o presencia/ausencia. Dentro de estos métodos, se reconocen tradicionalmente dos categorías, que se diferencian por la suposición de la respuesta de las especies a lo largo del gradiente ambiental: 
 
->2.**unimodal** (Figura 3, panel derecho): respuesta de la especie unimodalmente a lo largo del gradiente, con su punto óptimo en una determinada posición del gradiente; este modelo se acerca más a la realidad de los datos ecológicos y es más adecuado para conjuntos de datos heterogéneos (estructurados por un gradiente ecológico fuerte o largo, con un alto recambio de especies y muchos ceros en la matriz de especies), es decir, análisi de gradientes ambientales bastante largos.
+1. **lineal** (Figura 3, panel izquierdo): supone que las especies responden linealmente a lo largo del gradiente ambiental, lo que podría ser cierto para datos ecológicos bastante homogéneos, y esto se da cuando donde los gradientes ecológicos considerados son bastante cortos;
+
+2.**unimodal** (Figura 3, panel derecho): respuesta de la especie unimodalmente a lo largo del gradiente, con su punto óptimo en una determinada posición del gradiente; este modelo se acerca más a la realidad de los datos ecológicos y es más adecuado para conjuntos de datos heterogéneos (estructurados por un gradiente ecológico fuerte o largo, con un alto recambio de especies y muchos ceros en la matriz de especies), es decir, análisi de gradientes ambientales bastante largos.
 
 <image src="./images/Figura 3.jpg">
 
@@ -45,31 +46,34 @@ Instituto Tecnológico de Chascomús (INTECH, UNSAM-CONICET), Escuela de Bio y N
 
 #### (b) Métodos aplicados sobre datos transformados
 
->Todos los métodos de ordenación tienen implícito un paso de cálculo de índices de distancia en su algoritmo. En algunos casos, tenemos la opción de indicarle al algoritmo qué índice utilizar (ejemplo: PCoA o NMDS), mientras que en otros el índice utilizado es fijo (ejemplo: PCA, RDA). Lo que tenemos que tener en cuenta es que, entre todos los índices posibles, existen índices "*simétricos*" (incluyen el doble cero en el cálculo del índice), e índices "*asimétricos*" (no incluyen al doble cero en el cálculo del índice). La utilización de índices símetricos en análisis de ordenación que suponen respuesta lineal pueden llevar a la paradoja de que dos sitios se "ordenen cercanos" en base a la ausencia de especies en ambos sitios (para más detalle sobre este punto, referirse al Capítulo 7 de libro "Numerical Ecology" de Legendre & Legendre, 2012). En aquellos casos en que el modelo a aplicar es de respuesta lineal y se base en el cálculo de índices simétricos, se recomienda transformar los datos de composición de especies de forma tal de adecuar los datos ecológicos y evitar caer en la paradoja del doble-cero. En este sentido, Legendre y Gallagher (2001) detallan diversas transformaciones adecuadas para la aplicación de métodos de ordenación que asumen respuesta lineal.
+Todos los métodos de ordenación tienen implícito un paso de cálculo de índices de distancia en su algoritmo. En algunos casos, tenemos la opción de indicarle al algoritmo qué índice utilizar (ejemplo: PCoA o NMDS), mientras que en otros el índice utilizado es fijo (ejemplo: PCA, RDA). Lo que tenemos que tener en cuenta es que, entre todos los índices posibles, existen índices "*simétricos*" (incluyen el doble cero en el cálculo del índice), e índices "*asimétricos*" (no incluyen al doble cero en el cálculo del índice). La utilización de índices símetricos en análisis de ordenación que suponen respuesta lineal pueden llevar a la paradoja de que dos sitios se "ordenen cercanos" en base a la ausencia de especies en ambos sitios (para más detalle sobre este punto, referirse al Capítulo 7 de libro "Numerical Ecology" de Legendre & Legendre, 2012). En aquellos casos en que el modelo a aplicar es de respuesta lineal y se base en el cálculo de índices simétricos, se recomienda transformar los datos de composición de especies de forma tal de adecuar los datos ecológicos y evitar caer en la paradoja del doble-cero. En este sentido, Legendre y Gallagher (2001) detallan diversas transformaciones adecuadas para la aplicación de métodos de ordenación que asumen respuesta lineal.
 
 #### (c) Métodos basados en la distancia
 
->Métodos que utilizan la matriz de distancias entre muestras medidas por coeficientes de distancia y que proyectan estas distancias en diagramas de ordenación de dos o más dimensiones. El método se conoce como db-RDA (RDA basado en la distancia) y consiste en una combinación de PCoA, aplicada en datos sin procesar utilizando una medida de distancia seleccionada, y RDA aplicada en los autovectores resultantes de PCoA (ver más abajo). Ofrece una alternativa a RDA (basada en distancias euclidianas) y  al RDA basado en datos transformados (por ejemplo, transformados por Hellinger), con la libertad de elegir la medida de distancia adecuada para los datos investigados.
+Métodos que utilizan la matriz de distancias entre muestras medidas por coeficientes de distancia y que proyectan estas distancias en diagramas de ordenación de dos o más dimensiones. El método se conoce como db-RDA (RDA basado en la distancia) y consiste en una combinación de PCoA, aplicada en datos sin procesar utilizando una medida de distancia seleccionada, y RDA aplicada en los autovectores resultantes de PCoA (ver más abajo). Ofrece una alternativa a RDA (basada en distancias euclidianas) y  al RDA basado en datos transformados (por ejemplo, transformados por Hellinger), con la libertad de elegir la medida de distancia adecuada para los datos investigados.
 
 ### ¿Cómo saber si debo utilizar un método de ordenación de respuesta lineal o unimodal?
 
->Para decidir si aplicar el método de ordenación de respuesta lineal o unimodal en los datos, podemos basarnos en la regla general introducida por Lepš & Šmilauer (2003): primero, calcule DCA ("Detrended correspondence analysis"-análisis sin tendencia por segmentos) en sus datos y verifique la longitud del primer Eje del DCA (que está escalado en unidades de desviación estándar, S.D.). Una longitud del primer eje DCA > 4 S.D. indica un conjunto de datos heterogéneo en el que se deben utilizar métodos unimodales, mientras que la longitud < 3 S.D. indica un conjunto de datos homogéneo para el cual los métodos lineales son adecuados. En la zona gris entre 3 y 4 S.D., tanto los métodos lineales como los unimodales son adecuados. Sin embargo, tengan en cuenta que si bien **los métodos lineales no deben usarse para datos heterogéneos** (*i.e.* para datos de respuesta unimodal), los métodos unimodales pueden ser usados para datos homogéneos, no obstante, los métodos lineales, en este caso, son más poderosos y deberían ser preferidos. 
+Para decidir si aplicar el método de ordenación de respuesta lineal o unimodal en los datos, podemos basarnos en la regla general introducida por Lepš & Šmilauer (2003): primero, calcule DCA ("Detrended correspondence analysis"-análisis sin tendencia por segmentos) en sus datos y verifique la longitud del primer Eje del DCA (que está escalado en unidades de desviación estándar, S.D.). Una longitud del primer eje DCA > 4 S.D. indica un conjunto de datos heterogéneo en el que se deben utilizar métodos unimodales, mientras que la longitud < 3 S.D. indica un conjunto de datos homogéneo para el cual los métodos lineales son adecuados. En la zona gris entre 3 y 4 S.D., tanto los métodos lineales como los unimodales son adecuados. Sin embargo, tengan en cuenta que si bien **los métodos lineales no deben usarse para datos heterogéneos** (*i.e.* para datos de respuesta unimodal), los métodos unimodales pueden ser usados para datos homogéneos, no obstante, los métodos lineales, en este caso, son más poderosos y deberían ser preferidos. 
 Alternativamente, si tus datos de composición de especies son heterogéneos, pero aún querés utilizar algún método de ordenación lineal (PCA, RDA), recordá trasnformar estos datos de composición de especies de forma tal de evitar el problema del doble-cero. 
 
 
-### **ANÁLISIS DE REDUNDANCIA (RDA)**
+## Análisis de Redundancia (RDA)
 
->El RDA es un método que combina las técnicas de regresión lineal con el análisis de componentes principales (PCA). Por un lado, es una extensión directa del análisis de regresión múltiple para modelar la respuesta multivariada de datos. *Redundancia* es sinónimo de "variación explicada" y se interpreta de la misma manera que como lo aprendieron en sus cursos introductorios de Estadísitica al estudiar los modelos de análisis univariados. El análisis se dice *asimétrico* (*i.e.* se establece una matriz de respuesta y una matriz explicativa), en donde la matriz "Y" (biológica) corresponde a la variable multidimensional de respuesta y "X" (o "E", de acuerdo a la Figura 1), corresponde a la matriz multidimensional de variables explicativas. Desde una perspectiva descriptiva, uno diría que la ordenación de "Y" está *restringida* de forma tal que los vectores de ordenación resultantes son combinaciones lineales de las variables en "X".
+El RDA es un método que combina las técnicas de regresión lineal con el análisis de componentes principales (PCA). Por un lado, es una extensión directa del análisis de regresión múltiple para modelar la respuesta multivariada de datos. *Redundancia* es sinónimo de "variación explicada" y se interpreta de la misma manera que como lo aprendieron en sus cursos introductorios de Estadísitica al estudiar los modelos de análisis univariados. El análisis se dice *asimétrico* (*i.e.* se establece una matriz de respuesta y una matriz explicativa), en donde la matriz "Y" (biológica) corresponde a la variable multidimensional de respuesta y "X" (o "E", de acuerdo a la Figura 1), corresponde a la matriz multidimensional de variables explicativas. Desde una perspectiva descriptiva, uno diría que la ordenación de "Y" está *restringida* de forma tal que los vectores de ordenación resultantes son combinaciones lineales de las variables en "X".
 
 >Por otro lado, RDA también puede verse como una extensión del análisis de componentes principales (PCA), porque los vectores de ordenación canónica que resultan constituyen combinaciones lineales de las variables de respuesta "Y". Esto significa que cada vector de ordenación es una proyección unidimensional de la distribución de los objetos en un espacio que conserva las distancias euclidianas entre ellos. 
 
->Rápidamente, este método busca, en orden sucesivo, una serie de *combinaciones lineales* de las *variables explicativas* que *mejor explican* la *variación* de los datos de la matriz de *variable respuesta*. Los *ejes* definidos en el espacio a partir de la matriz de las variables explicativas son *ortogonales* entre sí (*i.e* independientes). RDA es por lo tanto un *procedimiento de ordenación restringida*. La diferencia con la ordenación sin restricciones es importante: la matriz de variables explicativas condiciona los “pesos” (*i.e.* autovalores, valores propios o *eigenvalues*) y las direcciones de los ejes de ordenación. En RDA, uno puede decir verdaderamente que los ejes explican o modelan (en el sentido estadístico) la variación de la matriz respuesta o dependiente.
+Rápidamente, este método busca, en orden sucesivo, una serie de *combinaciones lineales* de las *variables explicativas* que *mejor explican* la *variación* de los datos de la matriz de *variable respuesta*. Los *ejes* definidos en el espacio a partir de la matriz de las variables explicativas son *ortogonales* entre sí (*i.e* independientes). RDA es por lo tanto un *procedimiento de ordenación restringida*. La diferencia con la ordenación sin restricciones es importante: la matriz de variables explicativas condiciona los “pesos” (*i.e.* autovalores, valores propios o *eigenvalues*) y las direcciones de los ejes de ordenación. En RDA, uno puede decir verdaderamente que los ejes explican o modelan (en el sentido estadístico) la variación de la matriz respuesta o dependiente.
 
->Como resultado, la variación en la composición de especies se descompone en variación relacionada con variables ambientales (representadas por ejes restringidos/canónicos, autovectores o *eigenvectors*) y no relacionada con variables ambientales (ejes no restringidos). El número total de ejes canónicos generdados corresponde a la cantidad *min [p, m, n-1]*. Es decir, la cantidad de ejes será el número más bajo entre los parámetros *p*, *m*, y *(n-1)*, talque *(i)* la cantidad de ejes generados no puede exceder *p* que es el tamaño del espacio de referencia de la matriz "Y" (*i.e.* número de variables respuesta cosnideradas, de especies para nuestro caso); *(ii)* no puede exceder *m* que es el número de variables en X (cantidad de variables ambientales consideradas) y *(iii)* no puede exceder (n – 1), que es el número máximo de dimensiones requeridas para representar *n* puntos (*i.e.* sitios) en el espacio euclidiano. Finalmente, la significancia estadística del modelo de RDA (modelo global) y la de los ejes canónicos se pueden probar mediante análisis permutacionales (no paramétricos).
+Como resultado, la variación en la composición de especies se descompone en variación relacionada con variables ambientales (representadas por ejes restringidos/canónicos, autovectores o *eigenvectors*) y no relacionada con variables ambientales (ejes no restringidos). El número total de ejes canónicos generdados corresponde a la cantidad *min [p, m, n-1]*. Es decir, la cantidad de ejes será el número más bajo entre los parámetros *p*, *m*, y *(n-1)*, talque *(i)* la cantidad de ejes generados no puede exceder *p* que es el tamaño del espacio de referencia de la matriz "Y" (*i.e.* número de variables respuesta cosnideradas, de especies para nuestro caso); *(ii)* no puede exceder *m* que es el número de variables en X (cantidad de variables ambientales consideradas) y *(iii)* no puede exceder (n – 1), que es el número máximo de dimensiones requeridas para representar *n* puntos (*i.e.* sitios) en el espacio euclidiano. Finalmente, la significancia estadística del modelo de RDA (modelo global) y la de los ejes canónicos se pueden probar mediante análisis permutacionales (no paramétricos).
+
+
+## Caso de estudio
 
 ### Analicemos estos aspectos a través de un ejemplo práctico...
 
->Utilizaremos un set de datos del trabajo *Bacterioplankton morphotypes structure and cytometric fingerprint rely on environmental conditions in a sub-Antarctic peatland* publicado en *Hydrobiologia* (Quiroga *et al.* 2017), disponibles en el [Repositorio Institucional](http://hdl.handle.net/11336/201811) [CONICET Digital](http://hdl.handle.net/11336/201874). Para ello, descargar el set de datos **morpho_biomass.csv** y **chem.csv** de [GitHub Limno-con-R/CILCAL2023](https://github.com/Limno-con-R/CILCAL2023/tree/main/datasets).
+Utilizaremos un set de datos del trabajo *Bacterioplankton morphotypes structure and cytometric fingerprint rely on environmental conditions in a sub-Antarctic peatland* publicado en *Hydrobiologia* (Quiroga *et al.* 2017), disponibles en el [Repositorio Institucional](http://hdl.handle.net/11336/201811) [CONICET Digital](http://hdl.handle.net/11336/201874). Para ello, descargar el set de datos **morpho_biomass.csv** y **chem.csv** de [GitHub Limno-con-R/CILCAL2023](https://github.com/Limno-con-R/CILCAL2023/tree/main/datasets).
 Guardar los archivos en una carpeta llamada _data_, dentro del **Directorio de Trabajo** del **Proyecto** que creamos para esta Unidad (ver cómo hacerlo en la Unidad \@ref(intro)). Finalmente, instalar los paquetes como se indica en la Unidad \@ref(intro). Luego, cargarlos en la sesión. 
 
 ### RDA utilizando el paquete **vegan** (Oksanen *et al.*, 2007)
@@ -81,10 +85,6 @@ library (vegan)
 ```
 
 ```
-## Warning: package 'vegan' was built under R version 4.2.3
-```
-
-```
 ## Loading required package: permute
 ```
 
@@ -93,7 +93,7 @@ library (vegan)
 ```
 
 ```
-## This is vegan 2.6-4
+## This is vegan 2.5-7
 ```
 
 ```r
@@ -118,16 +118,14 @@ vare.dca
 ## 
 ## Detrended correspondence analysis with 26 segments.
 ## Rescaling of axes with 4 iterations.
-## Total inertia (scaled Chi-square): 0.109 
 ## 
-##                         DCA1     DCA2      DCA3      DCA4
-## Eigenvalues          0.07139 0.005130 0.0020470 0.0012492
-## Additive Eigenvalues 0.07139 0.008798 0.0117827 0.0154503
-## Decorana values      0.10595 0.001355 0.0005076 0.0002615
-## Axis lengths         0.60193 0.239784 0.1647616 0.1281498
+##                    DCA1     DCA2      DCA3      DCA4
+## Eigenvalues     0.07139 0.005130 0.0020470 0.0012492
+## Decorana values 0.10595 0.001355 0.0005076 0.0002615
+## Axis lengths    0.60193 0.239784 0.1647616 0.1281498
 ```
-> La última línea de la primer columna (DCA1) indica *Axis lengths= 0.60193*. Ese valor corresponde a la longitud del primer eje de ordenamiento del DCA, expresado en unidades de desvio estándar (S.D.) de recambio de especies. Un gradiente mayor a 4 S.D. indica que algunas especies presentan respuesta unimodal. En el caso de nuestr ejemplo, la longitud del gradiente es < 4, indicando un gradiente homogéneo o corto y, por lo tanto, el modelo de respuesta lineal es el adecuado para aplicar.
->Porcedemos, entonces, al modelado a través de un RDA:
+La última línea de la primer columna (DCA1) indica *Axis lengths= 0.60193*. Ese valor corresponde a la longitud del primer eje de ordenamiento del DCA, expresado en unidades de desvio estándar (S.D.) de recambio de especies. Un gradiente mayor a 4 S.D. indica que algunas especies presentan respuesta unimodal. En el caso de nuestr ejemplo, la longitud del gradiente es < 4, indicando un gradiente homogéneo o corto y, por lo tanto, el modelo de respuesta lineal es el adecuado para aplicar.
+Procedemos, entonces, al modelado a través de un RDA:
 
 
 ```r
@@ -138,8 +136,8 @@ ambiental <-read.csv("./data/chem.csv", row.names=1) #cargo las variables ambien
 env <- ambiental[,c(4:5,7:15)] # saco una de ellas: "DO" (oxígeno disuelto) ya que tiene datos faltantes (NAs) y el modelo no corre con variables que tengan datos faltantes
 ```
 
->Hasta acá, hemos (i) verificado el tipo de respuesta en nuestros datos de composición de especie para elegir el modelo adecuado y (ii) preparamos los datos de composición y de datos ambientales para modelar.
->Además del tipo de respuesta, otro requisito necesario es la "multinormalidad" de los datos de la matriz ambiental. En el siguiente paso, lo que vamos a hacer es chequear que este supuesto se cumpla:
+Hasta acá, hemos (i) verificado el tipo de respuesta en nuestros datos de composición de especie para elegir el modelo adecuado y (ii) preparamos los datos de composición y de datos ambientales para modelar.
+Además del tipo de respuesta, otro requisito necesario es la "multinormalidad" de los datos de la matriz ambiental. En el siguiente paso, lo que vamos a hacer es chequear que este supuesto se cumpla:
 
 
 ```
@@ -151,16 +149,16 @@ env <- ambiental[,c(4:5,7:15)] # saco una de ellas: "DO" (oxígeno disuelto) ya 
 ## [1] 0.854080999478208 0.186705671286224 <NA>             
 ## Levels: 0.854080999478208 0.186705671286224
 ```
->En este caso, elegimos analizar la asimetría de los datos ("*skewness*") a través del estudio de la significancia de los coeficiente de asimetría y curtosis multivariado de Mardia. Para la normalidad multivariada, los valores *p* de las estadísticas de asimetría y curtosis deben ser superiores a 0,05. Si el tamaño de la muestra es inferior a 20, se debe utilizar *p.value.small* como valor significativo de asimetría en lugar de *p.value.skew*. 
+En este caso, elegimos analizar la asimetría de los datos ("*skewness*") a través del estudio de la significancia de los coeficiente de asimetría y curtosis multivariado de Mardia. Para la normalidad multivariada, los valores *p* de las estadísticas de asimetría y curtosis deben ser superiores a 0,05. Si el tamaño de la muestra es inferior a 20, se debe utilizar *p.value.small* como valor significativo de asimetría en lugar de *p.value.skew*. 
 
->Con los supuestos del modelo revisados y comprobados, avanzamos con la aplicación del modelo a los datos. En el caso del paquete **vegan**, permite el cálculo de una RDA de dos maneras diferentes. La sintaxis más simple es listar los nombres de los marcos de datos involucrados separados por comas:
+Con los supuestos del modelo revisados y comprobados, avanzamos con la aplicación del modelo a los datos. En el caso del paquete **vegan**, permite el cálculo de una RDA de dos maneras diferentes. La sintaxis más simple es listar los nombres de los marcos de datos involucrados separados por comas:
 
 
 ```r
 simpleRDA <- rda(bio.trans, env)
 ```
 
->Esta manera, si bien es sencilla, tiene algunas limitaciones. Su principal inconveniente es que no permite incluir variables cualitativas en la matriz explicativa. Por lo tanto, en todas las aplicaciones excepto en las más simples, es mejor usar la interfaz de la fórmula:
+Esta manera, si bien es sencilla, tiene algunas limitaciones. Su principal inconveniente es que no permite incluir variables cualitativas en la matriz explicativa. Por lo tanto, en todas las aplicaciones excepto en las más simples, es mejor usar la interfaz de la fórmula:
 
 
 ```r
@@ -330,9 +328,9 @@ anova(biomass.rda, permutations = how(nperm = 999))#nada tiene que ver este aná
 ## Number of permutations: 999
 ## 
 ## Model: rda(formula = bio.trans ~ pH + EC + TH + DOC + DIN + TN + DRP + TP + a440 + SUVA254 + E2_E3, data = env, scale = TRUE)
-##          Df Variance      F Pr(>F)   
-## Model    11   4.6572 2.5224  0.007 **
-## Residual  8   1.3428                 
+##          Df Variance      F Pr(>F)  
+## Model    11   4.6572 2.5224  0.012 *
+## Residual  8   1.3428                
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ```
@@ -361,18 +359,18 @@ anova(biomass.rda, permutations = how(nperm = 999))#nada tiene que ver este aná
 ```r
 #0.47
 ```
->Expliquemos un poco esta salida...
->En primer lugar, se revisa la prueba global del modelo utilizando todas las variables explicativas (resultado de la función *anova*). Si, y solo si, la prueba global es significativa, se puede proceder con la selección de variables (más abajo). 
->La salida anterior porporciona información útil: "*Inertia*" (Inercia) es otro nombre para variación o varianza en este caso. "*Total*" se refiere a la varianza total, "*Constrained*" (Restringida) se refiere a la cantidad de varianza explicada por las variables explicativas, "*Unconstrainded*" (Sin restricciones) se refiere a la varianza residual. Restringido + Sin restricciones = Total. Se deriva, además, un estadístico R^2^ que se interpreta de manera similar al R^2^ de regresión: representa la variación explicada por el modelo en relación a la varianza total (Restringido/Total).Los autovalores se muestran tanto para los ejes restringidos como para los no restringidos. En este contexto, estos autovalores indican qué con cantidad de varianza contribuye cada uno de los ejes.
+Expliquemos un poco esta salida...
+En primer lugar, se revisa la prueba global del modelo utilizando todas las variables explicativas (resultado de la función *anova*). Si, y solo si, la prueba global es significativa, se puede proceder con la selección de variables (más abajo). 
+La salida anterior porporciona información útil: "*Inertia*" (Inercia) es otro nombre para variación o varianza en este caso. "*Total*" se refiere a la varianza total, "*Constrained*" (Restringida) se refiere a la cantidad de varianza explicada por las variables explicativas, "*Unconstrainded*" (Sin restricciones) se refiere a la varianza residual. Restringido + Sin restricciones = Total. Se deriva, además, un estadístico R^2^ que se interpreta de manera similar al R^2^ de regresión: representa la variación explicada por el modelo en relación a la varianza total (Restringido/Total).Los autovalores se muestran tanto para los ejes restringidos como para los no restringidos. En este contexto, estos autovalores indican qué con cantidad de varianza contribuye cada uno de los ejes.
 
->Podemos graficar el resultado de nuestro modelo (con todas las variables explicativas) para tener una idea de qué variables se correlacionan con especies a lo largo de qué ejes.
+Podemos graficar el resultado de nuestro modelo (con todas las variables explicativas) para tener una idea de qué variables se correlacionan con especies a lo largo de qué ejes.
 
 
 ```r
 ordiplot(biomass.rda, scaling = 1, type = "text")
 ```
 
-![](05-multi2_files/figure-latex/unnamed-chunk-8-1.pdf)<!-- --> 
+<img src="05-multi2_files/figure-html/unnamed-chunk-8-1.png" width="672" />
 
 **Figura 4:** El "*escalado*" 1 refleja en el gráfico las similitudes entre objetos en la matriz de respuesta. Es decir, los sitios (en negro) que están más cerca entre sí tienen comunidades más similares. Las especies que están más juntas ocupan más sitios en común.
 
@@ -381,12 +379,12 @@ ordiplot(biomass.rda, scaling = 1, type = "text")
 ordiplot(biomass.rda, scaling = 2, type = "text")
 ```
 
-![](05-multi2_files/figure-latex/unnamed-chunk-9-1.pdf)<!-- --> 
+<img src="05-multi2_files/figure-html/unnamed-chunk-9-1.png" width="672" />
 
 **Figura 5:** El "*escalado*" 2 muestra los efectos de las variables explicativas. Las flechas más largas significan que esta variable impulsa fuertemente la variación en la matriz de la comunidad. Las flechas que apuntan en direcciones opuestas tienen una relación negativa. Las flechas que apuntan en la misma dirección tienen una relación positiva. Cuanto más superpuestas las flechas, más correlacionadas resultan esas variables (ya sea positiva o negtivamente).
 
 ### Seleccionando las variables explicativas relevantes
->Si queremos simplificar este modelo, podemos realizar una selección hacia adelante (*forward*, van ingresando de a una por vez al modelo), o hacia atrás (*backward*, inicia con todas las variables involucradas y va eliminando de a una), o paso a paso (*stepwise*, proceso iterativo de inclusión y exclusión de variables). Estos tipos de selecciones nos ayudan a seleccionar variables que son estadísticamente importantes. Sin embargo, es importante notar que seleccionar variables de relevancia ecológica es mucho más importante que realizar la selección de variables "estadísticamente significativas". Si una variable relevante desde el punto de vista ecológico no se selecciona "estadísticamente", esto no significa que deba eliminarse del RDA.
+Si queremos simplificar este modelo, podemos realizar una selección hacia adelante (*forward*, van ingresando de a una por vez al modelo), o hacia atrás (*backward*, inicia con todas las variables involucradas y va eliminando de a una), o paso a paso (*stepwise*, proceso iterativo de inclusión y exclusión de variables). Estos tipos de selecciones nos ayudan a seleccionar variables que son estadísticamente importantes. Sin embargo, es importante notar que seleccionar variables de relevancia ecológica es mucho más importante que realizar la selección de variables "estadísticamente significativas". Si una variable relevante desde el punto de vista ecológico no se selecciona "estadísticamente", esto no significa que deba eliminarse del RDA.
 
 
 ```r
@@ -404,17 +402,17 @@ fwd.sel <- ordistep(rda(bio.trans ~ 1, data = env, scale= TRUE), # modelo mínim
 ## Start: bio.trans ~ 1 
 ## 
 ##           Df    AIC      F Pr(>F)   
-## + EC       1 33.486 5.4886  0.005 **
-## + TN       1 35.111 3.6559  0.035 * 
-## + DOC      1 36.689 2.0134  0.105   
-## + pH       1 36.512 2.1912  0.120   
-## + a440     1 37.495 1.2229  0.270   
-## + DIN      1 37.847 0.8874  0.415   
-## + DRP      1 38.029 0.7166  0.470   
-## + TP       1 37.997 0.7466  0.525   
-## + SUVA254  1 38.270 0.4923  0.695   
-## + E2_E3    1 38.353 0.4154  0.745   
-## + TH       1 38.425 0.3496  0.795   
+## + EC       1 33.486 5.4886  0.010 **
+## + TN       1 35.111 3.6559  0.030 * 
+## + pH       1 36.512 2.1912  0.085 . 
+## + DOC      1 36.689 2.0134  0.100 . 
+## + a440     1 37.495 1.2229  0.245   
+## + DIN      1 37.847 0.8874  0.455   
+## + TP       1 37.997 0.7466  0.480   
+## + DRP      1 38.029 0.7166  0.515   
+## + SUVA254  1 38.270 0.4923  0.685   
+## + TH       1 38.425 0.3496  0.760   
+## + E2_E3    1 38.353 0.4154  0.770   
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
@@ -422,37 +420,35 @@ fwd.sel <- ordistep(rda(bio.trans ~ 1, data = env, scale= TRUE), # modelo mínim
 ## 
 ##           Df    AIC      F Pr(>F)  
 ## + a440     1 30.718 4.5770  0.015 *
-## + pH       1 32.870 2.3759  0.085 .
-## + E2_E3    1 34.177 1.1501  0.350  
-## + TN       1 34.291 1.0469  0.390  
-## + DIN      1 34.608 0.7632  0.440  
-## + TP       1 34.803 0.5910  0.625  
-## + DRP      1 34.851 0.5485  0.625  
-## + DOC      1 34.986 0.4307  0.705  
-## + TH       1 34.873 0.5294  0.745  
+## + pH       1 32.870 2.3759  0.050 *
+## + E2_E3    1 34.177 1.1501  0.290  
+## + TN       1 34.291 1.0469  0.335  
+## + DIN      1 34.608 0.7632  0.480  
+## + DRP      1 34.851 0.5485  0.630  
+## + TH       1 34.873 0.5294  0.660  
+## + TP       1 34.803 0.5910  0.685  
+## + DOC      1 34.986 0.4307  0.730  
 ## + SUVA254  1 35.170 0.2709  0.910  
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## Step: bio.trans ~ EC + a440 
 ## 
-##           Df    AIC      F Pr(>F)  
-## + pH       1 30.098 2.2393  0.095 .
-## + TP       1 30.590 1.7964  0.160  
-## + TN       1 31.422 1.0710  0.360  
-## + DOC      1 31.460 1.0392  0.365  
-## + DRP      1 31.766 0.7802  0.530  
-## + SUVA254  1 31.840 0.7185  0.570  
-## + TH       1 32.114 0.4904  0.690  
-## + E2_E3    1 32.045 0.5477  0.720  
-## + DIN      1 32.500 0.1756  0.970  
-## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+##           Df    AIC      F Pr(>F)
+## + pH       1 30.098 2.2393  0.100
+## + TP       1 30.590 1.7964  0.165
+## + TN       1 31.422 1.0710  0.365
+## + DOC      1 31.460 1.0392  0.370
+## + SUVA254  1 31.840 0.7185  0.545
+## + DRP      1 31.766 0.7802  0.560
+## + E2_E3    1 32.045 0.5477  0.675
+## + TH       1 32.114 0.4904  0.745
+## + DIN      1 32.500 0.1756  0.945
 ```
 
->Para evitar la sobreestimación de la varianza explicada, la selección de variables debe realizarse con dos criterios de parada: (1) el nivel de significación alfa habitual y (2) el coeficiente de determinación múltiple ajustado (R^2^adj.) calculado utilizando todas las variables explicativas. Cuando la selección hacia adelante identifica una variable que hace que uno u otro criterio supere el umbral fijado, se rechaza esa variable y se detiene el procedimiento (referirse a Blanchet, F. G., Legendre, P., & Borcard, D. 2008. *Forward selection of explanatory variables*. Ecology, 89(9): 2623-2632, para más detalles).
+Para evitar la sobreestimación de la varianza explicada, la selección de variables debe realizarse con dos criterios de parada: (1) el nivel de significación alfa habitual y (2) el coeficiente de determinación múltiple ajustado (R^2^adj.) calculado utilizando todas las variables explicativas. Cuando la selección hacia adelante identifica una variable que hace que uno u otro criterio supere el umbral fijado, se rechaza esa variable y se detiene el procedimiento (referirse a Blanchet, F. G., Legendre, P., & Borcard, D. 2008. *Forward selection of explanatory variables*. Ecology, 89(9): 2623-2632, para más detalles).
 
->Qué variables son retenidas por la selección *forward*?
+Qué variables son retenidas por la selección *forward*?
 
 
 ```r
@@ -463,7 +459,7 @@ fwd.sel$call
 ## rda(formula = bio.trans ~ EC + a440, data = env, scale = TRUE)
 ```
 
->Cuál es el valor del R^2^ ajustado de este modelo?
+Cuál es el valor del R^2^ ajustado de este modelo?
 
 
 ```r
@@ -482,7 +478,7 @@ RsquareAdj(biomass.rda.signif)
 ## [1] 0.3251952
 ```
 
->Tests de significación
+Tests de significación
 
 
 ```r
@@ -495,9 +491,9 @@ anova.cca(biomass.rda.signif, step = 1000) #Significación global del modelo fin
 ## Number of permutations: 999
 ## 
 ## Model: rda(formula = bio.trans ~ EC + a440, data = env, scale = TRUE)
-##          Df Variance      F Pr(>F)   
-## Model     2   2.3774 5.5781  0.002 **
-## Residual 17   3.6226                 
+##          Df Variance      F Pr(>F)    
+## Model     2   2.3774 5.5781  0.001 ***
+## Residual 17   3.6226                  
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ```
@@ -516,8 +512,8 @@ anova.cca(biomass.rda.signif, step = 1000, by = "term") #significación de varia
 ## 
 ## Model: rda(formula = bio.trans ~ EC + a440, data = env, scale = TRUE)
 ##          Df Variance      F Pr(>F)   
-## EC        1   1.4020 6.5793  0.002 **
-## a440      1   0.9753 4.5770  0.011 * 
+## EC        1   1.4020 6.5793  0.004 **
+## a440      1   0.9753 4.5770  0.017 * 
 ## Residual 17   3.6226                 
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
@@ -536,15 +532,15 @@ anova.cca(biomass.rda.signif, step = 1000, by = "axis") #significación de los e
 ## Number of permutations: 999
 ## 
 ## Model: rda(formula = bio.trans ~ EC + a440, data = env, scale = TRUE)
-##          Df Variance      F Pr(>F)   
-## RDA1      1   1.9986 9.3787  0.002 **
-## RDA2      1   0.3788 1.7776  0.128   
-## Residual 17   3.6226                 
+##          Df Variance      F Pr(>F)    
+## RDA1      1   1.9986 9.3787  0.001 ***
+## RDA2      1   0.3788 1.7776  0.151    
+## Residual 17   3.6226                  
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ```
 
->Colinealidad entre variables explicativas
+Colinealidad entre variables explicativas
 
 
 ```r
@@ -558,13 +554,16 @@ vif.cca(biomass.rda.signif) #Sii vif ("variable inflation factor") <5 no hay col
 
 ### RDA basado en matriz de distancia ("Distance-based RDA", db-RDA)
 
->La diferencia en el análisis entre RDA y dbRDA es simplemente el paso de expresar una matriz de disimilitud no euclidiana en un espacio euclidiano. ¿Les suena familiar?... Sí! eso es exactamente lo que hace un PCoA.
->Los datos de especies crudos, sin procesar, se trasnforman primero en una matriz de disimilitud utilizando alguna métrica de disimilitud seleccionada, y con esta matriz se modela un PCoA. La matriz resultante de *scores* de sitios sobre todos los ejes de ordenación de PCoA se usa luego en RDA junto con las variables explicativas. El beneficio de dbRDA es que se puede aplicar cualquier métrica de distancia a los datos (es decir, no solo euclidiana como en RDA, Hellinger (o algunas otras) como en tbRDA o chi-cuadrado como en CCA). Se debe tener cuidado y evitar los autovalores negativos obtenidos en el PCoA, que se omitirían de los análisis. Para que ellos no ocurra, la solución es usar solo distancias métricas (euclidianas), o aplicar una transformación a la matriz de distancia de forma tal de convertir esa distancia "no métrica" en una métrica (por ejemplo, la transformación de raíz cuadrada aplicada a la matriz de distancia obtenida por Bray-Curtis), o usar algunas de las correcciones propuestas en las diferentes funciones.
->Notas:
->1. Si se aplica dbRDA a una matriz de distancia euclidiana, el dbRDA resulta idéntico a RDA.
->2. Si no se proporcionan variables explicativas, un dbRDA resulta idéntico a un PCoA
+La diferencia en el análisis entre RDA y dbRDA es simplemente el paso de expresar una matriz de disimilitud no euclidiana en un espacio euclidiano. ¿Les suena familiar?... Sí! eso es exactamente lo que hace un PCoA.
+Los datos de especies crudos, sin procesar, se trasnforman primero en una matriz de disimilitud utilizando alguna métrica de disimilitud seleccionada, y con esta matriz se modela un PCoA. La matriz resultante de *scores* de sitios sobre todos los ejes de ordenación de PCoA se usa luego en RDA junto con las variables explicativas. El beneficio de dbRDA es que se puede aplicar cualquier métrica de distancia a los datos (es decir, no solo euclidiana como en RDA, Hellinger (o algunas otras) como en tbRDA o chi-cuadrado como en CCA). Se debe tener cuidado y evitar los autovalores negativos obtenidos en el PCoA, que se omitirían de los análisis. Para que ellos no ocurra, la solución es usar solo distancias métricas (euclidianas), o aplicar una transformación a la matriz de distancia de forma tal de convertir esa distancia "no métrica" en una métrica (por ejemplo, la transformación de raíz cuadrada aplicada a la matriz de distancia obtenida por Bray-Curtis), o usar algunas de las correcciones propuestas en las diferentes funciones.
+
+**Notas:**
+1. Si se aplica dbRDA a una matriz de distancia euclidiana, el dbRDA resulta idéntico a RDA.
+
+2. Si no se proporcionan variables explicativas, un dbRDA resulta idéntico a un PCoA
 (porque el primer paso da como resultado un PCoA regular y el segundo paso no tiene sentido).
->Estos pasos son bastante simples de realizar y se pueden ejecutar uno por uno en R con unas pocas líneas de código. Sin embargo, **vegan** propone la función **capscale()** para este análisis. Esta función permite el trazado directo de las puntuaciones medias ponderadas de las especies si el usuario proporciona la matriz de especies en el argumento *com*.
+
+Estos pasos son bastante simples de realizar y se pueden ejecutar uno por uno en R con unas pocas líneas de código. Sin embargo, **vegan** propone la función **capscale()** para este análisis. Esta función permite el trazado directo de las puntuaciones medias ponderadas de las especies si el usuario proporciona la matriz de especies en el argumento *com*.
 
 
 ```r
@@ -578,7 +577,7 @@ rankindex(env, biomass, indices = c("euc", "man", "gow", "bra", "kul"), stepacro
 ## 0.2327555 0.2591706 0.3040157 0.3376863 0.3214870
 ```
 
->La distancia de Bray Curtis parece ser el mejor índice para aplicar.
+La distancia de Bray Curtis parece ser el mejor índice para aplicar.
 
 
 ```r
@@ -597,73 +596,46 @@ trace = TRUE)
 ## Start: biomass ~ 1 
 ## 
 ##           Df    AIC      F Pr(>F)   
-## + EC       1 435.62 7.3760  0.005 **
-## + TN       1 436.35 6.4767  0.010 **
-## + DOC      1 439.94 2.4469  0.130   
-## + a440     1 440.76 1.6257  0.225   
-## + TP       1 441.11 1.2859  0.305   
-## + TH       1 441.34 1.0725  0.315   
-## + DIN      1 441.51 0.9092  0.325   
-## + SUVA254  1 441.40 1.0155  0.365   
+## + TN       1 436.35 6.4767  0.005 **
+## + EC       1 435.62 7.3760  0.010 **
+## + DOC      1 439.94 2.4469  0.105   
+## + a440     1 440.76 1.6257  0.210   
+## + TP       1 441.11 1.2859  0.275   
+## + TH       1 441.34 1.0725  0.300   
+## + SUVA254  1 441.40 1.0155  0.360   
+## + DIN      1 441.51 0.9092  0.410   
 ## + E2_E3    1 441.53 0.8848  0.415   
-## + pH       1 441.68 0.7432  0.440   
-## + DRP      1 442.18 0.2880  0.730   
+## + pH       1 441.68 0.7432  0.465   
+## + DRP      1 442.18 0.2880  0.725   
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
-## Step: biomass ~ EC 
+## Step: biomass ~ TN 
 ## 
 ##           Df    AIC      F Pr(>F)  
-## + a440     1 433.14 4.2685  0.020 *
-## + TN       1 435.40 1.9954  0.110  
-## + E2_E3    1 435.03 2.3593  0.120  
-## + pH       1 435.57 1.8349  0.140  
-## + TP       1 436.22 1.2399  0.280  
-## + SUVA254  1 436.60 0.8973  0.430  
-## + DIN      1 436.64 0.8577  0.475  
-## + DOC      1 436.87 0.6540  0.545  
-## + TH       1 437.12 0.4337  0.735  
-## + DRP      1 437.50 0.1099  0.925  
+## + EC       1 435.40 2.6933  0.090 .
+## + a440     1 436.48 1.6577  0.170  
+## + DRP      1 437.12 1.0782  0.300  
+## + pH       1 437.21 0.9892  0.315  
+## + SUVA254  1 437.13 1.0618  0.360  
+## + E2_E3    1 437.19 1.0098  0.415  
+## + TP       1 437.06 1.1304  0.420  
+## + DIN      1 437.47 0.7613  0.560  
+## + DOC      1 437.66 0.5935  0.580  
+## + TH       1 438.01 0.2917  0.820  
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-## 
-## Step: biomass ~ EC + a440 
-## 
-##           Df    AIC      F Pr(>F)  
-## + pH       1 431.31 3.3846  0.045 *
-## + TN       1 432.60 2.1715  0.100 .
-## + E2_E3    1 433.25 1.5858  0.240  
-## + DOC      1 433.79 1.1182  0.310  
-## + SUVA254  1 434.40 0.6032  0.540  
-## + TP       1 434.29 0.6956  0.570  
-## + TH       1 434.31 0.6796  0.605  
-## + DRP      1 434.72 0.3418  0.805  
-## + DIN      1 434.90 0.1953  0.900  
-## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-## 
-## Step: biomass ~ EC + a440 + pH 
-## 
-##           Df    AIC      F Pr(>F)
-## + E2_E3    1 430.27 2.4564  0.115
-## + TN       1 431.11 1.7398  0.150
-## + TP       1 431.80 1.1744  0.320
-## + DRP      1 432.24 0.8201  0.375
-## + SUVA254  1 432.73 0.4406  0.715
-## + DOC      1 432.71 0.4525  0.750
-## + DIN      1 432.94 0.2786  0.845
-## + TH       1 433.05 0.1947  0.895
 ```
 
 ```r
 ordiplot(bray.env.cap.all, scaling = 2, type = "text")
 ```
 
-![](05-multi2_files/figure-latex/unnamed-chunk-19-1.pdf)<!-- --> 
+<img src="05-multi2_files/figure-html/unnamed-chunk-19-1.png" width="672" />
 
 **Figura 6:** Ordenamiento obtenido a partir del dbRDA en base a la distancia de Bray Curtis. Escalamiento tipo 2.
 
->Qué variables son retenidas por la selección *forward*?
+Qué variables son retenidas por la selección *forward*?
 
 
 ```r
@@ -671,10 +643,10 @@ fwd.sel.dbRDA$call
 ```
 
 ```
-## capscale(formula = biomass ~ EC + a440 + pH, data = env, add = "lingoes")
+## capscale(formula = biomass ~ TN, data = env, add = "lingoes")
 ```
 
->Cuál es el valor del R^2^ ajustado de este modelo?
+Cuál es el valor del R^2^ ajustado de este modelo?
 
 
 ```r
@@ -692,7 +664,7 @@ RsquareAdj(biomass.dbrda.signif)
 ## [1] 0.4442787
 ```
 
->Test de significación
+Test de significación
 
 
 ```r
@@ -725,11 +697,11 @@ anova.cca(biomass.dbrda.signif, step = 1000, by = "term") #significación de var
 ## Number of permutations: 999
 ## 
 ## Model: capscale(formula = biomass ~ EC + a440 + pH, data = env, add = "lingoes")
-##          Df   Variance      F Pr(>F)    
-## EC        1 1017246043 9.9379  0.001 ***
-## a440      1  498217165 4.8673  0.019 *  
-## pH        1  346449995 3.3846  0.052 .  
-## Residual 16 1637764593                  
+##          Df   Variance      F Pr(>F)   
+## EC        1 1017246043 9.9379  0.002 **
+## a440      1  498217165 4.8673  0.014 * 
+## pH        1  346449995 3.3846  0.037 * 
+## Residual 16 1637764593                 
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ```
@@ -747,16 +719,16 @@ anova.cca(biomass.dbrda.signif, step = 1000, by = "axis") #significación de los
 ## Number of permutations: 999
 ## 
 ## Model: capscale(formula = biomass ~ EC + a440 + pH, data = env, add = "lingoes")
-##          Df   Variance       F Pr(>F)   
-## CAP1      1 1503918383 14.6924  0.005 **
-## CAP2      1  278096049  2.7168  0.163   
-## CAP3      1   79898771  0.7806  0.512   
-## Residual 16 1637764593                  
+##          Df   Variance       F Pr(>F)    
+## CAP1      1 1503918383 14.6924  0.001 ***
+## CAP2      1  278096049  2.7168  0.178    
+## CAP3      1   79898771  0.7806  0.494    
+## Residual 16 1637764593                   
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ```
 
->Colinealidad entre variables explicativas
+Colinealidad entre variables explicativas
 
 
 ```r
@@ -769,7 +741,7 @@ vif.cca(biomass.dbrda.signif) #Sii vif ("variable inflation factor") <5 no hay c
 ```
 
 
->Existe otra manera de calcular dbRDA que fue propuesta por McArdle y Anderson (2001). Este método alternativo ejecuta el análisis directamente sobre la matriz de similitud de respuesta sin tener que pasar por un PCoA. Esta forma alternativa es proporcionada en el paqueta **vegan** en la fucnión **dbrda()**.
+Existe otra manera de calcular dbRDA que fue propuesta por McArdle y Anderson (2001). Este método alternativo ejecuta el análisis directamente sobre la matriz de similitud de respuesta sin tener que pasar por un PCoA. Esta forma alternativa es proporcionada en el paqueta **vegan** en la fucnión **dbrda()**.
 
 
 ```r
@@ -794,16 +766,16 @@ fwd.sel.dbRDA2<-ordistep (dbrda.0, scope = formula (dbrda.all), add=TRUE)
 ## 
 ##           Df    AIC      F Pr(>F)   
 ## + EC       1 18.715 6.6542  0.005 **
-## + TN       1 20.679 4.3484  0.005 **
-## + DOC      1 22.618 2.2839  0.065 . 
-## + a440     1 22.817 2.0827  0.065 . 
-## + DRP      1 23.525 1.3845  0.210   
-## + DIN      1 23.810 1.1098  0.345   
-## + SUVA254  1 24.037 0.8944  0.410   
-## + TH       1 24.081 0.8529  0.485   
-## + TP       1 24.087 0.8474  0.485   
-## + pH       1 24.092 0.8425  0.505   
-## + E2_E3    1 24.382 0.5712  0.720   
+## + TN       1 20.679 4.3484  0.010 **
+## + a440     1 22.817 2.0827  0.055 . 
+## + DOC      1 22.618 2.2839  0.090 . 
+## + DRP      1 23.525 1.3845  0.220   
+## + DIN      1 23.810 1.1098  0.290   
+## + TH       1 24.081 0.8529  0.445   
+## + SUVA254  1 24.037 0.8944  0.500   
+## + TP       1 24.087 0.8474  0.515   
+## + pH       1 24.092 0.8425  0.530   
+## + E2_E3    1 24.382 0.5712  0.790   
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
@@ -815,167 +787,37 @@ fwd.sel.dbRDA2<-ordistep (dbrda.0, scope = formula (dbrda.all), add=TRUE)
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ##           Df    AIC      F Pr(>F)  
-## + a440     1 18.018 2.4546  0.020 *
-## + DRP      1 19.089 1.4399  0.135  
-## + pH       1 19.078 1.4506  0.150  
-## + TN       1 19.061 1.4660  0.195  
-## + E2_E3    1 19.284 1.2616  0.235  
-## + DIN      1 19.478 1.0851  0.395  
-## + DOC      1 19.703 0.8828  0.500  
-## + TH       1 19.807 0.7900  0.615  
-## + TP       1 19.883 0.7230  0.660  
-## + SUVA254  1 20.175 0.4660  0.970  
+## + a440     1 18.018 2.4546  0.015 *
+## + pH       1 19.078 1.4506  0.145  
+## + TN       1 19.061 1.4660  0.170  
+## + DRP      1 19.089 1.4399  0.185  
+## + E2_E3    1 19.284 1.2616  0.205  
+## + DIN      1 19.478 1.0851  0.370  
+## + DOC      1 19.703 0.8828  0.530  
+## + TH       1 19.807 0.7900  0.655  
+## + TP       1 19.883 0.7230  0.730  
+## + SUVA254  1 20.175 0.4660  0.975  
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## Step: biomass.dist ~ EC + a440 
 ## 
 ##        Df    AIC      F Pr(>F)   
-## - a440  1 18.715 2.4546  0.050 * 
+## - a440  1 18.715 2.4546  0.030 * 
 ## - EC    1 22.817 6.8831  0.005 **
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-## 
-##           Df    AIC      F Pr(>F)  
-## + pH       1 17.824 1.8552  0.045 *
-## + TN       1 18.218 1.5069  0.090 .
-## + TP       1 18.175 1.5445  0.125  
-## + DRP      1 18.257 1.4724  0.135  
-## + TH       1 18.889 0.9289  0.435  
-## + DOC      1 18.935 0.8905  0.545  
-## + E2_E3    1 18.937 0.8890  0.555  
-## + SUVA254  1 19.014 0.8242  0.565  
-## + DIN      1 19.423 0.4831  0.950  
-## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-## 
-## Step: biomass.dist ~ EC + a440 + pH 
-## 
-##        Df    AIC      F Pr(>F)   
-## - pH    1 18.018 1.8552  0.110   
-## - a440  1 19.078 2.8267  0.025 * 
-## - EC    1 23.836 7.8833  0.005 **
-## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-## 
-## Step: biomass.dist ~ EC + a440 
 ## 
 ##           Df    AIC      F Pr(>F)  
 ## + pH       1 17.824 1.8552  0.055 .
-## + TN       1 18.218 1.5069  0.085 .
-## + TP       1 18.175 1.5445  0.140  
-## + DRP      1 18.257 1.4724  0.170  
-## + TH       1 18.889 0.9289  0.460  
-## + DOC      1 18.935 0.8905  0.555  
-## + E2_E3    1 18.937 0.8890  0.575  
-## + SUVA254  1 19.014 0.8242  0.675  
-## + DIN      1 19.423 0.4831  0.940  
-## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-## 
-##        Df    AIC      F Pr(>F)   
-## - a440  1 18.715 2.4546  0.045 * 
-## - EC    1 22.817 6.8831  0.005 **
-## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-## 
-##           Df    AIC      F Pr(>F)  
-## + pH       1 17.824 1.8552  0.035 *
-## + TP       1 18.175 1.5445  0.095 .
-## + TN       1 18.218 1.5069  0.125  
-## + DRP      1 18.257 1.4724  0.145  
-## + E2_E3    1 18.937 0.8890  0.470  
-## + TH       1 18.889 0.9289  0.520  
-## + DOC      1 18.935 0.8905  0.585  
-## + SUVA254  1 19.014 0.8242  0.605  
-## + DIN      1 19.423 0.4831  0.960  
-## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-## 
-## Step: biomass.dist ~ EC + a440 + pH 
-## 
-##        Df    AIC      F Pr(>F)   
-## - pH    1 18.018 1.8552  0.075 . 
-## - a440  1 19.078 2.8267  0.030 * 
-## - EC    1 23.836 7.8833  0.005 **
-## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-## 
-##           Df    AIC      F Pr(>F)  
-## + TP       1 17.506 1.8428  0.050 *
-## + DRP      1 17.560 1.7980  0.065 .
-## + TN       1 18.201 1.2684  0.210  
-## + E2_E3    1 18.352 1.1453  0.370  
-## + TH       1 18.613 0.9364  0.465  
-## + DOC      1 18.917 0.6956  0.775  
-## + SUVA254  1 18.944 0.6748  0.830  
-## + DIN      1 19.177 0.4931  0.920  
-## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-## 
-## Step: biomass.dist ~ EC + a440 + pH + TP 
-## 
-##        Df    AIC      F Pr(>F)   
-## - TP    1 17.824 1.8428  0.095 . 
-## - pH    1 18.175 2.1410  0.090 . 
-## - a440  1 20.167 3.9360  0.015 * 
-## - EC    1 24.511 8.5293  0.005 **
-## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-## 
-##           Df    AIC      F Pr(>F)  
-## + DRP      1 16.699 2.1102  0.040 *
-## + E2_E3    1 17.878 1.1876  0.210  
-## + TN       1 17.810 1.2392  0.250  
-## + TH       1 18.280 0.8858  0.515  
-## + DOC      1 18.389 0.8046  0.570  
-## + SUVA254  1 18.726 0.5574  0.905  
-## + DIN      1 18.762 0.5308  0.915  
-## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-## 
-## Step: biomass.dist ~ EC + a440 + pH + TP + DRP 
-## 
-##        Df    AIC      F Pr(>F)   
-## - DRP   1 17.506 2.1102  0.105   
-## - TP    1 17.560 2.1532  0.100 . 
-## - pH    1 18.515 2.9436  0.025 * 
-## - a440  1 20.239 4.4688  0.010 **
-## - EC    1 25.377 9.8785  0.005 **
-## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-## 
-## Step: biomass.dist ~ EC + a440 + pH + TP 
-## 
-##           Df    AIC      F Pr(>F)  
-## + DRP      1 16.699 2.1102  0.030 *
-## + TN       1 17.810 1.2392  0.225  
-## + E2_E3    1 17.878 1.1876  0.310  
-## + TH       1 18.280 0.8858  0.515  
-## + DOC      1 18.389 0.8046  0.630  
-## + SUVA254  1 18.726 0.5574  0.910  
-## + DIN      1 18.762 0.5308  0.935  
-## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-## 
-## Step: biomass.dist ~ EC + a440 + pH + TP + DRP 
-## 
-##        Df    AIC      F Pr(>F)   
-## - TP    1 17.560 2.1532  0.060 . 
-## - DRP   1 17.506 2.1102  0.045 * 
-## - pH    1 18.515 2.9436  0.025 * 
-## - a440  1 20.239 4.4688  0.005 **
-## - EC    1 25.377 9.8785  0.005 **
-## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-## 
-##           Df    AIC      F Pr(>F)  
-## + TN       1 16.046 1.8438  0.060 .
-## + DOC      1 17.329 0.9210  0.535  
-## + TH       1 17.397 0.8739  0.580  
-## + E2_E3    1 17.506 0.7989  0.655  
-## + SUVA254  1 17.757 0.6268  0.850  
-## + DIN      1 17.854 0.5611  0.880  
+## + DRP      1 18.257 1.4724  0.100 .
+## + TN       1 18.218 1.5069  0.110  
+## + TP       1 18.175 1.5445  0.125  
+## + TH       1 18.889 0.9289  0.480  
+## + E2_E3    1 18.937 0.8890  0.480  
+## + DOC      1 18.935 0.8905  0.505  
+## + SUVA254  1 19.014 0.8242  0.595  
+## + DIN      1 19.423 0.4831  0.980  
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ```
@@ -988,36 +830,36 @@ summary(fwd.sel.dbRDA2)
 ```
 ## 
 ## Call:
-## dbrda(formula = biomass.dist ~ EC + a440 + pH + TP + DRP, data = env,      add = TRUE) 
+## dbrda(formula = biomass.dist ~ EC + a440, data = env, add = TRUE) 
 ## 
 ## Partitioning of Lingoes adjusted squared Bray distance:
 ##               Inertia Proportion
-## Total           3.009     1.0000
-## Constrained     1.678     0.5575
-## Unconstrained   1.331     0.4425
+## Total           3.009      1.000
+## Constrained     1.089      0.362
+## Unconstrained   1.920      0.638
 ## 
 ## Eigenvalues, and their contribution to the Lingoes adjusted squared Bray distance 
 ## 
 ## Importance of components:
-##                       dbRDA1 dbRDA2  dbRDA3  dbRDA4  dbRDA5   MDS1    MDS2
-## Eigenvalue            1.0703 0.3221 0.12877 0.09009 0.06647 0.3678 0.20959
-## Proportion Explained  0.3557 0.1070 0.04279 0.02994 0.02209 0.1222 0.06965
-## Cumulative Proportion 0.3557 0.4627 0.50552 0.53546 0.55755 0.6798 0.74943
-##                          MDS3    MDS4    MDS5    MDS6    MDS7    MDS8    MDS9
-## Eigenvalue            0.17540 0.10549 0.08807 0.07393 0.05742 0.05189 0.04836
-## Proportion Explained  0.05829 0.03506 0.02927 0.02457 0.01908 0.01724 0.01607
-## Cumulative Proportion 0.80772 0.84277 0.87204 0.89661 0.91569 0.93293 0.94900
-##                         MDS10   MDS11   MDS12    MDS13    MDS14
-## Eigenvalue            0.04089 0.03853 0.03519 0.024559 0.014278
-## Proportion Explained  0.01359 0.01280 0.01170 0.008162 0.004745
-## Cumulative Proportion 0.96259 0.97540 0.98709 0.995255 1.000000
+##                       dbRDA1 dbRDA2   MDS1    MDS2    MDS3   MDS4   MDS5
+## Eigenvalue            0.8712 0.2181 0.5577 0.29135 0.22777 0.1574 0.1360
+## Proportion Explained  0.2895 0.0725 0.1853 0.09682 0.07569 0.0523 0.0452
+## Cumulative Proportion 0.2895 0.3620 0.5474 0.64419 0.71988 0.7722 0.8174
+##                          MDS6    MDS7    MDS8    MDS9   MDS10   MDS11   MDS12
+## Eigenvalue            0.09392 0.07799 0.06682 0.05467 0.05234 0.04506 0.04055
+## Proportion Explained  0.03121 0.02592 0.02221 0.01817 0.01739 0.01497 0.01347
+## Cumulative Proportion 0.84859 0.87451 0.89672 0.91488 0.93228 0.94725 0.96073
+##                         MDS13   MDS14   MDS15   MDS16     MDS17
+## Eigenvalue            0.03872 0.03572 0.03138 0.01186 0.0005022
+## Proportion Explained  0.01287 0.01187 0.01043 0.00394 0.0001669
+## Cumulative Proportion 0.97359 0.98546 0.99589 0.99983 1.0000000
 ## 
 ## Accumulated constrained eigenvalues
 ## Importance of components:
-##                       dbRDA1 dbRDA2  dbRDA3  dbRDA4  dbRDA5
-## Eigenvalue             1.070 0.3221 0.12877 0.09009 0.06647
-## Proportion Explained   0.638 0.1920 0.07676 0.05370 0.03962
-## Cumulative Proportion  0.638 0.8299 0.90668 0.96038 1.00000
+##                       dbRDA1 dbRDA2
+## Eigenvalue            0.8712 0.2181
+## Proportion Explained  0.7997 0.2003
+## Cumulative Proportion 0.7997 1.0000
 ## 
 ## Scaling 2 for species and site scores
 ## * Species are scaled proportional to eigenvalues
@@ -1027,77 +869,75 @@ summary(fwd.sel.dbRDA2)
 ## 
 ## Site scores (weighted sums of species scores)
 ## 
-##      dbRDA1    dbRDA2   dbRDA3   dbRDA4   dbRDA5     MDS1
-## 1O -0.66177 -0.132828 -0.08959 -0.66141  1.08241  0.23164
-## 2O -1.12361 -0.703321 -1.12959 -1.15553  0.66718 -0.97955
-## 3O -1.13289 -1.392541 -0.48992  1.51413 -1.18819 -1.25738
-## 4O -0.88509  0.095203 -0.34704 -0.87820  0.51330 -0.40484
-## 5O -0.81340  0.487815 -0.01471 -0.10775 -0.92183  1.03532
-## 1D -0.28776  0.321297  0.95037 -0.48981  0.43639  0.52258
-## 2D  0.41611  0.245248  0.26170 -0.25717 -0.46966  0.12984
-## 3D  0.79080 -0.007137 -0.89970 -0.18287  0.62830 -0.01169
-## 4D  1.02607 -1.341192  0.32315 -0.12623  0.09512 -0.01968
-## 5D  0.96387 -0.678324 -0.50040 -0.61642 -1.60054  0.64482
-## 1F -0.43323  0.171314  0.66604 -0.26967 -0.23443 -0.33023
-## 2F  0.63887  0.263552 -0.79425 -0.06902  0.11445  0.42287
-## 3F  0.27916  0.612592 -0.80159  1.03340 -0.55649  0.12495
-## 4F  0.48902 -0.439799  1.88244 -0.63326 -0.70495 -0.18254
-## 5F  0.60574  0.111096 -0.03600  0.60760  1.25946  0.33757
-## 1A -0.35564 -0.587072  1.33692  1.26054  0.35992  0.92485
-## 2A  0.34551  0.615936 -0.82057  0.17808 -0.29773  0.01335
-## 3A  0.58476  0.223384 -0.22519  0.83457  1.18538  0.46487
-## 4A -0.34673  1.242182  0.54157  0.10483 -0.22698 -1.07174
-## 5A -0.09978  0.892597  0.18637 -0.08582 -0.14112 -0.59501
+##      dbRDA1   dbRDA2    MDS1     MDS2     MDS3      MDS4
+## 1O -0.75722 -0.02883  0.1146  0.69689 -0.50552 -0.010087
+## 2O -1.33245 -0.68750 -0.1590 -0.99126 -0.21078  0.506909
+## 3O -1.22530 -1.48938 -1.2772 -1.36747 -0.45952 -0.379923
+## 4O -1.01412  0.13545 -0.1290  0.10517  0.29435  0.233042
+## 5O -0.88133  0.40173  0.7657  0.37087  0.30432  0.056749
+## 1D -0.28129  0.28354 -0.1962  1.01753  0.32216 -0.415822
+## 2D  0.46662  0.12799  0.2462  0.70645  0.35534  0.115546
+## 3D  0.80971  0.14222  0.7125 -0.57954  0.03156 -0.446071
+## 4D  1.11875 -1.56242  0.3542 -0.56941 -0.14181 -0.388054
+## 5D  1.01460 -1.08081  0.9180 -0.13391 -0.41922  1.646956
+## 1F -0.44487  0.06361 -0.6758  0.63564  0.42104 -0.684135
+## 2F  0.65899  0.36846  0.7203 -0.37572  1.02182 -0.792179
+## 3F  0.30689  0.79968  0.1296 -0.46387  0.15779 -0.110387
+## 4F  0.61024 -0.88971 -0.3379  0.69886 -0.68653  0.810023
+## 5F  0.67088  0.40072  0.6007 -0.04542 -1.08966 -0.144975
+## 1A -0.29362 -0.56008 -0.5688  0.64683 -1.22852 -0.804791
+## 2A  0.35116  0.73687  0.2095 -0.07234  1.01570  0.007836
+## 3A  0.64704  0.56271  0.3789 -0.33202 -0.44422 -0.519944
+## 4A -0.33337  1.32463 -1.1315 -0.16842  0.67999  1.034326
+## 5A -0.09132  0.95112 -0.6748  0.22115  0.58172  0.284983
 ## 
 ## 
 ## Site constraints (linear combinations of constraining variables)
 ## 
-##      dbRDA1   dbRDA2   dbRDA3    dbRDA4   dbRDA5     MDS1
-## 1O -0.53307 -0.40397 -0.57997 -0.103417  0.37580  0.23164
-## 2O -0.84955 -0.43534 -0.20140 -0.911766  0.87484 -0.97955
-## 3O -0.59128 -1.09759 -0.64176  1.235130 -0.74002 -1.25738
-## 4O -0.64595 -0.01218 -0.32465 -0.651934  0.09808 -0.40484
-## 5O -1.38536  0.54304 -0.39510 -0.803274 -0.21869  1.03532
-## 1D -0.39777  0.14876  0.88386 -0.291199 -0.44145  0.52258
-## 2D  0.48687  0.06101 -0.42604 -0.364645 -0.70724  0.12984
-## 3D  0.77718 -0.01113 -0.72868 -0.007326  0.67824 -0.01169
-## 4D  0.92707 -1.26462  0.82674 -0.760836 -0.03088 -0.01968
-## 5D  0.57971 -0.30129 -0.51144 -0.091981 -1.05526  0.64482
-## 1F -0.05628  0.11848  0.47350 -0.186501 -0.38489 -0.33023
-## 2F  0.30217 -0.07984 -0.15611 -0.121069 -0.30798  0.42287
-## 3F  0.10634  0.98806 -0.31458  0.527650 -0.55853  0.12495
-## 4F  0.60245 -0.18492  0.92179 -0.586995  0.21340 -0.18254
-## 5F  0.55139  0.29392 -0.65811  0.233307  1.37109  0.33757
-## 1A -0.78958 -0.63560  1.21030  1.323061  0.40709  0.92485
-## 2A  0.32949 -0.10949 -0.41455  0.362815 -0.22740  0.01335
-## 3A  0.34484  0.19814 -0.09886  0.788439  0.86578  0.46487
-## 4A  0.01653  1.22298  0.84255  0.246673  0.28781 -1.07174
-## 5A  0.22480  0.96158  0.29250  0.163868 -0.49980 -0.59501
+##      dbRDA1   dbRDA2    MDS1     MDS2     MDS3      MDS4
+## 1O -0.74852 -0.03451  0.1146  0.69689 -0.50552 -0.010087
+## 2O -1.18344 -0.09901 -0.1590 -0.99126 -0.21078  0.506909
+## 3O -0.35056 -0.74378 -1.2772 -1.36747 -0.45952 -0.379923
+## 4O -0.88255 -0.10095 -0.1290  0.10517  0.29435  0.233042
+## 5O -1.56136  0.11657  0.7657  0.37087  0.30432  0.056749
+## 1D -0.09251 -0.36406 -0.1962  1.01753  0.32216 -0.415822
+## 2D  0.25287 -0.38424  0.2462  0.70645  0.35534  0.115546
+## 3D  0.37842  0.47722  0.7125 -0.57954  0.03156 -0.446071
+## 4D  0.85022 -1.35728  0.3542 -0.56941 -0.14181 -0.388054
+## 5D  0.40721 -0.75092  0.9180 -0.13391 -0.41922  1.646956
+## 1F  0.09646 -0.25681 -0.6758  0.63564  0.42104 -0.684135
+## 2F  0.20797 -0.24183  0.7203 -0.37572  1.02182 -0.792179
+## 3F  0.22324  0.66219  0.1296 -0.46387  0.15779 -0.110387
+## 4F  0.65319 -0.36361 -0.3379  0.69886 -0.68653  0.810023
+## 5F  0.21433  1.15133  0.6007 -0.04542 -1.08966 -0.144975
+## 1A  0.03055 -0.04774 -0.5688  0.64683 -1.22852 -0.804791
+## 2A  0.27582 -0.02690  0.2095 -0.07234  1.01570  0.007836
+## 3A  0.42485  0.88299  0.3789 -0.33202 -0.44422 -0.519944
+## 4A  0.38091  1.02237 -1.1315 -0.16842  0.67999  1.034326
+## 5A  0.42291  0.45899 -0.6748  0.22115  0.58172  0.284983
 ## 
 ## 
 ## Biplot scores for constraining variables
 ## 
-##        dbRDA1   dbRDA2   dbRDA3   dbRDA4   dbRDA5 MDS1
-## EC    0.84744  0.25745  0.27261  0.36853  0.07372    0
-## a440  0.33292  0.71473 -0.02621  0.39707  0.46903    0
-## pH   -0.01327 -0.19504  0.96606 -0.03142  0.16592    0
-## TP    0.25049  0.07963 -0.03589  0.41833  0.86870    0
-## DRP  -0.22871 -0.55583 -0.22802  0.76265 -0.07146    0
+##      dbRDA1 dbRDA2 MDS1 MDS2 MDS3 MDS4
+## EC   0.9537 0.3007    0    0    0    0
+## a440 0.3792 0.9253    0    0    0    0
 ```
 
 
 ##### ***Desafío***: *aplicar los códigos correspondientes para para graficar, enumerar las variables significativas, solicitar el R^2^, evaluar la colinealidad y las distintas significaciones del modelo aquí utilizado.* 
 
 
-### **ANÁLISIS DE CORRESPONDENCIA CANÓNICA (CCA)**
+## Análisis de Correspondencia Canóninca (CCA)
 
->El Análisis de Correspondencia Canónica (CCA) es apropiado para modelar respuestas unimodales o en forma de joroba a variables explicativas (en lugar de lineales como vimos con RDA). En este caso, el modelo maximiza la correlación entre especies y los *scores* de las muestras (*i.e.* sitios). Esto lo hace después de aplicar una regresión lineal múltiple para "restringir" cada muestra a los ejes de ordenación que constituyen combinaciones lineales de las variables ambientales medidas.
->Podemos pensar al CCA com un RDA "ponderado" que preserva la distancia chi-cuadrado entre sitios (la distancia de chi-cuadrado es, en sí, un ejemplo de distancia euclídea ponderada). En el triplot (gráficos que incluyen sitios, variables ambientales y especies) del CCA, las especies se ordenan a lo largo de ejes canónicos siguiendo sus óptimos ecológicos, lo que permite una interpretación ecológica relativamente fácil. Sin embargo, se debe tener en cuenta que, dada las características de la distancia de chi-cuadrado, el algoritmo aumenta el "peso" de las especies de baja frecuencia en relación con las de mayor frecuencia. En consecuencia, se recomienda aplicar el modelo en los casos en que las especies raras están bien representadas y se consideran indicadores potenciales de características particulares del ecosistema; o bien, las especies "raras" deben eliminarse antes de modelar los datos con CCA. Otro punto a tener en cuenta es que el modelo genera una medida sesgada de variación explicada. Estas debilidades parece que han llevado a muchxs ecólogxs a indicar que "la distancia chi-cuadrado fue una de las peores distancias utilizadas para analizar para los datos de composición de la comunidad". Lo que esxs ecólogxs no tenían presente es que estos algoritmos son sólo modelos es decir, formas sintéticas de representar una realidad compleja. La complejidad de la realidad hace que no exista el modelo perfecto ni único, sino que tenemos varios modelos posibles e imperfectos para tratar de sintetizar y explicar el mundo... Compartimos estas ideas para que, entre café y café, piensen y discutan entre ustedes :).
+El Análisis de Correspondencia Canónica (CCA) es apropiado para modelar respuestas unimodales o en forma de joroba a variables explicativas (en lugar de lineales como vimos con RDA). En este caso, el modelo maximiza la correlación entre especies y los *scores* de las muestras (*i.e.* sitios). Esto lo hace después de aplicar una regresión lineal múltiple para "restringir" cada muestra a los ejes de ordenación que constituyen combinaciones lineales de las variables ambientales medidas.
 
->Pongamos manos a la obra y veamos cómo funciona trabajando con un ejemplo: en esta oportunidad, utilizaremos un set de datos del trabajo *Alternative states drive the patterns in the bacterioplankton composition in shallow Pampean lakes (Argentina)* publicado en *Environmental Microbiology Reports* (Llames *et al.* 2013). Para ello, descargar el set de datos **DGGE_cca.csv** y **DGGE_fq_cca_tunned.csv** de [GitHub Limno-con-R/CILCAL2023](https://github.com/Limno-con-R/CILCAL2023/tree/main/datasets).
+Podemos pensar al CCA com un RDA "ponderado" que preserva la distancia chi-cuadrado entre sitios (la distancia de chi-cuadrado es, en sí, un ejemplo de distancia euclídea ponderada). En el triplot (gráficos que incluyen sitios, variables ambientales y especies) del CCA, las especies se ordenan a lo largo de ejes canónicos siguiendo sus óptimos ecológicos, lo que permite una interpretación ecológica relativamente fácil. Sin embargo, se debe tener en cuenta que, dada las características de la distancia de chi-cuadrado, el algoritmo aumenta el "peso" de las especies de baja frecuencia en relación con las de mayor frecuencia. En consecuencia, se recomienda aplicar el modelo en los casos en que las especies raras están bien representadas y se consideran indicadores potenciales de características particulares del ecosistema; o bien, las especies "raras" deben eliminarse antes de modelar los datos con CCA. Otro punto a tener en cuenta es que el modelo genera una medida sesgada de variación explicada. Estas debilidades parece que han llevado a muchxs ecólogxs a indicar que "la distancia chi-cuadrado fue una de las peores distancias utilizadas para analizar para los datos de composición de la comunidad". Lo que esxs ecólogxs no tenían presente es que estos algoritmos son sólo modelos es decir, formas sintéticas de representar una realidad compleja. La complejidad de la realidad hace que no exista el modelo perfecto ni único, sino que tenemos varios modelos posibles e imperfectos para tratar de sintetizar y explicar el mundo... Compartimos estas ideas para que, entre café y café, piensen y discutan entre ustedes :).
+
+Pongamos manos a la obra y veamos cómo funciona trabajando con un ejemplo: en esta oportunidad, utilizaremos un set de datos del trabajo *Alternative states drive the patterns in the bacterioplankton composition in shallow Pampean lakes (Argentina)* publicado en *Environmental Microbiology Reports* (Llames *et al.* 2013). Para ello, descargar el set de datos **DGGE_cca.csv** y **DGGE_fq_cca_tunned.csv** de [GitHub Limno-con-R/CILCAL2023](https://github.com/Limno-con-R/CILCAL2023/tree/main/datasets).
 Guardar los archivos en una carpeta llamada _data_, dentro del **Directorio de Trabajo** del **Proyecto** que creamos para esta Unidad (ver cómo hacerlo en la Unidad \@ref(intro)). Finalmente, instalar los paquetes como se indica en la Unidad \@ref(intro). Luego, cargarlos en la sesión. 
 
->Una vez descargados los archivo, generamos el objeto en nuestro entorno de la matriz de composición de especies (en este caso, relevamiento de OTU's ("unidades taxonómicas operativas") por técnica de DGGE) y la matriz de datos limnológicos. Seguidamente, evaluamos el tipo de respuesta en la matriz de composición bacteriana:
+Una vez descargados los archivo, generamos el objeto en nuestro entorno de la matriz de composición de especies (en este caso, relevamiento de OTU's ("unidades taxonómicas operativas") por técnica de DGGE) y la matriz de datos limnológicos. Seguidamente, evaluamos el tipo de respuesta en la matriz de composición bacteriana:
 
 
 ```r
@@ -1122,20 +962,18 @@ vare.dca_cca
 ## 
 ## Detrended correspondence analysis with 26 segments.
 ## Rescaling of axes with 4 iterations.
-## Total inertia (scaled Chi-square): 5.6709 
 ## 
-##                        DCA1   DCA2   DCA3   DCA4
-## Eigenvalues          0.5616 0.4329 0.3330 0.2931
-## Additive Eigenvalues 0.5616 0.4309 0.3338 0.2920
-## Decorana values      0.6237 0.3876 0.2863 0.1524
-## Axis lengths         4.1986 3.7111 2.8788 2.3732
+##                   DCA1   DCA2   DCA3   DCA4
+## Eigenvalues     0.5616 0.4329 0.3330 0.2931
+## Decorana values 0.6237 0.3876 0.2863 0.1524
+## Axis lengths    4.1986 3.7111 2.8788 2.3732
 ```
 
->Como podemos observar, la longitud del gradiente es mayor a 4 S.D.. Por lo tanto, el modelo de CCA de respuesta unimodal es el modelo adecuado para este set de datos.
+Como podemos observar, la longitud del gradiente es mayor a 4 S.D.. Por lo tanto, el modelo de CCA de respuesta unimodal es el modelo adecuado para este set de datos.
 
 ### CCA utilizando la función **cca()** del paquete **vegan** 
 
->Luego de corroborar el tipo de respuesta de la matriz de composición, procedemos a la estandarización de las variables ambientales.
+Luego de corroborar el tipo de respuesta de la matriz de composición, procedemos a la estandarización de las variables ambientales.
 
 
 ```r
@@ -1143,7 +981,7 @@ vare.dca_cca
 env.r<-decostand (env_cca, method = "standardize") #N~(0,1)
 ```
 
->Ejecutemos un CCA utilizando la función **cca()** de **vegan** y la expresión de fórmula. Es importante señalar que, en un CCA, no es recomendable la transformación de los datos de composición tal como se puede realizar en RDA ya que al transformar,la distancia preservada ya no sería la distancia chi-cuadrado y los resultados no podrían ser interpretados.
+Ejecutemos un CCA utilizando la función **cca()** de **vegan** y la expresión de fórmula. Es importante señalar que, en un CCA, no es recomendable la transformación de los datos de composición tal como se puede realizar en RDA ya que al transformar,la distancia preservada ya no sería la distancia chi-cuadrado y los resultados no podrían ser interpretados.
 
 
 ```r
@@ -1157,7 +995,7 @@ RsquareAdj(cca_DGGE)
 ## [1] 0.4143396
 ## 
 ## $adj.r.squared
-## [1] 0.1458369
+## [1] 0.1423793
 ```
 
 
@@ -1415,9 +1253,9 @@ summary(cca_DGGE)
 ## Alk   -0.14734  0.17538  0.088390 -0.003335 -0.24797  0.35383
 ```
 
->Hay que tener presente que en un CCA se calculan dos conjuntos de "*scores*": puntajes "**LC**" y puntajes "**WA**". Los scores LC ("*linear constraints*") corresponden a los *scores* de los objetos en función de la combinación lineal de las variables ambientales, mientras que los puntajes de WA ("*weigthed averaged*") corresponden a los *scores* de los objetos en función del "peso" de las especies. Para tener en cuenta, por *default* el paquete **vegan** las gráficas de ordenación CCA de los sitios están utilizando *scores* WA (revisar salida anterior en "*Sites scores*"), mientras que en CANOCO 5 se grafican usando los *scores* LC. El uso de cada método de puntuación tiene sus defensores y detractores. Dado que pueden existir diferencias entre ambos tipos de gráficos, no hay que olvidar informar qué *score* se ha elegido mostrar, ya sea LC o WA.
+Hay que tener presente que en un CCA se calculan dos conjuntos de "*scores*": puntajes "**LC**" y puntajes "**WA**". Los scores LC ("*linear constraints*") corresponden a los *scores* de los objetos en función de la combinación lineal de las variables ambientales, mientras que los puntajes de WA ("*weigthed averaged*") corresponden a los *scores* de los objetos en función del "peso" de las especies. Para tener en cuenta, por *default* el paquete **vegan** las gráficas de ordenación CCA de los sitios están utilizando *scores* WA (revisar salida anterior en "*Sites scores*"), mientras que en CANOCO 5 se grafican usando los *scores* LC. El uso de cada método de puntuación tiene sus defensores y detractores. Dado que pueden existir diferencias entre ambos tipos de gráficos, no hay que olvidar informar qué *score* se ha elegido mostrar, ya sea LC o WA.
 
->Revisemos este punto gráficamente: generemos la figura correspondiente a la ordenación de los sitios "*default*" de **vegan** y solicitemos, además, el *score* de los sisitos en función de LC. Luego, para que resulte más evidente, vamos a trazar una línea de unión que marque la posición de un mismo sitio en cada caso:
+Revisemos este punto gráficamente: generemos la figura correspondiente a la ordenación de los sitios "*default*" de **vegan** y solicitemos, además, el *score* de los sisitos en función de LC. Luego, para que resulte más evidente, vamos a trazar una línea de unión que marque la posición de un mismo sitio en cada caso:
 
 
 ```r
@@ -1425,13 +1263,13 @@ plot(cca_DGGE, dis=c("wa","lc"))
 ordispider(cca_DGGE)
 ```
 
-![](05-multi2_files/figure-latex/unnamed-chunk-35-1.pdf)<!-- --> 
+<img src="05-multi2_files/figure-html/unnamed-chunk-35-1.png" width="672" />
 
 **Figura 7:** Diferencias entre *scores* de los sitios con LC y *scores* de los sitios con  WA en CCA.
 
 #### Triplot del CCA
 
->El código para producir triplots es similar al utilizado para RDA, excepto que las variables de respuesta (especies) están representadas por puntos y, por lo tanto, las flechas no están disponibles.
+El código para producir triplots es similar al utilizado para RDA, excepto que las variables de respuesta (especies) están representadas por puntos y, por lo tanto, las flechas no están disponibles.
 
 
 ```r
@@ -1440,7 +1278,7 @@ ordispider(cca_DGGE)
 plot(cca_DGGE,scaling = 1, display = c("sp", "lc", "cn"),main = "Triplot CCA DGGE -scaling 1")
 ```
 
-![](05-multi2_files/figure-latex/unnamed-chunk-36-1.pdf)<!-- --> 
+<img src="05-multi2_files/figure-html/unnamed-chunk-36-1.png" width="672" />
 
 **Figura 8:** Triplot del modelo completo de CCA con escalamiento 1. 
 
@@ -1451,13 +1289,13 @@ plot(cca_DGGE,scaling = 1, display = c("sp", "lc", "cn"),main = "Triplot CCA DGG
 plot(cca_DGGE, display = c("sp", "lc", "cn"), main = "Triplot CCA DGGE - scaling 2")
 ```
 
-![](05-multi2_files/figure-latex/unnamed-chunk-37-1.pdf)<!-- --> 
+<img src="05-multi2_files/figure-html/unnamed-chunk-37-1.png" width="672" />
 
 **Figura 9:** Triplot del modelo completo de CCA con escalamiento 2.
 
 #### Test permutacionales y selección de variables
 
->La significación del modelo puede analizarse de la misma manera que para el RDA
+La significación del modelo puede analizarse de la misma manera que para el RDA
 
 
 ```r
@@ -1489,12 +1327,12 @@ anova(cca_DGGE, by = "axis", permutations = how(nperm = 999))#Significación de 
 ## 
 ## Model: cca(formula = data_cca ~ Turb + DO + T + Cond + pH + Chl.a + TN + TP + SS + OM + IM + Alk, data = env.r)
 ##          Df ChiSquare      F Pr(>F)   
-## CCA1      1    0.5366 4.2011  0.007 **
-## CCA2      1    0.3764 2.9464  0.011 * 
-## CCA3      1    0.3502 2.7417  0.047 * 
-## CCA4      1    0.2387 1.8686  0.722   
-## CCA5      1    0.1981 1.5508  0.924   
-## CCA6      1    0.1458 1.1417  1.000   
+## CCA1      1    0.5366 4.2011  0.009 **
+## CCA2      1    0.3764 2.9464  0.007 **
+## CCA3      1    0.3502 2.7417  0.041 * 
+## CCA4      1    0.2387 1.8686  0.701   
+## CCA5      1    0.1981 1.5508  0.917   
+## CCA6      1    0.1458 1.1417  0.999   
 ## CCA7      1    0.1356 1.0613  0.999   
 ## CCA8      1    0.1155 0.9038  1.000   
 ## CCA9      1    0.0908 0.7105  1.000   
@@ -1522,15 +1360,15 @@ direction = "forward", permutations = how(nperm = 199))
 ## + Chl.a  1 247.92 3.3236  0.005 **
 ## + OM     1 248.75 2.4791  0.005 **
 ## + TP     1 248.92 2.3023  0.005 **
-## + TN     1 249.23 1.9917  0.005 **
-## + Turb   1 249.31 1.9118  0.010 **
-## + SS     1 249.43 1.7943  0.010 **
+## + TN     1 249.23 1.9917  0.015 * 
+## + SS     1 249.43 1.7943  0.015 * 
+## + Turb   1 249.31 1.9118  0.020 * 
 ## + IM     1 249.34 1.8855  0.020 * 
-## + pH     1 250.04 1.1904  0.285   
-## + DO     1 250.33 0.9122  0.675   
-## + Alk    1 250.54 0.7069  0.820   
-## + Cond   1 250.57 0.6747  0.920   
-## + T      1 250.57 0.6751  0.975   
+## + pH     1 250.04 1.1904  0.235   
+## + DO     1 250.33 0.9122  0.615   
+## + Alk    1 250.54 0.7069  0.825   
+## + Cond   1 250.57 0.6747  0.880   
+## + T      1 250.57 0.6751  0.955   
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
@@ -1538,16 +1376,16 @@ direction = "forward", permutations = how(nperm = 199))
 ## 
 ##        Df    AIC      F Pr(>F)   
 ## + TP    1 247.31 2.4923  0.005 **
-## + IM    1 247.82 1.9958  0.010 **
+## + IM    1 247.82 1.9958  0.005 **
 ## + SS    1 247.96 1.8591  0.010 **
-## + Turb  1 248.23 1.5960  0.045 * 
-## + OM    1 248.57 1.2757  0.135   
-## + TN    1 248.69 1.1618  0.195   
+## + Turb  1 248.23 1.5960  0.040 * 
+## + OM    1 248.57 1.2757  0.110   
+## + TN    1 248.69 1.1618  0.245   
 ## + pH    1 248.96 0.8984  0.625   
-## + DO    1 249.01 0.8576  0.635   
-## + Cond  1 249.16 0.7171  0.905   
-## + Alk   1 249.24 0.6383  0.935   
-## + T     1 249.16 0.7173  0.940   
+## + DO    1 249.01 0.8576  0.695   
+## + Cond  1 249.16 0.7171  0.855   
+## + T     1 249.16 0.7173  0.910   
+## + Alk   1 249.24 0.6383  0.915   
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
@@ -1555,37 +1393,49 @@ direction = "forward", permutations = how(nperm = 199))
 ## 
 ##        Df    AIC      F Pr(>F)  
 ## + OM    1 247.69 1.4913  0.040 *
-## + TN    1 247.95 1.2471  0.195  
-## + Turb  1 248.03 1.1693  0.285  
-## + SS    1 248.15 1.0624  0.395  
-## + IM    1 248.28 0.9348  0.515  
-## + pH    1 248.31 0.9083  0.595  
+## + TN    1 247.95 1.2471  0.185  
+## + Turb  1 248.03 1.1693  0.275  
+## + SS    1 248.15 1.0624  0.365  
+## + IM    1 248.28 0.9348  0.475  
 ## + DO    1 248.34 0.8866  0.655  
-## + T     1 248.49 0.7454  0.925  
-## + Alk   1 248.59 0.6523  0.950  
-## + Cond  1 248.64 0.6067  0.975  
+## + pH    1 248.31 0.9083  0.680  
+## + T     1 248.49 0.7454  0.835  
+## + Alk   1 248.59 0.6523  0.865  
+## + Cond  1 248.64 0.6067  0.965  
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## Step: data_cca ~ Chl.a + TP + OM 
 ## 
 ##        Df    AIC      F Pr(>F)  
-## + TN    1 248.10 1.4079  0.080 .
-## + Turb  1 248.23 1.2906  0.085 .
-## + IM    1 248.62 0.9454  0.465  
-## + SS    1 248.62 0.9453  0.475  
-## + DO    1 248.64 0.9231  0.540  
-## + pH    1 248.64 0.9217  0.580  
-## + T     1 248.62 0.9430  0.585  
-## + Alk   1 248.69 0.8760  0.610  
-## + Cond  1 248.68 0.8907  0.655  
+## + TN    1 248.10 1.4079  0.050 *
+## + Turb  1 248.23 1.2906  0.065 .
+## + SS    1 248.62 0.9453  0.450  
+## + IM    1 248.62 0.9454  0.505  
+## + T     1 248.62 0.9430  0.535  
+## + DO    1 248.64 0.9231  0.590  
+## + pH    1 248.64 0.9217  0.640  
+## + Alk   1 248.69 0.8760  0.640  
+## + Cond  1 248.68 0.8907  0.660  
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Step: data_cca ~ Chl.a + TP + OM + TN 
+## 
+##        Df    AIC      F Pr(>F)
+## + Turb  1 248.59 1.3067  0.130
+## + IM    1 249.01 0.9351  0.505
+## + SS    1 249.01 0.9350  0.505
+## + T     1 249.00 0.9490  0.545
+## + DO    1 249.07 0.8830  0.670
+## + Cond  1 249.07 0.8855  0.685
+## + pH    1 249.16 0.8072  0.715
+## + Alk   1 249.21 0.7610  0.750
 ```
 
 #### Elección del modelo
 
->Con la expresión en base a la fórmula, observamos que tenemos control del modelo pero nos enfrentamos al dilema de elegir el "mejor" de los modelos.
+Con la expresión en base a la fórmula, observamos que tenemos control del modelo pero nos enfrentamos al dilema de elegir el "mejor" de los modelos.
 Los modelos deben construirse con cuidado y, preferiblemente, utilizarse para probar
 hipótesis específicas. En la construcción automática de modelos, generalmente necesitamos dos modelos extremos: el mínimo y el modelo completo. Con esos dos modelos, podemos implementar la función **step()** para seleccionar el mejor modelo. Esta función utiliza el criterio de información de Akaike (AIC) en la elección del modelo. El AIC se basa en la bondad de ajuste (alta inercia restringida/ variabilidad explicada), pero es penalizado por el número de parámetros estimados (rango restringido/ criterio de parsimonia). Los modelos alternativos se ordenan por AIC. En cada caso, "+" indica el efecto de agregar un término, y "-" el efecto de eliminar un término, mientras que el modelo que se evalua está marcado como "<none>". Se debe tener mucho cuidado porque realmente no hay AIC para ordenaciones canónicas (¡aunque está calculada!), y siempre debemos inspeccionar la validez de elección del modelo.
 
@@ -1595,23 +1445,43 @@ final_cca <- step(cca.step.forward, scope=formula(cca_DGGE), test="perm")
 ```
 
 ```
-## Start:  AIC=247.69
+## Start:  AIC=248.1
+## data_cca ~ Chl.a + TP + OM + TN
+## 
+##         Df    AIC      F Pr(>F)   
+## - TN     1 247.69 1.4079  0.095 . 
+## - OM     1 247.95 1.6465  0.030 * 
+## <none>     248.10                 
+## - Chl.a  1 248.16 1.8428  0.015 * 
+## + Turb   1 248.59 1.3067  0.115   
+## + T      1 249.00 0.9490  0.550   
+## + IM     1 249.01 0.9351  0.505   
+## + SS     1 249.01 0.9350  0.575   
+## + Cond   1 249.07 0.8855  0.605   
+## + DO     1 249.07 0.8830  0.640   
+## - TP     1 249.09 2.7093  0.005 **
+## + pH     1 249.16 0.8072  0.815   
+## + Alk    1 249.21 0.7610  0.815   
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Step:  AIC=247.69
 ## data_cca ~ Chl.a + TP + OM
 ## 
 ##         Df    AIC      F Pr(>F)   
-## - OM     1 247.31 1.4913  0.100 . 
+## - OM     1 247.31 1.4913  0.055 . 
 ## <none>     247.69                 
-## - Chl.a  1 247.81 1.9596  0.020 * 
-## + TN     1 248.10 1.4079  0.070 . 
-## + Turb   1 248.23 1.2906  0.095 . 
+## - Chl.a  1 247.81 1.9596  0.015 * 
+## + TN     1 248.10 1.4079  0.080 . 
+## + Turb   1 248.23 1.2906  0.120   
 ## - TP     1 248.57 2.6824  0.005 **
-## + IM     1 248.62 0.9454  0.435   
-## + SS     1 248.62 0.9453  0.480   
-## + T      1 248.62 0.9430  0.545   
-## + DO     1 248.64 0.9231  0.620   
-## + pH     1 248.64 0.9217  0.630   
-## + Cond   1 248.68 0.8907  0.645   
-## + Alk    1 248.69 0.8760  0.575   
+## + IM     1 248.62 0.9454  0.465   
+## + SS     1 248.62 0.9453  0.525   
+## + T      1 248.62 0.9430  0.600   
+## + DO     1 248.64 0.9231  0.650   
+## + pH     1 248.64 0.9217  0.620   
+## + Cond   1 248.68 0.8907  0.685   
+## + Alk    1 248.69 0.8760  0.660   
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
@@ -1620,23 +1490,23 @@ final_cca <- step(cca.step.forward, scope=formula(cca_DGGE), test="perm")
 ## 
 ##         Df    AIC      F Pr(>F)   
 ## <none>     247.31                 
-## + OM     1 247.69 1.4913  0.050 * 
+## + OM     1 247.69 1.4913  0.045 * 
 ## - TP     1 247.92 2.4923  0.005 **
-## + TN     1 247.95 1.2471  0.155   
-## + Turb   1 248.03 1.1693  0.205   
-## + SS     1 248.15 1.0624  0.365   
-## + IM     1 248.28 0.9348  0.550   
-## + pH     1 248.31 0.9083  0.620   
-## + DO     1 248.34 0.8866  0.590   
-## + T      1 248.49 0.7454  0.865   
-## + Alk    1 248.59 0.6523  0.900   
+## + TN     1 247.95 1.2471  0.145   
+## + Turb   1 248.03 1.1693  0.260   
+## + SS     1 248.15 1.0624  0.350   
+## + IM     1 248.28 0.9348  0.510   
+## + pH     1 248.31 0.9083  0.615   
+## + DO     1 248.34 0.8866  0.670   
+## + T      1 248.49 0.7454  0.850   
+## + Alk    1 248.59 0.6523  0.920   
 ## + Cond   1 248.64 0.6067  0.955   
 ## - Chl.a  1 248.92 3.4926  0.005 **
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ```
 
->Criterio AIC: cuanto más bajo el valor, mejor. Sin embargo, modelos con diferencias de AIC < 2 son igualmente válidos. En este caso, ambos modelos son válidos.
+Criterio AIC: cuanto más bajo el valor, mejor. Sin embargo, modelos con diferencias de AIC < 2 son igualmente válidos. En este caso, ambos modelos son válidos.
 
 
 ```r
@@ -1657,8 +1527,8 @@ vif.cca(cca.step.forward)
 ```
 
 ```
-##    Chl.a       TP       OM 
-## 2.340084 1.390174 2.865323
+##    Chl.a       TP       OM       TN 
+## 2.372966 1.398995 3.117637 1.380088
 ```
 
 ```r
@@ -1671,7 +1541,7 @@ vif.cca(final_cca)
 ```
 *Notar que en el modelo completo Chl.a y TP presentan VIF > 5.*
 
-### Bibliografía citada y de lectura recomendada
+## Bibliografía citada y de lectura recomendada
 
 Blanchet, F. G., P. Legendre, & D. Borcard, 2008. Forward selection of explanatory variables. Ecology 89: 2623–2632.
 
