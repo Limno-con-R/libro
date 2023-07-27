@@ -9,7 +9,7 @@ link-citations: yes
 
 # LIMNOLOGIA CON R {-}
 
-Taller dictado en el marco del **IV Congreso Iberoamericano de Limnología - X Congreso Argentino de Limnología (IV CIL – CAL X)**, 27 y 28 de julio de 2023 .
+Taller dictado en el marco del **IV Congreso Iberoamericano de Limnología - X Congreso Argentino de Limnología (IV CIL – CAL X)**, 27 y 28 de julio de 2023.
 
 El material se elaboró utilizando el paquete _bookdown_ [@R-bookdown; @bookdown2016], basado en _R Markdown_ [@rmarkdown2020] y _knitr_ [@xie2015].
 

@@ -230,7 +230,7 @@ gam.check(modelo1$gam, type="pearson")
 ## indicate that k is too low, especially if edf is close to k'.
 ## 
 ##           k'  edf k-index p-value    
-## s(Mes)  8.00 3.86    0.93    0.16    
+## s(Mes)  8.00 3.86    0.93     0.2    
 ## s(Dias) 9.00 8.74    0.31  <2e-16 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
@@ -338,9 +338,9 @@ gam.check(modelo2$gam, type="pearson")
 ## indicate that k is too low, especially if edf is close to k'.
 ## 
 ##                 k'   edf k-index p-value    
-## s(Mes)        4.00  3.27    0.84   0.005 ** 
+## s(Mes)        4.00  3.27    0.84   0.025 *  
 ## s(Dias)      19.00 17.54    0.66  <2e-16 ***
-## ti(Mes,Dias) 12.00  3.72    0.89   0.015 *  
+## ti(Mes,Dias) 12.00  3.72    0.89   0.035 *  
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ```
