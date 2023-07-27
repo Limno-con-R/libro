@@ -205,9 +205,22 @@ El comando para realizar el análisis de componentes principales , está en el p
 
 ```r
 library(FactoMineR)
+```
+
+```
+## Warning: package 'FactoMineR' was built under R version 4.2.3
+```
+
+```r
 ?PCA ## ayuda del comando PCA
 # Realizar el analisis solo en las variables numericas continuas
 res.pca <- PCA(datos.stand [-2], graph=FALSE) # se guarda en el objeto res.pca (uso res para indicar que es un resultado) ## Saqué la variable sechi del analisis [-2]
+```
+
+```
+## Warning in PCA(datos.stand[-2], graph = FALSE): Missing values are imputed by
+## the mean of the variable: you should use the imputePCA function of the missMDA
+## package
 ```
 
 ¡Recibimos un ***mensaje de advertencia***! Este mensaje nos indica que hay valores faltantes y que el comando va a usar el promedio de la variable en las celdas donde falten datos.

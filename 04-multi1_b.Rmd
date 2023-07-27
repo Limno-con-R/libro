@@ -126,7 +126,7 @@ El comando para realizar el análisis de componentes principales , está en el p
 
 [FactoMineR](http://factominer.free.fr)
 
-```{r echo=TRUE, message=FALSE, warning=FALSE}
+```{r echo=TRUE}
 library(FactoMineR)
 ?PCA ## ayuda del comando PCA
 # Realizar el analisis solo en las variables numericas continuas
