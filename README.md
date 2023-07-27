@@ -1,4 +1,4 @@
-# LIMNOLOGIA CON R {-}
+# LIMNOLOGIA CON R
 
 Taller dictado en el marco del **IV Congreso Iberoamericano de Limnología - X Congreso Argentino de Limnología (IV CIL – CAL X)**, 27 y 28 de julio de 2023 .
 
