@@ -298,7 +298,21 @@ Hay una enorme diversidad, e incluso se pueden utilizar combinaciones de ellos p
 
 ```r
 library(ggplot2)
+```
+
+```
+## Warning: package 'ggplot2' was built under R version 4.2.2
+```
+
+```r
 library(ggpubr)
+```
+
+```
+## Warning: package 'ggpubr' was built under R version 4.2.2
+```
+
+```r
 library(grid)
 
 

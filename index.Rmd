@@ -21,7 +21,7 @@ El material se elaboró utilizando el paquete _bookdown_ [@R-bookdown; @bookdown
 
 **Unidad** \@ref(intro): Introducción a R y RStudio. Importación y manejo de datos en R. Gráficos exploratorios básicos.
 
-**Unidad** \@ref(regmul): Correlación, regresión múltiple.
+**Unidad** \@ref(regmul): Correlacioes y regresiones múltiples.
 
 **Unidad** \@ref(gam): Modelos Aditivos Generalizados.
 
@@ -32,10 +32,3 @@ El material se elaboró utilizando el paquete _bookdown_ [@R-bookdown; @bookdown
 **Unidad** \@ref(metrix): Paquete _metrix_. Estimar métricas (individuales y ecológicas) e índices bióticos basados en macroinvertebrados acuáticos para evaluar la calidad del agua.
 
 **Unidad** \@ref(diathor): Paquete _DiaThor_. Estimación de información ecológica e índices bióticos para diatomeas. Paquete _optimos.prime_. Estimación de óptimo y rango de tolerancia de una especie.
-
-```{r include=FALSE}
-# automatically create a bib database for R packages
-knitr::write_bib(c(
-  .packages(), 'bookdown', 'knitr', 'rmarkdown'
-), 'packages.bib')
-```

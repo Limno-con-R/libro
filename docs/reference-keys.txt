@@ -121,3 +121,4 @@ fig:unnamed-chunk-11-1
 fig:unnamed-chunk-11-2
 fig:unnamed-chunk-11-3
 fig:unnamed-chunk-11-4
+por-qué-usar-modelos-aditivos-generalizados-gams
