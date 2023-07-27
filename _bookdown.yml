@@ -1,4 +1,5 @@
 book_filename: "bookdown-LimnoR"
+output_dir: docs
 language:
   ui:
     chapter_name: "Unidad "
