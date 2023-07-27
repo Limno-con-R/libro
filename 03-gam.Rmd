@@ -12,7 +12,7 @@ Instituto Tecnológico de Chascomús (INTECH, UNSAM-CONICET), Escuela de Bio y N
 ### Aclaración
 En esta unidad se utiliza el paquete _ggplot2_ [@ggplot2] para generar algunos gráficos. Para comprender el código empleado se recomienda leer el _Capítulo 3: Data visualization_ del libro _R for Data Science_ [@wickham2017r].
 
-## ¿Porqué usar Modelos Aditivos Generalizados (GAMs)?
+## ¿Por qué usar Modelos Aditivos Generalizados (GAMs)?
 
 1. La relación entre variables predictoras (i.e., independientes) y la variable respuesta (i.e., dependiente) **no** necesita ser **lineal**.
 1. **No** necesitamos conocer de antemano la forma funcional de la relación.
@@ -38,7 +38,7 @@ Existen diferentes estrategias para ajustar una curva suave y continua a los dat
 knitr::include_graphics('./images/Splines.png')
 ```
 
-## Manos a la obra!
+## ¡Manos a la obra!
 Utilizaremos un set de datos del trabajo _The dynamics of picocyanobacteria from a hypereutrophic shallow lake is affected by light-climate and small-bodied zooplankton: a 10-year cytometric time-series analysis_ publicado en _FEMS Microbiology Ecology_ [@quiroga2021], disponibles en el [Repositorio Institucional CONICET Digital](http://hdl.handle.net/11336/200094).
 
 Descargar el set de datos **data_gam.csv** de [GitHub Limno-con-R/CILCAL2023](https://github.com/Limno-con-R/CILCAL2023/tree/main/datasets).

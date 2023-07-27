@@ -126,7 +126,7 @@ El comando para realizar el análisis de componentes principales , está en el p
 
 [FactoMineR](http://factominer.free.fr)
 
-```{r echo=FALSE}
+```{r echo=TRUE, message=FALSE, warning=FALSE}
 library(FactoMineR)
 ?PCA ## ayuda del comando PCA
 # Realizar el analisis solo en las variables numericas continuas
@@ -156,7 +156,7 @@ En la primer columna se observa el valor del eigenvalue, en la segunda columna s
 
 Un paquete útil para mejorar los gráficos de los analisis multivariados es **factoextra**.
 
-```{r echo=FALSE}
+```{r echo=TRUE, message=FALSE, warning=FALSE}
 library(factoextra)
 fviz_eig(res.pca, addlabels = TRUE)# scree plot de los eigenvalue
 ```
@@ -241,7 +241,7 @@ El nuevo ACP con las variables seleccionadas, explica un 78% de la variabilidad 
 
 El escalamiento multidimensional no métrico, mejor conocido por sus siglas en ingles (**Non-metric Multidimensional Scaling**), es un método de análisis estadístico multivariado que representa mediciones de *similaridad* (o disimilaridad) entre pares de objetos como distancias entre puntos de un espacio de dimensión reducida. El objetivo fundamental del **NMDS** es generar una representación gráfica de los objetos en un espacio de modo que sus posiciones relativas sean el reflejo de su proximidad. A diferencia de otros métodos de escalamientos, el NMDS utiliza ordenes de rango, por lo que es una técnica extremadamente flexible que puede adaptarse a una gran variedad de datos.
 
-```{r echo=FALSE}
+```{r echo=TRUE, message=FALSE, warning=FALSE}
 library(vegan)
 ```
 

@@ -62,7 +62,7 @@ datos <-  read_excel("data/data_cursoR.xlsx",
 
 ```
 ## New names:
-## * `` -> `...1`
+## • `` -> `...1`
 ```
 
 
@@ -203,14 +203,11 @@ El comando para realizar el análisis de componentes principales , está en el p
 [FactoMineR](http://factominer.free.fr)
 
 
-```
-## Warning: package 'FactoMineR' was built under R version 4.2.3
-```
-
-```
-## Warning in PCA(datos.stand[-2], graph = FALSE): Missing values are imputed by
-## the mean of the variable: you should use the imputePCA function of the missMDA
-## package
+```r
+library(FactoMineR)
+?PCA ## ayuda del comando PCA
+# Realizar el analisis solo en las variables numericas continuas
+res.pca <- PCA(datos.stand [-2], graph=FALSE) # se guarda en el objeto res.pca (uso res para indicar que es un resultado) ## Saqué la variable sechi del analisis [-2]
 ```
 
 ¡Recibimos un ***mensaje de advertencia***! Este mensaje nos indica que hay valores faltantes y que el comando va a usar el promedio de la variable en las celdas donde falten datos.
@@ -272,23 +269,12 @@ En la primer columna se observa el valor del eigenvalue, en la segunda columna s
 Un paquete útil para mejorar los gráficos de los analisis multivariados es **factoextra**.
 
 
-```
-## Warning: package 'factoextra' was built under R version 4.2.3
-```
-
-```
-## Loading required package: ggplot2
+```r
+library(factoextra)
+fviz_eig(res.pca, addlabels = TRUE)# scree plot de los eigenvalue
 ```
 
-```
-## Warning: package 'ggplot2' was built under R version 4.2.2
-```
-
-```
-## Welcome! Want to learn more? See two factoextra-related books at https://goo.gl/ve3WBa
-```
-
-![](04-multi1_b_files/figure-latex/unnamed-chunk-8-1.pdf)<!-- --> 
+<img src="04-multi1_b_files/figure-html/unnamed-chunk-8-1.png" width="672" />
 
 Los **eigenvalues** se utilizan para determinar el número de componentes que deben conservarse. Existen dos maneras frecuentes de analizar estos eigenvalues, por un lado muchos investigadores utilizan los eigenvalues \> 1. Otra manera de determinar el número de componentes es por la cantidad de variación explicada, muchos usan \> 70% de la variabilidad de los datos.
 
@@ -305,11 +291,11 @@ fviz_pca_biplot(res.pca,  repel=TRUE, invisible = "quali")+theme_classic()
 ```
 
 ```
-## Warning: ggrepel: 39 unlabeled data points (too many overlaps). Consider
+## Warning: ggrepel: 38 unlabeled data points (too many overlaps). Consider
 ## increasing max.overlaps
 ```
 
-![](04-multi1_b_files/figure-latex/unnamed-chunk-9-1.pdf)<!-- --> 
+<img src="04-multi1_b_files/figure-html/unnamed-chunk-9-1.png" width="672" />
 
 El gráfico muestra los ejes o componentes 1 y 2. A simple vista se observa que algunos individuos, como SL_34 por ejemplo es la muestra que tiene mas DOC (carbono orgánico disuelto), mientras que la muestra SL_50 es la que presentó la mayor cantidad de POM (materia orgánica particulada).
 
@@ -323,11 +309,11 @@ fviz_pca_biplot(res.pca, axes=c(1,3),  repel=TRUE, invisible = "quali")+theme_cl
 ```
 
 ```
-## Warning: ggrepel: 24 unlabeled data points (too many overlaps). Consider
+## Warning: ggrepel: 20 unlabeled data points (too many overlaps). Consider
 ## increasing max.overlaps
 ```
 
-![](04-multi1_b_files/figure-latex/unnamed-chunk-10-1.pdf)<!-- --> 
+<img src="04-multi1_b_files/figure-html/unnamed-chunk-10-1.png" width="672" />
 
 Una función importante del paquete FactoMiner, es el comando dimdesc. El mismo se utiliza para identificar las variables más significativamente asociadas a un componente.
 
@@ -400,7 +386,7 @@ Cree una nueva variable llamada condicion
 fviz_pca_biplot(res.pca,  repel=TRUE, invisible = "quali", habillage = datos$condicion, geom = ("point"))+theme_classic()
 ```
 
-![](04-multi1_b_files/figure-latex/unnamed-chunk-13-1.pdf)<!-- --> 
+<img src="04-multi1_b_files/figure-html/unnamed-chunk-13-1.png" width="672" />
 
 ### Refinando el modelo
 
@@ -447,14 +433,14 @@ Biplot:
 fviz_pca_biplot(res.pca2,  repel=TRUE, invisible = "quali", habillage = datos$condicion, geom = ("point"))+theme_classic()
 ```
 
-![](04-multi1_b_files/figure-latex/unnamed-chunk-17-1.pdf)<!-- --> 
+<img src="04-multi1_b_files/figure-html/unnamed-chunk-17-1.png" width="672" />
 
 
 ```r
 fviz_pca_biplot(res.pca2,  axes= c(1,3), repel=TRUE, invisible = "quali", habillage = datos$condicion, geom = ("point"))+theme_classic()
 ```
 
-![](04-multi1_b_files/figure-latex/unnamed-chunk-18-1.pdf)<!-- --> 
+<img src="04-multi1_b_files/figure-html/unnamed-chunk-18-1.png" width="672" />
 
 El nuevo ACP con las variables seleccionadas, explica un 78% de la variabilidad total de los datos, teniendo en cuenta los primeros 3 ejes. Considero que este modelo refinado es mucho mejor que el anterior.
 
@@ -463,20 +449,8 @@ El nuevo ACP con las variables seleccionadas, explica un 78% de la variabilidad 
 El escalamiento multidimensional no métrico, mejor conocido por sus siglas en ingles (**Non-metric Multidimensional Scaling**), es un método de análisis estadístico multivariado que representa mediciones de *similaridad* (o disimilaridad) entre pares de objetos como distancias entre puntos de un espacio de dimensión reducida. El objetivo fundamental del **NMDS** es generar una representación gráfica de los objetos en un espacio de modo que sus posiciones relativas sean el reflejo de su proximidad. A diferencia de otros métodos de escalamientos, el NMDS utiliza ordenes de rango, por lo que es una técnica extremadamente flexible que puede adaptarse a una gran variedad de datos.
 
 
-```
-## Warning: package 'vegan' was built under R version 4.2.3
-```
-
-```
-## Loading required package: permute
-```
-
-```
-## Loading required package: lattice
-```
-
-```
-## This is vegan 2.6-4
+```r
+library(vegan)
 ```
 
 Vamos a usar las variables seleccionadas en el segundo ACP, es decir las variables más relacionadas con la fracción disuelta.
@@ -651,7 +625,7 @@ legend("bottomright", cex=0.6, box.col=NA,
 ## species scores not available
 ```
 
-![](04-multi1_b_files/figure-latex/unnamed-chunk-24-1.pdf)<!-- --> 
+<img src="04-multi1_b_files/figure-html/unnamed-chunk-24-1.png" width="672" />
 
 El escalamiento es parecido al resultado del ACP, en donde se pueden observar que hay un solapamiento importante en el tipo de lagunas.
 

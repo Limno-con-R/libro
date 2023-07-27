@@ -239,7 +239,7 @@ ggcorr(datos_fq, method = c("everything", "spearman"))
 ```
 Si queremos tener un resumen numérico de los coeficientes de correlación, podemos generar una matriz.
 
-```{r hmisc, echo=FALSE, warning=FALSE}
+```{r hmisc, echo=TRUE, warning=FALSE}
 library(Hmisc)
 ```
 
@@ -472,7 +472,7 @@ Analizamos las interacciones y vemos que ninguna es significativa.
 
 Cuando hay muchas variables, puede haber efectos de colinealidad, que quizás no observamos en las correlaciones entre pares de variables. Un criterio sugerido por Zuur et al. 2010 en su artículo [A protocol por data exploration to avoid common statistical problems](https://besjournals.onlinelibrary.wiley.com/doi/10.1111/j.2041-210X.2009.00001.x) es calcular el valor **VIF (_Variance Inflation Factor_)** y sugiere quitar las variables con VIF > 3 (aunque señala que puede haber colinealidad con VIF > 2).  
 
-```{r car, echo=FALSE}
+```{r car, echo=TRUE, message=FALSE, warning=FALSE}
 library(car)
 ```
 
@@ -533,7 +533,7 @@ shapiro.test(residuals(modelo_conduct2))
 
 El segundo supuesto es el de heterocedasticidad. Lo podemos evaluar con el test de Breusch-Pagan. Dado que p > 0.05, no rechazamos el supuesto heterocedasticidad. Si este supuesto se rechaza, existen modelos que permiten incluir una estructura de varianzas particular.
 
-```{r lmtest, echo=FALSE}
+```{r lmtest, echo=TRUE, message=FALSE, warning=FALSE}
 library(lmtest)
 ```
 
@@ -547,11 +547,11 @@ bptest(modelo_conduct2)
 
 También podemos obtener algunos gráficos diagnósticos (teclar Enter para pasar de un gráfico al siguiente).
 
-```{r plot1, echo=FALSE}
+```{r plot1, echo=TRUE}
 plot(modelo_fecha4)
 ```
 
-```{r plot2, echo=FALSE}
+```{r plot2, echo=TRUE}
 plot(modelo_conduct2)
 ```
 
