@@ -35,7 +35,7 @@ La primera vez que abrimos RStudio la interfaz nos muestra tres paneles:
 knitr::include_graphics('./images/rstudio.png')
 ```
 
-## A trabajar!
+## ¡A trabajar!
 
 ### Crear un **Proyecto**
 

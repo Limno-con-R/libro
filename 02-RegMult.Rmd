@@ -1,10 +1,14 @@
-# Correlaciones y regresión múltiple {#regmul}
+# Correlaciones y regresiones múltiples {#regmul}
 
-_**Autora de esta unidad:** Natalia Morandeira_
+**Natalia Morandeira**^[nmorandeira@unsam.edu.ar]
+
+Instituto de Investigación e Ingeniería Ambiental (CONICET-UNSAM)
+
+## Introducción
 
 En esta Unidad vamos a abordar análisis de correlación y regresiones múltiples (modelos lineales). Las correlaciones son análisis útiles para explorar nuestros datos y para evaluar si dos variables están asociadas positivamente o negativamente. Por otro lado, en el caso de una regresión simple, tenemos una variable respuesta (o dependiente) y una variable explicativa (o independiente). Un análisis de regresión múltiple es muy adecuado cuando hemos medido muchas variables, por ejemplo, si tenemos una variable respuesta y muchas posibles variables explicativas. Nos interesa conocer cuál o cuáles variables explican la variación de la variable respuesta, y elegir el mejor modelo. 
 
-En el marco de análisis limnológicos, una situación común es tener una variable respuesta medida en cuerpos de agua y múltiples variables que creemos que pueden explicar su variación. Entre las variables respuestas, podríamos tener (de acuerdo al objetivo de nuestro estudio) la abundancia, biomasa o diversidad de especies de un dado taxón o de grupos funcionales; o la concentración de un agroquímico; o incluso variables físico-químicas del cuerpo de agua que hipotetizamos que dependen de otro factor. Entre las variables respuestas, es posible que tengamos variables físico-químicas, características morfométricas de la laguna, usos de suelo del entorno, características de la cuenca, abundancia de otro taxón que interactúe con nuestra especie de interés, etc. Nos puede interesar en primer lugar analizar si están correlacionadas nuestras potenciales variables explicativas. Luego, podemos intentar ajustar un buen modelo que explique cómo varía nuestra variable respuesta en función de varias variables explicativas. Ese es el camino que recorreremos en esta Unidad.
+En el marco de análisis limnológicos, una situación común es tener una variable respuesta medida en cuerpos de agua y múltiples variables que hipotetizamos que pueden explicar su variación. Entre las variables respuestas, podríamos tener (de acuerdo al objetivo de nuestro estudio) la abundancia, biomasa o diversidad de especies de un dado taxón o de grupos funcionales; o la concentración de un agroquímico; o incluso variables físico-químicas del cuerpo de agua que podrían depender de otro factor. Entre las variables respuestas, es posible que tengamos variables físico-químicas, características morfométricas de la laguna, usos de suelo del entorno, características de la cuenca, abundancia de otro taxón que interactúe con nuestra especie de interés, etc. Nos puede interesar en primer lugar analizar si están correlacionadas nuestras potenciales variables explicativas. Luego, podemos intentar ajustar un buen modelo que explique cómo varía nuestra variable respuesta en función de varias variables explicativas. Ese es el camino que recorreremos en esta Unidad.
 
 
 ## Caso de estudio
@@ -235,7 +239,7 @@ ggcorr(datos_fq, method = c("everything", "spearman"))
 ```
 Si queremos tener un resumen numérico de los coeficientes de correlación, podemos generar una matriz.
 
-```{r hmisc, echo=FALSE}
+```{r hmisc, echo=FALSE, warning=FALSE}
 library(Hmisc)
 ```
 
@@ -250,29 +254,314 @@ rcorr(as.matrix(datos_fq), type="spearman")
 
 ## Regresiones múltiples
 
-Intro
+Ahora vamos a buscar un modelo que explique la variabilidad de la biomasa total de morfotipos bacterianos en función de una o más variables abióticas medidas en los cuerpos de agua. Para ello, es útil todo el conocimiento que contamos sobre estas variables a partir de los análisis exploratorios previos, incluyendo las relaciones entre variables explicativas. 
 
-hay que estandarizar?
+Un **modelo de regresión múltiple** puede expresarse: _y = β0 + β1.x1 + β2.x2 + ... + βn.xn + ϵ_, donde _y_ es la variable respuesta; _β0_ es la ordenada al origen; _xi_ son las variables explicativas, cada una con un coeficiente estimado _βi_; y _ϵ_ es el error.
+
+**¿Hay que estandarizar las variables explicativas?** Podemos notar que las variables explicativas están en distintas escalas, por ejemplo con 'summary(datos_fq)' vemos que _ph_ varía entre 4.65 y 7.1, mientras que _total_nitrogen_ varía entre 1320 y 11330. No es estrictamente necesario estandarizar las variables. En caso de no estandarizar, hay que tener cuidado con la interpretación de los coeficientes _βi_: si en un modelo final el coeficiente asociado al nitrógeno total es mayor al del pH, no podemos afirmar que el impacto del nitrógeno total sobre la biomasa bacteriana es mayor al del pH. Vamos a ver un ejemplo de interpretación del modelo final más adelante.
+
+Vamos a trabajar con la tabla de datos _datos_RH_. Estandarizamos y centramos los datos para facilitar la interpretación (y luego comparemos los resultados que se obtienen con las variables originales). La función _scale_ permite centrar y/o escalar una o más columnas de una tabla de datos. Por defecto hace las dos operaciones, pero podemos solicitar que sólo centre ó sólo escale los datos. La operación de centrar significa que para cada columna se calcula la media (omitiendo NAs) y luego a cada valor se le resta la media de esa columna. La operación de escalar significa que el valor de cada celda se divide por la desviación estándar. El siguiente script es para analizar los valores originales de la variable pH, los valores centrados y los valores centrados y escalados. 
+
+
+```{r scale1, echo=TRUE}
+datos_RH[,12]
+scale(datos_RH[,12], center = TRUE, scale = FALSE)
+scale(datos_RH[,12], center = TRUE, scale = TRUE) #estos son los parámetros por defecto de la función scale
+```
+
+Ahora vamos a estandarizar todas las variables explicativas.
+
+```{r scale2, echo=TRUE}
+datos_RH_est <- datos_RH
+datos_RH_est[, 12:23] <- scale(datos_RH[, 12:23])
+datos_RH_est
+```
+
+**Nota.** Uno de los supuestos del modelo de regresión múltiple es que las observaciones son independientes entre sí. Dado que cada laguna fue medida repetidamente en cuatro fechas distintas, es muy posible que las cuatro observaciones de estas lagunas no sean totalmente independientes. A los efectos de esta actividad práctica, vamos a suponer que sí hay independencia entre cada una de las observaciones. Para el futuro, recomendamos explorar análisis que permitan incluir a la identidad de la laguna como factor aleaotorio (modelos lineales generalizados mixtos) y/o considerar las medidas repetidas. Todo lo que veamos a continuación sobre selección de variables es aplicable a otros modelos de regresión más complejos.
+
 
 ### Selección automática de variables
 
-#### Upward: del modelo nulo, sumando variables explicativas
+Contamos con 12 posibles variables explicativas continuas, más la fecha de muestreo. Un buen modelo de regresión múltiple tendrá un compromiso entre el poder explicativo y la cantidad de variables a incluir. Tengamos en cuenta que para cada variable explicativa tenemos que estimar un coeficiente. Además, un modelo muy complejo puede sobre-ajustar a nuestros datos e implica que, para luego predecir la variable respuesta, necesitaremos conocer el valor de muchas variables, algunas quizás difíciles de obtener a campo. Queremos obtener un modelo con buen poder explicativo pero lo más sencillo posible. Además sólo tenemos 20 observaciones, ¿sería lógico explicarlas con 12 o 13 variables? Y por último, ya vimos que las variables están correlacionadas, por lo cual hay redundancia, y que para algunas variables hay NAs. 
 
-#### Forward: del modelo completo, quitando variables explicativas
+Hay dos métodos de selección automática de variables. Luego, veremos cómo hacer una selección manual, lo cual muchas veces nos permite obtener mejores resultados o conocer mejor 
+
+
+### Modelos nulo y completo
+
+En primer lugar, construimos un **modelo nulo**, es decir, sin variables explicativas. Usamos la notación de R de "fórmula" (ver la hoja de referencia [Comparación de sintaxis de R](https://raw.githubusercontent.com/rstudio/cheatsheets/main/translations/spanish/syntax_es.pdf) ya citada). La virgulilla o símbolo _~_ expresa que una variable está en función de otras. En el caso del modelo nulo, indicamos con 1 que no hay variables explicativas. Vamos a trabajar con los datos estandarizados. La función _lm_ signigica _linear model_ y es la que usaremos para ajustar las regresiones múltiples.
+
+```{r modelonulo, echo=TRUE}
+modelo_nulo <- lm(bio_total ~ 1, data = datos_RH_est)
+summary(modelo_nulo)
+```
+
+En este modelo nulo, sólo contamos con un coeficiente estimado para la ordenada al origen (en inglés, _intercept_, que es significativamente distinta de cero), tenemos 19 grados de libertad y un error residual de 92050.
+
+Para la construcción del **modelo completo**, es decir, con todas las variables explicativas, vamos a usar todas las variables abióticas excepto el oxígeno disuelto que cuenta con varios NA y la fecha de muestreo.
+
+```{r modelocompleto, echo=TRUE}
+modelo_completo <- lm(bio_total ~ date + ph + conductivity +  total_hardness + doc + din + total_nitrogen + drp + total_phosphorus + ag_440  + suva254 + ms_index, data = datos_RH_est)
+summary(modelo_completo)
+```
+
+Observemos que el modelo completo tiene un R^2 ajustado de 87,5%, con 5 grados de libertad (más adelante interpretaremos estos resultados).
+   
+
+#### Selección secuencial _Forward_: del modelo nulo, sumando variables explicativas
+
+La regresión Forward inicia con un modelo nulo y en cada paso agrega una variable explicativa significativa hasta llegar al modelo final.
+La función _step_ en primer lugar pide que le indiquemos el modelo nulo. Luego, en scope, podemos indicar con una fórmula el modelo final máximo al que podemos llegar o (como en este ejemplo) un modelo mínimo _lower_ y un modelo máximo _upper_ (el nulo y el completo, respectivamente). Luego tenemos que indicar en qué dirección se construye el modelo, en este caso es _forward_.
+
+El criterio que se utiliza para agregar o no una variable es el **AIC (Akaike Information Criterion)**. A partir del modelo nulo, se prueba de agregar todas las variables y se analiza si esa variable reduce el valor de AIC se reduce. Si al agregar una variable el AIC no se reduce, esto significa que el modelo más simple es mejor y la selección se detiene. Podemos correr la siguiente función y analizar los resultados.
+
+
+```{r seleccion1, echo=TRUE}
+modelo_forward <- step(modelo_nulo, scope = list(lower=modelo_nulo, upper=modelo_completo), direction = "forward")
+summary(modelo_forward)
+```
+
+El modelo completo elegido por el método automático Forward incluye a las variables: date (notar que al ser una variable categórica con cuatro niveles se generan tres variables dummy) y a cinco variables abióticas. De ellas, algunas no tienen un efecto signigicativo según el p-valor a pesar de haber reducido el AIC (veremos cómo mejorar este modelo con el método de selección manual). El R^2 ajustado es de 88,06%, con 11 grados de libertad.
+
+
+#### Selección secuencial _Backward_: del modelo completo, quitando variables explicativas
+
+La regresión Backward inicia con un modelo completo y en cada paso va quitando la variable explicativa menos significativa. Modificamos la fórmula del modelo Forward: ahora iniciamos con el modelo completo.
+
+
+```{r seleccion2, echo=TRUE}
+modelo_backward <- step(modelo_completo, scope = list(lower=modelo_nulo, upper=modelo_completo), direction = "backward")
+summary(modelo_backward)
+```
+El mejor modelo según el criterio AIC incluye la fecha _date_ y nueve variables abióticas, algunas no significativas según el p-valor. El R^2 ajustado es de 90,92%, con 7 grados de libertad.
+
+
+#### Selección _Stepwise_: combinación secuencial de Forward y Backward
+
+La regresión Stepwise inicia con un modelo nulo, en cada paso agrega una variable explicativa significativa (similar a Forward), pero revisa el modelo y si hay una variable no significativa la quita y repite el paso. 
+
+```{r seleccion3, echo=TRUE}
+modelo_stepwise <- step(modelo_nulo, scope = list(lower=modelo_nulo, upper=modelo_completo), direction = "both")
+summary(modelo_stepwise)
+```
+
+Comparen el modelo final según este método con los obtenidos con los métodos Forward y Backward.
+
 
 ### Selección manual de variables
 
+Vamos a realizar una selección manual similar a Forward: partimos de un modelo nulo y agregamos variables de a una. Los criterios para agregar o no una variable serán:
+
++ AIC: al agregar una variable, el AIC del modelo se reduce en 2 o más respecto al AIC del modelo más sencillo.
++ Significancia: el efecto de la variable es significativo, con un nivel de significancia del 5% (p < 0.05).
++ Redundancia: evitaremos agregar variables muy correlacionadas entre sí.
+
+Algunas razones por las cuales es recomendable hacer una selección manual: a) entenderemos mejor nuestros modelos; b) podemos ajustar uno o más modelos; c) podemos incluir más fácilmente las interacciones entre variables; d) podemos tener en cuenta múltiples criterios para elegir si agregamos o no variables al modelo; e) vamos a incluir consideraciones sobre la redundancia de variables, según lo que vimos en los análisis de regresiones múltiples.
+
 #### Modelos univariados
-Todos los modelos
-AIC
+En primer lugar, ajustamos todos los modelos univariados y los comparamos con el modelo nulo. El AIC del modelo nulo es:
+
+```{r aic, echo=TRUE}
+AIC(modelo_nulo)
+```
+Corremos todos los modelos nulos. En este caso no los guardamos (pero podríamos hacerlo), sólo buscamos el resumen.
+
+```{r modelouniv1, echo=TRUE}
+summary(lm(bio_total ~ date, data = datos_RH_est))
+summary(lm(bio_total ~ ph, data = datos_RH_est))
+summary(lm(bio_total ~ conductivity, data = datos_RH_est))
+summary(lm(bio_total ~ total_hardness, data = datos_RH_est))
+summary(lm(bio_total ~ doc, data = datos_RH_est))
+summary(lm(bio_total ~ din, data = datos_RH_est))
+summary(lm(bio_total ~ total_nitrogen, data = datos_RH_est))
+summary(lm(bio_total ~ drp, data = datos_RH_est))
+summary(lm(bio_total ~ total_phosphorus, data = datos_RH_est))
+summary(lm(bio_total ~ ag_440, data = datos_RH_est))
+summary(lm(bio_total ~ suva254, data = datos_RH_est))
+summary(lm(bio_total ~ ms_index, data = datos_RH_est))
+```
+
+Observar que el modelo univariado con _date_ es significativo: la biomasa bacteriana es distinta en diciembre de 2009 y febrero de 2010 (p < 0.05) respecto al nivel base de octubre de 2009. También son significativos los modelos de _conductivity_ y de _total_nitrogen_. Los R^2 de estos modelos son 0.4595, 0.2598 y 0.2455, respectivamente. Podemos obtener sus AIC son la función AIC como hicimos con el modelo nulo y vemos que sus AIC son 507.19, 511.84 y 512.22. En todos los casos, el AIC es menor al del modelo nulo. Haremos entonces dos ramas de modelos de regresión múltiple, uno iniciando con _date_ y otro iniciando con _conductivity_ (podríamos hacer también la rama de _total_nitrogen_).
 
 #### Modelos de regresión múltiple
-vif
+
+Partimos de los dos mejores modelos univariados y agregamos de a una a todas las variables.
+
+#### Iniciando con la fecha de muestreo
+
+```{r modelo1, echo=TRUE}
+modelo_fecha <- lm(bio_total ~ date, data = datos_RH_est) ## AIC 507.19
+```
+
+Los modelos bivariados son (analicemos los p-valores de las variables incluidas y luego el AIC de los modelos):
+
+```{r modelo1.2, echo=TRUE}
+summary(lm(bio_total ~ date + ph, data = datos_RH_est))
+summary(lm(bio_total ~ date + conductivity, data = datos_RH_est))
+summary(lm(bio_total ~ date + total_hardness, data = datos_RH_est)) ## AIC 502.45
+summary(lm(bio_total ~ date + doc, data = datos_RH_est))
+summary(lm(bio_total ~ date + din, data = datos_RH_est))
+summary(lm(bio_total ~ date + total_nitrogen, data = datos_RH_est)) ## AIC 498.5779
+summary(lm(bio_total ~ date + drp, data = datos_RH_est))
+summary(lm(bio_total ~ date + total_phosphorus, data = datos_RH_est))
+summary(lm(bio_total ~ date + ag_440, data = datos_RH_est))
+summary(lm(bio_total ~ date + suva254, data = datos_RH_est))
+summary(lm(bio_total ~ date + ms_index, data = datos_RH_est)) ## AIC 500.7191
+```
+
+Entre todos estos modelos, el mejor es el que incluye la fecha y el nitrógeno total, con AIC menor al modelo univariado. Vamos a analizar si hay una interacción significativa entre la fecha y el nitrógeno total, para lo cual reemplazamos el símbolo + por un *.
+
+```{r modelo1.2.int, echo=TRUE}
+summary(lm(bio_total ~ date * total_nitrogen, data = datos_RH_est))
+```
+
+Vemos que ninguno de los términos de la interacción es significativo.
+
+Podemos también realizar un análisis de la varianza para evaluar si los tres modelos ajustados difieren significativamente (y en ese caso, vale la pena quedarnos con un modelo más complejo).
 
 
-### Evaluación e interpretación del modelo final
-Evaluación de supuestos. Si no se cumplen, permutaciones
-interpretación
+```{r modelo1.2.anova, echo=TRUE}
+modelo_fecha2 <- lm(bio_total ~ date + total_nitrogen, data = datos_RH_est)
+anova(modelo_fecha, modelo_fecha2)
+```
 
+Ahora seguimos con modelos con tres variables explicativas. 
+
+```{r modelo1.3, echo=TRUE}
+summary(lm(bio_total ~ date + total_nitrogen + ph, data = datos_RH_est)) 
+summary(lm(bio_total ~ date + total_nitrogen + conductivity, data = datos_RH_est)) # AIC 492.7927
+summary(lm(bio_total ~ date + total_nitrogen + total_hardness, data = datos_RH_est)) 
+summary(lm(bio_total ~ date + total_nitrogen + doc, data = datos_RH_est)) 
+summary(lm(bio_total ~ date + total_nitrogen + din, data = datos_RH_est)) 
+summary(lm(bio_total ~ date + total_nitrogen + drp, data = datos_RH_est)) 
+summary(lm(bio_total ~ date + total_nitrogen + total_phosphorus, data = datos_RH_est)) 
+summary(lm(bio_total ~ date + total_nitrogen + ag_440, data = datos_RH_est)) 
+summary(lm(bio_total ~ date + total_nitrogen + suva254, data = datos_RH_est)) 
+summary(lm(bio_total ~ date + total_nitrogen + ms_index, data = datos_RH_est)) # AIC 491.3469
+```
+
+Hay dos modelos significativos, ambos con menor AIC que el modelo bivariado. Entre ellos, el AIC es muy similar (diferencias menores de 2) y el R² también. ¿Con qué modelo de regresión múltiple seguir?
+
+Si volvemos a los análisis de correlación vemos que el nitrógeno total está algo correlacionado con la conductividad (pero con rho relativamente bajo, de 0.48) mientras que no está significativamente correlacionado con ms_index. Ese puede ser un criterio para elegir un modelo (el que incluye ms_index). O bien, podemos elegir al modelo con conductivity porque el R^2 es mayor. Alternativamente, podemos seguir dos nuevas ramas con ambos modelos. O bien, ante dos modelos prácticamente equivalentes podemos escoger el que más sentido tenga de acuerdo a nuestro conocimiento biológico (o presentar ambos modelos y fundamentar cuál nos parece más adecaudo).
+
+Evaluemos estos modelos con las interacciones. En lugar de usar * (que implica analizar las variables separadas y la interacción), vamos a usar específicamente : para indicar qué interacciones queremos considerar.
+
+```{r modelo1.3.int, echo=TRUE}
+summary(lm(bio_total ~ date + total_nitrogen + conductivity, data = datos_RH_est)) # AIC 492.7927
+summary(lm(bio_total ~ date + total_nitrogen + conductivity + date:conductivity, data = datos_RH_est)) # NS
+summary(lm(bio_total ~ date + total_nitrogen + conductivity + total_nitrogen:conductivity, data = datos_RH_est))  # NS
+summary(lm(bio_total ~ date + total_nitrogen + conductivity + date:conductivity + total_nitrogen:conductivity, data = datos_RH_est))  # NS
+
+summary(lm(bio_total ~ date + total_nitrogen + ms_index, data = datos_RH_est)) # AIC 491.3469
+summary(lm(bio_total ~ date + total_nitrogen + ms_index + date:ms_index, data = datos_RH_est)) # NS
+summary(lm(bio_total ~ date + total_nitrogen + ms_index + total_nitrogen:ms_index, data = datos_RH_est))  # NS
+summary(lm(bio_total ~ date + total_nitrogen + ms_index + date:ms_index + total_nitrogen:ms_index, data = datos_RH_est)) # NS
+```
+
+Las interacciones no son significativas. Opto por continuar agregando variables a partir del modelo de _date + total_nitrogen + ms_index_ (pueden tomar otro criterio).
+
+Al probar todos los modelos con cuatro variables (pueden hacerlo), observamos que al añadir la conductividad hay un efecto significativo y el AIC disminuye. También llama la atención que los p-valores de las variables que ya habíamos incluido disminuyen.
+
+```{r modelo1.4, echo=TRUE}
+modelo_fecha4 <- lm(bio_total ~ date + total_nitrogen + ms_index + conductivity, data = datos_RH_est)
+summary(modelo_fecha4)
+AIC(modelo_fecha4)
+```
+
+Analizamos las interacciones y vemos que ninguna es significativa.
+
+Cuando hay muchas variables, puede haber efectos de colinealidad, que quizás no observamos en las correlaciones entre pares de variables. Un criterio sugerido por Zuur et al. 2010 en su artículo [A protocol por data exploration to avoid common statistical problems](https://besjournals.onlinelibrary.wiley.com/doi/10.1111/j.2041-210X.2009.00001.x) es calcular el valor **VIF (_Variance Inflation Factor_)** y sugiere quitar las variables con VIF > 3 (aunque señala que puede haber colinealidad con VIF > 2).  
+
+```{r car, echo=FALSE}
+library(car)
+```
+
+```{r modelo1.4.vif, echo=TRUE}
+modelo_fecha4 <- lm(bio_total ~ date + total_nitrogen + ms_index + conductivity, data = datos_RH_est)
+AIC(modelo_fecha4)
+vif(modelo_fecha4)
+```
+Si el criterio (fijado a priori) es que VIF debe ser menor a 3, entonces estamos en condiciones de dejar las cuatro variables respuestas.
+
+A continuación, probamos de agregar una quinta variable, pero ninguna tiene un efecto significativo adicional. Guardamos este modelo para continuar con el análisis de la otra rama. Ojo, nos falta evaluar los supuestos.
+
+El modelo **modelo_fecha4** presenta un R^2 ajustado de 85,6%, un AIC de 482.5878 y 13 grados de libertad. Si observamos los coeficientes estimados, interpretamos que la biomasa bacteriana disminuye en febrero 2010 y en abril de 2010, aumenta en lagunas con mayor nitrógeno total y con mayor conductividad, y disminuye en lagunas con mayor ms_index. Dado que las variables están estandarizadas, podemos comparar los coeficientes: el efecto de la fecha es mayor al de las demás variables; y el efecto de ms_index es menor al de las demás variables.
+
+
+#### Iniciando con la conductividad
+
+Iniciaremos a partir del modelo univariado de conductividad, agregando variables de a una por vez, evaluando también las interacciones y utilizando como criterios: AIC (disminución de AIC en 2 unidades), p-valores (menor a 0.05) y vif (menor a 3)..., es muy importante informar estos criterios en un artículo. En este caso, opto por no incluir la variable categórica _date_. Pueden repetir el paso a paso, aquí un resumen de los mejores modelos.
+
+
+```{r modelo2, echo=TRUE}
+#univariado
+summary(lm(bio_total ~ conductivity, data = datos_RH_est)) # AIC 511.8359
+
+#bivariados significativos
+summary(lm(bio_total ~ conductivity + ag_440, data = datos_RH_est)) # AIC 504.3061, R2_adj = 0.5133 
+summary(lm(bio_total ~ conductivity * ag_440, data = datos_RH_est)) # interacción NS
+summary(lm(bio_total ~ conductivity + ms_index, data = datos_RH_est)) # AIC 508.9108 , R2_adj = 0.5133 
+summary(lm(bio_total ~ conductivity * ms_index, data = datos_RH_est)) # interacción NS
+
+#No hay trivariados significativos 
+
+#modelo final seleccionado en esta rama
+modelo_conduct2 <- lm(bio_total ~ conductivity + ag_440, data = datos_RH_est)
+
+# Ojo. Las variables conductivity y ag440 están correlacionadas, mientras que conductivity y ms_index no.
+modelo_conduct2bis <- lm(bio_total ~ conductivity + ms_index, data = datos_RH_est)
+
+
+```
+
+El modelo final de esta rama *modelo_conduct2* presenta un R^2 ajustado de 51,33%, un AIC de 504.3061 y 17 grados de libertad. La biomasa bacteriana aumenta con la conductividad y disminuye con ag_440. Ojo: estas variables están algo correlacionadas entre sí (ver análisis de la primera parte). El *modelo_conduct2bis*  presenta un R^2 ajustado de 38.73%, un AIC de 508.9188 y 17 grados de libertad
+
+
+### Evaluación de supuestos
+
+Los supuestos se evalúan con un modelo final, ya ajustado. Lamentablemente, si los supuestos no se cumplen, el arduo trabajo que hicimos hasta ahora de seleccionar variables debe ser repetido con otros modelos o estructuras.
+
+El primer supuesto es el de normalidad de los residuos. Podemos ponerlo a prueba con el test de Shapiro-Wilks. Dado que p > 0.05, no rechazamos el supuesto de distribución normal. Si este supuesto se rechaza, podríamos probar (por ejemplo) realizando transformaciones a la variable respuesta.
+
+```{r shapiro_1, echo=TRUE}
+shapiro.test(residuals(modelo_fecha4))
+```
+
+```{r shapiro_2, echo=TRUE}
+shapiro.test(residuals(modelo_conduct2))
+```
+
+El segundo supuesto es el de heterocedasticidad. Lo podemos evaluar con el test de Breusch-Pagan. Dado que p > 0.05, no rechazamos el supuesto heterocedasticidad. Si este supuesto se rechaza, existen modelos que permiten incluir una estructura de varianzas particular.
+
+```{r lmtest, echo=FALSE}
+library(lmtest)
+```
+
+```{r bptest1, echo=TRUE}
+bptest(modelo_fecha4)
+```
+
+```{r bptest2, echo=TRUE}
+bptest(modelo_conduct2)
+```
+
+También podemos obtener algunos gráficos diagnósticos (teclar Enter para pasar de un gráfico al siguiente).
+
+```{r plot1, echo=FALSE}
+plot(modelo_fecha4)
+```
+
+```{r plot2, echo=FALSE}
+plot(modelo_conduct2)
+```
+
+Finalmente, si los supuestos se rechazan, una posible opción es realizar un test no paramétrico, como por ejemplo regresiones lineales por permutaciones.
 
 ## A modo de conclusión
+
+¿Cuál es el mejor modelo? El *modelo_fecha4* tiene mayor poder explicativo, pero incluye la fecha de muestreo (que quizás deberíamos incluir en otro tipo de modelo que considere que hay lagunas repetidas). Sin considerar la fecha de muestreo, un buen modelo es el *modelo_conduct2*: explica más del 50% de la variabilidad en un estudio no experimental, limnológico, a campo (aunque deberíamos discutir si estas variables están muy correlacionadas entre sí). En cualquier caso, el método de selección manual nos dio un conocimiento importante de nuestros datos y nos permitió evaluar las interacciones paso a paso. El procedimiento de selección de variables que vimos en esta Unidad puede ser aplicado a otros tipos de modelos lineales (GLM, GLMM, modelos con estructura de varianzas o modelos no paramétricos). 
+
+Como se señaló anteriormente, en este caso de estudio hay medidas repetidas, que podríamos (o deberíamos) considerar en el análisis, incluyendo factores aleatorios como por ejemplo la identidad de las lagunas. Además --y especialmente si tenemos un conjunto grande de cuerpos de agua muestreados--, podemos considerar modelos más complejos que incluyan un componente espacial: ¿la biomasa de las bacterias heterótrofas de las lagunas más cercanas se parece más entre sí?
+
+La mejor manera de entrenarse en este análisis es probando con datos propios. ¿El o los modelos que ajusté tienen sentido biológico?
+
