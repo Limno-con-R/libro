@@ -305,3 +305,5 @@ library(pairwiseAdonis)
 res.pos<- pairwise.adonis(dis.dist, condicion, sim.method = "euclidean", p.adjust.m = "bonferroni")
 res.pos
 ```
+
+_Nota:_ para instalar la librería _pairwiseAdonis_ desde el repositorio github del autor, seguir las instrucciones (de acuerdo al Sistema Operativo) del [repositorio](https://github.com/pmartinezarbizu/pairwiseAdonis).

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.7.24)  28 JUL 2023 09:55
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.7.24)  28 JUL 2023 10:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3848,17 +3848,17 @@ File: 05-multi2_files/figure-latex/unnamed-chunk-8-1.pdf Graphic file (type pdf)
 File: 05-multi2_files/figure-latex/unnamed-chunk-9-1.pdf Graphic file (type pdf)
 <use 05-multi2_files/figure-latex/unnamed-chunk-9-1.pdf>
 [144] [145] [146]
-Overfull \hbox (33.0pt too wide) in paragraph at lines 5786--5786
+Overfull \hbox (33.0pt too wide) in paragraph at lines 5788--5788
 []\TU/lmtt/m/n/10 ## Model: rda(formula = bio.trans ~ EC + a440, data = env, scale = TRUE)[] 
  []
 
 
-Overfull \hbox (33.0pt too wide) in paragraph at lines 5807--5807
+Overfull \hbox (33.0pt too wide) in paragraph at lines 5809--5809
 []\TU/lmtt/m/n/10 ## Model: rda(formula = bio.trans ~ EC + a440, data = env, scale = TRUE)[] 
  []
 
 
-Overfull \hbox (33.0pt too wide) in paragraph at lines 5828--5828
+Overfull \hbox (33.0pt too wide) in paragraph at lines 5830--5830
 []\TU/lmtt/m/n/10 ## Model: rda(formula = bio.trans ~ EC + a440, data = env, scale = TRUE)[] 
  []
 
@@ -3869,895 +3869,872 @@ File: 05-multi2_files/figure-latex/unnamed-chunk-19-1.pdf Graphic file (type pdf
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [150]
-Overfull \hbox (54.0pt too wide) in paragraph at lines 5974--5974
+Overfull \hbox (54.0pt too wide) in paragraph at lines 5976--5976
 []\TU/lmtt/m/n/10 ## capscale(formula = biomass ~ EC + a440 + pH, data = env, add = "lingoes")[] 
  []
 
 [151]
-Overfull \hbox (90.75pt too wide) in paragraph at lines 6014--6014
+Overfull \hbox (90.75pt too wide) in paragraph at lines 6016--6016
 []\TU/lmtt/m/n/10 ## Model: capscale(formula = biomass ~ EC + a440 + pH, data = env, add = "lingoes")[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 6036--6036
+Overfull \hbox (90.75pt too wide) in paragraph at lines 6038--6038
 []\TU/lmtt/m/n/10 ## Model: capscale(formula = biomass ~ EC + a440 + pH, data = env, add = "lingoes")[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 6058--6058
+Overfull \hbox (90.75pt too wide) in paragraph at lines 6060--6060
 []\TU/lmtt/m/n/10 ## Model: capscale(formula = biomass ~ EC + a440 + pH, data = env, add = "lingoes")[] 
  []
 
-[152] [153] [154]
-Overfull \hbox (12.0pt too wide) in paragraph at lines 6299--6299
-[]\TU/lmtt/m/n/10 ## dbrda(formula = biomass.dist ~ EC + a440, data = env, add = TRUE)[] 
+[152] [153] [154] [155] [156]
+Overfull \hbox (90.75pt too wide) in paragraph at lines 6398--6398
+[]\TU/lmtt/m/n/10 ## dbrda(formula = biomass.dist ~ EC + a440 + pH + TP, data = env,      add = TRUE)[] 
  []
 
-[155]
-Overfull \hbox (96.0pt too wide) in paragraph at lines 6299--6299
+[157]
+Overfull \hbox (96.0pt too wide) in paragraph at lines 6398--6398
 []\TU/lmtt/m/n/10 ## Eigenvalues, and their contribution to the Lingoes adjusted squared Bray distance[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 6299--6299
-[]\TU/lmtt/m/n/10 ##                       dbRDA1 dbRDA2   MDS1    MDS2    MDS3   MDS4   MDS5[] 
+Overfull \hbox (59.25pt too wide) in paragraph at lines 6398--6398
+[]\TU/lmtt/m/n/10 ##                       dbRDA1 dbRDA2  dbRDA3  dbRDA4   MDS1    MDS2    MDS3[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 6299--6299
-[]\TU/lmtt/m/n/10 ## Eigenvalue            0.8712 0.2181 0.5577 0.29135 0.22777 0.1574 0.1360[] 
+Overfull \hbox (59.25pt too wide) in paragraph at lines 6398--6398
+[]\TU/lmtt/m/n/10 ## Eigenvalue            0.9615 0.3178 0.12865 0.06912 0.4639 0.21720 0.17540[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 6299--6299
-[]\TU/lmtt/m/n/10 ## Proportion Explained  0.2895 0.0725 0.1853 0.09682 0.07569 0.0523 0.0452[] 
+Overfull \hbox (59.25pt too wide) in paragraph at lines 6398--6398
+[]\TU/lmtt/m/n/10 ## Proportion Explained  0.3195 0.1056 0.04275 0.02297 0.1542 0.07218 0.05829[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 6299--6299
-[]\TU/lmtt/m/n/10 ## Cumulative Proportion 0.2895 0.3620 0.5474 0.64419 0.71988 0.7722 0.8174[] 
+Overfull \hbox (59.25pt too wide) in paragraph at lines 6398--6398
+[]\TU/lmtt/m/n/10 ## Cumulative Proportion 0.3195 0.4251 0.46789 0.49086 0.6450 0.71721 0.77550[] 
  []
 
 
-Overfull \hbox (75.0pt too wide) in paragraph at lines 6299--6299
-[]\TU/lmtt/m/n/10 ##                          MDS6    MDS7    MDS8    MDS9   MDS10   MDS11   MDS12[] 
+Overfull \hbox (69.75pt too wide) in paragraph at lines 6398--6398
+[]\TU/lmtt/m/n/10 ##                         MDS4    MDS5    MDS6    MDS7    MDS8    MDS9   MDS10[] 
  []
 
 
-Overfull \hbox (75.0pt too wide) in paragraph at lines 6299--6299
-[]\TU/lmtt/m/n/10 ## Eigenvalue            0.09392 0.07799 0.06682 0.05467 0.05234 0.04506 0.04055[] 
+Overfull \hbox (69.75pt too wide) in paragraph at lines 6398--6398
+[]\TU/lmtt/m/n/10 ## Eigenvalue            0.1438 0.09592 0.07458 0.06662 0.05708 0.05113 0.04614[] 
  []
 
 
-Overfull \hbox (75.0pt too wide) in paragraph at lines 6299--6299
-[]\TU/lmtt/m/n/10 ## Proportion Explained  0.03121 0.02592 0.02221 0.01817 0.01739 0.01497 0.01347[] 
+Overfull \hbox (69.75pt too wide) in paragraph at lines 6398--6398
+[]\TU/lmtt/m/n/10 ## Proportion Explained  0.0478 0.03188 0.02479 0.02214 0.01897 0.01699 0.01533[] 
  []
 
 
-Overfull \hbox (75.0pt too wide) in paragraph at lines 6299--6299
-[]\TU/lmtt/m/n/10 ## Cumulative Proportion 0.84859 0.87451 0.89672 0.91488 0.93228 0.94725 0.96073[] 
+Overfull \hbox (69.75pt too wide) in paragraph at lines 6398--6398
+[]\TU/lmtt/m/n/10 ## Cumulative Proportion 0.8233 0.85517 0.87996 0.90210 0.92107 0.93806 0.95339[] 
  []
 
 
-Overfull \hbox (1.5pt too wide) in paragraph at lines 6299--6299
-[]\TU/lmtt/m/n/10 ##                         MDS13   MDS14   MDS15   MDS16     MDS17[] 
- []
-
-
-Overfull \hbox (1.5pt too wide) in paragraph at lines 6299--6299
-[]\TU/lmtt/m/n/10 ## Eigenvalue            0.03872 0.03572 0.03138 0.01186 0.0005022[] 
- []
-
-
-Overfull \hbox (1.5pt too wide) in paragraph at lines 6299--6299
-[]\TU/lmtt/m/n/10 ## Proportion Explained  0.01287 0.01187 0.01043 0.00394 0.0001669[] 
- []
-
-
-Overfull \hbox (1.5pt too wide) in paragraph at lines 6299--6299
-[]\TU/lmtt/m/n/10 ## Cumulative Proportion 0.97359 0.98546 0.99589 0.99983 1.0000000[] 
- []
-
-
-Overfull \hbox (12.0pt too wide) in paragraph at lines 6299--6299
+Overfull \hbox (12.0pt too wide) in paragraph at lines 6398--6398
 []\TU/lmtt/m/n/10 ## * Sites are unscaled: weighted dispersion equal on all dimensions[] 
  []
 
-[156]
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6299--6299
+[158]
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6398--6398
 []\TU/lmtt/m/n/10 ## Site constraints (linear combinations of constraining variables)[] 
  []
 
-[157]
+[159]
 
-LaTeX Warning: Reference `intro' on page 158 undefined on input line 6312.
+LaTeX Warning: Reference `intro' on page 160 undefined on input line 6411.
 
 
-LaTeX Warning: Reference `intro' on page 158 undefined on input line 6312.
+LaTeX Warning: Reference `intro' on page 160 undefined on input line 6411.
 
-[158] [159]
-Overfull \hbox (43.5pt too wide) in paragraph at lines 6408--6408
+[160] [161]
+Overfull \hbox (43.5pt too wide) in paragraph at lines 6507--6507
 []\TU/lmtt/m/n/10 ## Call: cca(formula = data_cca ~ Turb + DO + T + Cond + pH + Chl.a + TN +[] 
  []
 
 
-Overfull \hbox (69.75pt too wide) in paragraph at lines 6408--6408
+Overfull \hbox (69.75pt too wide) in paragraph at lines 6507--6507
 []\TU/lmtt/m/n/10 ##   CCA1   CCA2   CCA3   CCA4   CCA5   CCA6   CCA7   CCA8   CCA9  CCA10  CCA11[] 
  []
 
 
-Overfull \hbox (69.75pt too wide) in paragraph at lines 6408--6408
+Overfull \hbox (69.75pt too wide) in paragraph at lines 6507--6507
 []\TU/lmtt/m/n/10 ## 0.5366 0.3764 0.3502 0.2387 0.1981 0.1458 0.1356 0.1155 0.0908 0.0767 0.0517[] 
  []
 
 
-Overfull \hbox (243.0pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (243.0pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## cca(formula = data_cca ~ Turb + DO + T + Cond + pH + Chl.a +      TN + TP + SS + OM + IM + Alk, data = env.r)[] 
  []
 
-[160]
-Overfull \hbox (75.0pt too wide) in paragraph at lines 6637--6637
+[162]
+Overfull \hbox (75.0pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ##                          CCA1    CCA2    CCA3    CCA4    CCA5    CCA6    CCA7[] 
  []
 
 
-Overfull \hbox (75.0pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (75.0pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## Eigenvalue            0.53664 0.37637 0.35022 0.23869 0.19810 0.14584 0.13557[] 
  []
 
 
-Overfull \hbox (75.0pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (75.0pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## Proportion Explained  0.09463 0.06637 0.06176 0.04209 0.03493 0.02572 0.02391[] 
  []
 
 
-Overfull \hbox (75.0pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (75.0pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## Cumulative Proportion 0.09463 0.16100 0.22276 0.26485 0.29978 0.32550 0.34941[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (80.25pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ##                          CCA8    CCA9   CCA10    CCA11    CCA12     CA1    CA2[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (80.25pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## Eigenvalue            0.11545 0.09075 0.07672 0.051728 0.033583 0.40530 0.3675[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (80.25pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## Proportion Explained  0.02036 0.01600 0.01353 0.009122 0.005922 0.07147 0.0648[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (80.25pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## Cumulative Proportion 0.36976 0.38577 0.39930 0.408418 0.414340 0.48581 0.5506[] 
  []
 
 
-Overfull \hbox (75.0pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (75.0pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ##                           CA3     CA4     CA5     CA6     CA7     CA8     CA9[] 
  []
 
 
-Overfull \hbox (75.0pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (75.0pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## Eigenvalue            0.33257 0.27241 0.24336 0.20904 0.16698 0.15786 0.14827[] 
  []
 
 
-Overfull \hbox (75.0pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (75.0pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## Proportion Explained  0.05865 0.04804 0.04291 0.03686 0.02944 0.02784 0.02615[] 
  []
 
 
-Overfull \hbox (75.0pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (75.0pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## Cumulative Proportion 0.60926 0.65729 0.70021 0.73707 0.76651 0.79435 0.82050[] 
  []
 
 
-Overfull \hbox (75.0pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (75.0pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ##                          CA10    CA11    CA12    CA13    CA14    CA15    CA16[] 
  []
 
 
-Overfull \hbox (75.0pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (75.0pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## Eigenvalue            0.13252 0.12870 0.10553 0.09177 0.08762 0.08385 0.07123[] 
  []
 
 
-Overfull \hbox (75.0pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (75.0pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## Proportion Explained  0.02337 0.02269 0.01861 0.01618 0.01545 0.01479 0.01256[] 
  []
 
 
-Overfull \hbox (75.0pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (75.0pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## Cumulative Proportion 0.84386 0.86656 0.88517 0.90135 0.91680 0.93159 0.94415[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (48.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ##                          CA17     CA18     CA19     CA20    CA21    CA22[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (48.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## Eigenvalue            0.05733 0.052902 0.041940 0.034947 0.03425 0.02501[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (48.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## Proportion Explained  0.01011 0.009329 0.007396 0.006163 0.00604 0.00441[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (48.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## Cumulative Proportion 0.95426 0.963588 0.970984 0.977146 0.98319 0.98760[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (48.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ##                         CCA1   CCA2   CCA3   CCA4    CCA5    CCA6   CCA7[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (48.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## Eigenvalue            0.5366 0.3764 0.3502 0.2387 0.19810 0.14584 0.1356[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (48.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## Proportion Explained  0.2284 0.1602 0.1491 0.1016 0.08431 0.06207 0.0577[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (48.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## Cumulative Proportion 0.2284 0.3886 0.5376 0.6392 0.72352 0.78559 0.8433[] 
  []
 
-[161]
-Overfull \hbox (12.0pt too wide) in paragraph at lines 6637--6637
+[163]
+Overfull \hbox (12.0pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## * Sites are unscaled: weighted dispersion equal on all dimensions[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ##             CCA1      CCA2      CCA3     CCA4      CCA5     CCA6[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## otu_1  -0.403249 -0.955155  0.763847 -1.40800  0.749197 -0.91516[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## otu_2  -0.802117 -0.469852  0.256538 -0.05351  0.367509 -1.20707[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## otu_3  -0.249106 -0.263044  0.146922 -0.07675 -0.400698  0.01643[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## otu_4  -0.375787 -0.725437  0.006064  0.15550  0.435117  0.22965[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## otu_5  -1.000683 -0.690005  0.582915 -0.11725 -0.259836  0.56259[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## otu_6  -1.785162  0.840869  0.106715 -0.34910  0.466184 -0.94946[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## otu_7  -0.817495  0.732667 -0.250358  0.54115 -0.579294 -0.23965[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## otu_8  -0.067389 -0.809976 -0.190006 -0.29167 -0.570023  0.35885[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## otu_9  -0.242941 -0.469628 -0.892187  0.07382  0.170892 -0.06897[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## otu_10  0.549038  0.329635  0.316105 -0.46102  0.043947  0.12611[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## otu_11  0.522378 -0.471719  0.321634  0.52502 -0.585695  1.06369[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## otu_12  0.732276 -0.420509  0.362197  0.20898 -0.430340  0.59674[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## otu_13  0.425700  0.208830  0.313627 -0.12682  0.146167  0.17270[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## otu_14  1.041453  0.994741  0.357850  0.17837 -0.015604  0.15856[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## otu_15  0.986178  1.128844  0.923651 -0.24931  0.383242 -0.04810[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## otu_16  0.536141 -0.132200  0.267277 -0.27604 -0.073920  0.28362[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## otu_17  0.015017  0.278275  1.326819 -0.46991  0.459386 -0.54252[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## otu_18  0.486071 -0.158579  0.627933 -0.47796  0.320389 -0.28083[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## otu_19  0.101239 -0.687806 -0.693236 -0.15157  0.007127  0.32022[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## otu_20 -0.690556  0.287948 -0.158349  0.94271  1.286098  1.24778[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## otu_21 -0.297528  0.073599  0.348741  0.52100  0.646365 -0.08760[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## otu_22 -1.527500  0.343887 -0.227218  0.43527  1.378051  0.22051[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## otu_23 -0.439724  0.482016 -0.317722  0.63857 -0.017165 -0.99339[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## otu_24 -0.009932 -0.582498 -0.212126 -0.19477 -0.233910 -0.54177[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## otu_25  0.279766 -0.707598  0.099509 -0.61727  0.149779 -0.32265[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## otu_26 -0.287915 -0.785217  0.160233 -0.39889  0.891188 -0.13645[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## otu_27  0.058509 -0.884015 -0.318393 -0.02105  0.380620  0.35233[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## otu_28 -0.269128  0.120909 -0.158513 -0.24697 -0.016550 -0.14433[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## otu_29 -0.564916  0.155731 -0.389144  0.13397 -0.068322 -0.24544[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## otu_30 -0.172715  0.790504  0.580147  0.11936 -0.236480  0.22945[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## otu_31 -0.150320 -0.371168 -0.917728  0.45088  0.195741  0.03331[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## otu_32 -0.048324  0.002044 -0.466621  0.63247 -0.042630 -1.05791[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## otu_33 -1.992309  2.022882 -1.943319 -1.74227 -0.031000  0.56095[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## otu_34  0.561034  0.579849  0.158790 -0.26669  0.599610 -0.60735[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## otu_35  0.453956 -0.287475  0.271138 -0.36441  0.175697  0.07431[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## otu_36 -0.514859  0.299528 -0.126874  1.43021  0.507622 -0.25276[] 
  []
 
-
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6637--6637
+[164]
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## otu_37  0.054169 -1.016254 -0.180183  0.02552  0.675691  0.04312[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## otu_38 -0.385252 -0.020055 -0.530828  0.59703  0.737244 -0.14189[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## otu_39 -0.354540  0.394670 -0.060948 -0.00325  0.162600 -0.45938[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## otu_40 -0.283637  0.209192 -0.400436  0.61968  0.741545 -0.07761[] 
  []
 
-[162]
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6637--6637
+
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## otu_41  0.562247  0.204309  0.426973 -0.42377  0.544602 -0.51472[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## otu_42  1.036005  1.005882  0.323829  0.86793  0.056946 -0.82951[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## otu_43  0.489902  0.583573  0.200813  0.27384 -0.173743  0.01413[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## otu_44  0.313163 -0.718301  0.130694 -0.66577  0.420362 -0.36566[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## otu_45 -0.292266 -0.166925 -0.343672  0.23232 -0.416471  0.01441[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## otu_46  0.979977  0.881874  0.439167 -0.41424  0.236389  0.17093[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## otu_47  0.009391 -0.076228 -0.596509  0.39290  0.032468 -0.77207[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## otu_48  0.335868 -0.581428  0.158930 -1.01640  0.308862 -0.26091[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## otu_49 -0.321809 -0.078012 -0.209954  0.55103 -0.293267 -0.66216[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## otu_50  0.211536 -0.919157 -0.006439 -0.67871  0.142491 -0.09779[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## otu_51  0.135106 -0.917477  0.096837  0.09523 -0.776378  0.82080[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## otu_52  0.098428 -1.089263  0.083656 -0.53499 -0.086324 -0.14263[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## otu_53 -0.281993 -0.377860  0.144662 -0.70469 -0.037245 -0.17924[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## otu_54 -0.067520 -0.548279 -0.145160  0.40939  0.481432  0.27200[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## otu_55 -0.435988 -0.512198 -0.301248  0.48363 -0.896383  0.43581[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## otu_56 -0.523627 -0.280158 -0.805672  2.22615  4.115503  2.20437[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## otu_57 -0.539141  0.827100 -0.093621  0.76073  0.019996 -0.17229[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6637--6637
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## otu_58 -4.211443 -0.016031  3.130961  0.06535 -0.052594  0.19969[] 
  []
 
-[163]
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6637--6637
+[165]
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6736--6736
 []\TU/lmtt/m/n/10 ## Site constraints (linear combinations of constraining variables)[] 
  []
 
-[164] [165]
+[166] [167]
 File: 05-multi2_files/figure-latex/unnamed-chunk-35-1.pdf Graphic file (type pdf)
 <use 05-multi2_files/figure-latex/unnamed-chunk-35-1.pdf>
 File: 05-multi2_files/figure-latex/unnamed-chunk-36-1.pdf Graphic file (type pdf)
 <use 05-multi2_files/figure-latex/unnamed-chunk-36-1.pdf>
-
-Underfull \vbox (badness 1377) has occurred while \output is active []
-
-[166]
+[168]
 File: 05-multi2_files/figure-latex/unnamed-chunk-37-1.pdf Graphic file (type pdf)
 <use 05-multi2_files/figure-latex/unnamed-chunk-37-1.pdf>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[167]
-Overfull \hbox (253.5pt too wide) in paragraph at lines 6705--6705
+[169]
+Overfull \hbox (253.5pt too wide) in paragraph at lines 6804--6804
 []\TU/lmtt/m/n/10 ## Model: cca(formula = data_cca ~ Turb + DO + T + Cond + pH + Chl.a + TN + TP + SS + OM + IM + Alk, data = env.r)[] 
  []
 
-[168]
-Overfull \hbox (253.5pt too wide) in paragraph at lines 6736--6736
+[170]
+Overfull \hbox (253.5pt too wide) in paragraph at lines 6835--6835
 []\TU/lmtt/m/n/10 ## Model: cca(formula = data_cca ~ Turb + DO + T + Cond + pH + Chl.a + TN + TP + SS + OM + IM + Alk, data = env.r)[] 
  []
 
-[169] [170] [171] [172]
-Overfull \hbox (75.0pt too wide) in paragraph at lines 6917--6917
+[171] [172] [173]
+Overfull \hbox (75.0pt too wide) in paragraph at lines 6984--6984
 []\TU/lmtt/m/n/10 ##         Turb           DO            T         Cond           pH        Chl.a[] 
  []
 
 
-Overfull \hbox (75.0pt too wide) in paragraph at lines 6917--6917
+Overfull \hbox (75.0pt too wide) in paragraph at lines 6984--6984
 []\TU/lmtt/m/n/10 ## 1.624592e+01 1.675050e+00 1.726303e+00 3.892686e+00 1.846872e+00 5.074104e+00[] 
  []
 
 
-Overfull \hbox (75.0pt too wide) in paragraph at lines 6917--6917
+Overfull \hbox (75.0pt too wide) in paragraph at lines 6984--6984
 []\TU/lmtt/m/n/10 ##           TN           TP           SS           OM           IM          Alk[] 
  []
 
 
-Overfull \hbox (75.0pt too wide) in paragraph at lines 6917--6917
+Overfull \hbox (75.0pt too wide) in paragraph at lines 6984--6984
 []\TU/lmtt/m/n/10 ## 2.052634e+00 5.642662e+00 4.859386e+08 5.514569e+07 3.413327e+08 3.391515e+00[] 
  []
 
-[173] [174]
+[174] [175] [176
+
+]
 Chapter 6.
 
-Package natbib Warning: Citation `cabrera2023' on page 175 undefined on input line 6985.
+Package natbib Warning: Citation `cabrera2023' on page 177 undefined on input line 7052.
 
 
-Package natbib Warning: Citation `capeletti2019' on page 175 undefined on input line 6996.
+Package natbib Warning: Citation `capeletti2019' on page 177 undefined on input line 7063.
 
-[175
-
-] [176]
-Overfull \hbox (164.25pt too wide) in paragraph at lines 7056--7056
+[177] [178]
+Overfull \hbox (164.25pt too wide) in paragraph at lines 7123--7123
 []\TU/lmtt/m/n/10 ## The word ampullaridae was not found in internal Family word database. Please check that entry.[] 
  []
 
 
-Overfull \hbox (43.5pt too wide) in paragraph at lines 7060--7060
+Overfull \hbox (43.5pt too wide) in paragraph at lines 7127--7127
 []\TU/lmtt/m/n/10 ## The autocorrect system replace the word ampullaridae for Ampullariidae.[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 7082--7082
+Overfull \hbox (80.25pt too wide) in paragraph at lines 7149--7149
 []\TU/lmtt/m/n/10 ##     Class   Order       Family    Subfamily       Tribe          Genus Species[] 
  []
 
 
-Overfull \hbox (38.25pt too wide) in paragraph at lines 7082--7082
+Overfull \hbox (38.25pt too wide) in paragraph at lines 7149--7149
 []\TU/lmtt/m/n/10 ## 1 Insecta Diptera Chironomidae Chironominae Tanytarsini Paratanytarsus[] 
  []
 
 
 Overfull \hbox (81.8623pt too wide) has occurred while \output is active
-\TU/lmr/m/sl/10 6.5.  CARGAR DATOS DE DENSIDAD DE MACROINVERTEBRADOS USANDO \TU/lmr/m/n/10 METRIX 177
+\TU/lmr/m/sl/10 6.5.  CARGAR DATOS DE DENSIDAD DE MACROINVERTEBRADOS USANDO \TU/lmr/m/n/10 METRIX 179
  []
 
-[177] [178]
-Overfull \hbox (85.5pt too wide) in paragraph at lines 7185--7185
+[179] [180]
+Overfull \hbox (85.5pt too wide) in paragraph at lines 7252--7252
 []\TU/lmtt/m/n/10 ##                 P1     P2     P3     P4     P5     P6    P7     P8    P9    P10[] 
  []
 
 
-Overfull \hbox (85.5pt too wide) in paragraph at lines 7185--7185
+Overfull \hbox (85.5pt too wide) in paragraph at lines 7252--7252
 []\TU/lmtt/m/n/10 ## r_oligochir 0.0066 0.0054 0.0278 0.6667 0.0357 0.0085 0.000 0.0313 0.100 3.3333[] 
  []
 
 
-Overfull \hbox (85.5pt too wide) in paragraph at lines 7185--7185
+Overfull \hbox (85.5pt too wide) in paragraph at lines 7252--7252
 []\TU/lmtt/m/n/10 ## r_oligoset  0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.000 0.0000 0.000 0.0000[] 
  []
 
 
-Overfull \hbox (85.5pt too wide) in paragraph at lines 7185--7185
+Overfull \hbox (85.5pt too wide) in paragraph at lines 7252--7252
 []\TU/lmtt/m/n/10 ## r_tanychir  0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.000 0.0000 0.000 0.0000[] 
  []
 
 
-Overfull \hbox (85.5pt too wide) in paragraph at lines 7185--7185
+Overfull \hbox (85.5pt too wide) in paragraph at lines 7252--7252
 []\TU/lmtt/m/n/10 ## den_t_lhoff 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.000 0.0000 0.000 0.0000[] 
  []
 
 
-Overfull \hbox (85.5pt too wide) in paragraph at lines 7185--7185
+Overfull \hbox (85.5pt too wide) in paragraph at lines 7252--7252
 []\TU/lmtt/m/n/10 ## den_t_bothr 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.000 0.0000 0.000 0.0000[] 
  []
 
 
-Overfull \hbox (85.5pt too wide) in paragraph at lines 7185--7185
+Overfull \hbox (85.5pt too wide) in paragraph at lines 7252--7252
 []\TU/lmtt/m/n/10 ## den_t_tubi  0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.000 0.0000 0.000 0.0000[] 
  []
 
 
-Overfull \hbox (85.5pt too wide) in paragraph at lines 7185--7185
+Overfull \hbox (85.5pt too wide) in paragraph at lines 7252--7252
 []\TU/lmtt/m/n/10 ## den_t_dero  0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.000 0.0000 0.000 0.0000[] 
  []
 
 
-Overfull \hbox (85.5pt too wide) in paragraph at lines 7185--7185
+Overfull \hbox (85.5pt too wide) in paragraph at lines 7252--7252
 []\TU/lmtt/m/n/10 ## den_t_prist 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.000 0.0000 0.000 0.0000[] 
  []
 
 
-Overfull \hbox (85.5pt too wide) in paragraph at lines 7185--7185
+Overfull \hbox (85.5pt too wide) in paragraph at lines 7252--7252
 []\TU/lmtt/m/n/10 ## den_t_chiro 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.000 0.0000 0.000 0.0000[] 
  []
 
 
-Overfull \hbox (85.5pt too wide) in paragraph at lines 7185--7185
+Overfull \hbox (85.5pt too wide) in paragraph at lines 7252--7252
 []\TU/lmtt/m/n/10 ## den_t_hele  0.5740 0.5740 0.5740 0.5740 0.5740 0.5740 0.574 0.5740 0.574 0.5740[] 
  []
 
-[179]
+[181]
 
-Package natbib Warning: Citation `armitage1983' on page 180 undefined on input line 7201.
-
-
-Package natbib Warning: Citation `armitage1983' on page 180 undefined on input line 7201.
+Package natbib Warning: Citation `armitage1983' on page 182 undefined on input line 7268.
 
 
-Package natbib Warning: Citation `alba1988' on page 180 undefined on input line 7201.
+Package natbib Warning: Citation `armitage1983' on page 182 undefined on input line 7268.
 
 
-Package natbib Warning: Citation `loyola2000' on page 180 undefined on input line 7201.
+Package natbib Warning: Citation `alba1988' on page 182 undefined on input line 7268.
 
 
-Package natbib Warning: Citation `rodrigues1999' on page 180 undefined on input line 7207.
+Package natbib Warning: Citation `loyola2000' on page 182 undefined on input line 7268.
 
 
-Package natbib Warning: Citation `kuhlmann2012' on page 180 undefined on input line 7211.
+Package natbib Warning: Citation `rodrigues1999' on page 182 undefined on input line 7274.
 
-[180]
-Overfull \hbox (43.5pt too wide) in paragraph at lines 7263--7263
+
+Package natbib Warning: Citation `kuhlmann2012' on page 182 undefined on input line 7278.
+
+[182]
+Overfull \hbox (43.5pt too wide) in paragraph at lines 7330--7330
 []\TU/lmtt/m/n/10 ##                                P1                 P2                 P3[] 
  []
 
 
-Overfull \hbox (43.5pt too wide) in paragraph at lines 7263--7263
+Overfull \hbox (43.5pt too wide) in paragraph at lines 7330--7330
 []\TU/lmtt/m/n/10 ## ind_bmwp_class Class VII Very Bad Class VII Very Bad Class VII Very Bad[] 
  []
 
 
-Overfull \hbox (43.5pt too wide) in paragraph at lines 7263--7263
+Overfull \hbox (43.5pt too wide) in paragraph at lines 7330--7330
 []\TU/lmtt/m/n/10 ## ind_aspt_class       Class VI Bad Class VII Very Bad       Class VI Bad[] 
  []
 
 
-Overfull \hbox (43.5pt too wide) in paragraph at lines 7263--7263
+Overfull \hbox (43.5pt too wide) in paragraph at lines 7330--7330
 []\TU/lmtt/m/n/10 ##                                P4                 P5                 P6[] 
  []
 
 
-Overfull \hbox (43.5pt too wide) in paragraph at lines 7263--7263
+Overfull \hbox (43.5pt too wide) in paragraph at lines 7330--7330
 []\TU/lmtt/m/n/10 ## ind_bmwp_class Class VII Very Bad Class VII Very Bad Class VII Very Bad[] 
  []
 
 
-Overfull \hbox (43.5pt too wide) in paragraph at lines 7263--7263
+Overfull \hbox (43.5pt too wide) in paragraph at lines 7330--7330
 []\TU/lmtt/m/n/10 ## ind_aspt_class Class VII Very Bad       Class VI Bad       Class VI Bad[] 
  []
 
 
-Overfull \hbox (43.5pt too wide) in paragraph at lines 7263--7263
+Overfull \hbox (43.5pt too wide) in paragraph at lines 7330--7330
 []\TU/lmtt/m/n/10 ##                                P7                 P8                 P9[] 
  []
 
 
-Overfull \hbox (43.5pt too wide) in paragraph at lines 7263--7263
+Overfull \hbox (43.5pt too wide) in paragraph at lines 7330--7330
 []\TU/lmtt/m/n/10 ## ind_bmwp_class Class VII Very Bad Class VII Very Bad Class VII Very Bad[] 
  []
 
 
-Overfull \hbox (43.5pt too wide) in paragraph at lines 7263--7263
+Overfull \hbox (43.5pt too wide) in paragraph at lines 7330--7330
 []\TU/lmtt/m/n/10 ## ind_aspt_class   Class V Moderate       Class VI Bad Class VII Very Bad[] 
  []
 
 
-Overfull \hbox (17.25pt too wide) in paragraph at lines 7286--7286
+Overfull \hbox (17.25pt too wide) in paragraph at lines 7353--7353
 []\TU/lmtt/m/n/10 ##                  P1 P2 P3 P4       P5 P6 P7       P8   P9      P10[] 
  []
 
 
-Overfull \hbox (17.25pt too wide) in paragraph at lines 7286--7286
+Overfull \hbox (17.25pt too wide) in paragraph at lines 7353--7353
 []\TU/lmtt/m/n/10 ## ind_icbrio 4.333333  4  4  4 3.666667  4  6 3.666667 2.75 4.333333[] 
  []
 
-[181] [182]
+[183] [184]
 Chapter 7.
-[183
+[185
 
 ]
 
-Package natbib Warning: Citation `nicolosigelis2020' on page 184 undefined on input line 7328.
+Package natbib Warning: Citation `nicolosigelis2020' on page 186 undefined on input line 7395.
 
 
-LaTeX Warning: Reference `intro' on page 184 undefined on input line 7333.
+LaTeX Warning: Reference `intro' on page 186 undefined on input line 7400.
 
 
-Package natbib Warning: Citation `nicolosigelis2022' on page 184 undefined on input line 7340.
+Package natbib Warning: Citation `nicolosigelis2022' on page 186 undefined on input line 7407.
 
 
-LaTeX Warning: Reference `intro' on page 184 undefined on input line 7340.
+LaTeX Warning: Reference `intro' on page 186 undefined on input line 7407.
 
-[184]
+[186]
 Missing character: There is no ✔ (U+2714) in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no ️ (U+FE0F) in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no 🚫 (U+1F6AB) in font [lmroman10-regular]:mapping=tex-text;!
 
-Overfull \hbox (38.25pt too wide) in paragraph at lines 7393--7393
+Overfull \hbox (38.25pt too wide) in paragraph at lines 7460--7460
 []\TU/lmtt/m/n/10 ##   X                        species S1_LI1_DAY0 S1_LI2_DAY0 S1_LI3_DAY0[] 
  []
 
 
-Overfull \hbox (38.25pt too wide) in paragraph at lines 7393--7393
+Overfull \hbox (38.25pt too wide) in paragraph at lines 7460--7460
 []\TU/lmtt/m/n/10 ## 1 1   Achnanthidium minutissimum             0           0           0[] 
  []
 
 
-Overfull \hbox (38.25pt too wide) in paragraph at lines 7393--7393
+Overfull \hbox (38.25pt too wide) in paragraph at lines 7460--7460
 []\TU/lmtt/m/n/10 ## 2 2 Achnanthes exigua var. exigua            0           0           0[] 
  []
 
 
-Overfull \hbox (38.25pt too wide) in paragraph at lines 7393--7393
+Overfull \hbox (38.25pt too wide) in paragraph at lines 7460--7460
 []\TU/lmtt/m/n/10 ## 3 3               Amphora libyca             0           0           0[] 
  []
 
 
-Overfull \hbox (38.25pt too wide) in paragraph at lines 7393--7393
+Overfull \hbox (38.25pt too wide) in paragraph at lines 7460--7460
 []\TU/lmtt/m/n/10 ## 4 4     Anomoeoneis sphaerophora             0           0           0[] 
  []
 
 
-Overfull \hbox (38.25pt too wide) in paragraph at lines 7393--7393
+Overfull \hbox (38.25pt too wide) in paragraph at lines 7460--7460
 []\TU/lmtt/m/n/10 ## 5 5            Craticula ambigua             0           0           1[] 
  []
 
 
-Overfull \hbox (38.25pt too wide) in paragraph at lines 7393--7393
+Overfull \hbox (38.25pt too wide) in paragraph at lines 7460--7460
 []\TU/lmtt/m/n/10 ## 6 6            Caloneis bacillum             0           0           0[] 
  []
 
-[185]
+[187]
 File: ./images/results_diathor.png Graphic file (type bmp)
 <./images/results_diathor.png>
-[186] [187]
-Underfull \hbox (badness 1033) in paragraph at lines 7503--7503
+[188] [189]
+Underfull \hbox (badness 1033) in paragraph at lines 7570--7570
 \TU/lmr/m/n/10 formatos, no es necesario poner las especies en itálicas o
  []
 
-[188]
-Underfull \hbox (badness 10000) in paragraph at lines 7515--7516
+[190]
+Underfull \hbox (badness 10000) in paragraph at lines 7582--7583
 []\TU/lmtt/m/n/10 *cannot open file []nuestro_archivo.csv[]: No such file or
  []
 
-[189]
-Underfull \hbox (badness 1102) in paragraph at lines 7605--7606
+[191]
+Underfull \hbox (badness 1102) in paragraph at lines 7672--7673
 []\TU/lmr/m/n/10 Rimet F. & Bouchez A., 2012. Life-forms, cell-sizes and ecolog-
  []
 
 
-Underfull \hbox (badness 1259) in paragraph at lines 7605--7606
+Underfull \hbox (badness 1259) in paragraph at lines 7672--7673
 \TU/lmr/m/n/10 ical guilds of diatoms in European rivers. Knowledge and man-
  []
 
 
-Underfull \hbox (badness 2512) in paragraph at lines 7605--7606
+Underfull \hbox (badness 2512) in paragraph at lines 7672--7673
 \TU/lmr/m/n/10 agement of aquatic ecosystems, 406: 1-14. []$[][][][][] [] [] [] [][][] [] [][][][] [][]
  []
 
 
-Underfull \hbox (badness 1102) in paragraph at lines 7613--7614
+Underfull \hbox (badness 1102) in paragraph at lines 7680--7681
 []\TU/lmr/m/n/10 Rimet F. & Bouchez A., 2012. Life-forms, cell-sizes and ecolog-
  []
 
 
-Underfull \hbox (badness 1259) in paragraph at lines 7613--7614
+Underfull \hbox (badness 1259) in paragraph at lines 7680--7681
 \TU/lmr/m/n/10 ical guilds of diatoms in European rivers. Knowledge and man-
  []
 
 
-Underfull \hbox (badness 2512) in paragraph at lines 7613--7614
+Underfull \hbox (badness 2512) in paragraph at lines 7680--7681
 \TU/lmr/m/n/10 agement of aquatic ecosystems, 406: 1-14. []$[][][][][] [] [] [] [][][] [] [][][][] [][]
  []
 
 
-Underfull \hbox (badness 2165) in paragraph at lines 7621--7622
+Underfull \hbox (badness 2165) in paragraph at lines 7688--7689
 \TU/lmr/m/n/10 82, 183-188. []$[][][][][] [] [] [] [][][] [] [][][][][][][][][][][][][] [] [][][] [] [][][][][][][] [] [][][][][][][] [] [][][] [] [][][] []
  []
 
-[190]
+[192]
 
-Package natbib Warning: Citation `vegan' on page 191 undefined on input line 7632.
+Package natbib Warning: Citation `vegan' on page 193 undefined on input line 7699.
 
-[191] [192]
+[193] [194]
 
-Package natbib Warning: Citation `sathicq2017' on page 193 undefined on input line 7712.
-
-
-LaTeX Warning: Reference `intro' on page 193 undefined on input line 7717.
+Package natbib Warning: Citation `sathicq2017' on page 195 undefined on input line 7779.
 
 
-Package natbib Warning: Citation `sathicq2020' on page 193 undefined on input line 7726.
+LaTeX Warning: Reference `intro' on page 195 undefined on input line 7784.
 
 
-LaTeX Warning: Reference `intro' on page 193 undefined on input line 7726.
+Package natbib Warning: Citation `sathicq2020' on page 195 undefined on input line 7793.
 
-[193] [194] [195]
+
+LaTeX Warning: Reference `intro' on page 195 undefined on input line 7793.
+
+[195] [196] [197]
 File: ./images/plot_optimosPrime.png Graphic file (type bmp)
 <./images/plot_optimosPrime.png>
-[196]
+[198]
 No file bookdown-LimnoR.bbl.
 
 Package natbib Warning: There were undefined citations.
 
-[197] (./bookdown-LimnoR.aux)
+[199] (./bookdown-LimnoR.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-06-30>
@@ -4786,4 +4763,4 @@ Here is how much of TeX's memory you used:
  14 hyphenation exceptions out of 8191
  90i,8n,120p,1687b,540s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on bookdown-LimnoR.pdf (197 pages).
+Output written on bookdown-LimnoR.pdf (199 pages).

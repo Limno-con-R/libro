@@ -192,7 +192,7 @@ tol_metrics(dataset = datos_cargados, store = FALSE, dec_c = ".", verbose = TRUE
 ```
 
 La relación de la densidad de Oligochaeta/Chironomidae nos permitiría diferenciar los sitios de acuerdo a su gradiente de impacto.
-Esta métrica disminuye a medida que aumenta ladegradación, por lo tanto los sitios con los valores más altos serían los más contaminados a diferencia de los sitios con los valores más bajo los cuales presentarían condiciones de referencia.
+Esta métrica aumenta a medida que aumenta la degradación, por lo tanto los sitios con los valores más altos serían los más contaminados a diferencia de los sitios con los valores más bajo los cuales presentarían condiciones de referencia.
 La métrica Heleobia/DT presenta el mismo valor en todos los sitios por lo tanto no nos estaría diferenciando los sitios de acuerdo a su gradiente de impacto antrópico.
 
 ## Cálculo de indices bióticos

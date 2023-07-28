@@ -687,3 +687,5 @@ res.pos
 ##             pairs Df SumsOfSqs  F.Model         R2 p.value p.adjusted sig
 ## 1 Clara vs Turbia  1  14.03004 2.046231 0.04008584   0.048      0.048   .
 ```
+
+_Nota:_ para instalar la librería _pairwiseAdonis_ desde el repositorio github del autor, seguir las instrucciones (de acuerdo al Sistema Operativo) del [repositorio](https://github.com/pmartinezarbizu/pairwiseAdonis).

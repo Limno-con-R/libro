@@ -247,7 +247,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.2.3" data-path="diathor.html"><a href="diathor.html#manos-a-la-obra-2"><i class="fa fa-check"></i><b>7.2.3</b> ¡Manos a la obra!</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 </ul>
 
       </nav>
@@ -534,7 +533,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## TDON   0.3729687 6.466085e-03
 ## SPM   -0.5178939 8.417748e-05
 ## NTU   -0.6197587 9.622302e-07</code></pre>
-<p>Estos resultados nos permiten asociar variables a los distintos ejes/componentes. Se puede inclusive establecer un criterio ya que usa coeficientes de correlación. Para este ejemplo, se puede usar las variables que tienen una correlación &gt;0.6 con el eje. Para el componente principal 1, que explica (32.2%), las variables asociadas a este componente son DOC, TP, TDP, conductivity y SPM. Para el componente principal 2 (27.3%), está asociado a POM, clorofila a y NTU (salinidad). Finalmente, el componente principal 3 (10.3%) estaría asociado de manera negativa solo a la salinidad (NTU). El signo de la correlación indica la dirección de la correlación.</p>
+<p>Estos resultados nos permiten asociar variables a los distintos ejes/componentes. Se puede inclusive establecer un criterio ya que usa coeficientes de correlación. Para este ejemplo, se puede usar las variables que tienen una correlación &gt;0.6 con el eje. Para el componente principal 1, que explica (32.2%), las variables asociadas a este componente son DOC, TP, TDP, conductivity y SPM. Para el componente principal 2 (27.3%), está asociado a POM, clorofila a y NTU (turbidez). Finalmente, el componente principal 3 (10.3%) estaría asociado de manera negativa solo a la salinidad (NTU). El signo de la correlación indica la dirección de la correlación.</p>
 </div>
 </div>
 <div id="crear-una-condición-para-colorear-los-individuos" class="section level3 hasAnchor" number="4.1.4">
@@ -737,6 +736,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb49-2"><a href="multi1.html#cb49-2" aria-hidden="true" tabindex="-1"></a>res.pos</span></code></pre></div>
 <pre><code>##             pairs Df SumsOfSqs  F.Model         R2 p.value p.adjusted sig
 ## 1 Clara vs Turbia  1  14.03004 2.046231 0.04008584   0.048      0.048   .</code></pre>
+<p><em>Nota:</em> para instalar la librería <em>pairwiseAdonis</em> desde el repositorio github del autor, seguir las instrucciones (de acuerdo al Sistema Operativo) del <a href="https://github.com/pmartinezarbizu/pairwiseAdonis">repositorio</a>.</p>
 
 </div>
 </div>
