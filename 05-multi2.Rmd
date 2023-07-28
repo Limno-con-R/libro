@@ -108,7 +108,7 @@ env <- ambiental[,c(4:5,7:15)] # saco una de ellas: "DO" (oxígeno disuelto) ya 
 Hasta acá, hemos (i) verificado el tipo de respuesta en nuestros datos de composición de especie para elegir el modelo adecuado y (ii) preparamos los datos de composición y de datos ambientales para modelar.
 Además del tipo de respuesta, otro requisito necesario es la "multinormalidad" de los datos de la matriz ambiental. En el siguiente paso, lo que vamos a hacer es chequear que este supuesto se cumpla:
 
-```{r echo=FALSE}
+```{r echo=TRUE}
 #Chequeo de normalidad de los datos en la amtriz ambiental
 library(MVN)
 mvn.env <- mvn(env, mvnTest = "mardia")

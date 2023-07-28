@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Unidad 5 Análisis multivariados II | bookdown-LimnoR</title>
   <meta name="description" content="" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Unidad 5 Análisis multivariados II | bookdown-LimnoR" />
   <meta property="og:type" content="book" />
-  
   
   
   
@@ -31,8 +30,8 @@
   
 <link rel="prev" href="multi1.html"/>
 <link rel="next" href="metrix.html"/>
-<script src="libs/header-attrs-2.10/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -48,7 +47,9 @@
 
 
 
-
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -89,7 +90,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -102,7 +103,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -114,6 +115,11 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -137,7 +143,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#instalación"><i class="fa fa-check"></i><b>1.1</b> Instalación</a></li>
 <li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#rstudio"><i class="fa fa-check"></i><b>1.2</b> RStudio</a></li>
-<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#a-trabajar"><i class="fa fa-check"></i><b>1.3</b> A trabajar!</a>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#a-trabajar"><i class="fa fa-check"></i><b>1.3</b> ¡A trabajar!</a>
 <ul>
 <li class="chapter" data-level="1.3.1" data-path="intro.html"><a href="intro.html#crear-un-proyecto"><i class="fa fa-check"></i><b>1.3.1</b> Crear un <strong>Proyecto</strong></a></li>
 <li class="chapter" data-level="1.3.2" data-path="intro.html"><a href="intro.html#crear-un-r-script"><i class="fa fa-check"></i><b>1.3.2</b> Crear un <strong>R Script</strong></a></li>
@@ -148,29 +154,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.3.7" data-path="intro.html"><a href="intro.html#recursos-extra-recomendados"><i class="fa fa-check"></i><b>1.3.7</b> Recursos extra recomendados</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="regmul.html"><a href="regmul.html"><i class="fa fa-check"></i><b>2</b> Correlaciones y regresión múltiple</a>
+<li class="chapter" data-level="2" data-path="regmul.html"><a href="regmul.html"><i class="fa fa-check"></i><b>2</b> Correlaciones y regresiones múltiples</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="regmul.html"><a href="regmul.html#caso-de-estudio"><i class="fa fa-check"></i><b>2.1</b> Caso de estudio</a></li>
-<li class="chapter" data-level="2.2" data-path="regmul.html"><a href="regmul.html#leer-y-emprolijar-los-datos"><i class="fa fa-check"></i><b>2.2</b> Leer y emprolijar los datos</a></li>
-<li class="chapter" data-level="2.3" data-path="regmul.html"><a href="regmul.html#correlaciones"><i class="fa fa-check"></i><b>2.3</b> Correlaciones</a>
+<li class="chapter" data-level="2.1" data-path="regmul.html"><a href="regmul.html#introducción"><i class="fa fa-check"></i><b>2.1</b> Introducción</a></li>
+<li class="chapter" data-level="2.2" data-path="regmul.html"><a href="regmul.html#caso-de-estudio"><i class="fa fa-check"></i><b>2.2</b> Caso de estudio</a></li>
+<li class="chapter" data-level="2.3" data-path="regmul.html"><a href="regmul.html#leer-y-emprolijar-los-datos"><i class="fa fa-check"></i><b>2.3</b> Leer y emprolijar los datos</a></li>
+<li class="chapter" data-level="2.4" data-path="regmul.html"><a href="regmul.html#correlaciones"><i class="fa fa-check"></i><b>2.4</b> Correlaciones</a>
 <ul>
-<li class="chapter" data-level="2.3.1" data-path="regmul.html"><a href="regmul.html#entre-biomasa-de-morfotipos-bacterianos"><i class="fa fa-check"></i><b>2.3.1</b> Entre biomasa de morfotipos bacterianos</a></li>
-<li class="chapter" data-level="2.3.2" data-path="regmul.html"><a href="regmul.html#entre-variables-abióticas"><i class="fa fa-check"></i><b>2.3.2</b> Entre variables abióticas</a></li>
+<li class="chapter" data-level="2.4.1" data-path="regmul.html"><a href="regmul.html#entre-biomasa-de-morfotipos-bacterianos"><i class="fa fa-check"></i><b>2.4.1</b> Entre biomasa de morfotipos bacterianos</a></li>
+<li class="chapter" data-level="2.4.2" data-path="regmul.html"><a href="regmul.html#entre-variables-abióticas"><i class="fa fa-check"></i><b>2.4.2</b> Entre variables abióticas</a></li>
 </ul></li>
-<li class="chapter" data-level="2.4" data-path="regmul.html"><a href="regmul.html#regresiones-múltiples"><i class="fa fa-check"></i><b>2.4</b> Regresiones múltiples</a>
+<li class="chapter" data-level="2.5" data-path="regmul.html"><a href="regmul.html#regresiones-múltiples"><i class="fa fa-check"></i><b>2.5</b> Regresiones múltiples</a>
 <ul>
-<li class="chapter" data-level="2.4.1" data-path="regmul.html"><a href="regmul.html#selección-automática-de-variables"><i class="fa fa-check"></i><b>2.4.1</b> Selección automática de variables</a></li>
-<li class="chapter" data-level="2.4.2" data-path="regmul.html"><a href="regmul.html#selección-manual-de-variables"><i class="fa fa-check"></i><b>2.4.2</b> Selección manual de variables</a></li>
-<li class="chapter" data-level="2.4.3" data-path="regmul.html"><a href="regmul.html#evaluación-e-interpretación-del-modelo-final"><i class="fa fa-check"></i><b>2.4.3</b> Evaluación e interpretación del modelo final</a></li>
+<li class="chapter" data-level="2.5.1" data-path="regmul.html"><a href="regmul.html#selección-automática-de-variables"><i class="fa fa-check"></i><b>2.5.1</b> Selección automática de variables</a></li>
+<li class="chapter" data-level="2.5.2" data-path="regmul.html"><a href="regmul.html#modelos-nulo-y-completo"><i class="fa fa-check"></i><b>2.5.2</b> Modelos nulo y completo</a></li>
+<li class="chapter" data-level="2.5.3" data-path="regmul.html"><a href="regmul.html#selección-manual-de-variables"><i class="fa fa-check"></i><b>2.5.3</b> Selección manual de variables</a></li>
+<li class="chapter" data-level="2.5.4" data-path="regmul.html"><a href="regmul.html#evaluación-de-supuestos"><i class="fa fa-check"></i><b>2.5.4</b> Evaluación de supuestos</a></li>
 </ul></li>
-<li class="chapter" data-level="2.5" data-path="regmul.html"><a href="regmul.html#a-modo-de-conclusión"><i class="fa fa-check"></i><b>2.5</b> A modo de conclusión</a></li>
+<li class="chapter" data-level="2.6" data-path="regmul.html"><a href="regmul.html#a-modo-de-conclusión"><i class="fa fa-check"></i><b>2.6</b> A modo de conclusión</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="gam.html"><a href="gam.html"><i class="fa fa-check"></i><b>3</b> Modelos Aditivos Generalizados</a>
 <ul>
 <li class="chapter" data-level="3.0.1" data-path="gam.html"><a href="gam.html#aclaración"><i class="fa fa-check"></i><b>3.0.1</b> Aclaración</a></li>
-<li class="chapter" data-level="3.1" data-path="gam.html"><a href="gam.html#porqué-usar-modelos-aditivos-generalizados-gams"><i class="fa fa-check"></i><b>3.1</b> ¿Porqué usar Modelos Aditivos Generalizados (GAMs)?</a></li>
+<li class="chapter" data-level="3.1" data-path="gam.html"><a href="gam.html#por-qué-usar-modelos-aditivos-generalizados-gams"><i class="fa fa-check"></i><b>3.1</b> ¿Por qué usar Modelos Aditivos Generalizados (GAMs)?</a></li>
 <li class="chapter" data-level="3.2" data-path="gam.html"><a href="gam.html#qué-son-los-gams"><i class="fa fa-check"></i><b>3.2</b> ¿Qué son los GAMs?</a></li>
-<li class="chapter" data-level="3.3" data-path="gam.html"><a href="gam.html#manos-a-la-obra"><i class="fa fa-check"></i><b>3.3</b> Manos a la obra!</a></li>
+<li class="chapter" data-level="3.3" data-path="gam.html"><a href="gam.html#manos-a-la-obra"><i class="fa fa-check"></i><b>3.3</b> ¡Manos a la obra!</a></li>
 <li class="chapter" data-level="3.4" data-path="gam.html"><a href="gam.html#agradecimientos"><i class="fa fa-check"></i><b>3.4</b> Agradecimientos</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="multi1.html"><a href="multi1.html"><i class="fa fa-check"></i><b>4</b> Análisis multivariados I</a>
@@ -188,8 +196,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="5" data-path="multi2.html"><a href="multi2.html"><i class="fa fa-check"></i><b>5</b> Análisis multivariados II</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="multi2.html"><a href="multi2.html#introducción"><i class="fa fa-check"></i><b>5.1</b> Introducción</a></li>
-<li class="chapter" data-level="5.2" data-path="multi2.html"><a href="multi2.html#la-lógica-de-las-técnicas-de-ordenación-restringida-o-canónica-constrained-análisis-de-gradiente-directo"><i class="fa fa-check"></i><b>5.2</b> La lógica de las técnicas de ordenación restringida o canónica (“constrained,” análisis de gradiente directo)</a>
+<li class="chapter" data-level="5.1" data-path="multi2.html"><a href="multi2.html#introducción-1"><i class="fa fa-check"></i><b>5.1</b> Introducción</a></li>
+<li class="chapter" data-level="5.2" data-path="multi2.html"><a href="multi2.html#la-lógica-de-las-técnicas-de-ordenación-restringida-o-canónica-constrained-análisis-de-gradiente-directo"><i class="fa fa-check"></i><b>5.2</b> La lógica de las técnicas de ordenación restringida o canónica (“constrained”, análisis de gradiente directo)</a>
 <ul>
 <li class="chapter" data-level="5.2.1" data-path="multi2.html"><a href="multi2.html#qué-tipo-de-datos-de-composición-de-especies-se-utilizan-para-el-análisis"><i class="fa fa-check"></i><b>5.2.1</b> ¿Qué tipo de datos de composición de especies se utilizan para el análisis?</a></li>
 <li class="chapter" data-level="5.2.2" data-path="multi2.html"><a href="multi2.html#cómo-saber-si-debo-utilizar-un-método-de-ordenación-de-respuesta-lineal-o-unimodal"><i class="fa fa-check"></i><b>5.2.2</b> ¿Cómo saber si debo utilizar un método de ordenación de respuesta lineal o unimodal?</a></li>
@@ -200,7 +208,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.4.1" data-path="multi2.html"><a href="multi2.html#analicemos-estos-aspectos-a-través-de-un-ejemplo-práctico"><i class="fa fa-check"></i><b>5.4.1</b> Analicemos estos aspectos a través de un ejemplo práctico…</a></li>
 <li class="chapter" data-level="5.4.2" data-path="multi2.html"><a href="multi2.html#rda-utilizando-el-paquete-vegan-oksanen-et-al.-2007"><i class="fa fa-check"></i><b>5.4.2</b> RDA utilizando el paquete <strong>vegan</strong> (Oksanen <em>et al.</em>, 2007)</a></li>
 <li class="chapter" data-level="5.4.3" data-path="multi2.html"><a href="multi2.html#seleccionando-las-variables-explicativas-relevantes"><i class="fa fa-check"></i><b>5.4.3</b> Seleccionando las variables explicativas relevantes</a></li>
-<li class="chapter" data-level="5.4.4" data-path="multi2.html"><a href="multi2.html#rda-basado-en-matriz-de-distancia-distance-based-rda-db-rda"><i class="fa fa-check"></i><b>5.4.4</b> RDA basado en matriz de distancia (“Distance-based RDA,” db-RDA)</a></li>
+<li class="chapter" data-level="5.4.4" data-path="multi2.html"><a href="multi2.html#rda-basado-en-matriz-de-distancia-distance-based-rda-db-rda"><i class="fa fa-check"></i><b>5.4.4</b> RDA basado en matriz de distancia (“Distance-based RDA”, db-RDA)</a></li>
 </ul></li>
 <li class="chapter" data-level="5.5" data-path="multi2.html"><a href="multi2.html#análisis-de-correspondencia-canóninca-cca"><i class="fa fa-check"></i><b>5.5</b> Análisis de Correspondencia Canóninca (CCA)</a>
 <ul>
@@ -256,13 +264,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="multi2" class="section level1" number="5">
-<h1><span class="header-section-number">Unidad 5</span> Análisis multivariados II</h1>
+<div id="multi2" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">Unidad 5</span> Análisis multivariados II<a href="multi2.html#multi2" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p><strong>TECNICAS DE ORDENACION CANONICA</strong></p>
 <p><strong>Maria Eugenia del R. Llames</strong><a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
 <p>Instituto Tecnológico de Chascomús (INTECH, UNSAM-CONICET), Escuela de Bio y Nanotecnologías (UNSAM)</p>
-<div id="introducción" class="section level2" number="5.1">
-<h2><span class="header-section-number">5.1</span> Introducción</h2>
+<div id="introducción-1" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> Introducción<a href="multi2.html#introducción-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>El supuesto principal de cualquier técnica de ordenación es que los datos analizados son redundantes, es decir, contienen más variables (y dimensiones) de las necesarias para describir la información subyacente, y podemos reducir el número de estas dimensiones sin perder demasiada información. Por ejemplo, en el caso de los datos de composición de especies, algunas de las especies suelen ser ecológicamente similares (por ejemplo, especies que prefieren crecer en un hábitat húmedo en lugar de seco), lo que significa que el conjunto de datos contiene varias variables redundantes (especies) que cuentan la misma historia. O, para explicar la redundancia de otra manera, a partir de la presencia de una especie, a menudo podemos predecir la presencia de varias otras especies. En el caso de la ordenación aplicada en la matriz de variables ambientales, estas a menudo se correlacionan entre sí (por ejemplo, las mediciones del temperatura del agua a menudo se relacionan con las concentraciones de oxígeno disuelto), lo que también permite la reducción de la dimensión.</p>
 <p>Dado que el espacio multidimensional no es fácil de mostrar, describir o simplemente imaginar, vale la pena reducirlo a unas pocas dimensiones principales, conservando al máximo la información. Esto también significa que si las variables individuales son completamente independientes entre sí (por ejemplo, cada especie tiene preferencias completamente diferentes), entonces es probable que la ordenación no encuentre una reducción razonable del espacio multidimensional.</p>
 <p>Lo que hace el método de ordenación se puede formular de dos maneras alternativas:(i) busca gradientes en la composición de especies (representados generalmente por ejes de ordenación) e intenta explicar estos gradientes por variables ambientales; y/o (ii) busca la distribución de muestras en un espacio de ordenación reducido que refleje al máximo la disimilitud (= distancia) entre muestras en términos de su composición de especies.</p>
@@ -274,13 +282,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><image src="./images/Figura 2.jpg">
 <strong>Figura 2:</strong> <em>Esquema de “funcionamiento” de las técnicas de ordenación canónicas.</em></p>
 </div>
-<div id="la-lógica-de-las-técnicas-de-ordenación-restringida-o-canónica-constrained-análisis-de-gradiente-directo" class="section level2" number="5.2">
-<h2><span class="header-section-number">5.2</span> La lógica de las técnicas de ordenación restringida o canónica (“constrained,” análisis de gradiente directo)</h2>
+<div id="la-lógica-de-las-técnicas-de-ordenación-restringida-o-canónica-constrained-análisis-de-gradiente-directo" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> La lógica de las técnicas de ordenación restringida o canónica (“constrained”, análisis de gradiente directo)<a href="multi2.html#la-lógica-de-las-técnicas-de-ordenación-restringida-o-canónica-constrained-análisis-de-gradiente-directo" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Los ejes de ordenación están limitados/restringidos por factores ambientales. Relaciona la composición de especies directamente con las variables ambientales y extrae la variación en la composición de especies que está directamente relacionada con el medio ambiente. Las variables ambientales ingresan directamente al algoritmo, y los ejes de ordenación restringidos corresponden a las direcciones de la variabilidad en los datos que se explica por estas variables ambientales. El método generalmente se usa como análisis confirmatorio, es decir, puede probar las hipótesis sobre la relación entre los factores ambientales en la composición de especies (a diferencia de la ordenación sin restricciones, que es exploratoria). Descompone la varianza total en los datos de composición de especies en una fracción explicada por variables ambientales (relacionadas con ejes de ordenación restringidos) y no explicada por variables ambientales (relacionadas con ejes de ordenación no restringidos). Ofrece varias oportunidades interesantes cuando se trata de variables explicativas: permite selección directa (la selección de variables ambientales importantes mediante la exclusión de aquellas que no son relevantes para la composición de especies), habilita la prueba de permutación de Monte Carlo (una prueba de significancia de la varianza explicada por factores ambientales) y permite el análisis de la partición de la varianza (partición de la varianza explicada por diferentes grupos de variables ambientales).</p>
-<div id="qué-tipo-de-datos-de-composición-de-especies-se-utilizan-para-el-análisis" class="section level3" number="5.2.1">
-<h3><span class="header-section-number">5.2.1</span> ¿Qué tipo de datos de composición de especies se utilizan para el análisis?</h3>
-<div id="a-métodos-basados-en-datos-brutos-enfoque-clásico" class="section level4" number="5.2.1.1">
-<h4><span class="header-section-number">5.2.1.1</span> (a) Métodos basados en datos brutos (enfoque clásico)</h4>
+<div id="qué-tipo-de-datos-de-composición-de-especies-se-utilizan-para-el-análisis" class="section level3 hasAnchor" number="5.2.1">
+<h3><span class="header-section-number">5.2.1</span> ¿Qué tipo de datos de composición de especies se utilizan para el análisis?<a href="multi2.html#qué-tipo-de-datos-de-composición-de-especies-se-utilizan-para-el-análisis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="a-métodos-basados-en-datos-brutos-enfoque-clásico" class="section level4 hasAnchor" number="5.2.1.1">
+<h4><span class="header-section-number">5.2.1.1</span> (a) Métodos basados en datos brutos (enfoque clásico)<a href="multi2.html#a-métodos-basados-en-datos-brutos-enfoque-clásico" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Métodos basados en el análisis de matrices crudas de muestras-especies con datos de abundancia o presencia/ausencia. Dentro de estos métodos, se reconocen tradicionalmente dos categorías, que se diferencian por la suposición de la respuesta de las especies a lo largo del gradiente ambiental:</p>
 <ol style="list-style-type: decimal">
 <li><strong>lineal</strong> (Figura 3, panel izquierdo): supone que las especies responden linealmente a lo largo del gradiente ambiental, lo que podría ser cierto para datos ecológicos bastante homogéneos, y esto se da cuando donde los gradientes ecológicos considerados son bastante cortos;</li>
@@ -289,82 +297,90 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><image src="./images/Figura 3.jpg"></p>
 <p><strong>Figura 3:</strong> <em>Supuesto de respuesta lineal (izquierda) frente a unimodal (derecha) del “fitness”/abundancia de las especies a lo largo del medio ambiente.Fuente <a href="https://www.davidzeleny.net/anadat-r/doku.php/en:ordination" class="uri">https://www.davidzeleny.net/anadat-r/doku.php/en:ordination</a></em></p>
 </div>
-<div id="b-métodos-aplicados-sobre-datos-transformados" class="section level4" number="5.2.1.2">
-<h4><span class="header-section-number">5.2.1.2</span> (b) Métodos aplicados sobre datos transformados</h4>
+<div id="b-métodos-aplicados-sobre-datos-transformados" class="section level4 hasAnchor" number="5.2.1.2">
+<h4><span class="header-section-number">5.2.1.2</span> (b) Métodos aplicados sobre datos transformados<a href="multi2.html#b-métodos-aplicados-sobre-datos-transformados" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Todos los métodos de ordenación tienen implícito un paso de cálculo de índices de distancia en su algoritmo. En algunos casos, tenemos la opción de indicarle al algoritmo qué índice utilizar (ejemplo: PCoA o NMDS), mientras que en otros el índice utilizado es fijo (ejemplo: PCA, RDA). Lo que tenemos que tener en cuenta es que, entre todos los índices posibles, existen índices “<em>simétricos</em>” (incluyen el doble cero en el cálculo del índice), e índices “<em>asimétricos</em>” (no incluyen al doble cero en el cálculo del índice). La utilización de índices símetricos en análisis de ordenación que suponen respuesta lineal pueden llevar a la paradoja de que dos sitios se “ordenen cercanos” en base a la ausencia de especies en ambos sitios (para más detalle sobre este punto, referirse al Capítulo 7 de libro “Numerical Ecology” de Legendre &amp; Legendre, 2012). En aquellos casos en que el modelo a aplicar es de respuesta lineal y se base en el cálculo de índices simétricos, se recomienda transformar los datos de composición de especies de forma tal de adecuar los datos ecológicos y evitar caer en la paradoja del doble-cero. En este sentido, Legendre y Gallagher (2001) detallan diversas transformaciones adecuadas para la aplicación de métodos de ordenación que asumen respuesta lineal.</p>
 </div>
-<div id="c-métodos-basados-en-la-distancia" class="section level4" number="5.2.1.3">
-<h4><span class="header-section-number">5.2.1.3</span> (c) Métodos basados en la distancia</h4>
+<div id="c-métodos-basados-en-la-distancia" class="section level4 hasAnchor" number="5.2.1.3">
+<h4><span class="header-section-number">5.2.1.3</span> (c) Métodos basados en la distancia<a href="multi2.html#c-métodos-basados-en-la-distancia" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Métodos que utilizan la matriz de distancias entre muestras medidas por coeficientes de distancia y que proyectan estas distancias en diagramas de ordenación de dos o más dimensiones. El método se conoce como db-RDA (RDA basado en la distancia) y consiste en una combinación de PCoA, aplicada en datos sin procesar utilizando una medida de distancia seleccionada, y RDA aplicada en los autovectores resultantes de PCoA (ver más abajo). Ofrece una alternativa a RDA (basada en distancias euclidianas) y al RDA basado en datos transformados (por ejemplo, transformados por Hellinger), con la libertad de elegir la medida de distancia adecuada para los datos investigados.</p>
 </div>
 </div>
-<div id="cómo-saber-si-debo-utilizar-un-método-de-ordenación-de-respuesta-lineal-o-unimodal" class="section level3" number="5.2.2">
-<h3><span class="header-section-number">5.2.2</span> ¿Cómo saber si debo utilizar un método de ordenación de respuesta lineal o unimodal?</h3>
+<div id="cómo-saber-si-debo-utilizar-un-método-de-ordenación-de-respuesta-lineal-o-unimodal" class="section level3 hasAnchor" number="5.2.2">
+<h3><span class="header-section-number">5.2.2</span> ¿Cómo saber si debo utilizar un método de ordenación de respuesta lineal o unimodal?<a href="multi2.html#cómo-saber-si-debo-utilizar-un-método-de-ordenación-de-respuesta-lineal-o-unimodal" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Para decidir si aplicar el método de ordenación de respuesta lineal o unimodal en los datos, podemos basarnos en la regla general introducida por Lepš &amp; Šmilauer (2003): primero, calcule DCA (“Detrended correspondence analysis”-análisis sin tendencia por segmentos) en sus datos y verifique la longitud del primer Eje del DCA (que está escalado en unidades de desviación estándar, S.D.). Una longitud del primer eje DCA &gt; 4 S.D. indica un conjunto de datos heterogéneo en el que se deben utilizar métodos unimodales, mientras que la longitud &lt; 3 S.D. indica un conjunto de datos homogéneo para el cual los métodos lineales son adecuados. En la zona gris entre 3 y 4 S.D., tanto los métodos lineales como los unimodales son adecuados. Sin embargo, tengan en cuenta que si bien <strong>los métodos lineales no deben usarse para datos heterogéneos</strong> (<em>i.e.</em> para datos de respuesta unimodal), los métodos unimodales pueden ser usados para datos homogéneos, no obstante, los métodos lineales, en este caso, son más poderosos y deberían ser preferidos.
 Alternativamente, si tus datos de composición de especies son heterogéneos, pero aún querés utilizar algún método de ordenación lineal (PCA, RDA), recordá trasnformar estos datos de composición de especies de forma tal de evitar el problema del doble-cero.</p>
 </div>
 </div>
-<div id="análisis-de-redundancia-rda" class="section level2" number="5.3">
-<h2><span class="header-section-number">5.3</span> Análisis de Redundancia (RDA)</h2>
-<p>El RDA es un método que combina las técnicas de regresión lineal con el análisis de componentes principales (PCA). Por un lado, es una extensión directa del análisis de regresión múltiple para modelar la respuesta multivariada de datos. <em>Redundancia</em> es sinónimo de “variación explicada” y se interpreta de la misma manera que como lo aprendieron en sus cursos introductorios de Estadísitica al estudiar los modelos de análisis univariados. El análisis se dice <em>asimétrico</em> (<em>i.e.</em> se establece una matriz de respuesta y una matriz explicativa), en donde la matriz “Y” (biológica) corresponde a la variable multidimensional de respuesta y “X” (o “E,” de acuerdo a la Figura 1), corresponde a la matriz multidimensional de variables explicativas. Desde una perspectiva descriptiva, uno diría que la ordenación de “Y” está <em>restringida</em> de forma tal que los vectores de ordenación resultantes son combinaciones lineales de las variables en “X.”</p>
+<div id="análisis-de-redundancia-rda" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> Análisis de Redundancia (RDA)<a href="multi2.html#análisis-de-redundancia-rda" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>El RDA es un método que combina las técnicas de regresión lineal con el análisis de componentes principales (PCA). Por un lado, es una extensión directa del análisis de regresión múltiple para modelar la respuesta multivariada de datos. <em>Redundancia</em> es sinónimo de “variación explicada” y se interpreta de la misma manera que como lo aprendieron en sus cursos introductorios de Estadísitica al estudiar los modelos de análisis univariados. El análisis se dice <em>asimétrico</em> (<em>i.e.</em> se establece una matriz de respuesta y una matriz explicativa), en donde la matriz “Y” (biológica) corresponde a la variable multidimensional de respuesta y “X” (o “E”, de acuerdo a la Figura 1), corresponde a la matriz multidimensional de variables explicativas. Desde una perspectiva descriptiva, uno diría que la ordenación de “Y” está <em>restringida</em> de forma tal que los vectores de ordenación resultantes son combinaciones lineales de las variables en “X”.</p>
 <blockquote>
-<p>Por otro lado, RDA también puede verse como una extensión del análisis de componentes principales (PCA), porque los vectores de ordenación canónica que resultan constituyen combinaciones lineales de las variables de respuesta “Y.” Esto significa que cada vector de ordenación es una proyección unidimensional de la distribución de los objetos en un espacio que conserva las distancias euclidianas entre ellos.</p>
+<p>Por otro lado, RDA también puede verse como una extensión del análisis de componentes principales (PCA), porque los vectores de ordenación canónica que resultan constituyen combinaciones lineales de las variables de respuesta “Y”. Esto significa que cada vector de ordenación es una proyección unidimensional de la distribución de los objetos en un espacio que conserva las distancias euclidianas entre ellos.</p>
 </blockquote>
 <p>Rápidamente, este método busca, en orden sucesivo, una serie de <em>combinaciones lineales</em> de las <em>variables explicativas</em> que <em>mejor explican</em> la <em>variación</em> de los datos de la matriz de <em>variable respuesta</em>. Los <em>ejes</em> definidos en el espacio a partir de la matriz de las variables explicativas son <em>ortogonales</em> entre sí (<em>i.e</em> independientes). RDA es por lo tanto un <em>procedimiento de ordenación restringida</em>. La diferencia con la ordenación sin restricciones es importante: la matriz de variables explicativas condiciona los “pesos” (<em>i.e.</em> autovalores, valores propios o <em>eigenvalues</em>) y las direcciones de los ejes de ordenación. En RDA, uno puede decir verdaderamente que los ejes explican o modelan (en el sentido estadístico) la variación de la matriz respuesta o dependiente.</p>
 <p>Como resultado, la variación en la composición de especies se descompone en variación relacionada con variables ambientales (representadas por ejes restringidos/canónicos, autovectores o <em>eigenvectors</em>) y no relacionada con variables ambientales (ejes no restringidos). El número total de ejes canónicos generdados corresponde a la cantidad <em>min [p, m, n-1]</em>. Es decir, la cantidad de ejes será el número más bajo entre los parámetros <em>p</em>, <em>m</em>, y <em>(n-1)</em>, talque <em>(i)</em> la cantidad de ejes generados no puede exceder <em>p</em> que es el tamaño del espacio de referencia de la matriz “Y” (<em>i.e.</em> número de variables respuesta cosnideradas, de especies para nuestro caso); <em>(ii)</em> no puede exceder <em>m</em> que es el número de variables en X (cantidad de variables ambientales consideradas) y <em>(iii)</em> no puede exceder (n – 1), que es el número máximo de dimensiones requeridas para representar <em>n</em> puntos (<em>i.e.</em> sitios) en el espacio euclidiano. Finalmente, la significancia estadística del modelo de RDA (modelo global) y la de los ejes canónicos se pueden probar mediante análisis permutacionales (no paramétricos).</p>
 </div>
-<div id="caso-de-estudio-1" class="section level2" number="5.4">
-<h2><span class="header-section-number">5.4</span> Caso de estudio</h2>
-<div id="analicemos-estos-aspectos-a-través-de-un-ejemplo-práctico" class="section level3" number="5.4.1">
-<h3><span class="header-section-number">5.4.1</span> Analicemos estos aspectos a través de un ejemplo práctico…</h3>
+<div id="caso-de-estudio-1" class="section level2 hasAnchor" number="5.4">
+<h2><span class="header-section-number">5.4</span> Caso de estudio<a href="multi2.html#caso-de-estudio-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="analicemos-estos-aspectos-a-través-de-un-ejemplo-práctico" class="section level3 hasAnchor" number="5.4.1">
+<h3><span class="header-section-number">5.4.1</span> Analicemos estos aspectos a través de un ejemplo práctico…<a href="multi2.html#analicemos-estos-aspectos-a-través-de-un-ejemplo-práctico" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Utilizaremos un set de datos del trabajo <em>Bacterioplankton morphotypes structure and cytometric fingerprint rely on environmental conditions in a sub-Antarctic peatland</em> publicado en <em>Hydrobiologia</em> (Quiroga <em>et al.</em> 2017), disponibles en el <a href="http://hdl.handle.net/11336/201811">Repositorio Institucional</a> <a href="http://hdl.handle.net/11336/201874">CONICET Digital</a>. Para ello, descargar el set de datos <strong>morpho_biomass.csv</strong> y <strong>chem.csv</strong> de <a href="https://github.com/Limno-con-R/CILCAL2023/tree/main/datasets">GitHub Limno-con-R/CILCAL2023</a>.
 Guardar los archivos en una carpeta llamada <em>data</em>, dentro del <strong>Directorio de Trabajo</strong> del <strong>Proyecto</strong> que creamos para esta Unidad (ver cómo hacerlo en la Unidad <a href="intro.html#intro">1</a>). Finalmente, instalar los paquetes como se indica en la Unidad <a href="intro.html#intro">1</a>. Luego, cargarlos en la sesión.</p>
 </div>
-<div id="rda-utilizando-el-paquete-vegan-oksanen-et-al.-2007" class="section level3" number="5.4.2">
-<h3><span class="header-section-number">5.4.2</span> RDA utilizando el paquete <strong>vegan</strong> (Oksanen <em>et al.</em>, 2007)</h3>
+<div id="rda-utilizando-el-paquete-vegan-oksanen-et-al.-2007" class="section level3 hasAnchor" number="5.4.2">
+<h3><span class="header-section-number">5.4.2</span> RDA utilizando el paquete <strong>vegan</strong> (Oksanen <em>et al.</em>, 2007)<a href="multi2.html#rda-utilizando-el-paquete-vegan-oksanen-et-al.-2007" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="multi2.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span> (vegan)</span></code></pre></div>
+<pre><code>## Warning: package &#39;vegan&#39; was built under R version 4.2.3</code></pre>
 <pre><code>## Loading required package: permute</code></pre>
 <pre><code>## Loading required package: lattice</code></pre>
-<pre><code>## This is vegan 2.5-7</code></pre>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="multi2.html#cb5-1" aria-hidden="true" tabindex="-1"></a>data_biomass <span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="st">&quot;./data/morpho_biomass.csv&quot;</span>,<span class="at">row.names=</span><span class="dv">1</span>) <span class="co"># biomasa [pgC/mL]</span></span>
-<span id="cb5-2"><a href="multi2.html#cb5-2" aria-hidden="true" tabindex="-1"></a>biomass <span class="ot">&lt;-</span>data_biomass[,<span class="dv">4</span><span class="sc">:</span><span class="dv">9</span>] <span class="co">#selecciono solo los datos de biomasa de los diferentes morfotipos de la matriz de datos biologicos</span></span>
-<span id="cb5-3"><a href="multi2.html#cb5-3" aria-hidden="true" tabindex="-1"></a>bio.trans <span class="ot">&lt;-</span><span class="fu">log10</span>(biomass<span class="sc">+</span><span class="dv">1</span>) <span class="co"># transformacion log10(x+1). Esta transformación se utiliza para estabilizar varianzas. Si tengo un grupo extremadamente dominante y otros menos representados, es una buena opción. Más detalle sobre transformaciones pueden encontrar en la biblio del curso. </span></span></code></pre></div>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="multi2.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cómputo del DCA para verificar la longitud del gradiente</span></span>
-<span id="cb6-2"><a href="multi2.html#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">#----</span></span>
-<span id="cb6-3"><a href="multi2.html#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="multi2.html#cb6-4" aria-hidden="true" tabindex="-1"></a>vare.dca <span class="ot">&lt;-</span> <span class="fu">decorana</span>(bio.trans)</span>
-<span id="cb6-5"><a href="multi2.html#cb6-5" aria-hidden="true" tabindex="-1"></a>vare.dca</span></code></pre></div>
+<pre><code>## This is vegan 2.6-4</code></pre>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="multi2.html#cb6-1" aria-hidden="true" tabindex="-1"></a>data_biomass <span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="st">&quot;./data/morpho_biomass.csv&quot;</span>,<span class="at">row.names=</span><span class="dv">1</span>) <span class="co"># biomasa [pgC/mL]</span></span>
+<span id="cb6-2"><a href="multi2.html#cb6-2" aria-hidden="true" tabindex="-1"></a>biomass <span class="ot">&lt;-</span>data_biomass[,<span class="dv">4</span><span class="sc">:</span><span class="dv">9</span>] <span class="co">#selecciono solo los datos de biomasa de los diferentes morfotipos de la matriz de datos biologicos</span></span>
+<span id="cb6-3"><a href="multi2.html#cb6-3" aria-hidden="true" tabindex="-1"></a>bio.trans <span class="ot">&lt;-</span><span class="fu">log10</span>(biomass<span class="sc">+</span><span class="dv">1</span>) <span class="co"># transformacion log10(x+1). Esta transformación se utiliza para estabilizar varianzas. Si tengo un grupo extremadamente dominante y otros menos representados, es una buena opción. Más detalle sobre transformaciones pueden encontrar en la biblio del curso. </span></span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="multi2.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cómputo del DCA para verificar la longitud del gradiente</span></span>
+<span id="cb7-2"><a href="multi2.html#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">#----</span></span>
+<span id="cb7-3"><a href="multi2.html#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="multi2.html#cb7-4" aria-hidden="true" tabindex="-1"></a>vare.dca <span class="ot">&lt;-</span> <span class="fu">decorana</span>(bio.trans)</span>
+<span id="cb7-5"><a href="multi2.html#cb7-5" aria-hidden="true" tabindex="-1"></a>vare.dca</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## decorana(veg = bio.trans) 
 ## 
 ## Detrended correspondence analysis with 26 segments.
 ## Rescaling of axes with 4 iterations.
+## Total inertia (scaled Chi-square): 0.109 
 ## 
-##                    DCA1     DCA2      DCA3      DCA4
-## Eigenvalues     0.07139 0.005130 0.0020470 0.0012492
-## Decorana values 0.10595 0.001355 0.0005076 0.0002615
-## Axis lengths    0.60193 0.239784 0.1647616 0.1281498</code></pre>
+##                         DCA1     DCA2      DCA3      DCA4
+## Eigenvalues          0.07139 0.005130 0.0020470 0.0012492
+## Additive Eigenvalues 0.07139 0.008798 0.0117827 0.0154503
+## Decorana values      0.10595 0.001355 0.0005076 0.0002615
+## Axis lengths         0.60193 0.239784 0.1647616 0.1281498</code></pre>
 <p>La última línea de la primer columna (DCA1) indica <em>Axis lengths= 0.60193</em>. Ese valor corresponde a la longitud del primer eje de ordenamiento del DCA, expresado en unidades de desvio estándar (S.D.) de recambio de especies. Un gradiente mayor a 4 S.D. indica que algunas especies presentan respuesta unimodal. En el caso de nuestr ejemplo, la longitud del gradiente es &lt; 4, indicando un gradiente homogéneo o corto y, por lo tanto, el modelo de respuesta lineal es el adecuado para aplicar.
 Procedemos, entonces, al modelado a través de un RDA:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="multi2.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># RDA</span></span>
-<span id="cb8-2"><a href="multi2.html#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#----</span></span>
-<span id="cb8-3"><a href="multi2.html#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Seleccion de variables explicativas</span></span>
-<span id="cb8-4"><a href="multi2.html#cb8-4" aria-hidden="true" tabindex="-1"></a>ambiental <span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="st">&quot;./data/chem.csv&quot;</span>, <span class="at">row.names=</span><span class="dv">1</span>) <span class="co">#cargo las variables ambientales</span></span>
-<span id="cb8-5"><a href="multi2.html#cb8-5" aria-hidden="true" tabindex="-1"></a>env <span class="ot">&lt;-</span> ambiental[,<span class="fu">c</span>(<span class="dv">4</span><span class="sc">:</span><span class="dv">5</span>,<span class="dv">7</span><span class="sc">:</span><span class="dv">15</span>)] <span class="co"># saco una de ellas: &quot;DO&quot; (oxígeno disuelto) ya que tiene datos faltantes (NAs) y el modelo no corre con variables que tengan datos faltantes</span></span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="multi2.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># RDA</span></span>
+<span id="cb9-2"><a href="multi2.html#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co">#----</span></span>
+<span id="cb9-3"><a href="multi2.html#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Seleccion de variables explicativas</span></span>
+<span id="cb9-4"><a href="multi2.html#cb9-4" aria-hidden="true" tabindex="-1"></a>ambiental <span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="st">&quot;./data/chem.csv&quot;</span>, <span class="at">row.names=</span><span class="dv">1</span>) <span class="co">#cargo las variables ambientales</span></span>
+<span id="cb9-5"><a href="multi2.html#cb9-5" aria-hidden="true" tabindex="-1"></a>env <span class="ot">&lt;-</span> ambiental[,<span class="fu">c</span>(<span class="dv">4</span><span class="sc">:</span><span class="dv">5</span>,<span class="dv">7</span><span class="sc">:</span><span class="dv">15</span>)] <span class="co"># saco una de ellas: &quot;DO&quot; (oxígeno disuelto) ya que tiene datos faltantes (NAs) y el modelo no corre con variables que tengan datos faltantes</span></span></code></pre></div>
 <p>Hasta acá, hemos (i) verificado el tipo de respuesta en nuestros datos de composición de especie para elegir el modelo adecuado y (ii) preparamos los datos de composición y de datos ambientales para modelar.
 Además del tipo de respuesta, otro requisito necesario es la “multinormalidad” de los datos de la matriz ambiental. En el siguiente paso, lo que vamos a hacer es chequear que este supuesto se cumpla:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="multi2.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Chequeo de normalidad de los datos en la amtriz ambiental</span></span>
+<span id="cb10-2"><a href="multi2.html#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MVN)</span>
+<span id="cb10-3"><a href="multi2.html#cb10-3" aria-hidden="true" tabindex="-1"></a>mvn.env <span class="ot">&lt;-</span> <span class="fu">mvn</span>(env, <span class="at">mvnTest =</span> <span class="st">&quot;mardia&quot;</span>)</span>
+<span id="cb10-4"><a href="multi2.html#cb10-4" aria-hidden="true" tabindex="-1"></a>mvn.env<span class="sc">$</span>Descriptives<span class="sc">$</span>Skew <span class="co"># skwe &lt; 2 </span></span></code></pre></div>
 <pre><code>##  [1]  0.7514272 -0.8963630  0.3566289  0.4353447  0.6865369  0.1131861
 ##  [7]  1.5255447  0.7839304  0.4965284  0.3858427 -0.2629160</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="multi2.html#cb12-1" aria-hidden="true" tabindex="-1"></a>mvn.env<span class="sc">$</span>multivariateNormality<span class="sc">$</span><span class="st">`</span><span class="at">p value</span><span class="st">`</span><span class="co">#p-valores &gt; 0.05, no tenemos evidencia para rechazar la multinomralidad de los datos. </span></span></code></pre></div>
 <pre><code>## [1] 0.854080999478208 0.186705671286224 &lt;NA&gt;             
 ## Levels: 0.854080999478208 0.186705671286224</code></pre>
 <p>En este caso, elegimos analizar la asimetría de los datos (“<em>skewness</em>”) a través del estudio de la significancia de los coeficiente de asimetría y curtosis multivariado de Mardia. Para la normalidad multivariada, los valores <em>p</em> de las estadísticas de asimetría y curtosis deben ser superiores a 0,05. Si el tamaño de la muestra es inferior a 20, se debe utilizar <em>p.value.small</em> como valor significativo de asimetría en lugar de <em>p.value.skew</em>.</p>
 <p>Con los supuestos del modelo revisados y comprobados, avanzamos con la aplicación del modelo a los datos. En el caso del paquete <strong>vegan</strong>, permite el cálculo de una RDA de dos maneras diferentes. La sintaxis más simple es listar los nombres de los marcos de datos involucrados separados por comas:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="multi2.html#cb11-1" aria-hidden="true" tabindex="-1"></a>simpleRDA <span class="ot">&lt;-</span> <span class="fu">rda</span>(bio.trans, env)</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="multi2.html#cb14-1" aria-hidden="true" tabindex="-1"></a>simpleRDA <span class="ot">&lt;-</span> <span class="fu">rda</span>(bio.trans, env)</span></code></pre></div>
 <p>Esta manera, si bien es sencilla, tiene algunas limitaciones. Su principal inconveniente es que no permite incluir variables cualitativas en la matriz explicativa. Por lo tanto, en todas las aplicaciones excepto en las más simples, es mejor usar la interfaz de la fórmula:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="multi2.html#cb12-1" aria-hidden="true" tabindex="-1"></a>biomass.rda<span class="ot">&lt;-</span><span class="fu">rda</span>(bio.trans <span class="sc">~</span> ., <span class="at">data=</span> env, <span class="at">scale=</span><span class="cn">TRUE</span> )<span class="co">#dado que las variables #ambietnales son dimensionalmente heterogéneas, debemos escalar los datos a una #distribución normal, de media cero y varianza 1 ( N~(0,1))</span></span>
-<span id="cb12-2"><a href="multi2.html#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co">#Observación: Observá el atajo (.) para indicarle a la función que use todas las #variables presentes en la matriz env</span></span>
-<span id="cb12-3"><a href="multi2.html#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span> (biomass.rda)</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="multi2.html#cb15-1" aria-hidden="true" tabindex="-1"></a>biomass.rda<span class="ot">&lt;-</span><span class="fu">rda</span>(bio.trans <span class="sc">~</span> ., <span class="at">data=</span> env, <span class="at">scale=</span><span class="cn">TRUE</span> )<span class="co">#dado que las variables #ambietnales son dimensionalmente heterogéneas, debemos escalar los datos a una #distribución normal, de media cero y varianza 1 ( N~(0,1))</span></span>
+<span id="cb15-2"><a href="multi2.html#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co">#Observación: Observá el atajo (.) para indicarle a la función que use todas las #variables presentes en la matriz env</span></span>
+<span id="cb15-3"><a href="multi2.html#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span> (biomass.rda)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## rda(formula = bio.trans ~ pH + EC + TH + DOC + DIN + TN + DRP +      TP + a440 + SUVA254 + E2_E3, data = env, scale = TRUE) 
@@ -475,8 +491,8 @@ Además del tipo de respuesta, otro requisito necesario es la “multinormalidad
 ## a440     0.03653 -0.48845 -0.66818 -0.233564 -0.24154 -0.272376
 ## SUVA254  0.13008 -0.29171 -0.27511  0.019930 -0.30331  0.359999
 ## E2_E3   -0.17459 -0.17869 -0.06789  0.162049  0.09327 -0.451209</code></pre>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="multi2.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Coeficientes canónicos </span></span>
-<span id="cb14-2"><a href="multi2.html#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(biomass.rda)</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="multi2.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Coeficientes canónicos </span></span>
+<span id="cb17-2"><a href="multi2.html#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(biomass.rda)</span></code></pre></div>
 <pre><code>##                  RDA1          RDA2          RDA3          RDA4          RDA5
 ## pH       2.152488e-02  1.592068e-01 -1.762663e-02  6.615200e-02 -6.710379e-02
 ## EC       2.531088e-02  7.981753e-04 -1.679251e-02 -1.075705e-02 -1.256239e-02
@@ -501,123 +517,125 @@ Además del tipo de respuesta, otro requisito necesario es la “multinormalidad
 ## a440    -8.433608e-02
 ## SUVA254  3.630886e-02
 ## E2_E3   -8.524522e-02</code></pre>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="multi2.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Test Global para el RDA con todas las variables</span></span></code></pre></div>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="multi2.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(biomass.rda, <span class="at">permutations =</span> <span class="fu">how</span>(<span class="at">nperm =</span> <span class="dv">999</span>))<span class="co">#nada tiene que ver este análisis #con el tradicional &quot;ANOVA&quot;de la estadística univariada...</span></span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="multi2.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Test Global para el RDA con todas las variables</span></span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="multi2.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(biomass.rda, <span class="at">permutations =</span> <span class="fu">how</span>(<span class="at">nperm =</span> <span class="dv">999</span>))<span class="co">#nada tiene que ver este análisis #con el tradicional &quot;ANOVA&quot;de la estadística univariada...</span></span></code></pre></div>
 <pre><code>## Permutation test for rda under reduced model
 ## Permutation: free
 ## Number of permutations: 999
 ## 
 ## Model: rda(formula = bio.trans ~ pH + EC + TH + DOC + DIN + TN + DRP + TP + a440 + SUVA254 + E2_E3, data = env, scale = TRUE)
 ##          Df Variance      F Pr(&gt;F)  
-## Model    11   4.6572 2.5224  0.012 *
+## Model    11   4.6572 2.5224  0.013 *
 ## Residual  8   1.3428                
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="multi2.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">#R^2</span></span>
-<span id="cb19-2"><a href="multi2.html#cb19-2" aria-hidden="true" tabindex="-1"></a>(R2 <span class="ot">&lt;-</span> <span class="fu">RsquareAdj</span>(biomass.rda)<span class="sc">$</span>r.squared)<span class="co"># 0.78</span></span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="multi2.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co">#R^2</span></span>
+<span id="cb22-2"><a href="multi2.html#cb22-2" aria-hidden="true" tabindex="-1"></a>(R2 <span class="ot">&lt;-</span> <span class="fu">RsquareAdj</span>(biomass.rda)<span class="sc">$</span>r.squared)<span class="co"># 0.78</span></span></code></pre></div>
 <pre><code>## [1] 0.7762</code></pre>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="multi2.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">#el R^2, al igual que ocurre en la regresión múltiple, está &quot;inflado&quot; por la cantidad #de variables incluidas en el mdoelo, es decir, aumenta al incluir más variables, #independientemente de que exista una relación o nó entre ellas y la matriz respuesta. #Además, la acumulación de variables explicativas infla la cantidad aparente de #varianza explicada como consecuencia de correlaciones aleatorias entre variables. Este #problema se puede solucionar ajustando el R^2</span></span>
-<span id="cb21-2"><a href="multi2.html#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-3"><a href="multi2.html#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-4"><a href="multi2.html#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="co"># R^2 ajustado (penalizado por la cantidad de variables incluidas en le modelo, mide la #cantidad de variación explicada &quot;sin sesgo&quot;) </span></span>
-<span id="cb21-5"><a href="multi2.html#cb21-5" aria-hidden="true" tabindex="-1"></a>(R2adj <span class="ot">&lt;-</span> <span class="fu">RsquareAdj</span>(biomass.rda)<span class="sc">$</span>adj.r.squared)</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="multi2.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co">#el R^2, al igual que ocurre en la regresión múltiple, está &quot;inflado&quot; por la cantidad #de variables incluidas en el mdoelo, es decir, aumenta al incluir más variables, #independientemente de que exista una relación o nó entre ellas y la matriz respuesta. #Además, la acumulación de variables explicativas infla la cantidad aparente de #varianza explicada como consecuencia de correlaciones aleatorias entre variables. Este #problema se puede solucionar ajustando el R^2</span></span>
+<span id="cb24-2"><a href="multi2.html#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-3"><a href="multi2.html#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-4"><a href="multi2.html#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="co"># R^2 ajustado (penalizado por la cantidad de variables incluidas en le modelo, mide la #cantidad de variación explicada &quot;sin sesgo&quot;) </span></span>
+<span id="cb24-5"><a href="multi2.html#cb24-5" aria-hidden="true" tabindex="-1"></a>(R2adj <span class="ot">&lt;-</span> <span class="fu">RsquareAdj</span>(biomass.rda)<span class="sc">$</span>adj.r.squared)</span></code></pre></div>
 <pre><code>## [1] 0.4684749</code></pre>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="multi2.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co">#0.47</span></span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="multi2.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co">#0.47</span></span></code></pre></div>
 <p>Expliquemos un poco esta salida…
 En primer lugar, se revisa la prueba global del modelo utilizando todas las variables explicativas (resultado de la función <em>anova</em>). Si, y solo si, la prueba global es significativa, se puede proceder con la selección de variables (más abajo).
 La salida anterior porporciona información útil: “<em>Inertia</em>” (Inercia) es otro nombre para variación o varianza en este caso. “<em>Total</em>” se refiere a la varianza total, “<em>Constrained</em>” (Restringida) se refiere a la cantidad de varianza explicada por las variables explicativas, “<em>Unconstrainded</em>” (Sin restricciones) se refiere a la varianza residual. Restringido + Sin restricciones = Total. Se deriva, además, un estadístico R<sup>2</sup> que se interpreta de manera similar al R<sup>2</sup> de regresión: representa la variación explicada por el modelo en relación a la varianza total (Restringido/Total).Los autovalores se muestran tanto para los ejes restringidos como para los no restringidos. En este contexto, estos autovalores indican qué con cantidad de varianza contribuye cada uno de los ejes.</p>
 <p>Podemos graficar el resultado de nuestro modelo (con todas las variables explicativas) para tener una idea de qué variables se correlacionan con especies a lo largo de qué ejes.</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="multi2.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ordiplot</span>(biomass.rda, <span class="at">scaling =</span> <span class="dv">1</span>, <span class="at">type =</span> <span class="st">&quot;text&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="multi2.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ordiplot</span>(biomass.rda, <span class="at">scaling =</span> <span class="dv">1</span>, <span class="at">type =</span> <span class="st">&quot;text&quot;</span>)</span></code></pre></div>
 <p><img src="05-multi2_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 <p><strong>Figura 4:</strong> El “<em>escalado</em>” 1 refleja en el gráfico las similitudes entre objetos en la matriz de respuesta. Es decir, los sitios (en negro) que están más cerca entre sí tienen comunidades más similares. Las especies que están más juntas ocupan más sitios en común.</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="multi2.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ordiplot</span>(biomass.rda, <span class="at">scaling =</span> <span class="dv">2</span>, <span class="at">type =</span> <span class="st">&quot;text&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="multi2.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ordiplot</span>(biomass.rda, <span class="at">scaling =</span> <span class="dv">2</span>, <span class="at">type =</span> <span class="st">&quot;text&quot;</span>)</span></code></pre></div>
 <p><img src="05-multi2_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 <p><strong>Figura 5:</strong> El “<em>escalado</em>” 2 muestra los efectos de las variables explicativas. Las flechas más largas significan que esta variable impulsa fuertemente la variación en la matriz de la comunidad. Las flechas que apuntan en direcciones opuestas tienen una relación negativa. Las flechas que apuntan en la misma dirección tienen una relación positiva. Cuanto más superpuestas las flechas, más correlacionadas resultan esas variables (ya sea positiva o negtivamente).</p>
 </div>
-<div id="seleccionando-las-variables-explicativas-relevantes" class="section level3" number="5.4.3">
-<h3><span class="header-section-number">5.4.3</span> Seleccionando las variables explicativas relevantes</h3>
-<p>Si queremos simplificar este modelo, podemos realizar una selección hacia adelante (<em>forward</em>, van ingresando de a una por vez al modelo), o hacia atrás (<em>backward</em>, inicia con todas las variables involucradas y va eliminando de a una), o paso a paso (<em>stepwise</em>, proceso iterativo de inclusión y exclusión de variables). Estos tipos de selecciones nos ayudan a seleccionar variables que son estadísticamente importantes. Sin embargo, es importante notar que seleccionar variables de relevancia ecológica es mucho más importante que realizar la selección de variables “estadísticamente significativas.” Si una variable relevante desde el punto de vista ecológico no se selecciona “estadísticamente,” esto no significa que deba eliminarse del RDA.</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="multi2.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Forward selection of variables:</span></span>
-<span id="cb26-2"><a href="multi2.html#cb26-2" aria-hidden="true" tabindex="-1"></a>fwd.sel <span class="ot">&lt;-</span> <span class="fu">ordistep</span>(<span class="fu">rda</span>(bio.trans <span class="sc">~</span> <span class="dv">1</span>, <span class="at">data =</span> env, <span class="at">scale=</span> <span class="cn">TRUE</span>), <span class="co"># modelo mínimo con una sola variable incluída</span></span>
-<span id="cb26-3"><a href="multi2.html#cb26-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">scope =</span> <span class="fu">formula</span>(biomass.rda), <span class="co">#modelo &quot;de máxima&quot;, con todas las variables incluidas, completo</span></span>
-<span id="cb26-4"><a href="multi2.html#cb26-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">direction =</span> <span class="st">&quot;forward&quot;</span>,</span>
-<span id="cb26-5"><a href="multi2.html#cb26-5" aria-hidden="true" tabindex="-1"></a>               <span class="at">R2scope =</span> <span class="cn">TRUE</span>, <span class="co"># no puede sobrepasar el R^2 del modelo completo</span></span>
-<span id="cb26-6"><a href="multi2.html#cb26-6" aria-hidden="true" tabindex="-1"></a>               <span class="at">pstep =</span> <span class="dv">1000</span>,</span>
-<span id="cb26-7"><a href="multi2.html#cb26-7" aria-hidden="true" tabindex="-1"></a>               <span class="at">trace =</span> <span class="cn">TRUE</span>) <span class="co"># cambiar a FALSE para no ver todo el proceso de selección</span></span></code></pre></div>
+<div id="seleccionando-las-variables-explicativas-relevantes" class="section level3 hasAnchor" number="5.4.3">
+<h3><span class="header-section-number">5.4.3</span> Seleccionando las variables explicativas relevantes<a href="multi2.html#seleccionando-las-variables-explicativas-relevantes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Si queremos simplificar este modelo, podemos realizar una selección hacia adelante (<em>forward</em>, van ingresando de a una por vez al modelo), o hacia atrás (<em>backward</em>, inicia con todas las variables involucradas y va eliminando de a una), o paso a paso (<em>stepwise</em>, proceso iterativo de inclusión y exclusión de variables). Estos tipos de selecciones nos ayudan a seleccionar variables que son estadísticamente importantes. Sin embargo, es importante notar que seleccionar variables de relevancia ecológica es mucho más importante que realizar la selección de variables “estadísticamente significativas”. Si una variable relevante desde el punto de vista ecológico no se selecciona “estadísticamente”, esto no significa que deba eliminarse del RDA.</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="multi2.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Forward selection of variables:</span></span>
+<span id="cb29-2"><a href="multi2.html#cb29-2" aria-hidden="true" tabindex="-1"></a>fwd.sel <span class="ot">&lt;-</span> <span class="fu">ordistep</span>(<span class="fu">rda</span>(bio.trans <span class="sc">~</span> <span class="dv">1</span>, <span class="at">data =</span> env, <span class="at">scale=</span> <span class="cn">TRUE</span>), <span class="co"># modelo mínimo con una sola variable incluída</span></span>
+<span id="cb29-3"><a href="multi2.html#cb29-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">scope =</span> <span class="fu">formula</span>(biomass.rda), <span class="co">#modelo &quot;de máxima&quot;, con todas las variables incluidas, completo</span></span>
+<span id="cb29-4"><a href="multi2.html#cb29-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">direction =</span> <span class="st">&quot;forward&quot;</span>,</span>
+<span id="cb29-5"><a href="multi2.html#cb29-5" aria-hidden="true" tabindex="-1"></a>               <span class="at">R2scope =</span> <span class="cn">TRUE</span>, <span class="co"># no puede sobrepasar el R^2 del modelo completo</span></span>
+<span id="cb29-6"><a href="multi2.html#cb29-6" aria-hidden="true" tabindex="-1"></a>               <span class="at">pstep =</span> <span class="dv">1000</span>,</span>
+<span id="cb29-7"><a href="multi2.html#cb29-7" aria-hidden="true" tabindex="-1"></a>               <span class="at">trace =</span> <span class="cn">TRUE</span>) <span class="co"># cambiar a FALSE para no ver todo el proceso de selección</span></span></code></pre></div>
 <pre><code>## 
 ## Start: bio.trans ~ 1 
 ## 
-##           Df    AIC      F Pr(&gt;F)   
-## + EC       1 33.486 5.4886  0.010 **
-## + TN       1 35.111 3.6559  0.030 * 
-## + pH       1 36.512 2.1912  0.085 . 
-## + DOC      1 36.689 2.0134  0.100 . 
-## + a440     1 37.495 1.2229  0.245   
-## + DIN      1 37.847 0.8874  0.455   
-## + TP       1 37.997 0.7466  0.480   
-## + DRP      1 38.029 0.7166  0.515   
-## + SUVA254  1 38.270 0.4923  0.685   
-## + TH       1 38.425 0.3496  0.760   
-## + E2_E3    1 38.353 0.4154  0.770   
+##           Df    AIC      F Pr(&gt;F)  
+## + EC       1 33.486 5.4886  0.025 *
+## + TN       1 35.111 3.6559  0.030 *
+## + pH       1 36.512 2.1912  0.105  
+## + DOC      1 36.689 2.0134  0.105  
+## + a440     1 37.495 1.2229  0.295  
+## + DIN      1 37.847 0.8874  0.380  
+## + TP       1 37.997 0.7466  0.530  
+## + DRP      1 38.029 0.7166  0.575  
+## + SUVA254  1 38.270 0.4923  0.595  
+## + E2_E3    1 38.353 0.4154  0.760  
+## + TH       1 38.425 0.3496  0.845  
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Step: bio.trans ~ EC 
 ## 
 ##           Df    AIC      F Pr(&gt;F)  
-## + a440     1 30.718 4.5770  0.015 *
-## + pH       1 32.870 2.3759  0.050 *
-## + E2_E3    1 34.177 1.1501  0.290  
-## + TN       1 34.291 1.0469  0.335  
-## + DIN      1 34.608 0.7632  0.480  
-## + DRP      1 34.851 0.5485  0.630  
-## + TH       1 34.873 0.5294  0.660  
-## + TP       1 34.803 0.5910  0.685  
-## + DOC      1 34.986 0.4307  0.730  
-## + SUVA254  1 35.170 0.2709  0.910  
+## + a440     1 30.718 4.5770  0.020 *
+## + pH       1 32.870 2.3759  0.085 .
+## + E2_E3    1 34.177 1.1501  0.365  
+## + TN       1 34.291 1.0469  0.410  
+## + DIN      1 34.608 0.7632  0.520  
+## + DRP      1 34.851 0.5485  0.600  
+## + TP       1 34.803 0.5910  0.665  
+## + TH       1 34.873 0.5294  0.685  
+## + DOC      1 34.986 0.4307  0.825  
+## + SUVA254  1 35.170 0.2709  0.875  
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Step: bio.trans ~ EC + a440 
 ## 
-##           Df    AIC      F Pr(&gt;F)
-## + pH       1 30.098 2.2393  0.100
-## + TP       1 30.590 1.7964  0.165
-## + TN       1 31.422 1.0710  0.365
-## + DOC      1 31.460 1.0392  0.370
-## + SUVA254  1 31.840 0.7185  0.545
-## + DRP      1 31.766 0.7802  0.560
-## + E2_E3    1 32.045 0.5477  0.675
-## + TH       1 32.114 0.4904  0.745
-## + DIN      1 32.500 0.1756  0.945</code></pre>
+##           Df    AIC      F Pr(&gt;F)  
+## + pH       1 30.098 2.2393  0.090 .
+## + TP       1 30.590 1.7964  0.170  
+## + TN       1 31.422 1.0710  0.345  
+## + DOC      1 31.460 1.0392  0.390  
+## + DRP      1 31.766 0.7802  0.490  
+## + SUVA254  1 31.840 0.7185  0.550  
+## + E2_E3    1 32.045 0.5477  0.630  
+## + TH       1 32.114 0.4904  0.735  
+## + DIN      1 32.500 0.1756  0.965  
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <p>Para evitar la sobreestimación de la varianza explicada, la selección de variables debe realizarse con dos criterios de parada: (1) el nivel de significación alfa habitual y (2) el coeficiente de determinación múltiple ajustado (R<sup>2</sup>adj.) calculado utilizando todas las variables explicativas. Cuando la selección hacia adelante identifica una variable que hace que uno u otro criterio supere el umbral fijado, se rechaza esa variable y se detiene el procedimiento (referirse a Blanchet, F. G., Legendre, P., &amp; Borcard, D. 2008. <em>Forward selection of explanatory variables</em>. Ecology, 89(9): 2623-2632, para más detalles).</p>
 <p>Qué variables son retenidas por la selección <em>forward</em>?</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="multi2.html#cb28-1" aria-hidden="true" tabindex="-1"></a>fwd.sel<span class="sc">$</span>call</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="multi2.html#cb31-1" aria-hidden="true" tabindex="-1"></a>fwd.sel<span class="sc">$</span>call</span></code></pre></div>
 <pre><code>## rda(formula = bio.trans ~ EC + a440, data = env, scale = TRUE)</code></pre>
 <p>Cuál es el valor del R<sup>2</sup> ajustado de este modelo?</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="multi2.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Escribir el modelo</span></span>
-<span id="cb30-2"><a href="multi2.html#cb30-2" aria-hidden="true" tabindex="-1"></a>biomass.rda.signif <span class="ot">&lt;-</span> <span class="fu">rda</span>(bio.trans <span class="sc">~</span> EC <span class="sc">+</span> a440, <span class="at">data =</span> env, <span class="at">scale=</span> <span class="cn">TRUE</span>)</span>
-<span id="cb30-3"><a href="multi2.html#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-4"><a href="multi2.html#cb30-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-5"><a href="multi2.html#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="fu">RsquareAdj</span>(biomass.rda.signif)</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="multi2.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Escribir el modelo</span></span>
+<span id="cb33-2"><a href="multi2.html#cb33-2" aria-hidden="true" tabindex="-1"></a>biomass.rda.signif <span class="ot">&lt;-</span> <span class="fu">rda</span>(bio.trans <span class="sc">~</span> EC <span class="sc">+</span> a440, <span class="at">data =</span> env, <span class="at">scale=</span> <span class="cn">TRUE</span>)</span>
+<span id="cb33-3"><a href="multi2.html#cb33-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-4"><a href="multi2.html#cb33-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-5"><a href="multi2.html#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="fu">RsquareAdj</span>(biomass.rda.signif)</span></code></pre></div>
 <pre><code>## $r.squared
 ## [1] 0.3962273
 ## 
 ## $adj.r.squared
 ## [1] 0.3251952</code></pre>
 <p>Tests de significación</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="multi2.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova.cca</span>(biomass.rda.signif, <span class="at">step =</span> <span class="dv">1000</span>) <span class="co">#Significación global del modelo final</span></span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="multi2.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova.cca</span>(biomass.rda.signif, <span class="at">step =</span> <span class="dv">1000</span>) <span class="co">#Significación global del modelo final</span></span></code></pre></div>
 <pre><code>## Permutation test for rda under reduced model
 ## Permutation: free
 ## Number of permutations: 999
 ## 
 ## Model: rda(formula = bio.trans ~ EC + a440, data = env, scale = TRUE)
-##          Df Variance      F Pr(&gt;F)    
-## Model     2   2.3774 5.5781  0.001 ***
-## Residual 17   3.6226                  
+##          Df Variance      F Pr(&gt;F)   
+## Model     2   2.3774 5.5781  0.002 **
+## Residual 17   3.6226                 
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="multi2.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova.cca</span>(biomass.rda.signif, <span class="at">step =</span> <span class="dv">1000</span>, <span class="at">by =</span> <span class="st">&quot;term&quot;</span>) <span class="co">#significación de variables </span></span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="multi2.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova.cca</span>(biomass.rda.signif, <span class="at">step =</span> <span class="dv">1000</span>, <span class="at">by =</span> <span class="st">&quot;term&quot;</span>) <span class="co">#significación de variables </span></span></code></pre></div>
 <pre><code>## Permutation test for rda under reduced model
 ## Terms added sequentially (first to last)
 ## Permutation: free
@@ -630,26 +648,26 @@ La salida anterior porporciona información útil: “<em>Inertia</em>” (Inerc
 ## Residual 17   3.6226                 
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="multi2.html#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova.cca</span>(biomass.rda.signif, <span class="at">step =</span> <span class="dv">1000</span>, <span class="at">by =</span> <span class="st">&quot;axis&quot;</span>) <span class="co">#significación de los ejes</span></span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="multi2.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova.cca</span>(biomass.rda.signif, <span class="at">step =</span> <span class="dv">1000</span>, <span class="at">by =</span> <span class="st">&quot;axis&quot;</span>) <span class="co">#significación de los ejes</span></span></code></pre></div>
 <pre><code>## Permutation test for rda under reduced model
 ## Forward tests for axes
 ## Permutation: free
 ## Number of permutations: 999
 ## 
 ## Model: rda(formula = bio.trans ~ EC + a440, data = env, scale = TRUE)
-##          Df Variance      F Pr(&gt;F)    
-## RDA1      1   1.9986 9.3787  0.001 ***
-## RDA2      1   0.3788 1.7776  0.151    
-## Residual 17   3.6226                  
+##          Df Variance      F Pr(&gt;F)   
+## RDA1      1   1.9986 9.3787  0.002 **
+## RDA2      1   0.3788 1.7776  0.156   
+## Residual 17   3.6226                 
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <p>Colinealidad entre variables explicativas</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="multi2.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">vif.cca</span>(biomass.rda.signif) <span class="co">#Sii vif (&quot;variable inflation factor&quot;) &lt;5 no hay colinealidad</span></span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="multi2.html#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">vif.cca</span>(biomass.rda.signif) <span class="co">#Sii vif (&quot;variable inflation factor&quot;) &lt;5 no hay colinealidad</span></span></code></pre></div>
 <pre><code>##       EC     a440 
 ## 1.693375 1.693375</code></pre>
 </div>
-<div id="rda-basado-en-matriz-de-distancia-distance-based-rda-db-rda" class="section level3" number="5.4.4">
-<h3><span class="header-section-number">5.4.4</span> RDA basado en matriz de distancia (“Distance-based RDA,” db-RDA)</h3>
+<div id="rda-basado-en-matriz-de-distancia-distance-based-rda-db-rda" class="section level3 hasAnchor" number="5.4.4">
+<h3><span class="header-section-number">5.4.4</span> RDA basado en matriz de distancia (“Distance-based RDA”, db-RDA)<a href="multi2.html#rda-basado-en-matriz-de-distancia-distance-based-rda-db-rda" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>La diferencia en el análisis entre RDA y dbRDA es simplemente el paso de expresar una matriz de disimilitud no euclidiana en un espacio euclidiano. ¿Les suena familiar?… Sí! eso es exactamente lo que hace un PCoA.
 Los datos de especies crudos, sin procesar, se trasnforman primero en una matriz de disimilitud utilizando alguna métrica de disimilitud seleccionada, y con esta matriz se modela un PCoA. La matriz resultante de <em>scores</em> de sitios sobre todos los ejes de ordenación de PCoA se usa luego en RDA junto con las variables explicativas. El beneficio de dbRDA es que se puede aplicar cualquier métrica de distancia a los datos (es decir, no solo euclidiana como en RDA, Hellinger (o algunas otras) como en tbRDA o chi-cuadrado como en CCA). Se debe tener cuidado y evitar los autovalores negativos obtenidos en el PCoA, que se omitirían de los análisis. Para que ellos no ocurra, la solución es usar solo distancias métricas (euclidianas), o aplicar una transformación a la matriz de distancia de forma tal de convertir esa distancia “no métrica” en una métrica (por ejemplo, la transformación de raíz cuadrada aplicada a la matriz de distancia obtenida por Bray-Curtis), o usar algunas de las correcciones propuestas en las diferentes funciones.</p>
 <p><strong>Notas:</strong>
@@ -659,71 +677,100 @@ Los datos de especies crudos, sin procesar, se trasnforman primero en una matriz
 (porque el primer paso da como resultado un PCoA regular y el segundo paso no tiene sentido).</li>
 </ol>
 <p>Estos pasos son bastante simples de realizar y se pueden ejecutar uno por uno en R con unas pocas líneas de código. Sin embargo, <strong>vegan</strong> propone la función <strong>capscale()</strong> para este análisis. Esta función permite el trazado directo de las puntuaciones medias ponderadas de las especies si el usuario proporciona la matriz de especies en el argumento <em>com</em>.</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="multi2.html#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co">#El primer paso es decidir qué medida de distancia usar. Una forma en que podemos hacer #esto es observando las correlaciones entre los índices de disimilitud y la separación #de gradiente; cuanto mayor sea el valor, mejor.</span></span>
-<span id="cb40-2"><a href="multi2.html#cb40-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-3"><a href="multi2.html#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="fu">rankindex</span>(env, biomass, <span class="at">indices =</span> <span class="fu">c</span>(<span class="st">&quot;euc&quot;</span>, <span class="st">&quot;man&quot;</span>, <span class="st">&quot;gow&quot;</span>, <span class="st">&quot;bra&quot;</span>, <span class="st">&quot;kul&quot;</span>), <span class="at">stepacross=</span> <span class="cn">FALSE</span>, <span class="at">method =</span> <span class="st">&quot;spearman&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="multi2.html#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co">#El primer paso es decidir qué medida de distancia usar. Una forma en que podemos hacer #esto es observando las correlaciones entre los índices de disimilitud y la separación #de gradiente; cuanto mayor sea el valor, mejor.</span></span>
+<span id="cb43-2"><a href="multi2.html#cb43-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-3"><a href="multi2.html#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="fu">rankindex</span>(env, biomass, <span class="at">indices =</span> <span class="fu">c</span>(<span class="st">&quot;euc&quot;</span>, <span class="st">&quot;man&quot;</span>, <span class="st">&quot;gow&quot;</span>, <span class="st">&quot;bra&quot;</span>, <span class="st">&quot;kul&quot;</span>), <span class="at">stepacross=</span> <span class="cn">FALSE</span>, <span class="at">method =</span> <span class="st">&quot;spearman&quot;</span>)</span></code></pre></div>
 <pre><code>##       euc       man       gow       bra       kul 
 ## 0.2327555 0.2591706 0.3040157 0.3376863 0.3214870</code></pre>
 <p>La distancia de Bray Curtis parece ser el mejor índice para aplicar.</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="multi2.html#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. capscale() en base a datos crudos (sitos x especies)</span></span>
-<span id="cb42-2"><a href="multi2.html#cb42-2" aria-hidden="true" tabindex="-1"></a>bray.env.cap<span class="ot">&lt;-</span> <span class="fu">capscale</span> (biomass <span class="sc">~</span> <span class="dv">1</span>, env, <span class="at">add =</span> <span class="st">&quot;lingoes&quot;</span> )<span class="co">#modelo mínimo</span></span>
-<span id="cb42-3"><a href="multi2.html#cb42-3" aria-hidden="true" tabindex="-1"></a>bray.env.cap.all <span class="ot">&lt;-</span> <span class="fu">capscale</span>(biomass <span class="sc">~</span> . , env, <span class="at">add =</span> <span class="st">&quot;lingoes&quot;</span>)<span class="co"># modelo completo</span></span>
-<span id="cb42-4"><a href="multi2.html#cb42-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Existen dos maneras de evitar autovalores negativos: una es agregando una constante #al análisis en el argumento &quot;add&quot; o tomando los valores de similitud transformados por #raíz cuadrada (argumento sqrt.dist= TRUE). Más detalle en help (capscale)</span></span>
-<span id="cb42-5"><a href="multi2.html#cb42-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb42-6"><a href="multi2.html#cb42-6" aria-hidden="true" tabindex="-1"></a>fwd.sel.dbRDA<span class="ot">&lt;-</span><span class="fu">ordistep</span> (bray.env.cap, <span class="at">scope =</span> <span class="fu">formula</span> (bray.env.cap.all), <span class="at">direction =</span> <span class="st">&quot;forward&quot;</span>, <span class="at">R2scope =</span> <span class="cn">TRUE</span>, <span class="co"># no puede sobrepasar el R^2 del modelo completo</span></span>
-<span id="cb42-7"><a href="multi2.html#cb42-7" aria-hidden="true" tabindex="-1"></a><span class="at">pstep =</span> <span class="dv">1000</span>,</span>
-<span id="cb42-8"><a href="multi2.html#cb42-8" aria-hidden="true" tabindex="-1"></a><span class="at">trace =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="multi2.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. capscale() en base a datos crudos (sitos x especies)</span></span>
+<span id="cb45-2"><a href="multi2.html#cb45-2" aria-hidden="true" tabindex="-1"></a>bray.env.cap<span class="ot">&lt;-</span> <span class="fu">capscale</span> (biomass <span class="sc">~</span> <span class="dv">1</span>, env, <span class="at">add =</span> <span class="st">&quot;lingoes&quot;</span> )<span class="co">#modelo mínimo</span></span>
+<span id="cb45-3"><a href="multi2.html#cb45-3" aria-hidden="true" tabindex="-1"></a>bray.env.cap.all <span class="ot">&lt;-</span> <span class="fu">capscale</span>(biomass <span class="sc">~</span> . , env, <span class="at">add =</span> <span class="st">&quot;lingoes&quot;</span>)<span class="co"># modelo completo</span></span>
+<span id="cb45-4"><a href="multi2.html#cb45-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Existen dos maneras de evitar autovalores negativos: una es agregando una constante #al análisis en el argumento &quot;add&quot; o tomando los valores de similitud transformados por #raíz cuadrada (argumento sqrt.dist= TRUE). Más detalle en help (capscale)</span></span>
+<span id="cb45-5"><a href="multi2.html#cb45-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-6"><a href="multi2.html#cb45-6" aria-hidden="true" tabindex="-1"></a>fwd.sel.dbRDA<span class="ot">&lt;-</span><span class="fu">ordistep</span> (bray.env.cap, <span class="at">scope =</span> <span class="fu">formula</span> (bray.env.cap.all), <span class="at">direction =</span> <span class="st">&quot;forward&quot;</span>, <span class="at">R2scope =</span> <span class="cn">TRUE</span>, <span class="co"># no puede sobrepasar el R^2 del modelo completo</span></span>
+<span id="cb45-7"><a href="multi2.html#cb45-7" aria-hidden="true" tabindex="-1"></a><span class="at">pstep =</span> <span class="dv">1000</span>,</span>
+<span id="cb45-8"><a href="multi2.html#cb45-8" aria-hidden="true" tabindex="-1"></a><span class="at">trace =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## 
 ## Start: biomass ~ 1 
 ## 
 ##           Df    AIC      F Pr(&gt;F)   
-## + TN       1 436.35 6.4767  0.005 **
-## + EC       1 435.62 7.3760  0.010 **
-## + DOC      1 439.94 2.4469  0.105   
-## + a440     1 440.76 1.6257  0.210   
-## + TP       1 441.11 1.2859  0.275   
-## + TH       1 441.34 1.0725  0.300   
-## + SUVA254  1 441.40 1.0155  0.360   
-## + DIN      1 441.51 0.9092  0.410   
-## + E2_E3    1 441.53 0.8848  0.415   
-## + pH       1 441.68 0.7432  0.465   
-## + DRP      1 442.18 0.2880  0.725   
+## + EC       1 435.62 7.3760  0.005 **
+## + TN       1 436.35 6.4767  0.010 **
+## + DOC      1 439.94 2.4469  0.075 . 
+## + a440     1 440.76 1.6257  0.250   
+## + TP       1 441.11 1.2859  0.260   
+## + TH       1 441.34 1.0725  0.320   
+## + SUVA254  1 441.40 1.0155  0.400   
+## + DIN      1 441.51 0.9092  0.400   
+## + pH       1 441.68 0.7432  0.435   
+## + E2_E3    1 441.53 0.8848  0.450   
+## + DRP      1 442.18 0.2880  0.765   
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
-## Step: biomass ~ TN 
+## Step: biomass ~ EC 
 ## 
 ##           Df    AIC      F Pr(&gt;F)  
-## + EC       1 435.40 2.6933  0.090 .
-## + a440     1 436.48 1.6577  0.170  
-## + DRP      1 437.12 1.0782  0.300  
-## + pH       1 437.21 0.9892  0.315  
-## + SUVA254  1 437.13 1.0618  0.360  
-## + E2_E3    1 437.19 1.0098  0.415  
-## + TP       1 437.06 1.1304  0.420  
-## + DIN      1 437.47 0.7613  0.560  
-## + DOC      1 437.66 0.5935  0.580  
-## + TH       1 438.01 0.2917  0.820  
+## + a440     1 433.14 4.2685  0.035 *
+## + E2_E3    1 435.03 2.3593  0.095 .
+## + TN       1 435.40 1.9954  0.120  
+## + pH       1 435.57 1.8349  0.135  
+## + TP       1 436.22 1.2399  0.325  
+## + DIN      1 436.64 0.8577  0.375  
+## + SUVA254  1 436.60 0.8973  0.450  
+## + DOC      1 436.87 0.6540  0.560  
+## + TH       1 437.12 0.4337  0.740  
+## + DRP      1 437.50 0.1099  0.930  
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Step: biomass ~ EC + a440 
+## 
+##           Df    AIC      F Pr(&gt;F)  
+## + pH       1 431.31 3.3846  0.040 *
+## + TN       1 432.60 2.1715  0.075 .
+## + E2_E3    1 433.25 1.5858  0.210  
+## + DOC      1 433.79 1.1182  0.310  
+## + TH       1 434.31 0.6796  0.470  
+## + SUVA254  1 434.40 0.6032  0.555  
+## + TP       1 434.29 0.6956  0.595  
+## + DRP      1 434.72 0.3418  0.735  
+## + DIN      1 434.90 0.1953  0.875  
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Step: biomass ~ EC + a440 + pH 
+## 
+##           Df    AIC      F Pr(&gt;F)  
+## + E2_E3    1 430.27 2.4564  0.095 .
+## + TN       1 431.11 1.7398  0.180  
+## + TP       1 431.80 1.1744  0.340  
+## + DRP      1 432.24 0.8201  0.420  
+## + SUVA254  1 432.73 0.4406  0.735  
+## + DOC      1 432.71 0.4525  0.760  
+## + DIN      1 432.94 0.2786  0.850  
+## + TH       1 433.05 0.1947  0.910  
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="multi2.html#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ordiplot</span>(bray.env.cap.all, <span class="at">scaling =</span> <span class="dv">2</span>, <span class="at">type =</span> <span class="st">&quot;text&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="multi2.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ordiplot</span>(bray.env.cap.all, <span class="at">scaling =</span> <span class="dv">2</span>, <span class="at">type =</span> <span class="st">&quot;text&quot;</span>)</span></code></pre></div>
 <p><img src="05-multi2_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
 <p><strong>Figura 6:</strong> Ordenamiento obtenido a partir del dbRDA en base a la distancia de Bray Curtis. Escalamiento tipo 2.</p>
 <p>Qué variables son retenidas por la selección <em>forward</em>?</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="multi2.html#cb45-1" aria-hidden="true" tabindex="-1"></a>fwd.sel.dbRDA<span class="sc">$</span>call</span></code></pre></div>
-<pre><code>## capscale(formula = biomass ~ TN, data = env, add = &quot;lingoes&quot;)</code></pre>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="multi2.html#cb48-1" aria-hidden="true" tabindex="-1"></a>fwd.sel.dbRDA<span class="sc">$</span>call</span></code></pre></div>
+<pre><code>## capscale(formula = biomass ~ EC + a440 + pH, data = env, add = &quot;lingoes&quot;)</code></pre>
 <p>Cuál es el valor del R<sup>2</sup> ajustado de este modelo?</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="multi2.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Escribir el modelo</span></span>
-<span id="cb47-2"><a href="multi2.html#cb47-2" aria-hidden="true" tabindex="-1"></a>biomass.dbrda.signif <span class="ot">&lt;-</span> <span class="fu">capscale</span>(<span class="at">formula =</span> biomass <span class="sc">~</span> EC <span class="sc">+</span> a440 <span class="sc">+</span> pH, <span class="at">data =</span> env, <span class="at">add =</span> <span class="st">&quot;lingoes&quot;</span>)</span>
-<span id="cb47-3"><a href="multi2.html#cb47-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-4"><a href="multi2.html#cb47-4" aria-hidden="true" tabindex="-1"></a><span class="fu">RsquareAdj</span>(biomass.dbrda.signif)</span></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="multi2.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Escribir el modelo</span></span>
+<span id="cb50-2"><a href="multi2.html#cb50-2" aria-hidden="true" tabindex="-1"></a>biomass.dbrda.signif <span class="ot">&lt;-</span> <span class="fu">capscale</span>(<span class="at">formula =</span> biomass <span class="sc">~</span> EC <span class="sc">+</span> a440 <span class="sc">+</span> pH, <span class="at">data =</span> env, <span class="at">add =</span> <span class="st">&quot;lingoes&quot;</span>)</span>
+<span id="cb50-3"><a href="multi2.html#cb50-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-4"><a href="multi2.html#cb50-4" aria-hidden="true" tabindex="-1"></a><span class="fu">RsquareAdj</span>(biomass.dbrda.signif)</span></code></pre></div>
 <pre><code>## $r.squared
 ## [1] 0.5320242
 ## 
 ## $adj.r.squared
 ## [1] 0.4442787</code></pre>
 <p>Test de significación</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="multi2.html#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova.cca</span>(biomass.dbrda.signif, <span class="at">step =</span> <span class="dv">1000</span>) <span class="co">#Significación global del modelo final</span></span></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="multi2.html#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova.cca</span>(biomass.dbrda.signif, <span class="at">step =</span> <span class="dv">1000</span>) <span class="co">#Significación global del modelo final</span></span></code></pre></div>
 <pre><code>## Permutation test for capscale under reduced model
 ## Permutation: free
 ## Number of permutations: 999
@@ -734,7 +781,7 @@ Los datos de especies crudos, sin procesar, se trasnforman primero en una matriz
 ## Residual 16 1637764593                  
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="multi2.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova.cca</span>(biomass.dbrda.signif, <span class="at">step =</span> <span class="dv">1000</span>, <span class="at">by =</span> <span class="st">&quot;term&quot;</span>) <span class="co">#significación de variables </span></span></code></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="multi2.html#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova.cca</span>(biomass.dbrda.signif, <span class="at">step =</span> <span class="dv">1000</span>, <span class="at">by =</span> <span class="st">&quot;term&quot;</span>) <span class="co">#significación de variables </span></span></code></pre></div>
 <pre><code>## Permutation test for capscale under reduced model
 ## Terms added sequentially (first to last)
 ## Permutation: free
@@ -743,12 +790,12 @@ Los datos de especies crudos, sin procesar, se trasnforman primero en una matriz
 ## Model: capscale(formula = biomass ~ EC + a440 + pH, data = env, add = &quot;lingoes&quot;)
 ##          Df   Variance      F Pr(&gt;F)   
 ## EC        1 1017246043 9.9379  0.002 **
-## a440      1  498217165 4.8673  0.014 * 
-## pH        1  346449995 3.3846  0.037 * 
+## a440      1  498217165 4.8673  0.023 * 
+## pH        1  346449995 3.3846  0.051 . 
 ## Residual 16 1637764593                 
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="multi2.html#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova.cca</span>(biomass.dbrda.signif, <span class="at">step =</span> <span class="dv">1000</span>, <span class="at">by =</span> <span class="st">&quot;axis&quot;</span>) <span class="co">#significación de los ejes</span></span></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="multi2.html#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova.cca</span>(biomass.dbrda.signif, <span class="at">step =</span> <span class="dv">1000</span>, <span class="at">by =</span> <span class="st">&quot;axis&quot;</span>) <span class="co">#significación de los ejes</span></span></code></pre></div>
 <pre><code>## Permutation test for capscale under reduced model
 ## Forward tests for axes
 ## Permutation: free
@@ -757,39 +804,39 @@ Los datos de especies crudos, sin procesar, se trasnforman primero en una matriz
 ## Model: capscale(formula = biomass ~ EC + a440 + pH, data = env, add = &quot;lingoes&quot;)
 ##          Df   Variance       F Pr(&gt;F)    
 ## CAP1      1 1503918383 14.6924  0.001 ***
-## CAP2      1  278096049  2.7168  0.178    
-## CAP3      1   79898771  0.7806  0.494    
+## CAP2      1  278096049  2.7168  0.171    
+## CAP3      1   79898771  0.7806  0.501    
 ## Residual 16 1637764593                   
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <p>Colinealidad entre variables explicativas</p>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="multi2.html#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">vif.cca</span>(biomass.dbrda.signif) <span class="co">#Sii vif (&quot;variable inflation factor&quot;) &lt;5 no hay colinealidad</span></span></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="multi2.html#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">vif.cca</span>(biomass.dbrda.signif) <span class="co">#Sii vif (&quot;variable inflation factor&quot;) &lt;5 no hay colinealidad</span></span></code></pre></div>
 <pre><code>##       EC     a440       pH 
 ## 1.932725 1.873615 1.153775</code></pre>
 <p>Existe otra manera de calcular dbRDA que fue propuesta por McArdle y Anderson (2001). Este método alternativo ejecuta el análisis directamente sobre la matriz de similitud de respuesta sin tener que pasar por un PCoA. Esta forma alternativa es proporcionada en el paqueta <strong>vegan</strong> en la fucnión <strong>dbrda()</strong>.</p>
-<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="multi2.html#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co"># dbRDA</span></span>
-<span id="cb57-2"><a href="multi2.html#cb57-2" aria-hidden="true" tabindex="-1"></a><span class="co">#------</span></span>
-<span id="cb57-3"><a href="multi2.html#cb57-3" aria-hidden="true" tabindex="-1"></a><span class="co"># generar la matriz de distancia</span></span>
-<span id="cb57-4"><a href="multi2.html#cb57-4" aria-hidden="true" tabindex="-1"></a>biomass.dist <span class="ot">&lt;-</span> <span class="fu">vegdist</span>(biomass, <span class="at">method=</span><span class="st">&quot;bray&quot;</span>) <span class="co"># bray curtis</span></span></code></pre></div>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="multi2.html#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Modelado</span></span>
-<span id="cb58-2"><a href="multi2.html#cb58-2" aria-hidden="true" tabindex="-1"></a>dbrda<span class="fl">.0</span> <span class="ot">&lt;-</span> <span class="fu">dbrda</span>(biomass.dist <span class="sc">~</span> <span class="dv">1</span>, env, <span class="at">add=</span><span class="cn">TRUE</span>)<span class="co">#modelo mínimo</span></span>
-<span id="cb58-3"><a href="multi2.html#cb58-3" aria-hidden="true" tabindex="-1"></a>dbrda.all <span class="ot">&lt;-</span> <span class="fu">dbrda</span>(biomass.dist <span class="sc">~</span> ., env, <span class="at">add=</span><span class="cn">TRUE</span>)<span class="co">#modelo completo</span></span>
-<span id="cb58-4"><a href="multi2.html#cb58-4" aria-hidden="true" tabindex="-1"></a>fwd.sel.dbRDA2<span class="ot">&lt;-</span><span class="fu">ordistep</span> (dbrda<span class="fl">.0</span>, <span class="at">scope =</span> <span class="fu">formula</span> (dbrda.all), <span class="at">add=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="multi2.html#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co"># dbRDA</span></span>
+<span id="cb60-2"><a href="multi2.html#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="co">#------</span></span>
+<span id="cb60-3"><a href="multi2.html#cb60-3" aria-hidden="true" tabindex="-1"></a><span class="co"># generar la matriz de distancia</span></span>
+<span id="cb60-4"><a href="multi2.html#cb60-4" aria-hidden="true" tabindex="-1"></a>biomass.dist <span class="ot">&lt;-</span> <span class="fu">vegdist</span>(biomass, <span class="at">method=</span><span class="st">&quot;bray&quot;</span>) <span class="co"># bray curtis</span></span></code></pre></div>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="multi2.html#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Modelado</span></span>
+<span id="cb61-2"><a href="multi2.html#cb61-2" aria-hidden="true" tabindex="-1"></a>dbrda<span class="fl">.0</span> <span class="ot">&lt;-</span> <span class="fu">dbrda</span>(biomass.dist <span class="sc">~</span> <span class="dv">1</span>, env, <span class="at">add=</span><span class="cn">TRUE</span>)<span class="co">#modelo mínimo</span></span>
+<span id="cb61-3"><a href="multi2.html#cb61-3" aria-hidden="true" tabindex="-1"></a>dbrda.all <span class="ot">&lt;-</span> <span class="fu">dbrda</span>(biomass.dist <span class="sc">~</span> ., env, <span class="at">add=</span><span class="cn">TRUE</span>)<span class="co">#modelo completo</span></span>
+<span id="cb61-4"><a href="multi2.html#cb61-4" aria-hidden="true" tabindex="-1"></a>fwd.sel.dbRDA2<span class="ot">&lt;-</span><span class="fu">ordistep</span> (dbrda<span class="fl">.0</span>, <span class="at">scope =</span> <span class="fu">formula</span> (dbrda.all), <span class="at">add=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## 
 ## Start: biomass.dist ~ 1 
 ## 
 ##           Df    AIC      F Pr(&gt;F)   
 ## + EC       1 18.715 6.6542  0.005 **
-## + TN       1 20.679 4.3484  0.010 **
-## + a440     1 22.817 2.0827  0.055 . 
-## + DOC      1 22.618 2.2839  0.090 . 
-## + DRP      1 23.525 1.3845  0.220   
-## + DIN      1 23.810 1.1098  0.290   
-## + TH       1 24.081 0.8529  0.445   
-## + SUVA254  1 24.037 0.8944  0.500   
-## + TP       1 24.087 0.8474  0.515   
-## + pH       1 24.092 0.8425  0.530   
-## + E2_E3    1 24.382 0.5712  0.790   
+## + TN       1 20.679 4.3484  0.005 **
+## + DOC      1 22.618 2.2839  0.050 * 
+## + a440     1 22.817 2.0827  0.075 . 
+## + DRP      1 23.525 1.3845  0.185   
+## + DIN      1 23.810 1.1098  0.345   
+## + SUVA254  1 24.037 0.8944  0.455   
+## + TH       1 24.081 0.8529  0.470   
+## + pH       1 24.092 0.8425  0.475   
+## + TP       1 24.087 0.8474  0.530   
+## + E2_E3    1 24.382 0.5712  0.815   
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
@@ -801,72 +848,141 @@ Los datos de especies crudos, sin procesar, se trasnforman primero en una matriz
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ##           Df    AIC      F Pr(&gt;F)  
-## + a440     1 18.018 2.4546  0.015 *
-## + pH       1 19.078 1.4506  0.145  
-## + TN       1 19.061 1.4660  0.170  
+## + a440     1 18.018 2.4546  0.035 *
+## + pH       1 19.078 1.4506  0.135  
+## + TN       1 19.061 1.4660  0.150  
 ## + DRP      1 19.089 1.4399  0.185  
-## + E2_E3    1 19.284 1.2616  0.205  
-## + DIN      1 19.478 1.0851  0.370  
-## + DOC      1 19.703 0.8828  0.530  
-## + TH       1 19.807 0.7900  0.655  
-## + TP       1 19.883 0.7230  0.730  
-## + SUVA254  1 20.175 0.4660  0.975  
+## + E2_E3    1 19.284 1.2616  0.235  
+## + DIN      1 19.478 1.0851  0.300  
+## + DOC      1 19.703 0.8828  0.480  
+## + TP       1 19.883 0.7230  0.710  
+## + TH       1 19.807 0.7900  0.720  
+## + SUVA254  1 20.175 0.4660  0.955  
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Step: biomass.dist ~ EC + a440 
 ## 
 ##        Df    AIC      F Pr(&gt;F)   
-## - a440  1 18.715 2.4546  0.030 * 
+## - a440  1 18.715 2.4546  0.045 * 
 ## - EC    1 22.817 6.8831  0.005 **
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ##           Df    AIC      F Pr(&gt;F)  
-## + pH       1 17.824 1.8552  0.055 .
-## + DRP      1 18.257 1.4724  0.100 .
-## + TN       1 18.218 1.5069  0.110  
+## + pH       1 17.824 1.8552  0.050 *
 ## + TP       1 18.175 1.5445  0.125  
-## + TH       1 18.889 0.9289  0.480  
-## + E2_E3    1 18.937 0.8890  0.480  
-## + DOC      1 18.935 0.8905  0.505  
-## + SUVA254  1 19.014 0.8242  0.595  
-## + DIN      1 19.423 0.4831  0.980  
+## + TN       1 18.218 1.5069  0.145  
+## + DRP      1 18.257 1.4724  0.150  
+## + TH       1 18.889 0.9289  0.500  
+## + E2_E3    1 18.937 0.8890  0.500  
+## + DOC      1 18.935 0.8905  0.555  
+## + SUVA254  1 19.014 0.8242  0.650  
+## + DIN      1 19.423 0.4831  0.960  
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Step: biomass.dist ~ EC + a440 + pH 
+## 
+##        Df    AIC      F Pr(&gt;F)   
+## - pH    1 18.018 1.8552  0.115   
+## - a440  1 19.078 2.8267  0.035 * 
+## - EC    1 23.836 7.8833  0.005 **
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Step: biomass.dist ~ EC + a440 
+## 
+##           Df    AIC      F Pr(&gt;F)  
+## + pH       1 17.824 1.8552  0.045 *
+## + TN       1 18.218 1.5069  0.050 *
+## + DRP      1 18.257 1.4724  0.100 .
+## + TP       1 18.175 1.5445  0.135  
+## + TH       1 18.889 0.9289  0.460  
+## + DOC      1 18.935 0.8905  0.520  
+## + E2_E3    1 18.937 0.8890  0.560  
+## + SUVA254  1 19.014 0.8242  0.580  
+## + DIN      1 19.423 0.4831  0.925  
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Step: biomass.dist ~ EC + a440 + pH 
+## 
+##        Df    AIC      F Pr(&gt;F)   
+## - pH    1 18.018 1.8552  0.110   
+## - a440  1 19.078 2.8267  0.030 * 
+## - EC    1 23.836 7.8833  0.005 **
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Step: biomass.dist ~ EC + a440 
+## 
+##           Df    AIC      F Pr(&gt;F)  
+## + pH       1 17.824 1.8552  0.035 *
+## + TP       1 18.175 1.5445  0.095 .
+## + DRP      1 18.257 1.4724  0.110  
+## + TN       1 18.218 1.5069  0.115  
+## + E2_E3    1 18.937 0.8890  0.450  
+## + TH       1 18.889 0.9289  0.465  
+## + SUVA254  1 19.014 0.8242  0.525  
+## + DOC      1 18.935 0.8905  0.590  
+## + DIN      1 19.423 0.4831  0.955  
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Step: biomass.dist ~ EC + a440 + pH 
+## 
+##        Df    AIC      F Pr(&gt;F)   
+## - pH    1 18.018 1.8552  0.085 . 
+## - a440  1 19.078 2.8267  0.040 * 
+## - EC    1 23.836 7.8833  0.005 **
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+##           Df    AIC      F Pr(&gt;F)  
+## + TP       1 17.506 1.8428  0.060 .
+## + DRP      1 17.560 1.7980  0.065 .
+## + TN       1 18.201 1.2684  0.280  
+## + E2_E3    1 18.352 1.1453  0.320  
+## + TH       1 18.613 0.9364  0.525  
+## + SUVA254  1 18.944 0.6748  0.760  
+## + DOC      1 18.917 0.6956  0.800  
+## + DIN      1 19.177 0.4931  0.950  
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="multi2.html#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fwd.sel.dbRDA2)</span></code></pre></div>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="multi2.html#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fwd.sel.dbRDA2)</span></code></pre></div>
 <pre><code>## 
 ## Call:
-## dbrda(formula = biomass.dist ~ EC + a440, data = env, add = TRUE) 
+## dbrda(formula = biomass.dist ~ EC + a440 + pH, data = env, add = TRUE) 
 ## 
 ## Partitioning of Lingoes adjusted squared Bray distance:
 ##               Inertia Proportion
-## Total           3.009      1.000
-## Constrained     1.089      0.362
-## Unconstrained   1.920      0.638
+## Total           3.009     1.0000
+## Constrained     1.289     0.4283
+## Unconstrained   1.720     0.5717
 ## 
 ## Eigenvalues, and their contribution to the Lingoes adjusted squared Bray distance 
 ## 
 ## Importance of components:
-##                       dbRDA1 dbRDA2   MDS1    MDS2    MDS3   MDS4   MDS5
-## Eigenvalue            0.8712 0.2181 0.5577 0.29135 0.22777 0.1574 0.1360
-## Proportion Explained  0.2895 0.0725 0.1853 0.09682 0.07569 0.0523 0.0452
-## Cumulative Proportion 0.2895 0.3620 0.5474 0.64419 0.71988 0.7722 0.8174
-##                          MDS6    MDS7    MDS8    MDS9   MDS10   MDS11   MDS12
-## Eigenvalue            0.09392 0.07799 0.06682 0.05467 0.05234 0.04506 0.04055
-## Proportion Explained  0.03121 0.02592 0.02221 0.01817 0.01739 0.01497 0.01347
-## Cumulative Proportion 0.84859 0.87451 0.89672 0.91488 0.93228 0.94725 0.96073
-##                         MDS13   MDS14   MDS15   MDS16     MDS17
-## Eigenvalue            0.03872 0.03572 0.03138 0.01186 0.0005022
-## Proportion Explained  0.01287 0.01187 0.01043 0.00394 0.0001669
-## Cumulative Proportion 0.97359 0.98546 0.99589 0.99983 1.0000000
+##                       dbRDA1  dbRDA2  dbRDA3   MDS1    MDS2    MDS3    MDS4
+## Eigenvalue            0.9474 0.22007 0.12138 0.4710 0.25928 0.20718 0.15320
+## Proportion Explained  0.3148 0.07313 0.04034 0.1565 0.08616 0.06885 0.05091
+## Cumulative Proportion 0.3148 0.38797 0.42831 0.5848 0.67100 0.73985 0.79076
+##                         MDS5    MDS6    MDS7    MDS8    MDS9   MDS10   MDS11
+## Eigenvalue            0.1360 0.08811 0.06708 0.05724 0.05454 0.04784 0.04271
+## Proportion Explained  0.0452 0.02928 0.02229 0.01902 0.01813 0.01590 0.01420
+## Cumulative Proportion 0.8360 0.86524 0.88753 0.90655 0.92468 0.94058 0.95478
+##                         MDS12   MDS13   MDS14    MDS15    MDS16
+## Eigenvalue            0.03956 0.03657 0.03326 0.019705 0.006988
+## Proportion Explained  0.01315 0.01215 0.01105 0.006548 0.002322
+## Cumulative Proportion 0.96792 0.98008 0.99113 0.997678 1.000000
 ## 
 ## Accumulated constrained eigenvalues
 ## Importance of components:
-##                       dbRDA1 dbRDA2
-## Eigenvalue            0.8712 0.2181
-## Proportion Explained  0.7997 0.2003
-## Cumulative Proportion 0.7997 1.0000
+##                       dbRDA1 dbRDA2  dbRDA3
+## Eigenvalue            0.9474 0.2201 0.12138
+## Proportion Explained  0.7351 0.1707 0.09418
+## Cumulative Proportion 0.7351 0.9058 1.00000
 ## 
 ## Scaling 2 for species and site scores
 ## * Species are scaled proportional to eigenvalues
@@ -876,106 +992,109 @@ Los datos de especies crudos, sin procesar, se trasnforman primero en una matriz
 ## 
 ## Site scores (weighted sums of species scores)
 ## 
-##      dbRDA1   dbRDA2    MDS1     MDS2     MDS3      MDS4
-## 1O -0.75722 -0.02883  0.1146  0.69689 -0.50552 -0.010087
-## 2O -1.33245 -0.68750 -0.1590 -0.99126 -0.21078  0.506909
-## 3O -1.22530 -1.48938 -1.2772 -1.36747 -0.45952 -0.379923
-## 4O -1.01412  0.13545 -0.1290  0.10517  0.29435  0.233042
-## 5O -0.88133  0.40173  0.7657  0.37087  0.30432  0.056749
-## 1D -0.28129  0.28354 -0.1962  1.01753  0.32216 -0.415822
-## 2D  0.46662  0.12799  0.2462  0.70645  0.35534  0.115546
-## 3D  0.80971  0.14222  0.7125 -0.57954  0.03156 -0.446071
-## 4D  1.11875 -1.56242  0.3542 -0.56941 -0.14181 -0.388054
-## 5D  1.01460 -1.08081  0.9180 -0.13391 -0.41922  1.646956
-## 1F -0.44487  0.06361 -0.6758  0.63564  0.42104 -0.684135
-## 2F  0.65899  0.36846  0.7203 -0.37572  1.02182 -0.792179
-## 3F  0.30689  0.79968  0.1296 -0.46387  0.15779 -0.110387
-## 4F  0.61024 -0.88971 -0.3379  0.69886 -0.68653  0.810023
-## 5F  0.67088  0.40072  0.6007 -0.04542 -1.08966 -0.144975
-## 1A -0.29362 -0.56008 -0.5688  0.64683 -1.22852 -0.804791
-## 2A  0.35116  0.73687  0.2095 -0.07234  1.01570  0.007836
-## 3A  0.64704  0.56271  0.3789 -0.33202 -0.44422 -0.519944
-## 4A -0.33337  1.32463 -1.1315 -0.16842  0.67999  1.034326
-## 5A -0.09132  0.95112 -0.6748  0.22115  0.58172  0.284983
+##      dbRDA1   dbRDA2   dbRDA3     MDS1     MDS2     MDS3
+## 1O -0.73464 -0.01643  0.08621  0.19941 -0.47402  0.88156
+## 2O -1.24621 -0.56534 -1.15651 -0.19849  1.06705 -0.34724
+## 3O -1.16324 -1.39115 -0.89075 -1.83112  0.91718  0.41621
+## 4O -0.96740  0.17915 -0.23369 -0.14342 -0.26194 -0.16586
+## 5O -0.84313  0.42921 -0.06374  0.86543 -0.25439 -0.37086
+## 1D -0.31229  0.20834  1.07008  0.28716 -0.82656 -0.20332
+## 2D  0.44429  0.10229  0.18228  0.06595 -1.02329  0.36839
+## 3D  0.81602  0.18349 -0.79783  0.40398  0.53507 -0.34176
+## 4D  1.06203 -1.59046 -0.02030  0.50960  0.92011 -0.65422
+## 5D  1.00961 -1.02658 -1.04724  0.54322  0.10558  0.79080
+## 1F -0.45510  0.02531  0.64254 -0.48291 -0.81013 -0.09667
+## 2F  0.67018  0.40802 -0.72381  0.51496  0.04164 -1.33913
+## 3F  0.33456  0.84678 -0.70134 -0.21442  0.14540 -0.03379
+## 4F  0.51502 -1.02429  1.53500  0.11854 -0.19621  0.78317
+## 5F  0.64142  0.36415  0.25968  0.59206  0.59098  0.88323
+## 1A -0.34538 -0.65672  1.34218  0.13620  0.24056  0.94163
+## 2A  0.37750  0.78460 -0.72487 -0.10208 -0.54983 -0.67509
+## 3A  0.62689  0.53914  0.10093  0.41708  0.67611 -0.03962
+## 4A -0.33855  1.27357  0.78639 -0.96264 -0.18794 -0.64256
+## 5A -0.09155  0.92692  0.35479 -0.71851 -0.65537 -0.15487
 ## 
 ## 
 ## Site constraints (linear combinations of constraining variables)
 ## 
-##      dbRDA1   dbRDA2    MDS1     MDS2     MDS3      MDS4
-## 1O -0.74852 -0.03451  0.1146  0.69689 -0.50552 -0.010087
-## 2O -1.18344 -0.09901 -0.1590 -0.99126 -0.21078  0.506909
-## 3O -0.35056 -0.74378 -1.2772 -1.36747 -0.45952 -0.379923
-## 4O -0.88255 -0.10095 -0.1290  0.10517  0.29435  0.233042
-## 5O -1.56136  0.11657  0.7657  0.37087  0.30432  0.056749
-## 1D -0.09251 -0.36406 -0.1962  1.01753  0.32216 -0.415822
-## 2D  0.25287 -0.38424  0.2462  0.70645  0.35534  0.115546
-## 3D  0.37842  0.47722  0.7125 -0.57954  0.03156 -0.446071
-## 4D  0.85022 -1.35728  0.3542 -0.56941 -0.14181 -0.388054
-## 5D  0.40721 -0.75092  0.9180 -0.13391 -0.41922  1.646956
-## 1F  0.09646 -0.25681 -0.6758  0.63564  0.42104 -0.684135
-## 2F  0.20797 -0.24183  0.7203 -0.37572  1.02182 -0.792179
-## 3F  0.22324  0.66219  0.1296 -0.46387  0.15779 -0.110387
-## 4F  0.65319 -0.36361 -0.3379  0.69886 -0.68653  0.810023
-## 5F  0.21433  1.15133  0.6007 -0.04542 -1.08966 -0.144975
-## 1A  0.03055 -0.04774 -0.5688  0.64683 -1.22852 -0.804791
-## 2A  0.27582 -0.02690  0.2095 -0.07234  1.01570  0.007836
-## 3A  0.42485  0.88299  0.3789 -0.33202 -0.44422 -0.519944
-## 4A  0.38091  1.02237 -1.1315 -0.16842  0.67999  1.034326
-## 5A  0.42291  0.45899 -0.6748  0.22115  0.58172  0.284983
+##       dbRDA1   dbRDA2   dbRDA3     MDS1     MDS2     MDS3
+## 1O -0.646720  0.03090 -0.43609  0.19941 -0.47402  0.88156
+## 2O -1.255177 -0.09599  0.02544 -0.19849  1.06705 -0.34724
+## 3O -0.132637 -0.63015 -0.84820 -1.83112  0.91718  0.41621
+## 4O -0.828964 -0.05190 -0.31761 -0.14342 -0.26194 -0.16586
+## 5O -1.483637  0.19224 -0.46195  0.86543 -0.25439 -0.37086
+## 1D -0.321907 -0.45647  0.63969  0.28716 -0.82656 -0.20332
+## 2D  0.465799 -0.29406 -0.68302  0.06595 -1.02329  0.36839
+## 3D  0.558614  0.53892 -0.42521  0.40398  0.53507 -0.34176
+## 4D  0.638679 -1.45571  0.57083  0.50960  0.92011 -0.65422
+## 5D  0.678300 -0.63520 -0.89812  0.54322  0.10558  0.79080
+## 1F -0.004652 -0.30015  0.28768 -0.48291 -0.81013 -0.09667
+## 2F  0.294992 -0.20682 -0.27659  0.51496  0.04164 -1.33913
+## 3F  0.386253  0.71842 -0.36625 -0.21442  0.14540 -0.03379
+## 4F  0.390320 -0.49128  0.85792  0.11854 -0.19621  0.78317
+## 5F  0.301840  1.16891 -0.05557  0.59206  0.59098  0.88323
+## 1A -0.399058 -0.23442  1.33007  0.13620  0.24056  0.94163
+## 2A  0.431535  0.03334 -0.44515 -0.10208 -0.54983 -0.67509
+## 3A  0.390008  0.84500  0.31365  0.41708  0.67611 -0.03962
+## 4A  0.127070  0.88882  1.00858 -0.96264 -0.18794 -0.64256
+## 5A  0.409341  0.43559  0.17993 -0.71851 -0.65537 -0.15487
 ## 
 ## 
 ## Biplot scores for constraining variables
 ## 
-##      dbRDA1 dbRDA2 MDS1 MDS2 MDS3 MDS4
-## EC   0.9537 0.3007    0    0    0    0
-## a440 0.3792 0.9253    0    0    0    0</code></pre>
-<div id="desafío-aplicar-los-códigos-correspondientes-para-para-graficar-enumerar-las-variables-significativas-solicitar-el-r2-evaluar-la-colinealidad-y-las-distintas-significaciones-del-modelo-aquí-utilizado." class="section level5" number="5.4.4.0.1">
-<h5><span class="header-section-number">5.4.4.0.1</span> <strong><em>Desafío</em></strong>: <em>aplicar los códigos correspondientes para para graficar, enumerar las variables significativas, solicitar el R<sup>2</sup>, evaluar la colinealidad y las distintas significaciones del modelo aquí utilizado.</em></h5>
+##        dbRDA1  dbRDA2 dbRDA3 MDS1 MDS2 MDS3
+## EC    0.91036  0.2516 0.3286    0    0    0
+## a440  0.36682  0.8978 0.2438    0    0    0
+## pH   -0.01343 -0.3631 0.9317    0    0    0</code></pre>
+<div id="desafío-aplicar-los-códigos-correspondientes-para-para-graficar-enumerar-las-variables-significativas-solicitar-el-r2-evaluar-la-colinealidad-y-las-distintas-significaciones-del-modelo-aquí-utilizado." class="section level5 hasAnchor" number="5.4.4.0.1">
+<h5><span class="header-section-number">5.4.4.0.1</span> <strong><em>Desafío</em></strong>: <em>aplicar los códigos correspondientes para para graficar, enumerar las variables significativas, solicitar el R<sup>2</sup>, evaluar la colinealidad y las distintas significaciones del modelo aquí utilizado.</em><a href="multi2.html#desafío-aplicar-los-códigos-correspondientes-para-para-graficar-enumerar-las-variables-significativas-solicitar-el-r2-evaluar-la-colinealidad-y-las-distintas-significaciones-del-modelo-aquí-utilizado." class="anchor-section" aria-label="Anchor link to header"></a></h5>
 </div>
 </div>
 </div>
-<div id="análisis-de-correspondencia-canóninca-cca" class="section level2" number="5.5">
-<h2><span class="header-section-number">5.5</span> Análisis de Correspondencia Canóninca (CCA)</h2>
+<div id="análisis-de-correspondencia-canóninca-cca" class="section level2 hasAnchor" number="5.5">
+<h2><span class="header-section-number">5.5</span> Análisis de Correspondencia Canóninca (CCA)<a href="multi2.html#análisis-de-correspondencia-canóninca-cca" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>El Análisis de Correspondencia Canónica (CCA) es apropiado para modelar respuestas unimodales o en forma de joroba a variables explicativas (en lugar de lineales como vimos con RDA). En este caso, el modelo maximiza la correlación entre especies y los <em>scores</em> de las muestras (<em>i.e.</em> sitios). Esto lo hace después de aplicar una regresión lineal múltiple para “restringir” cada muestra a los ejes de ordenación que constituyen combinaciones lineales de las variables ambientales medidas.</p>
-<p>Podemos pensar al CCA com un RDA “ponderado” que preserva la distancia chi-cuadrado entre sitios (la distancia de chi-cuadrado es, en sí, un ejemplo de distancia euclídea ponderada). En el triplot (gráficos que incluyen sitios, variables ambientales y especies) del CCA, las especies se ordenan a lo largo de ejes canónicos siguiendo sus óptimos ecológicos, lo que permite una interpretación ecológica relativamente fácil. Sin embargo, se debe tener en cuenta que, dada las características de la distancia de chi-cuadrado, el algoritmo aumenta el “peso” de las especies de baja frecuencia en relación con las de mayor frecuencia. En consecuencia, se recomienda aplicar el modelo en los casos en que las especies raras están bien representadas y se consideran indicadores potenciales de características particulares del ecosistema; o bien, las especies “raras” deben eliminarse antes de modelar los datos con CCA. Otro punto a tener en cuenta es que el modelo genera una medida sesgada de variación explicada. Estas debilidades parece que han llevado a muchxs ecólogxs a indicar que “la distancia chi-cuadrado fue una de las peores distancias utilizadas para analizar para los datos de composición de la comunidad.” Lo que esxs ecólogxs no tenían presente es que estos algoritmos son sólo modelos es decir, formas sintéticas de representar una realidad compleja. La complejidad de la realidad hace que no exista el modelo perfecto ni único, sino que tenemos varios modelos posibles e imperfectos para tratar de sintetizar y explicar el mundo… Compartimos estas ideas para que, entre café y café, piensen y discutan entre ustedes :).</p>
+<p>Podemos pensar al CCA com un RDA “ponderado” que preserva la distancia chi-cuadrado entre sitios (la distancia de chi-cuadrado es, en sí, un ejemplo de distancia euclídea ponderada). En el triplot (gráficos que incluyen sitios, variables ambientales y especies) del CCA, las especies se ordenan a lo largo de ejes canónicos siguiendo sus óptimos ecológicos, lo que permite una interpretación ecológica relativamente fácil. Sin embargo, se debe tener en cuenta que, dada las características de la distancia de chi-cuadrado, el algoritmo aumenta el “peso” de las especies de baja frecuencia en relación con las de mayor frecuencia. En consecuencia, se recomienda aplicar el modelo en los casos en que las especies raras están bien representadas y se consideran indicadores potenciales de características particulares del ecosistema; o bien, las especies “raras” deben eliminarse antes de modelar los datos con CCA. Otro punto a tener en cuenta es que el modelo genera una medida sesgada de variación explicada. Estas debilidades parece que han llevado a muchxs ecólogxs a indicar que “la distancia chi-cuadrado fue una de las peores distancias utilizadas para analizar para los datos de composición de la comunidad”. Lo que esxs ecólogxs no tenían presente es que estos algoritmos son sólo modelos es decir, formas sintéticas de representar una realidad compleja. La complejidad de la realidad hace que no exista el modelo perfecto ni único, sino que tenemos varios modelos posibles e imperfectos para tratar de sintetizar y explicar el mundo… Compartimos estas ideas para que, entre café y café, piensen y discutan entre ustedes :).</p>
 <p>Pongamos manos a la obra y veamos cómo funciona trabajando con un ejemplo: en esta oportunidad, utilizaremos un set de datos del trabajo <em>Alternative states drive the patterns in the bacterioplankton composition in shallow Pampean lakes (Argentina)</em> publicado en <em>Environmental Microbiology Reports</em> (Llames <em>et al.</em> 2013). Para ello, descargar el set de datos <strong>DGGE_cca.csv</strong> y <strong>DGGE_fq_cca_tunned.csv</strong> de <a href="https://github.com/Limno-con-R/CILCAL2023/tree/main/datasets">GitHub Limno-con-R/CILCAL2023</a>.
 Guardar los archivos en una carpeta llamada <em>data</em>, dentro del <strong>Directorio de Trabajo</strong> del <strong>Proyecto</strong> que creamos para esta Unidad (ver cómo hacerlo en la Unidad <a href="intro.html#intro">1</a>). Finalmente, instalar los paquetes como se indica en la Unidad <a href="intro.html#intro">1</a>. Luego, cargarlos en la sesión.</p>
 <p>Una vez descargados los archivo, generamos el objeto en nuestro entorno de la matriz de composición de especies (en este caso, relevamiento de OTU’s (“unidades taxonómicas operativas”) por técnica de DGGE) y la matriz de datos limnológicos. Seguidamente, evaluamos el tipo de respuesta en la matriz de composición bacteriana:</p>
-<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="multi2.html#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span> (vegan)</span>
-<span id="cb62-2"><a href="multi2.html#cb62-2" aria-hidden="true" tabindex="-1"></a>data_cca <span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="st">&quot;./data/DGGE_cca.csv&quot;</span>,<span class="at">row.names=</span><span class="dv">1</span>)</span>
-<span id="cb62-3"><a href="multi2.html#cb62-3" aria-hidden="true" tabindex="-1"></a>env_cca<span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="st">&quot;./data/DGGE_fq_cca_tunned.csv&quot;</span>, <span class="at">row.names =</span><span class="dv">1</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="multi2.html#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cómputo del DCA para verificar la longitud del gradiente</span></span>
-<span id="cb63-2"><a href="multi2.html#cb63-2" aria-hidden="true" tabindex="-1"></a><span class="co">#----</span></span>
-<span id="cb63-3"><a href="multi2.html#cb63-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb63-4"><a href="multi2.html#cb63-4" aria-hidden="true" tabindex="-1"></a>vare.dca_cca <span class="ot">&lt;-</span> <span class="fu">decorana</span>(data_cca)</span>
-<span id="cb63-5"><a href="multi2.html#cb63-5" aria-hidden="true" tabindex="-1"></a>vare.dca_cca</span></code></pre></div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="multi2.html#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span> (vegan)</span>
+<span id="cb65-2"><a href="multi2.html#cb65-2" aria-hidden="true" tabindex="-1"></a>data_cca <span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="st">&quot;./data/DGGE_cca.csv&quot;</span>,<span class="at">row.names=</span><span class="dv">1</span>)</span>
+<span id="cb65-3"><a href="multi2.html#cb65-3" aria-hidden="true" tabindex="-1"></a>env_cca<span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="st">&quot;./data/DGGE_fq_cca_tunned.csv&quot;</span>, <span class="at">row.names =</span><span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="multi2.html#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cómputo del DCA para verificar la longitud del gradiente</span></span>
+<span id="cb66-2"><a href="multi2.html#cb66-2" aria-hidden="true" tabindex="-1"></a><span class="co">#----</span></span>
+<span id="cb66-3"><a href="multi2.html#cb66-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-4"><a href="multi2.html#cb66-4" aria-hidden="true" tabindex="-1"></a>vare.dca_cca <span class="ot">&lt;-</span> <span class="fu">decorana</span>(data_cca)</span>
+<span id="cb66-5"><a href="multi2.html#cb66-5" aria-hidden="true" tabindex="-1"></a>vare.dca_cca</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## decorana(veg = data_cca) 
 ## 
 ## Detrended correspondence analysis with 26 segments.
 ## Rescaling of axes with 4 iterations.
+## Total inertia (scaled Chi-square): 5.6709 
 ## 
-##                   DCA1   DCA2   DCA3   DCA4
-## Eigenvalues     0.5616 0.4329 0.3330 0.2931
-## Decorana values 0.6237 0.3876 0.2863 0.1524
-## Axis lengths    4.1986 3.7111 2.8788 2.3732</code></pre>
+##                        DCA1   DCA2   DCA3   DCA4
+## Eigenvalues          0.5616 0.4329 0.3330 0.2931
+## Additive Eigenvalues 0.5616 0.4309 0.3338 0.2920
+## Decorana values      0.6237 0.3876 0.2863 0.1524
+## Axis lengths         4.1986 3.7111 2.8788 2.3732</code></pre>
 <p>Como podemos observar, la longitud del gradiente es mayor a 4 S.D.. Por lo tanto, el modelo de CCA de respuesta unimodal es el modelo adecuado para este set de datos.</p>
-<div id="cca-utilizando-la-función-cca-del-paquete-vegan" class="section level3" number="5.5.1">
-<h3><span class="header-section-number">5.5.1</span> CCA utilizando la función <strong>cca()</strong> del paquete <strong>vegan</strong></h3>
+<div id="cca-utilizando-la-función-cca-del-paquete-vegan" class="section level3 hasAnchor" number="5.5.1">
+<h3><span class="header-section-number">5.5.1</span> CCA utilizando la función <strong>cca()</strong> del paquete <strong>vegan</strong><a href="multi2.html#cca-utilizando-la-función-cca-del-paquete-vegan" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Luego de corroborar el tipo de respuesta de la matriz de composición, procedemos a la estandarización de las variables ambientales.</p>
-<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="multi2.html#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Estandarización de matriz ambiental</span></span>
-<span id="cb65-2"><a href="multi2.html#cb65-2" aria-hidden="true" tabindex="-1"></a>env.r<span class="ot">&lt;-</span><span class="fu">decostand</span> (env_cca, <span class="at">method =</span> <span class="st">&quot;standardize&quot;</span>) <span class="co">#N~(0,1)</span></span></code></pre></div>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="multi2.html#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Estandarización de matriz ambiental</span></span>
+<span id="cb68-2"><a href="multi2.html#cb68-2" aria-hidden="true" tabindex="-1"></a>env.r<span class="ot">&lt;-</span><span class="fu">decostand</span> (env_cca, <span class="at">method =</span> <span class="st">&quot;standardize&quot;</span>) <span class="co">#N~(0,1)</span></span></code></pre></div>
 <p>Ejecutemos un CCA utilizando la función <strong>cca()</strong> de <strong>vegan</strong> y la expresión de fórmula. Es importante señalar que, en un CCA, no es recomendable la transformación de los datos de composición tal como se puede realizar en RDA ya que al transformar,la distancia preservada ya no sería la distancia chi-cuadrado y los resultados no podrían ser interpretados.</p>
-<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="multi2.html#cb66-1" aria-hidden="true" tabindex="-1"></a>cca_DGGE <span class="ot">&lt;-</span> <span class="fu">cca</span>(data_cca <span class="sc">~</span> ., <span class="at">data=</span>env.r)<span class="co">#modelo de máxima, con todas las variables</span></span>
-<span id="cb66-2"><a href="multi2.html#cb66-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb66-3"><a href="multi2.html#cb66-3" aria-hidden="true" tabindex="-1"></a><span class="fu">RsquareAdj</span>(cca_DGGE) </span></code></pre></div>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="multi2.html#cb69-1" aria-hidden="true" tabindex="-1"></a>cca_DGGE <span class="ot">&lt;-</span> <span class="fu">cca</span>(data_cca <span class="sc">~</span> ., <span class="at">data=</span>env.r)<span class="co">#modelo de máxima, con todas las variables</span></span>
+<span id="cb69-2"><a href="multi2.html#cb69-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb69-3"><a href="multi2.html#cb69-3" aria-hidden="true" tabindex="-1"></a><span class="fu">RsquareAdj</span>(cca_DGGE) </span></code></pre></div>
 <pre><code>## $r.squared
 ## [1] 0.4143396
 ## 
 ## $adj.r.squared
-## [1] 0.1423793</code></pre>
-<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="multi2.html#cb68-1" aria-hidden="true" tabindex="-1"></a>cca_DGGE</span></code></pre></div>
+## [1] 0.1448568</code></pre>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="multi2.html#cb71-1" aria-hidden="true" tabindex="-1"></a>cca_DGGE</span></code></pre></div>
 <pre><code>## Call: cca(formula = data_cca ~ Turb + DO + T + Cond + pH + Chl.a + TN +
 ## TP + SS + OM + IM + Alk, data = env.r)
 ## 
@@ -995,7 +1114,7 @@ Guardar los archivos en una carpeta llamada <em>data</em>, dentro del <strong>Di
 ##    CA1    CA2    CA3    CA4    CA5    CA6    CA7    CA8 
 ## 0.4053 0.3675 0.3326 0.2724 0.2434 0.2090 0.1670 0.1579 
 ## (Showing 8 of 26 unconstrained eigenvalues)</code></pre>
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="multi2.html#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(cca_DGGE)</span></code></pre></div>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="multi2.html#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(cca_DGGE)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## cca(formula = data_cca ~ Turb + DO + T + Cond + pH + Chl.a +      TN + TP + SS + OM + IM + Alk, data = env.r) 
@@ -1216,66 +1335,66 @@ Guardar los archivos en una carpeta llamada <em>data</em>, dentro del <strong>Di
 ## OM    -0.59797  0.55302 -0.231386  0.079057 -0.10699 -0.26828
 ## IM     0.28466  0.66859  0.202521 -0.036285  0.18911 -0.29580
 ## Alk   -0.14734  0.17538  0.088390 -0.003335 -0.24797  0.35383</code></pre>
-<p>Hay que tener presente que en un CCA se calculan dos conjuntos de “<em>scores</em>”: puntajes “<strong>LC</strong>” y puntajes “<strong>WA</strong>.” Los scores LC (“<em>linear constraints</em>”) corresponden a los <em>scores</em> de los objetos en función de la combinación lineal de las variables ambientales, mientras que los puntajes de WA (“<em>weigthed averaged</em>”) corresponden a los <em>scores</em> de los objetos en función del “peso” de las especies. Para tener en cuenta, por <em>default</em> el paquete <strong>vegan</strong> las gráficas de ordenación CCA de los sitios están utilizando <em>scores</em> WA (revisar salida anterior en “<em>Sites scores</em>”), mientras que en CANOCO 5 se grafican usando los <em>scores</em> LC. El uso de cada método de puntuación tiene sus defensores y detractores. Dado que pueden existir diferencias entre ambos tipos de gráficos, no hay que olvidar informar qué <em>score</em> se ha elegido mostrar, ya sea LC o WA.</p>
+<p>Hay que tener presente que en un CCA se calculan dos conjuntos de “<em>scores</em>”: puntajes “<strong>LC</strong>” y puntajes “<strong>WA</strong>”. Los scores LC (“<em>linear constraints</em>”) corresponden a los <em>scores</em> de los objetos en función de la combinación lineal de las variables ambientales, mientras que los puntajes de WA (“<em>weigthed averaged</em>”) corresponden a los <em>scores</em> de los objetos en función del “peso” de las especies. Para tener en cuenta, por <em>default</em> el paquete <strong>vegan</strong> las gráficas de ordenación CCA de los sitios están utilizando <em>scores</em> WA (revisar salida anterior en “<em>Sites scores</em>”), mientras que en CANOCO 5 se grafican usando los <em>scores</em> LC. El uso de cada método de puntuación tiene sus defensores y detractores. Dado que pueden existir diferencias entre ambos tipos de gráficos, no hay que olvidar informar qué <em>score</em> se ha elegido mostrar, ya sea LC o WA.</p>
 <p>Revisemos este punto gráficamente: generemos la figura correspondiente a la ordenación de los sitios “<em>default</em>” de <strong>vegan</strong> y solicitemos, además, el <em>score</em> de los sisitos en función de LC. Luego, para que resulte más evidente, vamos a trazar una línea de unión que marque la posición de un mismo sitio en cada caso:</p>
-<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="multi2.html#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(cca_DGGE, <span class="at">dis=</span><span class="fu">c</span>(<span class="st">&quot;wa&quot;</span>,<span class="st">&quot;lc&quot;</span>))</span>
-<span id="cb72-2"><a href="multi2.html#cb72-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ordispider</span>(cca_DGGE)</span></code></pre></div>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="multi2.html#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(cca_DGGE, <span class="at">dis=</span><span class="fu">c</span>(<span class="st">&quot;wa&quot;</span>,<span class="st">&quot;lc&quot;</span>))</span>
+<span id="cb75-2"><a href="multi2.html#cb75-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ordispider</span>(cca_DGGE)</span></code></pre></div>
 <p><img src="05-multi2_files/figure-html/unnamed-chunk-35-1.png" width="672" /></p>
 <p><strong>Figura 7:</strong> Diferencias entre <em>scores</em> de los sitios con LC y <em>scores</em> de los sitios con WA en CCA.</p>
-<div id="triplot-del-cca" class="section level4" number="5.5.1.1">
-<h4><span class="header-section-number">5.5.1.1</span> Triplot del CCA</h4>
+<div id="triplot-del-cca" class="section level4 hasAnchor" number="5.5.1.1">
+<h4><span class="header-section-number">5.5.1.1</span> Triplot del CCA<a href="multi2.html#triplot-del-cca" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>El código para producir triplots es similar al utilizado para RDA, excepto que las variables de respuesta (especies) están representadas por puntos y, por lo tanto, las flechas no están disponibles.</p>
-<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="multi2.html#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="co"># saling=1: foco en la relación de distancias entre sitios</span></span>
-<span id="cb73-2"><a href="multi2.html#cb73-2" aria-hidden="true" tabindex="-1"></a><span class="co"># scores de sitios como promedios ponderados de la especie (WA)</span></span>
-<span id="cb73-3"><a href="multi2.html#cb73-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(cca_DGGE,<span class="at">scaling =</span> <span class="dv">1</span>, <span class="at">display =</span> <span class="fu">c</span>(<span class="st">&quot;sp&quot;</span>, <span class="st">&quot;lc&quot;</span>, <span class="st">&quot;cn&quot;</span>),<span class="at">main =</span> <span class="st">&quot;Triplot CCA DGGE -scaling 1&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="multi2.html#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="co"># saling=1: foco en la relación de distancias entre sitios</span></span>
+<span id="cb76-2"><a href="multi2.html#cb76-2" aria-hidden="true" tabindex="-1"></a><span class="co"># scores de sitios como promedios ponderados de la especie (WA)</span></span>
+<span id="cb76-3"><a href="multi2.html#cb76-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(cca_DGGE,<span class="at">scaling =</span> <span class="dv">1</span>, <span class="at">display =</span> <span class="fu">c</span>(<span class="st">&quot;sp&quot;</span>, <span class="st">&quot;lc&quot;</span>, <span class="st">&quot;cn&quot;</span>),<span class="at">main =</span> <span class="st">&quot;Triplot CCA DGGE -scaling 1&quot;</span>)</span></code></pre></div>
 <p><img src="05-multi2_files/figure-html/unnamed-chunk-36-1.png" width="672" /></p>
 <p><strong>Figura 8:</strong> Triplot del modelo completo de CCA con escalamiento 1.</p>
-<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="multi2.html#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Default scaling 2: foco en la relación de distancias entre otu&#39;s, </span></span>
-<span id="cb74-2"><a href="multi2.html#cb74-2" aria-hidden="true" tabindex="-1"></a><span class="co">#scores de otu&#39;s como promedio ponderado de los sitios (WA)</span></span>
-<span id="cb74-3"><a href="multi2.html#cb74-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(cca_DGGE, <span class="at">display =</span> <span class="fu">c</span>(<span class="st">&quot;sp&quot;</span>, <span class="st">&quot;lc&quot;</span>, <span class="st">&quot;cn&quot;</span>), <span class="at">main =</span> <span class="st">&quot;Triplot CCA DGGE - scaling 2&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="multi2.html#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Default scaling 2: foco en la relación de distancias entre otu&#39;s, </span></span>
+<span id="cb77-2"><a href="multi2.html#cb77-2" aria-hidden="true" tabindex="-1"></a><span class="co">#scores de otu&#39;s como promedio ponderado de los sitios (WA)</span></span>
+<span id="cb77-3"><a href="multi2.html#cb77-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(cca_DGGE, <span class="at">display =</span> <span class="fu">c</span>(<span class="st">&quot;sp&quot;</span>, <span class="st">&quot;lc&quot;</span>, <span class="st">&quot;cn&quot;</span>), <span class="at">main =</span> <span class="st">&quot;Triplot CCA DGGE - scaling 2&quot;</span>)</span></code></pre></div>
 <p><img src="05-multi2_files/figure-html/unnamed-chunk-37-1.png" width="672" /></p>
 <p><strong>Figura 9:</strong> Triplot del modelo completo de CCA con escalamiento 2.</p>
 </div>
-<div id="test-permutacionales-y-selección-de-variables" class="section level4" number="5.5.1.2">
-<h4><span class="header-section-number">5.5.1.2</span> Test permutacionales y selección de variables</h4>
+<div id="test-permutacionales-y-selección-de-variables" class="section level4 hasAnchor" number="5.5.1.2">
+<h4><span class="header-section-number">5.5.1.2</span> Test permutacionales y selección de variables<a href="multi2.html#test-permutacionales-y-selección-de-variables" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>La significación del modelo puede analizarse de la misma manera que para el RDA</p>
-<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="multi2.html#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(cca_DGGE, <span class="at">permutations =</span> <span class="fu">how</span>(<span class="at">nperm =</span> <span class="dv">999</span>))<span class="co">#Modelo completo</span></span></code></pre></div>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="multi2.html#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(cca_DGGE, <span class="at">permutations =</span> <span class="fu">how</span>(<span class="at">nperm =</span> <span class="dv">999</span>))<span class="co">#Modelo completo</span></span></code></pre></div>
 <pre><code>## Permutation test for cca under reduced model
 ## Permutation: free
 ## Number of permutations: 999
 ## 
 ## Model: cca(formula = data_cca ~ Turb + DO + T + Cond + pH + Chl.a + TN + TP + SS + OM + IM + Alk, data = env.r)
-##          Df ChiSquare      F Pr(&gt;F)    
-## Model    12    2.3497 1.5329  0.001 ***
-## Residual 26    3.3212                  
+##          Df ChiSquare      F Pr(&gt;F)   
+## Model    12    2.3497 1.5329  0.003 **
+## Residual 26    3.3212                 
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="multi2.html#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(cca_DGGE, <span class="at">by =</span> <span class="st">&quot;axis&quot;</span>, <span class="at">permutations =</span> <span class="fu">how</span>(<span class="at">nperm =</span> <span class="dv">999</span>))<span class="co">#Significación de los ejes</span></span></code></pre></div>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="multi2.html#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(cca_DGGE, <span class="at">by =</span> <span class="st">&quot;axis&quot;</span>, <span class="at">permutations =</span> <span class="fu">how</span>(<span class="at">nperm =</span> <span class="dv">999</span>))<span class="co">#Significación de los ejes</span></span></code></pre></div>
 <pre><code>## Permutation test for cca under reduced model
 ## Forward tests for axes
 ## Permutation: free
 ## Number of permutations: 999
 ## 
 ## Model: cca(formula = data_cca ~ Turb + DO + T + Cond + pH + Chl.a + TN + TP + SS + OM + IM + Alk, data = env.r)
-##          Df ChiSquare      F Pr(&gt;F)   
-## CCA1      1    0.5366 4.2011  0.009 **
-## CCA2      1    0.3764 2.9464  0.007 **
-## CCA3      1    0.3502 2.7417  0.041 * 
-## CCA4      1    0.2387 1.8686  0.701   
-## CCA5      1    0.1981 1.5508  0.917   
-## CCA6      1    0.1458 1.1417  0.999   
-## CCA7      1    0.1356 1.0613  0.999   
-## CCA8      1    0.1155 0.9038  1.000   
-## CCA9      1    0.0908 0.7105  1.000   
-## CCA10     1    0.0767 0.6006  1.000   
-## CCA11     1    0.0517 0.4050  1.000   
-## CCA12     1    0.0336 0.2629  1.000   
-## Residual 26    3.3212                 
+##          Df ChiSquare      F Pr(&gt;F)  
+## CCA1      1    0.5366 4.2011  0.014 *
+## CCA2      1    0.3764 2.9464  0.016 *
+## CCA3      1    0.3502 2.7417  0.054 .
+## CCA4      1    0.2387 1.8686  0.715  
+## CCA5      1    0.1981 1.5508  0.940  
+## CCA6      1    0.1458 1.1417  1.000  
+## CCA7      1    0.1356 1.0613  0.999  
+## CCA8      1    0.1155 0.9038  1.000  
+## CCA9      1    0.0908 0.7105  1.000  
+## CCA10     1    0.0767 0.6006  1.000  
+## CCA11     1    0.0517 0.4050  1.000  
+## CCA12     1    0.0336 0.2629  1.000  
+## Residual 26    3.3212                
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="multi2.html#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Selección forward de variables</span></span>
-<span id="cb79-2"><a href="multi2.html#cb79-2" aria-hidden="true" tabindex="-1"></a>cca.step.forward <span class="ot">&lt;-</span><span class="fu">ordistep</span>(<span class="fu">cca</span>(data_cca <span class="sc">~</span> <span class="dv">1</span>, <span class="at">data =</span> env.r), <span class="at">scope =</span> <span class="fu">formula</span>(cca_DGGE),</span>
-<span id="cb79-3"><a href="multi2.html#cb79-3" aria-hidden="true" tabindex="-1"></a><span class="at">direction =</span> <span class="st">&quot;forward&quot;</span>, <span class="at">permutations =</span> <span class="fu">how</span>(<span class="at">nperm =</span> <span class="dv">199</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="multi2.html#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Selección forward de variables</span></span>
+<span id="cb82-2"><a href="multi2.html#cb82-2" aria-hidden="true" tabindex="-1"></a>cca.step.forward <span class="ot">&lt;-</span><span class="fu">ordistep</span>(<span class="fu">cca</span>(data_cca <span class="sc">~</span> <span class="dv">1</span>, <span class="at">data =</span> env.r), <span class="at">scope =</span> <span class="fu">formula</span>(cca_DGGE),</span>
+<span id="cb82-3"><a href="multi2.html#cb82-3" aria-hidden="true" tabindex="-1"></a><span class="at">direction =</span> <span class="st">&quot;forward&quot;</span>, <span class="at">permutations =</span> <span class="fu">how</span>(<span class="at">nperm =</span> <span class="dv">199</span>))</span></code></pre></div>
 <pre><code>## 
 ## Start: data_cca ~ 1 
 ## 
@@ -1283,14 +1402,14 @@ Guardar los archivos en una carpeta llamada <em>data</em>, dentro del <strong>Di
 ## + Chl.a  1 247.92 3.3236  0.005 **
 ## + OM     1 248.75 2.4791  0.005 **
 ## + TP     1 248.92 2.3023  0.005 **
-## + TN     1 249.23 1.9917  0.015 * 
-## + SS     1 249.43 1.7943  0.015 * 
-## + Turb   1 249.31 1.9118  0.020 * 
+## + Turb   1 249.31 1.9118  0.005 **
+## + TN     1 249.23 1.9917  0.010 **
 ## + IM     1 249.34 1.8855  0.020 * 
-## + pH     1 250.04 1.1904  0.235   
-## + DO     1 250.33 0.9122  0.615   
-## + Alk    1 250.54 0.7069  0.825   
-## + Cond   1 250.57 0.6747  0.880   
+## + SS     1 249.43 1.7943  0.020 * 
+## + pH     1 250.04 1.1904  0.180   
+## + DO     1 250.33 0.9122  0.635   
+## + Alk    1 250.54 0.7069  0.830   
+## + Cond   1 250.57 0.6747  0.910   
 ## + T      1 250.57 0.6751  0.955   
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
@@ -1300,104 +1419,72 @@ Guardar los archivos en una carpeta llamada <em>data</em>, dentro del <strong>Di
 ##        Df    AIC      F Pr(&gt;F)   
 ## + TP    1 247.31 2.4923  0.005 **
 ## + IM    1 247.82 1.9958  0.005 **
-## + SS    1 247.96 1.8591  0.010 **
-## + Turb  1 248.23 1.5960  0.040 * 
-## + OM    1 248.57 1.2757  0.110   
-## + TN    1 248.69 1.1618  0.245   
-## + pH    1 248.96 0.8984  0.625   
-## + DO    1 249.01 0.8576  0.695   
-## + Cond  1 249.16 0.7171  0.855   
-## + T     1 249.16 0.7173  0.910   
-## + Alk   1 249.24 0.6383  0.915   
+## + SS    1 247.96 1.8591  0.015 * 
+## + Turb  1 248.23 1.5960  0.020 * 
+## + OM    1 248.57 1.2757  0.135   
+## + TN    1 248.69 1.1618  0.230   
+## + pH    1 248.96 0.8984  0.620   
+## + DO    1 249.01 0.8576  0.710   
+## + T     1 249.16 0.7173  0.905   
+## + Cond  1 249.16 0.7171  0.905   
+## + Alk   1 249.24 0.6383  0.920   
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Step: data_cca ~ Chl.a + TP 
 ## 
 ##        Df    AIC      F Pr(&gt;F)  
-## + OM    1 247.69 1.4913  0.040 *
-## + TN    1 247.95 1.2471  0.185  
-## + Turb  1 248.03 1.1693  0.275  
-## + SS    1 248.15 1.0624  0.365  
-## + IM    1 248.28 0.9348  0.475  
-## + DO    1 248.34 0.8866  0.655  
-## + pH    1 248.31 0.9083  0.680  
-## + T     1 248.49 0.7454  0.835  
-## + Alk   1 248.59 0.6523  0.865  
-## + Cond  1 248.64 0.6067  0.965  
+## + OM    1 247.69 1.4913  0.050 *
+## + TN    1 247.95 1.2471  0.135  
+## + Turb  1 248.03 1.1693  0.240  
+## + SS    1 248.15 1.0624  0.355  
+## + IM    1 248.28 0.9348  0.485  
+## + DO    1 248.34 0.8866  0.650  
+## + pH    1 248.31 0.9083  0.660  
+## + T     1 248.49 0.7454  0.850  
+## + Alk   1 248.59 0.6523  0.910  
+## + Cond  1 248.64 0.6067  0.975  
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Step: data_cca ~ Chl.a + TP + OM 
 ## 
 ##        Df    AIC      F Pr(&gt;F)  
-## + TN    1 248.10 1.4079  0.050 *
-## + Turb  1 248.23 1.2906  0.065 .
-## + SS    1 248.62 0.9453  0.450  
-## + IM    1 248.62 0.9454  0.505  
-## + T     1 248.62 0.9430  0.535  
-## + DO    1 248.64 0.9231  0.590  
-## + pH    1 248.64 0.9217  0.640  
-## + Alk   1 248.69 0.8760  0.640  
-## + Cond  1 248.68 0.8907  0.660  
+## + TN    1 248.10 1.4079  0.065 .
+## + Turb  1 248.23 1.2906  0.125  
+## + IM    1 248.62 0.9454  0.520  
+## + SS    1 248.62 0.9453  0.520  
+## + Alk   1 248.69 0.8760  0.540  
+## + DO    1 248.64 0.9231  0.550  
+## + T     1 248.62 0.9430  0.565  
+## + pH    1 248.64 0.9217  0.595  
+## + Cond  1 248.68 0.8907  0.600  
 ## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## Step: data_cca ~ Chl.a + TP + OM + TN 
-## 
-##        Df    AIC      F Pr(&gt;F)
-## + Turb  1 248.59 1.3067  0.130
-## + IM    1 249.01 0.9351  0.505
-## + SS    1 249.01 0.9350  0.505
-## + T     1 249.00 0.9490  0.545
-## + DO    1 249.07 0.8830  0.670
-## + Cond  1 249.07 0.8855  0.685
-## + pH    1 249.16 0.8072  0.715
-## + Alk   1 249.21 0.7610  0.750</code></pre>
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 </div>
-<div id="elección-del-modelo" class="section level4" number="5.5.1.3">
-<h4><span class="header-section-number">5.5.1.3</span> Elección del modelo</h4>
+<div id="elección-del-modelo" class="section level4 hasAnchor" number="5.5.1.3">
+<h4><span class="header-section-number">5.5.1.3</span> Elección del modelo<a href="multi2.html#elección-del-modelo" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Con la expresión en base a la fórmula, observamos que tenemos control del modelo pero nos enfrentamos al dilema de elegir el “mejor” de los modelos.
 Los modelos deben construirse con cuidado y, preferiblemente, utilizarse para probar
-hipótesis específicas. En la construcción automática de modelos, generalmente necesitamos dos modelos extremos: el mínimo y el modelo completo. Con esos dos modelos, podemos implementar la función <strong>step()</strong> para seleccionar el mejor modelo. Esta función utiliza el criterio de información de Akaike (AIC) en la elección del modelo. El AIC se basa en la bondad de ajuste (alta inercia restringida/ variabilidad explicada), pero es penalizado por el número de parámetros estimados (rango restringido/ criterio de parsimonia). Los modelos alternativos se ordenan por AIC. En cada caso, “+” indica el efecto de agregar un término, y “-” el efecto de eliminar un término, mientras que el modelo que se evalua está marcado como “<none>” Se debe tener mucho cuidado porque realmente no hay AIC para ordenaciones canónicas (¡aunque está calculada!), y siempre debemos inspeccionar la validez de elección del modelo.</p>
-<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="multi2.html#cb81-1" aria-hidden="true" tabindex="-1"></a>final_cca <span class="ot">&lt;-</span> <span class="fu">step</span>(cca.step.forward, <span class="at">scope=</span><span class="fu">formula</span>(cca_DGGE), <span class="at">test=</span><span class="st">&quot;perm&quot;</span>)</span></code></pre></div>
-<pre><code>## Start:  AIC=248.1
-## data_cca ~ Chl.a + TP + OM + TN
-## 
-##         Df    AIC      F Pr(&gt;F)   
-## - TN     1 247.69 1.4079  0.095 . 
-## - OM     1 247.95 1.6465  0.030 * 
-## &lt;none&gt;     248.10                 
-## - Chl.a  1 248.16 1.8428  0.015 * 
-## + Turb   1 248.59 1.3067  0.115   
-## + T      1 249.00 0.9490  0.550   
-## + IM     1 249.01 0.9351  0.505   
-## + SS     1 249.01 0.9350  0.575   
-## + Cond   1 249.07 0.8855  0.605   
-## + DO     1 249.07 0.8830  0.640   
-## - TP     1 249.09 2.7093  0.005 **
-## + pH     1 249.16 0.8072  0.815   
-## + Alk    1 249.21 0.7610  0.815   
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## Step:  AIC=247.69
+hipótesis específicas. En la construcción automática de modelos, generalmente necesitamos dos modelos extremos: el mínimo y el modelo completo. Con esos dos modelos, podemos implementar la función <strong>step()</strong> para seleccionar el mejor modelo. Esta función utiliza el criterio de información de Akaike (AIC) en la elección del modelo. El AIC se basa en la bondad de ajuste (alta inercia restringida/ variabilidad explicada), pero es penalizado por el número de parámetros estimados (rango restringido/ criterio de parsimonia). Los modelos alternativos se ordenan por AIC. En cada caso, “+” indica el efecto de agregar un término, y “-” el efecto de eliminar un término, mientras que el modelo que se evalua está marcado como “<none>”. Se debe tener mucho cuidado porque realmente no hay AIC para ordenaciones canónicas (¡aunque está calculada!), y siempre debemos inspeccionar la validez de elección del modelo.</p>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="multi2.html#cb84-1" aria-hidden="true" tabindex="-1"></a>final_cca <span class="ot">&lt;-</span> <span class="fu">step</span>(cca.step.forward, <span class="at">scope=</span><span class="fu">formula</span>(cca_DGGE), <span class="at">test=</span><span class="st">&quot;perm&quot;</span>)</span></code></pre></div>
+<pre><code>## Start:  AIC=247.69
 ## data_cca ~ Chl.a + TP + OM
 ## 
 ##         Df    AIC      F Pr(&gt;F)   
-## - OM     1 247.31 1.4913  0.055 . 
+## - OM     1 247.31 1.4913  0.045 * 
 ## &lt;none&gt;     247.69                 
-## - Chl.a  1 247.81 1.9596  0.015 * 
-## + TN     1 248.10 1.4079  0.080 . 
-## + Turb   1 248.23 1.2906  0.120   
+## - Chl.a  1 247.81 1.9596  0.020 * 
+## + TN     1 248.10 1.4079  0.060 . 
+## + Turb   1 248.23 1.2906  0.125   
 ## - TP     1 248.57 2.6824  0.005 **
-## + IM     1 248.62 0.9454  0.465   
-## + SS     1 248.62 0.9453  0.525   
-## + T      1 248.62 0.9430  0.600   
-## + DO     1 248.64 0.9231  0.650   
-## + pH     1 248.64 0.9217  0.620   
-## + Cond   1 248.68 0.8907  0.685   
-## + Alk    1 248.69 0.8760  0.660   
+## + IM     1 248.62 0.9454  0.490   
+## + SS     1 248.62 0.9453  0.540   
+## + T      1 248.62 0.9430  0.495   
+## + DO     1 248.64 0.9231  0.595   
+## + pH     1 248.64 0.9217  0.545   
+## + Cond   1 248.68 0.8907  0.620   
+## + Alk    1 248.69 0.8760  0.615   
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
@@ -1406,40 +1493,40 @@ hipótesis específicas. En la construcción automática de modelos, generalment
 ## 
 ##         Df    AIC      F Pr(&gt;F)   
 ## &lt;none&gt;     247.31                 
-## + OM     1 247.69 1.4913  0.045 * 
+## + OM     1 247.69 1.4913  0.035 * 
 ## - TP     1 247.92 2.4923  0.005 **
-## + TN     1 247.95 1.2471  0.145   
-## + Turb   1 248.03 1.1693  0.260   
-## + SS     1 248.15 1.0624  0.350   
-## + IM     1 248.28 0.9348  0.510   
-## + pH     1 248.31 0.9083  0.615   
-## + DO     1 248.34 0.8866  0.670   
-## + T      1 248.49 0.7454  0.850   
-## + Alk    1 248.59 0.6523  0.920   
-## + Cond   1 248.64 0.6067  0.955   
+## + TN     1 247.95 1.2471  0.155   
+## + Turb   1 248.03 1.1693  0.200   
+## + SS     1 248.15 1.0624  0.380   
+## + IM     1 248.28 0.9348  0.545   
+## + pH     1 248.31 0.9083  0.600   
+## + DO     1 248.34 0.8866  0.650   
+## + T      1 248.49 0.7454  0.875   
+## + Alk    1 248.59 0.6523  0.925   
+## + Cond   1 248.64 0.6067  0.950   
 ## - Chl.a  1 248.92 3.4926  0.005 **
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <p>Criterio AIC: cuanto más bajo el valor, mejor. Sin embargo, modelos con diferencias de AIC &lt; 2 son igualmente válidos. En este caso, ambos modelos son válidos.</p>
-<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="multi2.html#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Colinealidad de las variables</span></span>
-<span id="cb83-2"><a href="multi2.html#cb83-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb83-3"><a href="multi2.html#cb83-3" aria-hidden="true" tabindex="-1"></a><span class="fu">vif.cca</span>(cca_DGGE)</span></code></pre></div>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="multi2.html#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Colinealidad de las variables</span></span>
+<span id="cb86-2"><a href="multi2.html#cb86-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb86-3"><a href="multi2.html#cb86-3" aria-hidden="true" tabindex="-1"></a><span class="fu">vif.cca</span>(cca_DGGE)</span></code></pre></div>
 <pre><code>##         Turb           DO            T         Cond           pH        Chl.a 
 ## 1.624592e+01 1.675050e+00 1.726303e+00 3.892686e+00 1.846872e+00 5.074104e+00 
 ##           TN           TP           SS           OM           IM          Alk 
 ## 2.052634e+00 5.642662e+00 4.859386e+08 5.514569e+07 3.413327e+08 3.391515e+00</code></pre>
-<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="multi2.html#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="fu">vif.cca</span>(cca.step.forward)</span></code></pre></div>
-<pre><code>##    Chl.a       TP       OM       TN 
-## 2.372966 1.398995 3.117637 1.380088</code></pre>
-<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="multi2.html#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="fu">vif.cca</span>(final_cca)</span></code></pre></div>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="multi2.html#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="fu">vif.cca</span>(cca.step.forward)</span></code></pre></div>
+<pre><code>##    Chl.a       TP       OM 
+## 2.340084 1.390174 2.865323</code></pre>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="multi2.html#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="fu">vif.cca</span>(final_cca)</span></code></pre></div>
 <pre><code>##    Chl.a       TP 
 ## 1.013204 1.013204</code></pre>
 <p><em>Notar que en el modelo completo Chl.a y TP presentan VIF &gt; 5.</em></p>
 </div>
 </div>
 </div>
-<div id="bibliografía-citada-y-de-lectura-recomendada" class="section level2" number="5.6">
-<h2><span class="header-section-number">5.6</span> Bibliografía citada y de lectura recomendada</h2>
+<div id="bibliografía-citada-y-de-lectura-recomendada" class="section level2 hasAnchor" number="5.6">
+<h2><span class="header-section-number">5.6</span> Bibliografía citada y de lectura recomendada<a href="multi2.html#bibliografía-citada-y-de-lectura-recomendada" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Blanchet, F. G., P. Legendre, &amp; D. Borcard, 2008. Forward selection of explanatory variables. Ecology 89: 2623–2632.</p>
 <p>Borcard, D., F. Gillet, &amp; P. Legendre, 2018. Numerical Ecology with R. Dairy Science &amp; Technology, CRC Taylor &amp; Francis Group. Springer International Publishing, Cham, <a href="http://link.springer.com/10.1007/978-3-319-71404-2" class="uri">http://link.springer.com/10.1007/978-3-319-71404-2</a>.</p>
 <p>Greenacre, M., 2008. Representación gráfica de distancias ji-cuadrado. La práctica del análisis de correspondencias 1–11.</p>
@@ -1472,7 +1559,6 @@ Mcardle, B. H., M. J. Anderson, S. Ecology, &amp; N. Jan, 2014. Fitting Multivar
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -1491,6 +1577,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -1511,6 +1598,10 @@ gitbook.start({
 "text": null
 },
 "download": ["bookdown-LimnoR.pdf", "bookdown-LimnoR.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }

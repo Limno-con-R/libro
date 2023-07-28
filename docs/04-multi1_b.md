@@ -62,7 +62,7 @@ datos <-  read_excel("data/data_cursoR.xlsx",
 
 ```
 ## New names:
-## • `` -> `...1`
+## * `` -> `...1`
 ```
 
 
@@ -287,7 +287,7 @@ library(factoextra)
 fviz_eig(res.pca, addlabels = TRUE)# scree plot de los eigenvalue
 ```
 
-<img src="04-multi1_b_files/figure-html/unnamed-chunk-8-1.png" width="672" />
+![](04-multi1_b_files/figure-latex/unnamed-chunk-8-1.pdf)<!-- --> 
 
 Los **eigenvalues** se utilizan para determinar el número de componentes que deben conservarse. Existen dos maneras frecuentes de analizar estos eigenvalues, por un lado muchos investigadores utilizan los eigenvalues \> 1. Otra manera de determinar el número de componentes es por la cantidad de variación explicada, muchos usan \> 70% de la variabilidad de los datos.
 
@@ -304,11 +304,11 @@ fviz_pca_biplot(res.pca,  repel=TRUE, invisible = "quali")+theme_classic()
 ```
 
 ```
-## Warning: ggrepel: 38 unlabeled data points (too many overlaps). Consider
+## Warning: ggrepel: 39 unlabeled data points (too many overlaps). Consider
 ## increasing max.overlaps
 ```
 
-<img src="04-multi1_b_files/figure-html/unnamed-chunk-9-1.png" width="672" />
+![](04-multi1_b_files/figure-latex/unnamed-chunk-9-1.pdf)<!-- --> 
 
 El gráfico muestra los ejes o componentes 1 y 2. A simple vista se observa que algunos individuos, como SL_34 por ejemplo es la muestra que tiene mas DOC (carbono orgánico disuelto), mientras que la muestra SL_50 es la que presentó la mayor cantidad de POM (materia orgánica particulada).
 
@@ -322,11 +322,11 @@ fviz_pca_biplot(res.pca, axes=c(1,3),  repel=TRUE, invisible = "quali")+theme_cl
 ```
 
 ```
-## Warning: ggrepel: 20 unlabeled data points (too many overlaps). Consider
+## Warning: ggrepel: 24 unlabeled data points (too many overlaps). Consider
 ## increasing max.overlaps
 ```
 
-<img src="04-multi1_b_files/figure-html/unnamed-chunk-10-1.png" width="672" />
+![](04-multi1_b_files/figure-latex/unnamed-chunk-10-1.pdf)<!-- --> 
 
 Una función importante del paquete FactoMiner, es el comando dimdesc. El mismo se utiliza para identificar las variables más significativamente asociadas a un componente.
 
@@ -381,7 +381,7 @@ dimdesc(res.pca, axes = c(1:3), proba = 0.05)
 ## NTU   -0.6197587 9.622302e-07
 ```
 
-Estos resultados nos permiten asociar variables a los distintos ejes/componentes. Se puede inclusive establecer un criterio ya que usa coeficientes de correlación. Para este ejemplo, se puede usar las variables que tienen una correlación \>0.6 con el eje. Para el componente principal 1, que explica (32.2%), las variables asociadas a este componente son DOC, TP, TDP, conductivity y SPM. Para el componente principal 2 (27.3%), está asociado a POM, clorofila a y NTU (salinidad). Finalmente, el componente principal 3 (10.3%) estaría asociado de manera negativa solo a la salinidad (NTU). El signo de la correlación indica la dirección de la correlación.
+Estos resultados nos permiten asociar variables a los distintos ejes/componentes. Se puede inclusive establecer un criterio ya que usa coeficientes de correlación. Para este ejemplo, se puede usar las variables que tienen una correlación \>0.6 con el eje. Para el componente principal 1, que explica (32.2%), las variables asociadas a este componente son DOC, TP, TDP, conductivity y SPM. Para el componente principal 2 (27.3%), está asociado a POM, clorofila a y NTU (turbidez). Finalmente, el componente principal 3 (10.3%) estaría asociado de manera negativa solo a la salinidad (NTU). El signo de la correlación indica la dirección de la correlación.
 
 ### Crear una condición para colorear los individuos
 
@@ -399,7 +399,7 @@ Cree una nueva variable llamada condicion
 fviz_pca_biplot(res.pca,  repel=TRUE, invisible = "quali", habillage = datos$condicion, geom = ("point"))+theme_classic()
 ```
 
-<img src="04-multi1_b_files/figure-html/unnamed-chunk-13-1.png" width="672" />
+![](04-multi1_b_files/figure-latex/unnamed-chunk-13-1.pdf)<!-- --> 
 
 ### Refinando el modelo
 
@@ -446,14 +446,14 @@ Biplot:
 fviz_pca_biplot(res.pca2,  repel=TRUE, invisible = "quali", habillage = datos$condicion, geom = ("point"))+theme_classic()
 ```
 
-<img src="04-multi1_b_files/figure-html/unnamed-chunk-17-1.png" width="672" />
+![](04-multi1_b_files/figure-latex/unnamed-chunk-17-1.pdf)<!-- --> 
 
 
 ```r
 fviz_pca_biplot(res.pca2,  axes= c(1,3), repel=TRUE, invisible = "quali", habillage = datos$condicion, geom = ("point"))+theme_classic()
 ```
 
-<img src="04-multi1_b_files/figure-html/unnamed-chunk-18-1.png" width="672" />
+![](04-multi1_b_files/figure-latex/unnamed-chunk-18-1.pdf)<!-- --> 
 
 El nuevo ACP con las variables seleccionadas, explica un 78% de la variabilidad total de los datos, teniendo en cuenta los primeros 3 ejes. Considero que este modelo refinado es mucho mejor que el anterior.
 
@@ -638,7 +638,7 @@ legend("bottomright", cex=0.6, box.col=NA,
 ## species scores not available
 ```
 
-<img src="04-multi1_b_files/figure-html/unnamed-chunk-24-1.png" width="672" />
+![](04-multi1_b_files/figure-latex/unnamed-chunk-24-1.pdf)<!-- --> 
 
 El escalamiento es parecido al resultado del ACP, en donde se pueden observar que hay un solapamiento importante en el tipo de lagunas.
 
