@@ -106,6 +106,14 @@ El paquete nos irá mostrando información en la consola de RStudio, y nos solic
 
 Seleccionemos un directorio (preferentemente vacío!) para guardar las salidas, y el paquete continuará reconociendo las especies, y buscando información ecológica sobre ellas para calcular los distintos índices bióticos.
 
+Aclaración: Si estamos trabajando en sistema operativo Linux, es posible que este cuadro de dialogo no aparezca en la pantalla y obtengamos un error en la consola. Para evitar esto, podemos manualmente indicar el directorio adonde se guardaran los resultaos como un parámetro de la función `diaThorAll`, de la siguiente manera:
+
+
+```r
+resultados <- diaThorAll(base, resultsPath="/Resultados") #Por ejemplo, aquí debemos haber generado una subcarpeta llamada 'Resultados'
+```
+
+
 #### Los resultados
 
 Si todo ha salido bien, *diaThor* debería haber calculado todos los índices posibles.
