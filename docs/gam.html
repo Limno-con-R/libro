@@ -410,7 +410,7 @@ Figure 3.2: Serie temporal de abundancia (organismos/ml) de picocianobacterias.
 <p>Por <em>default</em> el máximo número de iteraciones está seteado en 20 <code>niterPQL=20</code>. Si el modelo no converge se puede incrementar el número de interacciones, por ejemplo: <code>gamm(..., niterPQL=40)</code>.</p>
 <p>Interpretación visual de los efectos parciales: curvas suaves <code>s()</code> ( <em>smooth functions</em>)</p>
 <div class="sourceCode" id="cb243"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb243-1"><a href="gam.html#cb243-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(modelo1<span class="sc">$</span>gam, <span class="at">scale=</span><span class="dv">0</span>, <span class="at">scheme=</span><span class="dv">1</span>, <span class="at">pages=</span><span class="dv">1</span>)</span></code></pre></div>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-6"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-6"></span>
 <img src="03-gam_files/figure-html/unnamed-chunk-6-1.png" alt="Efectos parciales del modelo 1. Las curvas suaves se centraron en cero, se indican los intervalos de confianza de 95% en gris. Las líneas internas en los ejes x (Mes y Dias) representan los datos." width="100%" />
 <p class="caption">
 Figure 3.3: Efectos parciales del modelo 1. Las curvas suaves se centraron en cero, se indican los intervalos de confianza de 95% en gris. Las líneas internas en los ejes x (Mes y Dias) representan los datos.
@@ -459,7 +459,7 @@ Figure 3.4: gam.check del modelo 1.
 ## indicate that k is too low, especially if edf is close to k&#39;.
 ## 
 ##           k&#39;  edf k-index p-value    
-## s(Mes)  8.00 3.86    0.93    0.15    
+## s(Mes)  8.00 3.86    0.93     0.2    
 ## s(Dias) 9.00 8.74    0.31  &lt;2e-16 ***
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
@@ -477,7 +477,7 @@ Figure 3.4: gam.check del modelo 1.
 <pre><code>## iteration 3</code></pre>
 <p>Interpretación visual de los efectos parciales: curvas suaves <code>s()</code>( <em>smooth functions</em>)</p>
 <div class="sourceCode" id="cb253"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb253-1"><a href="gam.html#cb253-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(modelo2<span class="sc">$</span>gam, <span class="at">scale=</span><span class="dv">0</span>, <span class="at">scheme=</span><span class="dv">1</span>, <span class="at">pages=</span><span class="dv">1</span>)</span></code></pre></div>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-9"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-9"></span>
 <img src="03-gam_files/figure-html/unnamed-chunk-9-1.png" alt="Efectos parciales del modelo 2. Las curvas suaves se centraron en cero, se indican los intervalos de confianza de 95% en gris. Las líneas internas en los ejes x (Mes y Dias) representan los datos." width="100%" />
 <p class="caption">
 Figure 3.5: Efectos parciales del modelo 2. Las curvas suaves se centraron en cero, se indican los intervalos de confianza de 95% en gris. Las líneas internas en los ejes x (Mes y Dias) representan los datos.
@@ -528,9 +528,9 @@ Figure 3.6: gam.check del modelo 2.
 ## indicate that k is too low, especially if edf is close to k&#39;.
 ## 
 ##                 k&#39;   edf k-index p-value    
-## s(Mes)        4.00  3.27    0.84   0.005 ** 
+## s(Mes)        4.00  3.27    0.84  &lt;2e-16 ***
 ## s(Dias)      19.00 17.54    0.66  &lt;2e-16 ***
-## ti(Mes,Dias) 12.00  3.72    0.89   0.020 *  
+## ti(Mes,Dias) 12.00  3.72    0.89   0.015 *  
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <p>De nuevo, parece correcto utilizar la <em>quasi familia</em> quasipoisson, sin mayores problemas con la varianza. La relación lineal positiva entre los valores observados y los predichos (gráfico inferior derecho) ha mejorado, coincidiendo con el incremento del <span class="math inline">\(R_{adj}^{2}\)</span> del modelo.</p>

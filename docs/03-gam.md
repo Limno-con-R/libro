@@ -176,12 +176,7 @@ plot(modelo1$gam, scale=0, scheme=1, pages=1)
 ```
 
 \begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{03-gam_files/figure-latex/unnamed-chunk-6-1} 
-
-}
-
-\caption{Efectos parciales del modelo 1. Las curvas suaves se centraron en cero, se indican los intervalos de confianza de 95% en gris. Las líneas internas en los ejes x (Mes y Dias) representan los datos.}(\#fig:unnamed-chunk-6)
+\includegraphics[width=1\linewidth]{03-gam_files/figure-latex/unnamed-chunk-6-1} \caption{Efectos parciales del modelo 1. Las curvas suaves se centraron en cero, se indican los intervalos de confianza de 95% en gris. Las líneas internas en los ejes x (Mes y Dias) representan los datos.}(\#fig:unnamed-chunk-6)
 \end{figure}
 
 Información del modelo
@@ -246,7 +241,7 @@ gam.check(modelo1$gam, type="pearson")
 ## indicate that k is too low, especially if edf is close to k'.
 ## 
 ##           k'  edf k-index p-value    
-## s(Mes)  8.00 3.86    0.93    0.15    
+## s(Mes)  8.00 3.86    0.93    0.16    
 ## s(Dias) 9.00 8.74    0.31  <2e-16 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
@@ -290,12 +285,7 @@ plot(modelo2$gam, scale=0, scheme=1, pages=1)
 ```
 
 \begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{03-gam_files/figure-latex/unnamed-chunk-9-1} 
-
-}
-
-\caption{Efectos parciales del modelo 2. Las curvas suaves se centraron en cero, se indican los intervalos de confianza de 95% en gris. Las líneas internas en los ejes x (Mes y Dias) representan los datos.}(\#fig:unnamed-chunk-9)
+\includegraphics[width=1\linewidth]{03-gam_files/figure-latex/unnamed-chunk-9-1} \caption{Efectos parciales del modelo 2. Las curvas suaves se centraron en cero, se indican los intervalos de confianza de 95% en gris. Las líneas internas en los ejes x (Mes y Dias) representan los datos.}(\#fig:unnamed-chunk-9)
 \end{figure}
 
 La interacción se muestra en 3D, y es difícil de interpretar visualmente. Aquí nos centramos en la interpretación visual de los efectos parciales.
@@ -362,9 +352,9 @@ gam.check(modelo2$gam, type="pearson")
 ## indicate that k is too low, especially if edf is close to k'.
 ## 
 ##                 k'   edf k-index p-value    
-## s(Mes)        4.00  3.27    0.84    0.01 ** 
+## s(Mes)        4.00  3.27    0.84   0.010 ** 
 ## s(Dias)      19.00 17.54    0.66  <2e-16 ***
-## ti(Mes,Dias) 12.00  3.72    0.89    0.03 *  
+## ti(Mes,Dias) 12.00  3.72    0.89   0.025 *  
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ```
