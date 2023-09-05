@@ -345,9 +345,9 @@ anova(biomass.rda, permutations = how(nperm = 999))#nada tiene que ver este aná
 ## Number of permutations: 999
 ## 
 ## Model: rda(formula = bio.trans ~ pH + EC + TH + DOC + DIN + TN + DRP + TP + a440 + SUVA254 + E2_E3, data = env, scale = TRUE)
-##          Df Variance      F Pr(>F)  
-## Model    11   4.6572 2.5224  0.013 *
-## Residual  8   1.3428                
+##          Df Variance      F Pr(>F)   
+## Model    11   4.6572 2.5224  0.006 **
+## Residual  8   1.3428                 
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ```
@@ -387,7 +387,7 @@ Podemos graficar el resultado de nuestro modelo (con todas las variables explica
 ordiplot(biomass.rda, scaling = 1, type = "text")
 ```
 
-<img src="05-multi2_files/figure-html/unnamed-chunk-8-1.png" width="672" />
+![](05-multi2_files/figure-latex/unnamed-chunk-8-1.pdf)<!-- --> 
 
 **Figura 4:** El "*escalado*" 1 refleja en el gráfico las similitudes entre objetos en la matriz de respuesta. Es decir, los sitios (en negro) que están más cerca entre sí tienen comunidades más similares. Las especies que están más juntas ocupan más sitios en común.
 
@@ -396,7 +396,7 @@ ordiplot(biomass.rda, scaling = 1, type = "text")
 ordiplot(biomass.rda, scaling = 2, type = "text")
 ```
 
-<img src="05-multi2_files/figure-html/unnamed-chunk-9-1.png" width="672" />
+![](05-multi2_files/figure-latex/unnamed-chunk-9-1.pdf)<!-- --> 
 
 **Figura 5:** El "*escalado*" 2 muestra los efectos de las variables explicativas. Las flechas más largas significan que esta variable impulsa fuertemente la variación en la matriz de la comunidad. Las flechas que apuntan en direcciones opuestas tienen una relación negativa. Las flechas que apuntan en la misma dirección tienen una relación positiva. Cuanto más superpuestas las flechas, más correlacionadas resultan esas variables (ya sea positiva o negtivamente).
 
@@ -418,34 +418,34 @@ fwd.sel <- ordistep(rda(bio.trans ~ 1, data = env, scale= TRUE), # modelo mínim
 ## 
 ## Start: bio.trans ~ 1 
 ## 
-##           Df    AIC      F Pr(>F)  
-## + EC       1 33.486 5.4886  0.015 *
-## + TN       1 35.111 3.6559  0.035 *
-## + pH       1 36.512 2.1912  0.075 .
-## + DOC      1 36.689 2.0134  0.190  
-## + a440     1 37.495 1.2229  0.270  
-## + DIN      1 37.847 0.8874  0.460  
-## + DRP      1 38.029 0.7166  0.480  
-## + TP       1 37.997 0.7466  0.505  
-## + SUVA254  1 38.270 0.4923  0.665  
-## + E2_E3    1 38.353 0.4154  0.735  
-## + TH       1 38.425 0.3496  0.815  
+##           Df    AIC      F Pr(>F)   
+## + EC       1 33.486 5.4886  0.010 **
+## + TN       1 35.111 3.6559  0.025 * 
+## + pH       1 36.512 2.1912  0.125   
+## + DOC      1 36.689 2.0134  0.145   
+## + a440     1 37.495 1.2229  0.290   
+## + DIN      1 37.847 0.8874  0.380   
+## + DRP      1 38.029 0.7166  0.485   
+## + TP       1 37.997 0.7466  0.520   
+## + SUVA254  1 38.270 0.4923  0.640   
+## + E2_E3    1 38.353 0.4154  0.740   
+## + TH       1 38.425 0.3496  0.820   
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## Step: bio.trans ~ EC 
 ## 
 ##           Df    AIC      F Pr(>F)   
-## + a440     1 30.718 4.5770  0.005 **
-## + pH       1 32.870 2.3759  0.075 . 
-## + TN       1 34.291 1.0469  0.325   
-## + E2_E3    1 34.177 1.1501  0.345   
-## + DIN      1 34.608 0.7632  0.495   
-## + TP       1 34.803 0.5910  0.610   
+## + a440     1 30.718 4.5770  0.010 **
+## + pH       1 32.870 2.3759  0.115   
+## + E2_E3    1 34.177 1.1501  0.280   
+## + TN       1 34.291 1.0469  0.370   
+## + DIN      1 34.608 0.7632  0.540   
+## + TP       1 34.803 0.5910  0.595   
 ## + TH       1 34.873 0.5294  0.640   
 ## + DRP      1 34.851 0.5485  0.670   
 ## + DOC      1 34.986 0.4307  0.785   
-## + SUVA254  1 35.170 0.2709  0.865   
+## + SUVA254  1 35.170 0.2709  0.885   
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
@@ -453,14 +453,14 @@ fwd.sel <- ordistep(rda(bio.trans ~ 1, data = env, scale= TRUE), # modelo mínim
 ## 
 ##           Df    AIC      F Pr(>F)
 ## + pH       1 30.098 2.2393  0.100
-## + TP       1 30.590 1.7964  0.130
+## + TP       1 30.590 1.7964  0.145
+## + DOC      1 31.460 1.0392  0.325
 ## + TN       1 31.422 1.0710  0.330
-## + DOC      1 31.460 1.0392  0.400
-## + DRP      1 31.766 0.7802  0.510
-## + SUVA254  1 31.840 0.7185  0.570
-## + TH       1 32.114 0.4904  0.705
-## + E2_E3    1 32.045 0.5477  0.755
-## + DIN      1 32.500 0.1756  0.960
+## + DRP      1 31.766 0.7802  0.515
+## + SUVA254  1 31.840 0.7185  0.535
+## + E2_E3    1 32.045 0.5477  0.655
+## + TH       1 32.114 0.4904  0.740
+## + DIN      1 32.500 0.1756  0.955
 ```
 
 Para evitar la sobreestimación de la varianza explicada, la selección de variables debe realizarse con dos criterios de parada: (1) el nivel de significación alfa habitual y (2) el coeficiente de determinación múltiple ajustado (R^2^adj.) calculado utilizando todas las variables explicativas. Cuando la selección hacia adelante identifica una variable que hace que uno u otro criterio supere el umbral fijado, se rechaza esa variable y se detiene el procedimiento (referirse a Blanchet, F. G., Legendre, P., & Borcard, D. 2008. *Forward selection of explanatory variables*. Ecology, 89(9): 2623-2632, para más detalles).
@@ -529,8 +529,8 @@ anova.cca(biomass.rda.signif, step = 1000, by = "term") #significación de varia
 ## 
 ## Model: rda(formula = bio.trans ~ EC + a440, data = env, scale = TRUE)
 ##          Df Variance      F Pr(>F)   
-## EC        1   1.4020 6.5793  0.003 **
-## a440      1   0.9753 4.5770  0.012 * 
+## EC        1   1.4020 6.5793  0.004 **
+## a440      1   0.9753 4.5770  0.008 **
 ## Residual 17   3.6226                 
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
@@ -549,10 +549,10 @@ anova.cca(biomass.rda.signif, step = 1000, by = "axis") #significación de los e
 ## Number of permutations: 999
 ## 
 ## Model: rda(formula = bio.trans ~ EC + a440, data = env, scale = TRUE)
-##          Df Variance      F Pr(>F)    
-## RDA1      1   1.9986 9.3787  0.001 ***
-## RDA2      1   0.3788 1.7776  0.151    
-## Residual 17   3.6226                  
+##          Df Variance      F Pr(>F)   
+## RDA1      1   1.9986 9.3787  0.004 **
+## RDA2      1   0.3788 1.7776  0.138   
+## Residual 17   3.6226                 
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ```
@@ -615,67 +615,67 @@ trace = TRUE)
 ##           Df    AIC      F Pr(>F)   
 ## + EC       1 435.62 7.3760  0.005 **
 ## + TN       1 436.35 6.4767  0.015 * 
-## + DOC      1 439.94 2.4469  0.060 . 
-## + a440     1 440.76 1.6257  0.160   
-## + TP       1 441.11 1.2859  0.270   
-## + TH       1 441.34 1.0725  0.315   
-## + E2_E3    1 441.53 0.8848  0.330   
-## + SUVA254  1 441.40 1.0155  0.355   
-## + DIN      1 441.51 0.9092  0.355   
-## + pH       1 441.68 0.7432  0.520   
-## + DRP      1 442.18 0.2880  0.760   
+## + DOC      1 439.94 2.4469  0.120   
+## + a440     1 440.76 1.6257  0.140   
+## + TP       1 441.11 1.2859  0.300   
+## + SUVA254  1 441.40 1.0155  0.340   
+## + TH       1 441.34 1.0725  0.360   
+## + DIN      1 441.51 0.9092  0.365   
+## + E2_E3    1 441.53 0.8848  0.445   
+## + pH       1 441.68 0.7432  0.485   
+## + DRP      1 442.18 0.2880  0.720   
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## Step: biomass ~ EC 
 ## 
-##           Df    AIC      F Pr(>F)  
-## + a440     1 433.14 4.2685  0.015 *
-## + E2_E3    1 435.03 2.3593  0.125  
-## + TN       1 435.40 1.9954  0.135  
-## + pH       1 435.57 1.8349  0.140  
-## + TP       1 436.22 1.2399  0.295  
-## + DIN      1 436.64 0.8577  0.400  
-## + SUVA254  1 436.60 0.8973  0.415  
-## + DOC      1 436.87 0.6540  0.565  
-## + TH       1 437.12 0.4337  0.680  
-## + DRP      1 437.50 0.1099  0.960  
+##           Df    AIC      F Pr(>F)   
+## + a440     1 433.14 4.2685  0.010 **
+## + E2_E3    1 435.03 2.3593  0.105   
+## + pH       1 435.57 1.8349  0.125   
+## + TN       1 435.40 1.9954  0.135   
+## + TP       1 436.22 1.2399  0.320   
+## + SUVA254  1 436.60 0.8973  0.415   
+## + DIN      1 436.64 0.8577  0.445   
+## + DOC      1 436.87 0.6540  0.545   
+## + TH       1 437.12 0.4337  0.730   
+## + DRP      1 437.50 0.1099  0.950   
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## Step: biomass ~ EC + a440 
 ## 
 ##           Df    AIC      F Pr(>F)  
-## + pH       1 431.31 3.3846  0.025 *
-## + TN       1 432.60 2.1715  0.150  
-## + E2_E3    1 433.25 1.5858  0.230  
-## + DOC      1 433.79 1.1182  0.335  
-## + TP       1 434.29 0.6956  0.570  
+## + pH       1 431.31 3.3846  0.040 *
+## + TN       1 432.60 2.1715  0.130  
+## + E2_E3    1 433.25 1.5858  0.185  
+## + DOC      1 433.79 1.1182  0.340  
+## + TP       1 434.29 0.6956  0.505  
 ## + TH       1 434.31 0.6796  0.605  
 ## + SUVA254  1 434.40 0.6032  0.615  
 ## + DRP      1 434.72 0.3418  0.730  
-## + DIN      1 434.90 0.1953  0.920  
+## + DIN      1 434.90 0.1953  0.880  
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## Step: biomass ~ EC + a440 + pH 
 ## 
 ##           Df    AIC      F Pr(>F)
-## + E2_E3    1 430.27 2.4564  0.110
-## + TN       1 431.11 1.7398  0.155
-## + TP       1 431.80 1.1744  0.310
-## + DRP      1 432.24 0.8201  0.430
-## + DOC      1 432.71 0.4525  0.625
-## + SUVA254  1 432.73 0.4406  0.660
-## + DIN      1 432.94 0.2786  0.780
-## + TH       1 433.05 0.1947  0.895
+## + E2_E3    1 430.27 2.4564  0.130
+## + TN       1 431.11 1.7398  0.175
+## + TP       1 431.80 1.1744  0.350
+## + DRP      1 432.24 0.8201  0.470
+## + DOC      1 432.71 0.4525  0.690
+## + SUVA254  1 432.73 0.4406  0.695
+## + DIN      1 432.94 0.2786  0.825
+## + TH       1 433.05 0.1947  0.930
 ```
 
 ```r
 ordiplot(bray.env.cap.all, scaling = 2, type = "text")
 ```
 
-<img src="05-multi2_files/figure-html/unnamed-chunk-19-1.png" width="672" />
+![](05-multi2_files/figure-latex/unnamed-chunk-19-1.pdf)<!-- --> 
 
 **Figura 6:** Ordenamiento obtenido a partir del dbRDA en base a la distancia de Bray Curtis. Escalamiento tipo 2.
 
@@ -741,11 +741,11 @@ anova.cca(biomass.dbrda.signif, step = 1000, by = "term") #significación de var
 ## Number of permutations: 999
 ## 
 ## Model: capscale(formula = biomass ~ EC + a440 + pH, data = env, add = "lingoes")
-##          Df   Variance      F Pr(>F)   
-## EC        1 1017246043 9.9379  0.002 **
-## a440      1  498217165 4.8673  0.020 * 
-## pH        1  346449995 3.3846  0.039 * 
-## Residual 16 1637764593                 
+##          Df   Variance      F Pr(>F)    
+## EC        1 1017246043 9.9379  0.001 ***
+## a440      1  498217165 4.8673  0.014 *  
+## pH        1  346449995 3.3846  0.046 *  
+## Residual 16 1637764593                  
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ```
@@ -763,11 +763,11 @@ anova.cca(biomass.dbrda.signif, step = 1000, by = "axis") #significación de los
 ## Number of permutations: 999
 ## 
 ## Model: capscale(formula = biomass ~ EC + a440 + pH, data = env, add = "lingoes")
-##          Df   Variance       F Pr(>F)   
-## CAP1      1 1503918383 14.6924  0.002 **
-## CAP2      1  278096049  2.7168  0.136   
-## CAP3      1   79898771  0.7806  0.483   
-## Residual 16 1637764593                  
+##          Df   Variance       F Pr(>F)    
+## CAP1      1 1503918383 14.6924  0.001 ***
+## CAP2      1  278096049  2.7168  0.153    
+## CAP3      1   79898771  0.7806  0.496    
+## Residual 16 1637764593                   
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ```
@@ -813,12 +813,12 @@ fwd.sel.dbRDA2<-ordistep (dbrda.0, scope = formula (dbrda.all), add=TRUE)
 ## + TN       1 20.679 4.3484  0.005 **
 ## + DOC      1 22.618 2.2839  0.050 * 
 ## + a440     1 22.817 2.0827  0.055 . 
-## + DRP      1 23.525 1.3845  0.220   
-## + DIN      1 23.810 1.1098  0.340   
-## + SUVA254  1 24.037 0.8944  0.440   
-## + TH       1 24.081 0.8529  0.460   
-## + pH       1 24.092 0.8425  0.475   
-## + TP       1 24.087 0.8474  0.570   
+## + DRP      1 23.525 1.3845  0.240   
+## + DIN      1 23.810 1.1098  0.330   
+## + TH       1 24.081 0.8529  0.450   
+## + SUVA254  1 24.037 0.8944  0.465   
+## + TP       1 24.087 0.8474  0.465   
+## + pH       1 24.092 0.8425  0.495   
 ## + E2_E3    1 24.382 0.5712  0.770   
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
@@ -831,37 +831,37 @@ fwd.sel.dbRDA2<-ordistep (dbrda.0, scope = formula (dbrda.all), add=TRUE)
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ##           Df    AIC      F Pr(>F)  
-## + a440     1 18.018 2.4546  0.030 *
-## + TN       1 19.061 1.4660  0.110  
-## + DRP      1 19.089 1.4399  0.145  
-## + pH       1 19.078 1.4506  0.150  
-## + E2_E3    1 19.284 1.2616  0.260  
-## + DIN      1 19.478 1.0851  0.370  
-## + DOC      1 19.703 0.8828  0.510  
-## + TH       1 19.807 0.7900  0.655  
-## + TP       1 19.883 0.7230  0.685  
-## + SUVA254  1 20.175 0.4660  0.985  
+## + a440     1 18.018 2.4546  0.020 *
+## + DRP      1 19.089 1.4399  0.170  
+## + TN       1 19.061 1.4660  0.175  
+## + pH       1 19.078 1.4506  0.175  
+## + E2_E3    1 19.284 1.2616  0.185  
+## + DIN      1 19.478 1.0851  0.320  
+## + DOC      1 19.703 0.8828  0.495  
+## + TH       1 19.807 0.7900  0.640  
+## + TP       1 19.883 0.7230  0.725  
+## + SUVA254  1 20.175 0.4660  0.955  
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## Step: biomass.dist ~ EC + a440 
 ## 
 ##        Df    AIC      F Pr(>F)   
-## - a440  1 18.715 2.4546  0.050 * 
+## - a440  1 18.715 2.4546  0.060 . 
 ## - EC    1 22.817 6.8831  0.005 **
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ##           Df    AIC      F Pr(>F)  
-## + pH       1 17.824 1.8552  0.085 .
-## + TP       1 18.175 1.5445  0.105  
-## + DRP      1 18.257 1.4724  0.140  
-## + TN       1 18.218 1.5069  0.175  
-## + E2_E3    1 18.937 0.8890  0.475  
-## + TH       1 18.889 0.9289  0.505  
-## + DOC      1 18.935 0.8905  0.560  
-## + SUVA254  1 19.014 0.8242  0.625  
-## + DIN      1 19.423 0.4831  0.980  
+## + pH       1 17.824 1.8552  0.065 .
+## + TP       1 18.175 1.5445  0.075 .
+## + TN       1 18.218 1.5069  0.125  
+## + DRP      1 18.257 1.4724  0.135  
+## + E2_E3    1 18.937 0.8890  0.505  
+## + TH       1 18.889 0.9289  0.540  
+## + DOC      1 18.935 0.8905  0.550  
+## + SUVA254  1 19.014 0.8242  0.630  
+## + DIN      1 19.423 0.4831  0.945  
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ```
@@ -1041,7 +1041,7 @@ RsquareAdj(cca_DGGE)
 ## [1] 0.4143396
 ## 
 ## $adj.r.squared
-## [1] 0.1437225
+## [1] 0.1431345
 ```
 
 
@@ -1309,7 +1309,7 @@ plot(cca_DGGE, dis=c("wa","lc"))
 ordispider(cca_DGGE)
 ```
 
-<img src="05-multi2_files/figure-html/unnamed-chunk-35-1.png" width="672" />
+![](05-multi2_files/figure-latex/unnamed-chunk-35-1.pdf)<!-- --> 
 
 **Figura 7:** Diferencias entre *scores* de los sitios con LC y *scores* de los sitios con  WA en CCA.
 
@@ -1324,7 +1324,7 @@ El código para producir triplots es similar al utilizado para RDA, excepto que 
 plot(cca_DGGE,scaling = 1, display = c("sp", "lc", "cn"),main = "Triplot CCA DGGE -scaling 1")
 ```
 
-<img src="05-multi2_files/figure-html/unnamed-chunk-36-1.png" width="672" />
+![](05-multi2_files/figure-latex/unnamed-chunk-36-1.pdf)<!-- --> 
 
 **Figura 8:** Triplot del modelo completo de CCA con escalamiento 1. 
 
@@ -1335,7 +1335,7 @@ plot(cca_DGGE,scaling = 1, display = c("sp", "lc", "cn"),main = "Triplot CCA DGG
 plot(cca_DGGE, display = c("sp", "lc", "cn"), main = "Triplot CCA DGGE - scaling 2")
 ```
 
-<img src="05-multi2_files/figure-html/unnamed-chunk-37-1.png" width="672" />
+![](05-multi2_files/figure-latex/unnamed-chunk-37-1.pdf)<!-- --> 
 
 **Figura 9:** Triplot del modelo completo de CCA con escalamiento 2.
 
@@ -1354,9 +1354,9 @@ anova(cca_DGGE, permutations = how(nperm = 999))#Modelo completo
 ## Number of permutations: 999
 ## 
 ## Model: cca(formula = data_cca ~ Turb + DO + T + Cond + pH + Chl.a + TN + TP + SS + OM + IM + Alk, data = env.r)
-##          Df ChiSquare      F Pr(>F)   
-## Model    12    2.3497 1.5329  0.002 **
-## Residual 26    3.3212                 
+##          Df ChiSquare      F Pr(>F)    
+## Model    12    2.3497 1.5329  0.001 ***
+## Residual 26    3.3212                  
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ```
@@ -1374,12 +1374,12 @@ anova(cca_DGGE, by = "axis", permutations = how(nperm = 999))#Significación de 
 ## Model: cca(formula = data_cca ~ Turb + DO + T + Cond + pH + Chl.a + TN + TP + SS + OM + IM + Alk, data = env.r)
 ##          Df ChiSquare      F Pr(>F)   
 ## CCA1      1    0.5366 4.2011  0.007 **
-## CCA2      1    0.3764 2.9464  0.014 * 
-## CCA3      1    0.3502 2.7417  0.039 * 
-## CCA4      1    0.2387 1.8686  0.734   
-## CCA5      1    0.1981 1.5508  0.932   
+## CCA2      1    0.3764 2.9464  0.015 * 
+## CCA3      1    0.3502 2.7417  0.045 * 
+## CCA4      1    0.2387 1.8686  0.714   
+## CCA5      1    0.1981 1.5508  0.931   
 ## CCA6      1    0.1458 1.1417  1.000   
-## CCA7      1    0.1356 1.0613  0.998   
+## CCA7      1    0.1356 1.0613  1.000   
 ## CCA8      1    0.1155 0.9038  1.000   
 ## CCA9      1    0.0908 0.7105  1.000   
 ## CCA10     1    0.0767 0.6006  1.000   
@@ -1406,15 +1406,15 @@ direction = "forward", permutations = how(nperm = 199))
 ## + Chl.a  1 247.92 3.3236  0.005 **
 ## + OM     1 248.75 2.4791  0.005 **
 ## + TP     1 248.92 2.3023  0.005 **
-## + Turb   1 249.31 1.9118  0.005 **
-## + SS     1 249.43 1.7943  0.005 **
 ## + TN     1 249.23 1.9917  0.010 **
-## + IM     1 249.34 1.8855  0.015 * 
+## + SS     1 249.43 1.7943  0.015 * 
+## + Turb   1 249.31 1.9118  0.020 * 
+## + IM     1 249.34 1.8855  0.025 * 
 ## + pH     1 250.04 1.1904  0.235   
-## + DO     1 250.33 0.9122  0.625   
-## + Alk    1 250.54 0.7069  0.850   
-## + Cond   1 250.57 0.6747  0.890   
-## + T      1 250.57 0.6751  0.950   
+## + DO     1 250.33 0.9122  0.560   
+## + Alk    1 250.54 0.7069  0.860   
+## + Cond   1 250.57 0.6747  0.870   
+## + T      1 250.57 0.6751  0.940   
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
@@ -1422,32 +1422,32 @@ direction = "forward", permutations = how(nperm = 199))
 ## 
 ##        Df    AIC      F Pr(>F)   
 ## + TP    1 247.31 2.4923  0.005 **
-## + IM    1 247.82 1.9958  0.005 **
 ## + SS    1 247.96 1.8591  0.005 **
-## + Turb  1 248.23 1.5960  0.030 * 
-## + OM    1 248.57 1.2757  0.170   
+## + IM    1 247.82 1.9958  0.010 **
+## + Turb  1 248.23 1.5960  0.025 * 
+## + OM    1 248.57 1.2757  0.155   
 ## + TN    1 248.69 1.1618  0.230   
-## + pH    1 248.96 0.8984  0.610   
-## + DO    1 249.01 0.8576  0.755   
-## + Cond  1 249.16 0.7171  0.850   
-## + T     1 249.16 0.7173  0.925   
-## + Alk   1 249.24 0.6383  0.925   
+## + pH    1 248.96 0.8984  0.595   
+## + DO    1 249.01 0.8576  0.650   
+## + T     1 249.16 0.7173  0.915   
+## + Cond  1 249.16 0.7171  0.915   
+## + Alk   1 249.24 0.6383  0.930   
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## Step: data_cca ~ Chl.a + TP 
 ## 
 ##        Df    AIC      F Pr(>F)  
-## + OM    1 247.69 1.4913  0.030 *
-## + TN    1 247.95 1.2471  0.165  
-## + Turb  1 248.03 1.1693  0.245  
-## + SS    1 248.15 1.0624  0.370  
-## + IM    1 248.28 0.9348  0.535  
-## + DO    1 248.34 0.8866  0.540  
-## + pH    1 248.31 0.9083  0.615  
-## + T     1 248.49 0.7454  0.860  
-## + Alk   1 248.59 0.6523  0.895  
-## + Cond  1 248.64 0.6067  0.950  
+## + OM    1 247.69 1.4913  0.040 *
+## + TN    1 247.95 1.2471  0.175  
+## + Turb  1 248.03 1.1693  0.210  
+## + SS    1 248.15 1.0624  0.385  
+## + IM    1 248.28 0.9348  0.595  
+## + pH    1 248.31 0.9083  0.650  
+## + DO    1 248.34 0.8866  0.675  
+## + Alk   1 248.59 0.6523  0.910  
+## + T     1 248.49 0.7454  0.940  
+## + Cond  1 248.64 0.6067  0.945  
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
@@ -1455,14 +1455,14 @@ direction = "forward", permutations = how(nperm = 199))
 ## 
 ##        Df    AIC      F Pr(>F)  
 ## + TN    1 248.10 1.4079  0.070 .
-## + Turb  1 248.23 1.2906  0.115  
-## + SS    1 248.62 0.9453  0.500  
-## + IM    1 248.62 0.9454  0.515  
-## + pH    1 248.64 0.9217  0.590  
-## + DO    1 248.64 0.9231  0.600  
-## + Alk   1 248.69 0.8760  0.615  
-## + T     1 248.62 0.9430  0.640  
-## + Cond  1 248.68 0.8907  0.650  
+## + Turb  1 248.23 1.2906  0.130  
+## + IM    1 248.62 0.9454  0.450  
+## + DO    1 248.64 0.9231  0.540  
+## + SS    1 248.62 0.9453  0.565  
+## + T     1 248.62 0.9430  0.570  
+## + Cond  1 248.68 0.8907  0.640  
+## + Alk   1 248.69 0.8760  0.640  
+## + pH    1 248.64 0.9217  0.650  
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ```
@@ -1483,19 +1483,19 @@ final_cca <- step(cca.step.forward, scope=formula(cca_DGGE), test="perm")
 ## data_cca ~ Chl.a + TP + OM
 ## 
 ##         Df    AIC      F Pr(>F)   
-## - OM     1 247.31 1.4913  0.075 . 
+## - OM     1 247.31 1.4913  0.045 * 
 ## <none>     247.69                 
-## - Chl.a  1 247.81 1.9596  0.015 * 
-## + TN     1 248.10 1.4079  0.055 . 
-## + Turb   1 248.23 1.2906  0.125   
+## - Chl.a  1 247.81 1.9596  0.005 **
+## + TN     1 248.10 1.4079  0.070 . 
+## + Turb   1 248.23 1.2906  0.140   
 ## - TP     1 248.57 2.6824  0.005 **
-## + IM     1 248.62 0.9454  0.495   
-## + SS     1 248.62 0.9453  0.505   
-## + T      1 248.62 0.9430  0.530   
-## + DO     1 248.64 0.9231  0.590   
-## + pH     1 248.64 0.9217  0.590   
-## + Cond   1 248.68 0.8907  0.685   
-## + Alk    1 248.69 0.8760  0.605   
+## + IM     1 248.62 0.9454  0.565   
+## + SS     1 248.62 0.9453  0.465   
+## + T      1 248.62 0.9430  0.560   
+## + DO     1 248.64 0.9231  0.575   
+## + pH     1 248.64 0.9217  0.610   
+## + Cond   1 248.68 0.8907  0.605   
+## + Alk    1 248.69 0.8760  0.640   
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
@@ -1504,17 +1504,17 @@ final_cca <- step(cca.step.forward, scope=formula(cca_DGGE), test="perm")
 ## 
 ##         Df    AIC      F Pr(>F)   
 ## <none>     247.31                 
-## + OM     1 247.69 1.4913  0.055 . 
+## + OM     1 247.69 1.4913  0.080 . 
 ## - TP     1 247.92 2.4923  0.005 **
-## + TN     1 247.95 1.2471  0.145   
-## + Turb   1 248.03 1.1693  0.250   
-## + SS     1 248.15 1.0624  0.345   
-## + IM     1 248.28 0.9348  0.480   
-## + pH     1 248.31 0.9083  0.610   
-## + DO     1 248.34 0.8866  0.660   
-## + T      1 248.49 0.7454  0.880   
+## + TN     1 247.95 1.2471  0.160   
+## + Turb   1 248.03 1.1693  0.230   
+## + SS     1 248.15 1.0624  0.400   
+## + IM     1 248.28 0.9348  0.520   
+## + pH     1 248.31 0.9083  0.630   
+## + DO     1 248.34 0.8866  0.540   
+## + T      1 248.49 0.7454  0.875   
 ## + Alk    1 248.59 0.6523  0.910   
-## + Cond   1 248.64 0.6067  0.945   
+## + Cond   1 248.64 0.6067  0.960   
 ## - Chl.a  1 248.92 3.4926  0.005 **
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1

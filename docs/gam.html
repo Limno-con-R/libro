@@ -459,7 +459,7 @@ Figure 3.4: gam.check del modelo 1.
 ## indicate that k is too low, especially if edf is close to k&#39;.
 ## 
 ##           k&#39;  edf k-index p-value    
-## s(Mes)  8.00 3.86    0.93    0.14    
+## s(Mes)  8.00 3.86    0.93    0.15    
 ## s(Dias) 9.00 8.74    0.31  &lt;2e-16 ***
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
@@ -530,7 +530,7 @@ Figure 3.6: gam.check del modelo 2.
 ##                 k&#39;   edf k-index p-value    
 ## s(Mes)        4.00  3.27    0.84   0.005 ** 
 ## s(Dias)      19.00 17.54    0.66  &lt;2e-16 ***
-## ti(Mes,Dias) 12.00  3.72    0.89   0.005 ** 
+## ti(Mes,Dias) 12.00  3.72    0.89   0.020 *  
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <p>De nuevo, parece correcto utilizar la <em>quasi familia</em> quasipoisson, sin mayores problemas con la varianza. La relación lineal positiva entre los valores observados y los predichos (gráfico inferior derecho) ha mejorado, coincidiendo con el incremento del <span class="math inline">\(R_{adj}^{2}\)</span> del modelo.</p>

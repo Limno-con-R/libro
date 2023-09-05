@@ -16,10 +16,14 @@ Instituto Tecnológico de Chascomús (INTECH, UNSAM-CONICET), Escuela de Bio y N
 
 Seguir las indicaciones de la página <https://posit.co/download/rstudio-desktop/> para descargar e instalar **R** y **RStudio**. Es muy importante que lo haga de manera secuencial como se indica, primero **R** y luego **RStudio**.
 
-<div class="figure" style="text-align: center">
-<img src="./images/posit.png" alt="Instalación de R y RStudio." width="100%" />
-<p class="caption">(\#fig:posit)Instalación de R y RStudio.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{./images/posit} 
+
+}
+
+\caption{Instalación de R y RStudio.}(\#fig:posit)
+\end{figure}
 
 ## RStudio
 
@@ -32,10 +36,14 @@ La primera vez que abrimos RStudio la interfaz nos muestra tres paneles:
 -   *Panel derecho inferior* -solapa: **Paquetes**: visualización/carga/actualización de paquetes de R.
 -   *Panel derecho inferior* -solapa: **Ayuda**: Recuerde que puede buscar ayuda desde esta solapa o tipeado en la consola `?nombre_del_comando`.
 
-<div class="figure" style="text-align: center">
-<img src="./images/rstudio.png" alt="Interfaz de RStudio." width="100%" />
-<p class="caption">(\#fig:rstudio)Interfaz de RStudio.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{./images/rstudio} 
+
+}
+
+\caption{Interfaz de RStudio.}(\#fig:rstudio)
+\end{figure}
 
 ## ¡A trabajar!
 
@@ -48,10 +56,14 @@ La primera vez que abrimos RStudio la interfaz nos muestra tres paneles:
 5.  Escribir el nombre de la carpeta, que será el **Directorio de Trabajo** y contendrá el **Proyecto**. Se puede setear la ubicación de la carpeta haciendo click en `Browse`. En la Figura \@ref(fig:project) se creó la carpeta LimonologiaR_U01 en el Escritorio.
 6.  Click en `Create Project`.
 
-<div class="figure" style="text-align: center">
-<img src="./images/project.png" alt="Crear un nuevo proyecto para la Unidad 1." width="75%" />
-<p class="caption">(\#fig:project)Crear un nuevo proyecto para la Unidad 1.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.75\linewidth]{./images/project} 
+
+}
+
+\caption{Crear un nuevo proyecto para la Unidad 1.}(\#fig:project)
+\end{figure}
 
 Ver el **Directorio de Trabajo**:
 
@@ -77,19 +89,27 @@ Recuerde las recomendaciones para nombrar archivos al `guardar` el script.
 
 El script se va a guardar como archivo *.R* en el **Directorio de Trabajo**.
 
-<div class="figure" style="text-align: center">
-<img src="./images/script.png" alt="Crear un nuevo R Script." width="75%" />
-<p class="caption">(\#fig:script)Crear un nuevo R Script.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.75\linewidth]{./images/script} 
+
+}
+
+\caption{Crear un nuevo R Script.}(\#fig:script)
+\end{figure}
 
 En este **script** se escribe y guarda el código.
 
 Una forma fácil de copiar código es utilizando el botón `Copy to clipboard` que se encuentra en la esquina superior izquierda de los `bloques de código` (Figura \@ref(fig:copycode)).
 
-<div class="figure" style="text-align: center">
-<img src="./images/copycode.png" alt="Copiar código desde el material del taller." width="30%" />
-<p class="caption">(\#fig:copycode)Copiar código desde el material del taller.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.3\linewidth]{./images/copycode} 
+
+}
+
+\caption{Copiar código desde el material del taller.}(\#fig:copycode)
+\end{figure}
 
 Se pega o escribe `código` en el **script** y se `guarda` haciendo click como se indica en el *recuadro 1* de la Figura \@ref(fig:code).
 
@@ -103,10 +123,14 @@ Los resultados se pueden copiar de la **consola** y pegar en el **script**. Recu
 
 R **no** ejecuta lo que se encuentra después de `#`.
 
-<div class="figure" style="text-align: center">
-<img src="./images/code.png" alt="Trabajo en la interfaz de RStudio. 1- Guardar Script. 2- Ejecutar código desde Script. 3- Resultados en consola" width="100%" />
-<p class="caption">(\#fig:code)Trabajo en la interfaz de RStudio. 1- Guardar Script. 2- Ejecutar código desde Script. 3- Resultados en consola</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{./images/code} 
+
+}
+
+\caption{Trabajo en la interfaz de RStudio. 1- Guardar Script. 2- Ejecutar código desde Script. 3- Resultados en consola}(\#fig:code)
+\end{figure}
 
 ### Instalar y cargar **paquetes**
 
@@ -344,10 +368,14 @@ ggarrange(barra,scatter,histo,box, ncol=2, nrow = 2, widths = c(0.5,0.5), labels
 ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 ```
 
-<div class="figure" style="text-align: center">
-<img src="01-introSo_files/figure-html/unnamed-chunk-8-1.png" alt="Tipos de gráficos. A) Gráfico de barras. B) Scatter plot, gráfico de puntos. C) Histograma. D) Boxplot" width="100%" />
-<p class="caption">(\#fig:unnamed-chunk-8)Tipos de gráficos. A) Gráfico de barras. B) Scatter plot, gráfico de puntos. C) Histograma. D) Boxplot</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{01-introSo_files/figure-latex/unnamed-chunk-8-1} 
+
+}
+
+\caption{Tipos de gráficos. A) Gráfico de barras. B) Scatter plot, gráfico de puntos. C) Histograma. D) Boxplot}(\#fig:unnamed-chunk-8)
+\end{figure}
 
 [¿R base o Ggplot2?]{.underline}
 
@@ -364,7 +392,7 @@ El comando básico es `plot()`entre dos variables. Es decir,
 plot(iris$Petal.Length,iris$Petal.Length)
 ```
 
-<img src="01-introSo_files/figure-html/unnamed-chunk-9-1.png" width="672" />
+![](01-introSo_files/figure-latex/unnamed-chunk-9-1.pdf)<!-- --> 
 
 De ahi en adelante, se pueden agregar distintos parámetros que hagan a la customizacion. Por ejemplo,
 
@@ -381,10 +409,14 @@ plot(iris$Petal.Length,iris$Petal.Width,
 legend(x=1, y=2.4, legend=levels(iris$Species), col=c(1:3), pch=16) # Leyenda 
 ```
 
-<div class="figure" style="text-align: center">
-<img src="01-introSo_files/figure-html/unnamed-chunk-10-1.png" alt="Tipos de gráficos" width="100%" />
-<p class="caption">(\#fig:unnamed-chunk-10)Tipos de gráficos</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{01-introSo_files/figure-latex/unnamed-chunk-10-1} 
+
+}
+
+\caption{Tipos de gráficos}(\#fig:unnamed-chunk-10)
+\end{figure}
 
 Veamos como se hace el resto de los gráficos:
 
@@ -394,10 +426,14 @@ Veamos como se hace el resto de los gráficos:
 plot(iris$Species)
 ```
 
-<div class="figure" style="text-align: center">
-<img src="01-introSo_files/figure-html/unnamed-chunk-11-1.png" alt="Tipos de gráficos" width="100%" />
-<p class="caption">(\#fig:unnamed-chunk-11-1)Tipos de gráficos</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{01-introSo_files/figure-latex/unnamed-chunk-11-1} 
+
+}
+
+\caption{Tipos de gráficos}(\#fig:unnamed-chunk-11-1)
+\end{figure}
 
 ```r
 # Boxplot
@@ -408,10 +444,14 @@ plot(iris$Species, iris$Sepal.Length,
      col="skyblue")
 ```
 
-<div class="figure" style="text-align: center">
-<img src="01-introSo_files/figure-html/unnamed-chunk-11-2.png" alt="Tipos de gráficos" width="100%" />
-<p class="caption">(\#fig:unnamed-chunk-11-2)Tipos de gráficos</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{01-introSo_files/figure-latex/unnamed-chunk-11-2} 
+
+}
+
+\caption{Tipos de gráficos}(\#fig:unnamed-chunk-11-2)
+\end{figure}
 
 ```r
 # Historgram
@@ -422,10 +462,14 @@ hist(iris$Sepal.Width,
      breaks=30)
 ```
 
-<div class="figure" style="text-align: center">
-<img src="01-introSo_files/figure-html/unnamed-chunk-11-3.png" alt="Tipos de gráficos" width="100%" />
-<p class="caption">(\#fig:unnamed-chunk-11-3)Tipos de gráficos</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{01-introSo_files/figure-latex/unnamed-chunk-11-3} 
+
+}
+
+\caption{Tipos de gráficos}(\#fig:unnamed-chunk-11-3)
+\end{figure}
 
 ```r
 # Qué pasa si queremos plotear el data frame entero? 
@@ -433,10 +477,14 @@ hist(iris$Sepal.Width,
 plot(iris)
 ```
 
-<div class="figure" style="text-align: center">
-<img src="01-introSo_files/figure-html/unnamed-chunk-11-4.png" alt="Tipos de gráficos" width="100%" />
-<p class="caption">(\#fig:unnamed-chunk-11-4)Tipos de gráficos</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{01-introSo_files/figure-latex/unnamed-chunk-11-4} 
+
+}
+
+\caption{Tipos de gráficos}(\#fig:unnamed-chunk-11-4)
+\end{figure}
 
 *ggplot2*
 
@@ -450,7 +498,7 @@ ggplot(iris, aes(x=Petal.Length, y=Petal.Width))+
   geom_point()
 ```
 
-<img src="01-introSo_files/figure-html/unnamed-chunk-12-1.png" width="672" />
+![](01-introSo_files/figure-latex/unnamed-chunk-12-1.pdf)<!-- --> 
 
 -   **Buenas prácticas!** Conviene usar un renglón por capa, de esta manera es fácil detectar errores y ver cómo se va modificando el gráfico a medida que van agregando capas.
 
@@ -462,7 +510,7 @@ ggplot(iris, aes(x=Petal.Length, y=Petal.Width))+
   geom_point(aes(colour=Species)) 
 ```
 
-<img src="01-introSo_files/figure-html/unnamed-chunk-13-1.png" width="672" />
+![](01-introSo_files/figure-latex/unnamed-chunk-13-1.pdf)<!-- --> 
 
 En este caso, quise cambiar el color de los puntos. Para ello, lo tengo que especificar en la capa *aes* del geom_point.
 
@@ -472,7 +520,7 @@ ggplot(iris, aes(x=Petal.Length, y=Petal.Width, color=Species))+
   geom_point() 
 ```
 
-<img src="01-introSo_files/figure-html/unnamed-chunk-14-1.png" width="672" />
+![](01-introSo_files/figure-latex/unnamed-chunk-14-1.pdf)<!-- --> 
 
 También puede ir en el aes general del gráfico. No solo puedo cambiar el color, sino también formas. O combinar todo:
 
@@ -482,14 +530,14 @@ ggplot(iris, aes(x=Petal.Length, y=Petal.Width, shape=Species))+
   geom_point() 
 ```
 
-<img src="01-introSo_files/figure-html/unnamed-chunk-15-1.png" width="672" />
+![](01-introSo_files/figure-latex/unnamed-chunk-15-1.pdf)<!-- --> 
 
 ```r
 ggplot(iris, aes(x=Petal.Length, y=Petal.Width, size=Sepal.Length))+
   geom_point(aes(color=Species)) 
 ```
 
-<img src="01-introSo_files/figure-html/unnamed-chunk-15-2.png" width="672" />
+![](01-introSo_files/figure-latex/unnamed-chunk-15-2.pdf)<!-- --> 
 
 Noten que se generan automáticamente las leyendas, según vamos cambiando lo estético, a diferencia de R base.
 
