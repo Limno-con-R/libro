@@ -13,7 +13,7 @@ Taller dictado en el marco del **IV Congreso Iberoamericano de Limnología - X C
 
 El material se elaboró utilizando el paquete _bookdown_ [@R-bookdown; @bookdown2016], basado en _R Markdown_ [@rmarkdown2020] y _knitr_ [@xie2015].
 
-**Docentes**: Natalia Morandeira, María E. Llames, Sofía Caruso, Patricia E.García, Joaquín Cochero, Julieta Capeletti y María Victoria Quiroga.
+**Docentes**: Natalia Morandeira, María E. Llames, Sofía Carusso, Patricia E.García, Joaquín Cochero, Julieta Capeletti y María Victoria Quiroga.
 
 **Coordinadora**: María Victoria Quiroga.
 
@@ -32,3 +32,5 @@ El material se elaboró utilizando el paquete _bookdown_ [@R-bookdown; @bookdown
 **Unidad** \@ref(metrix): Paquete _metrix_. Estimar métricas (individuales y ecológicas) e índices bióticos basados en macroinvertebrados acuáticos para evaluar la calidad del agua.
 
 **Unidad** \@ref(diathor): Paquete _DiaThor_. Estimación de información ecológica e índices bióticos para diatomeas. Paquete _optimos.prime_. Estimación de óptimo y rango de tolerancia de una especie.
+
+**Unidad** \@ref(buenaspracticas): Buenas prácticas en R y Rstudio

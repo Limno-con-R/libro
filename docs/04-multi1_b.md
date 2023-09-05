@@ -418,8 +418,8 @@ res.pca2 <-PCA(data.stan.sel, graph=FALSE)
 ```
 
 ```
-## Warning in PCA(data.stan.sel, graph = FALSE): Missing values are imputed by
-## the mean of the variable: you should use the imputePCA function of the missMDA
+## Warning in PCA(data.stan.sel, graph = FALSE): Missing values are imputed by the
+## mean of the variable: you should use the imputePCA function of the missMDA
 ## package
 ```
 

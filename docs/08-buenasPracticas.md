@@ -1,0 +1,264 @@
+# Buenas prácticas en R y Rstudio {#buenaspracticas}
+
+**Joaquín Cochero**[^09-buenaspracticas-1]
+
+[^09-buenaspracticas-1]: [jcochero\@ilpla.edu.ar](mailto:jcochero@ilpla.edu.ar){.email}
+
+## Proyectos de RStudio
+
+### ¿Qué son?
+
+Los proyectos de RStudio son un sistema para organizar nuestro trabajo en RStudio. Una de las ventajas principales de los proyectos es que organizan lo que vamos a utilizar dentro de un único directorio de trabajo.
+
+Al mantener todos los archivos fuente de un proyecto en el mismo directorio, podemos utilizar rutas relativas cuando sea necesario para acceder a ellos. Por ejemplo, puede utilizar:
+
+
+```r
+my_data <- read.csv("data/example_data.csv")
+```
+
+### ¿Cuándo usarlos?
+
+**Casi siempre.** Se sugiere hacer un proyecto nuevo para cada actividad que se va a realizar. Por ejemplo, un proyecto que contenga todos los datos y scripts que van a ser utilizados en un mismo artículo o informe técnico.
+
+Es más fácil decir ejemplos de cuando NO usar un proyecto de RStudio:
+
+-   Cuando quieran hacer una figura a último minuto.
+
+-   Necesitan una vista rápida de los datos antes de hacer el proyecto .
+
+-   Necesitan transformar o modificar datos para otra persona .
+
+-   Si pueden hacer todo lo que necesitan en unas 100 líneas de código o menos.
+
+### Estructura de directorios
+
+A menos que sea un análisis corto que pueda hacerse en unas pocas líneas de código (incluyendo cargar archivos, limpieza, transformación, visualización, etc.), conviene crear *scripts* separados.
+
+No hay una metodología estandarizada para la organización de los directorios en los proyectos, aunque se sugiere una estructura sencilla, por ejemplo:
+
+-   --\> **mi-proyecto** *(carpeta principal del proyecto, es el directorio de trabajo)*
+
+    -   -----\> **data** *(se guardarán los archivos de datos, CSV, XLSX, etc.)*
+    -   -----\> **results** *(para ir exportando los resultados)*
+    -   -----\> **scripts** *(cada script es una etapa en nuestro trabajo)*
+        -   *script_principal.R*
+        -   *01_funciones.R*
+        -   *02_limpieza_datos.R*
+        -   *03_analisis.R*
+        -   *04_figuras.R*
+
+### Nombres de archivos
+
+Los nombres de los archivos deben ser explicativos del contenido. En el caso de los *scripts*, se sugiere numerarlos para que otros usuarios del proyecto sepan el orden de las instrucciones.
+
+**Buenas prácticas**:
+
+"01_carga_datos.R"\
+"02_limpieza_datos.R"\
+"03_analisis_descriptivos.R"
+
+**Malas practicas:**
+
+"Mi archivo.R"\
+"untitled.R"\
+"script.R"
+
+### Otras consideraciones en RStudio
+
+No guarde un historial de la sesión (la opción por defecto en R, cuando le pregunta si desea un archivo RData). En su lugar, comience en un entorno limpio para que los objetos antiguos no permanezcan en su entorno más tiempo del necesario.
+
+Colabora. Practica revisión de código con un colega. Nuestro código también es un logro científico y el producto de mucho trabajo. Utiliza un sistema de control de versiones, como las de GitHub.
+
+## Buenas prácticas dentro de los scripts
+
+### **Lleva un registro de quién escribió el código y de su finalidad**
+
+Empieza tu código con una descripción anotada de lo que hace el código, para cuando tengas que mirarlo o cambiarlo en el futuro.
+
+
+```r
+# Este es el código para replicar los análisis y las cifras del  paper titulado "La corchea y el orticón, interacción y propuesta", en Ecología Austral 2020.
+# Código desarrollado por Juan Martínez.
+```
+
+### **Identifique y segregue distintos componentes en su código**
+
+Es fácil anotar y marcar tu código usando `#` o `#-` para separar secciones de tu código y facilitar la búsqueda de partes específicas de tu código. Por ejemplo, al escribir código suele ser útil separar las definiciones de las funciones.
+
+Rstudio le ofrece la posibilidad de crear una sección pulsando (*Ctrl* + *Shift* + *R* ), o puede crear una añadiendo 4 guiones (-) después de un comentario o 4 símbolos de numeral (\#) después de un comentario.
+
+
+```r
+# algún comentario ----
+
+# algún comentario ####
+```
+
+Esto hace que el código tenga un aspecto prolijo y que sea fácil de mantener a largo plazo.
+
+También puede crear subsecciones en R añadiendo símbolos numeral delante de una sección.
+
+
+```r
+## algún comentario ----
+
+### algún comentario ----
+
+#### algún comentario ----
+```
+
+### **Orden del código**
+
+Para ordenar las secciones en tu código se sugiere:
+
+1.  Incuír todas las librerías en la parte superior del código.
+2.  Establecer todas las variables por defecto u opciones globales y todas las variables de rutas en la parte superior del código.
+3.  Fuentes del código y créditos, en la parte superior.
+4.  Llamar a todos los archivos de datos en la parte superior (CSV, XLS, etc.).
+
+Si creas sólo una o unas pocas funciones personalizadas en tu script, colocalas hacia la parte superior de tu código. Si has escrito muchas funciones, es mejor separarlas en su propio archivo .R y luego crear un script principal que las llame.
+
+También, se sugiere:
+
+-   Dividir el código en trozos del tamaño de un bocado. Si una función o un bucle resulta demasiado largo, busca formas de dividirlo en trozos más pequeños.
+
+-   Utilizar un estilo coherente en su código. Por ejemplo, nombra todas las matrices con algo que termine en \_mat. La coherencia facilita la lectura del código y la detección de problemas.
+
+-   No te repitas a ti mismo: ¡automatiza! Si estás repitiendo el mismo código una y otra vez, utiliza un bucle o una función para que repita ese código por ti. La repetición innecesaria no sólo te hace perder tiempo, sino que también aumenta la probabilidad de que cometas un error costoso.
+
+### **Sea explícito sobre los requisitos y dependencias de su código**
+
+Cargar todos los paquetes que serán necesarios para ejecutar tu código (usando las librerías) es una buena forma de indicar qué paquetes son necesarios para ejecutar tu código. Puede ser frustrante llegar a dos tercios del camino a través de un script de larga ejecución sólo para descubrir que una dependencia no ha sido instalada.
+
+Ejemplo:
+
+
+```r
+library(ggplot2)
+library(reshape)
+library(vegan)
+```
+
+Otra forma de ser explícito sobre los requisitos de tu código y mejorar su reproducibilidad es limitar la "codificación" de los archivos de entrada y salida de tu script. Si su código va a leer datos de un archivo, es mejor definir una variable al principio del código que almacene la ruta a ese archivo.
+
+Por ejemplo, esta manera es recomendada:
+
+
+```r
+# Definir rutas
+
+input_file <- "data/data.csv" 
+
+output_file <- "data/results.csv"
+
+# Leer entrada
+
+input_data <- read.csv(input_file)
+
+# obtener el número de muestras en los datos
+
+sample_number <- nrow(input_data)
+
+# generar resultados
+
+results <- otra_funcion(input_file, sample_number)
+
+# escribir resultados
+
+write.table(results, output_file)
+```
+
+Antes que su alternativa:
+
+
+```r
+# Leer entrada
+
+input_data <- read.csv("data/data.csv")
+
+# obtener el número de muestras en los datos
+
+sample_number <- nrow(input_data)
+
+# generar resultados
+
+results <- otra_funcion("data/data.csv", sample_number)
+
+# escribir resultados
+
+write.table("data/results.csv", output_file)
+```
+
+### Objetos y funciones
+
+Para que el código sea más legible y explícito, trata de que los nombres de las variables sean bien descriptivas. Se suele usar el estilo "*snake_case*" *(todas las letras en minúscula con una guión bajo para separar las palabras*) para **objetos,** y el estilo "*PascalCase*" o "*camelCase*" (*cada palabra comienza con una mayúscula, o excepto la primera palabra*) para **funciones**.
+
+Además, los nombres de los objetos y funciones deben ser cortos.
+
+Un ejemplo de buena práctica:
+
+
+```r
+# Buena práctica
+vector_123 <- c(1,2,3)
+FuncionExponencial(vector_123, 2)
+
+#función FuncionExponencial
+NuestraFuncion <- function (base, exponent) {
+  return (base**exponent)
+}
+```
+
+Mala práctica:
+
+
+```r
+# Mala Práctica
+mi_vector <- c(1,2,3)
+
+mifuncionqueconvierteaExponentes() 
+mifuncionqueconvierteaExponentes <- function (base, exponent) {
+  return (base**exponent)
+}
+```
+
+*Tip: tenga cuidado con la función setwd()*
+
+`setwd()` es la función para establecer la ruta del directorio de trabajo, y hay que tener cuidado al usarla. Cambiar directorios en un archivo de script puede limitar la reproducibilidad.
+
+`setwd()` devolverá un error si el directorio al que se intenta cambiar no existe o si el usuario no tiene los permisos correctos para acceder a ese directorio. Esto se convierte en un problema cuando se comparten scripts entre usuarios que han organizado sus directorios de forma diferente.
+
+Si/cuando su script termina con un error, puede dejar al usuario en un directorio diferente al que empezó, y si luego llama al script de nuevo, esto causará más problemas. Si debe usar `setwd()`, es mejor ponerlo al principio del script para evitar estos problemas.
+
+### Indentación y espacios
+
+Trate de mantener el mismo número de espacios en todo el código. El editor de RStudio ayudará con ello, pero si eliges 2 espacios o 4 espacios como equivalente de tabuladores debes mantener esa regla en todo el archivo. No se sugiere usar tabuladores como indentaciones.
+
+La única excepción es cuando la definición de una función se extiende por multiples líneas. En ese caso, la segunda línea debe ser indentada adonde comienza la definición. Por ejemplo:
+
+
+```r
+funcion_larga <- function(a = "argumento 1", 
+                          b = "otro argumento",
+                          c = "otro argumento largo") {
+}
+```
+
+#### *Dale un respiro a tu código!*
+
+Los espacios ayudan a que el código sea más fácil de leer. Veamos lo feo que se ve este código sin espacios:
+
+
+```r
+y=ts(data=c(23,391,728,512,10),start=2010)
+```
+
+En comparación con este:
+
+
+```r
+y = ts(data = c(23, 391, 728, 512, 10), start = 2010)
+```
+
+En Rstudio puedes simplemente pulsar *Ctrl + Shift + A* para autoformatear tu código, y agregar espacios entre las palabras adonde deben estar.

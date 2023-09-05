@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Unidad 8 Buenas prácticas en R y Rstudio | bookdown-LimnoR</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Unidad 8 Buenas prácticas en R y Rstudio | bookdown-LimnoR" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Unidad 8 Buenas prácticas en R y Rstudio | bookdown-LimnoR" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="diathor.html"/>
+<link rel="next" href="references.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>LIMNOLOGIA CON R</a>
+<ul>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#contenido"><i class="fa fa-check"></i><b>0.1</b> Contenido</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introducción a R y RStudio</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#instalación"><i class="fa fa-check"></i><b>1.1</b> Instalación</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#rstudio"><i class="fa fa-check"></i><b>1.2</b> RStudio</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#a-trabajar"><i class="fa fa-check"></i><b>1.3</b> ¡A trabajar!</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="intro.html"><a href="intro.html#crear-un-proyecto"><i class="fa fa-check"></i><b>1.3.1</b> Crear un <strong>Proyecto</strong></a></li>
+<li class="chapter" data-level="1.3.2" data-path="intro.html"><a href="intro.html#crear-un-r-script"><i class="fa fa-check"></i><b>1.3.2</b> Crear un <strong>R Script</strong></a></li>
+<li class="chapter" data-level="1.3.3" data-path="intro.html"><a href="intro.html#instalar-y-cargar-paquetes"><i class="fa fa-check"></i><b>1.3.3</b> Instalar y cargar <strong>paquetes</strong></a></li>
+<li class="chapter" data-level="1.3.4" data-path="intro.html"><a href="intro.html#importar-datos"><i class="fa fa-check"></i><b>1.3.4</b> Importar <strong>datos</strong></a></li>
+<li class="chapter" data-level="1.3.5" data-path="intro.html"><a href="intro.html#visualizar-y-manipular-datos"><i class="fa fa-check"></i><b>1.3.5</b> Visualizar y manipular <strong>datos</strong></a></li>
+<li class="chapter" data-level="1.3.6" data-path="intro.html"><a href="intro.html#gráficos-exploratorios-básicos"><i class="fa fa-check"></i><b>1.3.6</b> Gráficos exploratorios básicos</a></li>
+<li class="chapter" data-level="1.3.7" data-path="intro.html"><a href="intro.html#recursos-extra-recomendados"><i class="fa fa-check"></i><b>1.3.7</b> Recursos extra recomendados</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="regmul.html"><a href="regmul.html"><i class="fa fa-check"></i><b>2</b> Correlaciones y regresiones múltiples</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="regmul.html"><a href="regmul.html#introducción"><i class="fa fa-check"></i><b>2.1</b> Introducción</a></li>
+<li class="chapter" data-level="2.2" data-path="regmul.html"><a href="regmul.html#caso-de-estudio"><i class="fa fa-check"></i><b>2.2</b> Caso de estudio</a></li>
+<li class="chapter" data-level="2.3" data-path="regmul.html"><a href="regmul.html#leer-y-emprolijar-los-datos"><i class="fa fa-check"></i><b>2.3</b> Leer y emprolijar los datos</a></li>
+<li class="chapter" data-level="2.4" data-path="regmul.html"><a href="regmul.html#correlaciones"><i class="fa fa-check"></i><b>2.4</b> Correlaciones</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="regmul.html"><a href="regmul.html#entre-biomasa-de-morfotipos-bacterianos"><i class="fa fa-check"></i><b>2.4.1</b> Entre biomasa de morfotipos bacterianos</a></li>
+<li class="chapter" data-level="2.4.2" data-path="regmul.html"><a href="regmul.html#entre-variables-abióticas"><i class="fa fa-check"></i><b>2.4.2</b> Entre variables abióticas</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="regmul.html"><a href="regmul.html#regresiones-múltiples"><i class="fa fa-check"></i><b>2.5</b> Regresiones múltiples</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="regmul.html"><a href="regmul.html#selección-automática-de-variables"><i class="fa fa-check"></i><b>2.5.1</b> Selección automática de variables</a></li>
+<li class="chapter" data-level="2.5.2" data-path="regmul.html"><a href="regmul.html#modelos-nulo-y-completo"><i class="fa fa-check"></i><b>2.5.2</b> Modelos nulo y completo</a></li>
+<li class="chapter" data-level="2.5.3" data-path="regmul.html"><a href="regmul.html#selección-manual-de-variables"><i class="fa fa-check"></i><b>2.5.3</b> Selección manual de variables</a></li>
+<li class="chapter" data-level="2.5.4" data-path="regmul.html"><a href="regmul.html#evaluación-de-supuestos"><i class="fa fa-check"></i><b>2.5.4</b> Evaluación de supuestos</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="regmul.html"><a href="regmul.html#a-modo-de-conclusión"><i class="fa fa-check"></i><b>2.6</b> A modo de conclusión</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="gam.html"><a href="gam.html"><i class="fa fa-check"></i><b>3</b> Modelos Aditivos Generalizados</a>
+<ul>
+<li class="chapter" data-level="3.0.1" data-path="gam.html"><a href="gam.html#aclaración"><i class="fa fa-check"></i><b>3.0.1</b> Aclaración</a></li>
+<li class="chapter" data-level="3.1" data-path="gam.html"><a href="gam.html#por-qué-usar-modelos-aditivos-generalizados-gams"><i class="fa fa-check"></i><b>3.1</b> ¿Por qué usar Modelos Aditivos Generalizados (GAMs)?</a></li>
+<li class="chapter" data-level="3.2" data-path="gam.html"><a href="gam.html#qué-son-los-gams"><i class="fa fa-check"></i><b>3.2</b> ¿Qué son los GAMs?</a></li>
+<li class="chapter" data-level="3.3" data-path="gam.html"><a href="gam.html#manos-a-la-obra"><i class="fa fa-check"></i><b>3.3</b> ¡Manos a la obra!</a></li>
+<li class="chapter" data-level="3.4" data-path="gam.html"><a href="gam.html#agradecimientos"><i class="fa fa-check"></i><b>3.4</b> Agradecimientos</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="multi1.html"><a href="multi1.html"><i class="fa fa-check"></i><b>4</b> Análisis multivariados I</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="multi1.html"><a href="multi1.html#análisis-de-componentes-principales"><i class="fa fa-check"></i><b>4.1</b> Análisis de Componentes Principales</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="multi1.html"><a href="multi1.html#qué-tipos-de-datos-usa-una-acp"><i class="fa fa-check"></i><b>4.1.1</b> ¿Qué tipos de datos usa una ACP?</a></li>
+<li class="chapter" data-level="4.1.2" data-path="multi1.html"><a href="multi1.html#cómo-funciona-el-análisis"><i class="fa fa-check"></i><b>4.1.2</b> ¿Cómo funciona el análisis?</a></li>
+<li class="chapter" data-level="4.1.3" data-path="multi1.html"><a href="multi1.html#ahora-manos-a-la-obra-miremos-datos"><i class="fa fa-check"></i><b>4.1.3</b> Ahora manos a la obra: miremos datos</a></li>
+<li class="chapter" data-level="4.1.4" data-path="multi1.html"><a href="multi1.html#crear-una-condición-para-colorear-los-individuos"><i class="fa fa-check"></i><b>4.1.4</b> Crear una condición para colorear los individuos</a></li>
+<li class="chapter" data-level="4.1.5" data-path="multi1.html"><a href="multi1.html#refinando-el-modelo"><i class="fa fa-check"></i><b>4.1.5</b> Refinando el modelo</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="multi1.html"><a href="multi1.html#nmds"><i class="fa fa-check"></i><b>4.2</b> NMDS</a></li>
+<li class="chapter" data-level="4.3" data-path="multi1.html"><a href="multi1.html#permanova"><i class="fa fa-check"></i><b>4.3</b> PERMANOVA</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="multi2.html"><a href="multi2.html"><i class="fa fa-check"></i><b>5</b> Análisis multivariados II</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="multi2.html"><a href="multi2.html#introducción-1"><i class="fa fa-check"></i><b>5.1</b> Introducción</a></li>
+<li class="chapter" data-level="5.2" data-path="multi2.html"><a href="multi2.html#la-lógica-de-las-técnicas-de-ordenación-restringida-o-canónica-constrained-análisis-de-gradiente-directo"><i class="fa fa-check"></i><b>5.2</b> La lógica de las técnicas de ordenación restringida o canónica (“constrained”, análisis de gradiente directo)</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="multi2.html"><a href="multi2.html#qué-tipo-de-datos-de-composición-de-especies-se-utilizan-para-el-análisis"><i class="fa fa-check"></i><b>5.2.1</b> ¿Qué tipo de datos de composición de especies se utilizan para el análisis?</a></li>
+<li class="chapter" data-level="5.2.2" data-path="multi2.html"><a href="multi2.html#cómo-saber-si-debo-utilizar-un-método-de-ordenación-de-respuesta-lineal-o-unimodal"><i class="fa fa-check"></i><b>5.2.2</b> ¿Cómo saber si debo utilizar un método de ordenación de respuesta lineal o unimodal?</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="multi2.html"><a href="multi2.html#análisis-de-redundancia-rda"><i class="fa fa-check"></i><b>5.3</b> Análisis de Redundancia (RDA)</a></li>
+<li class="chapter" data-level="5.4" data-path="multi2.html"><a href="multi2.html#caso-de-estudio-1"><i class="fa fa-check"></i><b>5.4</b> Caso de estudio</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="multi2.html"><a href="multi2.html#analicemos-estos-aspectos-a-través-de-un-ejemplo-práctico"><i class="fa fa-check"></i><b>5.4.1</b> Analicemos estos aspectos a través de un ejemplo práctico…</a></li>
+<li class="chapter" data-level="5.4.2" data-path="multi2.html"><a href="multi2.html#rda-utilizando-el-paquete-vegan-oksanen-et-al.-2007"><i class="fa fa-check"></i><b>5.4.2</b> RDA utilizando el paquete <strong>vegan</strong> (Oksanen <em>et al.</em>, 2007)</a></li>
+<li class="chapter" data-level="5.4.3" data-path="multi2.html"><a href="multi2.html#seleccionando-las-variables-explicativas-relevantes"><i class="fa fa-check"></i><b>5.4.3</b> Seleccionando las variables explicativas relevantes</a></li>
+<li class="chapter" data-level="5.4.4" data-path="multi2.html"><a href="multi2.html#rda-basado-en-matriz-de-distancia-distance-based-rda-db-rda"><i class="fa fa-check"></i><b>5.4.4</b> RDA basado en matriz de distancia (“Distance-based RDA”, db-RDA)</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="multi2.html"><a href="multi2.html#análisis-de-correspondencia-canóninca-cca"><i class="fa fa-check"></i><b>5.5</b> Análisis de Correspondencia Canóninca (CCA)</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="multi2.html"><a href="multi2.html#cca-utilizando-la-función-cca-del-paquete-vegan"><i class="fa fa-check"></i><b>5.5.1</b> CCA utilizando la función <strong>cca()</strong> del paquete <strong>vegan</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="multi2.html"><a href="multi2.html#bibliografía-citada-y-de-lectura-recomendada"><i class="fa fa-check"></i><b>5.6</b> Bibliografía citada y de lectura recomendada</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="metrix.html"><a href="metrix.html"><i class="fa fa-check"></i><b>6</b> Paquete <em>metrix</em></a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="metrix.html"><a href="metrix.html#que-es-metrix"><i class="fa fa-check"></i><b>6.1</b> ¿Que es Metrix?</a></li>
+<li class="chapter" data-level="6.2" data-path="metrix.html"><a href="metrix.html#conjunto-de-datos-de-ejemplo"><i class="fa fa-check"></i><b>6.2</b> Conjunto de datos de ejemplo</a></li>
+<li class="chapter" data-level="6.3" data-path="metrix.html"><a href="metrix.html#instalar-metrix"><i class="fa fa-check"></i><b>6.3</b> Instalar <em>metrix</em></a></li>
+<li class="chapter" data-level="6.4" data-path="metrix.html"><a href="metrix.html#que-tipos-de-datos-analiza-metrix"><i class="fa fa-check"></i><b>6.4</b> ¿Que tipos de datos analiza <em>metrix</em>?</a></li>
+<li class="chapter" data-level="6.5" data-path="metrix.html"><a href="metrix.html#cargar-datos-de-densidad-de-macroinvertebrados-usando-metrix"><i class="fa fa-check"></i><b>6.5</b> Cargar datos de densidad de macroinvertebrados usando <em>metrix</em></a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="metrix.html"><a href="metrix.html#que-pasa-si-quiero-crear-mi-propio-conjunto-de-datos"><i class="fa fa-check"></i><b>6.5.1</b> ¿QUE PASA SI QUIERO CREAR MI PROPIO CONJUNTO DE DATOS?</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="metrix.html"><a href="metrix.html#cálculo-de-metricas-individuales-y-ecológicas"><i class="fa fa-check"></i><b>6.6</b> Cálculo de metricas individuales y ecológicas</a></li>
+<li class="chapter" data-level="6.7" data-path="metrix.html"><a href="metrix.html#cálculo-de-indices-bióticos"><i class="fa fa-check"></i><b>6.7</b> Cálculo de indices bióticos</a></li>
+<li class="chapter" data-level="6.8" data-path="metrix.html"><a href="metrix.html#futuro-del-paquete"><i class="fa fa-check"></i><b>6.8</b> FUTURO DEL PAQUETE</a></li>
+<li class="chapter" data-level="6.9" data-path="metrix.html"><a href="metrix.html#agradecimientos-1"><i class="fa fa-check"></i><b>6.9</b> AGRADECIMIENTOS</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="diathor.html"><a href="diathor.html"><i class="fa fa-check"></i><b>7</b> Paquetes <em>DiaThor</em> y <em>optimos.prime</em></a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="diathor.html"><a href="diathor.html#paquete-diathor"><i class="fa fa-check"></i><b>7.1</b> Paquete <em>DiaThor</em></a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="diathor.html"><a href="diathor.html#qué-hace"><i class="fa fa-check"></i><b>7.1.1</b> ¿Qué hace?</a></li>
+<li class="chapter" data-level="7.1.2" data-path="diathor.html"><a href="diathor.html#cómo-funciona"><i class="fa fa-check"></i><b>7.1.2</b> ¿Cómo funciona?</a></li>
+<li class="chapter" data-level="7.1.3" data-path="diathor.html"><a href="diathor.html#manos-a-la-obra-1"><i class="fa fa-check"></i><b>7.1.3</b> ¡Manos a la obra!</a></li>
+<li class="chapter" data-level="7.1.4" data-path="diathor.html"><a href="diathor.html#fuentes-de-información-ecológica-de-las-especies"><i class="fa fa-check"></i><b>7.1.4</b> Fuentes de información ecológica de las especies</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="diathor.html"><a href="diathor.html#paquete-optimos.prime"><i class="fa fa-check"></i><b>7.2</b> Paquete <em>optimos.prime</em></a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="diathor.html"><a href="diathor.html#qué-hace-1"><i class="fa fa-check"></i><b>7.2.1</b> ¿Qué hace?</a></li>
+<li class="chapter" data-level="7.2.2" data-path="diathor.html"><a href="diathor.html#cómo-lo-hace"><i class="fa fa-check"></i><b>7.2.2</b> ¿Cómo lo hace?</a></li>
+<li class="chapter" data-level="7.2.3" data-path="diathor.html"><a href="diathor.html#manos-a-la-obra-2"><i class="fa fa-check"></i><b>7.2.3</b> ¡Manos a la obra!</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="buenaspracticas.html"><a href="buenaspracticas.html"><i class="fa fa-check"></i><b>8</b> Buenas prácticas en R y Rstudio</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="buenaspracticas.html"><a href="buenaspracticas.html#proyectos-de-rstudio"><i class="fa fa-check"></i><b>8.1</b> Proyectos de RStudio</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="buenaspracticas.html"><a href="buenaspracticas.html#qué-son"><i class="fa fa-check"></i><b>8.1.1</b> ¿Qué son?</a></li>
+<li class="chapter" data-level="8.1.2" data-path="buenaspracticas.html"><a href="buenaspracticas.html#cuándo-usarlos"><i class="fa fa-check"></i><b>8.1.2</b> ¿Cuándo usarlos?</a></li>
+<li class="chapter" data-level="8.1.3" data-path="buenaspracticas.html"><a href="buenaspracticas.html#estructura-de-directorios"><i class="fa fa-check"></i><b>8.1.3</b> Estructura de directorios</a></li>
+<li class="chapter" data-level="8.1.4" data-path="buenaspracticas.html"><a href="buenaspracticas.html#nombres-de-archivos"><i class="fa fa-check"></i><b>8.1.4</b> Nombres de archivos</a></li>
+<li class="chapter" data-level="8.1.5" data-path="buenaspracticas.html"><a href="buenaspracticas.html#otras-consideraciones-en-rstudio"><i class="fa fa-check"></i><b>8.1.5</b> Otras consideraciones en RStudio</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="buenaspracticas.html"><a href="buenaspracticas.html#buenas-prácticas-dentro-de-los-scripts"><i class="fa fa-check"></i><b>8.2</b> Buenas prácticas dentro de los scripts</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="buenaspracticas.html"><a href="buenaspracticas.html#lleva-un-registro-de-quién-escribió-el-código-y-de-su-finalidad"><i class="fa fa-check"></i><b>8.2.1</b> <strong>Lleva un registro de quién escribió el código y de su finalidad</strong></a></li>
+<li class="chapter" data-level="8.2.2" data-path="buenaspracticas.html"><a href="buenaspracticas.html#identifique-y-segregue-distintos-componentes-en-su-código"><i class="fa fa-check"></i><b>8.2.2</b> <strong>Identifique y segregue distintos componentes en su código</strong></a></li>
+<li class="chapter" data-level="8.2.3" data-path="buenaspracticas.html"><a href="buenaspracticas.html#orden-del-código"><i class="fa fa-check"></i><b>8.2.3</b> <strong>Orden del código</strong></a></li>
+<li class="chapter" data-level="8.2.4" data-path="buenaspracticas.html"><a href="buenaspracticas.html#sea-explícito-sobre-los-requisitos-y-dependencias-de-su-código"><i class="fa fa-check"></i><b>8.2.4</b> <strong>Sea explícito sobre los requisitos y dependencias de su código</strong></a></li>
+<li class="chapter" data-level="8.2.5" data-path="buenaspracticas.html"><a href="buenaspracticas.html#objetos-y-funciones"><i class="fa fa-check"></i><b>8.2.5</b> Objetos y funciones</a></li>
+<li class="chapter" data-level="8.2.6" data-path="buenaspracticas.html"><a href="buenaspracticas.html#indentación-y-espacios"><i class="fa fa-check"></i><b>8.2.6</b> Indentación y espacios</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="buenaspracticas" class="section level1 hasAnchor" number="8">
+<h1><span class="header-section-number">Unidad 8</span> Buenas prácticas en R y Rstudio<a href="buenaspracticas.html#buenaspracticas" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><strong>Joaquín Cochero</strong><a href="#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a></p>
+<div id="proyectos-de-rstudio" class="section level2 hasAnchor" number="8.1">
+<h2><span class="header-section-number">8.1</span> Proyectos de RStudio<a href="buenaspracticas.html#proyectos-de-rstudio" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="qué-son" class="section level3 hasAnchor" number="8.1.1">
+<h3><span class="header-section-number">8.1.1</span> ¿Qué son?<a href="buenaspracticas.html#qué-son" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Los proyectos de RStudio son un sistema para organizar nuestro trabajo en RStudio. Una de las ventajas principales de los proyectos es que organizan lo que vamos a utilizar dentro de un único directorio de trabajo.</p>
+<p>Al mantener todos los archivos fuente de un proyecto en el mismo directorio, podemos utilizar rutas relativas cuando sea necesario para acceder a ellos. Por ejemplo, puede utilizar:</p>
+<div class="sourceCode" id="cb443"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb443-1"><a href="buenaspracticas.html#cb443-1" aria-hidden="true" tabindex="-1"></a>my_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;data/example_data.csv&quot;</span>)</span></code></pre></div>
+</div>
+<div id="cuándo-usarlos" class="section level3 hasAnchor" number="8.1.2">
+<h3><span class="header-section-number">8.1.2</span> ¿Cuándo usarlos?<a href="buenaspracticas.html#cuándo-usarlos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Casi siempre.</strong> Se sugiere hacer un proyecto nuevo para cada actividad que se va a realizar. Por ejemplo, un proyecto que contenga todos los datos y scripts que van a ser utilizados en un mismo artículo o informe técnico.</p>
+<p>Es más fácil decir ejemplos de cuando NO usar un proyecto de RStudio:</p>
+<ul>
+<li><p>Cuando quieran hacer una figura a último minuto.</p></li>
+<li><p>Necesitan una vista rápida de los datos antes de hacer el proyecto .</p></li>
+<li><p>Necesitan transformar o modificar datos para otra persona .</p></li>
+<li><p>Si pueden hacer todo lo que necesitan en unas 100 líneas de código o menos.</p></li>
+</ul>
+</div>
+<div id="estructura-de-directorios" class="section level3 hasAnchor" number="8.1.3">
+<h3><span class="header-section-number">8.1.3</span> Estructura de directorios<a href="buenaspracticas.html#estructura-de-directorios" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A menos que sea un análisis corto que pueda hacerse en unas pocas líneas de código (incluyendo cargar archivos, limpieza, transformación, visualización, etc.), conviene crear <em>scripts</em> separados.</p>
+<p>No hay una metodología estandarizada para la organización de los directorios en los proyectos, aunque se sugiere una estructura sencilla, por ejemplo:</p>
+<ul>
+<li><p>–&gt; <strong>mi-proyecto</strong> <em>(carpeta principal del proyecto, es el directorio de trabajo)</em></p>
+<ul>
+<li>—–&gt; <strong>data</strong> <em>(se guardarán los archivos de datos, CSV, XLSX, etc.)</em></li>
+<li>—–&gt; <strong>results</strong> <em>(para ir exportando los resultados)</em></li>
+<li>—–&gt; <strong>scripts</strong> <em>(cada script es una etapa en nuestro trabajo)</em>
+<ul>
+<li><em>script_principal.R</em></li>
+<li><em>01_funciones.R</em></li>
+<li><em>02_limpieza_datos.R</em></li>
+<li><em>03_analisis.R</em></li>
+<li><em>04_figuras.R</em></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<div id="nombres-de-archivos" class="section level3 hasAnchor" number="8.1.4">
+<h3><span class="header-section-number">8.1.4</span> Nombres de archivos<a href="buenaspracticas.html#nombres-de-archivos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Los nombres de los archivos deben ser explicativos del contenido. En el caso de los <em>scripts</em>, se sugiere numerarlos para que otros usuarios del proyecto sepan el orden de las instrucciones.</p>
+<p><strong>Buenas prácticas</strong>:</p>
+<p>“01_carga_datos.R”<br />
+“02_limpieza_datos.R”<br />
+“03_analisis_descriptivos.R”</p>
+<p><strong>Malas practicas:</strong></p>
+<p>“Mi archivo.R”<br />
+“untitled.R”<br />
+“script.R”</p>
+</div>
+<div id="otras-consideraciones-en-rstudio" class="section level3 hasAnchor" number="8.1.5">
+<h3><span class="header-section-number">8.1.5</span> Otras consideraciones en RStudio<a href="buenaspracticas.html#otras-consideraciones-en-rstudio" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>No guarde un historial de la sesión (la opción por defecto en R, cuando le pregunta si desea un archivo RData). En su lugar, comience en un entorno limpio para que los objetos antiguos no permanezcan en su entorno más tiempo del necesario.</p>
+<p>Colabora. Practica revisión de código con un colega. Nuestro código también es un logro científico y el producto de mucho trabajo. Utiliza un sistema de control de versiones, como las de GitHub.</p>
+</div>
+</div>
+<div id="buenas-prácticas-dentro-de-los-scripts" class="section level2 hasAnchor" number="8.2">
+<h2><span class="header-section-number">8.2</span> Buenas prácticas dentro de los scripts<a href="buenaspracticas.html#buenas-prácticas-dentro-de-los-scripts" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="lleva-un-registro-de-quién-escribió-el-código-y-de-su-finalidad" class="section level3 hasAnchor" number="8.2.1">
+<h3><span class="header-section-number">8.2.1</span> <strong>Lleva un registro de quién escribió el código y de su finalidad</strong><a href="buenaspracticas.html#lleva-un-registro-de-quién-escribió-el-código-y-de-su-finalidad" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Empieza tu código con una descripción anotada de lo que hace el código, para cuando tengas que mirarlo o cambiarlo en el futuro.</p>
+<div class="sourceCode" id="cb444"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb444-1"><a href="buenaspracticas.html#cb444-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Este es el código para replicar los análisis y las cifras del  paper titulado &quot;La corchea y el orticón, interacción y propuesta&quot;, en Ecología Austral 2020.</span></span>
+<span id="cb444-2"><a href="buenaspracticas.html#cb444-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Código desarrollado por Juan Martínez.</span></span></code></pre></div>
+</div>
+<div id="identifique-y-segregue-distintos-componentes-en-su-código" class="section level3 hasAnchor" number="8.2.2">
+<h3><span class="header-section-number">8.2.2</span> <strong>Identifique y segregue distintos componentes en su código</strong><a href="buenaspracticas.html#identifique-y-segregue-distintos-componentes-en-su-código" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Es fácil anotar y marcar tu código usando <code>#</code> o <code>#-</code> para separar secciones de tu código y facilitar la búsqueda de partes específicas de tu código. Por ejemplo, al escribir código suele ser útil separar las definiciones de las funciones.</p>
+<p>Rstudio le ofrece la posibilidad de crear una sección pulsando (<em>Ctrl</em> + <em>Shift</em> + <em>R</em> ), o puede crear una añadiendo 4 guiones (-) después de un comentario o 4 símbolos de numeral (#) después de un comentario.</p>
+<div class="sourceCode" id="cb445"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb445-1"><a href="buenaspracticas.html#cb445-1" aria-hidden="true" tabindex="-1"></a><span class="co"># algún comentario ----</span></span>
+<span id="cb445-2"><a href="buenaspracticas.html#cb445-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb445-3"><a href="buenaspracticas.html#cb445-3" aria-hidden="true" tabindex="-1"></a><span class="co"># algún comentario ####</span></span></code></pre></div>
+<p>Esto hace que el código tenga un aspecto prolijo y que sea fácil de mantener a largo plazo.</p>
+<p>También puede crear subsecciones en R añadiendo símbolos numeral delante de una sección.</p>
+<div class="sourceCode" id="cb446"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb446-1"><a href="buenaspracticas.html#cb446-1" aria-hidden="true" tabindex="-1"></a><span class="do">## algún comentario ----</span></span>
+<span id="cb446-2"><a href="buenaspracticas.html#cb446-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb446-3"><a href="buenaspracticas.html#cb446-3" aria-hidden="true" tabindex="-1"></a><span class="do">### algún comentario ----</span></span>
+<span id="cb446-4"><a href="buenaspracticas.html#cb446-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb446-5"><a href="buenaspracticas.html#cb446-5" aria-hidden="true" tabindex="-1"></a><span class="do">#### algún comentario ----</span></span></code></pre></div>
+</div>
+<div id="orden-del-código" class="section level3 hasAnchor" number="8.2.3">
+<h3><span class="header-section-number">8.2.3</span> <strong>Orden del código</strong><a href="buenaspracticas.html#orden-del-código" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Para ordenar las secciones en tu código se sugiere:</p>
+<ol style="list-style-type: decimal">
+<li>Incuír todas las librerías en la parte superior del código.</li>
+<li>Establecer todas las variables por defecto u opciones globales y todas las variables de rutas en la parte superior del código.</li>
+<li>Fuentes del código y créditos, en la parte superior.</li>
+<li>Llamar a todos los archivos de datos en la parte superior (CSV, XLS, etc.).</li>
+</ol>
+<p>Si creas sólo una o unas pocas funciones personalizadas en tu script, colocalas hacia la parte superior de tu código. Si has escrito muchas funciones, es mejor separarlas en su propio archivo .R y luego crear un script principal que las llame.</p>
+<p>También, se sugiere:</p>
+<ul>
+<li><p>Dividir el código en trozos del tamaño de un bocado. Si una función o un bucle resulta demasiado largo, busca formas de dividirlo en trozos más pequeños.</p></li>
+<li><p>Utilizar un estilo coherente en su código. Por ejemplo, nombra todas las matrices con algo que termine en _mat. La coherencia facilita la lectura del código y la detección de problemas.</p></li>
+<li><p>No te repitas a ti mismo: ¡automatiza! Si estás repitiendo el mismo código una y otra vez, utiliza un bucle o una función para que repita ese código por ti. La repetición innecesaria no sólo te hace perder tiempo, sino que también aumenta la probabilidad de que cometas un error costoso.</p></li>
+</ul>
+</div>
+<div id="sea-explícito-sobre-los-requisitos-y-dependencias-de-su-código" class="section level3 hasAnchor" number="8.2.4">
+<h3><span class="header-section-number">8.2.4</span> <strong>Sea explícito sobre los requisitos y dependencias de su código</strong><a href="buenaspracticas.html#sea-explícito-sobre-los-requisitos-y-dependencias-de-su-código" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Cargar todos los paquetes que serán necesarios para ejecutar tu código (usando las librerías) es una buena forma de indicar qué paquetes son necesarios para ejecutar tu código. Puede ser frustrante llegar a dos tercios del camino a través de un script de larga ejecución sólo para descubrir que una dependencia no ha sido instalada.</p>
+<p>Ejemplo:</p>
+<div class="sourceCode" id="cb447"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb447-1"><a href="buenaspracticas.html#cb447-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb447-2"><a href="buenaspracticas.html#cb447-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reshape)</span>
+<span id="cb447-3"><a href="buenaspracticas.html#cb447-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(vegan)</span></code></pre></div>
+<p>Otra forma de ser explícito sobre los requisitos de tu código y mejorar su reproducibilidad es limitar la “codificación” de los archivos de entrada y salida de tu script. Si su código va a leer datos de un archivo, es mejor definir una variable al principio del código que almacene la ruta a ese archivo.</p>
+<p>Por ejemplo, esta manera es recomendada:</p>
+<div class="sourceCode" id="cb448"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb448-1"><a href="buenaspracticas.html#cb448-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Definir rutas</span></span>
+<span id="cb448-2"><a href="buenaspracticas.html#cb448-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb448-3"><a href="buenaspracticas.html#cb448-3" aria-hidden="true" tabindex="-1"></a>input_file <span class="ot">&lt;-</span> <span class="st">&quot;data/data.csv&quot;</span> </span>
+<span id="cb448-4"><a href="buenaspracticas.html#cb448-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb448-5"><a href="buenaspracticas.html#cb448-5" aria-hidden="true" tabindex="-1"></a>output_file <span class="ot">&lt;-</span> <span class="st">&quot;data/results.csv&quot;</span></span>
+<span id="cb448-6"><a href="buenaspracticas.html#cb448-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb448-7"><a href="buenaspracticas.html#cb448-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Leer entrada</span></span>
+<span id="cb448-8"><a href="buenaspracticas.html#cb448-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb448-9"><a href="buenaspracticas.html#cb448-9" aria-hidden="true" tabindex="-1"></a>input_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(input_file)</span>
+<span id="cb448-10"><a href="buenaspracticas.html#cb448-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb448-11"><a href="buenaspracticas.html#cb448-11" aria-hidden="true" tabindex="-1"></a><span class="co"># obtener el número de muestras en los datos</span></span>
+<span id="cb448-12"><a href="buenaspracticas.html#cb448-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb448-13"><a href="buenaspracticas.html#cb448-13" aria-hidden="true" tabindex="-1"></a>sample_number <span class="ot">&lt;-</span> <span class="fu">nrow</span>(input_data)</span>
+<span id="cb448-14"><a href="buenaspracticas.html#cb448-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb448-15"><a href="buenaspracticas.html#cb448-15" aria-hidden="true" tabindex="-1"></a><span class="co"># generar resultados</span></span>
+<span id="cb448-16"><a href="buenaspracticas.html#cb448-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb448-17"><a href="buenaspracticas.html#cb448-17" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">otra_funcion</span>(input_file, sample_number)</span>
+<span id="cb448-18"><a href="buenaspracticas.html#cb448-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb448-19"><a href="buenaspracticas.html#cb448-19" aria-hidden="true" tabindex="-1"></a><span class="co"># escribir resultados</span></span>
+<span id="cb448-20"><a href="buenaspracticas.html#cb448-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb448-21"><a href="buenaspracticas.html#cb448-21" aria-hidden="true" tabindex="-1"></a><span class="fu">write.table</span>(results, output_file)</span></code></pre></div>
+<p>Antes que su alternativa:</p>
+<div class="sourceCode" id="cb449"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb449-1"><a href="buenaspracticas.html#cb449-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Leer entrada</span></span>
+<span id="cb449-2"><a href="buenaspracticas.html#cb449-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb449-3"><a href="buenaspracticas.html#cb449-3" aria-hidden="true" tabindex="-1"></a>input_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;data/data.csv&quot;</span>)</span>
+<span id="cb449-4"><a href="buenaspracticas.html#cb449-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb449-5"><a href="buenaspracticas.html#cb449-5" aria-hidden="true" tabindex="-1"></a><span class="co"># obtener el número de muestras en los datos</span></span>
+<span id="cb449-6"><a href="buenaspracticas.html#cb449-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb449-7"><a href="buenaspracticas.html#cb449-7" aria-hidden="true" tabindex="-1"></a>sample_number <span class="ot">&lt;-</span> <span class="fu">nrow</span>(input_data)</span>
+<span id="cb449-8"><a href="buenaspracticas.html#cb449-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb449-9"><a href="buenaspracticas.html#cb449-9" aria-hidden="true" tabindex="-1"></a><span class="co"># generar resultados</span></span>
+<span id="cb449-10"><a href="buenaspracticas.html#cb449-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb449-11"><a href="buenaspracticas.html#cb449-11" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">otra_funcion</span>(<span class="st">&quot;data/data.csv&quot;</span>, sample_number)</span>
+<span id="cb449-12"><a href="buenaspracticas.html#cb449-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb449-13"><a href="buenaspracticas.html#cb449-13" aria-hidden="true" tabindex="-1"></a><span class="co"># escribir resultados</span></span>
+<span id="cb449-14"><a href="buenaspracticas.html#cb449-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb449-15"><a href="buenaspracticas.html#cb449-15" aria-hidden="true" tabindex="-1"></a><span class="fu">write.table</span>(<span class="st">&quot;data/results.csv&quot;</span>, output_file)</span></code></pre></div>
+</div>
+<div id="objetos-y-funciones" class="section level3 hasAnchor" number="8.2.5">
+<h3><span class="header-section-number">8.2.5</span> Objetos y funciones<a href="buenaspracticas.html#objetos-y-funciones" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Para que el código sea más legible y explícito, trata de que los nombres de las variables sean bien descriptivas. Se suele usar el estilo “<em>snake_case</em>” <em>(todas las letras en minúscula con una guión bajo para separar las palabras</em>) para <strong>objetos,</strong> y el estilo “<em>PascalCase</em>” o “<em>camelCase</em>” (<em>cada palabra comienza con una mayúscula, o excepto la primera palabra</em>) para <strong>funciones</strong>.</p>
+<p>Además, los nombres de los objetos y funciones deben ser cortos.</p>
+<p>Un ejemplo de buena práctica:</p>
+<div class="sourceCode" id="cb450"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb450-1"><a href="buenaspracticas.html#cb450-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Buena práctica</span></span>
+<span id="cb450-2"><a href="buenaspracticas.html#cb450-2" aria-hidden="true" tabindex="-1"></a>vector_123 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
+<span id="cb450-3"><a href="buenaspracticas.html#cb450-3" aria-hidden="true" tabindex="-1"></a><span class="fu">FuncionExponencial</span>(vector_123, <span class="dv">2</span>)</span>
+<span id="cb450-4"><a href="buenaspracticas.html#cb450-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb450-5"><a href="buenaspracticas.html#cb450-5" aria-hidden="true" tabindex="-1"></a><span class="co">#función FuncionExponencial</span></span>
+<span id="cb450-6"><a href="buenaspracticas.html#cb450-6" aria-hidden="true" tabindex="-1"></a>NuestraFuncion <span class="ot">&lt;-</span> <span class="cf">function</span> (base, exponent) {</span>
+<span id="cb450-7"><a href="buenaspracticas.html#cb450-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span> (base<span class="sc">**</span>exponent)</span>
+<span id="cb450-8"><a href="buenaspracticas.html#cb450-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>Mala práctica:</p>
+<div class="sourceCode" id="cb451"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb451-1"><a href="buenaspracticas.html#cb451-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Mala Práctica</span></span>
+<span id="cb451-2"><a href="buenaspracticas.html#cb451-2" aria-hidden="true" tabindex="-1"></a>mi_vector <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
+<span id="cb451-3"><a href="buenaspracticas.html#cb451-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb451-4"><a href="buenaspracticas.html#cb451-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mifuncionqueconvierteaExponentes</span>() </span>
+<span id="cb451-5"><a href="buenaspracticas.html#cb451-5" aria-hidden="true" tabindex="-1"></a>mifuncionqueconvierteaExponentes <span class="ot">&lt;-</span> <span class="cf">function</span> (base, exponent) {</span>
+<span id="cb451-6"><a href="buenaspracticas.html#cb451-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span> (base<span class="sc">**</span>exponent)</span>
+<span id="cb451-7"><a href="buenaspracticas.html#cb451-7" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p><em>Tip: tenga cuidado con la función setwd()</em></p>
+<p><code>setwd()</code> es la función para establecer la ruta del directorio de trabajo, y hay que tener cuidado al usarla. Cambiar directorios en un archivo de script puede limitar la reproducibilidad.</p>
+<p><code>setwd()</code> devolverá un error si el directorio al que se intenta cambiar no existe o si el usuario no tiene los permisos correctos para acceder a ese directorio. Esto se convierte en un problema cuando se comparten scripts entre usuarios que han organizado sus directorios de forma diferente.</p>
+<p>Si/cuando su script termina con un error, puede dejar al usuario en un directorio diferente al que empezó, y si luego llama al script de nuevo, esto causará más problemas. Si debe usar <code>setwd()</code>, es mejor ponerlo al principio del script para evitar estos problemas.</p>
+</div>
+<div id="indentación-y-espacios" class="section level3 hasAnchor" number="8.2.6">
+<h3><span class="header-section-number">8.2.6</span> Indentación y espacios<a href="buenaspracticas.html#indentación-y-espacios" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Trate de mantener el mismo número de espacios en todo el código. El editor de RStudio ayudará con ello, pero si eliges 2 espacios o 4 espacios como equivalente de tabuladores debes mantener esa regla en todo el archivo. No se sugiere usar tabuladores como indentaciones.</p>
+<p>La única excepción es cuando la definición de una función se extiende por multiples líneas. En ese caso, la segunda línea debe ser indentada adonde comienza la definición. Por ejemplo:</p>
+<div class="sourceCode" id="cb452"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb452-1"><a href="buenaspracticas.html#cb452-1" aria-hidden="true" tabindex="-1"></a>funcion_larga <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">a =</span> <span class="st">&quot;argumento 1&quot;</span>, </span>
+<span id="cb452-2"><a href="buenaspracticas.html#cb452-2" aria-hidden="true" tabindex="-1"></a>                          <span class="at">b =</span> <span class="st">&quot;otro argumento&quot;</span>,</span>
+<span id="cb452-3"><a href="buenaspracticas.html#cb452-3" aria-hidden="true" tabindex="-1"></a>                          <span class="at">c =</span> <span class="st">&quot;otro argumento largo&quot;</span>) {</span>
+<span id="cb452-4"><a href="buenaspracticas.html#cb452-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div id="dale-un-respiro-a-tu-código" class="section level4 hasAnchor" number="8.2.6.1">
+<h4><span class="header-section-number">8.2.6.1</span> <em>Dale un respiro a tu código!</em><a href="buenaspracticas.html#dale-un-respiro-a-tu-código" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Los espacios ayudan a que el código sea más fácil de leer. Veamos lo feo que se ve este código sin espacios:</p>
+<div class="sourceCode" id="cb453"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb453-1"><a href="buenaspracticas.html#cb453-1" aria-hidden="true" tabindex="-1"></a>y<span class="ot">=</span><span class="fu">ts</span>(<span class="at">data=</span><span class="fu">c</span>(<span class="dv">23</span>,<span class="dv">391</span>,<span class="dv">728</span>,<span class="dv">512</span>,<span class="dv">10</span>),<span class="at">start=</span><span class="dv">2010</span>)</span></code></pre></div>
+<p>En comparación con este:</p>
+<div class="sourceCode" id="cb454"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb454-1"><a href="buenaspracticas.html#cb454-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">=</span> <span class="fu">ts</span>(<span class="at">data =</span> <span class="fu">c</span>(<span class="dv">23</span>, <span class="dv">391</span>, <span class="dv">728</span>, <span class="dv">512</span>, <span class="dv">10</span>), <span class="at">start =</span> <span class="dv">2010</span>)</span></code></pre></div>
+<p>En Rstudio puedes simplemente pulsar <em>Ctrl + Shift + A</em> para autoformatear tu código, y agregar espacios entre las palabras adonde deben estar.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="12">
+<li id="fn12"><p><a href="mailto:jcochero@ilpla.edu.ar" class="email">jcochero@ilpla.edu.ar</a><a href="buenaspracticas.html#fnref12" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="diathor.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/08-buenasPracticas.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-LimnoR.pdf", "bookdown-LimnoR.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

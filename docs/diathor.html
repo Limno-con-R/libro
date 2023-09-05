@@ -29,7 +29,7 @@
   
   
 <link rel="prev" href="metrix.html"/>
-<link rel="next" href="references.html"/>
+<link rel="next" href="buenaspracticas.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -269,6 +269,26 @@ div.csl-indent {
 <li class="chapter" data-level="7.2.3" data-path="diathor.html"><a href="diathor.html#manos-a-la-obra-2"><i class="fa fa-check"></i><b>7.2.3</b> ¡Manos a la obra!</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="8" data-path="buenaspracticas.html"><a href="buenaspracticas.html"><i class="fa fa-check"></i><b>8</b> Buenas prácticas en R y Rstudio</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="buenaspracticas.html"><a href="buenaspracticas.html#proyectos-de-rstudio"><i class="fa fa-check"></i><b>8.1</b> Proyectos de RStudio</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="buenaspracticas.html"><a href="buenaspracticas.html#qué-son"><i class="fa fa-check"></i><b>8.1.1</b> ¿Qué son?</a></li>
+<li class="chapter" data-level="8.1.2" data-path="buenaspracticas.html"><a href="buenaspracticas.html#cuándo-usarlos"><i class="fa fa-check"></i><b>8.1.2</b> ¿Cuándo usarlos?</a></li>
+<li class="chapter" data-level="8.1.3" data-path="buenaspracticas.html"><a href="buenaspracticas.html#estructura-de-directorios"><i class="fa fa-check"></i><b>8.1.3</b> Estructura de directorios</a></li>
+<li class="chapter" data-level="8.1.4" data-path="buenaspracticas.html"><a href="buenaspracticas.html#nombres-de-archivos"><i class="fa fa-check"></i><b>8.1.4</b> Nombres de archivos</a></li>
+<li class="chapter" data-level="8.1.5" data-path="buenaspracticas.html"><a href="buenaspracticas.html#otras-consideraciones-en-rstudio"><i class="fa fa-check"></i><b>8.1.5</b> Otras consideraciones en RStudio</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="buenaspracticas.html"><a href="buenaspracticas.html#buenas-prácticas-dentro-de-los-scripts"><i class="fa fa-check"></i><b>8.2</b> Buenas prácticas dentro de los scripts</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="buenaspracticas.html"><a href="buenaspracticas.html#lleva-un-registro-de-quién-escribió-el-código-y-de-su-finalidad"><i class="fa fa-check"></i><b>8.2.1</b> <strong>Lleva un registro de quién escribió el código y de su finalidad</strong></a></li>
+<li class="chapter" data-level="8.2.2" data-path="buenaspracticas.html"><a href="buenaspracticas.html#identifique-y-segregue-distintos-componentes-en-su-código"><i class="fa fa-check"></i><b>8.2.2</b> <strong>Identifique y segregue distintos componentes en su código</strong></a></li>
+<li class="chapter" data-level="8.2.3" data-path="buenaspracticas.html"><a href="buenaspracticas.html#orden-del-código"><i class="fa fa-check"></i><b>8.2.3</b> <strong>Orden del código</strong></a></li>
+<li class="chapter" data-level="8.2.4" data-path="buenaspracticas.html"><a href="buenaspracticas.html#sea-explícito-sobre-los-requisitos-y-dependencias-de-su-código"><i class="fa fa-check"></i><b>8.2.4</b> <strong>Sea explícito sobre los requisitos y dependencias de su código</strong></a></li>
+<li class="chapter" data-level="8.2.5" data-path="buenaspracticas.html"><a href="buenaspracticas.html#objetos-y-funciones"><i class="fa fa-check"></i><b>8.2.5</b> Objetos y funciones</a></li>
+<li class="chapter" data-level="8.2.6" data-path="buenaspracticas.html"><a href="buenaspracticas.html#indentación-y-espacios"><i class="fa fa-check"></i><b>8.2.6</b> Indentación y espacios</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 </ul>
 
@@ -313,21 +333,21 @@ div.csl-indent {
 <div id="instalar-el-paquete" class="section level4 hasAnchor" number="7.1.3.2">
 <h4><span class="header-section-number">7.1.3.2</span> Instalar el paquete<a href="diathor.html#instalar-el-paquete" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Instalaremos el paquete <code>diaThor</code><span class="citation">(<a href="#ref-nicolosigelis2022" role="doc-biblioref">M. M. Nicolosi Gelis et al. 2022</a>)</span> como se indica en la Unidad <a href="intro.html#intro">1</a> y los cargaremos a nuestro espacio de trabajo actual:</p>
-<div class="sourceCode" id="cb418"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb418-1"><a href="diathor.html#cb418-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(diathor)</span></code></pre></div>
+<div class="sourceCode" id="cb421"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb421-1"><a href="diathor.html#cb421-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(diathor)</span></code></pre></div>
 </div>
 <div id="cargar-y-previsualizar-nuestro-archivo-de-datos" class="section level4 hasAnchor" number="7.1.3.3">
 <h4><span class="header-section-number">7.1.3.3</span> Cargar y previsualizar nuestro archivo de datos<a href="diathor.html#cargar-y-previsualizar-nuestro-archivo-de-datos" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Cargaremos nuestro archivo de ejemplo (<em>sampleData_diaThor.csv</em>) a un dataframe llamado “base”:</p>
-<div class="sourceCode" id="cb419"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb419-1"><a href="diathor.html#cb419-1" aria-hidden="true" tabindex="-1"></a>base <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;sampleData_diaThor.csv&quot;</span>) <span class="co">#Corroborar que el nombre del archivo coincida con el que vamos a utilizar, y que se encuentre en la carpeta de nuestro proyecto</span></span></code></pre></div>
+<div class="sourceCode" id="cb422"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb422-1"><a href="diathor.html#cb422-1" aria-hidden="true" tabindex="-1"></a>base <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;sampleData_diaThor.csv&quot;</span>) <span class="co">#Corroborar que el nombre del archivo coincida con el que vamos a utilizar, y que se encuentre en la carpeta de nuestro proyecto</span></span></code></pre></div>
 <p>Veamos brevemente cómo está organizada la información de nuestras especies:</p>
-<div class="sourceCode" id="cb420"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb420-1"><a href="diathor.html#cb420-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(base)</span></code></pre></div>
+<div class="sourceCode" id="cb423"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb423-1"><a href="diathor.html#cb423-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(base)</span></code></pre></div>
 <p><code>base</code> es un objeto <code>data.frame</code> con 164 <code>obs.</code> o filas (especies) y 110 <code>variables</code> o columnas (muestras).</p>
 <p>Nuestra planilla de datos además contiene una <strong>columna obligatoria</strong> llamada “<strong><em>species</em></strong>”, la primera, adonde debremos ingresar los nombres de las especies lo mejor que podamos, sin datos sobre autorías de las mismas.</p>
 <p><em>Ejemplo de cómo llamar a las especies:</em></p>
 <p><em>Hippodonta capitata</em> ————&gt; (ASI SI! ✔️)</p>
 <p><em>Hippodonta capitata</em> (Ehrenb.) Lange-Bert., Metzeltin and Witkowski 1996 ————&gt; (ASI NO! 🚫)</p>
 <p>Veamos las primeras filas y las primeras columnas:</p>
-<div class="sourceCode" id="cb421"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb421-1"><a href="diathor.html#cb421-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(base[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb424"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb424-1"><a href="diathor.html#cb424-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(base[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>])</span></code></pre></div>
 <pre><code>##   X                        species S1_LI1_DAY0 S1_LI2_DAY0 S1_LI3_DAY0
 ## 1 1   Achnanthidium minutissimum             0           0           0
 ## 2 2 Achnanthes exigua var. exigua            0           0           0
@@ -343,12 +363,12 @@ Debe contener un nombre de muestra (<em>por ejemplo, se llaman S1_LI1_DAY0, S1_L
 <h4><span class="header-section-number">7.1.3.4</span> <strong>¡A la magia!</strong><a href="diathor.html#a-la-magia" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Vamos a ejecutar la función <code>diaThorAll()</code> , que se encargará de realizar <strong>todos los análisis que puede realizar el paquete</strong>, una atrás de otra. Y dispondremos de los resultados en un único objeto de tipo <code>data.frame</code>, que aquí lo llamaremos <code>resultados</code>.</p>
 <p>Más adelante veremos que podemos solicitar cosas específicas si sólo necesitamos un tipo de resultado, para ahorrar tiempo y reducir la cantidad de salidas.</p>
-<div class="sourceCode" id="cb423"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb423-1"><a href="diathor.html#cb423-1" aria-hidden="true" tabindex="-1"></a>resultados <span class="ot">&lt;-</span> <span class="fu">diaThorAll</span>(base)</span></code></pre></div>
+<div class="sourceCode" id="cb426"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb426-1"><a href="diathor.html#cb426-1" aria-hidden="true" tabindex="-1"></a>resultados <span class="ot">&lt;-</span> <span class="fu">diaThorAll</span>(base)</span></code></pre></div>
 <p>El paquete nos irá mostrando información en la consola de RStudio, y nos solicitará que le indiquemos una carpeta adonde guardar todas las posibles salidas que vaya generando. Exploraremos estas salidas luego para tratar de mejorar los resultados.</p>
 <p><code>[1] "Select Results folder"</code></p>
 <p>Seleccionemos un directorio (preferentemente vacío!) para guardar las salidas, y el paquete continuará reconociendo las especies, y buscando información ecológica sobre ellas para calcular los distintos índices bióticos.</p>
 <p>Aclaración: Si estamos trabajando en sistema operativo Linux, es posible que este cuadro de dialogo no aparezca en la pantalla y obtengamos un error en la consola. Para evitar esto, podemos manualmente indicar el directorio adonde se guardaran los resultaos como un parámetro de la función <code>diaThorAll</code>, de la siguiente manera:</p>
-<div class="sourceCode" id="cb424"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb424-1"><a href="diathor.html#cb424-1" aria-hidden="true" tabindex="-1"></a>resultados <span class="ot">&lt;-</span> <span class="fu">diaThorAll</span>(base, <span class="at">resultsPath=</span><span class="st">&quot;/Resultados&quot;</span>) <span class="co">#Por ejemplo, aquí debemos haber generado una subcarpeta llamada &#39;Resultados&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb427"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb427-1"><a href="diathor.html#cb427-1" aria-hidden="true" tabindex="-1"></a>resultados <span class="ot">&lt;-</span> <span class="fu">diaThorAll</span>(base, <span class="at">resultsPath=</span><span class="st">&quot;/Resultados&quot;</span>) <span class="co">#Por ejemplo, aquí debemos haber generado una subcarpeta llamada &#39;Resultados&#39;</span></span></code></pre></div>
 </div>
 <div id="los-resultados" class="section level4 hasAnchor" number="7.1.3.5">
 <h4><span class="header-section-number">7.1.3.5</span> Los resultados<a href="diathor.html#los-resultados" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -357,10 +377,10 @@ Debe contener un nombre de muestra (<em>por ejemplo, se llaman S1_LI1_DAY0, S1_L
 <p><strong>En la consola veremos que porcentaje del listado de especies que ingresamos fue efectivamente utilizado para calcular cada índice.</strong> Por ejemplo -&gt; <em>“Taxa recognized to be used in DISP index: 22.6 %”</em>, nos indica que de nuestras 164 especies, sólo utilizó 22.6% para calcular el índice DISP, mientras que dejó afuera el 77.4%. Es importante entonces delimitar qué índices fueron calculados sobre una base sólida de nuestros datos al momento de interpretar los resultados.</p>
 <p>El final de la secuencia de cálculo en la consola está delimitado por la exportación de gráficos (<em>[1] “Plots exported!”</em>).</p>
 <p>En el objeto <code>resultados</code> veremos una tabla completa con todos los resultados obtenidos.</p>
-<div class="sourceCode" id="cb425"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb425-1"><a href="diathor.html#cb425-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(resultados)</span></code></pre></div>
+<div class="sourceCode" id="cb428"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb428-1"><a href="diathor.html#cb428-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(resultados)</span></code></pre></div>
 <p>Es un objeto <code>data.table</code> con 109 <code>obs.</code> (nuestras muestras, filas) y 124 <code>vars.</code> (los índices calculados para cada muestra).</p>
 <p>Veamos los resultados completos!</p>
-<div class="sourceCode" id="cb426"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb426-1"><a href="diathor.html#cb426-1" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(resultados)</span></code></pre></div>
+<div class="sourceCode" id="cb429"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb429-1"><a href="diathor.html#cb429-1" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(resultados)</span></code></pre></div>
 <div class="figure">
 <img src="images/results_diathor.png" alt="" />
 <p class="caption">Figura 7.1. Primeras filas y columnas de la tabla de resultados de DiaThor</p>
@@ -404,39 +424,39 @@ El paquete va a tratar de buscarlas de cualquier manera aunque no contengan esto
 <p><code>*cannot open file 'nuestro_archivo.csv': No such file or directory</code></p>
 <p>Si corremos la función <code>diaThorAll()</code> directamente, sin agregar argumentos o parámetros, <strong>un cuadro de diálogo</strong> nos pedirá que seleccionemos el archivo con nuestros datos.</p></li>
 </ul>
-<div class="sourceCode" id="cb427"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb427-1"><a href="diathor.html#cb427-1" aria-hidden="true" tabindex="-1"></a>resultados <span class="ot">&lt;-</span> <span class="fu">diaThorAll</span>() <span class="co">#sin argumentos</span></span></code></pre></div>
+<div class="sourceCode" id="cb430"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb430-1"><a href="diathor.html#cb430-1" aria-hidden="true" tabindex="-1"></a>resultados <span class="ot">&lt;-</span> <span class="fu">diaThorAll</span>() <span class="co">#sin argumentos</span></span></code></pre></div>
 <ul>
 <li><em>¿Nuestros datos están en abundancia relativa?</em><br />
 Hay que indicarselo, cambiando el argumento <code>isRelAb</code> a <code>TRUE</code>.</li>
 </ul>
-<div class="sourceCode" id="cb428"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb428-1"><a href="diathor.html#cb428-1" aria-hidden="true" tabindex="-1"></a>resultados <span class="ot">&lt;-</span> <span class="fu">diaThorAll</span>(<span class="at">isRelAb=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb431"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb431-1"><a href="diathor.html#cb431-1" aria-hidden="true" tabindex="-1"></a>resultados <span class="ot">&lt;-</span> <span class="fu">diaThorAll</span>(<span class="at">isRelAb=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 <ul>
 <li><em>¿No encuentra las especies, y quiero hacer una búsqueda heurística más amplia?</em><br />
 Cambiemos el argumento <code>maxDistTaxa</code>.</li>
 </ul>
-<div class="sourceCode" id="cb429"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb429-1"><a href="diathor.html#cb429-1" aria-hidden="true" tabindex="-1"></a>resultados <span class="ot">&lt;-</span> <span class="fu">diaThorAll</span>(<span class="at">maxDistTaxa=</span><span class="dv">4</span>) <span class="co">#Ahora buscará nombres de taxa en las bases de datos internas con hasta cuatro caracteres de diferencia al ingresado en nuestro CSV.</span></span></code></pre></div>
+<div class="sourceCode" id="cb432"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb432-1"><a href="diathor.html#cb432-1" aria-hidden="true" tabindex="-1"></a>resultados <span class="ot">&lt;-</span> <span class="fu">diaThorAll</span>(<span class="at">maxDistTaxa=</span><span class="dv">4</span>) <span class="co">#Ahora buscará nombres de taxa en las bases de datos internas con hasta cuatro caracteres de diferencia al ingresado en nuestro CSV.</span></span></code></pre></div>
 <ul>
 <li><em>¿Y si quiero sólo calcular un índice, en vez de todo? Así es más rápido.</em><br />
 Podemos usar funciones para cada índice biótico o ecológico.</li>
 </ul>
-<div class="sourceCode" id="cb430"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb430-1"><a href="diathor.html#cb430-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Primero, cargamos nuestros datos, como siempre</span></span>
-<span id="cb430-2"><a href="diathor.html#cb430-2" aria-hidden="true" tabindex="-1"></a>base <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;sampleData_diaThor.csv&quot;</span>) <span class="co">#Corroborar que el nombre del archivo coincida con el que vamos a utilizar, y que se encuentre en la carpeta de nuestro proyecto</span></span>
-<span id="cb430-3"><a href="diathor.html#cb430-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb430-4"><a href="diathor.html#cb430-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Luego, necesitamos que diaThor reconozca las especies por su nombre. Para esto existe la función diat_loadData()</span></span>
-<span id="cb430-5"><a href="diathor.html#cb430-5" aria-hidden="true" tabindex="-1"></a><span class="co">#A esta función se le pueden pasar los mismos argumentos que a diaThorAll(). Es decir, podemos restringir la distancia heurística con &#39;maxDistTaxa&#39;, o indicar si los datos están expresados en abundancia relativa con &#39;isRelAb&#39;</span></span>
-<span id="cb430-6"><a href="diathor.html#cb430-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb430-7"><a href="diathor.html#cb430-7" aria-hidden="true" tabindex="-1"></a>resultados <span class="ot">&lt;-</span> <span class="fu">diat_loadData</span>(base, <span class="at">isRelAb=</span><span class="cn">TRUE</span>, <span class="at">maxDistTaxa =</span> <span class="dv">2</span>) <span class="co">#Ejemplo usando abundancias relativas y la distancia heurística por defecto = 2</span></span>
-<span id="cb430-8"><a href="diathor.html#cb430-8" aria-hidden="true" tabindex="-1"></a><span class="co">#Deberemos indicar una carpeta para los resultados, en el cuadro de diálogo </span></span>
-<span id="cb430-9"><a href="diathor.html#cb430-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb430-10"><a href="diathor.html#cb430-10" aria-hidden="true" tabindex="-1"></a><span class="co">#Y luego, por ejemplo, podemos calcular sólo el índice IDP</span></span>
-<span id="cb430-11"><a href="diathor.html#cb430-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb430-12"><a href="diathor.html#cb430-12" aria-hidden="true" tabindex="-1"></a>resultadosIDP <span class="ot">&lt;-</span> <span class="fu">diat_idp</span>(resultados) <span class="co">#Grabamos los resultados en el objeto resultados IDP</span></span>
-<span id="cb430-13"><a href="diathor.html#cb430-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb430-14"><a href="diathor.html#cb430-14" aria-hidden="true" tabindex="-1"></a><span class="co">#o el índice IPS</span></span>
-<span id="cb430-15"><a href="diathor.html#cb430-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb430-16"><a href="diathor.html#cb430-16" aria-hidden="true" tabindex="-1"></a>resultadosIPS <span class="ot">&lt;-</span> <span class="fu">diat_ips</span>(resultados) <span class="co">#Grabamos los resultados en el objeto resultados IPS</span></span>
-<span id="cb430-17"><a href="diathor.html#cb430-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb430-18"><a href="diathor.html#cb430-18" aria-hidden="true" tabindex="-1"></a><span class="co">#Hay funciones separadas para todos los índices del paquete; en la documentación se indican cuales, y se van agregando con las distintas actualizaciones.</span></span></code></pre></div>
+<div class="sourceCode" id="cb433"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb433-1"><a href="diathor.html#cb433-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Primero, cargamos nuestros datos, como siempre</span></span>
+<span id="cb433-2"><a href="diathor.html#cb433-2" aria-hidden="true" tabindex="-1"></a>base <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;sampleData_diaThor.csv&quot;</span>) <span class="co">#Corroborar que el nombre del archivo coincida con el que vamos a utilizar, y que se encuentre en la carpeta de nuestro proyecto</span></span>
+<span id="cb433-3"><a href="diathor.html#cb433-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb433-4"><a href="diathor.html#cb433-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Luego, necesitamos que diaThor reconozca las especies por su nombre. Para esto existe la función diat_loadData()</span></span>
+<span id="cb433-5"><a href="diathor.html#cb433-5" aria-hidden="true" tabindex="-1"></a><span class="co">#A esta función se le pueden pasar los mismos argumentos que a diaThorAll(). Es decir, podemos restringir la distancia heurística con &#39;maxDistTaxa&#39;, o indicar si los datos están expresados en abundancia relativa con &#39;isRelAb&#39;</span></span>
+<span id="cb433-6"><a href="diathor.html#cb433-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb433-7"><a href="diathor.html#cb433-7" aria-hidden="true" tabindex="-1"></a>resultados <span class="ot">&lt;-</span> <span class="fu">diat_loadData</span>(base, <span class="at">isRelAb=</span><span class="cn">TRUE</span>, <span class="at">maxDistTaxa =</span> <span class="dv">2</span>) <span class="co">#Ejemplo usando abundancias relativas y la distancia heurística por defecto = 2</span></span>
+<span id="cb433-8"><a href="diathor.html#cb433-8" aria-hidden="true" tabindex="-1"></a><span class="co">#Deberemos indicar una carpeta para los resultados, en el cuadro de diálogo </span></span>
+<span id="cb433-9"><a href="diathor.html#cb433-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb433-10"><a href="diathor.html#cb433-10" aria-hidden="true" tabindex="-1"></a><span class="co">#Y luego, por ejemplo, podemos calcular sólo el índice IDP</span></span>
+<span id="cb433-11"><a href="diathor.html#cb433-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb433-12"><a href="diathor.html#cb433-12" aria-hidden="true" tabindex="-1"></a>resultadosIDP <span class="ot">&lt;-</span> <span class="fu">diat_idp</span>(resultados) <span class="co">#Grabamos los resultados en el objeto resultados IDP</span></span>
+<span id="cb433-13"><a href="diathor.html#cb433-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb433-14"><a href="diathor.html#cb433-14" aria-hidden="true" tabindex="-1"></a><span class="co">#o el índice IPS</span></span>
+<span id="cb433-15"><a href="diathor.html#cb433-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb433-16"><a href="diathor.html#cb433-16" aria-hidden="true" tabindex="-1"></a>resultadosIPS <span class="ot">&lt;-</span> <span class="fu">diat_ips</span>(resultados) <span class="co">#Grabamos los resultados en el objeto resultados IPS</span></span>
+<span id="cb433-17"><a href="diathor.html#cb433-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb433-18"><a href="diathor.html#cb433-18" aria-hidden="true" tabindex="-1"></a><span class="co">#Hay funciones separadas para todos los índices del paquete; en la documentación se indican cuales, y se van agregando con las distintas actualizaciones.</span></span></code></pre></div>
 </div>
 <div id="shiny" class="section level4 hasAnchor" number="7.1.3.8">
 <h4><span class="header-section-number">7.1.3.8</span> Shiny!<a href="diathor.html#shiny" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -528,36 +548,36 @@ t_{k} = \sqrt{\frac{\sum_{i=1}^{n} y_{ik} (x_{i} - u_{k})^2}{\sum_{i=1}^{n} y_{i
 <div id="instalar-el-paquete-1" class="section level4 hasAnchor" number="7.2.3.2">
 <h4><span class="header-section-number">7.2.3.2</span> Instalar el paquete<a href="diathor.html#instalar-el-paquete-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Instalaremos el paquete <em>optimos.prime</em> <span class="citation">(<a href="#ref-sathicq2020" role="doc-biblioref">Sathicq, Nicolosi Gelis, and Cochero 2020</a>)</span> como se indica en la Unidad <a href="intro.html#intro">1</a> y los cargaremos a nuestro espacio de trabajo actual:</p>
-<div class="sourceCode" id="cb431"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb431-1"><a href="diathor.html#cb431-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(optimos.prime)</span></code></pre></div>
+<div class="sourceCode" id="cb434"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb434-1"><a href="diathor.html#cb434-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(optimos.prime)</span></code></pre></div>
 </div>
 <div id="cargar-y-previsualizar-nuestro-archivo-de-datos-1" class="section level4 hasAnchor" number="7.2.3.3">
 <h4><span class="header-section-number">7.2.3.3</span> Cargar y previsualizar nuestro archivo de datos<a href="diathor.html#cargar-y-previsualizar-nuestro-archivo-de-datos-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Debemos cargar dos sets de datos. El primero contiene la información de las variables ambientales en cada sitio o muestra (“<em>environmental_data_OptimosPrime</em>”). El segundo contiene la información de abundancia relativa de los taxa en cada sitio o muestra (“<em>species_data_OptimosPrime</em>”).</p>
-<div class="sourceCode" id="cb432"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb432-1"><a href="diathor.html#cb432-1" aria-hidden="true" tabindex="-1"></a>env_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;environmental_data_OptimosPrime.csv&quot;</span>) <span class="co">#Corroborar que el nombre del archivo coincida con el que vamos a utilizar, y que se encuentre en la carpeta de nuestro proyecto</span></span>
-<span id="cb432-2"><a href="diathor.html#cb432-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb432-3"><a href="diathor.html#cb432-3" aria-hidden="true" tabindex="-1"></a>species_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;species_data_OptimosPrime.csv&quot;</span>) <span class="co">#Corroborar que el nombre del archivo coincida con el que vamos a utilizar, y que se encuentre en la carpeta de nuestro proyecto</span></span>
-<span id="cb432-4"><a href="diathor.html#cb432-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb432-5"><a href="diathor.html#cb432-5" aria-hidden="true" tabindex="-1"></a><span class="co">#Alternativamente, para seleccionar un archivo con un cuadro de diálogo, se puede usar la función `file.choose()`, así:</span></span>
-<span id="cb432-6"><a href="diathor.html#cb432-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb432-7"><a href="diathor.html#cb432-7" aria-hidden="true" tabindex="-1"></a>env_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">file.choose</span>()) <span class="co">#y seleccionar el CSV con los datos ambientales</span></span>
-<span id="cb432-8"><a href="diathor.html#cb432-8" aria-hidden="true" tabindex="-1"></a>species_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">file.choose</span>()) <span class="co">#y seleccionar el CSV con los datos de abundancia de especies</span></span>
-<span id="cb432-9"><a href="diathor.html#cb432-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb432-10"><a href="diathor.html#cb432-10" aria-hidden="true" tabindex="-1"></a><span class="co">#Cualquiera de estas dos opciones cargará nuestros datos a los objetos &quot;env_data&quot; y &quot;species_data&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb435"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb435-1"><a href="diathor.html#cb435-1" aria-hidden="true" tabindex="-1"></a>env_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;environmental_data_OptimosPrime.csv&quot;</span>) <span class="co">#Corroborar que el nombre del archivo coincida con el que vamos a utilizar, y que se encuentre en la carpeta de nuestro proyecto</span></span>
+<span id="cb435-2"><a href="diathor.html#cb435-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb435-3"><a href="diathor.html#cb435-3" aria-hidden="true" tabindex="-1"></a>species_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;species_data_OptimosPrime.csv&quot;</span>) <span class="co">#Corroborar que el nombre del archivo coincida con el que vamos a utilizar, y que se encuentre en la carpeta de nuestro proyecto</span></span>
+<span id="cb435-4"><a href="diathor.html#cb435-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb435-5"><a href="diathor.html#cb435-5" aria-hidden="true" tabindex="-1"></a><span class="co">#Alternativamente, para seleccionar un archivo con un cuadro de diálogo, se puede usar la función `file.choose()`, así:</span></span>
+<span id="cb435-6"><a href="diathor.html#cb435-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb435-7"><a href="diathor.html#cb435-7" aria-hidden="true" tabindex="-1"></a>env_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">file.choose</span>()) <span class="co">#y seleccionar el CSV con los datos ambientales</span></span>
+<span id="cb435-8"><a href="diathor.html#cb435-8" aria-hidden="true" tabindex="-1"></a>species_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">file.choose</span>()) <span class="co">#y seleccionar el CSV con los datos de abundancia de especies</span></span>
+<span id="cb435-9"><a href="diathor.html#cb435-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb435-10"><a href="diathor.html#cb435-10" aria-hidden="true" tabindex="-1"></a><span class="co">#Cualquiera de estas dos opciones cargará nuestros datos a los objetos &quot;env_data&quot; y &quot;species_data&quot;</span></span></code></pre></div>
 <p>Veamos brevemente cómo está organizada la información de nuestras especies:</p>
-<div class="sourceCode" id="cb433"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb433-1"><a href="diathor.html#cb433-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(env_data)</span></code></pre></div>
+<div class="sourceCode" id="cb436"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb436-1"><a href="diathor.html#cb436-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(env_data)</span></code></pre></div>
 <p><code>env_data</code> es un objeto <code>data.frame</code> con 11 <code>obs.</code> o filas (<em>parámetros ambientales</em>) y 51 <code>variables</code> o columnas (<em>sitios muestreados, o muestras</em>).</p>
-<div class="sourceCode" id="cb434"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb434-1"><a href="diathor.html#cb434-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(species_data)</span></code></pre></div>
+<div class="sourceCode" id="cb437"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb437-1"><a href="diathor.html#cb437-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(species_data)</span></code></pre></div>
 <p><code>species_data</code> es un objeto <code>data.frame</code> con 57 <code>obs.</code> o filas (<em>especies</em>) y 51 <code>variables</code> o columnas (<em>sitios muestreados, o muestras</em>).</p>
 <p><strong>¡Es importante que la cantidad de variables o columnas (<em>sitios muestreados, o muestras</em>) sea igual en ambos sets de datos!</strong></p>
 </div>
 <div id="a-la-magia-1" class="section level4 hasAnchor" number="7.2.3.4">
 <h4><span class="header-section-number">7.2.3.4</span> <strong>¡A la magia!</strong><a href="diathor.html#a-la-magia-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Vamos a ejecutar la función <code>op_calculate()</code> , que se encargará de realizar los análisis de óptimos ecológicos y rangos de tolerancia de los taxones que ingresamos en <code>species_data</code> a las variables ambientales que ingresamos en <code>env_data</code> . Y dispondremos de los resultados en un único objeto de tipo <code>data.frame</code>, que aquí lo llamaremos <code>resultados</code>.</p>
-<div class="sourceCode" id="cb435"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb435-1"><a href="diathor.html#cb435-1" aria-hidden="true" tabindex="-1"></a>resultados <span class="ot">&lt;-</span> <span class="fu">op_calculate</span>(env_data, species_data)</span></code></pre></div>
+<div class="sourceCode" id="cb438"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb438-1"><a href="diathor.html#cb438-1" aria-hidden="true" tabindex="-1"></a>resultados <span class="ot">&lt;-</span> <span class="fu">op_calculate</span>(env_data, species_data)</span></code></pre></div>
 <p>Cuando terminen los cálculos, en la consola nos indicará que ya podemos ver los resultados.</p>
 <p><code>[1] "Optimum values and tolerance range calculated and placed in the final data frame"</code></p>
 <p><code>[1] "Use View() to view data frame with results"</code></p>
-<div class="sourceCode" id="cb436"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb436-1"><a href="diathor.html#cb436-1" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(resultados)</span></code></pre></div>
+<div class="sourceCode" id="cb439"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb439-1"><a href="diathor.html#cb439-1" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(resultados)</span></code></pre></div>
 </div>
 <div id="los-resultados-1" class="section level4 hasAnchor" number="7.2.3.5">
 <h4><span class="header-section-number">7.2.3.5</span> Los resultados<a href="diathor.html#los-resultados-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -576,9 +596,9 @@ t_{k} = \sqrt{\frac{\sum_{i=1}^{n} y_{ik} (x_{i} - u_{k})^2}{\sum_{i=1}^{n} y_{i
 </div>
 <p>En el gráfico, se verán las especies (<em>en el eje Y</em>) y la variable ambiental elegida (pH, <em>en el eje X</em>). Los puntos verdes indican el <strong>valor óptimo de cada especie</strong>, y los bigotes indican los <strong>rangos de tolerancia</strong> de cada especie a esa variable.</p>
 <p>Aquellas especies con rangos de tolerancia más bajos (ejs. <em>Actinastrum fluviale</em>, o <em>Euglena</em> <em>acus</em>), son consideradas especies ‘sensibles’ a esa variable ambiental, y aquellas con grandes rangos de tolerancia (ejs. <em>S.nanus</em> o <em>Tetrastrum</em> <em>glabrum</em>) son consideradas especies ‘tolerantes’. A su vez en este ejemplo, aquellas con valores óptimos más altos (más arriba en el gráfico) son consideradas mas alcalófilas y las que se encuentran más abajo en el gráfico son especies más acidófilas. Es importante revisar aquellas especies que tienen rangos de tolerancia muy bajos (ej. <em>A. distans</em>), ya que puede ser el resultado de una baja cantidad de presencias de esa especie en las muestras.</p>
-<div class="sourceCode" id="cb437"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb437-1"><a href="diathor.html#cb437-1" aria-hidden="true" tabindex="-1"></a><span class="fu">op_plot</span>(resultados)</span>
-<span id="cb437-2"><a href="diathor.html#cb437-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb437-3"><a href="diathor.html#cb437-3" aria-hidden="true" tabindex="-1"></a><span class="co">#En la consola nos preguntará que variable queremos graficar, y deberemos ingresar el número de la variable. Por ejemplo, para seleccionar el pH escribiriamos el número 2.</span></span></code></pre></div>
+<div class="sourceCode" id="cb440"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb440-1"><a href="diathor.html#cb440-1" aria-hidden="true" tabindex="-1"></a><span class="fu">op_plot</span>(resultados)</span>
+<span id="cb440-2"><a href="diathor.html#cb440-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb440-3"><a href="diathor.html#cb440-3" aria-hidden="true" tabindex="-1"></a><span class="co">#En la consola nos preguntará que variable queremos graficar, y deberemos ingresar el número de la variable. Por ejemplo, para seleccionar el pH escribiriamos el número 2.</span></span></code></pre></div>
 </div>
 <div id="algunas-aclaraciones-relevantes-1" class="section level4 hasAnchor" number="7.2.3.7">
 <h4><span class="header-section-number">7.2.3.7</span> <strong>Algunas aclaraciones relevantes:</strong><a href="diathor.html#algunas-aclaraciones-relevantes-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -586,12 +606,12 @@ t_{k} = \sqrt{\frac{\sum_{i=1}^{n} y_{ik} (x_{i} - u_{k})^2}{\sum_{i=1}^{n} y_{i
 <li><em>¿Nuestros datos no se encuentran en abundancia relativa?</em><br />
 Hay que indicarselo, cambiando el argumento <code>isRelAb</code> a <code>FALSE</code>.</li>
 </ul>
-<div class="sourceCode" id="cb438"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb438-1"><a href="diathor.html#cb438-1" aria-hidden="true" tabindex="-1"></a>resultados <span class="ot">&lt;-</span> <span class="fu">op_calculate</span>(<span class="at">isRelAb=</span><span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb441"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb441-1"><a href="diathor.html#cb441-1" aria-hidden="true" tabindex="-1"></a>resultados <span class="ot">&lt;-</span> <span class="fu">op_calculate</span>(<span class="at">isRelAb=</span><span class="cn">FALSE</span>)</span></code></pre></div>
 <ul>
 <li><em>¿Nuestros datos ya fueron convertidos a log10?</em><br />
 Hay que indicarselo, cambiando el argumento <code>islog10</code> a <code>TRUE</code>.</li>
 </ul>
-<div class="sourceCode" id="cb439"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb439-1"><a href="diathor.html#cb439-1" aria-hidden="true" tabindex="-1"></a>resultados <span class="ot">&lt;-</span> <span class="fu">op_calculate</span>(<span class="at">islog10=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb442"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb442-1"><a href="diathor.html#cb442-1" aria-hidden="true" tabindex="-1"></a>resultados <span class="ot">&lt;-</span> <span class="fu">op_calculate</span>(<span class="at">islog10=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 </div>
 <div id="shiny-1" class="section level4 hasAnchor" number="7.2.3.8">
 <h4><span class="header-section-number">7.2.3.8</span> Shiny!<a href="diathor.html#shiny-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -634,7 +654,7 @@ Sathicq, María Belén, María Mercedes Nicolosi Gelis, and Joaquín Cochero. 20
         </div>
       </div>
 <a href="metrix.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="buenaspracticas.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -269,6 +269,27 @@ div.csl-indent {
 <li class="chapter" data-level="7.2.3" data-path="diathor.html"><a href="diathor.html#manos-a-la-obra-2"><i class="fa fa-check"></i><b>7.2.3</b> ¡Manos a la obra!</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="8" data-path="buenaspracticas.html"><a href="buenaspracticas.html"><i class="fa fa-check"></i><b>8</b> Buenas prácticas en R y Rstudio</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="buenaspracticas.html"><a href="buenaspracticas.html#proyectos-de-rstudio"><i class="fa fa-check"></i><b>8.1</b> Proyectos de RStudio</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="buenaspracticas.html"><a href="buenaspracticas.html#qué-son"><i class="fa fa-check"></i><b>8.1.1</b> ¿Qué son?</a></li>
+<li class="chapter" data-level="8.1.2" data-path="buenaspracticas.html"><a href="buenaspracticas.html#cuándo-usarlos"><i class="fa fa-check"></i><b>8.1.2</b> ¿Cuándo usarlos?</a></li>
+<li class="chapter" data-level="8.1.3" data-path="buenaspracticas.html"><a href="buenaspracticas.html#estructura-de-directorios"><i class="fa fa-check"></i><b>8.1.3</b> Estructura de directorios</a></li>
+<li class="chapter" data-level="8.1.4" data-path="buenaspracticas.html"><a href="buenaspracticas.html#nombres-de-archivos"><i class="fa fa-check"></i><b>8.1.4</b> Nombres de archivos</a></li>
+<li class="chapter" data-level="8.1.5" data-path="buenaspracticas.html"><a href="buenaspracticas.html#otras-consideraciones-en-rstudio"><i class="fa fa-check"></i><b>8.1.5</b> Otras consideraciones en RStudio</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="buenaspracticas.html"><a href="buenaspracticas.html#buenas-prácticas-dentro-de-los-scripts"><i class="fa fa-check"></i><b>8.2</b> Buenas prácticas dentro de los scripts</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="buenaspracticas.html"><a href="buenaspracticas.html#lleva-un-registro-de-quién-escribió-el-código-y-de-su-finalidad"><i class="fa fa-check"></i><b>8.2.1</b> <strong>Lleva un registro de quién escribió el código y de su finalidad</strong></a></li>
+<li class="chapter" data-level="8.2.2" data-path="buenaspracticas.html"><a href="buenaspracticas.html#identifique-y-segregue-distintos-componentes-en-su-código"><i class="fa fa-check"></i><b>8.2.2</b> <strong>Identifique y segregue distintos componentes en su código</strong></a></li>
+<li class="chapter" data-level="8.2.3" data-path="buenaspracticas.html"><a href="buenaspracticas.html#orden-del-código"><i class="fa fa-check"></i><b>8.2.3</b> <strong>Orden del código</strong></a></li>
+<li class="chapter" data-level="8.2.4" data-path="buenaspracticas.html"><a href="buenaspracticas.html#sea-explícito-sobre-los-requisitos-y-dependencias-de-su-código"><i class="fa fa-check"></i><b>8.2.4</b> <strong>Sea explícito sobre los requisitos y dependencias de su código</strong></a></li>
+<li class="chapter" data-level="8.2.5" data-path="buenaspracticas.html"><a href="buenaspracticas.html#objetos-y-funciones"><i class="fa fa-check"></i><b>8.2.5</b> Objetos y funciones</a></li>
+<li class="chapter" data-level="8.2.6" data-path="buenaspracticas.html"><a href="buenaspracticas.html#indentación-y-espacios"><i class="fa fa-check"></i><b>8.2.6</b> Indentación y espacios</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 </ul>
 
       </nav>
@@ -288,9 +309,9 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="metrix" class="section level1 hasAnchor" number="6">
 <h1><span class="header-section-number">Unidad 6</span> Paquete <em>metrix</em><a href="metrix.html#metrix" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p><strong>Julieta Capeletti</strong><a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
+<p><strong>Julieta Capeletti</strong><a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a></p>
 <p>Instituto Nacional de Limnología (INALI, UNL-CONICET), Laboratorio de Bentos</p>
-<p><strong>Juan Manuel Cabrera</strong><a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
+<p><strong>Juan Manuel Cabrera</strong><a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a></p>
 <p>Instituto de Investigación y Desarrollo en Bioingeniería y Bioinformática (IBB, UNER-CONICET)</p>
 <div id="que-es-metrix" class="section level2 hasAnchor" number="6.1">
 <h2><span class="header-section-number">6.1</span> ¿Que es Metrix?<a href="metrix.html#que-es-metrix" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -312,7 +333,7 @@ El conjunto de datos está disponible en la carpeta <em>data</em> del repositori
 <p><em>metrix</em> se encuentra disponible en el repositorio CRAN.
 Primeramente se debe descargar e instalar utilizando el código <code>install.packages("metrix")</code>.
 Seguidamente se debe cargar el paquete en el entorno de trabajo:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="metrix.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(metrix)</span></code></pre></div>
+<div class="sourceCode" id="cb403"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb403-1"><a href="metrix.html#cb403-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(metrix)</span></code></pre></div>
 </div>
 <div id="que-tipos-de-datos-analiza-metrix" class="section level2 hasAnchor" number="6.4">
 <h2><span class="header-section-number">6.4</span> ¿Que tipos de datos analiza <em>metrix</em>?<a href="metrix.html#que-tipos-de-datos-analiza-metrix" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -337,8 +358,8 @@ Esta función recibe 3 parámatros:</p>
 <li><p><em>correct</em>: valor lógico que indica si se va a utilizar el sistema de autocorrección de datos.</p></li>
 <li><p><em>verbose</em>: valor lógico que indica si se debe mostrar mensajes descriptivos del proceso de carga.</p></li>
 </ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="metrix.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#IMPORTANTE: revisar la dirección del archivo ecological_data.csv. En este ejemplo estaría dentro del directorio de trabajo por lo que no es necesario indicar la ruta completa al archivo</span></span>
-<span id="cb2-2"><a href="metrix.html#cb2-2" aria-hidden="true" tabindex="-1"></a>datos_cargados<span class="ot">&lt;-</span><span class="fu">read_data</span>(<span class="at">file_name =</span> <span class="st">&quot;ecological_data.csv&quot;</span>, <span class="at">correct =</span> <span class="cn">TRUE</span>, <span class="at">verbose =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb404"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb404-1"><a href="metrix.html#cb404-1" aria-hidden="true" tabindex="-1"></a><span class="co">#IMPORTANTE: revisar la dirección del archivo ecological_data.csv. En este ejemplo estaría dentro del directorio de trabajo por lo que no es necesario indicar la ruta completa al archivo</span></span>
+<span id="cb404-2"><a href="metrix.html#cb404-2" aria-hidden="true" tabindex="-1"></a>datos_cargados<span class="ot">&lt;-</span><span class="fu">read_data</span>(<span class="at">file_name =</span> <span class="st">&quot;ecological_data.csv&quot;</span>, <span class="at">correct =</span> <span class="cn">TRUE</span>, <span class="at">verbose =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>## The word ampullaridae was not found in internal Family word database. Please check that entry.</code></pre>
 <pre><code>## The autocorrect system replace the word ampullaridae for Ampullariidae.</code></pre>
 <p>En este ejemplo, los datos ecológicos utilizados contienen un error en la columna de <em>Familia</em>.
@@ -347,7 +368,7 @@ El sistema de autocorrección notificará al usuario sobre este error y, si el p
 <h3><span class="header-section-number">6.5.1</span> ¿QUE PASA SI QUIERO CREAR MI PROPIO CONJUNTO DE DATOS?<a href="metrix.html#que-pasa-si-quiero-crear-mi-propio-conjunto-de-datos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><em>metrix</em> contiene una función que genera un archivo .CSV con una tabla cuyas columnas están debidamente etiquetadas para que pueda ser utilizada por el paquete.
 Para generar este archivo en el espacio de trabajo, se debe correr el siguiente código:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="metrix.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">metrix_table_template</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb407"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb407-1"><a href="metrix.html#cb407-1" aria-hidden="true" tabindex="-1"></a><span class="fu">metrix_table_template</span>()</span></code></pre></div>
 <pre><code>##     Class   Order       Family    Subfamily       Tribe          Genus Species
 ## 1 Insecta Diptera Chironomidae Chironominae Tanytarsini Paratanytarsus        
 ##   FG Sample1 Sample2
@@ -370,8 +391,8 @@ Para ello vamos a utilizar la función <code>rich_metrics()</code>, la cual reci
 <li><em>dec_c</em>: caracter utilizado como separador de decimales.</li>
 <li><em>verbose</em>: valor lógico que indica si se debe mostrar mensajes descriptivos del calcúlo realizado.</li>
 </ul>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="metrix.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Calculo de riqueza</span></span>
-<span id="cb7-2"><a href="metrix.html#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rich_metrics</span>(<span class="at">dataset =</span> datos_cargados, <span class="at">store =</span> <span class="cn">FALSE</span>, <span class="at">dec_c =</span> <span class="st">&quot;.&quot;</span>, <span class="at">verbose =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb409"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb409-1"><a href="metrix.html#cb409-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Calculo de riqueza</span></span>
+<span id="cb409-2"><a href="metrix.html#cb409-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rich_metrics</span>(<span class="at">dataset =</span> datos_cargados, <span class="at">store =</span> <span class="cn">FALSE</span>, <span class="at">dec_c =</span> <span class="st">&quot;.&quot;</span>, <span class="at">verbose =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## Checking table format for Richness measures calculation...</code></pre>
 <pre><code>##                    P1 P2 P3 P4 P5 P6 P7 P8 P9 P10
 ## n_taxa              4  7  7  7  6  6  4  6  8   4
@@ -403,8 +424,8 @@ Esta función recibe 4 parámetros:</p>
 <li><em>dec_c</em>: caracter utilizado como separador de decimales.</li>
 <li><em>verbose</em>:valor lógico que indica si se debe mostrar mensajes descriptivos del calcúlo realizado.</li>
 </ul>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="metrix.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Calculo de metricas de tolerancia</span></span>
-<span id="cb10-2"><a href="metrix.html#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tol_metrics</span>(<span class="at">dataset =</span> datos_cargados, <span class="at">store =</span> <span class="cn">FALSE</span>, <span class="at">dec_c =</span> <span class="st">&quot;.&quot;</span>, <span class="at">verbose =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb412"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb412-1"><a href="metrix.html#cb412-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Calculo de metricas de tolerancia</span></span>
+<span id="cb412-2"><a href="metrix.html#cb412-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tol_metrics</span>(<span class="at">dataset =</span> datos_cargados, <span class="at">store =</span> <span class="cn">FALSE</span>, <span class="at">dec_c =</span> <span class="st">&quot;.&quot;</span>, <span class="at">verbose =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## Checking table format for Tolerance measures calculation...</code></pre>
 <pre><code>##                 P1     P2     P3     P4     P5     P6    P7     P8    P9    P10
 ## r_oligochir 0.0066 0.0054 0.0278 0.6667 0.0357 0.0085 0.000 0.0313 0.100 3.3333
@@ -450,8 +471,8 @@ Ambas funciones reciben 4 parámetros:</p>
 <li><em>dec_c</em>: caracter utilizado como separador de decimales.</li>
 <li><em>verbose</em>:valor lógico que indica si se debe mostrar mensajes descriptivos del calcúlo realizado.</li>
 </ul>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="metrix.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Calculo de BMWP</span></span>
-<span id="cb13-2"><a href="metrix.html#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">bmwp_ind</span>(<span class="at">dataset =</span> datos_cargados, <span class="at">store =</span> <span class="cn">FALSE</span>, <span class="at">dec_c =</span> <span class="st">&quot;.&quot;</span>, <span class="at">verbose =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb415"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb415-1"><a href="metrix.html#cb415-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Calculo de BMWP</span></span>
+<span id="cb415-2"><a href="metrix.html#cb415-2" aria-hidden="true" tabindex="-1"></a><span class="fu">bmwp_ind</span>(<span class="at">dataset =</span> datos_cargados, <span class="at">store =</span> <span class="cn">FALSE</span>, <span class="at">dec_c =</span> <span class="st">&quot;.&quot;</span>, <span class="at">verbose =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## Checking table format for BMWP and ASPT index calculation...</code></pre>
 <pre><code>## $Ibmwp_n
 ##          P1  P2 P3  P4 P5 P6 P7 P8  P9 P10
@@ -472,8 +493,8 @@ Ambas funciones reciben 4 parámetros:</p>
 ## ind_bmwp_class Class VII Very Bad
 ## ind_aspt_class Class VII Very Bad</code></pre>
 <p>Los valores de BMWP y ASPT nos indican condiciones de mala calidad en los 10 puntos de muestreo.</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="metrix.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Calculo de ICBrio</span></span>
-<span id="cb16-2"><a href="metrix.html#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">icbrio_ind</span>(<span class="at">dataset =</span> datos_cargados, <span class="at">store =</span> <span class="cn">FALSE</span>, <span class="at">dec_c =</span> <span class="st">&quot;.&quot;</span>, <span class="at">verbose =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb418"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb418-1"><a href="metrix.html#cb418-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Calculo de ICBrio</span></span>
+<span id="cb418-2"><a href="metrix.html#cb418-2" aria-hidden="true" tabindex="-1"></a><span class="fu">icbrio_ind</span>(<span class="at">dataset =</span> datos_cargados, <span class="at">store =</span> <span class="cn">FALSE</span>, <span class="at">dec_c =</span> <span class="st">&quot;.&quot;</span>, <span class="at">verbose =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## Checking table format for ICbrio index calculation...</code></pre>
 <pre><code>## $Icbrio_n
 ##                  P1 P2 P3 P4       P5 P6 P7       P8   P9      P10
@@ -497,7 +518,7 @@ Mercedes Marchese y Dr. Joaquien Cochero por su ayuda y apoyo en la creación d
 
 </div>
 </div>
-<h3>References</h3>
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-alba1988" class="csl-entry">
 Alba-Tercedor, J, and A Sánchez-Ortega. 1988. <span>“Rapid and Simple Method to Assess the Biological Quality of Waters Based on That of Hellawell (1978).”</span> <em>Limn<span>é</span>tica</em> 8: 51–56.
@@ -523,9 +544,9 @@ Rodrigues Capı́tulo, A. 1999. <span>“The Macroinvertebrates as Quality Indic
 </div>
 <div class="footnotes">
 <hr />
-<ol start="1">
-<li id="fn1"><p><a href="mailto:julieta.capeletti@hotmail.com" class="email">julieta.capeletti@hotmail.com</a><a href="metrix.html#fnref1" class="footnote-back">↩︎</a></p></li>
-<li id="fn2"><p><a href="mailto:juan.cabrera@uner.edu.ar" class="email">juan.cabrera@uner.edu.ar</a><a href="metrix.html#fnref2" class="footnote-back">↩︎</a></p></li>
+<ol start="7">
+<li id="fn7"><p><a href="mailto:julieta.capeletti@hotmail.com" class="email">julieta.capeletti@hotmail.com</a><a href="metrix.html#fnref7" class="footnote-back">↩︎</a></p></li>
+<li id="fn8"><p><a href="mailto:juan.cabrera@uner.edu.ar" class="email">juan.cabrera@uner.edu.ar</a><a href="metrix.html#fnref8" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
@@ -588,6 +609,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
