@@ -1,6 +1,6 @@
 # LIMNOLOGIA CON R
 
-https://raw.githubusercontent.com/Limno-con-R/libro/main/images/portada.png
+![](https://raw.githubusercontent.com/Limno-con-R/libro/main/images/portada.png)
 
 Esta publicación debe citarse como
 
