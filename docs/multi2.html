@@ -567,9 +567,9 @@ Además del tipo de respuesta, otro requisito necesario es la “multinormalidad
 ## Number of permutations: 999
 ## 
 ## Model: rda(formula = bio.trans ~ pH + EC + TH + DOC + DIN + TN + DRP + TP + a440 + SUVA254 + E2_E3, data = env, scale = TRUE)
-##          Df Variance      F Pr(&gt;F)   
-## Model    11   4.6572 2.5224   0.01 **
-## Residual  8   1.3428                 
+##          Df Variance      F Pr(&gt;F)  
+## Model    11   4.6572 2.5224  0.017 *
+## Residual  8   1.3428                
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <div class="sourceCode" id="cb333"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb333-1"><a href="multi2.html#cb333-1" aria-hidden="true" tabindex="-1"></a><span class="co">#R^2</span></span>
@@ -608,49 +608,47 @@ La salida anterior porporciona información útil: “<em>Inertia</em>” (Inerc
 ## 
 ##           Df    AIC      F Pr(&gt;F)   
 ## + EC       1 33.486 5.4886  0.010 **
-## + TN       1 35.111 3.6559  0.020 * 
-## + pH       1 36.512 2.1912  0.120   
-## + DOC      1 36.689 2.0134  0.135   
-## + a440     1 37.495 1.2229  0.290   
-## + DIN      1 37.847 0.8874  0.415   
-## + DRP      1 38.029 0.7166  0.490   
-## + TP       1 37.997 0.7466  0.515   
-## + SUVA254  1 38.270 0.4923  0.665   
-## + E2_E3    1 38.353 0.4154  0.730   
-## + TH       1 38.425 0.3496  0.755   
+## + TN       1 35.111 3.6559  0.015 * 
+## + pH       1 36.512 2.1912  0.105   
+## + DOC      1 36.689 2.0134  0.105   
+## + a440     1 37.495 1.2229  0.295   
+## + DIN      1 37.847 0.8874  0.380   
+## + DRP      1 38.029 0.7166  0.530   
+## + TP       1 37.997 0.7466  0.550   
+## + SUVA254  1 38.270 0.4923  0.710   
+## + E2_E3    1 38.353 0.4154  0.715   
+## + TH       1 38.425 0.3496  0.830   
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Step: bio.trans ~ EC 
 ## 
-##           Df    AIC      F Pr(&gt;F)  
-## + a440     1 30.718 4.5770  0.015 *
-## + pH       1 32.870 2.3759  0.065 .
-## + E2_E3    1 34.177 1.1501  0.320  
-## + TN       1 34.291 1.0469  0.380  
-## + DIN      1 34.608 0.7632  0.515  
-## + TP       1 34.803 0.5910  0.610  
-## + DRP      1 34.851 0.5485  0.625  
-## + TH       1 34.873 0.5294  0.765  
-## + DOC      1 34.986 0.4307  0.800  
-## + SUVA254  1 35.170 0.2709  0.905  
+##           Df    AIC      F Pr(&gt;F)   
+## + a440     1 30.718 4.5770  0.005 **
+## + pH       1 32.870 2.3759  0.090 . 
+## + E2_E3    1 34.177 1.1501  0.255   
+## + TN       1 34.291 1.0469  0.365   
+## + DIN      1 34.608 0.7632  0.505   
+## + TP       1 34.803 0.5910  0.650   
+## + TH       1 34.873 0.5294  0.665   
+## + DRP      1 34.851 0.5485  0.690   
+## + DOC      1 34.986 0.4307  0.710   
+## + SUVA254  1 35.170 0.2709  0.880   
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Step: bio.trans ~ EC + a440 
 ## 
-##           Df    AIC      F Pr(&gt;F)  
-## + pH       1 30.098 2.2393  0.095 .
-## + TP       1 30.590 1.7964  0.145  
-## + TN       1 31.422 1.0710  0.360  
-## + DOC      1 31.460 1.0392  0.380  
-## + DRP      1 31.766 0.7802  0.490  
-## + SUVA254  1 31.840 0.7185  0.535  
-## + E2_E3    1 32.045 0.5477  0.675  
-## + TH       1 32.114 0.4904  0.685  
-## + DIN      1 32.500 0.1756  0.970  
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+##           Df    AIC      F Pr(&gt;F)
+## + pH       1 30.098 2.2393  0.110
+## + TP       1 30.590 1.7964  0.160
+## + DOC      1 31.460 1.0392  0.340
+## + TN       1 31.422 1.0710  0.350
+## + DRP      1 31.766 0.7802  0.510
+## + SUVA254  1 31.840 0.7185  0.595
+## + E2_E3    1 32.045 0.5477  0.680
+## + TH       1 32.114 0.4904  0.685
+## + DIN      1 32.500 0.1756  0.960</code></pre>
 <p>Para evitar la sobreestimación de la varianza explicada, la selección de variables debe realizarse con dos criterios de parada: (1) el nivel de significación alfa habitual y (2) el coeficiente de determinación múltiple ajustado (R<sup>2</sup>adj.) calculado utilizando todas las variables explicativas. Cuando la selección hacia adelante identifica una variable que hace que uno u otro criterio supere el umbral fijado, se rechaza esa variable y se detiene el procedimiento (referirse a Blanchet, F. G., Legendre, P., &amp; Borcard, D. 2008. <em>Forward selection of explanatory variables</em>. Ecology, 89(9): 2623-2632, para más detalles).</p>
 <p>Qué variables son retenidas por la selección <em>forward</em>?</p>
 <div class="sourceCode" id="cb342"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb342-1"><a href="multi2.html#cb342-1" aria-hidden="true" tabindex="-1"></a>fwd.sel<span class="sc">$</span>call</span></code></pre></div>
@@ -685,10 +683,10 @@ La salida anterior porporciona información útil: “<em>Inertia</em>” (Inerc
 ## Number of permutations: 999
 ## 
 ## Model: rda(formula = bio.trans ~ EC + a440, data = env, scale = TRUE)
-##          Df Variance      F Pr(&gt;F)   
-## EC        1   1.4020 6.5793  0.003 **
-## a440      1   0.9753 4.5770  0.011 * 
-## Residual 17   3.6226                 
+##          Df Variance      F Pr(&gt;F)    
+## EC        1   1.4020 6.5793  0.001 ***
+## a440      1   0.9753 4.5770  0.011 *  
+## Residual 17   3.6226                  
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <div class="sourceCode" id="cb350"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb350-1"><a href="multi2.html#cb350-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova.cca</span>(biomass.rda.signif, <span class="at">step =</span> <span class="dv">1000</span>, <span class="at">by =</span> <span class="st">&quot;axis&quot;</span>) <span class="co">#significación de los ejes</span></span></code></pre></div>
@@ -699,8 +697,8 @@ La salida anterior porporciona información útil: “<em>Inertia</em>” (Inerc
 ## 
 ## Model: rda(formula = bio.trans ~ EC + a440, data = env, scale = TRUE)
 ##          Df Variance      F Pr(&gt;F)   
-## RDA1      1   1.9986 9.3787  0.002 **
-## RDA2      1   0.3788 1.7776  0.155   
+## RDA1      1   1.9986 9.3787  0.005 **
+## RDA2      1   0.3788 1.7776  0.150   
 ## Residual 17   3.6226                 
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
@@ -739,47 +737,61 @@ Los datos de especies crudos, sin procesar, se trasnforman primero en una matriz
 ## 
 ##           Df    AIC      F Pr(&gt;F)   
 ## + EC       1 435.62 7.3760  0.005 **
-## + TN       1 436.35 6.4767  0.005 **
-## + DOC      1 439.94 2.4469  0.065 . 
-## + a440     1 440.76 1.6257  0.235   
-## + TP       1 441.11 1.2859  0.250   
-## + TH       1 441.34 1.0725  0.340   
-## + SUVA254  1 441.40 1.0155  0.375   
-## + DIN      1 441.51 0.9092  0.440   
-## + E2_E3    1 441.53 0.8848  0.440   
-## + pH       1 441.68 0.7432  0.475   
-## + DRP      1 442.18 0.2880  0.765   
+## + TN       1 436.35 6.4767  0.020 * 
+## + DOC      1 439.94 2.4469  0.085 . 
+## + a440     1 440.76 1.6257  0.180   
+## + TP       1 441.11 1.2859  0.245   
+## + TH       1 441.34 1.0725  0.305   
+## + SUVA254  1 441.40 1.0155  0.330   
+## + DIN      1 441.51 0.9092  0.385   
+## + E2_E3    1 441.53 0.8848  0.410   
+## + pH       1 441.68 0.7432  0.500   
+## + DRP      1 442.18 0.2880  0.740   
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Step: biomass ~ EC 
 ## 
-##           Df    AIC      F Pr(&gt;F)   
-## + a440     1 433.14 4.2685  0.010 **
-## + E2_E3    1 435.03 2.3593  0.115   
-## + TN       1 435.40 1.9954  0.130   
-## + pH       1 435.57 1.8349  0.155   
-## + TP       1 436.22 1.2399  0.270   
-## + DIN      1 436.64 0.8577  0.425   
-## + SUVA254  1 436.60 0.8973  0.475   
-## + DOC      1 436.87 0.6540  0.580   
-## + TH       1 437.12 0.4337  0.715   
-## + DRP      1 437.50 0.1099  0.955   
+##           Df    AIC      F Pr(&gt;F)  
+## + a440     1 433.14 4.2685  0.015 *
+## + E2_E3    1 435.03 2.3593  0.125  
+## + TN       1 435.40 1.9954  0.125  
+## + pH       1 435.57 1.8349  0.160  
+## + TP       1 436.22 1.2399  0.315  
+## + DIN      1 436.64 0.8577  0.330  
+## + SUVA254  1 436.60 0.8973  0.460  
+## + DOC      1 436.87 0.6540  0.600  
+## + TH       1 437.12 0.4337  0.680  
+## + DRP      1 437.50 0.1099  0.935  
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Step: biomass ~ EC + a440 
 ## 
 ##           Df    AIC      F Pr(&gt;F)  
-## + TN       1 432.60 2.1715  0.055 .
-## + pH       1 431.31 3.3846  0.060 .
-## + E2_E3    1 433.25 1.5858  0.210  
-## + DOC      1 433.79 1.1182  0.310  
-## + SUVA254  1 434.40 0.6032  0.540  
-## + TH       1 434.31 0.6796  0.580  
-## + TP       1 434.29 0.6956  0.620  
-## + DRP      1 434.72 0.3418  0.695  
+## + pH       1 431.31 3.3846  0.030 *
+## + TN       1 432.60 2.1715  0.140  
+## + E2_E3    1 433.25 1.5858  0.220  
+## + DOC      1 433.79 1.1182  0.305  
+## + TH       1 434.31 0.6796  0.515  
+## + TP       1 434.29 0.6956  0.555  
+## + SUVA254  1 434.40 0.6032  0.610  
+## + DRP      1 434.72 0.3418  0.720  
 ## + DIN      1 434.90 0.1953  0.835  
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Step: biomass ~ EC + a440 + pH 
+## 
+##           Df    AIC      F Pr(&gt;F)  
+## + E2_E3    1 430.27 2.4564  0.090 .
+## + TN       1 431.11 1.7398  0.175  
+## + TP       1 431.80 1.1744  0.290  
+## + DRP      1 432.24 0.8201  0.495  
+## + DOC      1 432.71 0.4525  0.680  
+## + SUVA254  1 432.73 0.4406  0.700  
+## + DIN      1 432.94 0.2786  0.840  
+## + TH       1 433.05 0.1947  0.865  
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <div class="sourceCode" id="cb358"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb358-1"><a href="multi2.html#cb358-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ordiplot</span>(bray.env.cap.all, <span class="at">scaling =</span> <span class="dv">2</span>, <span class="at">type =</span> <span class="st">&quot;text&quot;</span>)</span></code></pre></div>
@@ -787,7 +799,7 @@ Los datos de especies crudos, sin procesar, se trasnforman primero en una matriz
 <p><strong>Figura 6:</strong> Ordenamiento obtenido a partir del dbRDA en base a la distancia de Bray Curtis. Escalamiento tipo 2.</p>
 <p>Qué variables son retenidas por la selección <em>forward</em>?</p>
 <div class="sourceCode" id="cb359"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb359-1"><a href="multi2.html#cb359-1" aria-hidden="true" tabindex="-1"></a>fwd.sel.dbRDA<span class="sc">$</span>call</span></code></pre></div>
-<pre><code>## capscale(formula = biomass ~ EC + a440, data = env, add = &quot;lingoes&quot;)</code></pre>
+<pre><code>## capscale(formula = biomass ~ EC + a440 + pH, data = env, add = &quot;lingoes&quot;)</code></pre>
 <p>Cuál es el valor del R<sup>2</sup> ajustado de este modelo?</p>
 <div class="sourceCode" id="cb361"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb361-1"><a href="multi2.html#cb361-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Escribir el modelo</span></span>
 <span id="cb361-2"><a href="multi2.html#cb361-2" aria-hidden="true" tabindex="-1"></a>biomass.dbrda.signif <span class="ot">&lt;-</span> <span class="fu">capscale</span>(<span class="at">formula =</span> biomass <span class="sc">~</span> EC <span class="sc">+</span> a440 <span class="sc">+</span> pH, <span class="at">data =</span> env, <span class="at">add =</span> <span class="st">&quot;lingoes&quot;</span>)</span>
@@ -805,9 +817,9 @@ Los datos de especies crudos, sin procesar, se trasnforman primero en una matriz
 ## Number of permutations: 999
 ## 
 ## Model: capscale(formula = biomass ~ EC + a440 + pH, data = env, add = &quot;lingoes&quot;)
-##          Df   Variance      F Pr(&gt;F)    
-## Model     3 1861913203 6.0633  0.001 ***
-## Residual 16 1637764593                  
+##          Df   Variance      F Pr(&gt;F)   
+## Model     3 1861913203 6.0633  0.002 **
+## Residual 16 1637764593                 
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <div class="sourceCode" id="cb365"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb365-1"><a href="multi2.html#cb365-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova.cca</span>(biomass.dbrda.signif, <span class="at">step =</span> <span class="dv">1000</span>, <span class="at">by =</span> <span class="st">&quot;term&quot;</span>) <span class="co">#significación de variables </span></span></code></pre></div>
@@ -817,11 +829,11 @@ Los datos de especies crudos, sin procesar, se trasnforman primero en una matriz
 ## Number of permutations: 999
 ## 
 ## Model: capscale(formula = biomass ~ EC + a440 + pH, data = env, add = &quot;lingoes&quot;)
-##          Df   Variance      F Pr(&gt;F)   
-## EC        1 1017246043 9.9379  0.002 **
-## a440      1  498217165 4.8673  0.017 * 
-## pH        1  346449995 3.3846  0.046 * 
-## Residual 16 1637764593                 
+##          Df   Variance      F Pr(&gt;F)    
+## EC        1 1017246043 9.9379  0.001 ***
+## a440      1  498217165 4.8673  0.023 *  
+## pH        1  346449995 3.3846  0.048 *  
+## Residual 16 1637764593                  
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <div class="sourceCode" id="cb367"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb367-1"><a href="multi2.html#cb367-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova.cca</span>(biomass.dbrda.signif, <span class="at">step =</span> <span class="dv">1000</span>, <span class="at">by =</span> <span class="st">&quot;axis&quot;</span>) <span class="co">#significación de los ejes</span></span></code></pre></div>
@@ -833,8 +845,8 @@ Los datos de especies crudos, sin procesar, se trasnforman primero en una matriz
 ## Model: capscale(formula = biomass ~ EC + a440 + pH, data = env, add = &quot;lingoes&quot;)
 ##          Df   Variance       F Pr(&gt;F)   
 ## CAP1      1 1503918383 14.6924  0.002 **
-## CAP2      1  278096049  2.7168  0.153   
-## CAP3      1   79898771  0.7806  0.470   
+## CAP2      1  278096049  2.7168  0.158   
+## CAP3      1   79898771  0.7806  0.477   
 ## Residual 16 1637764593                  
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
@@ -856,16 +868,16 @@ Los datos de especies crudos, sin procesar, se trasnforman primero en una matriz
 ## 
 ##           Df    AIC      F Pr(&gt;F)   
 ## + EC       1 18.715 6.6542  0.005 **
-## + TN       1 20.679 4.3484  0.015 * 
-## + DOC      1 22.618 2.2839  0.050 * 
-## + a440     1 22.817 2.0827  0.055 . 
-## + DRP      1 23.525 1.3845  0.235   
-## + DIN      1 23.810 1.1098  0.275   
-## + pH       1 24.092 0.8425  0.445   
-## + SUVA254  1 24.037 0.8944  0.450   
-## + TP       1 24.087 0.8474  0.470   
-## + TH       1 24.081 0.8529  0.475   
-## + E2_E3    1 24.382 0.5712  0.735   
+## + TN       1 20.679 4.3484  0.020 * 
+## + a440     1 22.817 2.0827  0.075 . 
+## + DOC      1 22.618 2.2839  0.080 . 
+## + DRP      1 23.525 1.3845  0.275   
+## + DIN      1 23.810 1.1098  0.300   
+## + TH       1 24.081 0.8529  0.430   
+## + SUVA254  1 24.037 0.8944  0.440   
+## + pH       1 24.092 0.8425  0.495   
+## + TP       1 24.087 0.8474  0.520   
+## + E2_E3    1 24.382 0.5712  0.810   
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
@@ -876,115 +888,136 @@ Los datos de especies crudos, sin procesar, se trasnforman primero en una matriz
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
-##           Df    AIC      F Pr(&gt;F)  
-## + a440     1 18.018 2.4546  0.015 *
-## + TN       1 19.061 1.4660  0.100 .
-## + pH       1 19.078 1.4506  0.195  
-## + DRP      1 19.089 1.4399  0.210  
-## + E2_E3    1 19.284 1.2616  0.225  
-## + DIN      1 19.478 1.0851  0.355  
-## + DOC      1 19.703 0.8828  0.560  
-## + TH       1 19.807 0.7900  0.605  
-## + TP       1 19.883 0.7230  0.675  
-## + SUVA254  1 20.175 0.4660  0.945  
+##           Df    AIC      F Pr(&gt;F)   
+## + a440     1 18.018 2.4546  0.010 **
+## + pH       1 19.078 1.4506  0.100 . 
+## + TN       1 19.061 1.4660  0.150   
+## + DRP      1 19.089 1.4399  0.160   
+## + E2_E3    1 19.284 1.2616  0.285   
+## + DIN      1 19.478 1.0851  0.335   
+## + DOC      1 19.703 0.8828  0.580   
+## + TH       1 19.807 0.7900  0.715   
+## + TP       1 19.883 0.7230  0.745   
+## + SUVA254  1 20.175 0.4660  0.935   
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Step: biomass.dist ~ EC + a440 
 ## 
 ##        Df    AIC      F Pr(&gt;F)   
-## - a440  1 18.715 2.4546  0.030 * 
+## - a440  1 18.715 2.4546  0.035 * 
 ## - EC    1 22.817 6.8831  0.005 **
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ##           Df    AIC      F Pr(&gt;F)  
-## + pH       1 17.824 1.8552  0.045 *
-## + TP       1 18.175 1.5445  0.110  
-## + DRP      1 18.257 1.4724  0.130  
-## + TN       1 18.218 1.5069  0.135  
-## + DOC      1 18.935 0.8905  0.470  
-## + E2_E3    1 18.937 0.8890  0.500  
-## + TH       1 18.889 0.9289  0.505  
-## + SUVA254  1 19.014 0.8242  0.585  
-## + DIN      1 19.423 0.4831  0.960  
+## + pH       1 17.824 1.8552  0.050 *
+## + TP       1 18.175 1.5445  0.100 .
+## + TN       1 18.218 1.5069  0.125  
+## + DRP      1 18.257 1.4724  0.175  
+## + TH       1 18.889 0.9289  0.430  
+## + E2_E3    1 18.937 0.8890  0.535  
+## + DOC      1 18.935 0.8905  0.550  
+## + SUVA254  1 19.014 0.8242  0.595  
+## + DIN      1 19.423 0.4831  0.955  
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Step: biomass.dist ~ EC + a440 + pH 
 ## 
 ##        Df    AIC      F Pr(&gt;F)   
-## - pH    1 18.018 1.8552  0.095 . 
+## - pH    1 18.018 1.8552  0.070 . 
 ## - a440  1 19.078 2.8267  0.025 * 
 ## - EC    1 23.836 7.8833  0.005 **
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ##           Df    AIC      F Pr(&gt;F)  
-## + TP       1 17.506 1.8428  0.045 *
-## + DRP      1 17.560 1.7980  0.070 .
-## + TN       1 18.201 1.2684  0.255  
-## + E2_E3    1 18.352 1.1453  0.360  
-## + TH       1 18.613 0.9364  0.435  
-## + DOC      1 18.917 0.6956  0.760  
-## + SUVA254  1 18.944 0.6748  0.820  
-## + DIN      1 19.177 0.4931  0.960  
+## + TP       1 17.506 1.8428  0.030 *
+## + DRP      1 17.560 1.7980  0.040 *
+## + TN       1 18.201 1.2684  0.250  
+## + E2_E3    1 18.352 1.1453  0.310  
+## + TH       1 18.613 0.9364  0.495  
+## + DOC      1 18.917 0.6956  0.765  
+## + SUVA254  1 18.944 0.6748  0.775  
+## + DIN      1 19.177 0.4931  0.975  
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Step: biomass.dist ~ EC + a440 + pH + TP 
 ## 
 ##        Df    AIC      F Pr(&gt;F)   
-## - TP    1 17.824 1.8428  0.075 . 
-## - pH    1 18.175 2.1410  0.060 . 
-## - a440  1 20.167 3.9360  0.010 **
+## - TP    1 17.824 1.8428  0.080 . 
+## - pH    1 18.175 2.1410  0.045 * 
+## - a440  1 20.167 3.9360  0.005 **
 ## - EC    1 24.511 8.5293  0.005 **
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ##           Df    AIC      F Pr(&gt;F)  
-## + DRP      1 16.699 2.1102  0.055 .
-## + TN       1 17.810 1.2392  0.215  
-## + E2_E3    1 17.878 1.1876  0.290  
-## + TH       1 18.280 0.8858  0.505  
-## + DOC      1 18.389 0.8046  0.535  
-## + DIN      1 18.762 0.5308  0.890  
-## + SUVA254  1 18.726 0.5574  0.895  
+## + DRP      1 16.699 2.1102  0.045 *
+## + TN       1 17.810 1.2392  0.195  
+## + E2_E3    1 17.878 1.1876  0.270  
+## + TH       1 18.280 0.8858  0.475  
+## + DOC      1 18.389 0.8046  0.620  
+## + DIN      1 18.762 0.5308  0.895  
+## + SUVA254  1 18.726 0.5574  0.905  
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Step: biomass.dist ~ EC + a440 + pH + TP + DRP 
+## 
+##        Df    AIC      F Pr(&gt;F)   
+## - TP    1 17.560 2.1532  0.095 . 
+## - DRP   1 17.506 2.1102  0.070 . 
+## - pH    1 18.515 2.9436  0.010 **
+## - a440  1 20.239 4.4688  0.005 **
+## - EC    1 25.377 9.8785  0.005 **
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+##           Df    AIC      F Pr(&gt;F)  
+## + TN       1 16.046 1.8438  0.090 .
+## + DOC      1 17.329 0.9210  0.465  
+## + TH       1 17.397 0.8739  0.565  
+## + E2_E3    1 17.506 0.7989  0.650  
+## + SUVA254  1 17.757 0.6268  0.800  
+## + DIN      1 17.854 0.5611  0.845  
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <div class="sourceCode" id="cb374"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb374-1"><a href="multi2.html#cb374-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fwd.sel.dbRDA2)</span></code></pre></div>
 <pre><code>## 
 ## Call:
-## dbrda(formula = biomass.dist ~ EC + a440 + pH + TP, data = env,      add = TRUE) 
+## dbrda(formula = biomass.dist ~ EC + a440 + pH + TP + DRP, data = env,      add = TRUE) 
 ## 
 ## Partitioning of Lingoes adjusted squared Bray distance:
 ##               Inertia Proportion
 ## Total           3.009     1.0000
-## Constrained     1.477     0.4909
-## Unconstrained   1.532     0.5091
+## Constrained     1.678     0.5575
+## Unconstrained   1.331     0.4425
 ## 
 ## Eigenvalues, and their contribution to the Lingoes adjusted squared Bray distance 
 ## 
 ## Importance of components:
-##                       dbRDA1 dbRDA2  dbRDA3  dbRDA4   MDS1    MDS2    MDS3
-## Eigenvalue            0.9615 0.3178 0.12865 0.06912 0.4639 0.21720 0.17540
-## Proportion Explained  0.3195 0.1056 0.04275 0.02297 0.1542 0.07218 0.05829
-## Cumulative Proportion 0.3195 0.4251 0.46789 0.49086 0.6450 0.71721 0.77550
-##                         MDS4    MDS5    MDS6    MDS7    MDS8    MDS9   MDS10
-## Eigenvalue            0.1438 0.09592 0.07458 0.06662 0.05708 0.05113 0.04614
-## Proportion Explained  0.0478 0.03188 0.02479 0.02214 0.01897 0.01699 0.01533
-## Cumulative Proportion 0.8233 0.85517 0.87996 0.90210 0.92107 0.93806 0.95339
-##                         MDS11   MDS12   MDS13   MDS14    MDS15
-## Eigenvalue            0.04077 0.03663 0.03341 0.02022 0.009221
-## Proportion Explained  0.01355 0.01217 0.01110 0.00672 0.003065
-## Cumulative Proportion 0.96694 0.97911 0.99022 0.99694 1.000000
+##                       dbRDA1 dbRDA2  dbRDA3  dbRDA4  dbRDA5   MDS1    MDS2
+## Eigenvalue            1.0703 0.3221 0.12877 0.09009 0.06647 0.3678 0.20959
+## Proportion Explained  0.3557 0.1070 0.04279 0.02994 0.02209 0.1222 0.06965
+## Cumulative Proportion 0.3557 0.4627 0.50552 0.53546 0.55755 0.6798 0.74943
+##                          MDS3    MDS4    MDS5    MDS6    MDS7    MDS8    MDS9
+## Eigenvalue            0.17540 0.10549 0.08807 0.07393 0.05742 0.05189 0.04836
+## Proportion Explained  0.05829 0.03506 0.02927 0.02457 0.01908 0.01724 0.01607
+## Cumulative Proportion 0.80772 0.84277 0.87204 0.89661 0.91569 0.93293 0.94900
+##                         MDS10   MDS11   MDS12    MDS13    MDS14
+## Eigenvalue            0.04089 0.03853 0.03519 0.024559 0.014278
+## Proportion Explained  0.01359 0.01280 0.01170 0.008162 0.004745
+## Cumulative Proportion 0.96259 0.97540 0.98709 0.995255 1.000000
 ## 
 ## Accumulated constrained eigenvalues
 ## Importance of components:
-##                       dbRDA1 dbRDA2 dbRDA3  dbRDA4
-## Eigenvalue            0.9615 0.3178 0.1286 0.06912
-## Proportion Explained  0.6510 0.2151 0.0871 0.04680
-## Cumulative Proportion 0.6510 0.8661 0.9532 1.00000
+##                       dbRDA1 dbRDA2  dbRDA3  dbRDA4  dbRDA5
+## Eigenvalue             1.070 0.3221 0.12877 0.09009 0.06647
+## Proportion Explained   0.638 0.1920 0.07676 0.05370 0.03962
+## Cumulative Proportion  0.638 0.8299 0.90668 0.96038 1.00000
 ## 
 ## Scaling 2 for species and site scores
 ## * Species are scaled proportional to eigenvalues
@@ -994,61 +1027,62 @@ Los datos de especies crudos, sin procesar, se trasnforman primero en una matriz
 ## 
 ## Site scores (weighted sums of species scores)
 ## 
-##     dbRDA1   dbRDA2   dbRDA3   dbRDA4     MDS1     MDS2
-## 1O -0.7191 -0.20145 -0.05147  0.72162  0.15056  1.15922
-## 2O -1.2062 -0.81616 -1.06853  0.14603 -0.33877 -0.81040
-## 3O -1.1091 -1.39022 -0.54267 -0.35190 -1.96470 -0.05132
-## 4O -0.9608  0.01208 -0.30320  0.11303 -0.12022  0.05940
-## 5O -0.8596  0.45243 -0.01242 -0.85814  0.98517 -0.43361
-## 1D -0.3234  0.28943  0.97250  0.20064  0.41941  0.26242
-## 2D  0.4284  0.26288  0.26461 -0.55588  0.17600  0.88056
-## 3D  0.8176  0.01717 -0.89366  0.44569  0.28911 -0.44089
-## 4D  1.1001 -1.29835  0.32640  0.01792  0.39902 -1.02150
-## 5D  1.0177 -0.64255 -0.49045 -1.75283  0.57734  0.32741
-## 1F -0.4624  0.14455  0.67711 -0.30650 -0.38041  0.44089
-## 2F  0.6601  0.29034 -0.79598  0.03216  0.54330 -1.08298
-## 3F  0.3126  0.66932 -0.84948 -0.08770 -0.14050 -0.25746
-## 4F  0.5137 -0.42669  1.89971 -0.90210  0.13237  0.64606
-## 5F  0.6415  0.15355 -0.05652  1.37866  0.42460  0.51463
-## 1A -0.3239 -0.55849  1.29398  0.91797  0.03736  0.74096
-## 2A  0.3554  0.64187 -0.83385 -0.22860 -0.06097 -0.16799
-## 3A  0.6239  0.27356 -0.25522  1.40667  0.29197 -0.30496
-## 4A -0.3827  1.23714  0.53325 -0.16158 -0.84982 -0.60789
-## 5A -0.1236  0.88959  0.18588 -0.17514 -0.57080  0.14745
+##      dbRDA1    dbRDA2   dbRDA3   dbRDA4   dbRDA5     MDS1
+## 1O -0.66177 -0.132828 -0.08959 -0.66141  1.08241  0.23164
+## 2O -1.12361 -0.703321 -1.12959 -1.15553  0.66718 -0.97955
+## 3O -1.13289 -1.392541 -0.48992  1.51413 -1.18819 -1.25738
+## 4O -0.88509  0.095203 -0.34704 -0.87820  0.51330 -0.40484
+## 5O -0.81340  0.487815 -0.01471 -0.10775 -0.92183  1.03532
+## 1D -0.28776  0.321297  0.95037 -0.48981  0.43639  0.52258
+## 2D  0.41611  0.245248  0.26170 -0.25717 -0.46966  0.12984
+## 3D  0.79080 -0.007137 -0.89970 -0.18287  0.62830 -0.01169
+## 4D  1.02607 -1.341192  0.32315 -0.12623  0.09512 -0.01968
+## 5D  0.96387 -0.678324 -0.50040 -0.61642 -1.60054  0.64482
+## 1F -0.43323  0.171314  0.66604 -0.26967 -0.23443 -0.33023
+## 2F  0.63887  0.263552 -0.79425 -0.06902  0.11445  0.42287
+## 3F  0.27916  0.612592 -0.80159  1.03340 -0.55649  0.12495
+## 4F  0.48902 -0.439799  1.88244 -0.63326 -0.70495 -0.18254
+## 5F  0.60574  0.111096 -0.03600  0.60760  1.25946  0.33757
+## 1A -0.35564 -0.587072  1.33692  1.26054  0.35992  0.92485
+## 2A  0.34551  0.615936 -0.82057  0.17808 -0.29773  0.01335
+## 3A  0.58476  0.223384 -0.22519  0.83457  1.18538  0.46487
+## 4A -0.34673  1.242182  0.54157  0.10483 -0.22698 -1.07174
+## 5A -0.09978  0.892597  0.18637 -0.08582 -0.14112 -0.59501
 ## 
 ## 
 ## Site constraints (linear combinations of constraining variables)
 ## 
-##       dbRDA1   dbRDA2  dbRDA3   dbRDA4     MDS1     MDS2
-## 1O -0.561844 -0.44305 -0.5675  0.31860  0.15056  1.15922
-## 2O -1.155105 -0.60248 -0.1380  0.52257 -0.33877 -0.81040
-## 3O -0.041339 -0.90855 -0.7165 -0.28352 -1.96470 -0.05132
-## 4O -0.826979 -0.11453 -0.2859 -0.12584 -0.12022  0.05940
-## 5O -1.571515  0.41706 -0.3520 -0.47567  0.98517 -0.43361
-## 1D -0.409495  0.13017  0.8933 -0.50667  0.41941  0.26242
-## 2D  0.410043  0.04587 -0.4142 -0.79292  0.17600  0.88056
-## 3D  0.643850 -0.03589 -0.7194  0.62968  0.28911 -0.44089
-## 4D  0.733480 -1.32905  0.8687 -0.27492  0.39902 -1.02150
-## 5D  0.639631 -0.26182 -0.5185 -1.02927  0.57734  0.32741
-## 1F -0.067398  0.11279  0.4782 -0.42206 -0.38041  0.44089
-## 2F  0.282199 -0.07882 -0.1530 -0.33230  0.54330 -1.08298
-## 3F  0.258269  1.06998 -0.3521 -0.35656 -0.14050 -0.25746
-## 4F  0.391971 -0.25138  0.9555  0.01066  0.13237  0.64606
-## 5F  0.414090  0.26568 -0.6541  1.36298  0.42460  0.51463
-## 1A -0.316292 -0.47361  1.1412  0.83873  0.03736  0.74096
-## 2A  0.446012 -0.05015 -0.4370 -0.09649 -0.06097 -0.16799
-## 3A  0.462393  0.26722 -0.1326  1.07699  0.29197 -0.30496
-## 4A  0.003798  1.23948  0.8290  0.35471 -0.84982 -0.60789
-## 5A  0.264232  1.00107  0.2750 -0.41868 -0.57080  0.14745
+##      dbRDA1   dbRDA2   dbRDA3    dbRDA4   dbRDA5     MDS1
+## 1O -0.53307 -0.40397 -0.57997 -0.103417  0.37580  0.23164
+## 2O -0.84955 -0.43534 -0.20140 -0.911766  0.87484 -0.97955
+## 3O -0.59128 -1.09759 -0.64176  1.235130 -0.74002 -1.25738
+## 4O -0.64595 -0.01218 -0.32465 -0.651934  0.09808 -0.40484
+## 5O -1.38536  0.54304 -0.39510 -0.803274 -0.21869  1.03532
+## 1D -0.39777  0.14876  0.88386 -0.291199 -0.44145  0.52258
+## 2D  0.48687  0.06101 -0.42604 -0.364645 -0.70724  0.12984
+## 3D  0.77718 -0.01113 -0.72868 -0.007326  0.67824 -0.01169
+## 4D  0.92707 -1.26462  0.82674 -0.760836 -0.03088 -0.01968
+## 5D  0.57971 -0.30129 -0.51144 -0.091981 -1.05526  0.64482
+## 1F -0.05628  0.11848  0.47350 -0.186501 -0.38489 -0.33023
+## 2F  0.30217 -0.07984 -0.15611 -0.121069 -0.30798  0.42287
+## 3F  0.10634  0.98806 -0.31458  0.527650 -0.55853  0.12495
+## 4F  0.60245 -0.18492  0.92179 -0.586995  0.21340 -0.18254
+## 5F  0.55139  0.29392 -0.65811  0.233307  1.37109  0.33757
+## 1A -0.78958 -0.63560  1.21030  1.323061  0.40709  0.92485
+## 2A  0.32949 -0.10949 -0.41455  0.362815 -0.22740  0.01335
+## 3A  0.34484  0.19814 -0.09886  0.788439  0.86578  0.46487
+## 4A  0.01653  1.22298  0.84255  0.246673  0.28781 -1.07174
+## 5A  0.22480  0.96158  0.29250  0.163868 -0.49980 -0.59501
 ## 
 ## 
 ## Biplot scores for constraining variables
 ## 
-##         dbRDA1  dbRDA2   dbRDA3 dbRDA4 MDS1 MDS2
-## EC    0.894819  0.3155  0.25136 0.1912    0    0
-## a440  0.342868  0.7448 -0.04397 0.5708    0    0
-## pH   -0.009634 -0.1954  0.96860 0.1535    0    0
-## TP    0.266805  0.1004 -0.04881 0.9573    0    0</code></pre>
+##        dbRDA1   dbRDA2   dbRDA3   dbRDA4   dbRDA5 MDS1
+## EC    0.84744  0.25745  0.27261  0.36853  0.07372    0
+## a440  0.33292  0.71473 -0.02621  0.39707  0.46903    0
+## pH   -0.01327 -0.19504  0.96606 -0.03142  0.16592    0
+## TP    0.25049  0.07963 -0.03589  0.41833  0.86870    0
+## DRP  -0.22871 -0.55583 -0.22802  0.76265 -0.07146    0</code></pre>
 <div id="desafío-aplicar-los-códigos-correspondientes-para-para-graficar-enumerar-las-variables-significativas-solicitar-el-r2-evaluar-la-colinealidad-y-las-distintas-significaciones-del-modelo-aquí-utilizado." class="section level5 hasAnchor" number="5.4.4.0.1">
 <h5><span class="header-section-number">5.4.4.0.1</span> <strong><em>Desafío</em></strong>: <em>aplicar los códigos correspondientes para para graficar, enumerar las variables significativas, solicitar el R<sup>2</sup>, evaluar la colinealidad y las distintas significaciones del modelo aquí utilizado.</em><a href="multi2.html#desafío-aplicar-los-códigos-correspondientes-para-para-graficar-enumerar-las-variables-significativas-solicitar-el-r2-evaluar-la-colinealidad-y-las-distintas-significaciones-del-modelo-aquí-utilizado." class="anchor-section" aria-label="Anchor link to header"></a></h5>
 </div>
@@ -1096,7 +1130,7 @@ Guardar los archivos en una carpeta llamada <em>data</em>, dentro del <strong>Di
 ## [1] 0.4143396
 ## 
 ## $adj.r.squared
-## [1] 0.1428248</code></pre>
+## [1] 0.1428423</code></pre>
 <div class="sourceCode" id="cb382"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb382-1"><a href="multi2.html#cb382-1" aria-hidden="true" tabindex="-1"></a>cca_DGGE</span></code></pre></div>
 <pre><code>## Call: cca(formula = data_cca ~ Turb + DO + T + Cond + pH + Chl.a + TN +
 ## TP + SS + OM + IM + Alk, data = env.r)
@@ -1367,9 +1401,9 @@ Guardar los archivos en una carpeta llamada <em>data</em>, dentro del <strong>Di
 ## Number of permutations: 999
 ## 
 ## Model: cca(formula = data_cca ~ Turb + DO + T + Cond + pH + Chl.a + TN + TP + SS + OM + IM + Alk, data = env.r)
-##          Df ChiSquare      F Pr(&gt;F)   
-## Model    12    2.3497 1.5329  0.002 **
-## Residual 26    3.3212                 
+##          Df ChiSquare      F Pr(&gt;F)    
+## Model    12    2.3497 1.5329  0.001 ***
+## Residual 26    3.3212                  
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <div class="sourceCode" id="cb391"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb391-1"><a href="multi2.html#cb391-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(cca_DGGE, <span class="at">by =</span> <span class="st">&quot;axis&quot;</span>, <span class="at">permutations =</span> <span class="fu">how</span>(<span class="at">nperm =</span> <span class="dv">999</span>))<span class="co">#Significación de los ejes</span></span></code></pre></div>
@@ -1379,20 +1413,20 @@ Guardar los archivos en una carpeta llamada <em>data</em>, dentro del <strong>Di
 ## Number of permutations: 999
 ## 
 ## Model: cca(formula = data_cca ~ Turb + DO + T + Cond + pH + Chl.a + TN + TP + SS + OM + IM + Alk, data = env.r)
-##          Df ChiSquare      F Pr(&gt;F)  
-## CCA1      1    0.5366 4.2011  0.012 *
-## CCA2      1    0.3764 2.9464  0.015 *
-## CCA3      1    0.3502 2.7417  0.046 *
-## CCA4      1    0.2387 1.8686  0.714  
-## CCA5      1    0.1981 1.5508  0.944  
-## CCA6      1    0.1458 1.1417  1.000  
-## CCA7      1    0.1356 1.0613  0.999  
-## CCA8      1    0.1155 0.9038  1.000  
-## CCA9      1    0.0908 0.7105  1.000  
-## CCA10     1    0.0767 0.6006  1.000  
-## CCA11     1    0.0517 0.4050  1.000  
-## CCA12     1    0.0336 0.2629  1.000  
-## Residual 26    3.3212                
+##          Df ChiSquare      F Pr(&gt;F)   
+## CCA1      1    0.5366 4.2011  0.006 **
+## CCA2      1    0.3764 2.9464  0.019 * 
+## CCA3      1    0.3502 2.7417  0.056 . 
+## CCA4      1    0.2387 1.8686  0.744   
+## CCA5      1    0.1981 1.5508  0.927   
+## CCA6      1    0.1458 1.1417  1.000   
+## CCA7      1    0.1356 1.0613  1.000   
+## CCA8      1    0.1155 0.9038  0.999   
+## CCA9      1    0.0908 0.7105  1.000   
+## CCA10     1    0.0767 0.6006  1.000   
+## CCA11     1    0.0517 0.4050  1.000   
+## CCA12     1    0.0336 0.2629  1.000   
+## Residual 26    3.3212                 
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <div class="sourceCode" id="cb393"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb393-1"><a href="multi2.html#cb393-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Selección forward de variables</span></span>
@@ -1408,12 +1442,12 @@ Guardar los archivos en una carpeta llamada <em>data</em>, dentro del <strong>Di
 ## + TN     1 249.23 1.9917  0.005 **
 ## + Turb   1 249.31 1.9118  0.010 **
 ## + SS     1 249.43 1.7943  0.010 **
-## + IM     1 249.34 1.8855  0.025 * 
-## + pH     1 250.04 1.1904  0.200   
-## + DO     1 250.33 0.9122  0.585   
-## + Alk    1 250.54 0.7069  0.790   
-## + Cond   1 250.57 0.6747  0.920   
-## + T      1 250.57 0.6751  0.945   
+## + IM     1 249.34 1.8855  0.030 * 
+## + pH     1 250.04 1.1904  0.220   
+## + DO     1 250.33 0.9122  0.675   
+## + Alk    1 250.54 0.7069  0.810   
+## + Cond   1 250.57 0.6747  0.885   
+## + T      1 250.57 0.6751  0.935   
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
@@ -1422,30 +1456,30 @@ Guardar los archivos en una carpeta llamada <em>data</em>, dentro del <strong>Di
 ##        Df    AIC      F Pr(&gt;F)   
 ## + TP    1 247.31 2.4923  0.005 **
 ## + IM    1 247.82 1.9958  0.005 **
-## + SS    1 247.96 1.8591  0.015 * 
-## + Turb  1 248.23 1.5960  0.015 * 
-## + OM    1 248.57 1.2757  0.150   
-## + TN    1 248.69 1.1618  0.260   
-## + pH    1 248.96 0.8984  0.635   
-## + DO    1 249.01 0.8576  0.705   
-## + Cond  1 249.16 0.7171  0.880   
-## + T     1 249.16 0.7173  0.915   
-## + Alk   1 249.24 0.6383  0.945   
+## + SS    1 247.96 1.8591  0.010 **
+## + Turb  1 248.23 1.5960  0.040 * 
+## + OM    1 248.57 1.2757  0.165   
+## + TN    1 248.69 1.1618  0.240   
+## + pH    1 248.96 0.8984  0.630   
+## + DO    1 249.01 0.8576  0.665   
+## + Cond  1 249.16 0.7171  0.885   
+## + Alk   1 249.24 0.6383  0.890   
+## + T     1 249.16 0.7173  0.920   
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Step: data_cca ~ Chl.a + TP 
 ## 
 ##        Df    AIC      F Pr(&gt;F)  
-## + OM    1 247.69 1.4913  0.065 .
-## + TN    1 247.95 1.2471  0.155  
-## + Turb  1 248.03 1.1693  0.210  
-## + SS    1 248.15 1.0624  0.435  
-## + IM    1 248.28 0.9348  0.550  
-## + pH    1 248.31 0.9083  0.645  
-## + DO    1 248.34 0.8866  0.715  
-## + T     1 248.49 0.7454  0.890  
-## + Alk   1 248.59 0.6523  0.890  
+## + OM    1 247.69 1.4913  0.055 .
+## + TN    1 247.95 1.2471  0.175  
+## + Turb  1 248.03 1.1693  0.240  
+## + SS    1 248.15 1.0624  0.350  
+## + IM    1 248.28 0.9348  0.565  
+## + pH    1 248.31 0.9083  0.610  
+## + DO    1 248.34 0.8866  0.615  
+## + T     1 248.49 0.7454  0.880  
+## + Alk   1 248.59 0.6523  0.895  
 ## + Cond  1 248.64 0.6067  0.955  
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
@@ -1463,14 +1497,14 @@ hipótesis específicas. En la construcción automática de modelos, generalment
 ## &lt;none&gt;     247.31                 
 ## + OM     1 247.69 1.4913  0.045 * 
 ## - TP     1 247.92 2.4923  0.005 **
-## + TN     1 247.95 1.2471  0.255   
-## + Turb   1 248.03 1.1693  0.250   
-## + SS     1 248.15 1.0624  0.375   
-## + IM     1 248.28 0.9348  0.490   
-## + pH     1 248.31 0.9083  0.640   
-## + DO     1 248.34 0.8866  0.665   
+## + TN     1 247.95 1.2471  0.140   
+## + Turb   1 248.03 1.1693  0.260   
+## + SS     1 248.15 1.0624  0.370   
+## + IM     1 248.28 0.9348  0.550   
+## + pH     1 248.31 0.9083  0.600   
+## + DO     1 248.34 0.8866  0.575   
 ## + T      1 248.49 0.7454  0.870   
-## + Alk    1 248.59 0.6523  0.915   
+## + Alk    1 248.59 0.6523  0.880   
 ## + Cond   1 248.64 0.6067  0.965   
 ## - Chl.a  1 248.92 3.4926  0.005 **
 ## ---
