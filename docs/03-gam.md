@@ -34,14 +34,10 @@ Donde $\mu$ es el valor esperado de la variable dependiente _y_ que puede presen
 
 Existen diferentes estrategias para ajustar una curva suave y continua a los datos. Aquí vamos a utilizar _splines_, y en particular _spline_ cúbico y cúbico cíclico. De manera muy breve, un _spline_ cúbico es una curva suave cúbica por tramos (Figura \@ref(fig:Splines)). El _spline_ cúbico cíclico empieza y termina en el mismo punto. El paquete con el que vamos a trabajar _mgcv_ [@wood2017] usa splines penalizados ( _conventional intergrated square second derivative cubic spline penalty_), donde la penalización será más grande cuanto menos suave sea la curva.
 
-\begin{figure}
-
-{\centering \includegraphics[width=0.8\linewidth]{./images/Splines} 
-
-}
-
-\caption{Construcción de un spline cúbico. La curva suave (línea contínua gruesa) es la suma de las 5 funciones basis (líneas finas). Las líneas verticales muestran los nodos equiespaciados. Extraído de Wood (2017).}(\#fig:Splines)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="./images/Splines.png" alt="Construcción de un spline cúbico. La curva suave (línea contínua gruesa) es la suma de las 5 funciones basis (líneas finas). Las líneas verticales muestran los nodos equiespaciados. Extraído de Wood (2017)." width="80%" />
+<p class="caption">(\#fig:Splines)Construcción de un spline cúbico. La curva suave (línea contínua gruesa) es la suma de las 5 funciones basis (líneas finas). Las líneas verticales muestran los nodos equiespaciados. Extraído de Wood (2017).</p>
+</div>
 
 ## ¡Manos a la obra!
 Utilizaremos un set de datos del trabajo _The dynamics of picocyanobacteria from a hypereutrophic shallow lake is affected by light-climate and small-bodied zooplankton: a 10-year cytometric time-series analysis_ publicado en _FEMS Microbiology Ecology_ [@quiroga2021], disponibles en el [Repositorio Institucional CONICET Digital](http://hdl.handle.net/11336/200094).
@@ -121,14 +117,10 @@ ggplot(base, aes(x= Dias, y= Pcy_orgml))  +
   theme(legend.position = "none")
 ```
 
-\begin{figure}
-
-{\centering \includegraphics[width=0.8\linewidth]{03-gam_files/figure-latex/serie-1} 
-
-}
-
-\caption{Serie temporal de abundancia (organismos/ml) de picocianobacterias.}(\#fig:serie)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="03-gam_files/figure-html/serie-1.png" alt="Serie temporal de abundancia (organismos/ml) de picocianobacterias." width="80%" />
+<p class="caption">(\#fig:serie)Serie temporal de abundancia (organismos/ml) de picocianobacterias.</p>
+</div>
 
 No se observan outliers en el gráfico.
 
@@ -175,9 +167,10 @@ Interpretación visual de los efectos parciales: curvas suaves `s()` ( _smooth f
 plot(modelo1$gam, scale=0, scheme=1, pages=1)
 ```
 
-\begin{figure}
-\includegraphics[width=1\linewidth]{03-gam_files/figure-latex/unnamed-chunk-6-1} \caption{Efectos parciales del modelo 1. Las curvas suaves se centraron en cero, se indican los intervalos de confianza de 95% en gris. Las líneas internas en los ejes x (Mes y Dias) representan los datos.}(\#fig:unnamed-chunk-6)
-\end{figure}
+<div class="figure">
+<img src="03-gam_files/figure-html/unnamed-chunk-6-1.png" alt="Efectos parciales del modelo 1. Las curvas suaves se centraron en cero, se indican los intervalos de confianza de 95% en gris. Las líneas internas en los ejes x (Mes y Dias) representan los datos." width="100%" />
+<p class="caption">(\#fig:unnamed-chunk-6)Efectos parciales del modelo 1. Las curvas suaves se centraron en cero, se indican los intervalos de confianza de 95% en gris. Las líneas internas en los ejes x (Mes y Dias) representan los datos.</p>
+</div>
 
 Información del modelo
 
@@ -224,14 +217,10 @@ par(mfrow=c(2,2))
 gam.check(modelo1$gam, type="pearson")
 ```
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{03-gam_files/figure-latex/check-1} 
-
-}
-
-\caption{gam.check del modelo 1.}(\#fig:check)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="03-gam_files/figure-html/check-1.png" alt="gam.check del modelo 1." width="100%" />
+<p class="caption">(\#fig:check)gam.check del modelo 1.</p>
+</div>
 
 ```
 ## 
@@ -241,7 +230,7 @@ gam.check(modelo1$gam, type="pearson")
 ## indicate that k is too low, especially if edf is close to k'.
 ## 
 ##           k'  edf k-index p-value    
-## s(Mes)  8.00 3.86    0.93    0.16    
+## s(Mes)  8.00 3.86    0.93    0.13    
 ## s(Dias) 9.00 8.74    0.31  <2e-16 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
@@ -284,9 +273,10 @@ Interpretación visual de los efectos parciales: curvas suaves `s()`( _smooth fu
 plot(modelo2$gam, scale=0, scheme=1, pages=1)
 ```
 
-\begin{figure}
-\includegraphics[width=1\linewidth]{03-gam_files/figure-latex/unnamed-chunk-9-1} \caption{Efectos parciales del modelo 2. Las curvas suaves se centraron en cero, se indican los intervalos de confianza de 95% en gris. Las líneas internas en los ejes x (Mes y Dias) representan los datos.}(\#fig:unnamed-chunk-9)
-\end{figure}
+<div class="figure">
+<img src="03-gam_files/figure-html/unnamed-chunk-9-1.png" alt="Efectos parciales del modelo 2. Las curvas suaves se centraron en cero, se indican los intervalos de confianza de 95% en gris. Las líneas internas en los ejes x (Mes y Dias) representan los datos." width="100%" />
+<p class="caption">(\#fig:unnamed-chunk-9)Efectos parciales del modelo 2. Las curvas suaves se centraron en cero, se indican los intervalos de confianza de 95% en gris. Las líneas internas en los ejes x (Mes y Dias) representan los datos.</p>
+</div>
 
 La interacción se muestra en 3D, y es difícil de interpretar visualmente. Aquí nos centramos en la interpretación visual de los efectos parciales.
 
@@ -335,14 +325,10 @@ par(mfrow=c(2,2))
 gam.check(modelo2$gam, type="pearson")
 ```
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{03-gam_files/figure-latex/check2-1} 
-
-}
-
-\caption{gam.check del modelo 2.}(\#fig:check2)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="03-gam_files/figure-html/check2-1.png" alt="gam.check del modelo 2." width="100%" />
+<p class="caption">(\#fig:check2)gam.check del modelo 2.</p>
+</div>
 
 ```
 ## 
@@ -352,9 +338,9 @@ gam.check(modelo2$gam, type="pearson")
 ## indicate that k is too low, especially if edf is close to k'.
 ## 
 ##                 k'   edf k-index p-value    
-## s(Mes)        4.00  3.27    0.84   0.010 ** 
+## s(Mes)        4.00  3.27    0.84   0.005 ** 
 ## s(Dias)      19.00 17.54    0.66  <2e-16 ***
-## ti(Mes,Dias) 12.00  3.72    0.89   0.025 *  
+## ti(Mes,Dias) 12.00  3.72    0.89   0.015 *  
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ```
@@ -391,14 +377,10 @@ vis.gam(modelo2$gam, type="response",
 points(base$Mes,base$Dias,pch = 20) #agregar puntos de muestreo
 ```
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{03-gam_files/figure-latex/unnamed-chunk-12-1} 
-
-}
-
-\caption{vis.gam plot del modelo 2.}(\#fig:unnamed-chunk-12)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="03-gam_files/figure-html/unnamed-chunk-12-1.png" alt="vis.gam plot del modelo 2." width="100%" />
+<p class="caption">(\#fig:unnamed-chunk-12)vis.gam plot del modelo 2.</p>
+</div>
 
 Se pueden graficar los valores observados a campo y los predichos por el modelo. Cuanto mas alto sea el $R_{adj}^{2}$, mas similares serán ambos valores. 
 
@@ -419,7 +401,7 @@ ggplot(data = datas, aes(Fecha,Pcy_orgml, group = datos))+
   labs(x = "", y = "Pcy (org/ml)")
 ```
 
-![](03-gam_files/figure-latex/unnamed-chunk-13-1.pdf)<!-- --> 
+<img src="03-gam_files/figure-html/unnamed-chunk-13-1.png" width="672" />
 
 
 

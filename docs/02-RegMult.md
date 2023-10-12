@@ -43,33 +43,33 @@ datos_fq
 ```
 
 ```
-## # A tibble: 20 x 16
-##    ID    Pool  Site      Date     pH Condu~1 Disso~2 Total~3   DOC   DIN Total~4
+## # A tibble: 20 × 16
+##    ID    Pool  Site      Date     pH Condu…¹ Disso…² Total…³   DOC   DIN Total…⁴
 ##    <chr> <chr> <chr>     <chr> <dbl>   <dbl>   <dbl>   <dbl> <dbl> <dbl>   <dbl>
-##  1 1O    RH1   shore     Octo~  4.91    13.4    NA      21.2   5.6  83.6    1870
-##  2 2O    RH2   shore     Octo~  5.52     8.7    NA      46.2   5.1  41.3    1980
-##  3 3O    RH3   shore     Octo~  4.72    15.2    NA      13.8   2.8  10      1980
-##  4 4O    RH4   north sh~ Octo~  5.09    11.8    NA      33.2   5.7  55.3    1650
-##  5 5O    RH5   shore     Octo~  4.82     5.5    NA      25.8   3.9  54.4    3410
-##  6 1D    RH1   shore     Dece~  6.39    19.1    11.0    38.5   7.2  21.1    1320
-##  7 2D    RH2   shore     Dece~  4.75    22.6    11.0    42.1   7.7  12.1    1870
-##  8 3D    RH3   shore     Dece~  4.67    26.7    11.7    18.9  13.4  22.6    5720
-##  9 4D    RH4   north sh~ Dece~  6.75    25.6    11.7    24.8   5.3  34      7480
-## 10 5D    RH5   shore     Dece~  4.65    23      11.5    20.1  11    11.2   10230
-## 11 1F    RH1   shore     Febr~  5.9     21.4    10.4    39.5  12.7  53      8030
-## 12 2F    RH2   shore     Febr~  5.19    22.6    10.2    34     5.9  30.3   10010
-## 13 3F    RH3   shore     Febr~  4.66    25.7    10.6    32    12.5  45.3   11330
-## 14 4F    RH4   north sh~ Febr~  6.65    26.8    10.9    36.6   4     0      5610
-## 15 5F    RH5   shore     Febr~  4.82    27.2    10.4    24.5   7.1  22.3    8250
-## 16 1A    RH1   shore     Apri~  7.1     21.4    10.7    25.3   7.6  23.1    9790
-## 17 2A    RH2   shore     Apri~  4.88    24      11.4    20.3   7.5   0     11110
-## 18 3A    RH3   shore     Apri~  5.4     28.5    10.4    18.8  12.7 103.     8910
-## 19 4A    RH4   north sh~ Apri~  6.2     28.5    11.2    27.7   5.3  43      3630
-## 20 5A    RH5   shore     Apri~  5.43    27.1    11.2    24.2  11.6  73.2    3740
-## # ... with 5 more variables: DRP <dbl>, `Total phosphorus` <dbl>,
+##  1 1O    RH1   shore     Octo…  4.91    13.4    NA      21.2   5.6  83.6    1870
+##  2 2O    RH2   shore     Octo…  5.52     8.7    NA      46.2   5.1  41.3    1980
+##  3 3O    RH3   shore     Octo…  4.72    15.2    NA      13.8   2.8  10      1980
+##  4 4O    RH4   north sh… Octo…  5.09    11.8    NA      33.2   5.7  55.3    1650
+##  5 5O    RH5   shore     Octo…  4.82     5.5    NA      25.8   3.9  54.4    3410
+##  6 1D    RH1   shore     Dece…  6.39    19.1    11.0    38.5   7.2  21.1    1320
+##  7 2D    RH2   shore     Dece…  4.75    22.6    11.0    42.1   7.7  12.1    1870
+##  8 3D    RH3   shore     Dece…  4.67    26.7    11.7    18.9  13.4  22.6    5720
+##  9 4D    RH4   north sh… Dece…  6.75    25.6    11.7    24.8   5.3  34      7480
+## 10 5D    RH5   shore     Dece…  4.65    23      11.5    20.1  11    11.2   10230
+## 11 1F    RH1   shore     Febr…  5.9     21.4    10.4    39.5  12.7  53      8030
+## 12 2F    RH2   shore     Febr…  5.19    22.6    10.2    34     5.9  30.3   10010
+## 13 3F    RH3   shore     Febr…  4.66    25.7    10.6    32    12.5  45.3   11330
+## 14 4F    RH4   north sh… Febr…  6.65    26.8    10.9    36.6   4     0      5610
+## 15 5F    RH5   shore     Febr…  4.82    27.2    10.4    24.5   7.1  22.3    8250
+## 16 1A    RH1   shore     Apri…  7.1     21.4    10.7    25.3   7.6  23.1    9790
+## 17 2A    RH2   shore     Apri…  4.88    24      11.4    20.3   7.5   0     11110
+## 18 3A    RH3   shore     Apri…  5.4     28.5    10.4    18.8  12.7 103.     8910
+## 19 4A    RH4   north sh… Apri…  6.2     28.5    11.2    27.7   5.3  43      3630
+## 20 5A    RH5   shore     Apri…  5.43    27.1    11.2    24.2  11.6  73.2    3740
+## # … with 5 more variables: DRP <dbl>, `Total phosphorus` <dbl>,
 ## #   `ag(440)` <dbl>, SUVA254 <dbl>, `MS index` <dbl>, and abbreviated variable
-## #   names 1: Conductivity, 2: `Dissolved oxigen`, 3: `Total hardness`,
-## #   4: `Total nitrogen`
+## #   names ¹​Conductivity, ²​`Dissolved oxigen`, ³​`Total hardness`,
+## #   ⁴​`Total nitrogen`
 ```
 
 
@@ -78,31 +78,31 @@ datos_bacterias
 ```
 
 ```
-## # A tibble: 20 x 10
-##    ID    Pool  Site        Date  Filam~1 Large~2 Vibri~3 Large~4 Small~5 Small~6
+## # A tibble: 20 × 10
+##    ID    Pool  Site        Date  Filam…¹ Large…² Vibri…³ Large…⁴ Small…⁵ Small…⁶
 ##    <chr> <chr> <chr>       <chr>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>
-##  1 1O    RH1   shore       Octo~       0   16921    5315   12676    1747   25994
-##  2 2O    RH2   shore       Octo~    1435    5645    2384    7381     888   12075
-##  3 3O    RH3   shore       Octo~   13307    1597     392    8131     708   13222
-##  4 4O    RH4   north shore Octo~       0    8085    3499    7534    2028   25353
-##  5 5O    RH5   shore       Octo~       0    1921     451   15662     666   31621
-##  6 1D    RH1   shore       Dece~       0   12374    9228   21906    4503   38421
-##  7 2D    RH2   shore       Dece~       0   22924    5933   34663    6687   77581
-##  8 3D    RH3   shore       Dece~       0   12309    3471   46807    8694  139006
-##  9 4D    RH4   north shore Dece~   44419   76819   19692   44391   24931  156132
-## 10 5D    RH5   shore       Dece~       0   66952   23046  134707    2949  102890
-## 11 1F    RH1   shore       Febr~    3177    6414    7533   22218    4013   34495
-## 12 2F    RH2   shore       Febr~       0    7263    4879   25886    4098  137049
-## 13 3F    RH3   shore       Febr~    3886    9283    1294   17402    2522   93008
-## 14 4F    RH4   north shore Febr~    5860   54624   20331   33949   12469   58990
-## 15 5F    RH5   shore       Febr~       0   21324   17482   24397    7064  106885
-## 16 1A    RH1   shore       Apri~   12331   21098   11615   16083    6592   33478
-## 17 2A    RH2   shore       Apri~       0    6950    4028   22525    1395   94037
-## 18 3A    RH3   shore       Apri~       0   12394   17281   18608    4678  121090
-## 19 4A    RH4   north shore Apri~       0     901    2484    3455     642   50957
-## 20 5A    RH5   shore       Apri~       0    7626    3338   17231    2016   60287
-## # ... with abbreviated variable names 1: Filaments, 2: Large_rods,
-## #   3: Vibrio_shaped, 4: Large_cocci, 5: Small_rods, 6: Small_cocci
+##  1 1O    RH1   shore       Octo…       0   16921    5315   12676    1747   25994
+##  2 2O    RH2   shore       Octo…    1435    5645    2384    7381     888   12075
+##  3 3O    RH3   shore       Octo…   13307    1597     392    8131     708   13222
+##  4 4O    RH4   north shore Octo…       0    8085    3499    7534    2028   25353
+##  5 5O    RH5   shore       Octo…       0    1921     451   15662     666   31621
+##  6 1D    RH1   shore       Dece…       0   12374    9228   21906    4503   38421
+##  7 2D    RH2   shore       Dece…       0   22924    5933   34663    6687   77581
+##  8 3D    RH3   shore       Dece…       0   12309    3471   46807    8694  139006
+##  9 4D    RH4   north shore Dece…   44419   76819   19692   44391   24931  156132
+## 10 5D    RH5   shore       Dece…       0   66952   23046  134707    2949  102890
+## 11 1F    RH1   shore       Febr…    3177    6414    7533   22218    4013   34495
+## 12 2F    RH2   shore       Febr…       0    7263    4879   25886    4098  137049
+## 13 3F    RH3   shore       Febr…    3886    9283    1294   17402    2522   93008
+## 14 4F    RH4   north shore Febr…    5860   54624   20331   33949   12469   58990
+## 15 5F    RH5   shore       Febr…       0   21324   17482   24397    7064  106885
+## 16 1A    RH1   shore       Apri…   12331   21098   11615   16083    6592   33478
+## 17 2A    RH2   shore       Apri…       0    6950    4028   22525    1395   94037
+## 18 3A    RH3   shore       Apri…       0   12394   17281   18608    4678  121090
+## 19 4A    RH4   north shore Apri…       0     901    2484    3455     642   50957
+## 20 5A    RH5   shore       Apri…       0    7626    3338   17231    2016   60287
+## # … with abbreviated variable names ¹​Filaments, ²​Large_rods, ³​Vibrio_shaped,
+## #   ⁴​Large_cocci, ⁵​Small_rods, ⁶​Small_cocci
 ```
 
 Para unir estas tablas en una sola, debemos buscar una variable o columna que sea un indicador único de cada dato, y que sea equivalente en ambas tablas. ¿Cuál les parece que es?
@@ -123,36 +123,35 @@ datos_RH
 ```
 
 ```
-## # A tibble: 20 x 25
-##    ID    Pool.x Site.x    Date.x Filam~1 Large~2 Vibri~3 Large~4 Small~5 Small~6
+## # A tibble: 20 × 25
+##    ID    Pool.x Site.x    Date.x Filam…¹ Large…² Vibri…³ Large…⁴ Small…⁵ Small…⁶
 ##    <chr> <chr>  <chr>     <chr>    <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>
-##  1 1O    RH1    shore     Octob~       0   16921    5315   12676    1747   25994
-##  2 2O    RH2    shore     Octob~    1435    5645    2384    7381     888   12075
-##  3 3O    RH3    shore     Octob~   13307    1597     392    8131     708   13222
-##  4 4O    RH4    north sh~ Octob~       0    8085    3499    7534    2028   25353
-##  5 5O    RH5    shore     Octob~       0    1921     451   15662     666   31621
-##  6 1D    RH1    shore     Decem~       0   12374    9228   21906    4503   38421
-##  7 2D    RH2    shore     Decem~       0   22924    5933   34663    6687   77581
-##  8 3D    RH3    shore     Decem~       0   12309    3471   46807    8694  139006
-##  9 4D    RH4    north sh~ Decem~   44419   76819   19692   44391   24931  156132
-## 10 5D    RH5    shore     Decem~       0   66952   23046  134707    2949  102890
-## 11 1F    RH1    shore     Febru~    3177    6414    7533   22218    4013   34495
-## 12 2F    RH2    shore     Febru~       0    7263    4879   25886    4098  137049
-## 13 3F    RH3    shore     Febru~    3886    9283    1294   17402    2522   93008
-## 14 4F    RH4    north sh~ Febru~    5860   54624   20331   33949   12469   58990
-## 15 5F    RH5    shore     Febru~       0   21324   17482   24397    7064  106885
-## 16 1A    RH1    shore     April~   12331   21098   11615   16083    6592   33478
-## 17 2A    RH2    shore     April~       0    6950    4028   22525    1395   94037
-## 18 3A    RH3    shore     April~       0   12394   17281   18608    4678  121090
-## 19 4A    RH4    north sh~ April~       0     901    2484    3455     642   50957
-## 20 5A    RH5    shore     April~       0    7626    3338   17231    2016   60287
-## # ... with 15 more variables: Pool.y <chr>, Site.y <chr>, Date.y <chr>,
-## #   pH <dbl>, Conductivity <dbl>, `Dissolved oxigen` <dbl>,
-## #   `Total hardness` <dbl>, DOC <dbl>, DIN <dbl>, `Total nitrogen` <dbl>,
-## #   DRP <dbl>, `Total phosphorus` <dbl>, `ag(440)` <dbl>, SUVA254 <dbl>,
-## #   `MS index` <dbl>, and abbreviated variable names 1: Filaments,
-## #   2: Large_rods, 3: Vibrio_shaped, 4: Large_cocci, 5: Small_rods,
-## #   6: Small_cocci
+##  1 1O    RH1    shore     Octob…       0   16921    5315   12676    1747   25994
+##  2 2O    RH2    shore     Octob…    1435    5645    2384    7381     888   12075
+##  3 3O    RH3    shore     Octob…   13307    1597     392    8131     708   13222
+##  4 4O    RH4    north sh… Octob…       0    8085    3499    7534    2028   25353
+##  5 5O    RH5    shore     Octob…       0    1921     451   15662     666   31621
+##  6 1D    RH1    shore     Decem…       0   12374    9228   21906    4503   38421
+##  7 2D    RH2    shore     Decem…       0   22924    5933   34663    6687   77581
+##  8 3D    RH3    shore     Decem…       0   12309    3471   46807    8694  139006
+##  9 4D    RH4    north sh… Decem…   44419   76819   19692   44391   24931  156132
+## 10 5D    RH5    shore     Decem…       0   66952   23046  134707    2949  102890
+## 11 1F    RH1    shore     Febru…    3177    6414    7533   22218    4013   34495
+## 12 2F    RH2    shore     Febru…       0    7263    4879   25886    4098  137049
+## 13 3F    RH3    shore     Febru…    3886    9283    1294   17402    2522   93008
+## 14 4F    RH4    north sh… Febru…    5860   54624   20331   33949   12469   58990
+## 15 5F    RH5    shore     Febru…       0   21324   17482   24397    7064  106885
+## 16 1A    RH1    shore     April…   12331   21098   11615   16083    6592   33478
+## 17 2A    RH2    shore     April…       0    6950    4028   22525    1395   94037
+## 18 3A    RH3    shore     April…       0   12394   17281   18608    4678  121090
+## 19 4A    RH4    north sh… April…       0     901    2484    3455     642   50957
+## 20 5A    RH5    shore     April…       0    7626    3338   17231    2016   60287
+## # … with 15 more variables: Pool.y <chr>, Site.y <chr>, Date.y <chr>, pH <dbl>,
+## #   Conductivity <dbl>, `Dissolved oxigen` <dbl>, `Total hardness` <dbl>,
+## #   DOC <dbl>, DIN <dbl>, `Total nitrogen` <dbl>, DRP <dbl>,
+## #   `Total phosphorus` <dbl>, `ag(440)` <dbl>, SUVA254 <dbl>, `MS index` <dbl>,
+## #   and abbreviated variable names ¹​Filaments, ²​Large_rods, ³​Vibrio_shaped,
+## #   ⁴​Large_cocci, ⁵​Small_rods, ⁶​Small_cocci
 ```
 
 Las variables Pool, Site y Date se repiten en ambas tablas, por eso aparecen como Pool.x y Pool.y (por ejemplo). Dado que son idénticas, tenemos la opción de eliminar estas variables de alguna de las dos tablas, o bien incluirlas como parte de la información de nexo.
@@ -164,35 +163,34 @@ datos_RH
 ```
 
 ```
-## # A tibble: 20 x 22
-##    ID    Pool  Site  Date  Filam~1 Large~2 Vibri~3 Large~4 Small~5 Small~6    pH
+## # A tibble: 20 × 22
+##    ID    Pool  Site  Date  Filam…¹ Large…² Vibri…³ Large…⁴ Small…⁵ Small…⁶    pH
 ##    <chr> <chr> <chr> <chr>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl> <dbl>
-##  1 1O    RH1   shore Octo~       0   16921    5315   12676    1747   25994  4.91
-##  2 2O    RH2   shore Octo~    1435    5645    2384    7381     888   12075  5.52
-##  3 3O    RH3   shore Octo~   13307    1597     392    8131     708   13222  4.72
-##  4 4O    RH4   nort~ Octo~       0    8085    3499    7534    2028   25353  5.09
-##  5 5O    RH5   shore Octo~       0    1921     451   15662     666   31621  4.82
-##  6 1D    RH1   shore Dece~       0   12374    9228   21906    4503   38421  6.39
-##  7 2D    RH2   shore Dece~       0   22924    5933   34663    6687   77581  4.75
-##  8 3D    RH3   shore Dece~       0   12309    3471   46807    8694  139006  4.67
-##  9 4D    RH4   nort~ Dece~   44419   76819   19692   44391   24931  156132  6.75
-## 10 5D    RH5   shore Dece~       0   66952   23046  134707    2949  102890  4.65
-## 11 1F    RH1   shore Febr~    3177    6414    7533   22218    4013   34495  5.9 
-## 12 2F    RH2   shore Febr~       0    7263    4879   25886    4098  137049  5.19
-## 13 3F    RH3   shore Febr~    3886    9283    1294   17402    2522   93008  4.66
-## 14 4F    RH4   nort~ Febr~    5860   54624   20331   33949   12469   58990  6.65
-## 15 5F    RH5   shore Febr~       0   21324   17482   24397    7064  106885  4.82
-## 16 1A    RH1   shore Apri~   12331   21098   11615   16083    6592   33478  7.1 
-## 17 2A    RH2   shore Apri~       0    6950    4028   22525    1395   94037  4.88
-## 18 3A    RH3   shore Apri~       0   12394   17281   18608    4678  121090  5.4 
-## 19 4A    RH4   nort~ Apri~       0     901    2484    3455     642   50957  6.2 
-## 20 5A    RH5   shore Apri~       0    7626    3338   17231    2016   60287  5.43
-## # ... with 11 more variables: Conductivity <dbl>, `Dissolved oxigen` <dbl>,
+##  1 1O    RH1   shore Octo…       0   16921    5315   12676    1747   25994  4.91
+##  2 2O    RH2   shore Octo…    1435    5645    2384    7381     888   12075  5.52
+##  3 3O    RH3   shore Octo…   13307    1597     392    8131     708   13222  4.72
+##  4 4O    RH4   nort… Octo…       0    8085    3499    7534    2028   25353  5.09
+##  5 5O    RH5   shore Octo…       0    1921     451   15662     666   31621  4.82
+##  6 1D    RH1   shore Dece…       0   12374    9228   21906    4503   38421  6.39
+##  7 2D    RH2   shore Dece…       0   22924    5933   34663    6687   77581  4.75
+##  8 3D    RH3   shore Dece…       0   12309    3471   46807    8694  139006  4.67
+##  9 4D    RH4   nort… Dece…   44419   76819   19692   44391   24931  156132  6.75
+## 10 5D    RH5   shore Dece…       0   66952   23046  134707    2949  102890  4.65
+## 11 1F    RH1   shore Febr…    3177    6414    7533   22218    4013   34495  5.9 
+## 12 2F    RH2   shore Febr…       0    7263    4879   25886    4098  137049  5.19
+## 13 3F    RH3   shore Febr…    3886    9283    1294   17402    2522   93008  4.66
+## 14 4F    RH4   nort… Febr…    5860   54624   20331   33949   12469   58990  6.65
+## 15 5F    RH5   shore Febr…       0   21324   17482   24397    7064  106885  4.82
+## 16 1A    RH1   shore Apri…   12331   21098   11615   16083    6592   33478  7.1 
+## 17 2A    RH2   shore Apri…       0    6950    4028   22525    1395   94037  4.88
+## 18 3A    RH3   shore Apri…       0   12394   17281   18608    4678  121090  5.4 
+## 19 4A    RH4   nort… Apri…       0     901    2484    3455     642   50957  6.2 
+## 20 5A    RH5   shore Apri…       0    7626    3338   17231    2016   60287  5.43
+## # … with 11 more variables: Conductivity <dbl>, `Dissolved oxigen` <dbl>,
 ## #   `Total hardness` <dbl>, DOC <dbl>, DIN <dbl>, `Total nitrogen` <dbl>,
 ## #   DRP <dbl>, `Total phosphorus` <dbl>, `ag(440)` <dbl>, SUVA254 <dbl>,
-## #   `MS index` <dbl>, and abbreviated variable names 1: Filaments,
-## #   2: Large_rods, 3: Vibrio_shaped, 4: Large_cocci, 5: Small_rods,
-## #   6: Small_cocci
+## #   `MS index` <dbl>, and abbreviated variable names ¹​Filaments, ²​Large_rods,
+## #   ³​Vibrio_shaped, ⁴​Large_cocci, ⁵​Small_rods, ⁶​Small_cocci
 ```
 
 Ahora vamos a mejorar los nombres de las columnas. Una buena práctica es elegir siempre el mismo tipo de nomenclatura. Hay varias convenciones pero las más elegidas en el mundo de R son **_snake_** y **_camel_**. La nomenclatura _snake_ implica usar guiones bajos como separador de palabras y, generalmente, todas las letras en minúscula. La nomenclatura _camel_ implica, en vez de usar guiones, usar a las mayúsculas como indicador de que hay una palabra nueva, y siempre dejar a la primera palabra en minúscula. Si nuestra variable se llama "Fecha de muestreo", la nomenclatura sería _fecha_de_muestreo_ o _fechaDeMuestreo_, de acuerdo a la convención elegida.
@@ -212,34 +210,34 @@ datos_RH
 ```
 
 ```
-## # A tibble: 20 x 22
-##    id    pool  site  date  filam~1 large~2 vibri~3 large~4 small~5 small~6   p_h
+## # A tibble: 20 × 22
+##    id    pool  site  date  filam…¹ large…² vibri…³ large…⁴ small…⁵ small…⁶   p_h
 ##    <chr> <chr> <chr> <chr>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl> <dbl>
-##  1 1O    RH1   shore Octo~       0   16921    5315   12676    1747   25994  4.91
-##  2 2O    RH2   shore Octo~    1435    5645    2384    7381     888   12075  5.52
-##  3 3O    RH3   shore Octo~   13307    1597     392    8131     708   13222  4.72
-##  4 4O    RH4   nort~ Octo~       0    8085    3499    7534    2028   25353  5.09
-##  5 5O    RH5   shore Octo~       0    1921     451   15662     666   31621  4.82
-##  6 1D    RH1   shore Dece~       0   12374    9228   21906    4503   38421  6.39
-##  7 2D    RH2   shore Dece~       0   22924    5933   34663    6687   77581  4.75
-##  8 3D    RH3   shore Dece~       0   12309    3471   46807    8694  139006  4.67
-##  9 4D    RH4   nort~ Dece~   44419   76819   19692   44391   24931  156132  6.75
-## 10 5D    RH5   shore Dece~       0   66952   23046  134707    2949  102890  4.65
-## 11 1F    RH1   shore Febr~    3177    6414    7533   22218    4013   34495  5.9 
-## 12 2F    RH2   shore Febr~       0    7263    4879   25886    4098  137049  5.19
-## 13 3F    RH3   shore Febr~    3886    9283    1294   17402    2522   93008  4.66
-## 14 4F    RH4   nort~ Febr~    5860   54624   20331   33949   12469   58990  6.65
-## 15 5F    RH5   shore Febr~       0   21324   17482   24397    7064  106885  4.82
-## 16 1A    RH1   shore Apri~   12331   21098   11615   16083    6592   33478  7.1 
-## 17 2A    RH2   shore Apri~       0    6950    4028   22525    1395   94037  4.88
-## 18 3A    RH3   shore Apri~       0   12394   17281   18608    4678  121090  5.4 
-## 19 4A    RH4   nort~ Apri~       0     901    2484    3455     642   50957  6.2 
-## 20 5A    RH5   shore Apri~       0    7626    3338   17231    2016   60287  5.43
-## # ... with 11 more variables: conductivity <dbl>, dissolved_oxigen <dbl>,
+##  1 1O    RH1   shore Octo…       0   16921    5315   12676    1747   25994  4.91
+##  2 2O    RH2   shore Octo…    1435    5645    2384    7381     888   12075  5.52
+##  3 3O    RH3   shore Octo…   13307    1597     392    8131     708   13222  4.72
+##  4 4O    RH4   nort… Octo…       0    8085    3499    7534    2028   25353  5.09
+##  5 5O    RH5   shore Octo…       0    1921     451   15662     666   31621  4.82
+##  6 1D    RH1   shore Dece…       0   12374    9228   21906    4503   38421  6.39
+##  7 2D    RH2   shore Dece…       0   22924    5933   34663    6687   77581  4.75
+##  8 3D    RH3   shore Dece…       0   12309    3471   46807    8694  139006  4.67
+##  9 4D    RH4   nort… Dece…   44419   76819   19692   44391   24931  156132  6.75
+## 10 5D    RH5   shore Dece…       0   66952   23046  134707    2949  102890  4.65
+## 11 1F    RH1   shore Febr…    3177    6414    7533   22218    4013   34495  5.9 
+## 12 2F    RH2   shore Febr…       0    7263    4879   25886    4098  137049  5.19
+## 13 3F    RH3   shore Febr…    3886    9283    1294   17402    2522   93008  4.66
+## 14 4F    RH4   nort… Febr…    5860   54624   20331   33949   12469   58990  6.65
+## 15 5F    RH5   shore Febr…       0   21324   17482   24397    7064  106885  4.82
+## 16 1A    RH1   shore Apri…   12331   21098   11615   16083    6592   33478  7.1 
+## 17 2A    RH2   shore Apri…       0    6950    4028   22525    1395   94037  4.88
+## 18 3A    RH3   shore Apri…       0   12394   17281   18608    4678  121090  5.4 
+## 19 4A    RH4   nort… Apri…       0     901    2484    3455     642   50957  6.2 
+## 20 5A    RH5   shore Apri…       0    7626    3338   17231    2016   60287  5.43
+## # … with 11 more variables: conductivity <dbl>, dissolved_oxigen <dbl>,
 ## #   total_hardness <dbl>, doc <dbl>, din <dbl>, total_nitrogen <dbl>,
 ## #   drp <dbl>, total_phosphorus <dbl>, ag_440 <dbl>, suva254 <dbl>,
-## #   ms_index <dbl>, and abbreviated variable names 1: filaments, 2: large_rods,
-## #   3: vibrio_shaped, 4: large_cocci, 5: small_rods, 6: small_cocci
+## #   ms_index <dbl>, and abbreviated variable names ¹​filaments, ²​large_rods,
+## #   ³​vibrio_shaped, ⁴​large_cocci, ⁵​small_rods, ⁶​small_cocci
 ```
 
 El nombre de la variable pH quedó un poco raro, lo vamos a cambiar. A continuación se pide el nombre de las columnas de datos_RH, luego específicamente el de la columna 11, y luego lo cambiamos.
@@ -292,35 +290,34 @@ datos_bio_opcion1
 ```
 
 ```
-## # A tibble: 20 x 23
-##    id    pool  site  date  filam~1 large~2 vibri~3 large~4 small~5 small~6    ph
+## # A tibble: 20 × 23
+##    id    pool  site  date  filam…¹ large…² vibri…³ large…⁴ small…⁵ small…⁶    ph
 ##    <chr> <chr> <chr> <chr>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl> <dbl>
-##  1 1O    RH1   shore Octo~       0   16921    5315   12676    1747   25994  4.91
-##  2 2O    RH2   shore Octo~    1435    5645    2384    7381     888   12075  5.52
-##  3 3O    RH3   shore Octo~   13307    1597     392    8131     708   13222  4.72
-##  4 4O    RH4   nort~ Octo~       0    8085    3499    7534    2028   25353  5.09
-##  5 5O    RH5   shore Octo~       0    1921     451   15662     666   31621  4.82
-##  6 1D    RH1   shore Dece~       0   12374    9228   21906    4503   38421  6.39
-##  7 2D    RH2   shore Dece~       0   22924    5933   34663    6687   77581  4.75
-##  8 3D    RH3   shore Dece~       0   12309    3471   46807    8694  139006  4.67
-##  9 4D    RH4   nort~ Dece~   44419   76819   19692   44391   24931  156132  6.75
-## 10 5D    RH5   shore Dece~       0   66952   23046  134707    2949  102890  4.65
-## 11 1F    RH1   shore Febr~    3177    6414    7533   22218    4013   34495  5.9 
-## 12 2F    RH2   shore Febr~       0    7263    4879   25886    4098  137049  5.19
-## 13 3F    RH3   shore Febr~    3886    9283    1294   17402    2522   93008  4.66
-## 14 4F    RH4   nort~ Febr~    5860   54624   20331   33949   12469   58990  6.65
-## 15 5F    RH5   shore Febr~       0   21324   17482   24397    7064  106885  4.82
-## 16 1A    RH1   shore Apri~   12331   21098   11615   16083    6592   33478  7.1 
-## 17 2A    RH2   shore Apri~       0    6950    4028   22525    1395   94037  4.88
-## 18 3A    RH3   shore Apri~       0   12394   17281   18608    4678  121090  5.4 
-## 19 4A    RH4   nort~ Apri~       0     901    2484    3455     642   50957  6.2 
-## 20 5A    RH5   shore Apri~       0    7626    3338   17231    2016   60287  5.43
-## # ... with 12 more variables: conductivity <dbl>, dissolved_oxigen <dbl>,
+##  1 1O    RH1   shore Octo…       0   16921    5315   12676    1747   25994  4.91
+##  2 2O    RH2   shore Octo…    1435    5645    2384    7381     888   12075  5.52
+##  3 3O    RH3   shore Octo…   13307    1597     392    8131     708   13222  4.72
+##  4 4O    RH4   nort… Octo…       0    8085    3499    7534    2028   25353  5.09
+##  5 5O    RH5   shore Octo…       0    1921     451   15662     666   31621  4.82
+##  6 1D    RH1   shore Dece…       0   12374    9228   21906    4503   38421  6.39
+##  7 2D    RH2   shore Dece…       0   22924    5933   34663    6687   77581  4.75
+##  8 3D    RH3   shore Dece…       0   12309    3471   46807    8694  139006  4.67
+##  9 4D    RH4   nort… Dece…   44419   76819   19692   44391   24931  156132  6.75
+## 10 5D    RH5   shore Dece…       0   66952   23046  134707    2949  102890  4.65
+## 11 1F    RH1   shore Febr…    3177    6414    7533   22218    4013   34495  5.9 
+## 12 2F    RH2   shore Febr…       0    7263    4879   25886    4098  137049  5.19
+## 13 3F    RH3   shore Febr…    3886    9283    1294   17402    2522   93008  4.66
+## 14 4F    RH4   nort… Febr…    5860   54624   20331   33949   12469   58990  6.65
+## 15 5F    RH5   shore Febr…       0   21324   17482   24397    7064  106885  4.82
+## 16 1A    RH1   shore Apri…   12331   21098   11615   16083    6592   33478  7.1 
+## 17 2A    RH2   shore Apri…       0    6950    4028   22525    1395   94037  4.88
+## 18 3A    RH3   shore Apri…       0   12394   17281   18608    4678  121090  5.4 
+## 19 4A    RH4   nort… Apri…       0     901    2484    3455     642   50957  6.2 
+## 20 5A    RH5   shore Apri…       0    7626    3338   17231    2016   60287  5.43
+## # … with 12 more variables: conductivity <dbl>, dissolved_oxigen <dbl>,
 ## #   total_hardness <dbl>, doc <dbl>, din <dbl>, total_nitrogen <dbl>,
 ## #   drp <dbl>, total_phosphorus <dbl>, ag_440 <dbl>, suva254 <dbl>,
-## #   ms_index <dbl>, bio_total <dbl>, and abbreviated variable names
-## #   1: filaments, 2: large_rods, 3: vibrio_shaped, 4: large_cocci,
-## #   5: small_rods, 6: small_cocci
+## #   ms_index <dbl>, bio_total <dbl>, and abbreviated variable names ¹​filaments,
+## #   ²​large_rods, ³​vibrio_shaped, ⁴​large_cocci, ⁵​small_rods, ⁶​small_cocci
 ```
 
 
@@ -334,35 +331,34 @@ datos_bio_opcion2
 ```
 
 ```
-## # A tibble: 20 x 23
-##    id    pool  site        date  bio_t~1 filam~2 large~3 vibri~4 large~5 small~6
+## # A tibble: 20 × 23
+##    id    pool  site        date  bio_t…¹ filam…² large…³ vibri…⁴ large…⁵ small…⁶
 ##    <chr> <chr> <chr>       <chr>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>
-##  1 1O    RH1   shore       Octo~   62653       0   16921    5315   12676    1747
-##  2 2O    RH2   shore       Octo~   29808    1435    5645    2384    7381     888
-##  3 3O    RH3   shore       Octo~   37357   13307    1597     392    8131     708
-##  4 4O    RH4   north shore Octo~   46499       0    8085    3499    7534    2028
-##  5 5O    RH5   shore       Octo~   50321       0    1921     451   15662     666
-##  6 1D    RH1   shore       Dece~   86432       0   12374    9228   21906    4503
-##  7 2D    RH2   shore       Dece~  147788       0   22924    5933   34663    6687
-##  8 3D    RH3   shore       Dece~  210287       0   12309    3471   46807    8694
-##  9 4D    RH4   north shore Dece~  366384   44419   76819   19692   44391   24931
-## 10 5D    RH5   shore       Dece~  330544       0   66952   23046  134707    2949
-## 11 1F    RH1   shore       Febr~   77850    3177    6414    7533   22218    4013
-## 12 2F    RH2   shore       Febr~  179175       0    7263    4879   25886    4098
-## 13 3F    RH3   shore       Febr~  127395    3886    9283    1294   17402    2522
-## 14 4F    RH4   north shore Febr~  186223    5860   54624   20331   33949   12469
-## 15 5F    RH5   shore       Febr~  177152       0   21324   17482   24397    7064
-## 16 1A    RH1   shore       Apri~  101197   12331   21098   11615   16083    6592
-## 17 2A    RH2   shore       Apri~  128935       0    6950    4028   22525    1395
-## 18 3A    RH3   shore       Apri~  174051       0   12394   17281   18608    4678
-## 19 4A    RH4   north shore Apri~   58439       0     901    2484    3455     642
-## 20 5A    RH5   shore       Apri~   90498       0    7626    3338   17231    2016
-## # ... with 13 more variables: small_cocci <dbl>, ph <dbl>, conductivity <dbl>,
+##  1 1O    RH1   shore       Octo…   62653       0   16921    5315   12676    1747
+##  2 2O    RH2   shore       Octo…   29808    1435    5645    2384    7381     888
+##  3 3O    RH3   shore       Octo…   37357   13307    1597     392    8131     708
+##  4 4O    RH4   north shore Octo…   46499       0    8085    3499    7534    2028
+##  5 5O    RH5   shore       Octo…   50321       0    1921     451   15662     666
+##  6 1D    RH1   shore       Dece…   86432       0   12374    9228   21906    4503
+##  7 2D    RH2   shore       Dece…  147788       0   22924    5933   34663    6687
+##  8 3D    RH3   shore       Dece…  210287       0   12309    3471   46807    8694
+##  9 4D    RH4   north shore Dece…  366384   44419   76819   19692   44391   24931
+## 10 5D    RH5   shore       Dece…  330544       0   66952   23046  134707    2949
+## 11 1F    RH1   shore       Febr…   77850    3177    6414    7533   22218    4013
+## 12 2F    RH2   shore       Febr…  179175       0    7263    4879   25886    4098
+## 13 3F    RH3   shore       Febr…  127395    3886    9283    1294   17402    2522
+## 14 4F    RH4   north shore Febr…  186223    5860   54624   20331   33949   12469
+## 15 5F    RH5   shore       Febr…  177152       0   21324   17482   24397    7064
+## 16 1A    RH1   shore       Apri…  101197   12331   21098   11615   16083    6592
+## 17 2A    RH2   shore       Apri…  128935       0    6950    4028   22525    1395
+## 18 3A    RH3   shore       Apri…  174051       0   12394   17281   18608    4678
+## 19 4A    RH4   north shore Apri…   58439       0     901    2484    3455     642
+## 20 5A    RH5   shore       Apri…   90498       0    7626    3338   17231    2016
+## # … with 13 more variables: small_cocci <dbl>, ph <dbl>, conductivity <dbl>,
 ## #   dissolved_oxigen <dbl>, total_hardness <dbl>, doc <dbl>, din <dbl>,
 ## #   total_nitrogen <dbl>, drp <dbl>, total_phosphorus <dbl>, ag_440 <dbl>,
-## #   suva254 <dbl>, ms_index <dbl>, and abbreviated variable names 1: bio_total,
-## #   2: filaments, 3: large_rods, 4: vibrio_shaped, 5: large_cocci,
-## #   6: small_rods
+## #   suva254 <dbl>, ms_index <dbl>, and abbreviated variable names ¹​bio_total,
+## #   ²​filaments, ³​large_rods, ⁴​vibrio_shaped, ⁵​large_cocci, ⁶​small_rods
 ```
 
 La ventaja de la segunda opción es que podemos elegir dónde agregar la nueva columna (antes de la columna _filaments_, por ejemplo). Así que nos quedaremos con esta tabla para los siguientes pasos. De paso, borramos los dataframes que ya no necesitamos.
@@ -407,7 +403,7 @@ datos_bacterias <- datos_RH[,5:11]
 ggpairs(datos_bacterias, title="Correlograma entre la biomasa de morfotipos bacterianos") 
 ```
 
-![](02-RegMult_files/figure-latex/correlo1-1.pdf)<!-- --> 
+<img src="02-RegMult_files/figure-html/correlo1-1.png" width="672" />
 Obtenemos una matriz de gráficos, en la que cada celda expresa la correlacion de un par de variables. En este caso, todas las variables son continuas, por lo que observamos que los gráficos en la parte inferior de la matriz son de dispersión (puntos).
 
 En las diagonales, observamos histogramas suavizados para cada variable. Por ejemplo, comparemos el histograma de la biomasa total.
@@ -417,7 +413,7 @@ En las diagonales, observamos histogramas suavizados para cada variable. Por eje
 hist(datos_bacterias$bio_total, breaks=10, col="lightblue", xlab="Biomasa total de bacterias heterótrofas", ylab="Frecuencia", main="")
 ```
 
-![](02-RegMult_files/figure-latex/hist-1.pdf)<!-- --> 
+<img src="02-RegMult_files/figure-html/hist-1.png" width="672" />
 
 En la parte superior, se muestra el coeficiente de correlación para cada par de variables y asteriscos indicando su nivel de significancia. Podemos evaluar el par que nos interese con una función, para tener información numérica más detallada.
 
@@ -518,7 +514,7 @@ datos_bacterias <- datos_RH[,5:11]
 ggpairs(datos_bacterias, title="Correlograma entre la biomasa de morfotipos bacterianos", upper = list(continuous = wrap( "cor", method="spearman"), combo = "box_no_facet", discrete = "count", na =  "na")) 
 ```
 
-![](02-RegMult_files/figure-latex/correlo2-1.pdf)<!-- --> 
+<img src="02-RegMult_files/figure-html/correlo2-1.png" width="672" />
 
 Ahora visualizaremos la correlación como un mapa de calor.
 
@@ -527,14 +523,14 @@ Ahora visualizaremos la correlación como un mapa de calor.
 ggcorr(datos_bacterias, method = c("everything", "pearson")) 
 ```
 
-![](02-RegMult_files/figure-latex/correlo3-1.pdf)<!-- --> 
+<img src="02-RegMult_files/figure-html/correlo3-1.png" width="672" />
 
 
 ```r
 ggcorr(datos_bacterias, method = c("everything", "spearman")) 
 ```
 
-![](02-RegMult_files/figure-latex/correlo4-1.pdf)<!-- --> 
+<img src="02-RegMult_files/figure-html/correlo4-1.png" width="672" />
 
 ### Entre variables abióticas
 
@@ -549,7 +545,7 @@ datos_fq <- datos_RH[,12:23]
 ggcorr(datos_fq, method = c("everything", "spearman")) 
 ```
 
-![](02-RegMult_files/figure-latex/correlo5-1.pdf)<!-- --> 
+<img src="02-RegMult_files/figure-html/correlo5-1.png" width="672" />
 Si queremos tener un resumen numérico de los coeficientes de correlación, podemos generar una matriz.
 
 
@@ -711,7 +707,7 @@ datos_RH[,12]
 ```
 
 ```
-## # A tibble: 20 x 1
+## # A tibble: 20 × 1
 ##       ph
 ##    <dbl>
 ##  1  4.91
@@ -811,35 +807,34 @@ datos_RH_est
 ```
 
 ```
-## # A tibble: 20 x 23
-##    id    pool  site        date  bio_t~1 filam~2 large~3 vibri~4 large~5 small~6
+## # A tibble: 20 × 23
+##    id    pool  site        date  bio_t…¹ filam…² large…³ vibri…⁴ large…⁵ small…⁶
 ##    <chr> <fct> <chr>       <fct>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>
-##  1 1O    RH1   shore       Octo~   62653       0   16921    5315   12676    1747
-##  2 2O    RH2   shore       Octo~   29808    1435    5645    2384    7381     888
-##  3 3O    RH3   shore       Octo~   37357   13307    1597     392    8131     708
-##  4 4O    RH4   north shore Octo~   46499       0    8085    3499    7534    2028
-##  5 5O    RH5   shore       Octo~   50321       0    1921     451   15662     666
-##  6 1D    RH1   shore       Dece~   86432       0   12374    9228   21906    4503
-##  7 2D    RH2   shore       Dece~  147788       0   22924    5933   34663    6687
-##  8 3D    RH3   shore       Dece~  210287       0   12309    3471   46807    8694
-##  9 4D    RH4   north shore Dece~  366384   44419   76819   19692   44391   24931
-## 10 5D    RH5   shore       Dece~  330544       0   66952   23046  134707    2949
-## 11 1F    RH1   shore       Febr~   77850    3177    6414    7533   22218    4013
-## 12 2F    RH2   shore       Febr~  179175       0    7263    4879   25886    4098
-## 13 3F    RH3   shore       Febr~  127395    3886    9283    1294   17402    2522
-## 14 4F    RH4   north shore Febr~  186223    5860   54624   20331   33949   12469
-## 15 5F    RH5   shore       Febr~  177152       0   21324   17482   24397    7064
-## 16 1A    RH1   shore       Apri~  101197   12331   21098   11615   16083    6592
-## 17 2A    RH2   shore       Apri~  128935       0    6950    4028   22525    1395
-## 18 3A    RH3   shore       Apri~  174051       0   12394   17281   18608    4678
-## 19 4A    RH4   north shore Apri~   58439       0     901    2484    3455     642
-## 20 5A    RH5   shore       Apri~   90498       0    7626    3338   17231    2016
-## # ... with 13 more variables: small_cocci <dbl>, ph <dbl>, conductivity <dbl>,
+##  1 1O    RH1   shore       Octo…   62653       0   16921    5315   12676    1747
+##  2 2O    RH2   shore       Octo…   29808    1435    5645    2384    7381     888
+##  3 3O    RH3   shore       Octo…   37357   13307    1597     392    8131     708
+##  4 4O    RH4   north shore Octo…   46499       0    8085    3499    7534    2028
+##  5 5O    RH5   shore       Octo…   50321       0    1921     451   15662     666
+##  6 1D    RH1   shore       Dece…   86432       0   12374    9228   21906    4503
+##  7 2D    RH2   shore       Dece…  147788       0   22924    5933   34663    6687
+##  8 3D    RH3   shore       Dece…  210287       0   12309    3471   46807    8694
+##  9 4D    RH4   north shore Dece…  366384   44419   76819   19692   44391   24931
+## 10 5D    RH5   shore       Dece…  330544       0   66952   23046  134707    2949
+## 11 1F    RH1   shore       Febr…   77850    3177    6414    7533   22218    4013
+## 12 2F    RH2   shore       Febr…  179175       0    7263    4879   25886    4098
+## 13 3F    RH3   shore       Febr…  127395    3886    9283    1294   17402    2522
+## 14 4F    RH4   north shore Febr…  186223    5860   54624   20331   33949   12469
+## 15 5F    RH5   shore       Febr…  177152       0   21324   17482   24397    7064
+## 16 1A    RH1   shore       Apri…  101197   12331   21098   11615   16083    6592
+## 17 2A    RH2   shore       Apri…  128935       0    6950    4028   22525    1395
+## 18 3A    RH3   shore       Apri…  174051       0   12394   17281   18608    4678
+## 19 4A    RH4   north shore Apri…   58439       0     901    2484    3455     642
+## 20 5A    RH5   shore       Apri…   90498       0    7626    3338   17231    2016
+## # … with 13 more variables: small_cocci <dbl>, ph <dbl>, conductivity <dbl>,
 ## #   dissolved_oxigen <dbl>, total_hardness <dbl>, doc <dbl>, din <dbl>,
 ## #   total_nitrogen <dbl>, drp <dbl>, total_phosphorus <dbl>, ag_440 <dbl>,
-## #   suva254 <dbl>, ms_index <dbl>, and abbreviated variable names 1: bio_total,
-## #   2: filaments, 3: large_rods, 4: vibrio_shaped, 5: large_cocci,
-## #   6: small_rods
+## #   suva254 <dbl>, ms_index <dbl>, and abbreviated variable names ¹​bio_total,
+## #   ²​filaments, ³​large_rods, ⁴​vibrio_shaped, ⁵​large_cocci, ⁶​small_rods
 ```
 
 **Nota.** Uno de los supuestos del modelo de regresión múltiple es que las observaciones son independientes entre sí. Dado que cada laguna fue medida repetidamente en cuatro fechas distintas, es muy posible que las cuatro observaciones de estas lagunas no sean totalmente independientes. A los efectos de esta actividad práctica, vamos a suponer que sí hay independencia entre cada una de las observaciones. Para el futuro, recomendamos explorar análisis que permitan incluir a la identidad de la laguna como factor aleaotorio (modelos lineales generalizados mixtos) y/o considerar las medidas repetidas. Todo lo que veamos a continuación sobre selección de variables es aplicable a otros modelos de regresión más complejos.
@@ -2943,14 +2938,14 @@ También podemos obtener algunos gráficos diagnósticos (teclar Enter para pasa
 plot(modelo_fecha4)
 ```
 
-![](02-RegMult_files/figure-latex/plot1-1.pdf)<!-- --> ![](02-RegMult_files/figure-latex/plot1-2.pdf)<!-- --> ![](02-RegMult_files/figure-latex/plot1-3.pdf)<!-- --> ![](02-RegMult_files/figure-latex/plot1-4.pdf)<!-- --> 
+<img src="02-RegMult_files/figure-html/plot1-1.png" width="672" /><img src="02-RegMult_files/figure-html/plot1-2.png" width="672" /><img src="02-RegMult_files/figure-html/plot1-3.png" width="672" /><img src="02-RegMult_files/figure-html/plot1-4.png" width="672" />
 
 
 ```r
 plot(modelo_conduct2)
 ```
 
-![](02-RegMult_files/figure-latex/plot2-1.pdf)<!-- --> ![](02-RegMult_files/figure-latex/plot2-2.pdf)<!-- --> ![](02-RegMult_files/figure-latex/plot2-3.pdf)<!-- --> ![](02-RegMult_files/figure-latex/plot2-4.pdf)<!-- --> 
+<img src="02-RegMult_files/figure-html/plot2-1.png" width="672" /><img src="02-RegMult_files/figure-html/plot2-2.png" width="672" /><img src="02-RegMult_files/figure-html/plot2-3.png" width="672" /><img src="02-RegMult_files/figure-html/plot2-4.png" width="672" />
 
 Finalmente, si los supuestos se rechazan, una posible opción es realizar un test no paramétrico, como por ejemplo regresiones lineales por permutaciones.
 

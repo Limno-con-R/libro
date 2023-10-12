@@ -8,14 +8,15 @@ link-citations: yes
 ---
 
 # LIMNOLOGIA CON R {-}
+<img src="./images/portada.png" width="100%" style="display: block; margin: auto;" />
+
+Esta publicación debe citarse como
+
+Quiroga M.V., Capeletti J., Carusso S., Cochero J., García P.E., Llames M.E., Morandeira N.S. 2023. Limnología con R. Universidad Nacional de La Plata. Facultad de Ciencias Naturales y Museo. La Plata, Argentina. https://limno-con-r.github.io/libro/
+
+ISBN 978-950-34-2316-5
 
 Taller dictado en el marco del **IV Congreso Iberoamericano de Limnología - X Congreso Argentino de Limnología (IV CIL – CAL X)**, 27 y 28 de julio de 2023.
-
-El material se elaboró utilizando el paquete _bookdown_ [@R-bookdown; @bookdown2016], basado en _R Markdown_ [@rmarkdown2020] y _knitr_ [@xie2015].
-
-**Docentes**: Natalia Morandeira, María E. Llames, Sofía Carusso, Patricia E.García, Joaquín Cochero, Julieta Capeletti y María Victoria Quiroga.
-
-**Coordinadora**: María Victoria Quiroga.
 
 ## Contenido
 
@@ -34,3 +35,5 @@ El material se elaboró utilizando el paquete _bookdown_ [@R-bookdown; @bookdown
 **Unidad** \@ref(diathor): Paquete _DiaThor_. Estimación de información ecológica e índices bióticos para diatomeas. Paquete _optimos.prime_. Estimación de óptimo y rango de tolerancia de una especie.
 
 **Unidad** \@ref(buenaspracticas): Buenas prácticas en R y Rstudio
+
+El material se elaboró utilizando el paquete _bookdown_ [@R-bookdown; @bookdown2016], basado en _R Markdown_ [@rmarkdown2020] y _knitr_ [@xie2015].
